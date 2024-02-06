@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page-7</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="base.css">
+</head>
+<body>
+    <nav id="navbar" class="navbar navbar-expand-md bg-light sticky-md-top">
+        <h2 class="navbar-brand ps-5 ms-5">Start Bootstarp</h2>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navCollapse" area-controls="navCollpase" area-label="Toggle naviugation" area-expanded="false">
+         <span class="navbar-toggler-icon"></span>
+        </button>
+       <div class="collapse navbar-collapse" id="navCollapse">
+         <ul class="navbar-nav px-5">
+             <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+             <li class="nav-item dropdown"><a data-bs-toggle="dropdown" class="nav-link  dropdown-toggle active"
+                     href="#shop">Shop</a>
+                 <ul class="dropdown-menu mt-2">
+                     <li><a class="dropdown-item" href="#">All Products</a></li>
+                     <li class="dropdown-divider"></li>
+                     <li><a class="dropdown-item" href="#">Popular Items</a></li>
+                     <li><a class="dropdown-item" href="#">New Arraivals</a></li>
+                 </ul>
+             </li>
+         </ul>
+         <div class=" offset-7 ps-5 d-none d-md-block">
+             <button class="btn btn-outline-dark"><i class="bi bi-cart-fill"> </i><span class="px-1">Cart</span> <span
+                     class="badge bg-dark">0</span></button>
+         </div>
+       </div>
+    </nav>
+    <div class="container bg-white d-flex justify-content-center align-items-center gap-5 my-5 pt-5 flex-lg-nowrap flex-wrap">
+        <div class="px-sm-5 px-0 d-none d-xxl-block">
+            <img src="images/laptop-600x700.png" alt="">
+        </div>
+        <div class="px-sm-5 px-0 d-block d-xxl-none">
+            <img class="img-fluid " src="images/laptop-600x700.png" alt="">
+        </div>
+        <div>
+            <span class="fs-5">SKU:BST-498</span>
+            <h1>Shop item template</h1>
+            <p class="fs-5"><span class="text-decoration-line-through">$45.00</span> $40.00</p>
+            <p class="mt-5 fs-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis minima odio quae esse
+                atque doloremque libero, eveniet, omnis, repudiandae tempore rerum nam nobis aliquam! Illum et sint
+                quisquam optio hic.</p>
+            <div class="mt-3 d-flex align-items-center gap-3">
+                <input class="form-control form-control-lg" min="1" style="width: 80px;" type="number" name="qty"
+                    id="qty">
+                <button class="btn btn-outline-dark btn-lg"><i class="bi bi-cart-fill"></i> Add to cart</button>
+            </div>
+        </div>
+    </div>
+<section class=" bg-body-tertiary">
+    <div class="container">
+        <div class="mt-5 pt-5">
+            <h1 class="mt-5 mb-5">Related products</h1>
+        </div>
+        <div class="d-flex justify-content-center align-items-center gap-5 pb-5 flex-wrap flex-lg-nowrap">
+            <div class="card">
+                <div class="card-img bg-body-tertiary">
+                    <img class="img-fluid" src="images/laptop-450x300-10.png" alt="">
+                </div>
+                <div class="card-body text-center">
+                    <h4 class="fw-bold fs-3">Fancy Product</h4>
+                    <p class=" text-secondary fs-5">$40.00 - $80.00</p>
+                    <button class="btn btn-outline-dark btn-lg mt-5 mb-3">View options</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img bg-body-tertiary">
+                    <span class="badge bg-dark px-3 position-absolute end-0 mt-2 me-2 fs-6">Sale</span>
+                    <img class="img-fluid" src="images/laptop-450x300-9.png" alt="">
+                </div>
+                <div class="card-body text-center">
+                    <h4 class="fw-bold fs-3">Special Item</h4>
+                    <div class="fs-5">
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                    </div>
+                    <p class=" text-secondary fs-5"><span class="text-decoration-line-through">$20.00</span> $18.00</p>
+                    <button class="btn btn-outline-dark btn-lg mt-3 mb-3">Add to cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img bg-body-tertiary">
+                    <span class="badge bg-dark px-3 position-absolute end-0 mt-2 me-2 fs-6">Sale</span>
+                    <img class="img-fluid" src="images/laptop-450x300-12.png" alt="">
+                </div>
+                <div class="card-body text-center">
+                    <h4 class="fw-bold fs-3">Sale Item</h4>
+                    <p class=" text-secondary fs-5"><span class="text-decoration-line-through">$50.00</span> $25.00</p>
+                    <button class="btn btn-outline-dark btn-lg mt-5 mb-3">Add to cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img bg-body-tertiary">
+                    <img class="img-fluid" src="images/laptop-450x300-11.png" alt="">
+                </div>
+                <div class="card-body text-center">
+                    <h4 class="fw-bold fs-3">Popular Item</h4>
+                    <div class="fs-5">
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                    </div>
+                    <p class=" text-secondary fs-5">$40.00</p>
+                    <button class="btn btn-outline-dark btn-lg mt-3 mb-3">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <footer>
+        <div class="container-fluid bg-dark d-flex justify-content-center align-items-center">
+            <p class="py-5 text-white text-center">Copyright &copy Your Website 2023</p>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
