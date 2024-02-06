@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="num">Enter 5 Digit Number</label>
+    <input type="text" id="num" />
+    <p id="error"></p>
+    <button type="button" id="btn">Result</button>
+    <p id="output"></p>
+
+    <script>
+      function calc() {
+        const numElement = document.getElementById("num");
+        const outputElement = document.getElementById("output");
+        const num = Number(numElement.value);
+
+        if (num == 0) {
+          error.innerHTML = "Number not be empty";
+          return;
+        }
+        if (isNaN(num)) {
+          error.innerHTML = "Please fill Numeric Data Only";
+          numElement.value = "";
+          numElement.focus();
+          return;
+        }
+        if (numElement.value.length != 5) {
+          error.innerHTML = "Please Enter 5 Digit number only";
+          return;
+        }
+        error.innerHTML = "";
+        outputElement.innerHTML = num;
+      }
+      document.getElementById("btn").addEventListener("click", calc);
+
+      /*
+        + - * / % **
+        += -= *= 
+      
+      
+//Compare
+      let a = "10";
+      let b = 10;
+      console.log(a == b);
+      console.log(a === b);
+      console.log(a != b);
+//Relational > < >= <=
+  
+      let a = 20;
+      let b = 20;
+      console.log(a > b);
+      console.log(a < b);
+      console.log(a >= b);
+      console.log(a <= b);
+
+         
+
+      //logical Operator  and &&(all)  or ||(anyone)
+
+      let m1 = 6;
+      let m2 = 22;
+      let m3 = 22;
+
+      console.log(m1 >= 35 && m2 >= 35 && m3 >= 35);
+      console.log(m1 >= 35 || m2 >= 35 || m3 >= 35);
+
+       */
+    </script>
+  </body>
+</html>

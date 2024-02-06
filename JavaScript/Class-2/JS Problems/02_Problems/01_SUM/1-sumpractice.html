@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice</title>
+  </head>
+  <body>
+    <label>Enter Basic Salary</label>
+    <input id="bs" type="text" />
+    <button id="btn" type="button">Calculate</button>
+    <p id="result">Enter the basic salary</p>
+
+    <script>
+      function salary() {
+        const bs = Number(document.getElementById("bs").value);
+
+        if (bs == 0) {
+          result.innerHTML = "Please Enter the Number";
+          return;
+        }
+
+        if (isNaN(bs)) {
+          result.innerHTML = "Please Enter Number Only";
+          return;
+        }
+
+        let da = bs * 0.4;
+        let hra = bs * 0.2;
+        let gross = bs + da + hra;
+        console.log("Gross Salary : " + gross);
+        const para = document.getElementById("result");
+        para.innerHTML = `
+        <table>
+      <tr>
+        <th>Basic Salary</th>
+        <td>${bs}</td>
+      </tr>
+      <tr>
+        <th>da</th>
+        <td>${da}</td>
+      </tr>
+      <tr>
+        <th>hra</th>
+        <td>${hra}</td>
+      </tr>
+
+      <tr>
+        <th>Gross Salary</th>
+        <td>${gross}</td>
+      </tr>
+    </table>
+        `;
+      }
+
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", salary);
+    </script>
+  </body>
+</html>

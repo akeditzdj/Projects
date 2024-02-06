@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <title>Sum 2</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="text-center mb-5">Finding Distance</h2>
+      <div class="row">
+        <div class="offset-3 col-6">
+          <label class="form-label fs-4">Distance between two cities</label>
+          <div class="input-group">
+            <span class="input-group-text">in km</span>
+            <input id="km" type="text" class="form-control" />
+            <button id="btn" class="btn btn-info">Calculate</button>
+            <button id="btnClear" class="btn btn-outline-primary">Clear</button>
+          </div>
+          <p id="validate" class="form-text text-danger"></p>
+
+          <p id="result" class="mt-3"></p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const kmElement = document.getElementById("km");
+      const validateElement = document.getElementById("validate");
+      const btnClearElement = document.getElementById("btnClear");
+      const result = document.getElementById("result");
+
+      btnClearElement.addEventListener("click", function () {
+        kmElement.value = "";
+        kmElement.focus();
+        result.innerHTML = "";
+        validateElement.innerHTML = "";
+        return;
+      });
+
+      function distance() {
+        const km = Number(kmElement.value);
+
+        if (km == 0) {
+          validateElement.innerHTML = "Please Enter the Number";
+          result.innerHTML = "";
+          return;
+        }
+        if (isNaN(km)) {
+          validateElement.innerHTML = "Please Enter Number Only";
+          result.innerHTML = "";
+          return;
+        }
+
+        validateElement.innerHTML = "";
+
+        let m = km * 1000;
+        let ft = km * 3280.84;
+        let inc = km * 39370;
+        let cm = km * 100000;
+
+        console.log(m);
+
+        const para = document.getElementById("result");
+        para.innerHTML = `
+        <div class="mx-auto" style="width: 500px">
+        <table class="table table-striped border-info table-bordered ">
+                <tr>
+                  <th>Distance in Kilometer</th>
+                  <td>${km}</td>
+                </tr>
+                <tr>
+                  <th>Distance in Meter</th>
+                  <td>${m}</td>
+                </tr>
+                <tr>
+                  <th>Distance in Feet</th>
+                  <td>${ft}</td>
+                </tr>
+                <tr>
+                  <th>Distance in Inches</th>
+                  <td>${inc}</td>
+                </tr>
+                <tr>
+                  <th>Distance in Centimeter</th>
+                  <td>${cm}</td>
+                </tr>
+            </table>
+        </div>
+        `;
+      }
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", distance);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

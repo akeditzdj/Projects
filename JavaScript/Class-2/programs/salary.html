@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      table {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+      }
+      table td,
+      table th {
+        text-align: left;
+        border: 1px solid #ccc;
+        padding: 5px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>1. Ramesh’s basic salary is input through the keyboard. His dearness allowance is 40% of basic salary, and house rent allowance is 20% of basic salary. Write a program to calculate his gross salary.</p>
+
+    <label for="bs">Basic Salary</label>
+    <input type="text" id="bs" />
+    <button type="button" id="btn">Calculate</button>
+    <p id="output">Pls enter basic salary</p>
+
+    <script>
+      function calculateSalary() {
+        const bsElement = document.getElementById("bs");
+        const paraElement = document.getElementById("output");
+        //Text data to Number type conversion
+        const bs = Number(bsElement.value);
+        //console.log(bs + 500);
+        let hra = bs * 0.2;
+        let da = bs * 0.4;
+        let gs = bs + hra + da;
+
+        /*
+        paraElement.innerHTML = "Basic Salary : " + bs + "<br>";
+        paraElement.innerHTML += "Dearness Allowance  : " + da + "<br>";
+        paraElement.innerHTML += "House Rent Allowance  : " + hra + "<br>";
+        paraElement.innerHTML += "Gross Salary : " + gs + "<br>";
+
+        */
+        //Back Tick -> Template Literal
+        /*
+        paraElement.innerHTML = `Basic Salary : ${bs} <br>`;
+        paraElement.innerHTML += `Dearness Allowance  : ${da} <br>`;
+        paraElement.innerHTML += `House Rent Allowance  :  ${hra} <br>`;
+        paraElement.innerHTML += `Gross Salary : ${gs} <br>`;
+
+        */
+
+        paraElement.innerHTML = `
+          <table>
+              <tr><th>Basic Salary</th><td>${bs}</td></tr>
+              <tr><th>Dearness Allowance</th><td>${da}</td></tr>
+              <tr><th>House Rent Allowance </th><td>${hra}</td></tr>
+              <tr><th>Gross Salary</th><td>${gs}</td></tr>
+          </table>
+        `;
+      }
+      const button = document.getElementById("btn");
+      button.addEventListener("click", calculateSalary);
+
+      /*
+      let bs = 15000;
+      let hra = bs * 0.2;
+      let da = bs * 0.4;
+      let gs = bs + hra + da;
+      console.log("Basic Salary : " + bs);
+      console.log("Dearness Allowance  : " + da);
+      console.log("House Rent Allowance  : " + hra);
+      console.log("Gross Salary : " + gs);
+      */
+    </script>
+  </body>
+</html>
