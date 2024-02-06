@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #D7DEE4;
+}
+
+.box{
+    width: 430px;
+    height: 500px;
+    margin: 250px auto;
+    background-color: white;
+    position: relative;
+}
+
+.box img{
+    width: 100%;
+    height: 275px;
+    object-fit: cover;
+}
+.content{
+    padding: 20px;
+}
+.box .content h5{
+  background-color:#1988CF ;
+  width: 27%;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 250px;
+  left: 0;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+span{
+    color: #1988CF;
+    font-size: 20px;
+    font-weight: 500;
+    top: 385px;
+    position: absolute;
+    
+}
+
+.icon1 p{
+  margin-top: -15px;
+  margin-left: 22px;
+  position: absolute;
+  width:50px;
+ 
+}
+
+.icon2 p{
+    margin-top: -14px;
+    margin-left: 25px;
+    position: absolute;
+    width:110px;
+
+  }
+
+  .icon1 .fa-clock{
+    margin-top: 55px;
+    margin-left: 10px;
+    position: absolute;
+  }
+  
+  .icon2 .fa-comments{
+      margin-top: 55px;
+      margin-left: 100px;
+      position: absolute;
+    }
+
+    .box .icon{
+        margin-top: 20px;
+        margin-left: -10px;
+    }
+    .box .date{
+        width: 12%;
+        text-align: center;
+        line-height: 15px;
+        background-color: #1988CF;
+        padding: 10px;
+        font-size: 15px;
+        color: white;
+        font-weight: 700;
+        border-radius: 50%;
+        position: absolute;
+        top: 20px;
+        left:355px;
+    }

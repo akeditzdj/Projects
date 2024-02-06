@@ -1,0 +1,107 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #E0E0E0;
+}
+
+.box{
+    width: 950px;
+    height: 490px;
+    margin: 290px auto;
+    background-color:black ;
+    border-radius: 20px;
+    position: relative;
+}
+
+.box img{
+    width:390px;
+    height: 490px;
+    object-fit: cover;
+    border-top-left-radius:15px;
+    border-bottom-left-radius:15px;
+}
+
+.box .content{
+    margin-left: 440px;
+    margin-top: -460px;
+    color: white;
+}
+.box .content h1{
+    font-size: 48px;
+    font-weight: 400;
+}
+
+
+.box .content .span1{
+    position: absolute;
+    margin-top: 19px;
+    font-size: 17px;
+}
+
+.box .content .span2{
+    position: absolute;
+    margin-top: 19px;
+    left: 540px;
+    font-size: 17px;
+}
+
+.box .content .span3{
+    position: absolute;
+    margin-top: 19px;
+    left: 660px;
+    font-size: 17px;
+}
+
+.box .content .icon{
+    margin-top: 60px;
+    font-size: 25px;
+}
+
+.box .content p{
+    margin-top: 15px;
+    font-size: 16px;
+    width: 430px;
+    line-height: 25px;
+}
+
+.box .content h4{
+   margin-top: 15px;
+   font-size: 17px;
+   color: #FFD401;
+   font-weight: 400;
+}
+
+.box .content button{
+   margin-top: 20px;
+   background-color: transparent;
+   padding: 10px;
+   color: #FFD401;
+   border-style: solid;
+   border-color:#FFD401 ;
+   border-radius: 5px;
+   font-size: 16px;
+   text-align: right;
+   word-spacing:5px;
+   text-transform: uppercase;
+   position: absolute;
+   width: 195px;
+   border-width: 3px;
+ }
+.box .content button .icon1{
+ position: absolute;
+ left: 10px;
+ top:12px;
+}

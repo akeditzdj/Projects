@@ -1,0 +1,105 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  body{
+    height: 100vh;
+    width: 100%;
+    background:linear-gradient(to right, #FDC83E,#FC4037) ;
+  }
+
+  .box1{
+    width: 700px;
+    height: 350px;
+    margin: 250px auto;
+    background-color: white;
+    border-radius: 25px;
+    position: relative;
+  }
+ .box1 .content{
+    margin-left: 250px;
+    margin-top: 60px;
+    position: absolute;
+ }
+
+ .box1 .content button{
+     position: absolute;
+     top: 160px;
+     padding: 11px;
+     background:linear-gradient(to right, #fdad3e,#FC4037) ;
+     color: white;
+     width: 130px;
+     border-radius: 25px;
+     border: none;
+     font-weight: 500;
+ }
+
+ .box1 .content p{
+    position: absolute;
+    top: 95px;
+    width: 400px;
+    font-size: 15px;
+    color: rgb(105, 102, 102);
+}
+
+.box1 .content h2{
+    position: absolute;
+    top: 55px;
+    width: 400px;
+    font-size: 20px;
+}
+
+.box1 .content h4{
+    position: absolute;
+    top: 20px;
+    width: 400px;
+    font-size: 15px;
+    color: rgb(105, 102, 102);
+}
+
+.box2{
+    width: 250px;
+    height: 250px;
+    border: 1px solid;
+    background:linear-gradient(to right bottom, #FC803A,#FC4037) ;
+    border-radius: 15px;
+    border: none;
+    margin-top:50px ;
+    position: absolute;
+    margin-left: -50px;
+}
+
+.box3{
+    width: 10px;
+    height: 10px;
+    background-color: #c3c0c0;
+    border-radius: 50%;
+    position: absolute;
+    left: 670px;
+    top: 145px;
+}
+.box5{
+    width: 10px;
+    height: 10px;
+    background-color: #c3c0c0;
+    border-radius: 50%;
+    position: absolute;
+    left: 670px;
+    top: 195px;
+}
+
+.box4{
+    width: 10px;
+    height: 25px;
+    background-color: #f90202;
+    border-radius:5px;
+    position: absolute;
+    left: 670px;
+    top: 163px;
+}

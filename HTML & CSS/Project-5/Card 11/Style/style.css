@@ -1,0 +1,122 @@
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 300;
+   
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #E5DED8;
+}
+
+.box{
+    width: 900px;
+    height: 530px;
+    margin: 250px auto;
+    border-bottom-right-radius:5px ;
+    border-bottom-left-radius:5px ;
+   background-color: white;
+   position: relative;
+}
+.box .image img{
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-top-right-radius:5px ;
+    border-top-left-radius:5px ;
+    object-fit: cover;
+}
+
+.box .logo img{
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   position: absolute;
+   top: 30px;
+   left: 70px;
+   object-fit: cover;
+}
+
+.box .logo h3{
+    position: absolute;
+    top: 30px;
+    left: 105px;
+    color: white;
+    font-size: 18px;
+ }
+
+ .box .content{
+   margin-left: 80px;
+   width: 750px;
+ }
+ 
+ .box .content h1{
+    margin-top: 15px;
+    color: #3c3a3a;
+ }
+ .box .content p{
+    margin-top: 20px;
+    color: #545252;
+   
+ }
+
+ .box .button1{
+    word-spacing: 5px;
+   
+ }
+ .box .button1 button {
+    margin-top: 15px;
+    background-color:transparent;
+    padding: 2px;
+    border-radius: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+    color: #8b8787;
+    border-color: #a19c9c;
+    border-style: solid;
+    font-size: 13px;
+ }
+
+ hr{
+    margin-top: 30px;
+ }
+
+ .box .button2 button {
+    margin-top: 30px;
+    background-color:transparent;
+    padding: 2px;
+    border-radius: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+    color: #8b8787;
+    border-color: #a19c9c;
+    border-style: solid;
+    font-size: 13px;
+ }
+
+ .box .icon{
+    margin-left: 660px;
+    margin-top: -30px;
+    position: absolute;
+    font-size: 24px;
+    color: #8b8787;
+    word-spacing: 25px;
+ }
+
+ .box .icon span{
+    margin-top: 3px;
+    margin-left: 6px;
+    font-size: 16px;
+    color: #8b8787;
+    position: absolute;
+ }
