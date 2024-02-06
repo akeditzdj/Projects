@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form-1</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="image">
+        <img src="images/image-2.webp" alt="Form Image" />
+      </div>
+      <form action="#">
+        <div class="row">
+          <label for="f-name">First Name</label>
+          <input
+            type="text"
+            name="f-name"
+            id="f-name"
+            placeholder="Your first name"
+            required
+          />
+          <label for="l-name">Last Name</label>
+          <input
+            type="text"
+            name="l-name"
+            id="l-name"
+            placeholder="Your last name"
+            required
+          />
+        </div>
+        <div class="row">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder="example@email.com"
+            required
+          />
+          <label for="gender">Gender</label>
+          <select required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <div class="row">
+          <label for="phone">Phone</label>
+          <input
+            type="text"
+            name="area-code"
+            id="area-code"
+            placeholder="Area code" required
+          />
+          <input
+            type="text"
+            name="p-number"
+            id="p-number"
+            placeholder="Phone number" required
+          />
+        </div>
+        <div class="row">
+          <label for="position">Applying for Position</label>
+          <input type="text" name="position" id="position"  required/>
+        </div>
+        <div class="row">
+          <label for="doj">When can you start?</label>
+          <input type="date" name="doj" id="doj" required/>
+        </div>
+        <div class="row">
+          <label for="address">Address</label>
+          <input
+            type="text"
+            name="address"
+            id="address1"
+            placeholder="Street address" required
+          />
+          <input
+            type="text"
+            name="address"
+            id="address2"
+            placeholder="Street address line 2" required
+          />
+        </div>
+        <div class="row">
+          <label for="cover-letter">Cover Letter</label>
+          <textarea name="cover-letter" id="cover-letter" required></textarea>
+        </div>
+        <div class="row-file">
+          <label
+            >Upload Resume <input type="file" name="file" id="file"
+          /></label>
+        </div>
+        <div class="row">
+          <button>Apply Now</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
