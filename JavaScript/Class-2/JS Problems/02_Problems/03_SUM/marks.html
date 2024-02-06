@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <title>03 SUM</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="mb-4">Marks of a Student</h2>
+      <table class="table table-hover" style="width: 400px">
+        <tr>
+          <th>Marks obtained in English</th>
+          <td>
+            <div class="input-group">
+              <input id="en" class="form-control" type="text" />
+              <span class="input-group-text text-bg-danger">/100</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Marks obtained in Tamil</th>
+          <td>
+            <div class="input-group">
+              <input id="ta" class="form-control" type="text" />
+              <span class="input-group-text text-bg-danger">/100</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Marks obtained in Mathematics</th>
+          <td>
+            <div class="input-group">
+              <input id="ma" class="form-control" type="text" />
+              <span class="input-group-text text-bg-danger">/100</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Marks obtained in Science</th>
+          <td>
+            <div class="input-group">
+              <input id="sc" class="form-control" type="text" />
+              <span class="input-group-text text-bg-danger">/100</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Marks obtained in Social Science</th>
+          <td>
+            <div class="input-group">
+              <input id="ss" class="form-control" type="text" />
+              <span class="input-group-text text-bg-danger">/100</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Aggregate Marks</th>
+          <td class="d-flex">
+            <p id="result1" class="w-100"></p>
+            <button id="btn1" class="btn btn-danger">Calculate</button>
+          </td>
+        </tr>
+        <tr>
+          <th>Percentage</th>
+          <td class="d-flex">
+            <p id="result2" class="w-100"></p>
+            <button id="btn2" class="btn btn-danger">Calculate</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      function marks() {
+        const en = Number(document.getElementById("en").value);
+        const ta = Number(document.getElementById("ta").value);
+        const ma = Number(document.getElementById("ma").value);
+        const sc = Number(document.getElementById("sc").value);
+        const ss = Number(document.getElementById("ss").value);
+
+        let sum = en + ta + ma + sc + ss;
+        let avg = (sum / 500) * 100;
+
+        const para1 = document.getElementById("result1");
+        para1.innerHTML = sum + " out of 500";
+
+        const para2 = document.getElementById("result2");
+        para2.innerHTML = avg + " % ";
+      }
+
+      const btn1 = document.getElementById("btn1");
+      btn1.addEventListener("click", marks);
+
+      const btn2 = document.getElementById("btn2");
+      btn2.addEventListener("click", marks);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

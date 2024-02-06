@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <title>Sum 11</title>
+    <style>
+      .ans {
+        height: 40px;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <p class="fw-semibold fs-5 mb-5">
+        <b>QUESTION:</b>A cashier has currency notes of denominations 10, 50 and 100. If the amount to be withdrawn is input through the keyboard in hundreds, find the total number of currency notes of each denomination the cashier will have to give to the withdrawer.//Rs.1575 => 100*15,50*1,10*2,5
+      </p>
+      <h2>Currency Notes</h2>
+      <table style="width: 500px" class="table">
+        <!--ROW 1-->
+        <tr>
+          <th>Enter the amount to withdraw</th>
+          <td>
+            <div class="input-group">
+              <input id="cash" class="form-control" type="text" />
+              <button id="btn" class="btn btn-warning" type="button">Calculate</button>
+              <button id="btnClear" class="btn btn-secondary" type="button">Clear</button>
+            </div>
+            <p id="validate" class="form-text text-danger"></p>
+          </td>
+        </tr>
+
+        <!--ROW 2-->
+        <tr>
+          <th>required notes of rs 100</th>
+          <td>
+            <p id="r1" class="ans bg-light text-center fw-semibold fs-4"></p>
+          </td>
+        </tr>
+
+        <!--ROW 3-->
+        <tr>
+          <th>required notes of rs 50</th>
+          <td>
+            <p id="r2" class="ans bg-light text-center fw-semibold fs-4"></p>
+          </td>
+        </tr>
+
+        <!--ROW 4-->
+        <tr>
+          <th>required notes of rs 10</th>
+          <td>
+            <p id="r3" class="ans bg-light text-center fw-semibold fs-4"></p>
+          </td>
+        </tr>
+
+        <!--ROW 5-->
+        <tr>
+          <th>Amount still remaining</th>
+          <td>
+            <p id="r4" class="ans bg-light text-center fw-semibold fs-4"></p>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      const cashElement = document.getElementById("cash");
+      const validateElement = document.getElementById("validate");
+      const btn = document.getElementById("btn");
+      const btnClearElement = document.getElementById("btnClear");
+
+      const r1 = document.getElementById("r1");
+      const r2 = document.getElementById("r2");
+      const r3 = document.getElementById("r3");
+      const r4 = document.getElementById("r4");
+
+      btnClearElement.addEventListener("click", function () {
+        r1.innerHTML = "";
+        r2.innerHTML = "";
+        r3.innerHTML = "";
+        r4.innerHTML = "";
+        cashElement.value = "";
+        validateElement.innerHTML = "";
+        cashElement.focus();
+        return;
+      });
+
+      btn.addEventListener("click", function () {
+        const cash = Number(cashElement.value);
+
+        if (isNaN(cash)) {
+          validateElement.innerHTML = "Please Enter Number only";
+          r1.innerHTML = "";
+          r2.innerHTML = "";
+          r3.innerHTML = "";
+          r4.innerHTML = "";
+          console.log("check 1");
+
+          return;
+        }
+
+        if (cash == 0) {
+          validateElement.innerHTML = "Please the Enter Number";
+          r1.innerHTML = "";
+          r2.innerHTML = "";
+          r3.innerHTML = "";
+          r4.innerHTML = "";
+          return;
+        }
+
+        validateElement.innerHTML = "";
+        //Hundred
+        let hun = Math.floor(cash / 100);
+
+        r1.innerHTML = hun;
+
+        //FIF
+        let balance1 = cash % 100;
+        let fif = Math.floor(balance1 / 50);
+
+        r2.innerHTML = fif;
+
+        //tens
+        let balance2 = balance1 % 50;
+        let tens = Math.floor(balance2 / 10);
+
+        r3.innerHTML = tens;
+
+        //remaining
+        let remaining = balance2 % 10;
+
+        r4.innerHTML = remaining;
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

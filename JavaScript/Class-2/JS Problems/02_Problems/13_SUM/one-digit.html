@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <title>One digit</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <p class="fw-semibold fs-4 text-success border-bottom border-success">
+        13.If a five-digit number is input through the keyboard, write a program to print a new number by adding one to each of its digits. For example, if the number that is input is 12391 then the output should be displayed as 23402
+      </p>
+
+      <table class="table">
+        <tr>
+          <td class="fs-5">
+            <label>Enter the five digit number</label>
+          </td>
+          <td>
+            <div class="input-group">
+              <input id="num" class="form-control" type="text" />
+              <button type="button" id="btn" class="btn btn-primary">Calculate</button>
+              <button type="button" class="btn btn-info" id="btnClear">Clear</button>
+            </div>
+            <p id="validate" class="form-text text-danger fw-bold"></p>
+          </td>
+        </tr>
+        <tr class="fs-5" id="output"></tr>
+      </table>
+    </div>
+    <script>
+      const btnElement = document.getElementById("btn");
+      const btnClearElement = document.getElementById("btnClear");
+      const numElement = document.getElementById("num");
+      const output = document.getElementById("output");
+
+      const validateElement = document.getElementById("validate");
+
+      btnClearElement.addEventListener("click", function () {
+        numElement.value = "";
+        output.innerHTML = "";
+        validateElement.innerHTML = "";
+        numElement.focus();
+        return;
+      });
+
+      btnElement.addEventListener("click", function () {
+        let num = Number(numElement.value);
+
+        if (isNaN(num)) {
+          validateElement.innerHTML = "Please Enter Number Only";
+          output.innerHTML = "";
+          return;
+        }
+
+        if (num == 0) {
+          validateElement.innerHTML = "Please Enter Number";
+          output.innerHTML = "";
+          return;
+        }
+
+        //DOUBT difff b/t num and numElement.value
+        if (numElement.value.length != 5) {
+          validateElement.innerHTML = "Please Enter 5 Digit Number only";
+          output.innerHTML = "";
+          return;
+        }
+        validateElement.innerHTML = "";
+        let a5 = ((num % 10) + 1) % 10; //5
+        num = Math.floor(num / 10); //1234
+
+        let a4 = ((num % 10) + 1) % 10; //4
+        num = Math.floor(num / 10); //123
+
+        let a3 = ((num % 10) + 1) % 10; //3
+        num = Math.floor(num / 10); //12
+
+        let a2 = ((num % 10) + 1) % 10; //2
+        num = Math.floor(num / 10); //1
+
+        let a1 = ((num % 10) + 1) % 10; //1
+
+        a1 = a1 * 10000;
+        a2 = a2 * 1000;
+        a3 = a3 * 100;
+        a4 = a4 * 10;
+
+        let ot = a1 + a2 + a3 + a4 + a5;
+        console.log(ot);
+
+        output.innerHTML = `
+          <td class="text-success fw-semibold">After adding one to each of its digits</td>
+          <td class="text-success fw-semibold">${ot}</td>
+        `;
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

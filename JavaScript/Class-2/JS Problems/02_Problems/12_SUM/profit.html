@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <title>Profit</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <p class="fw-semibold fs-4 text-success border-bottom border-success">12. total selling price of If the 15 items and the total profit earned on them is input through the keyboard, write a program to find the cost price of one item</p>
+      <h2>Finding profit of one item</h2>
+
+      <table style="width: 550px" class="table table-danger table-bordered border-danger">
+        <!--ROW 1-->
+        <tr>
+          <td>
+            <label class="fw-semibold">Enter The Selling price of 15 Items</label>
+          </td>
+          <td>
+            <input id="sp" class="form-control" type="text" />
+            <p id="validate1" class="form-text text-danger"></p>
+          </td>
+        </tr>
+
+        <!--ROW 2-->
+        <tr>
+          <td>
+            <label class="fw-semibold">Enter The Profit</label>
+          </td>
+          <td>
+            <input id="p" class="form-control" type="text" />
+            <p id="validate2" class="form-text text-danger"></p>
+          </td>
+        </tr>
+
+        <!--ROW 3-->
+        <tr>
+          <td></td>
+          <td colspan="2">
+            <button id="btn" class="btn btn-danger">Calculate</button>
+            <button type="button" id="btnClear" class="btn btn-secondary">Clear</button>
+          </td>
+        </tr>
+      </table>
+
+      <!--ROW 4-->
+      <table style="width: 550px" id="output" class="table table-success"></table>
+    </div>
+
+    <script>
+      const spElement = document.getElementById("sp");
+      const pElement = document.getElementById("p");
+      const btnElement = document.getElementById("btn");
+      const btnClearElement = document.getElementById("btnClear");
+      const validate1 = document.getElementById("validate1");
+      const validate2 = document.getElementById("validate2");
+      const output = document.getElementById("output");
+
+      //console.log(validate2);
+
+      btnClearElement.addEventListener("click", function () {
+        spElement.value = "";
+        pElement.value = "";
+        output.innerHTML = "";
+        validate1.innerHTML = "";
+        validate2.innerHTML = "";
+        spElement.focus();
+        return;
+      });
+
+      btnElement.addEventListener("click", function () {
+        sp = Number(spElement.value);
+        p = Number(pElement.value);
+
+        if (isNaN(sp)) {
+          validate1.innerHTML = "Please Enter Number only";
+          output.innerHTML = "";
+          return;
+        }
+
+        if (isNaN(p)) {
+          validate2.innerHTML = "Please Enter Number only";
+          output.innerHTML = "";
+          return;
+        }
+
+        if (sp == 0) {
+          validate1.innerHTML = "Please Enter the Number";
+          output.innerHTML = "";
+          return;
+        }
+        if (p == 0) {
+          validate2.innerHTML = "Please Enter the Number";
+          output.innerHTML = "";
+          return;
+        }
+
+        validate1.innerHTML = "";
+        validate2.innerHTML = "";
+        let cp = (sp - p) / 15;
+
+        output.innerHTML = `
+        <tr>
+          <th>Cost price of one item is ${cp}</th>
+        </tr>
+        `;
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+<!--
+  const btnClearElement = document.getElementById("btnClear");
+
+      btnClearElement.addEventListener("click", function () {
+        document.getElementById("sp").value = "";
+        document.getElementById("p").value = "";
+        out.innerHTML = "";
+        document.getElementById("sp").focus();
+      });
+      function profit() {
+        const sp = Number(document.getElementById("sp").value);
+        const p = Number(document.getElementById("p").value);
+
+        if (isNaN(sp)) {
+          output.innerHTML = "";
+          validate1Element.innerHTML = "Please Enter Number Only";
+          return;
+
+        let cp = (sp - p) / 15;
+        //console.log(cp);
+
+        const out = document.getElementById("out");
+        out.innerHTML = `
+        <tr>
+          <th>Cost price of one item is ${cp}</th>
+        </tr>
+        `;
+      }
+
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", profit);
+-->
