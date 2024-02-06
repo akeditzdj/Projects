@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ-Accordion</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/x-icon" href="Images/favicon-32x32.png" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="section section-1">
+        <img src="Images/background-pattern-desktop.svg" alt="" />
+      </div>
+      <div class="section section-2">
+        <div class="faq-box">
+          <div class="header">
+            <img src="Images/icon-star.svg" alt="" />
+            <h1>FAQ<span>S</span></h1>
+          </div>
+          <div class="row row-1">
+            <div class="row-heading">
+              <div>
+                <h3 onclick="myFunction1()">
+                  What is Frontend Mentor, and how will it help me?
+                </h3>
+              </div>
+              <div class="toggle">
+                <img src="Images/icon-plus.svg" alt="" />
+                <img
+                  class="minus"
+                  id="minus-1"
+                  src="Images/icon-minus.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="faq-cont faq-cont-1" id="para-1">
+              <p>
+                Frontend Mentor offers realistic coding challenges to help
+                developers improve their frontend coding skills with projects in
+                HTML, CSS, and JavaScript. It's suitable for all levels and
+                ideal for portfolio building.
+              </p>
+            </div>
+          </div>
+          <div class="row row-2">
+            <div class="row-heading">
+              <div>
+                <h3 onclick="myFunction2()">Is Frontend Mentor free?</h3>
+              </div>
+              <div class="toggle">
+                <img src="Images/icon-plus.svg" alt="" />
+                <img
+                  class="minus"
+                  id="minus-2"
+                  src="Images/icon-minus.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="faq-cont faq-cont-2" id="para-2">
+              <p>
+                Yes, Frontend Mentor offers both free and premium coding
+                challenges, with the free option providing access to a range of
+                projects suitable for all skill levels.
+              </p>
+            </div>
+          </div>
+          <div class="row row-3">
+            <div class="row-heading">
+              <div>
+                <h3 onclick="myFunction3()">
+                  Can I use Frontend Mentor projects in my portfolio?
+                </h3>
+              </div>
+              <div class="toggle">
+                <img src="Images/icon-plus.svg" alt="" />
+                <img
+                  class="minus"
+                  id="minus-3"
+                  src="Images/icon-minus.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="faq-cont faq-cont-3" id="para-3">
+              <p>
+                Yes, you can use projects completed on Frontend Mentor in your
+                portfolio. It's an excellent way to showcase your skills to
+                potential employers!
+              </p>
+            </div>
+          </div>
+          <div class="row row-4">
+            <div class="row-heading">
+              <div>
+                <h3 onclick="myFunction4()">
+                  How can I get help if I'm stuck on a challenge?
+                </h3>
+              </div>
+              <div class="toggle">
+                <img src="Images/icon-plus.svg" alt="" />
+                <img
+                  class="minus"
+                  id="minus-4"
+                  src="Images/icon-minus.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="faq-cont faq-cont-4" id="para-4">
+              <p>
+                The best place to get help is inside Frontend Mentor's Discord
+                community. There's a help channel where you can ask questions
+                and seek support from other community members.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function myFunction1() {
+        var x = document.getElementById("para-1");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+
+        var x = document.getElementById("minus-1");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+      function myFunction2() {
+        var x = document.getElementById("para-2");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+
+        var x = document.getElementById("minus-2");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+      function myFunction3() {
+        var x = document.getElementById("para-3");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+
+        var x = document.getElementById("minus-3");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+      function myFunction4() {
+        var x = document.getElementById("para-4");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+
+        var x = document.getElementById("minus-4");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

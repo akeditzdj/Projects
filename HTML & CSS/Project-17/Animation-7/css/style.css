@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 1400px;
+  height: 530px;
+}
+.box {
+  width: 450px;
+  height: 530px;
+  position: relative;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  margin-left: 500px;
+}
+
+
+.box1 {
+  background-color: orange;
+  position: absolute;
+  z-index: 1;
+  transform: rotate(2deg);
+}
+
+.box2 {
+  position: absolute;
+  z-index: 2;
+  background-color: red;
+  transform: rotate(-2deg);
+}
+
+.box3 {
+  background-color: blue;
+  position: absolute;
+  z-index: -1;
+  transform: rotate(4deg);
+  
+}
+
+.box2:hover + .box3{
+ animation: right 1s linear;
+ transform: translateX(370px) rotate(0deg);
+ transition: 1s ease;
+}
+.box2:hover +.box1{
+ animation: right 1s linear;
+ transform: translateX(-370px) rotate(0deg);
+ transition: 1s ease;
+}
+
+.box1:hover .box2{
+ animation: right 1s linear;
+ transform: translateX(-370px) rotate(0deg) translateX(370px);
+ transition: 1s ease;
+}
+
+.content h2 {
+  margin-left: 40px;
+  margin-top: 20px;
+  font-size: 34px;
+}
+
+.inside-box {
+  width: 100%;
+  height: 200px;
+  background-color: rgb(221, 216, 216);
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+h1 {
+  font-size: 42px;
+  font-weight: 400;
+  color: #9f9c9c;
+}
+span {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 14px;
+  color: #9f9c9c;
+}
+p {
+  margin-left: 40px;
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 30px;
+  width: 350px;
+}
