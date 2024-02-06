@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #eff0f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  width: 400px;
+  height: 600px;
+  border-radius: 13px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px,
+    rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: #eff0f5;
+  position: relative;
+}
+
+.menu_button {
+  display: flex;
+  justify-content: space-around;
+  gap: 300px;
+  margin-top: 30px;
+  font-size: 22px;
+  position: absolute;
+  left:30px;
+  cursor: pointer;
+  color: rgb(95, 94, 94);
+}
+.image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.image img {
+  width: 180px;
+  border-radius: 50%;
+  border: 1px solid;
+  border-width: 18px;
+  border-color: #eff0f5;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+h1 {
+  font-weight: 500;
+  margin-top: 5px;
+  color: rgb(58, 57, 57);
+}
+
+p {
+  font-weight: 400;
+  margin-top: 10px;
+  font-size: 21px;
+  color: rgb(95, 94, 94);
+}
+.icon {
+  text-align: center;
+  word-spacing: 10px;
+  margin-top: 10px;
+  width: 100%;
+}
+.icon .fa-facebook-f,
+.fa-twitter,
+.fa-instagram,
+.fa-youtube {
+  padding: 18px;
+  border-radius: 50%;
+  background-color: #eff0f5;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+    rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.icon .fa-facebook-f {
+  color: rgb(21, 5, 245);
+}
+.icon .fa-twitter {
+  color: rgb(28, 166, 247);
+}
+.icon .fa-instagram {
+  color: rgb(212, 67, 23);
+}
+.icon .fa-youtube {
+  color: rgb(250, 61, 4);
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.btn button {
+  width: 155px;
+  padding: 15px;
+  background-color: #eff0f5;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: none;
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  color: rgb(95, 94, 94);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 45px;
+  align-items: center;
+  font-size: 19px;
+}
+
+.line1,
+.line2 {
+  width: 2.5px;
+  height: 30px;
+  background-color: rgb(216, 214, 214);
+}
+span {
+  font-weight: 500;
+  color: rgb(95, 94, 94);
+}

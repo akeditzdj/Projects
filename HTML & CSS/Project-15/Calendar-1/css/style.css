@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #e9e1cc;
+  display: grid;
+  place-items: center;
+}
+.container{
+  width:1400px;
+  height: 900px;
+  display: flex;
+  gap: 20px;
+}
+
+.box1{
+  width: 500px;
+  background-image: url("../images/main.png");
+  background-size: cover;
+  display: grid;
+  place-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.box1 div h1{
+  font-size: 140px;
+  color: #374439;
+}
+.box1 div p{
+  font-size: 50px;
+  color: #374439;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+
+.box2{
+  width: 900px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+ 
+}
+.box2 .month:nth-child(odd){
+  background-image: url("../images/01.png");
+  background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.box2 .month:nth-child(even){
+  background-image: url("../images/02.png");
+  background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.box2 .month h2:nth-child(odd){
+  text-transform: uppercase;
+  font-size: 18px;
+  text-align: center;
+  background-color:#374439 ;
+  color: white;
+  width: 75%;
+  margin:0 auto;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 5px;
+}
+
+.month .dates{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 10px;
+  gap: 5px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.box2 .month:nth-child(odd) .dates{
+  margin-top: 110px;
+}
+
+.box2 .month:nth-child(even) .dates{
+  margin-top: 70px;
+}
+
+.dates div:nth-child(7n) {
+  color: red;
+}
+
+
+
