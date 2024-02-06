@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-dark d-md-flex d-block justify-content-between sticky-top"
+        data-bs-theme="dark" style="padding: 10px 150px;">
+        <div class="d-flex justify-content-between align-items-center">
+            <a class="navbar-brand ps-md-5" href="home.html">Start Bootstrap</a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+                area-controls="offcanvas" area-label="Toggle navigation" area-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="offcanvas offcanvas-end bg-dark" data-bs-theme="bg-dark" id="offcanvas">
+            <div class="offcanvas-header">
+                <h4 class="offcanvas-title">Start Bootstrap</h4>
+                <button type="button" class="btn btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav pe-md-5 d-block d-md-none">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                            href="blog-home.html">Blog</a>
+                        <ul class="dropdown-menu dropdown-menu-dark mt-2">
+                            <li><a class="dropdown-item" href="blog-home.html">Blog Home</a></li>
+                            <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>
+                            <li><a class="dropdown-item" href="#">Link-3</a></li>
+                            <li><a class="dropdown-item" href="#">Link-4</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                            href="portfolio-overview.html">Portfolio</a>
+                        <ul class="dropdown-menu dropdown-menu-dark mt-2 dropdown-menu-end">
+                            <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
+                            <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
+                            <li><a class="dropdown-item" href="#">Link-3</a></li>
+                            <li><a class="dropdown-item" href="#">Link-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul class="navbar-nav pe-md-5 d-none d-md-flex">
+            <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                    href="blog-home.html">Blog</a>
+                <ul class="dropdown-menu dropdown-menu-dark mt-2">
+                    <li><a class="dropdown-item" href="blog-home.html">Blog Home</a></li>
+                    <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>
+                    <li><a class="dropdown-item" href="#">Link-3</a></li>
+                    <li><a class="dropdown-item" href="#">Link-4</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                    href="portfolio-overview.html">Portfolio</a>
+                <ul class="dropdown-menu dropdown-menu-dark mt-2 dropdown-menu-end">
+                    <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
+                    <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
+                    <li><a class="dropdown-item" href="#">Link-3</a></li>
+                    <li><a class="dropdown-item" href="#">Link-4</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <section style="height: 600px;">
+        <div id="blog" class="container-fluid" style="padding: 0 150px;">
+            <h5 class="mt-md-5 pt-5 px-md-5 px-3 fw-bold">Company Blog</h5>
+            <div id="homeourblog"
+                class=" card border-0 shadow mt-4 mx-md-5 mx-3 d-md-flex d-block justify-content-start align-items-center flex-row"
+                style="height: 450px;">
+                <div class=" p-md-5 card-body">
+                    <span class="badge bg-primary">News</span>
+                    <h2 class="fw-bold mt-3">Article heading goes here</h2>
+                    <p class="mt-3 fs-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ullam
+                        laboriosam, dolorum quo fuga voluptatem amet sequi dolor laborum porro, veniam sit quae
+                        temporibus laudantium consectetur modi mollitia possimus voluptates?</p>
+                    <a class="text-decoration-none link-primary fs-6" href="#">Read More <i
+                            class="bi bi-arrow-right"></i></a>
+                </div>
+                <div class="card-img">
+                    <img id="bloghomeimage" class="card-img rounded rounded-start-0 w-100" src="images/700x350.jpg"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-body-tertiary" style="height: 600px;">
+        <div id="blognews" style="padding: 0 150px;"
+            class="container-fluid d-md-flex d-block justify-content-between align-items-start h-100">
+            <div class="news mt-5 ps-md-5 px-3">
+                <div>
+                    <h5 class="fw-bold pt-5 pt-md-0">News</h5>
+                </div>
+                <div class="mt-5">
+                    <p class="text-secondary mb-0">May 12, 2023</p>
+                    <h2 id="blognewsh2" class="text-decoration-underline">Start Bootstrap releases Bootstrap 5 updates
+                        for templates
+                        and themes</h2>
+                </div>
+                <div class="mt-5">
+                    <p class="text-secondary mb-0">May 5, 2023</p>
+                    <h2 id="blognewsh2" class="text-decoration-underline">Bootstrap 5 has officially landed</h2>
+                </div>
+                <div class="mt-5">
+                    <p class="text-secondary mb-0">Apr 21, 2023</p>
+                    <h2 id="blognewsh2" class="text-decoration-underline">This is another news article headline, but
+                        this one is a
+                        little bit longer</h2>
+                </div>
+                <div class="mt-5">
+                    <a class="link-primary text-decoration-none d-flex justify-content-end" href="#">More news <i
+                            class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="card mt-md-5 me-md-5 border-0" style="width:350px;height: 500px;">
+                <div class="card-body  d-flex justify-content-center align-items-center flex-column">
+                    <h5 class="fw-bold fs-3">Contact</h5>
+                    <p class="text-secondary">For press enquiries, email us at</p>
+                    <a class="link-primary" href="mailto:press@domain.com">press@domain.com</a>
+                    <h5 class="fw-bold mt-4">Follow us</h5>
+                    <div class="mt-2">
+                        <a class="p-2 text-dark fs-5" class="link-dark" href="#"><i class="bi bi-twitter"></i></a>
+                        <a class="p-2 text-dark fs-5" class="link-dark" href="#"><i class="bi bi-facebook"></i></a>
+                        <a class="p-2 text-dark fs-5" class="link-dark" href="#"><i class="bi bi-linkedin"></i></a>
+                        <a class="p-2 text-dark fs-5" class="link-dark" href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section style="height: 1250px;">
+        <div id="homeourblog" class="container-fluid" style="padding: 0 150px;">
+            <div class="row px-md-5 mb-5">
+                <h5 class="fw-bold mt-5 px-4">Feature Stories</h5>
+                <div id="homecard" class="col-md-4 mt-4 pe-md-5 px-4">
+                    <div class="card border-0 shadow" style="height: 610px;">
+                        <div class="card-img">
+                            <img class="img-fluid rounded rounded-bottom-0" src="images/600x350-1.jpg" alt="">
+                        </div>
+                        <div class="card-body pt-4 px-md-5">
+                            <span class="badge bg-primary">News</span>
+                            <h5 class="fw-bold mt-2">Blog post title</h5>
+                            <p class="mt-3">Some quick example text to build on the card title and make up the bulk
+                                of the card's content. </p>
+                            <div class="d-flex justify-content-start align-items-center mt-5 pt-5">
+                                <div>
+                                    <img class="img-fluid rounded-circle shadow" src="images/150x150-1.jpg" width="75"
+                                        alt="">
+                                </div>
+                                <div class="ms-4 mt-2">
+                                    <h6 class="fw-bold">Kelly Rowan</h6>
+                                    <p class="text-secondary">Mar 12, 2023 . 6 min read</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="homecard" class="col-md-4 mt-4 px-md-4 px-4">
+                    <div class="card border-0 shadow" style="height: 610px;">
+                        <div class="card-img">
+                            <img class="img-fluid rounded rounded-bottom-0" src="images/600x350-2.jpg" alt="">
+                        </div>
+                        <div class="card-body pt-4 px-md-5">
+                            <span class="badge bg-primary">Media</span>
+                            <h5 class="fw-bold mt-2">Another blog post title</h5>
+                            <p class="mt-3">This text is a bit longer to illustrate the adaptive height of each card.
+                                Some quick example text to build on the card title and make up the bulk of the card's
+                                content. </p>
+                            <div class="d-flex justify-content-start align-items-center mt-4 pt-4">
+                                <div>
+                                    <img class="img-fluid rounded-circle shadow" src="images/150x150-2.jpg" width="75"
+                                        alt="">
+                                </div>
+                                <div class="ms-4 mt-2">
+                                    <h6 class="fw-bold">Josiah Barclay</h6>
+                                    <p class="text-secondary">Mar 23, 2023 . 4 min read</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="homecrad" class="col-md-4 mt-4 ps-md-5 px-4">
+                    <div class="card border-0 shadow" style="height: 610px;">
+                        <div class="card-img">
+                            <img class="img-fluid rounded rounded-bottom-0" src="images/600x350-4.jpg" alt="">
+                        </div>
+                        <div class="card-body pt-4 px-md-5">
+                            <span class="badge bg-primary">News</span>
+                            <h5 class="fw-bold mt-2">The last blog post title is a little bit longer then others </h5>
+                            <p class="mt-3">Some more quick example text to build on the card title and make up the bulk
+                                of the card's content. </p>
+                            <div class="d-flex justify-content-start align-items-center mt-4 pt-4">
+                                <div>
+                                    <img class="img-fluid rounded-circle shadow" src="images/150x150-3.jpg" width="75"
+                                        alt="">
+                                </div>
+                                <div class="ms-4 mt-2">
+                                    <h6 class="fw-bold">Evelyn Martinez</h6>
+                                    <p class="text-secondary">Apr 2, 2023 . 10 min read</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="link-primary text-end mt-5 pe-4 text-decoration-none" href="#">More Stories <i
+                        class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div id="homecopyright"
+            class="container-fluid bg-dark py-md-3 d-md-flex d-block justify-content-between align-items-center w-100"
+            style="padding: 10px 150px;">
+            <div class="text-center mt-3">
+                <p class="text-white ps-md-5">Copyright &copy Your Website 2023</p>
+            </div>
+            <div class="text-center mt-3">
+                <ul class="d-flex align-items-center pe-md-5">
+                    <li class="pe-4 m-auto"><a class="text-white" href="privacy.html">Privacy</a></li>
+                    <li class="pe-4 m-auto"><a class="text-white" href="terms.html">Terms</a></li>
+                    <li class="pe-4 m-auto"><a class="text-white" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

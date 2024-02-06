@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-dark d-md-flex d-block justify-content-between sticky-top"
+        data-bs-theme="dark" style="padding: 10px 150px;">
+        <div class="d-flex justify-content-between align-items-center">
+            <a class="navbar-brand ps-md-5" href="home.html">Start Bootstrap</a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+                area-controls="offcanvas" area-label="Toggle navigation" area-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="offcanvas offcanvas-end bg-dark" data-bs-theme="bg-dark" id="offcanvas">
+            <div class="offcanvas-header">
+                <h4 class="offcanvas-title">Start Bootstrap</h4>
+                <button type="button" class="btn btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav pe-md-5 d-block d-md-none">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                            href="blog-home.html">Blog</a>
+                        <ul class="dropdown-menu dropdown-menu-dark mt-2">
+                            <li><a class="dropdown-item" href="blog-home.html">Blog Home</a></li>
+                            <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>
+                            <li><a class="dropdown-item" href="#">Link-3</a></li>
+                            <li><a class="dropdown-item" href="#">Link-4</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                            href="portfolio-overview.html">Portfolio</a>
+                        <ul class="dropdown-menu dropdown-menu-dark mt-2 dropdown-menu-end">
+                            <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
+                            <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
+                            <li><a class="dropdown-item" href="#">Link-3</a></li>
+                            <li><a class="dropdown-item" href="#">Link-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul class="navbar-nav pe-md-5 d-none d-md-flex">
+            <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                    href="blog-home.html">Blog</a>
+                <ul class="dropdown-menu dropdown-menu-dark mt-2">
+                    <li><a class="dropdown-item" href="blog-home.html">Blog Home</a></li>
+                    <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>
+                    <li><a class="dropdown-item" href="#">Link-3</a></li>
+                    <li><a class="dropdown-item" href="#">Link-4</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                    href="portfolio-overview.html">Portfolio</a>
+                <ul class="dropdown-menu dropdown-menu-dark mt-2 dropdown-menu-end">
+                    <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
+                    <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
+                    <li><a class="dropdown-item" href="#">Link-3</a></li>
+                    <li><a class="dropdown-item" href="#">Link-4</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <section>
+        <div id="contactmain"
+            class="container-fluid bg-body-tertiary d-flex justify-content-center align-items-center flex-column mt-5"
+            style="width: 79%;">
+            <i class="bi bi-envelope bg-primary text-white fs-1 px-2 py-0 mt-5 rounded "></i>
+            <h1 class="fw-bold mt-3 text-center">Get in touch</h1>
+            <p class="text-secondary fs-5 mb-5">Weid love to hear from you</p>
+            <form id="contactform" class="w-50" action="#">
+                <input class="form-control" type="text" name="name" id="name" placeholder="Full name">
+                <input class="form-control mt-4" type="email" name="email" id="email" placeholder="Email address">
+                <input class="form-control mt-4" type="text" name="phone" id="phone" placeholder="Phone number">
+                <textarea class="form-control mt-4" name="message" id="message" cols="30" rows="10"
+                    placeholder="Message"></textarea>
+                <button type="button" class="btn btn-primary mt-4 w-100 mb-5">Submit</button>
+            </form>
+        </div>
+    </section>
+    <div class="container-fluid mt-md-5 pt-md-5 mb-md-0 mb-5" style="width: 79%; height:700px;">
+        <div class="contact-group d-md-flex d-block justify-content-between align-items-center mt-md-5 pt-5">
+            <div>
+                <i class="bi bi-chat-dots bg-primary px-2 py-md-0 py-1 fs-1 text-white rounded text-center"></i>
+                <h5 class="mt-3">Chat with us</h5>
+                <p class="w-75 text-secondary">Chat live with one of our support specialists.</p>
+            </div>
+            <div>
+                <i class="bi bi-people bg-primary px-2 py-md-0 py-1 fs-1 text-white rounded text-center"></i>
+                <h5 class="mt-3">Ask the community</h5>
+                <p class="w-75 text-secondary">Explore our community forums and communicate with other users.</p>
+            </div>
+            <div>
+                <i class="bi bi-question-circle bg-primary px-2 py-md-0 py-1 fs-1 text-white rounded text-center"></i>
+                <h5 class="mt-3">Support center</h5>
+                <p class="w-75 text-secondary">Browse FAQ's and support articles to find solutions. </p>
+            </div>
+            <div>
+                <i class="bi bi-telephone bg-primary px-2 py-md-0 py-1 fs-1 text-white rounded text-center"></i>
+                <h5 class="mt-3 ">Call us</h5>
+                <p class="w-75 text-secondary">Call us during normal business hours at (555) 892-9403.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div id="homecopyright"
+            class="container-fluid bg-dark py-3 d-md-flex d-block justify-content-between align-items-center"
+            style="padding: 10px 150px;">
+            <div class="text-center mt-3">
+                <p class="text-white ps-md-5">Copyright &copy Your Website 2023</p>
+            </div>
+            <div class="text-center mt-3">
+                <ul class="d-flex align-items-center pe-md-5">
+                    <li class="pe-4 m-auto"><a class="text-white" href="privacy.html">Privacy</a></li>
+                    <li class="pe-4 m-auto"><a class="text-white" href="terms.html">Terms</a></li>
+                    <li class="pe-4 m-auto"><a class="text-white" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
