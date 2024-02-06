@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form-15</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <form action="#">
+      <div class="form-group">
+       <div class="row image">
+<img src="images/images-9.webp" alt="logo">
+       </div>
+       <div class="row name">
+        <label for="name">Name</label>
+        <input type="text" name="f-name" id="f-name" placeholder="First name">
+        <input type="text" name="l-name" id="l-name" placeholder="Last name">
+       </div>
+       <div class="row">
+        <label for="age">Age</label>
+        <input type="text" name="age" id="age" placeholder="ex 25">
+       </div>
+       <div class="row">
+        <label for="dob">Date of Birth</label>
+        <input type="date" name="dob" id="dob">
+       </div>
+       <div class="row">
+        <label for="gender">Gender</label>
+        <select>
+          <option value="male">Male</option>
+          <option value="female">FeMale</option>
+        </select>
+       </div>
+       <div class="row">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" placeholder="example@email.com">
+       </div>
+       <div class="row">
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address" placeholder="Street address">
+        <input type="text" name="address" id="address" placeholder="Street address line 2">
+       </div>
+<div class="row phone">
+  <label for="phone">Phone</label>
+  <input type="text" name="area-code" id="area-code" placeholder="Area code">
+  <input type="text" name="phone-number" id="phone-number" placeholder="Phone number">
+</div>
+<div class="row zip-code">
+<label for="zip-code">Post/Zip code</label>
+<input type="text" name="zip-code" id="zip-code" placeholder="ex 8976">
+<label for="city">City</label>
+<input type="text" name="city" id="city" placeholder="ex New York">
+</div>
+<div class="row signature">
+  <label for="signature">Upload Signature</label>
+  <input type="file" name="signature" id="signature">
+</div>
+<div class="row terms-and-conditions">
+  <input type="checkbox" name="t&c" id="t&c">
+  <p>I agree to the defined <a href="#">terms, conditions, and polices</a></p>
+</div>
+<div class="row">
+  <button>Submit</button>
+</div>
+      </div>
+    </form>
+  </body>
+</html>

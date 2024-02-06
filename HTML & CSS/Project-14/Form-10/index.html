@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form-10</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <form action="#">
+      <div class="form-group">
+        <div class="row">
+          <img src="images/images-6.webp" alt="logo" />
+        </div>
+        <div class="row image">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter your name"
+          />
+        </div>
+        <div class="row">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder="Enter your email"
+          />
+        </div>
+        <div class="row">
+          <label for="age">Age</label>
+          <input type="text" name="age" id="age" placeholder="Enter your age" />
+        </div>
+        <div class="row">
+          <label for="option">Which option best describe you?</label>
+          <select>
+            <option value="student">Student</option>
+            <option value="self employee">Self Employee</option>
+            <option value="saleried">Saleried</option>
+          </select>
+        </div>
+        <div class="row radio-1">
+          <label for="recomend"
+            >Would you recomended our site to a friend?</label
+          >
+          <label for="yes"
+            ><input type="radio" name="recomend" id="yes" /> Yes</label
+          >
+          <label for="no"
+            ><input type="radio" name="recomend" id="no" /> No</label
+          >
+          <label for="maybe"
+            ><input type="radio" name="recomend" id="maybe" /> Maybe</label
+          >
+        </div>
+        <div class="row radio-2">
+          <label for="recomend">Which languages & frameworks you know?</label>
+          <label for="c"><input type="radio" name="language" id="c" /> C</label>
+          <label for="c++"
+            ><input type="radio" name="language" id="c++" /> C++</label
+          >
+          <label for="java"
+            ><input type="radio" name="language" id="java" /> Java</label
+          >
+          <label for="python"
+            ><input type="radio" name="language" id="python" /> Python</label
+          >
+          <label for="javascript"
+            ><input type="radio" name="language" id="javascript" />
+            JavaScript</label
+          >
+          <label for="react"
+            ><input type="radio" name="language" id="react" /> React</label
+          >
+          <label for="angular"
+            ><input type="radio" name="language" id="angular" /> Angular</label
+          >
+          <label for="django"
+            ><input type="radio" name="language" id="django" /> Django</label
+          >
+          <label for="tailwind"
+            ><input type="radio" name="language" id="tailwind" /> Tailwind
+            CSS</label
+          >
+          <label for="bootstrap"
+            ><input type="radio" name="language" id="bootstrap" />
+            Bootstrap</label
+          >
+        </div>
+        <div class="row">
+          <label for="comments">Any comments or suggestions</label>
+          <textarea
+            name="comments"
+            id="comments"
+            placeholder="Type here..."
+          ></textarea>
+        </div>
+        <div class="row">
+          <button>Submit</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
