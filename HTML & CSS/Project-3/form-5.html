@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <form>
+            <table cellpadding="4px" cellspacing="2px">
+                <tr>
+                    <th>AA Submission Information</th>
+                </tr>
+                <tr>
+                    <td><button>Search AA</button></td>
+                </tr>
+                <td><br></td>
+                <tr>
+                    <td><label for="date">AA Date Signed</label></td>
+                    <td><input type="date" name="date"></td>
+                    <td><label for="name">AA Name</label></td>
+                    <td><input type="text" name="name"></td>
+                </tr>
+                <tr>
+                    <td><label for="ein">AA EIN</label></td>
+                    <td><input type="text" name="ein"></td>
+                    <td><label for="title">AA Title</label></td>
+                    <td><input type="text" name="title"></td>
+                </tr>
+                <tr>
+                    <td><label for="officecode">AA Office Code</label><br></td>
+                    <td><input type="text" hidden name="officecode"></td>
+                    <td><label for="phone">AA Phone Number</label></td>
+                    <td><input type="tel" name="phone"></td>
+                </tr>
+                <tr>
+                    <td><label for="menu"><sub><i>select from menu</i></sub></label></td>
+                    <td>
+                        <select>
+                        <option value=""></option>
+                        <option value="selectyourcode" hidden >Select Your Code</option>
+                    </select>
+                </td>
+                <td><label for="fax">AA Fax Number</label></td>
+                <td><input type="text" name="fax"></td>
+                </tr>
+                <tr>
+                    <td><label for="manualinput"><sub><i>manual input(last 6 digits)</i></sub></label></td>
+                   <td><label for="manualinput">00<input type="text" name="manualinput"></label></td>
+                  
+                </tr>
+                <tr>
+                    <td><label for="companyname">AA Company Name</label></td>
+                    <td><input type="text" name="companyname"></td>
+                </tr>
+                </table>
+                <table cellspacing="2px">
+                <tr>
+                    <td><label for="certificate">Valid AA Certificate of Accuracy attached?</label></td>
+                    <td><label>Yes<input type="radio" name="certificate"></label></td>
+                    <td><label>No<input type="radio" name="certificate"></label></td>
+                </tr>
+            </table>
+            <br><br>
+            <table cellpadding="4px" cellspacing="5px">
+                <tr><th>Application Signature</th></tr>
+                <tr>
+                    <td><label for="signature">Application Signature</label></td>
+                    <td>
+                        <select>
+                         <option value=""></option>
+                         <option value="signhere" hidden>Please Sign Here</option>
+                    </select>
+                </td>
+                </tr>
+                <tr>
+                    <td><label for="datesigned">Date Signed</label></td>
+                    <td><input type="date" name="datesigned"></td>
+                </tr>
+                <tr>
+                    <td><label for="phonenumber">Phone Number</label></td>
+                    <td><input type="tel" name="phonenumber"></td>
+                </tr>
+                <tr>
+                    <td><label for="delegate">Name of Delegate</label></td>
+                    <td><input type="text" name="delegate"></td>
+                </tr>
+            </table>
+            <table cellspacing="2px">
+                <tr>
+                    <td><label for="poa">Valid Legal Document Supporting Court-Appointed Guardian or Power of Attomey(POA) received? </label></td>
+                    <td><label>Yes<input type="radio" name="poa"></label></td>
+                    <td><label>No<input type="radio" name="poa"></label></td>
+                </tr>
+            </table>
+            <br><br>
+            <table cellpadding="5px" cellspacing="5px">
+                <tr>
+                    <td><button>Back to Preliminary W-7 Data</button></td>
+                    <td><button>Submit</button></td>
+                </tr>
+            </table>
+            <br>
+            <table>
+                   <tfoot>
+                    <tr>
+                    <td><a href="form-5.html">Back to Top</a></td>
+                </tr>
+                   </tfoot>
+            </table>
+        </form>
+    </fieldset>
+</body>
+</html>

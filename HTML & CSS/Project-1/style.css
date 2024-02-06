@@ -1,0 +1,205 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background-color: rgb(242, 237, 237);
+}
+
+
+ header h1{
+    font-size: 55px;
+    text-decoration: underline;
+    text-align: center;
+    width:100% ;
+ }
+
+ td h2{
+    text-align: center;
+    font-style: italic;
+    text-decoration: underline;
+    background-color: #fcba00;
+    border-radius: 10px;
+    padding: 10px;
+ }
+
+span{
+    color: blue;
+}
+ .price span{
+    color: red;
+    text-decoration: line-through;
+}
+
+#production {
+    text-align: center;
+    text-decoration: underline;
+}
+
+table{
+ width: 100%;
+ align-items: left;
+ 
+}
+.table1{
+ background-color: #fcba00;
+ width: 20%;
+
+ }
+
+ footer table{
+  background-color: #fcba00;
+ }
+
+ 
+ footer table td{
+  width: 25%;
+ }
+.modeltable th{
+    background-color: #fcba00;
+    font-size: 18px;
+    border-style: solid;
+   
+}
+.modeltable td{
+    text-align: center;
+    font-weight: 500;
+    padding: 10px;
+    border-style: double;
+}
+#size{
+    text-align: center;
+}
+
+footer , h3 h2{
+    text-align:center;
+}
+ footer td a h3 {
+    text-align: left;
+    text-decoration: none;
+    padding: 10px;
+ }
+ footer td a {
+    text-align: left;
+    text-decoration: none;
+    color: black;
+ }
+
+ footer td a:hover {
+   text-decoration: underline;
+   color: red;
+ }
+ footer td :hover {
+    text-decoration: underline;
+    color:white;
+  }
+
+  .sidemenu .menu{
+    background-color:#fcba00;
+  }
+
+  .sidemenu .menu h3 a{
+    text-decoration: none;
+    color: black;
+  }
+
+  .sidemenu .menu h3 a:hover{
+   color: white;
+   background-color: red;
+   padding: 8px;
+   border-radius: 10px;
+  }
+
+  .menu h3{
+    margin-top: 20px;
+    padding: 10px;
+    
+  }
+
+  .navbar{
+    background-color: #fcba00;
+  }
+  .navbar a{
+    text-decoration: none;
+    color: black;
+    word-spacing: 3px;
+    background-color: red;
+    
+  }
+
+  .navbar tr td h3{
+    text-align: center;
+  }
+
+  .navbar a h3:hover{
+    text-decoration: underline;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+  }
+    
+   
+  #history{
+    border-bottom:ridge;
+    border-color:orange;
+  }
+
+  #modelandprice{
+    border-bottom:ridge;
+    border-color:orange;
+  }
+  #hardware{
+    border-bottom:ridge;
+    border-color:orange;
+  }
+  #software{
+    border-bottom:ridge;
+    border-color:orange;
+  }
+
+  #history:hover{
+    text-decoration-line: underline;
+    text-decoration-color: #fcba00;
+    text-decoration-style:double;
+  }
+  #modelandprice:hover{
+    text-decoration-line: underline;
+    text-decoration-color: #fcba00;
+    text-decoration-style:double;
+  }
+  #hardware:hover{
+    text-decoration-line: underline;
+    text-decoration-color: #fcba00;
+    text-decoration-style:double;
+  }
+  #software:hover{
+    text-decoration-line: underline;
+    text-decoration-color: #fcba00;
+    text-decoration-style:double;
+  }
+  #videos{
+    padding: 10px;
+  }
+
+
+  ol li{
+    list-style-type: upper-roman;
+  }
+  ul li{
+    list-style-type: square;
+  }
+.price ol li{
+  list-style-type: upper-alpha;
+}
+.price .list li{
+  list-style-type: decimal;
+}
+
+ .list2 li{
+  list-style-type: disc;
+}
+
+.list3 li{
+  list-style-type:circle;
+}

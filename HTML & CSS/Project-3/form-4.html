@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table width="100%">
+        <th bgcolor="#f1f1f1" width="100%" align="left">Add/Edit Schedule Task</th>
+    </table>
+    <br>
+    <table cellpadding="2px" cellspacing="3px">
+        <tr>
+            <td><label for="taskname"><b>Task Name</b></label></td>
+            <td><input type="text" name="taskname"></td>
+        </tr>
+        <tr>
+            <td><label for="group"><b>Group</b></label></td>
+            <td><input type="text" name="group"></td>
+        </tr>
+        <tr>
+            <td><p>The group to which the task belongs</p></td>
+       </tr>
+       <tr>
+        <td><label for="duration"><b>Duration</b></label></td>
+        <td><label><b>Start date </b><input type="date" name="duration" id="duration"></label></td>
+        <td><label><b>End date (Optional) </b><input type="date" name="duration" id="duration"></label></td>
+       </tr>
+       <tr><td><br></td></tr>
+      <tr>
+        <td><label for="frequency"><b>Frequency</b></label></td>
+        <td><label><input type="radio"><b>One-Time at</b></label></td>
+        <td><label><input type="time"></label></td>
+       <tr><td colspan="5"><hr></td></tr>
+       </tr>
+       <tr><td><br></td></tr>
+       <tr>
+        <td><label for="frequency"></label></td>
+        <td><label><input type="radio"><b>Recuring</label></td>
+        <td><select><option value="daily">Daily</option></select></td>
+        <td><label>at <input type="text"></label></td>
+        <tr><td colspan="5"><hr></td></tr>
+       </tr>
+
+       <tr><td><br></td></tr>
+       <tr>
+        <td><label for="frequency"></label></td>
+        <td><label><input type="radio"><b>Daily Every</b></label></td>
+        <td><label>Hours <input type="text" placeholder="0"></label></td>
+        <td><label>Minutes <input type="text" placeholder="0"></label></td>
+        <td><label>Seconds <input type="text" placeholder="0"></label></td>
+        <tr><td><br></td></tr>
+       </tr>
+       <tr>
+        <td colspan="2"><label for="frequency"></label></td>
+        <td colspan="2"><label>Start Time <input type="text" placeholder="0"></label></td>
+        <td><label>End Time <input type="text" placeholder="0"></label></td>
+        <tr><td><br></td></tr>
+       </tr>
+       <tr>
+        <td colspan="2"><label for="frequency"></label></td>
+        <td><label for="repeat">Repeat</label></td>
+        <td><label><input type="radio" name="repeat"> Forever</label></td>
+        <td><label><input type="text" name="repeat"> times</label></td>
+        <tr><td colspan="5"><hr></td></tr>
+       </tr>
+       <tr><td><br></td></tr>
+       <tr>
+        <td><label for="frequency"></label></td>
+        <td><label><input type="radio"><b>Condition</b></label></td>
+        <td><input type="text" name="condition"></td>
+       </tr>
+        <tr>
+                <td><label for="frequency"></label></td>
+        
+               <td colspan="3">
+                Cron expression to schedule the task . A cron expression is a string that contains six or seven space-seperated fields. <br> For example, 0 0 12 * * ? implies Fire the task at 12pm daily.
+            </td>
+            <tr><td colspan="5"><hr></td></tr>
+        </tr>
+        <tr><td><br></td></tr>
+        <tr>
+            <td><label for="frequency"></label></td>
+            <td><label><input type="radio"><b>Chained Task</b></label></td>
+           </tr>
+           
+            <tr>
+                    <td><label for="frequency"></label></td>
+            
+                   <td colspan="3">
+                    Enables chain execution of task. <br> For example, if you chain the task you create with another (parent task), it executes after the parent task.
+                </td>
+                <tr><td colspan="5"><hr></td></tr>
+            </tr>
+            <tr>
+                <td><label for="url"><b>URL</b></label></td>
+                <td><input type="url" name="url" placeholder="https://www.akeditz.com"></td>
+            </tr>
+            <tr>
+                <td><label for="username"><b>User Name</b></label></td>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td><label for="password"><b>Password</b></label></td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td><label for="timeout"></label><b>Timeout (in seconds)</b></td>
+                <td><input type="text" name="timeout"></td>
+            </tr>
+            <tr>
+                <td><label for="proxy"><b>Proxy Server</b></label></td>
+                <td><input type="text" name="proxy"></td>
+                <td><label><b>Port</b> <input type="text" name="port" id=""></label></td>
+            </tr>
+            <tr>
+                <td><label for="proxy"><b>Proxy User</b></label></td>
+                <td><input type="text" name="proxy"></td>
+                <td><label><b>Password</b> <input type="password" name="password"></label></td>
+            </tr>
+            <tr>
+                <td><label for="publish"><b>Publish</b></label></td>
+                <td><label><input type="checkbox" name="publish"> Save output to a file</label></td>
+            </tr>
+            <tr>
+                <td><label for="resloveurl"><b>Resolve URL</b></label></td>
+                <td><label><input type="checkbox" name="resolveurl"> Resolve internal URLs do that links remain intact</label></td>
+            </tr>
+    </table>
+    <br>
+    <table>
+        <tr>
+            <td>
+                <button>Show Additional Settings</button>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table>
+        <tr> 
+            <td>
+            <button>Submit</button>
+            <button>Cancel</button>
+        </td>
+        </tr>
+    </table>
+</body>
+</html>
