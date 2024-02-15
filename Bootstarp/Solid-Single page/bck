@@ -1,0 +1,122 @@
+<div class="row mt-5 pt-5 pt-md-5 mb-5 pb-5 ">
+            <div class="col-md-6 border-end border-bottom pb-5 mb-5 pe-5">
+                <div class="row">
+                    <div class="col-12">
+                        <img class="img-fluid w-100" src="images/about-light-01.png" alt="About Light">
+                    </div>
+                    <div class="col-12 d-flex justify-content-center align-items-start flex-column mt-5 pt-5 mb-5 pb-5">
+                        <h6>GROW YOUR BUSINESS FASTER</h6>
+                        <h2 class="fw-bold">Track Your Audience <br> Activities</h2>
+                        <p class="text-secondary mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Incidunt, voluptatem earum iure
+                            maxime animi ut laudantium labore in. Esse voluptates veniam dicta tempore ut velit
+                            assumenda commodi nam iste nisi?</p>
+                        <p class="mt-4 pb-5 mb-5"><a class="link-dark text-decoration-none d-flex align-items-center"
+                                href="#">Know
+                                More <i class="bi bi-arrow-right-short fs-3"></i></a></p>
+                    </div>
+                    <div class="col-12 mt-5 pt-5 d-flex flex-column justify-content-center align-items-start">
+                        <div class="mt-5 pt-5">
+                            <div class="mt-5 pt-5">
+                                <h1 class="mt-5">Solid Has Neat & Clean User <br> Interface.</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="mt-5 text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                                reprehenderit
+                                reiciendis
+                                voluptatem provident,.</p>
+                        </div>
+                        <div>
+                            <p class="mt-4 text-secondary">Nam odio et quis officia porro commodi veritatis voluptate
+                                culpa
+                                quo fugit
+                                adipisci aut dicta
+                                molestias dolor laboriosam</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 pb-5 mb-5 border-bottom ps-5">
+                <div class="row mt-5">
+                    <div class="col-12 px-md-5">
+                        <div class="d-flex justify-content-start align-items-center gap-2">
+                            <span class="badge bg-success px-3 fs-6 rounded-pill">NEW</span>
+                            <h6>START TRACKING VISITORS</h6>
+                        </div>
+                        <h2 class="mt-4 fw-bold">Know More About Our <br> Product</h2>
+                        <p class="mt-md-5 mt-3 text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Minus,
+                            earum quibusdam
+                            alias
+                            nesciunt,
+                            fuga
+                            autem nobis nulla non quae aspernatur corrupti quia dolore modi! Ad vel provident harum?
+                            !</p>
+
+                        <div class="d-flex justify-content-start align-items-center gap-3 mt-5">
+                            <div>
+                                <span class="badge rounded-circle border p-3 text-dark fs-5 text-center">01</span>
+                            </div>
+                            <div>
+                                <h6>Lorem ipsum dolor.</h6>
+                                <p class="text-secondary ">Ut ultricies lacus non fermentum ultrices.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-start align-items-center gap-3 mt-5">
+                            <div>
+                                <span class="badge rounded-circle border p-3 text-dark fs-5 text-center">02</span>
+                            </div>
+                            <div>
+                                <h6>Fusce consectetur le.</h6>
+                                <p class="text-secondary">consectetur adipiscing elit fementum <br>
+                                    ultricies.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-5 pt-5 pb-5 mb-5">
+                        <img class="img-fluid w-100" src="images/about-light-02.png" alt="About Light">
+                    </div>
+                    <div class="col-12 mt-5 pt-5">
+                        <img class="img-fluid w-100" src="images/features-light-01.png" alt="Features Light">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row nav-tabs w-100 bg-white">
+            <div class="col-12">
+                <div class=" border rounded d-flex justify-content-around align-items-center py-2 shadow">
+                    <a class="link-dark text-decoration-none" href="#">
+                        <div class="d-flex justify-content-around align-items-center gap-3">
+                            <div>
+                                <span class="badge rounded-circle border p-3 text-dark fs-5 text-center">01</span>
+                            </div>
+                            <div>
+                                <h6>Clean User Interface</h6>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="link-dark text-decoration-none" href="#">
+                        <div class="d-flex justify-content-around align-items-center gap-3">
+                            <div>
+                                <span class="badge rounded-circle border p-3 text-dark fs-5 text-center">02</span>
+                            </div>
+                            <div>
+                                <h6>Cloud Data Save Options</h6>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="link-dark text-decoration-none" href="#">
+                        <div class="d-flex justify-content-around align-items-center gap-3">
+                            <div>
+                                <span class="badge rounded-circle border p-3 text-dark fs-5 text-center">03</span>
+                            </div>
+                            <div>
+                                <h6>Management And Collaboration</h6>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
