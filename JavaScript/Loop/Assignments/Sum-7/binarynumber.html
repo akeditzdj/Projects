@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function convertToBinary(inputNumber) {  // 12
+      binaryNumber = 0;
+      let rem, i = 1
+      while (inputNumber != 0) { // 12! = 0 , 6!=0 , 3!= 0 , 1!=0
+        rem = inputNumber % 2; // rem = 0 , 0 , 1 ,1
+        inputNumber = parseInt(inputNumber / 2); // 6 3 1 0
+        binaryNumber = binaryNumber + rem * i; // 0 + 0 * 1 = 0 + 0 * 10 = 0 , 0+ 1 * 100 =100, 100+ 1*1000
+        i = i * 10; // 10 , 10* 10 = 100, 100*10 = 1000
+      }
+      document.write(` Decimal Number: ${number} and Binary Number: ${binaryNumber}`);
+    }
+    let number = prompt('Enter a decimal number: ');
+    convertToBinary(number)
+    // const number = parseInt(prompt('Enter a decimal number: '));
+    //    const result = number.toString(2);
+    //    document.write(`Decimal Number: ${number} Binary Number: ${result}`);
+    //  inputNumber = 24;
+    // reminder1 = Math.floor(inputNumber / 2)
+    // quotient1 = inputNumber % 2
+    // reminder2 = Math.floor(reminder1 / 2)25
+    // quotient2 = reminder1 % 2
+    // reminder3 = Math.floor(reminder2 / 2)
+    // quotient3 = reminder2 % 2
+    // reminder4 = Math.floor(reminder3 / 2)
+    // quotient4 = reminder3 % 2
+    // reminder5 = Math.floor(reminder4 / 2)
+    // quotient5 = reminder4 % 2
+    // console.log(quotient1)
+    // console.log(quotient2)
+    // console.log(quotient3)
+    // console.log(quotient4)
+    // console.log(quotient5)
+    // document.write(`Decimal number = ${inputNumber} <br> Binary number = `+quotient5 + quotient4 + quotient3 + quotient2 + quotient1)
+  </script>
+</body>
+</html>

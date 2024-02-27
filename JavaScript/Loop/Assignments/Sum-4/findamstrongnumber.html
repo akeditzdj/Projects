@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    for (i = 0; i <= 10000; i++) {
+      num = i
+      if (num <= 9) {
+        document.write(`<br>${num}`);
+      }
+      else if (num <= 999) {
+        sum = Math.pow(num % 10, 3) +
+          Math.pow((num % 100 - num % 10) / 10, 3) +
+          Math.pow((num % 1000 - num % 100) / 100, 3);
+        if (sum == i) {
+          document.write(`<br>${i}`)
+        }
+      }
+      else {
+        sum = Math.pow(num % 10, 4) +
+          Math.pow((num % 100 - num % 10) / 10, 4) +
+          Math.pow((num % 1000 - num % 100) / 100, 4) +
+          Math.pow((num % 10000 - num % 1000) / 1000, 4);
+        if (sum == i) {
+          document.write(`<br>${i}`)
+        }
+      }
+    }
+  </script>
+</body>
+</html>
