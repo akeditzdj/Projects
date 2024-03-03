@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form-5</title>
+    <link rel="stylesheet" href="base.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-light-subtle">
+    <div class="container w-75 mb-5 bg-white p-4">
+      <form>
+        <div class="row">
+            <div class="col-lg-12">
+              <h1 class="fw-semibold mt-3">STUDENT REGISTRATION FORM</h1>
+            </div>
+          </div>
+          <div class="row mt-5 bg-secondary bg-opacity-25 rounded">
+            <div class="col-lg-12 input-group d-flex justify-content-between align-items-center">
+                <h3 class="text-center p-4 text-dark fs-4">Basic Information</h3>
+                <i class="fa-solid fa-caret-down fs-4 p-4"></i>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-4">
+                <label class="form-label fw-semibold" for="name">Full Name</label>
+                <input class="form-control" type="text" name="f-name" id="f-name">
+                <label class="form-label py-1" for="f-name">First Name</label>
+            </div>
+            <div class="col-lg-4 mt-auto">
+                <input class="form-control" type="text" name="m-name" id="m-name">
+                <label class="form-label py-1" for="m-name">Middle Name</label>
+            </div>
+            <div class="col-lg-4 mt-auto">
+                <input class="form-control" type="text" name="l-name" id="l-name">
+                <label class="form-label py-1" for="l-name">Last Name</label>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-6">
+                <label class="form-label fw-semibold" for="s-number">Student Number</label>
+                <input class="form-control" type="text" name="s-number" id="s-nmuber">
+                <small class="form-text">Ex:01</small>
+            </div>
+            <div class="col-lg-6">
+                <label class="form-label fw-semibold" for="year-level">Year Level</label>
+                <select class="form-select" name="year-level" id="year-level">
+                    <option value="plaese select" selected>Plaese Select</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                </select>
+                <small class="form-text">Ex:2018</small>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-6">
+                <label class="form-label fw-semibold" for="degree">Degree Program</label>
+                <select class="form-select" name="degree" id="degree">
+                    <option value="please select" selected>Please Select</option>
+                    <option value="DIPLOMA">DIPLOMA</option>
+                    <option value="BE">BE</option>
+                    <option value="ME">ME</option>
+                    <option value="BCA">BCA</option>
+                    <option value="MCA">MCA</option>
+                </select>
+            </div>
+            <div class="col-lg-6">
+                <label class="form-label fw-semibold" for="email">Email</label>
+                <input class="form-control" type="email" name="email" id="email" placeholder="Ex:example@gmail.com">
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-6">
+                <label class="form-label fw-semibold" for="p-number">Phone Number</label>
+                <input class="form-control" type="text" name="p-number" id="p-nmuber">
+            </div>
+            <div class="col-lg-6">
+                <label class="form-label fw-semibold" for="network-provider">Network Provider</label>
+                <select class="form-select" name="network-provider" id="network-provider">
+                    <option value="plaese select" selected>Plaese Select</option>
+                    <option value="Airtel">Airtel</option>
+                    <option value="Bsnl">Bsnl</option>
+                    <option value="Jio">Jio</option>
+                    <option value="Vodafone">Vodafone</option>
+                    <option value="Idea">Idea</option>
+                </select>
+                <small class="form-text">Ex:2018</small>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-4">
+                <label class="form-label fw-semibold" for="dob">Birth Date</label>
+                <select class="form-select" name="month" id="month">
+                    <option value="" selected></option>
+                    <option value="jan">Jan</option>
+                    <option value="feb">Feb</option>
+                    <option value="mar">Mar</option>
+                    <option value="apr">Apr</option>
+                    <option value="may">May</option>
+                    <option value="jun">Jun</option>
+                    <option value="jul">Jul</option>
+                    <option value="aug">Aug</option>
+                    <option value="sep">Sep</option>
+                    <option value="oct">Oct</option>
+                    <option value="nov">Nov</option>
+                    <option value="dec">Dec</option>
+                </select>
+                <label class="form-label py-1" for="month">Month</label>
+            </div>
+            <div class="col-lg-4 mt-auto">
+                <select class="form-select" name="day" id="day">
+                    <option value="" selected></option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+                <label class="form-label py-1" for="day">Day</label>
+            </div>
+            <div class="col-lg-4 mt-auto">
+                <select class="form-select" name="year" id="year">
+                    <option value="" selected></option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                    <option value="2014">2014</option>
+                    <option value="2013">2013</option>
+                    <option value="2012">2012</option>
+                    <option value="2011">2011</option>
+                    <option value="2010">2010</option>
+                    <option value="2009">2009</option>
+                    <option value="2008">2008</option>
+                    <option value="2007">2007</option>
+                    <option value="2006">2006</option>
+                    <option value="2005">2005</option>
+                    <option value="2004">2004</option>
+                    <option value="2003">2003</option>
+                    <option value="2002">2002</option>
+                    <option value="2001">2001</option>
+                    <option value="2000">2000</option>
+                    <option value="1999">1999</option>
+                    <option value="1998">1998</option>
+                    <option value="1997">1997</option>
+                    <option value="1996">1996</option>
+                    <option value="1995">1995</option>
+                    <option value="1994">1994</option>
+                    <option value="1993">1993</option>
+                </select>
+                <label class="form-label py-1" for="year">Year</label>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-12">
+                <label class="form-label fw-semibold" for="p-address">Permanent Address</label>
+                <input class="form-control" type="text" name="address-line1" id="address-line1">
+                <label class="form-label py-1" for="address-line1">Address Line 1</label>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-12">
+                <input class="form-control" type="text" name="address-line2" id="address-line2">
+                <label class="form-label py-1" for="address-line2">Address Line 2</label>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-6">
+                <input class="form-control" type="text" name="city" id="city">
+                <label class="form-label py-1" for="city">City</label>
+            </div>
+            <div class="col-lg-6">
+                <input class="form-control" type="text" name="state" id="state">
+                <label class="form-label py-1" for="state">State/Province</label>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-6">
+                <input class="form-control" type="text" name="zip-code" id="zip-code">
+                <label class="form-label py-1" for="zip-code">Postel / Zip Code</label>
+            </div>
+            <div class="col-lg-6">
+                <select class="form-select" name="country" id="country">
+                    <option value="united states"selected>United States</option>
+                    <option value="india">India</option>
+                    <option value="singapore">Singapore</option>
+                </select>
+                <label class="form-label py-1" for="country">Country</label>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-6">
+                <label class="form-label fw-semibold" for="emg-contact">Emergency Contact</label>
+           <div class="row g-2">
+            <div class="col">
+              <input class="form-control" type="text" name="f-name" id="f-name">
+              <label class="form-label py-1" for="f-name">First Name</label>
+            </div>
+            <div class="col">
+              <input class="form-control" type="text" name="l-name" id="l-name">
+              <label class="form-label py-1" for="l-name">Last Name</label>
+            </div>
+           </div>
+        
+            </div>
+            <div class="col-lg-6">
+                <label class="form-label fw-semibold" for="relationship">Relationship</label>
+                <input class="form-control" type="text" name="relative" id="relative">
+                <small class="form-text py-1">Ex: Father, Mother, etc</small>
+            </div>
+          </div>
+          <div class="row mt-5">
+           <div class="col-lg-12">
+             <label class="form-label fw-semibold" for="add-emg-contact">Address Of Person To Contact In Case Of Emergency</label>
+             <input class="form-control" type="text" name="emg-add-line1" id="emg-add-line1">
+             <label class="form-label py-1" for="emg-add-line1">Address Line 1</label>
+           </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-12">
+              <input class="form-control" type="text" name="emg-add-line2" id="emg-add-line2">
+              <label class="form-label py-1" for="emg-add-line2">Address Line 2</label>
+            </div>
+           </div>
+           <div class="row mt-5">
+            <div class="col-lg-6">
+                <input class="form-control" type="text" name="emg-city" id="emg-city">
+                <label class="form-label py-1" for="emg-city">City</label>
+            </div>
+            <div class="col-lg-6">
+                <input class="form-control" type="text" name="emg-state" id="emg-state">
+                <label class="form-label py-1" for="emg-state">State/Province</label>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-12">
+                <input class="form-control" type="text" name="emg-zip-code" id="emg-zip-code">
+                <label class="form-label py-1" for="emg-zip-code">Postel / Zip Code</label>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-6">
+              <label class="form-label fw-semibold" for="emg-contact-number">Phone Number Of Person To Contact In Case Of Emergency</label>
+              <input class="form-control" type="text" name="emg-contact-number" id="emg-contact-number" placeholder="000 000-0000">
+              <small class="form-text">Plaese enter a valid phone number</small>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-6 col-md-12">
+                <label class="form-label fw-semibold" for="extra-caricular">Other Extra Caricular Activities</label>
+                <input class="form-control" type="text" name="extra-caricular" id="extra-caricular">
+            </div>
+          </div>
+          <div class="row mt-5">
+            <label class="form-label w-100 fw-semibold" for="extra-caricular-participants">Extra Caricular Participants</label>
+            <div class="col-lg-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="student-council" id="student-council">
+                    <label class="form-check-label" for="student-council">Student Council</label>
+                </div>
+               <div class="form-check py-1">
+                 <input class="form-check-input" type="checkbox" name="cricket" id="cricket">
+                 <label class="form-check-label" for="cricket">Cricket</label>
+               </div>
+         <div class="form-check">
+                   <input class="form-check-input" type="checkbox" name="Others" id="others">
+                   <label class="form-check-label" for="others">Others</label>
+         </div>
+            </div>
+            <div class="col-lg-6">
+               <div class="form-check py-1">
+                 <input class="form-check-input" type="checkbox" name="cash-officer" id="cash-officer">
+                 <label class="form-check-label" for="cash-officer">Cash Officer</label>
+               </div>
+             <div class="form-check">
+                   <input class="form-check-input" type="checkbox" name="shop-keeper" id="shop-kepper">
+                   <label class="form-check-label" for="shop-keeper">Shop-keeper</label>
+             </div>
+            </div>
+          </div>
+          <div class="row mt-5 bg-secondary bg-opacity-25 rounded">
+            <div class="col-lg-12">
+                <div class="col-lg-12 input-group d-flex justify-content-between align-items-center">
+                    <h3 class="text-center p-4 fs-4">Other Details</h3>
+                    <i class="fa-solid fa-caret-down fs-4 p-4"></i>
+                </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <label class="form-label fw-semibold" for="resourse">Resources Available</label>
+            <div class="col-lg-6">
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" name="mobile" id="mobile">
+                 <label class="form-check-label" for="mobile">Mobile</label>
+               </div>
+               <div class="form-check py-1">
+                 <input class="form-check-input" type="checkbox" name="printer" id="printer">
+                 <label class="form-check-label" for="printer">Printer</label>
+               </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="laptop" id="laptop">
+                  <label class="form-check-label" for="laptop">Laptop</label>
+              </div>
+            </div>
+            <div class="col-lg-6">
+               <div class="form-check py-1">
+                 <input class="form-check-input" type="checkbox" name="tv" id="tv">
+                 <label class="form-check-label for="tv">Television</label>
+               </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="projector" id="projector">
+                  <label class="form-check-label" for="projector">LCD Projector</label>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <label class="form-label fw-semibold" for="skills">Skills/Talents</label>
+            <div class="col-lg-6">
+             <div class="form-check">
+                   <input class="form-check-input" type="checkbox" name="acting" id="acting">
+                   <label class="form-check-label" for="acting">Acting</label>
+             </div>
+              <div class="form-check py-1">
+                  <input class="form-check-input" type="checkbox" name="
+                  Creativity" id="
+                  Creativity">
+                  <label class="form-check-label" for="
+                  Creativity">
+                  Creativity</label>
+              </div>
+             <div class="form-check">
+                   <input class="form-check-input" type="checkbox" name="Teamwork" id="Teamwork">
+                   <label class="form-check-label" for="Teamwork">Teamwork</label>
+             </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="Design" id="Design">
+                  <label class="form-check-label" for="Design">Design</label>
+              </div>
+          <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="Leadership" id="Leadership">
+                  <label class="form-check-label" for="Leadership">Leadership</label>
+          </div>
+            <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Writing" id="Writing">
+                    <label class="form-check-label" for="Writing">Writing</label>
+            </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Negotiation" id="Negotiation">
+                    <label class="form-check-label" for="Negotiation">Negotiation</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Problem solving" id="Problem solving">
+                    <label class="form-check-label" for="Problem solving">Problem solving</label>
+                </div>
+            </div>
+            <div class="col-lg-6">
+               <div class="form-check py-1">
+                 <input class="form-check-input" type="checkbox" name="Active listening" id="Active listening">
+                 <label class="form-check-label" for="Active listening">Active listening</label>
+               </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="
+                  Critical thinking" id="
+                  Critical thinking">
+                  <label class="form-check-label" for="
+                  Critical thinking">
+                  Critical thinking</label>
+              </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" name="Marketing" id="Marketing">
+                 <label class="form-check-label" for="Marketing">Marketing</label>
+               </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" name="Speaking" id="Speaking">
+                 <label class="form-check-label" for="Speaking">Speaking</label>
+               </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="Math" id="Math">
+                  <label class="form-check-label" for="Math">Math</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="Painting" id="Painting">
+                  <label class="form-check-label" for="Painting">Painting</label>
+              </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" name="Networking" id="Networking">
+                 <label class="form-check-label" for="Networking">Networking</label>
+               </div>
+          <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="Storytelling" id="Storytelling">
+                  <label class="form-check-label" for="Storytelling">Storytelling</label>
+          </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <label class="form-label fw-semibold" for="sports">Sports</label>
+            <div class="col-lg-6">
+              <div class="form-check py-1">
+                  <input class="form-check-input" type="checkbox" name="Basketball" id="Basketball">
+                  <label class="form-check-label" for="Basketball">Basketball</label>
+              </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" name="Boxing" id="Boxing">
+                 <label class="form-check-label" for="Boxing">Boxing</label>
+               </div>
+             <div class="form-check">
+                   <input class="form-check-input" type="checkbox" name="Cricket" id="Cricket">
+                   <label class="form-check-label" for="Cricket">Cricket</label>
+             </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" name="Hockey" id="Hockey">
+                 <label class="form-check-label" for="Hockey">Hockey</label>
+               </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="Skateboarding" id="Skateboarding">
+                  <label class="form-check-label" for="Skateboarding">Skateboarding</label>
+              </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" name="Skiing" id="Skiing">
+                 <label class="form-check-label" for="Skiing">Skiing</label>
+               </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Bowling" id="Bowling">
+                    <label class="form-check-label" for="Bowling">Bowling</label>
+                </div>
+            </div>
+            <div class="col-lg-6">
+               <div class="form-check py-1">
+                 <input class="form-check-input" type="checkbox" name="Archery" id="Archery">
+                 <label class="form-check-label" for="Archery">Archery</label>
+               </div>
+           <div class="form-check">
+                 <input class="form-check-input" type="checkbox" name="Golf" id="Golf">
+                 <label class="form-check-label" for="Golf">Golf</label>
+           </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" name="Tennis" id="Tennis">
+                 <label class="form-check-label" for="Tennis">Tennis</label>
+               </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Baseball" id="Baseball">
+                    <label class="form-check-label" for="Baseball">Baseball</label>
+                </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" name="
+                 Swimming" id="
+                 Swimming">
+                 <label class="form-check-label" for="
+                 Swimming">
+                 Swimming</label>
+               </div>
+             <div class="form-check">
+                   <input class="form-check-input" type="checkbox" name="Football" id="Football">
+                   <label class="form-check-label" for="Football">Football</label>
+             </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="australian football" id="australian football">
+                    <label class="form-check-label" for="australian football">australian football</label>
+                </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-12">
+                <label class="form-label fw-semibold" for="interests">Interests</label>
+                <textarea class="form-control " name="interests" id="interests" rows="5" style="resize: none;"></textarea>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-6">
+                <label class="form-label fw-semibold" for="m-salary">Estimate Your Family Monthly Income</label>
+                <select class="form-select" name="m-salary" id="m-salary">
+                    <option value="please select">Please Select</option>
+                    <option value="25000">25000</option>
+                    <option value="35000">35000</option>
+                    <option value="50000">50000</option>
+                    <option value="75000">75000</option>
+                    <option value="100000">100000</option>
+                </select>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-6">
+                <label class="form-label fw-semibold" for="scholarship">Do You Have Any Scholarship</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="scholarship" id="scholarship1">
+                    <label class="form-check-label" for="scholarship1">Yes</label>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-auto">
+               <div class="form-check">
+                 <input class="form-check-input" type="radio" name="scholarship" id="scholarship2">
+                 <label class="form-check-label" for="scholarship2">No</label>
+               </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-6">
+                <label class="form-label fw-semibold" for="sponsor">Who/What is the name of your sponsor?</label>
+                <input class="form-control" type="text" name="sponsor" id="sponsor">
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-6">
+                <label class="form-label fw-semibold" for="switch-course">Do You Plan To Switch To Another Course?</label>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="switch-course" id="switch-course1">
+                  <label class="form-check-label" for="switch-course1">Yes</label>
+              </div>
+            </div>
+            <div class="col-lg-6 mt-auto">
+                <input class="form-check-input" type="radio" name="switch-course" id="switch-course2">
+                <label class="form-check-label" for="switch-course2">No</label>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-6">
+                <label class="form-label fw-semibold" for="course-choice">What Course Is Your First Choice Is The Univercity?</label>
+                <input class="form-control" type="text" name="course-choice" id="course-choice">
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-6">
+                <label class="form-label fw-semibold" for="after-collage">What Is Your Plan After Collage?</label>
+                <select class="form-select" name="after-collage" id="after-collage">
+                    <option value="please select">Please Select</option>
+                    <option value="job">Job</option>
+                    <option value="business">Business</option>
+                    <option value="sports">Sports</option>
+                </select>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-12">
+                <label class="form-label fw-semibold" for="comments">Suggestions / Comments</label>
+                <textarea class="form-control " name="comments" id="comments" rows="5"></textarea>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-12 d-flex justify-content-end gap-2">
+                <button class="btn btn-outline-dark text-center py-2 px-3 fs-5">Print Form</button>
+                <button class="btn btn-dark text-light text-center px-5 py-2 fs-5">Submit</button>
+            </div>
+          </div>
+      </form>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
