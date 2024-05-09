@@ -230,6 +230,13 @@ btnUpdate.addEventListener("click", function () {
       menglishElement.focus();
       return;
     }
+    if (isNaN(english)) {
+      setModalError(menglishElement, "Please input numeric characters only");
+      menglishElement.value = "";
+      menglishElement.focus();
+      success = false;
+      return;
+    }
     setModalSuccess(menglishElement);
   }
 
@@ -249,6 +256,13 @@ btnUpdate.addEventListener("click", function () {
       setModalError(mmathsElement, "Please enter valid marks");
       mmathsElement.value = "";
       mmathsElement.focus();
+      return;
+    }
+    if (isNaN(maths)) {
+      setModalError(mmathsElement, "Please input numeric characters only");
+      mmathsElement.value = "";
+      mmathsElement.focus();
+      success = false;
       return;
     }
     setModalSuccess(mmathsElement);
@@ -272,6 +286,14 @@ btnUpdate.addEventListener("click", function () {
       mscienceElement.focus();
       return;
     }
+    if (isNaN(science)) {
+      setModalError(mscienceElement, "Please input numeric characters only");
+      mscienceElement.value = "";
+      mscienceElement.focus();
+      success = false;
+      return;
+    }
+
     setModalSuccess(mscienceElement);
   }
 
@@ -293,6 +315,13 @@ btnUpdate.addEventListener("click", function () {
       msocialElement.focus();
       return;
     }
+    if (isNaN(social)) {
+      setModalError(msocialElement, "Please input numeric characters only");
+      msocialElement.value = "";
+      msocialElement.focus();
+      success = false;
+      return;
+    }
     setModalSuccess(msocialElement);
   }
 
@@ -312,6 +341,13 @@ btnUpdate.addEventListener("click", function () {
       setModalError(mtamilElement, "Please enter valid marks");
       mtamilElement.value = "";
       mtamilElement.focus();
+      return;
+    }
+    if (isNaN(tamil)) {
+      setModalError(mtamilElement, "Please input numeric characters only");
+      mtamilElement.value = "";
+      mtamilElement.focus();
+      success = false;
       return;
     }
     setModalSuccess(mtamilElement);
@@ -536,6 +572,13 @@ btnAdd.addEventListener("click", function () {
       englishElement.focus();
       return;
     }
+    if (isNaN(english)) {
+      setError(englishElement, "Please input numeric characters only");
+      englishElement.value = "";
+      englishElement.focus();
+      success = false;
+      return;
+    }
     setSuccess(englishElement);
   }
 
@@ -555,6 +598,13 @@ btnAdd.addEventListener("click", function () {
       setError(mathsElement, "Please enter valid marks");
       mathsElement.value = "";
       mathsElement.focus();
+      return;
+    }
+    if (isNaN(maths)) {
+      setError(mathsElement, "Please input numeric characters only");
+      mathsElement.value = "";
+      mathsElement.focus();
+      success = false;
       return;
     }
     setSuccess(mathsElement);
@@ -578,6 +628,13 @@ btnAdd.addEventListener("click", function () {
       scienceElement.focus();
       return;
     }
+    if (isNaN(science)) {
+      setError(scienceElement, "Please input numeric characters only");
+      scienceElement.value = "";
+      scienceElement.focus();
+      success = false;
+      return;
+    }
     setSuccess(scienceElement);
   }
 
@@ -599,6 +656,13 @@ btnAdd.addEventListener("click", function () {
       socialElement.focus();
       return;
     }
+    if (isNaN(social)) {
+      setError(socialElement, "Please input numeric characters only");
+      socialElement.value = "";
+      socialElement.focus();
+      success = false;
+      return;
+    }
     setSuccess(socialElement);
   }
 
@@ -618,6 +682,13 @@ btnAdd.addEventListener("click", function () {
       setError(tamilElement, "Please enter valid marks");
       tamilElement.value = "";
       tamilElement.focus();
+      return;
+    }
+    if (isNaN(tamil)) {
+      setError(tamilElement, "Please input numeric characters only");
+      tamilElement.value = "";
+      tamilElement.focus();
+      success = false;
       return;
     }
     setSuccess(tamilElement);
