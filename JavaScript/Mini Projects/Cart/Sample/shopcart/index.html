@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="#" class="logo">Shoppy</a>
+      <a href="#" id="cartBtn" onclick="showCart()">Cart Item</a>
+    </nav>
+    <div class="container"></div>
+    <div class="modal">
+      <div class="modal-content">
+        <div class="close" onclick="closeCart()">&times;</div>
+        <h4>Shopping Cart</h4>
+        <hr />
+        <table>
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Qty</th>
+              <th>Amount</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="modal-items"></tbody>
+          <tfoot>
+            <tr>
+              <td colspan="5">Total Amount</td>
+              <td id="tamt"></td>
+            </tr>
+            <tr>
+              <td colspan="5">Tax 18%</td>
+              <td id="tax"></td>
+            </tr>
+            <tr>
+              <td colspan="5">Net Amount</td>
+              <td id="net"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>

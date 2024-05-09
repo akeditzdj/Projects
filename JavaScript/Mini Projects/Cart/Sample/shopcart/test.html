@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="showAlert()">Click 1</button>
+    <button id="btnClick">Click 2</button>
+    <button id="btnClick3">Click 3</button>
+
+    <script>
+      function showAlert() {
+        alert("Hi");
+      }
+
+      document.getElementById("btnClick").onclick = function (e) {
+        alert(e.target.textContent);
+      };
+
+      document.getElementById("btnClick3").addEventListener("click", function (e) {
+        alert(e.target.textContent);
+      });
+    </script>
+  </body>
+</html>

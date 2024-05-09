@@ -1,0 +1,12 @@
+const textqty = e.target.value;
+      const pid = txtqty.dataset.id;
+
+      const updated_cart = cart_items.map((product) => {
+        if (pid == product.id) {
+          return { ...product, quantity: Number(textqty), amount: Number(textqty) * Number(product.price) };
+        } else {
+          return product;
+        }
+      });
+
+      cart_items = updated_cart;
