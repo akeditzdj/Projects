@@ -12,7 +12,11 @@
   color: red !important;
 }
 
-.form-group .error {
+.form-group label {
+  color: black !important;
+}
+
+.form-group.error {
   color: red !important;
   font-size: 14px !important;
   margin-top: 5px !important;
