@@ -26,7 +26,7 @@
   border-color: red !important;
 }
 
-.form-group .success input {
+.form-group.success input {
   border-color: #0cc477 !important;
 }
 
@@ -40,6 +40,6 @@
   border-color: red !important;
 }
 
-.form-group .msuccess input {
+.form-group.msuccess input {
   border-color: #0cc477 !important;
 }
