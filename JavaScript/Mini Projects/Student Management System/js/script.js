@@ -180,7 +180,7 @@ btnUpdate.addEventListener("click", function () {
 
   if (name == "") {
     setModalError(mnameElement, "Name is required");
-    mnameElement.value = "";
+    // mnameElement.value = "";
     mnameElement.focus();
     success = false;
     return;
@@ -214,7 +214,7 @@ btnUpdate.addEventListener("click", function () {
 
   if (english == "") {
     setModalError(menglishElement, "Mark is required");
-    menglishElement.value = "";
+    // menglishElement.value = "";
     menglishElement.focus();
     success = false;
     return;
@@ -226,13 +226,13 @@ btnUpdate.addEventListener("click", function () {
     ) {
       success = false;
       setModalError(menglishElement, "Please enter valid marks");
-      menglishElement.value = "";
+      // menglishElement.value = "";
       menglishElement.focus();
       return;
     }
     if (isNaN(english)) {
       setModalError(menglishElement, "Please input numeric characters only");
-      menglishElement.value = "";
+      // menglishElement.value = "";
       menglishElement.focus();
       success = false;
       return;
@@ -243,7 +243,7 @@ btnUpdate.addEventListener("click", function () {
   if (maths == "") {
     success = false;
     setModalError(mmathsElement, "Mark is required");
-    mmathsElement.value = "";
+    // mmathsElement.value = "";
     mmathsElement.focus();
     return;
   } else {
@@ -254,13 +254,13 @@ btnUpdate.addEventListener("click", function () {
     ) {
       success = false;
       setModalError(mmathsElement, "Please enter valid marks");
-      mmathsElement.value = "";
+      // mmathsElement.value = "";
       mmathsElement.focus();
       return;
     }
     if (isNaN(maths)) {
       setModalError(mmathsElement, "Please input numeric characters only");
-      mmathsElement.value = "";
+      // mmathsElement.value = "";
       mmathsElement.focus();
       success = false;
       return;
@@ -271,7 +271,7 @@ btnUpdate.addEventListener("click", function () {
   if (science == "") {
     success = false;
     setModalError(mscienceElement, "Mark is required");
-    mscienceElement.value = "";
+    // mscienceElement.value = "";
     mscienceElement.focus();
     return;
   } else {
@@ -282,13 +282,13 @@ btnUpdate.addEventListener("click", function () {
     ) {
       success = false;
       setModalError(mscienceElement, "Please enter valid marks");
-      mscienceElement.value = "";
+      // mscienceElement.value = "";
       mscienceElement.focus();
       return;
     }
     if (isNaN(science)) {
       setModalError(mscienceElement, "Please input numeric characters only");
-      mscienceElement.value = "";
+      // mscienceElement.value = "";
       mscienceElement.focus();
       success = false;
       return;
@@ -300,7 +300,7 @@ btnUpdate.addEventListener("click", function () {
   if (social == "") {
     success = false;
     setModalError(msocialElement, "Mark is required");
-    msocialElement.value = "";
+    // msocialElement.value = "";
     msocialElement.focus();
     return;
   } else {
@@ -311,13 +311,13 @@ btnUpdate.addEventListener("click", function () {
     ) {
       success = false;
       setModalError(msocialElement, "Please enter valid marks");
-      msocialElement.value = "";
+      // msocialElement.value = "";
       msocialElement.focus();
       return;
     }
     if (isNaN(social)) {
       setModalError(msocialElement, "Please input numeric characters only");
-      msocialElement.value = "";
+      // msocialElement.value = "";
       msocialElement.focus();
       success = false;
       return;
@@ -328,7 +328,7 @@ btnUpdate.addEventListener("click", function () {
   if (tamil == "") {
     success = false;
     setModalError(mtamilElement, "Mark is required");
-    mtamilElement.value = "";
+    // mtamilElement.value = "";
     mtamilElement.focus();
     return;
   } else {
@@ -339,13 +339,13 @@ btnUpdate.addEventListener("click", function () {
     ) {
       success = false;
       setModalError(mtamilElement, "Please enter valid marks");
-      mtamilElement.value = "";
+      // mtamilElement.value = "";
       mtamilElement.focus();
       return;
     }
     if (isNaN(tamil)) {
       setModalError(mtamilElement, "Please input numeric characters only");
-      mtamilElement.value = "";
+      // mtamilElement.value = "";
       mtamilElement.focus();
       success = false;
       return;
@@ -518,7 +518,7 @@ btnAdd.addEventListener("click", function () {
 
   if (name === "") {
     setError(nameElement, "Name is required");
-    nameElement.value = "";
+    // nameElement.value = "";
     nameElement.focus();
     success = false;
     return;
@@ -528,7 +528,7 @@ btnAdd.addEventListener("click", function () {
 
   if (rollno == 0) {
     setError(rollnoElement, "Roll No is required");
-    rollnoElement.value = "";
+    // rollnoElement.value = "";
     rollnoElement.focus();
     success = false;
     return;
@@ -536,13 +536,13 @@ btnAdd.addEventListener("click", function () {
     if (rollnoElement.value.length != 4) {
       success = false;
       setError(rollnoElement, "Please enter 4 digits number");
-      rollnoElement.value = "";
+      // rollnoElement.value = "";
       rollnoElement.focus();
       return;
     }
     if (isNaN(rollno)) {
       setError(rollnoElement, "Please input numeric characters only");
-      rollnoElement.value = "";
+      // rollnoElement.value = "";
       rollnoElement.focus();
       success = false;
       return;
@@ -556,7 +556,7 @@ btnAdd.addEventListener("click", function () {
 
   if (english == "") {
     setError(englishElement, "Mark is required");
-    englishElement.value = "";
+    // englishElement.value = "";
     englishElement.focus();
     success = false;
     return;
@@ -568,13 +568,13 @@ btnAdd.addEventListener("click", function () {
     ) {
       success = false;
       setError(englishElement, "Please enter valid marks");
-      englishElement.value = "";
+      // englishElement.value = "";
       englishElement.focus();
       return;
     }
     if (isNaN(english)) {
       setError(englishElement, "Please input numeric characters only");
-      englishElement.value = "";
+      // englishElement.value = "";
       englishElement.focus();
       success = false;
       return;
@@ -585,7 +585,7 @@ btnAdd.addEventListener("click", function () {
   if (maths == "") {
     success = false;
     setError(mathsElement, "Mark is required");
-    mathsElement.value = "";
+    // mathsElement.value = "";
     mathsElement.focus();
     return;
   } else {
@@ -596,13 +596,13 @@ btnAdd.addEventListener("click", function () {
     ) {
       success = false;
       setError(mathsElement, "Please enter valid marks");
-      mathsElement.value = "";
+      // mathsElement.value = "";
       mathsElement.focus();
       return;
     }
     if (isNaN(maths)) {
       setError(mathsElement, "Please input numeric characters only");
-      mathsElement.value = "";
+      // mathsElement.value = "";
       mathsElement.focus();
       success = false;
       return;
@@ -613,7 +613,7 @@ btnAdd.addEventListener("click", function () {
   if (science == "") {
     success = false;
     setError(scienceElement, "Mark is required");
-    scienceElement.value = "";
+    // scienceElement.value = "";
     scienceElement.focus();
     return;
   } else {
@@ -624,13 +624,13 @@ btnAdd.addEventListener("click", function () {
     ) {
       success = false;
       setError(scienceElement, "Please enter valid marks");
-      scienceElement.value = "";
+      // scienceElement.value = "";
       scienceElement.focus();
       return;
     }
     if (isNaN(science)) {
       setError(scienceElement, "Please input numeric characters only");
-      scienceElement.value = "";
+      // scienceElement.value = "";
       scienceElement.focus();
       success = false;
       return;
@@ -641,7 +641,7 @@ btnAdd.addEventListener("click", function () {
   if (social == "") {
     success = false;
     setError(socialElement, "Mark is required");
-    socialElement.value = "";
+    // socialElement.value = "";
     socialElement.focus();
     return;
   } else {
@@ -652,13 +652,13 @@ btnAdd.addEventListener("click", function () {
     ) {
       success = false;
       setError(socialElement, "Please enter valid marks");
-      socialElement.value = "";
+      // socialElement.value = "";
       socialElement.focus();
       return;
     }
     if (isNaN(social)) {
       setError(socialElement, "Please input numeric characters only");
-      socialElement.value = "";
+      // socialElement.value = "";
       socialElement.focus();
       success = false;
       return;
@@ -669,7 +669,7 @@ btnAdd.addEventListener("click", function () {
   if (tamil == "") {
     success = false;
     setError(tamilElement, "Mark is required");
-    tamilElement.value = "";
+    // tamilElement.value = "";
     tamilElement.focus();
     return;
   } else {
@@ -680,13 +680,13 @@ btnAdd.addEventListener("click", function () {
     ) {
       success = false;
       setError(tamilElement, "Please enter valid marks");
-      tamilElement.value = "";
+      // tamilElement.value = "";
       tamilElement.focus();
       return;
     }
     if (isNaN(tamil)) {
       setError(tamilElement, "Please input numeric characters only");
-      tamilElement.value = "";
+      // tamilElement.value = "";
       tamilElement.focus();
       success = false;
       return;
