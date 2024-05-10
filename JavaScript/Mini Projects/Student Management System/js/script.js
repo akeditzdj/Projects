@@ -539,6 +539,10 @@ btnAdd.addEventListener("click", function () {
       setError(rollnoElement, "Roll No already preset.");
       return;
     }
+    if ((rollno = Number("0000"))) {
+      setError(rollnoElement, "Roll No can't be '0000");
+      return;
+    }
     setSuccess(rollnoElement);
   }
 
