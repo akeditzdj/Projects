@@ -523,7 +523,7 @@ btnAdd.addEventListener("click", function () {
     success = false;
     return;
   } else {
-    setSuccess(nameElement, "Looks Good!");
+    setSuccess(nameElement);
   }
 
   if (rollno == 0) {
@@ -724,7 +724,7 @@ function setError(element, message) {
   inputGroup.classList.remove("success");
 }
 
-function setSuccess(element, message) {
+function setSuccess(element) {
   const inputGroup = element.parentElement;
   const errorElement = inputGroup.querySelector(".error");
 
