@@ -151,7 +151,7 @@ function deleteStudent(e) {
 
 function setModalError(element, message) {
   const inputGroupModal = element.parentElement;
-  const errorElementModal = document.querySelector("merror");
+  const errorElementModal = document.querySelector(".merror");
 
   errorElementModal.innerText = message;
   inputGroupModal.classList.add("merror");
