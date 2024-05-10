@@ -109,10 +109,9 @@
 
   <div class="container-fluid px-2">
     <div class="row mt-5">
-
       <div class="col-md-12">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4 col-12">
             <table class="table table-bordered text-center table-hover">
               <thead>
                 <h5 class="text-white bg-success py-2 text-center">Rankwise Data</h5>
@@ -125,7 +124,7 @@
               <tbody id="rankBody"></tbody>
             </table>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 col-12">
             <table class="table table-bordered text-center table-hover">
               <thead>
                 <h5 class="text-white bg-success py-2 text-center">Genderwise Data</h5>
@@ -139,7 +138,7 @@
               <tbody id="genBody"></tbody>
             </table>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 col-12">
             <table class="table table-bordered text-center table-hover">
               <thead>
                 <h5 class="text-white bg-success py-2 text-center">Subjectwise Data</h5>
@@ -154,32 +153,40 @@
             </table>
           </div>
         </div>
-        <table class="table table-bordered text-center table-hover">
-          <div class="d-flex justify-content-end my-3">
-            <input type="text" class="form-control form-control-sm w-25" placeholder="Search Text" id="searchTxt" />
-          </div>
-          <thead>
-            <h5 class="text-white bg-success py-2 text-center">OverAll Data</h5>
-            <tr>
-              <th class="bg-dark-subtle">Sl No</th>
-              <th class="bg-dark-subtle">Name</th>
-              <th class="bg-dark-subtle">Gender</th>
-              <th class="bg-dark-subtle">Roll No</th>
-              <th class="bg-dark-subtle">English</th>
-              <th class="bg-dark-subtle">Maths</th>
-              <th class="bg-dark-subtle">Science</th>
-              <th class="bg-dark-subtle">Social</th>
-              <th class="bg-dark-subtle">Tamil</th>
-              <th class="bg-dark-subtle">Total</th>
-              <th class="bg-dark-subtle">Average</th>
-              <th class="bg-dark-subtle">Result</th>
-              <th class="bg-dark-subtle">Grade</th>
-              <th class="bg-dark-subtle">Edit</th>
-              <th class="bg-dark-subtle">Delete</th>
-            </tr>
-          </thead>
-          <tbody id="mainBody"></tbody>
-        </table>
+
+        <div class="d-md-flex d-flex justify-content-md-end justify-content-center my-3">
+          <input type="text" class="form-control form-control w-50" placeholder="Search Text" id="searchTxt" />
+        </div>
+
+        <div>
+          <h5 class="text-white bg-success py-2 text-center w-100">OverAll Data</h5>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-bordered text-center table-hover">
+
+            <thead>
+
+              <tr>
+                <th class="bg-dark-subtle">Sl No</th>
+                <th class="bg-dark-subtle">Name</th>
+                <th class="bg-dark-subtle">Gender</th>
+                <th class="bg-dark-subtle">Roll No</th>
+                <th class="bg-dark-subtle">English</th>
+                <th class="bg-dark-subtle">Maths</th>
+                <th class="bg-dark-subtle">Science</th>
+                <th class="bg-dark-subtle">Social</th>
+                <th class="bg-dark-subtle">Tamil</th>
+                <th class="bg-dark-subtle">Total</th>
+                <th class="bg-dark-subtle">Average</th>
+                <th class="bg-dark-subtle">Result</th>
+                <th class="bg-dark-subtle">Grade</th>
+                <th class="bg-dark-subtle">Edit</th>
+                <th class="bg-dark-subtle">Delete</th>
+              </tr>
+            </thead>
+            <tbody id="mainBody"></tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
