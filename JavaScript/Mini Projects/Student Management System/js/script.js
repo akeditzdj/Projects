@@ -88,9 +88,9 @@ function loadStudentData(initial = false) {
          <td><button data-id='${
            student.id
          }' class="btn btn-primary btnEdit btn-sm">Edit</button></td>
-         <td><button data-id='${
+         <td><button  data-id="${
            student.id
-         }' class="btn btn-danger btnDelete btn-sm">Delete</button></td>
+         }" class="btn btn-danger btnDelete btn-sm" >Delete</button></td>
         </tr>`;
 
     return {
@@ -106,11 +106,11 @@ function loadStudentData(initial = false) {
   btnEdit.forEach((btn) => {
     btn.addEventListener("click", editStudent);
   });
-
   const btnDelete = document.querySelectorAll(".btnDelete");
   btnDelete.forEach((btn) => {
     btn.addEventListener("click", deleteStudent);
   });
+
   if (initial == false) saveStudentsLocalStorage();
 }
 
@@ -138,7 +138,7 @@ function editStudent(e) {
 
 function deleteStudent(e) {
   const id = e.target.dataset.id;
-  if (confirm("Are You sure to delete ?")) {
+  if (confirm("Are you sure to delete?")) {
     students = students.filter((student) => student.id != id);
     loadStudentData();
     top3Students();
@@ -146,6 +146,23 @@ function deleteStudent(e) {
     subjectwise();
   }
 }
+
+// function deleteUserWithConfirmation(id) {
+//   if (id) {
+//     deleteUser(id);
+//   }
+// }
+
+// function deleteStudent(e) {
+//   const id = e.target.dataset.id;
+//   if (confirm("Are You sure to delete ?")) {
+//     students = students.filter((student) => student.id != id);
+//     loadStudentData();
+//     top3Students();
+//     genderwise();
+//     subjectwise();
+//   }
+// }
 
 // Modal Update Form - Validate //
 
