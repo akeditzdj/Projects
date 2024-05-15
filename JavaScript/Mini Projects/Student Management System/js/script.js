@@ -168,20 +168,20 @@ function deleteStudent(e) {
 
 function setModalError(element, message) {
   const inputGroupModal = element.parentElement;
-  const errorElementModal = document.querySelector(".merror");
+  const errorElementModal = document.querySelector(".modal-error");
 
   errorElementModal.innerText = message;
-  inputGroupModal.classList.add("merror");
-  inputGroupModal.classList.remove("msuccess");
+  inputGroupModal.classList.add("modal-error");
+  inputGroupModal.classList.remove("modal-success");
 }
 
 function setModalSuccess(element) {
   const inputGroupModal = element.parentElement;
-  const errorElementModal = document.querySelector(".merror");
+  const errorElementModal = document.querySelector(".modal-error");
 
   errorElementModal.innerText = "";
-  inputGroupModal.classList.add("msuccess");
-  inputGroupModal.classList.remove("merror");
+  inputGroupModal.classList.add("modal-success");
+  inputGroupModal.classList.remove("modal-error");
 }
 
 btnUpdate.addEventListener("click", function () {

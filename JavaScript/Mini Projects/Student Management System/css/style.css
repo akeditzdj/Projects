@@ -22,7 +22,7 @@
   margin-top: 5px !important;
 }
 
-.form-group .error input {
+.form-group.error input {
   border-color: red !important;
 }
 
@@ -30,16 +30,16 @@
   border-color: #0cc477 !important;
 }
 
-.form-group .merror {
+.modal-body .form-group .modal-error {
   color: red !important;
   font-size: 14px !important;
   margin-top: 5px !important;
 }
 
-.form-group .merror input {
+.modal-body .form-group.modal-error input {
   border-color: red !important;
 }
 
-.form-group.msuccess input {
+.modal-body .form-group.modal-success input {
   border-color: #0cc477 !important;
 }
