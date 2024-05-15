@@ -167,21 +167,21 @@ function deleteStudent(e) {
 // Modal Update Form - Validate //
 
 function setModalError(element, message) {
-  const inputGroupModal = element.parentElement;
-  const errorElementModal = document.querySelector(".modal-error");
+  const formGroupModal = element.parentElement;
+  const errorElementModal = formGroupModal.querySelector(".modal-error");
 
   errorElementModal.innerText = message;
-  inputGroupModal.classList.add("modal-error");
-  inputGroupModal.classList.remove("modal-success");
+  formGroupModal.classList.add("modal-error");
+  formGroupModal.classList.remove("modal-success");
 }
 
 function setModalSuccess(element) {
-  const inputGroupModal = element.parentElement;
-  const errorElementModal = document.querySelector(".modal-error");
+  const formGroupModal = element.parentElement;
+  const errorElementModal = formGroupModal.querySelector(".modal-error");
 
   errorElementModal.innerText = "";
-  inputGroupModal.classList.add("modal-success");
-  inputGroupModal.classList.remove("modal-error");
+  formGroupModal.classList.add("modal-success");
+  formGroupModal.classList.remove("modal-error");
 }
 
 btnUpdate.addEventListener("click", function () {
@@ -199,7 +199,6 @@ btnUpdate.addEventListener("click", function () {
     setModalError(mnameElement, "Name is required");
     // mnameElement.value = "";
     mnameElement.focus();
-
     return;
   } else {
     setModalSuccess(mnameElement);
@@ -713,21 +712,21 @@ btnAdd.addEventListener("click", function () {
 // Registration Form Validate //
 
 function setError(element, message) {
-  const inputGroup = element.parentElement;
-  const errorElement = inputGroup.querySelector(".error");
+  const formGroup = element.parentElement;
+  const errorElement = formGroup.querySelector(".error");
 
   errorElement.innerText = message;
-  inputGroup.classList.add("error");
-  inputGroup.classList.remove("success");
+  formGroup.classList.add("error");
+  formGroup.classList.remove("success");
 }
 
 function setSuccess(element) {
-  const inputGroup = element.parentElement;
-  const errorElement = inputGroup.querySelector(".error");
+  const formGroup = element.parentElement;
+  const errorElement = formGroup.querySelector(".error");
 
   errorElement.innerText = "";
-  inputGroup.classList.add("success");
-  inputGroup.classList.remove("error");
+  formGroup.classList.add("success");
+  formGroup.classList.remove("error");
 }
 
 function clearAll() {
