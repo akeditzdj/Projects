@@ -204,29 +204,32 @@ btnUpdate.addEventListener("click", function () {
     setModalSuccess(mnameElement);
   }
 
-  // if (rollno == 0) {
-  //   setModalError(mrollnoElement, "Roll No is required");
-  //   mrollnoElement.value = "";
-  //   mrollnoElement.focus();
-  //   success = false;
-  //   return;
-  // } else {
-  //   // if (mrollnoElement.value.length != 4) {
-  //   //   success = false;
-  //   //   setModalError(mrollnoElement, "Please enter 4 digits number");
-  //   //   rollnoElement.value = "";
-  //   //   rollnoElement.focus();
-  //   //   return;
-  //   // }
-  //   // if (isNaN(rollno)) {
-  //   //   setModalError(mrollnoElement, "Please input numeric characters only");
-  //   //   mrollnoElement.value = "";
-  //   //   mrollnoElement.focus();
-  //   //   success = false;
-  //   //   return;
-  //   // }
-  //   setModalSuccess(rollnoElement);
-  // }
+  if (rollno == 0) {
+    setModalError(mrollnoElement, "Roll No is required");
+    // mrollnoElement.value = "";
+    mrollnoElement.focus();
+
+    return;
+  } else {
+    if (mrollnoElement.value.length != 4) {
+      setModalError(mrollnoElement, "Please enter 4 digits number");
+      // mrollnoElement.value = "";
+      mrollnoElement.focus();
+      return;
+    }
+    if (isNaN(rollno)) {
+      setModalError(mrollnoElement, "Please input numeric characters only");
+      // mrollnoElement.value = "";
+      mrollnoElement.focus();
+
+      return;
+    }
+    if (rollnoAlreadyExist(rollno)) {
+      setModalError(mrollnoElement, "Roll No already preset.");
+      return;
+    }
+    setModalSuccess(mrollnoElement);
+  }
 
   if (english == "") {
     setModalError(menglishElement, "Mark is required");
