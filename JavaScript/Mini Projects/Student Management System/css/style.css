@@ -44,18 +44,21 @@
   border-color: #0cc477 !important;
 }
 
+.title {
+  width: 30% !important ;
+  overflow: hidden !important;
+}
+
 .title p {
-  animation: slide-text forwards 10s infinite !important;
+  animation: slide-text 15s linear infinite !important;
 }
 
 @keyframes slide-text {
   0% {
-    transform: translateX(-200px) !important;
+    transform: translateX(540px);
   }
-  50% {
-    transform: translateX(0px) !important;
-  }
+
   100% {
-    transform: translateX(200px) !important;
+    transform: translateX(-500px);
   }
 }
