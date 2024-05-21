@@ -43,3 +43,25 @@
 .modal-body .form-group.modal-success input {
   border-color: #0cc477 !important;
 }
+
+.title {
+  width: 50% !important;
+  height: auto !important;
+  overflow: hidden !important;
+}
+
+.title p {
+  animation: slide-text forwards 5s ease-in-out infinite !important;
+}
+
+@keyframes slide-text {
+  0% {
+    transform: translateX(-200px) !important;
+  }
+  /* 50% {
+    transform: translateX(0px) !important;
+  } */
+  100% {
+    transform: translateX(200px) !important;
+  }
+}
