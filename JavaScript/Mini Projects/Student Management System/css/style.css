@@ -44,12 +44,6 @@
   border-color: #0cc477 !important;
 }
 
-.title {
-  width: 50% !important;
-  height: auto !important;
-  overflow: hidden !important;
-}
-
 .title p {
   animation: slide-text forwards 5s ease-in-out infinite !important;
 }
