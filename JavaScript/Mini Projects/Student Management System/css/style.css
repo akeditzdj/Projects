@@ -45,16 +45,16 @@
 }
 
 .title p {
-  animation: slide-text forwards 5s ease-in-out infinite !important;
+  animation: slide-text forwards 10s infinite !important;
 }
 
 @keyframes slide-text {
   0% {
     transform: translateX(-200px) !important;
   }
-  /* 50% {
+  50% {
     transform: translateX(0px) !important;
-  } */
+  }
   100% {
     transform: translateX(200px) !important;
   }
