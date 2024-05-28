@@ -880,7 +880,6 @@ let data = {
   ],
 };
 
-
 window.onload = function () {
   const selectState = document.getElementById("state");
   const selectDistrict = document.getElementById("district");
@@ -894,7 +893,6 @@ window.onload = function () {
   selectState.addEventListener("change", function (e) {
     selectDistrict.disabled = false;
     data.states.forEach((detail, index) => {
-      
       if (detail.state == e.target.value) {
         selectDistrict.innerHTML = "";
         selectDistrict.append(createOption("Select District", ""));
@@ -913,10 +911,3 @@ window.onload = function () {
     return newOption;
   }
 };
-
-// let rotate = document.getElementsByClassName("rotate");
-// rotate.addEventListener("click", function () {
-//    rotate.Add(".down");
-      
-    
-// })

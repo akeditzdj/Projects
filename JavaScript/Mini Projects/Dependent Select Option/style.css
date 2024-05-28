@@ -32,13 +32,3 @@ select option:checked {
   top: 9px;
   font-size: 17px;
 }
-
-/* 
-.rotate {
-  transition: all 0.2s  !important;
-
-  
-}
-.rotate .down {
-  transform: rotate(-180deg);
-}  */
