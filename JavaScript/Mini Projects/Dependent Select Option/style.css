@@ -18,7 +18,27 @@ body {
   height: auto !important;
 }
 
-select option:checked{
-    font-weight: bold !important;
+select option:checked {
+  font-weight: bold !important;
 }
 
+.form-group {
+  position: relative !important;
+}
+
+.form-group i {
+  position: absolute !important;
+  right: 14px;
+  top: 9px;
+  font-size: 17px;
+}
+
+/* 
+.rotate {
+  transition: all 0.2s  !important;
+
+  
+}
+.rotate .down {
+  transform: rotate(-180deg);
+}  */
