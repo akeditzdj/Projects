@@ -21,14 +21,3 @@ body {
 select option:checked {
   font-weight: bold !important;
 }
-
-.form-group {
-  position: relative !important;
-}
-
-.form-group i {
-  position: absolute !important;
-  right: 14px;
-  top: 9px;
-  font-size: 17px;
-}
