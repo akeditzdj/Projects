@@ -3,12 +3,22 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  box-sizing: border-box !important;
+  font-family: "Poppins", sans-serif !important;
 }
 
 body {
-  width: 100% !important;
+  width: 100vw !important;
   height: 100vh !important;
-  background-color: aqua !important;
+  background-color: #079992 !important;
 }
+
+.container {
+  max-width: 600px !important;
+  height: auto !important;
+}
+
+select option:checked{
+    font-weight: bold !important;
+}
+
