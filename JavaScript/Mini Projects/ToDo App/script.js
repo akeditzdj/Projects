@@ -1,5 +1,5 @@
 //Dummy data
-/*
+
 const tasks = [
   {
     id: 1,
@@ -15,12 +15,11 @@ const tasks = [
     id: 3,
     taskName: "Cooking",
     status: "Pending",
-  }
+  },
 ];
 
 console.log(JSON.stringify(tasks));
 
-*/
 //Get data from LocalStorage
 function getTasks() {
   let tasks = [];
@@ -67,9 +66,14 @@ function deleteTask(taskId) {
     const updatedTasks = tasks.filter((task) => task.id != taskId);
     saveTasks(updatedTasks);
     renderTasks();
-    }
-   
+  }
 }
 
 //Initial Call
 renderTasks();
+
+/*
+
+[{"id":1,"taskName":"Reading","status":"Complete"},{"id":2,"taskName":"Writing","status":"Pending"},{"id":3,"taskName":"Cooking","status":"Pending"}]
+
+*/
