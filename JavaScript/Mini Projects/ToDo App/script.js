@@ -1,4 +1,5 @@
 //Dummy data
+/*
 
 const tasks = [
   {
@@ -19,7 +20,11 @@ const tasks = [
 ];
 
 console.log(JSON.stringify(tasks));
-
+*/
+const btnAdd = document.getElementById("btnAdd");
+const btnClear = document.getElementById("btnClear");
+const nameElement = document.getElementById("taskName");
+const statusElement = document.getElementById("taskStatus");
 //Get data from LocalStorage
 function getTasks() {
   let tasks = [];
@@ -54,6 +59,13 @@ function renderTasks() {
   });
 }
 
+//Add New task
+// function addNewTask() {
+//     btnAdd.addEventListener("click", function () {
+
+//     })
+// }
+
 //Save Task Details in LocalStorage
 function saveTasks(tasks) {
   localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -67,6 +79,14 @@ function deleteTask(taskId) {
     saveTasks(updatedTasks);
     renderTasks();
   }
+}
+
+btnClear.addEventListener("click", clearAll);
+
+function clearAll() {
+  nameElement.value = "";
+  statusElement.value = "";
+  
 }
 
 //Initial Call

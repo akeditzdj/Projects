@@ -13,21 +13,35 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-dark px-5" data-bs-theme="dark">
         <div class="container-fluid">
-            <a href="#" class="navbar-brand">AK Editz</a>
+            <a href="#" class="navbar-brand fw-semibold">AK Editz</a>
         </div>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="dropdown nav-item">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"  href="#">Others</a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li ><a class="dropdown-item" href="#">Link 1</a></li>
+                    <li ><a class="dropdown-item" href="#">Link 2</a></li>
+                    <li ><a class="dropdown-item" href="#">Link 3</a></li>
+                </ul>
+            </li>
+        </ul>
     </nav>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 mt-5">
                 <h4 class="text-primary border-bottom py-3 mb-3">ToDo Application Vanilla Js LocalStorage</h4>
                 <div class="d-flex justify-content-between align-items-center">
-                    <button class="btn btn-sm btn-primary"><i class="bi bi-plus-square"></i> Add Task</button>
+                    <button type="button" data-bs-target="#myModal" data-bs-toggle="modal"
+                        class="btn btn-sm btn-primary"><i class="bi bi-plus-square"></i> Add Task</button>
                     <input class="form-control form-control-sm w-50" type="search" name="search " id="search"
                         placeholder="Search Task">
                 </div>
-                <table class="table table-bordered mt-5">
+                <table class="table table-bordered mt-5 text-center">
                     <thead>
                         <tr>
                             <th>S.No</th>
@@ -40,6 +54,38 @@
                     <tbody id="taskList">
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modal-md" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="text-primary">Add New Task</h3>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="taskForm">
+                        <div class="form-group mt-2 d-flex justify-content-between align-items-center" >
+                            <label class="form-label" for="taskId">Task Id</label>
+                            <input class="form-control w-75" type="text" name="taskId" id="taskId" disabled>
+                        </div>
+                        <div class="form-group mt-3 d-flex justify-content-between align-items-center">
+                            <label class="form-label" for="taskName">Task Name</label>
+                            <input class="form-control w-75" type="text" name="taskName" id="taskName" placeholder="Enter name">
+                        </div>
+                        <div class="form-group mt-3 d-flex justify-content-between align-items-center">
+                            <label class="form-label" for="taskStatus">Task Status</label>
+                            <input class="form-control w-75" type="text" name="taskStatus" id="taskStatus"
+                                placeholder="Enter status">
+                        </div>
+                        <div class="form-group mt-4 mt-4 d-flex justify-content-center align-items-cente gap-2">
+                            <button id="btnAdd" type="button" class="btn btn-success btn-sm">Add Task</button>
+                            <button id="btnClear" type="button" class="btn btn-danger btn-sm">Clear</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
