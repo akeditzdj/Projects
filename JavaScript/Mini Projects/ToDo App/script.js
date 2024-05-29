@@ -19,8 +19,8 @@ const tasks = [
 ];
 
 console.log(JSON.stringify(tasks));
-*/
 
+*/
 //Get data from LocalStorage
 function getTasks() {
   let tasks = [];
@@ -67,7 +67,8 @@ function deleteTask(taskId) {
     const updatedTasks = tasks.filter((task) => task.id != taskId);
     saveTasks(updatedTasks);
     renderTasks();
-  }
+    }
+   
 }
 
 //Initial Call
