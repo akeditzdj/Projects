@@ -75,7 +75,7 @@ addTask.addEventListener("click", function () {
   clearAll();
 });
 
-//Add New Task
+//Validate form
 
 taskForm.addEventListener("submit", function (e) {
   e.preventDefault();
