@@ -25,6 +25,14 @@ const btnAdd = document.getElementById("btnAdd");
 const btnClear = document.getElementById("btnClear");
 const nameElement = document.getElementById("taskName");
 const statusElement = document.getElementById("taskStatus");
+const addTask = document.getElementById("addTask");
+const modalTitle = document.querySelector(".modal-title");
+const taskForm = document.getElementById("taskForm");
+const errorElement = document.querySelectorAll(".error");
+const mymodalElement = document.getElementById("myModal")
+const myModal =new bootstrap.Modal(mymodalElement)
+
+
 //Get data from LocalStorage
 function getTasks() {
   let tasks = [];
@@ -46,7 +54,9 @@ function renderTasks() {
         <td>${task.taskName}</td>
         <td>${task.status}</td>
         <td>
-        <button class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></button>
+        <button class="btn btn-sm btn-primary" onclick="editTask(${
+          task.id
+        })"><i class="bi bi-pencil-square"></i></button>
         </td>
         <td>
         <button class="btn btn-sm btn-danger" onclick="deleteTask(${
@@ -59,12 +69,80 @@ function renderTasks() {
   });
 }
 
-//Add New task
-// function addNewTask() {
-//     btnAdd.addEventListener("click", function () {
+//Click Add New Task button
+addTask.addEventListener("click", function () {
+  modalTitle.innerHTML = " Add New Task";
+  clearAll();
+});
 
-//     })
-// }
+//Add New Task
+
+taskForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const taskName = nameElement.value;
+  const taskStatus = statusElement.value;
+  const taskId = Number(btnAdd.getAttribute("data-taskid"));
+  
+
+  if (taskName && taskStatus) {
+    if (taskId) {
+      //Task need to updated
+      updateTask(taskId, taskName, taskStatus);
+    } else {
+      //Task need to add
+      addNewTask(taskName, taskStatus);
+    }
+    myModal.hide();
+  } else {
+    alert("Please enter task name and status.")
+  }
+});
+
+//Add new task
+
+function addNewTask(taskName, status) {
+  const tasks = getTasks();
+  const newTask = {
+    id: Date.now(),
+    taskName,
+    status,
+  };
+  tasks.push(newTask);
+  saveTasks(tasks);
+  renderTasks();
+}
+
+//Upade existing task
+
+function updateTask(id, taskName, status) {
+  const tasks = getTasks();
+  const updatedTasks = tasks.map((task) => {
+    if (task.id == id) {
+      task.taskName = taskName
+      task.status = status
+    }
+    return task;
+  })
+  saveTasks(updatedTasks);
+  renderTasks();
+
+ }
+
+
+//Edit task
+
+function editTask(id) {
+  const tasks = getTasks();
+  const task = tasks.find((task) => task.id === id);
+  if (task) {
+     nameElement.value = task.taskName;
+    statusElement.value = task.status;
+    btnAdd.setAttribute("data-taskid", task.id);
+     modalTitle.innerHTML = " Update Task";
+    myModal.show()
+   
+  }
+}
 
 //Save Task Details in LocalStorage
 function saveTasks(tasks) {
@@ -86,14 +164,9 @@ btnClear.addEventListener("click", clearAll);
 function clearAll() {
   nameElement.value = "";
   statusElement.value = "";
-  
 }
 
 //Initial Call
 renderTasks();
 
-/*
 
-[{"id":1,"taskName":"Reading","status":"Complete"},{"id":2,"taskName":"Writing","status":"Pending"},{"id":3,"taskName":"Cooking","status":"Pending"}]
-
-*/

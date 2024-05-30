@@ -10,3 +10,7 @@
 .container {
   max-width: 700px !important;
 }
+
+table:hover {
+  background-color: red !important;
+}

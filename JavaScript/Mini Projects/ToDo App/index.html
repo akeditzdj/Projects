@@ -36,7 +36,7 @@
             <div class="col-md-12 mt-5">
                 <h4 class="text-primary border-bottom py-3 mb-3">ToDo Application Vanilla Js LocalStorage</h4>
                 <div class="d-flex justify-content-between align-items-center">
-                    <button type="button" data-bs-target="#myModal" data-bs-toggle="modal"
+                    <button type="button" id="addTask" data-bs-target="#myModal" data-bs-toggle="modal"
                         class="btn btn-sm btn-primary"><i class="bi bi-plus-square"></i> Add Task</button>
                     <input class="form-control form-control-sm w-50" type="search" name="search " id="search"
                         placeholder="Search Task">
@@ -61,27 +61,28 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="text-primary">Add New Task</h3>
+                    <h4 class="text-primary modal-title">Sample Task</h4>
                     <button class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="taskForm">
-                        <div class="form-group mt-2 d-flex justify-content-between align-items-center">
-                            <label class="form-label" for="taskId">Task Id</label>
-                            <input class="form-control w-75" type="text" name="taskId" id="taskId" disabled>
-                        </div>
+                    <form id="taskForm" autocomplete="off">
                         <div class="form-group mt-3 d-flex justify-content-between align-items-center">
                             <label class="form-label" for="taskName">Task Name</label>
                             <input class="form-control w-75" type="text" name="taskName" id="taskName"
                                 placeholder="Enter name">
+                                <small class="error"></small>
                         </div>
                         <div class="form-group mt-3 d-flex justify-content-between align-items-center">
                             <label class="form-label" for="taskStatus">Task Status</label>
-                            <input class="form-control w-75" type="text" name="taskStatus" id="taskStatus"
-                                placeholder="Enter status">
+                            <select class="form-select w-75" name="taskStatus" id="taskStatus">
+                                <option value="Select Status">Select Status</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Complete">Complete</option>
+                            </select>
+                            <small class="error"></small>
                         </div>
                         <div class="form-group mt-4 mt-4 d-flex justify-content-center align-items-cente gap-2">
-                            <button id="btnAdd" type="button" class="btn btn-success btn-sm">Add Task</button>
+                            <button id="btnAdd" type="submit" class="btn btn-success btn-sm">Save Details</button>
                             <button id="btnClear" type="button" class="btn btn-danger btn-sm">Clear</button>
                         </div>
                     </form>
