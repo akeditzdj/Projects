@@ -28,10 +28,12 @@ const statusElement = document.getElementById("taskStatus");
 const addTask = document.getElementById("addTask");
 const modalTitle = document.querySelector(".modal-title");
 const taskForm = document.getElementById("taskForm");
-const errorElement = document.querySelectorAll(".error");
+const errorElementName = document.querySelector(".name-error");
+const errorElementStatus = document.querySelector(".status-error");
 const mymodalElement = document.getElementById("myModal");
 const myModal = new bootstrap.Modal(mymodalElement);
 const searchInput = document.querySelector("#search");
+const modalClose = document.querySelector("#modalClose");
 
 //Get data from LocalStorage
 function getTasks() {
@@ -78,7 +80,10 @@ function renderTasks(isForSearch = 0, filteredTask = []) {
 //Click Add New Task button
 addTask.addEventListener("click", function () {
   modalTitle.innerHTML = " Add New Task";
+    errorElementName.innerHTML = "";
+    errorElementStatus.innerHTML = "";
   clearAll();
+  
 });
 
 //Validate form
@@ -99,13 +104,25 @@ taskForm.addEventListener("submit", function (e) {
     }
     myModal.hide();
   } else {
-    alert("Please enter task name and status.");
+    // alert("Please enter task name and status.");
+
+    if (taskName == "") {
+      errorElementName.innerHTML = "Task name should not be empty";
+    } else {
+      errorElementName.innerHTML = "";
+    }
+    if (taskStatus == "") {
+      errorElementStatus.innerHTML = " Please select valid status";
+    } else {
+      errorElementStatus.innerHTML = "";
+    }
   }
 });
 
 //Add new task
 
 function addNewTask(taskName, status) {
+
   const tasks = getTasks();
   const newTask = {
     id: Date.now(),
@@ -178,6 +195,13 @@ searchInput.addEventListener("input", function () {
   );
   renderTasks(1, filteredTask);
 });
+
+// Reset error text
+
+modalClose.addEventListener("click", function () {
+  errorElementName.innerHTML = "";
+   errorElementStatus.innerHTML = "";
+})
 
 //Initial Call
 renderTasks();

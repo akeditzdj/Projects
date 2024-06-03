@@ -62,24 +62,25 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="text-primary modal-title">Sample Task</h4>
-                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                    <button id="modalClose" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <form id="taskForm" autocomplete="off">
-                        <div class="form-group mt-3 d-flex justify-content-between align-items-center">
+                        <div class="form-group mt-3">
                             <label class="form-label" for="taskName">Task Name</label>
                             <input class="form-control w-75" type="text" name="taskName" id="taskName"
                                 placeholder="Enter name">
-                                <small class="error"></small>
+                                <small class="name-error text-danger"></small>
                         </div>
-                        <div class="form-group mt-3 d-flex justify-content-between align-items-center">
+                      
+                        <div class="form-group mt-3 ">
                             <label class="form-label" for="taskStatus">Task Status</label>
                             <select class="form-select w-75" name="taskStatus" id="taskStatus">
                                 <option value="">Select Status</option>
                                 <option value="Pending">Pending</option>
                                 <option value="Complete">Complete</option>
                             </select>
-                            <small class="error"></small>
+                            <small class="status-error text-danger"></small>
                         </div>
                         <div class="form-group mt-4 mt-4 d-flex justify-content-center align-items-cente gap-2">
                             <button id="btnAdd" type="submit" class="btn btn-success btn-sm">Save Details</button>
