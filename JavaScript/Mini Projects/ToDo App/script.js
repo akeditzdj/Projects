@@ -29,10 +29,9 @@ const addTask = document.getElementById("addTask");
 const modalTitle = document.querySelector(".modal-title");
 const taskForm = document.getElementById("taskForm");
 const errorElement = document.querySelectorAll(".error");
-const mymodalElement = document.getElementById("myModal")
+const mymodalElement = document.getElementById("myModal");
 const myModal = new bootstrap.Modal(mymodalElement);
-const searchInput = document.querySelector("#search")
-
+const searchInput = document.querySelector("#search");
 
 //Get data from LocalStorage
 function getTasks() {
@@ -44,8 +43,14 @@ function getTasks() {
 }
 
 //Render Task details in Table Format
-function renderTasks() {
-  const tasks = getTasks();
+function renderTasks(isForSearch = 0, filteredTask = []) {
+  let tasks = [];
+  if (isForSearch == 0) {
+    tasks = getTasks();
+  } else {
+    tasks = filteredTask;
+  }
+
   const taskList = document.getElementById("taskList");
   taskList.innerHTML = "";
   tasks.forEach((task, index) => {
@@ -83,7 +88,6 @@ taskForm.addEventListener("submit", function (e) {
   const taskName = nameElement.value;
   const taskStatus = statusElement.value;
   const taskId = Number(btnAdd.getAttribute("data-taskid"));
-  
 
   if (taskName && taskStatus) {
     if (taskId) {
@@ -95,7 +99,7 @@ taskForm.addEventListener("submit", function (e) {
     }
     myModal.hide();
   } else {
-    alert("Please enter task name and status.")
+    alert("Please enter task name and status.");
   }
 });
 
@@ -119,16 +123,14 @@ function updateTask(id, taskName, status) {
   const tasks = getTasks();
   const updatedTasks = tasks.map((task) => {
     if (task.id == id) {
-      task.taskName = taskName
-      task.status = status
+      task.taskName = taskName;
+      task.status = status;
     }
     return task;
-  })
+  });
   saveTasks(updatedTasks);
   renderTasks();
-
- }
-
+}
 
 //Edit task
 
@@ -136,12 +138,11 @@ function editTask(id) {
   const tasks = getTasks();
   const task = tasks.find((task) => task.id === id);
   if (task) {
-     nameElement.value = task.taskName;
+    nameElement.value = task.taskName;
     statusElement.value = task.status;
     btnAdd.setAttribute("data-taskid", task.id);
-     modalTitle.innerHTML = " Update Task";
-    myModal.show()
-   
+    modalTitle.innerHTML = " Update Task";
+    myModal.show();
   }
 }
 
@@ -167,9 +168,16 @@ function clearAll() {
   statusElement.value = "";
 }
 
+//Search Function
 
+searchInput.addEventListener("input", function () {
+  const searchQuery = this.value.toLowerCase();
+  const tasks = getTasks();
+  const filteredTask = tasks.filter((task) =>
+    task.taskName.toLowerCase().includes(searchQuery)
+  );
+  renderTasks(1, filteredTask);
+});
 
 //Initial Call
 renderTasks();
-
-
