@@ -47,7 +47,7 @@ function getTasks() {
 function renderTasks() {
   const tasks = getTasks();
   const taskList = document.getElementById("taskList");
-  tasks.innerHTML = "";
+  taskList.innerHTML = "";
   tasks.forEach((task, index) => {
     const row = `
     <tr>
