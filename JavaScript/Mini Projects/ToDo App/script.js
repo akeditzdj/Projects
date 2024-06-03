@@ -30,7 +30,8 @@ const modalTitle = document.querySelector(".modal-title");
 const taskForm = document.getElementById("taskForm");
 const errorElement = document.querySelectorAll(".error");
 const mymodalElement = document.getElementById("myModal")
-const myModal =new bootstrap.Modal(mymodalElement)
+const myModal = new bootstrap.Modal(mymodalElement);
+const searchInput = document.querySelector("#search")
 
 
 //Get data from LocalStorage
@@ -165,6 +166,8 @@ function clearAll() {
   nameElement.value = "";
   statusElement.value = "";
 }
+
+
 
 //Initial Call
 renderTasks();
