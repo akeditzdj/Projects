@@ -5,8 +5,6 @@ class csvExport {
     if (!header && this.rows[0].querySelectorAll("th").length) {
       this.rows.shift();
     }
-    // console.log(this.rows);
-    // console.log(this._longestRow());
   }
 
   exportCsv() {
@@ -22,7 +20,7 @@ class csvExport {
       }
       lines.push(line);
     }
-    //console.log(lines);
+
     return lines.join("\n");
   }
   _longestRow() {
@@ -34,9 +32,9 @@ class csvExport {
   }
   static safeData(td) {
     let data = td.textContent;
-    //Replace all double quote to two double quotes
+
     data = data.replace(/"/g, `""`);
-    //Replace , and \n to double quotes
+
     data = /[",\n"]/.test(data) ? `"${data}"` : data;
     return data;
   }

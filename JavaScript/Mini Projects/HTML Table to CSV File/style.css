@@ -15,8 +15,10 @@ body {
 .container {
  width: 750px !important;
   padding: 10px !important;
+
 }
 
-table tbody tr:hover{
-   background-color: #cccc;
+table{
+  box-shadow: 5px 5px 25px #626262cc;
+  border: 1px rgb(168, 166, 166) !important;
 }
