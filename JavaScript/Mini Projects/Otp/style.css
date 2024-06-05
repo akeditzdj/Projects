@@ -14,6 +14,15 @@ body {
   place-items: center;
   background-color: darkslategrey;
 }
+.container {
+  width: 550px;
+  height: auto;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 5px 5px 25px rgb(42, 40, 40);
+}
 
 .container h3 {
   margin-top: 10px;
@@ -27,15 +36,32 @@ body {
   color: #787575;
 }
 
-.container {
-  width: 550px;
-  height: 320px;
-  background-color: white;
-  padding: 10px;
-  text-align: center;
-  border-radius: 5px;
-  box-shadow: 5px 5px 25px rgb(42, 40, 40);
+.pass-generate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
 }
+
+#password {
+  font-size: 28px;
+  letter-spacing: 5px;
+  color: red;
+  border-right: 2px solid #ccc;
+  padding: 10px;
+}
+#countdown{
+    font-size: 16px;
+    font-weight: 500;
+    color: #575656;
+    padding: 10px;
+}
+
+#countdown .span{
+    color: red;
+}
+
 .inputs {
   width: 500px;
   height: auto;
@@ -43,7 +69,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .inputs input {
