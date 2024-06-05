@@ -17,7 +17,7 @@ body {
 
 .container h3 {
   margin-top: 10px;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 600;
 }
 .container p {
@@ -76,6 +76,6 @@ button:disabled {
   cursor: not-allowed;
 }
 button:enabled {
-  background-color: orangered;
+  background-color: darkslategrey;
   cursor: pointer;
 }
