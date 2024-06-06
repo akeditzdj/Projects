@@ -3,6 +3,8 @@ const inputElement = document.querySelectorAll(".input");
 const button = document.querySelector("#btnSubmit");
 const counterElement = document.getElementById("countdown");
 const passwordElement = document.getElementById("password");
+const modalElement = document.getElementById("modal");
+const btnClose = document.getElementById("btnClose");
 
 let otpNumber;
 
@@ -12,7 +14,7 @@ inputs.addEventListener("input", function (e) {
 
   if (isNaN(value)) {
     target.value = "";
-    return;
+    return
   }
 
   if (value != "") {
@@ -28,16 +30,15 @@ inputs.addEventListener("input", function (e) {
       let result = otpInput.reduce((total, input) => {
         return total + input;
       }, "");
-
+       
       if (checkDigits() && result == otpNumber) {
-        passwordElement.classList.remove("active");
+        passwordElement.classList.remove("error");
         button.disabled = false;
         button.addEventListener("click", function () {
-          alert("OTP Sumitted successfully.");
-          location.reload();
+             modalElement.classList.add("show")
         });
       } else {
-        passwordElement.classList.add("active");
+        passwordElement.classList.add("error");
         button.disabled = true;
       }
     }
@@ -53,7 +54,7 @@ inputs.addEventListener("keyup", function (e) {
     const prevElement = target.previousElementSibling;
     if (prevElement) {
       prevElement.focus();
-    }
+    } 
   }
 });
 
@@ -80,26 +81,36 @@ function generateOTP() {
   return OTP;
 }
 
-//Countdown Timer
-let countDown = 30;
-
-function countdown() {
-  setInterval(function () {
-    if (countDown === 0) {
-      location.reload();
-      return;
-    }
-    countDown--;
-    counterElement.innerHTML = "Timer" + " : " + countDown;
-  }, 1000);
-  return countdown;
-}
-countdown();
-
 function refreshDiv() {
   otpNumber = generateOTP();
   document.getElementById("password").innerHTML = otpNumber;
+ 
 }
 refreshDiv();
 
-window.setInterval(refreshDiv, 30000); //place reference to refreshDiv (not a string)
+window.setInterval("refreshDiv()", 30000);
+
+function refreshCount() {
+  //Countdown Timer
+  let countDown = 30;
+
+  function countdown() {
+    setInterval(function () {
+      if (countDown == 0) {
+        return
+      }
+      countDown--;
+      counterElement.innerHTML = "Timer" + " : " + countDown;
+    }, 1000);
+    return countdown;
+  }
+  countdown();
+}
+
+window.setInterval("refreshCount()", 30000);
+refreshCount();
+
+btnClose.addEventListener("click", function () {
+  modalElement.classList.remove("show");
+  location.reload();
+})
