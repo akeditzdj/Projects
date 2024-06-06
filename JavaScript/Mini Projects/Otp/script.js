@@ -6,38 +6,36 @@ const counterElement = document.getElementById("countdown");
 inputs.addEventListener("input", function (e) {
   const target = e.target;
   const value = target.value;
-
-  const otpValue = OTP;
-
+  const otpValue = generateOTP()
+  
   if (isNaN(value)) {
     target.value = "";
     return;
   }
-  // if (value != "") {
-  //   const nextElement = target.nextElementSibling;
-  //   if (nextElement) {
-  //     nextElement.focus();
-  //   } else {
-  //     if (checkDigits()) {
-  //       button.disabled = false;
-  //     } else {
-  //       button.disabled = true;
-  //     }
-  //   }
-  // }
-  if (value == otpValue) {
+   
+
+  if (value != "") {
     const nextElement = target.nextElementSibling;
     if (nextElement) {
       nextElement.focus();
     } else {
-      if (checkDigits()) {
-        button.disabled = false;
-      } else {
-        button.disabled = true;
+      if (value == otpValue) {
+        const nextElement = target.nextElementSibling;
+        if (nextElement) {
+          nextElement.focus();
+        } else {
+          if (checkDigits()) {
+            button.disabled = false;
+          } else {
+            button.disabled = true;
+          }
+        }
       }
     }
   }
+
 });
+
 
 inputs.addEventListener("keyup", function (e) {
   const target = e.target;
