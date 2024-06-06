@@ -1,15 +1,13 @@
 const inputs = document.querySelector(".inputs");
+const inputElement = document.querySelectorAll(".input");
 const button = document.querySelector("#btnSubmit");
-const outputPassElement = document.getElementById("password");
 const counterElement = document.getElementById("countdown");
 
-console.log(outputPassElement.value);
+let otpNumber;
 
 inputs.addEventListener("input", function (e) {
   const target = e.target;
   const value = target.value;
-
-  console.log(value);
 
   if (isNaN(value)) {
     target.value = "";
@@ -23,7 +21,15 @@ inputs.addEventListener("input", function (e) {
       nextElement.focus();
       return;
     } else {
-      if (checkDigits() && value) {
+    
+      let otpInput=[];
+      inputElement.forEach((input) => otpInput.push(input.value));
+
+      let result = otpInput.reduce((total, input) => {
+        return total + input;
+      },"")
+      
+      if (checkDigits() && result == otpNumber) {
         button.disabled = false;
         button.addEventListener("click", function () {
           alert("OTP Sumitted successfully.");
@@ -72,22 +78,26 @@ function generateOTP() {
   return OTP;
 }
 
-outputPassElement.innerHTML = generateOTP();
-
-let countDown = 10;
-
 //Countdown Timer
+let countDown = 30;
 
 function countdown() {
   setInterval(function () {
     if (countDown === 0) {
-      location.reload();
+      location.reload()
       return;
     }
     countDown--;
-    counterElement.innerHTML = countDown + " " + "seconds remaining";
-    return countDown;
+    counterElement.innerHTML = "Timer"+ " : " +countDown;
   }, 1000);
+  return countdown;
 }
-
 countdown();
+
+function refreshDiv() {
+  otpNumber = generateOTP();
+  document.getElementById("password").innerHTML = otpNumber;
+}
+refreshDiv();
+
+window.setInterval(refreshDiv, 30000); //place reference to refreshDiv (not a string)

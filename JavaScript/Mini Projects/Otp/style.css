@@ -15,13 +15,14 @@ body {
   background-color: darkslategrey;
 }
 .container {
-  width: 550px;
+  max-width: 550px;
   height: auto;
   background-color: white;
   padding: 10px;
   text-align: center;
   border-radius: 5px;
   box-shadow: 5px 5px 25px rgb(42, 40, 40);
+  position: relative;
 }
 
 .container h3 {
@@ -36,30 +37,40 @@ body {
   color: #787575;
 }
 
-.pass-generate {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  margin-top: 20px;
-}
 
 #password {
-  font-size: 28px;
-  letter-spacing: 5px;
-  color: red;
-  border-right: 2px solid #ccc;
+   width: 100%;
+  margin-top: 20px;
+  transition:all 0.3s ease;
   padding: 10px;
+  font-size: 28px;
+  letter-spacing: 10px;
+  color: red;
+  transition:all 0.3s ease;
+  font-weight: 600;
 }
 #countdown{
     font-size: 16px;
     font-weight: 500;
     color: #575656;
-    padding: 10px;
+    padding: 3px;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 30px;
+    background-color: green;
+    border-radius:5px 0 5px 0;
+    color: white;
+    text-align: center;
 }
 
-#countdown .span{
-    color: red;
+
+small{
+  color: red;
+  text-align: center;
+  font-weight: 500;
 }
 
 .inputs {
@@ -69,7 +80,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .inputs input {
@@ -96,6 +107,7 @@ button {
   font-size: 16px;
   font-weight: 500;
   color: white;
+  margin-bottom: 10px;
 }
 button:disabled {
   background-color: #ccc;
