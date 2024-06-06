@@ -37,41 +37,44 @@ body {
   color: #787575;
 }
 
-
 #password {
-   width: 100%;
+  width: 100%;
   margin-top: 20px;
-  transition:all 0.3s ease;
+  transition: all 0.3s ease;
   padding: 10px;
   font-size: 28px;
   letter-spacing: 10px;
-  color: red;
-  transition:all 0.3s ease;
+  color: green;
+  transition: all 0.3s ease;
   font-weight: 600;
 }
-#countdown{
-    font-size: 16px;
-    font-weight: 500;
-    color: #575656;
-    padding: 3px;
-    transition: all 0.3s ease;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100px;
-    height: 30px;
-    background-color: green;
-    border-radius:5px 0 5px 0;
-    color: white;
-    text-align: center;
-}
 
-
-small{
+#password.active {
   color: red;
-  text-align: center;
-  font-weight: 500;
 }
+#countdown {
+  font-size: 16px;
+  font-weight: 500;
+  color: #575656;
+  padding: 3px;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 30px;
+  background-color: green;
+  border-radius: 5px 0 5px 0;
+  color: white;
+  text-align: center;
+}
+
+small {
+  color: green;
+  text-align: center;
+  font-weight: 600;
+}
+
 
 .inputs {
   width: 500px;

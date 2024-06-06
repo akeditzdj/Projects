@@ -2,6 +2,7 @@ const inputs = document.querySelector(".inputs");
 const inputElement = document.querySelectorAll(".input");
 const button = document.querySelector("#btnSubmit");
 const counterElement = document.getElementById("countdown");
+const passwordElement = document.getElementById("password");
 
 let otpNumber;
 
@@ -21,21 +22,22 @@ inputs.addEventListener("input", function (e) {
       nextElement.focus();
       return;
     } else {
-    
-      let otpInput=[];
+      let otpInput = [];
       inputElement.forEach((input) => otpInput.push(input.value));
 
       let result = otpInput.reduce((total, input) => {
         return total + input;
-      },"")
-      
+      }, "");
+
       if (checkDigits() && result == otpNumber) {
+        passwordElement.classList.remove("active");
         button.disabled = false;
         button.addEventListener("click", function () {
           alert("OTP Sumitted successfully.");
           location.reload();
         });
       } else {
+        passwordElement.classList.add("active");
         button.disabled = true;
       }
     }
@@ -84,11 +86,11 @@ let countDown = 30;
 function countdown() {
   setInterval(function () {
     if (countDown === 0) {
-      location.reload()
+      location.reload();
       return;
     }
     countDown--;
-    counterElement.innerHTML = "Timer"+ " : " +countDown;
+    counterElement.innerHTML = "Timer" + " : " + countDown;
   }, 1000);
   return countdown;
 }
