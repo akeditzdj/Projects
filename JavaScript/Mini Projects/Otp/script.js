@@ -3,45 +3,45 @@ const button = document.querySelector("#btnSubmit");
 const outputPassElement = document.getElementById("password");
 const counterElement = document.getElementById("countdown");
 
+console.log(outputPassElement.value);
+
 inputs.addEventListener("input", function (e) {
   const target = e.target;
   const value = target.value;
-  const otpValue = generateOTP()
-  
+
+  console.log(value);
+
   if (isNaN(value)) {
     target.value = "";
     return;
   }
-   
 
   if (value != "") {
     const nextElement = target.nextElementSibling;
+
     if (nextElement) {
       nextElement.focus();
+      return;
     } else {
-      if (value == otpValue) {
-        const nextElement = target.nextElementSibling;
-        if (nextElement) {
-          nextElement.focus();
-        } else {
-          if (checkDigits()) {
-            button.disabled = false;
-          } else {
-            button.disabled = true;
-          }
-        }
+      if (checkDigits() && value) {
+        button.disabled = false;
+        button.addEventListener("click", function () {
+          alert("OTP Sumitted successfully.");
+          location.reload();
+        });
+      } else {
+        button.disabled = true;
       }
     }
   }
-
 });
-
 
 inputs.addEventListener("keyup", function (e) {
   const target = e.target;
   const key = e.key.toLowerCase();
   if (key == "backspace" || key == "delete") {
     target.value = "";
+    button.disabled = true;
     const prevElement = target.previousElementSibling;
     if (prevElement) {
       prevElement.focus();
@@ -74,19 +74,13 @@ function generateOTP() {
 
 outputPassElement.innerHTML = generateOTP();
 
-button.addEventListener("click", function () {
-  const textboxs = inputs.querySelectorAll(".input");
-
-  alert("OTP Sumitted successfully.");
-});
-
-let countDown = 60;
+let countDown = 10;
 
 //Countdown Timer
 
 function countdown() {
   setInterval(function () {
-    if (countDown == 0) {
+    if (countDown === 0) {
       location.reload();
       return;
     }
