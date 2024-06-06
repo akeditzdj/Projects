@@ -6,11 +6,26 @@ const counterElement = document.getElementById("countdown");
 inputs.addEventListener("input", function (e) {
   const target = e.target;
   const value = target.value;
+
+  const otpValue = OTP;
+
   if (isNaN(value)) {
     target.value = "";
     return;
   }
-  if (value != "") {
+  // if (value != "") {
+  //   const nextElement = target.nextElementSibling;
+  //   if (nextElement) {
+  //     nextElement.focus();
+  //   } else {
+  //     if (checkDigits()) {
+  //       button.disabled = false;
+  //     } else {
+  //       button.disabled = true;
+  //     }
+  //   }
+  // }
+  if (value == otpValue) {
     const nextElement = target.nextElementSibling;
     if (nextElement) {
       nextElement.focus();
@@ -49,8 +64,6 @@ function checkDigits() {
 
 // Function to generate OTP
 function generateOTP() {
-  // Declare a digits variable
-  // which stores all digits
   let digits = "0123456789";
   let OTP = "";
   let len = digits.length;
@@ -64,23 +77,23 @@ function generateOTP() {
 outputPassElement.innerHTML = generateOTP();
 
 button.addEventListener("click", function () {
-const textboxs = inputs.querySelectorAll(".input");
+  const textboxs = inputs.querySelectorAll(".input");
 
   alert("OTP Sumitted successfully.");
 });
 
+let countDown = 60;
 
-
-let countDown = 15;
+//Countdown Timer
 
 function countdown() {
   setInterval(function () {
-      if (countDown == 0) {
-        location.reload()
+    if (countDown == 0) {
+      location.reload();
       return;
     }
     countDown--;
-    counterElement.innerHTML = countDown + " " +  "seconds remaining";
+    counterElement.innerHTML = countDown + " " + "seconds remaining";
     return countDown;
   }, 1000);
 }
