@@ -1,59 +1,88 @@
 let courseList = [
   {
-    id: 1,
     name: " Html",
     percentage: 85,
   },
   {
-    id: 2,
     name: " Css",
     percentage: 76,
   },
-  
+
   {
-    id: 3,
     name: " JavaScript",
     percentage: 64,
   },
 
   {
-    id: 4,
     name: "React",
     percentage: 80,
   },
   {
-    id: 5,
     name: "NodeJs",
     percentage: 84,
   },
   {
-    id: 6,
     name: "Angular",
     percentage: 67,
   },
   {
-    id: 7,
     name: "Express",
     percentage: 79,
   },
   {
-    id: 8,
     name: "BootStap",
     percentage: 95,
   },
 ];
 
-const progessBar = document.getElementById("progress-box");
+const progessBox = document.getElementById("progressBox");
 
-function loadData() {
+function loadProgressData() {
   let output;
   courseList.forEach((course) => {
     output += `
         <div class="box">
-           <div>${course.name}<span>${course.percentage}</span></div>
+           <h5>${course.name}</h5>
+       <div class="skill">
+        <div class="outer">
+            <div class="inner">
+                <div class="number" data-num="${course.percentage}">
+                </div>
+            </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+            <defs>
+                <linearGradient id="GradientColor">
+                    <stop offset="0%" stop-color="#e91e63" />
+                    <stop offset="100%" stop-color="#673ab7" />
+                </linearGradient>
+            </defs>
+            <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+        </svg>
+    </div>
         </div>
          `;
-    progessBar.innerHTML = output;
+    progessBox.innerHTML = output;
   });
 }
-loadData();
+loadProgressData();
+
+const numbers = document.querySelectorAll(".number");
+const svgEl = document.querySelectorAll("svg circle");
+const counters = Array(numbers.length);
+const intervals = Array(counters.length);
+counters.fill(0);
+
+numbers.forEach((number, index) => {
+  intervals[index] = setInterval(() => {
+    if (counters[index] === parseInt(number.dataset.num)) {
+      clearInterval(counters[index]);
+    } else {
+      counters[index] += 1;
+      number.innerHTML = counters[index] + "%";
+      svgEl[index].style.strokeDashoffset = Math.floor(
+        472 - 440 * parseFloat(number.dataset.num / 100)
+      );
+    }
+  }, 25);
+});
