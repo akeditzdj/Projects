@@ -84,19 +84,19 @@ nav ul li:hover {
 }
 
 .container .boxes {
-  width: 80%;
+  width: 75%;
   height: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
-   
+  gap: 50px; 
+  display: flex;
+  flex-wrap: wrap;
+ 
 }
 
 .container .boxes .box {
   height: 300px;
+  width: 300px;
   border: 1px solid white;
   text-align: center;
-  padding: 10px;
   color: black;
   font-weight: 500;
   background-color: white;
@@ -106,7 +106,8 @@ nav ul li:hover {
   font-size: 24px;
   border-radius: 10px;
  display: grid;
-  place-items: center;
+ place-items: center;
+
 }
 
 .container .boxes .box:hover {
@@ -116,7 +117,6 @@ nav ul li:hover {
 
  .skill {
     position: relative;
-    margin-right: 40px;
 }
 
  .skill .outer {

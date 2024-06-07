@@ -12,14 +12,17 @@ let courseList = [
     name: " JavaScript",
     percentage: 64,
   },
-
+  {
+    name: "BootStap",
+    percentage: 95,
+  },
   {
     name: "React",
     percentage: 80,
   },
   {
     name: "NodeJs",
-    percentage: 84,
+    percentage: 60,
   },
   {
     name: "Angular",
@@ -28,10 +31,6 @@ let courseList = [
   {
     name: "Express",
     percentage: 79,
-  },
-  {
-    name: "BootStap",
-    percentage: 95,
   },
 ];
 
