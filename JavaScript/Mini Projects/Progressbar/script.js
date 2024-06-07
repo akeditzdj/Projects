@@ -82,7 +82,19 @@ numbers.forEach((number, index) => {
       svgEl[index].style.strokeDashoffset = Math.floor(
         472 - 440 * parseFloat(number.dataset.num / 100)
       );
+      svgEl[circle].style.color = getColor();
     }
   }, 25);
 });
  
+
+// Random color generate
+
+function getColor(){
+  const randomDigit = Math.floor(Math.random() * 123456);
+ const value = randomDigit.toString(16);
+  const color = "#" + value.padStart(6, 0);
+  
+  return color;
+}
+getColor();

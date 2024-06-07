@@ -148,16 +148,8 @@ nav ul li:hover {
 }
 
 
-.skill:nth-child(1) .outer .inner .number {
-    color: #f75023;
-}
-
  .skill:nth-child(2) .outer .inner .number {
     color: #4fa0ff;
-}
-
- .skill:nth-child(3) .outer .inner .number {
-    color: #7811f7
 }
 
 circle {
@@ -174,14 +166,6 @@ svg {
     left: 0;
 }
 
- .skill:nth-child(1) circle {
-    stroke: #f75023;
-}
-
- .skill:nth-child(2) circle {
+ .skill circle {
     stroke: #4fa0ff;
-}
-
- .skill:nth-child(3) circle {
-    stroke: #7811f7;
 }
