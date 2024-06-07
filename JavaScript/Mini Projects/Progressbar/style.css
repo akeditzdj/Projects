@@ -86,7 +86,7 @@ nav ul li:hover {
 .container .boxes {
   width: 75%;
   height: auto;
-  gap: 50px; 
+  gap: 20px; 
   display: flex;
   flex-wrap: wrap;
  
