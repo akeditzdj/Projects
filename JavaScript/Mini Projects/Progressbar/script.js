@@ -41,7 +41,7 @@ function loadProgressData() {
   courseList.forEach((course) => {
     output += `
         <div class="box">
-           <h5>${course.name}</h5>
+           <h5 class="title">${course.name}</h5>
        <div class="skill">
         <div class="outer">
             <div class="inner">
@@ -56,7 +56,7 @@ function loadProgressData() {
                     <stop offset="100%" stop-color="#673ab7" />
                 </linearGradient>
             </defs>
-            <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+            <circle id="color" cx="80" cy="80" r="70" stroke-linecap="round" />
         </svg>
     </div>
         </div>
@@ -70,23 +70,32 @@ const numbers = document.querySelectorAll(".number");
 const svgEl = document.querySelectorAll("svg circle");
 const counters = Array(numbers.length);
 const intervals = Array(counters.length);
+let title = document.querySelectorAll(".title");
 counters.fill(0);
+
+console.log(title);
+
 
 numbers.forEach((number, index) => {
   intervals[index] = setInterval(() => {
     if (counters[index] === parseInt(number.dataset.num)) {
       clearInterval(counters[index]);
+      
     } else {
       counters[index] += 1;
       number.innerHTML = counters[index] + "%";
       svgEl[index].style.strokeDashoffset = Math.floor(
         472 - 440 * parseFloat(number.dataset.num / 100)
+        
       );
-      svgEl[circle].style.color = getColor();
+      numColor = svgEl[index].style.stroke = getColor();
+      number.style.color = numColor;
+      title[index].style.color = numColor;
     }
-  }, 25);
+  }, 20);
 });
  
+
 
 // Random color generate
 
