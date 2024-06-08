@@ -14,7 +14,7 @@ inputs.addEventListener("input", function (e) {
 
   if (isNaN(value)) {
     target.value = "";
-    return
+    return;
   }
 
   if (value != "") {
@@ -30,12 +30,12 @@ inputs.addEventListener("input", function (e) {
       let result = otpInput.reduce((total, input) => {
         return total + input;
       }, "");
-       
+
       if (checkDigits() && result == otpNumber) {
         passwordElement.classList.remove("error");
         button.disabled = false;
         button.addEventListener("click", function () {
-             modalElement.classList.add("show")
+          modalElement.classList.add("show");
         });
       } else {
         passwordElement.classList.add("error");
@@ -54,7 +54,7 @@ inputs.addEventListener("keyup", function (e) {
     const prevElement = target.previousElementSibling;
     if (prevElement) {
       prevElement.focus();
-    } 
+    }
   }
 });
 
@@ -84,20 +84,18 @@ function generateOTP() {
 function refreshDiv() {
   otpNumber = generateOTP();
   document.getElementById("password").innerHTML = otpNumber;
- 
 }
 refreshDiv();
 
 window.setInterval("refreshDiv()", 30000);
 
 function refreshCount() {
-  //Countdown Timer
   let countDown = 30;
 
   function countdown() {
     setInterval(function () {
       if (countDown == 0) {
-        return
+        return;
       }
       countDown--;
       counterElement.innerHTML = "Timer" + " : " + countDown;
@@ -113,4 +111,4 @@ refreshCount();
 btnClose.addEventListener("click", function () {
   modalElement.classList.remove("show");
   location.reload();
-})
+});

@@ -111,6 +111,11 @@ button {
   color: white;
   margin-bottom: 10px;
 }
+
+button:enabled:hover{
+  background: green;
+  color: white;
+}
 button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
