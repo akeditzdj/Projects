@@ -14,7 +14,7 @@ let courseList = [
   },
   {
     name: "BootStap",
-    percentage: 95,
+    percentage: 90,
   },
   {
     name: "React",
@@ -25,19 +25,19 @@ let courseList = [
     percentage: 60,
   },
   {
-    name: "Angular",
-    percentage: 67,
-  },
-  {
     name: "Express",
     percentage: 79,
+  },
+  {
+    name: "Mongo DB",
+    percentage: 67,
   },
 ];
 
 const progessBox = document.getElementById("progressBox");
 
 function loadProgressData() {
-  let output;
+  let output = "";
   courseList.forEach((course) => {
     output += `
         <div class="box">
@@ -61,8 +61,8 @@ function loadProgressData() {
     </div>
         </div>
          `;
-    progessBox.innerHTML = output;
   });
+  progessBox.innerHTML = output;
 }
 loadProgressData();
 
@@ -75,35 +75,30 @@ counters.fill(0);
 
 console.log(title);
 
-
 numbers.forEach((number, index) => {
   intervals[index] = setInterval(() => {
     if (counters[index] === parseInt(number.dataset.num)) {
       clearInterval(counters[index]);
-      
     } else {
       counters[index] += 1;
       number.innerHTML = counters[index] + "%";
       svgEl[index].style.strokeDashoffset = Math.floor(
         472 - 440 * parseFloat(number.dataset.num / 100)
-        
       );
       numColor = svgEl[index].style.stroke = getColor();
       number.style.color = numColor;
       title[index].style.color = numColor;
     }
-  }, 20);
+  }, 25);
 });
- 
-
 
 // Random color generate
 
-function getColor(){
+function getColor() {
   const randomDigit = Math.floor(Math.random() * 123456);
- const value = randomDigit.toString(16);
+  const value = randomDigit.toString(16);
   const color = "#" + value.padStart(6, 0);
-  
+
   return color;
 }
 getColor();

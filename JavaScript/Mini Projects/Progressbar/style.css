@@ -87,14 +87,15 @@ nav ul li:hover {
   width: 75%;
   height: auto;
   gap: 20px; 
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
  
 }
 
 .container .boxes .box {
   height: 300px;
-  width: 300px;
   border: 1px solid white;
   text-align: center;
   color: black;
