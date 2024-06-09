@@ -92,7 +92,7 @@ form input:focus {
 .termsandcondition span {
   color: red;
 }
-form #btn-create:disabled {
+form button:disabled {
   width: 100%;
   height: 45px;
   border: none;
@@ -107,7 +107,7 @@ form #btn-create:disabled {
 }
 
 
-form #btn-create:enabled{
+form button:enabled{
     width: 100%;
   height: 45px;
   border: none;
