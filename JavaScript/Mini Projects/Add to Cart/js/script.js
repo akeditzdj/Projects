@@ -84,6 +84,7 @@ const deliveryAmt = document.querySelector("#delivery");
 const taxAmt = document.querySelector("#tax");
 const netAmt = document.querySelector("#net");
 
+
 let cart_items = [];
 
 function loadProductPage() {
@@ -141,6 +142,17 @@ function loadProductPage() {
     button.addEventListener("click", addItems);
   });
 }
+
+function cartCountInnerHtml() {
+  let cartCount = document.querySelector("#cart-count");
+  const btnAdd = document.querySelectorAll(".btnAdd");
+  btnAdd.addEventListener("click", function () {
+    cartCount.innerHTML = "hi";
+  });
+  
+}
+
+cartCountInnerHtml();
 
 /*************** Modal output ****************/
 
