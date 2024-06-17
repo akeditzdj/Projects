@@ -17,8 +17,7 @@ body {
 .container {
   width: 770px;
   background-color: #fff;
-  transition: 3s ease;
-  height: auto;
+
 }
 
 .header {
