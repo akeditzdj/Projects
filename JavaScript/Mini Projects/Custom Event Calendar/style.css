@@ -17,7 +17,7 @@ body {
 .container {
   width: 770px;
   background-color: #fff;
-
+  
 }
 
 .header {
@@ -45,6 +45,7 @@ button {
 .header button {
   background-color: #ff5252;
 }
+
 .weekdays {
   width: 100%;
   display: flex;
@@ -81,10 +82,12 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
 }
 .day:hover {
   background-color: rgba(112, 111, 211, 0.1);
   color: #706fd3;
+ 
 }
 
 #currentDay {
