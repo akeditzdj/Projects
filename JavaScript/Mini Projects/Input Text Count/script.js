@@ -7,8 +7,8 @@ textarea.addEventListener("input", function () {
   let length = 120;
   let content = this.value;
  button.disabled = true
-  charCount.innerHTML = "Input character -" + `${content.length}`;
-  maxChar.textContent = "Max allowed chacrectors -" + `${length}`;
+  charCount.innerHTML = "Input character-" + `${content.length}`;
+  maxChar.textContent = "Max allowed chacrectors-" + `${length}`;
   if (content.length <= length) {
     textarea.style.borderColor = "green";
     maxChar.style.color = "green";
