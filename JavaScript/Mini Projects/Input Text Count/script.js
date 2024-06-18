@@ -25,4 +25,5 @@ textarea.addEventListener("input", function () {
 
   button.addEventListener("click", function () {
     alert("Message Sent Successfully...");
+    window.location.reload();
   });
