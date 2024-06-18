@@ -15,16 +15,17 @@ body {
   background-color: aliceblue;
 }
 .container {
-  width: 370px;
-  height: 200px;
+  width: 550px;
+  height: 300px;
   padding: 20px;
   position: relative;
   background-color: #fff;
+  border-radius: 6px;
 }
 .container textarea {
   width: 100%;
   resize: none;
-  height: 90%;
+  height: 80%;
   border: 1px solid #ccc;
   outline: none;
   border-radius: 5px;
@@ -37,6 +38,7 @@ body {
   font-size: 12px;
   color: #ccc;
 }
+
 
 textarea::-webkit-scrollbar {
   width: 5px;
@@ -55,4 +57,31 @@ textarea::-webkit-scrollbar-thumb {
 /* Handle on hover */
 textarea::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+p{
+  font-size: 12px;
+  color: #ccc;
+  margin-top: 5px;
+}
+
+button{
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 10px;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled{
+  background-color: #ccc;
+  cursor: no-drop;
+}
+
+.input-status{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

@@ -1,11 +1,28 @@
 const textarea = document.querySelector("textarea");
-const span = document.querySelector("span");
+const maxChar = document.querySelector(".max-char");
+const charCount = document.querySelector(".char-count");
+const button = document.querySelector("button");
 
 textarea.addEventListener("input", function () {
   let length = 120;
   let content = this.value;
-  if (content.length > length) {
-    this.value = this.value.slice(0, length - 1);
+ button.disabled = true
+  charCount.innerHTML = "Input character -" + `${content.length}`;
+  maxChar.textContent = "Max allowed chacrectors -" + `${length}`;
+  if (content.length <= length) {
+    textarea.style.borderColor = "green";
+    maxChar.style.color = "green";
+    charCount.style.color="green";
+    button.disabled = false
+  } else {
+    textarea.style.borderColor = "red";
+    maxChar.style.color = "red";
+     charCount.style.color = "red";
+    button.disabled = true
   }
-  span.textContent = `${content.length}/${length}`;
 });
+
+
+  button.addEventListener("click", function () {
+    alert("Message Sent Successfully...");
+  });
