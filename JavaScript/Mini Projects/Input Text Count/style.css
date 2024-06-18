@@ -39,6 +39,9 @@ body {
   color: #ccc;
 }
 
+textarea{
+  font-size: 14px;
+}
 
 textarea::-webkit-scrollbar {
   width: 5px;
