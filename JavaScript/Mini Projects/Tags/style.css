@@ -17,15 +17,15 @@ body{
 }
 .container{
   background-color: #fff;
-  width: 400px;
-  min-height: 150px;
+  width: 500px;
+  min-height: 250px;
   padding: 24px 50px 10px 10px;
   border-radius: 5px;
   border:1px solid #ccc;
   position:relative;
 }
 .row{
-  width: 400px;
+  width: 500px;
   display: flex;
   justify-content: space-between;
   font-size: 11px;
@@ -35,14 +35,15 @@ body{
 .close,
 .copy{
   position: absolute;
-  top: 5px;
+  top: 10px;
   right: 10px;
   color:#ccc;
   cursor: pointer;
   transition: 0.5s;
+  font-size: 18px;
 }
 .copy{
-  right:35px;
+  right:40px;
 }
 .close:hover,
 .copy:hover{
@@ -63,15 +64,15 @@ font-size: 12px;
 display: flex;
 align-content: center;
 gap: 5px;
-padding: 5px;
-border-radius: 5px;
+padding: 5px 10px;
+border-radius: 50px;
 cursor: pointer;
 }
 .input-tags .tag:hover{
   background-color: #ebe7e7;
 }
 .input-tags .tag ion-icon{
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .copy::before{
@@ -88,4 +89,33 @@ cursor: pointer;
 }
 .copy:hover::before{
   display: block;
+}
+
+textarea{
+  width:485px ;
+  resize: none;
+  border: none;
+  padding: 5px;
+  outline: none;
+  height: 100%;
+}
+
+
+textarea::-webkit-scrollbar {
+  width: 0px;
+}
+
+/*  Track */
+textarea::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+textarea::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+textarea::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

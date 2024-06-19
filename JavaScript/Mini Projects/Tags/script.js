@@ -1,6 +1,7 @@
 const closebtn = document.querySelector(".close");
 const copybtn = document.querySelector(".copy");
 const inputTags = document.querySelector(".input-tags");
+const textarea = document.querySelector("textarea");
 
 closebtn.addEventListener("click", function () {
   inputTags.innerHTML = "";
