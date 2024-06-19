@@ -16,7 +16,7 @@ body {
 }
 .container {
   width: 550px;
-  height: 300px;
+  height: 360px;
   padding: 20px;
   position: relative;
   background-color: #fff;
@@ -25,7 +25,7 @@ body {
 .container textarea {
   width: 100%;
   resize: none;
-  height: 80%;
+  height: 70%;
   border: 1px solid #ccc;
   outline: none;
   border-radius: 5px;
@@ -39,8 +39,12 @@ body {
   color: #ccc;
 }
 
+h2{
+  margin-bottom: 10px;
+}
+
 textarea{
-  font-size: 14px;
+  font-size: 16px;
 }
 
 textarea::-webkit-scrollbar {
@@ -63,7 +67,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 p{
-  font-size: 12px;
+  font-size: 14px;
   color: #ccc;
   margin-top: 5px;
 }
@@ -76,6 +80,12 @@ button{
   background-color: green;
   color: white;
   cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+button:hover{
+  background-color: orangered;
 }
 
 button:disabled{
