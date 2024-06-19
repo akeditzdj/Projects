@@ -12,7 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aliceblue;
+  background-color: rgb(175, 65, 32);
 }
 .container {
   width: 550px;
@@ -30,6 +30,10 @@ body {
   outline: none;
   border-radius: 5px;
   padding: 10px;
+}
+
+.container textarea::placeholder{
+  font-size: 14px;
 }
 .container span {
   position: absolute;
