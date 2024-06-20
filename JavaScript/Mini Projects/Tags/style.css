@@ -91,31 +91,27 @@ cursor: pointer;
   display: block;
 }
 
-textarea{
-  width:485px ;
-  resize: none;
-  border: none;
+.tag-container {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+.tag {
+  padding: 5px;
+  border: 1px solid #aaa;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 15px;
+}
+
+
+.tag-container input {
+  flex: 1;
+  font-size: 16px;
   padding: 5px;
   outline: none;
-  height: 100%;
+  border: 0;
 }
 
-
-textarea::-webkit-scrollbar {
-  width: 0px;
-}
-
-/*  Track */
-textarea::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-textarea::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Handle on hover */
-textarea::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
