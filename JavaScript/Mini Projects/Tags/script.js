@@ -2,6 +2,8 @@ const inputTags = document.querySelector(".input-tags");
 const input = document.querySelector(".input-tags input");
 const closebtn = document.querySelector(".close");
 const copybtn = document.querySelector(".copy");
+const charCount = document.querySelector(".char-count");
+const container = document.querySelector(".container");
 
 let tags = [];
 
@@ -11,10 +13,13 @@ function reset() {
     tag.parentElement.removeChild(tag);
   });
 }
+reset();
 
 closebtn.addEventListener("click", function () {
   tags = [];
   reset();
+  charCount.style.color = "#ccc";
+  charCount.innerHTML = `0/500`;
 });
 
 copybtn.addEventListener("click", function () {
@@ -74,20 +79,36 @@ document.addEventListener("click", function (e) {
 });
 
 input.addEventListener("keyup", function (event) {
-  if (event.key == "Enter") {
-    const data = input.value.trim();
-    if (data.includes(",")) {
-      const list_of_tags = data.split(",");
-      // list_of_tags.forEach((element) => {
-      //   console.log(createTag(element));
-      // });
-      tags.push(...list_of_tags);
-    } else {
-      // console.log(createTag(data));
-      tags.push(data);
+  let length = 300;
+  let = tags;
+  tags.forEach((tag) => {
+    tag.toString().length;
+    return;
+  });
+  charCount.innerHTML = `${tags.toString().length}/300`;
+
+  if (tags.toString().length <= length) {
+    container.style.borderColor = "green";
+    charCount.style.color = "green";
+    if (event.key == "Enter") {
+      const data = input.value.trim();
+      if (data.includes(",")) {
+        const list_of_tags = data.split(",");
+        // list_of_tags.forEach((element) => {
+        // console.log(createTag(element));
+        // });
+        tags.push(...list_of_tags);
+      } else {
+        // console.log(createTag(data));
+        tags.push(data);
+      }
+      tags = [...new Set(tags)];
+      input.value = "";
+      addTags();
+      // console.log(tags.toString().length)
     }
-    tags = [...new Set(tags)];
-    input.value = "";
-    addTags();
+  } else {
+    container.style.borderColor = "red";
+    charCount.style.color = "red";
   }
 });

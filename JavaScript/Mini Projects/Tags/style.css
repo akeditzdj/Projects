@@ -17,7 +17,7 @@ body{
 }
 .container{
   background-color: #fff;
-  width: 400px;
+  width: 600px;
   min-height: 150px;
   padding: 24px 50px 10px 10px;
   border-radius: 5px;
@@ -25,7 +25,7 @@ body{
   position:relative;
 }
 .row{
-  width: 400px;
+  width: 600px;
   display: flex;
   justify-content: space-between;
   font-size: 11px;
@@ -100,3 +100,6 @@ cursor: pointer;
   display: block;
 }
 
+p{
+  color: #a9a7a7;
+}
