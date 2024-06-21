@@ -46,6 +46,24 @@ function addTags() {
     });
 }
 
+input.addEventListener("keyup", function (event) {
+  if (event.key == "Enter") {
+    const data = input.value.trim();
+    if (data.includes(",")) {
+      const list_of_tags = data.split(",");
+      // list_of_tags.forEach((element) => {
+      //   console.log(createTag(element));
+      // });
+      tags.push(...list_of_tags);
+    } else {
+      // console.log(createTag(data));
+      tags.push(data);
+    }
+    tags = [...new Set(tags)];
+    input.value = "";
+    addTags();
+  }
+});
 document.addEventListener("click", function (e) {
   if (e.target.tagName == "ION-ICON") {
     const data = e.target.getAttribute("data-item");

@@ -67,11 +67,21 @@ padding: 5px;
 border-radius: 5px;
 cursor: pointer;
 }
+
+.input-tags input {
+  flex: 1;
+  font-size: 14px;
+  padding: 5px;
+  outline: none;
+  border: 0;
+}
+
 .input-tags .tag:hover{
   background-color: #ebe7e7;
 }
 .input-tags .tag ion-icon{
   font-size: 14px;
+  cursor: pointer;
 }
 
 .copy::before{
@@ -90,10 +100,3 @@ cursor: pointer;
   display: block;
 }
 
-.input-tags input {
-  flex: 1;
-  font-size: 16px;
-  padding: 5px;
-  outline: none;
-  border: 0;
-}
