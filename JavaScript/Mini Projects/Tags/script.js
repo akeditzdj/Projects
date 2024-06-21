@@ -2,7 +2,6 @@ const closebtn = document.querySelector(".close");
 const copybtn = document.querySelector(".copy");
 const inputTags = document.querySelector(".input-tags");
 
-
 closebtn.addEventListener("click", function () {
   inputTags.innerHTML = "";
 });
@@ -28,4 +27,17 @@ function copyToClipboard(text) {
   setTimeout(() => {
     obj.style.content = '"Copy"';
   }, 2000);
+}
+
+function createTag(tag) {
+  const div = document.createElement("div");
+  div.setAttribute("class", "tag");
+  const span = document.createElement("span");
+  span.innerHTML = tag;
+  const icon = document.createElement("ion-icon");
+  icon.setAttribute("name", "close-circle-outline");
+  icon.setAttribute("data-item", tag);
+  div.appendChild(span);
+  div.appendChild(icon);
+  return div;
 }

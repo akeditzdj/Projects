@@ -17,15 +17,15 @@ body{
 }
 .container{
   background-color: #fff;
-  width: 500px;
-  min-height: 250px;
+  width: 400px;
+  min-height: 150px;
   padding: 24px 50px 10px 10px;
   border-radius: 5px;
   border:1px solid #ccc;
   position:relative;
 }
 .row{
-  width: 500px;
+  width: 400px;
   display: flex;
   justify-content: space-between;
   font-size: 11px;
@@ -35,15 +35,14 @@ body{
 .close,
 .copy{
   position: absolute;
-  top: 10px;
+  top: 5px;
   right: 10px;
   color:#ccc;
   cursor: pointer;
   transition: 0.5s;
-  font-size: 18px;
 }
 .copy{
-  right:40px;
+  right:35px;
 }
 .close:hover,
 .copy:hover{
@@ -64,15 +63,15 @@ font-size: 12px;
 display: flex;
 align-content: center;
 gap: 5px;
-padding: 5px 10px;
-border-radius: 50px;
+padding: 5px;
+border-radius: 5px;
 cursor: pointer;
 }
 .input-tags .tag:hover{
   background-color: #ebe7e7;
 }
 .input-tags .tag ion-icon{
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .copy::before{
@@ -91,27 +90,10 @@ cursor: pointer;
   display: block;
 }
 
-.tag-container {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-}
-.tag {
-  padding: 5px;
-  border: 1px solid #aaa;
-  margin: 5px;
-  display: flex;
-  align-items: center;
-  background-color: #f2f2f2;
-  border-radius: 15px;
-}
-
-
-.tag-container input {
+.input-tags input {
   flex: 1;
   font-size: 16px;
   padding: 5px;
   outline: none;
   border: 0;
 }
-
