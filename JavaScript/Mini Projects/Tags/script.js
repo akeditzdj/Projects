@@ -80,11 +80,6 @@ document.addEventListener("click", function (e) {
 
 input.addEventListener("keyup", function (event) {
   let length = 300;
-  let = tags;
-  tags.forEach((tag) => {
-    tag.toString().length;
-    return;
-  });
   charCount.innerHTML = `${tags.toString().length}/300`;
 
   if (tags.toString().length <= length) {
