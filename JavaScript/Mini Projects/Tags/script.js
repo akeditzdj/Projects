@@ -20,6 +20,7 @@ closebtn.addEventListener("click", function () {
   reset();
   charCount.style.color = "#ccc";
   charCount.innerHTML = `0/500`;
+    container.style.borderColor = "#ccc";
 });
 
 copybtn.addEventListener("click", function () {
@@ -81,6 +82,7 @@ document.addEventListener("click", function (e) {
 input.addEventListener("keyup", function (event) {
   let length = 300;
   charCount.innerHTML = `${tags.toString().length}/300`;
+
 
   if (tags.toString().length <= length) {
     container.style.borderColor = "green";

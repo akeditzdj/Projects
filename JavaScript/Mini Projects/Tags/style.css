@@ -63,9 +63,11 @@ font-size: 12px;
 display: flex;
 align-content: center;
 gap: 5px;
-padding: 5px;
-border-radius: 5px;
+padding: 4px 10px ;
+border-radius: 50px;
 cursor: pointer;
+text-transform: lowercase;
+height: 25px
 }
 
 .input-tags input {
