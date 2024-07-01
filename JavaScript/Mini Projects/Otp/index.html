@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h3>OTP Input</h3>
+        <p>Enter your one-time password</p>
+        <div id="password"></div>
+        <div id="countdown"></div>
+        <small>OTP will be change every 30 sec</small>
+       
+
+        <div class="inputs">
+            <input type="text" name="input" maxlength="1" class="input" autocomplete="off">
+            <input type="text" name="input" maxlength="1" class="input" autocomplete="off">
+            <input type="text" name="input" maxlength="1" class="input" autocomplete="off">
+            <input type="text" name="input" maxlength="1" class="input" autocomplete="off">
+            <input type="text" name="input" maxlength="1" class="input" autocomplete="off">
+            <input type="text" name="input" maxlength="1" class="input" autocomplete="off">
+        </div>
+        <button id="btnSubmit" disabled>Submit</button>
+
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-body">
+            <h2>OTP submitted successfully...</h2>
+        </div>
+        <div class="modal-footer">
+            <button id="btnClose" type="button">Close</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

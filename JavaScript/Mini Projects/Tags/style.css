@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+}
+.container{
+  background-color: #fff;
+  width: 600px;
+  min-height: 150px;
+  padding: 24px 50px 10px 10px;
+  border-radius: 5px;
+  border:1px solid #ccc;
+  position:relative;
+}
+.row{
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color:  #ccc;
+  margin-top: 5px;
+}
+.close,
+.copy{
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color:#ccc;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.copy{
+  right:35px;
+}
+.close:hover,
+.copy:hover{
+color: #333;
+}
+
+.input-tags{
+height: 100%;
+display: flex;
+align-content: flex-start;
+gap: 5px;
+flex-wrap: wrap;
+}
+
+.input-tags .tag{
+border: 1px solid #ccc;
+font-size: 12px;
+display: flex;
+align-content: center;
+gap: 5px;
+padding: 4px 10px ;
+border-radius: 50px;
+cursor: pointer;
+text-transform: lowercase;
+height: 25px
+}
+
+.input-tags input {
+  flex: 1;
+  font-size: 14px;
+  padding: 5px;
+  outline: none;
+  border: 0;
+}
+
+.input-tags .tag:hover{
+  background-color: #ebe7e7;
+}
+.input-tags .tag ion-icon{
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.copy::before{
+  content: "Copy";
+  position: absolute;
+  color: #fff;
+  background-color: #333;
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  top: -30px;
+  right: -13px;
+  display: none;
+}
+.copy:hover::before{
+  display: block;
+}
+
+p{
+  color: #a9a7a7;
+}

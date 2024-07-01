@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: darkslategrey;
+}
+.container {
+  max-width: 550px;
+  height: auto;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 5px 5px 25px rgb(42, 40, 40);
+  position: relative;
+}
+
+.container h3 {
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: 600;
+}
+.container p {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #787575;
+}
+
+#password {
+  width: 100%;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  padding: 10px;
+  font-size: 28px;
+  letter-spacing: 10px;
+  color: green;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+#password.error {
+  color: red;
+}
+#countdown {
+  font-size: 16px;
+  font-weight: 500;
+  color: #575656;
+  padding: 3px;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 30px;
+  background-color: green;
+  border-radius: 5px 0 5px 0;
+  color: white;
+  text-align: center;
+}
+
+small {
+  color: green;
+  text-align: center;
+  font-weight: 600;
+}
+
+.inputs {
+  width: 500px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.inputs input {
+  width: 50px;
+  height: 70px;
+  text-align: center;
+  font-size: 32px;
+  outline: none;
+  border: 1px solid #ccc;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+input:focus {
+  border-bottom: 3px solid orange;
+}
+
+button {
+  width: 150px;
+  height: 40px;
+  border-radius: 50px;
+  border: none;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 10px;
+}
+
+button:enabled:hover{
+  background: green;
+  color: white;
+}
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+button:enabled {
+  background-color: darkslategrey;
+  cursor: pointer;
+}
+
+.modal.show {
+  display: block;
+  /* transition: 0.8s ease; */
+}
+
+.modal {
+  width: 450px;
+  height: auto;
+  background-color: white;
+  position: absolute;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: darkslategrey;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  display: none;
+  animation: popUp linear 0.3s;
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0.5);
+  }
+
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.modal .modal-body {
+  padding: 30px;
+}
+.modal .modal-body h2 {
+  color: white;
+  font-weight: 500;
+}
+
+.modal .modal-footer {
+  padding: 10px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.modal .modal-footer button {
+  width: 80px;
+  height: 30px;
+  background-color: #ffffff;
+  color: black;
+  margin: 0;
+  cursor: pointer;
+}
+.modal .modal-footer button:hover {
+  background-color: green;
+  color: white;
+}
