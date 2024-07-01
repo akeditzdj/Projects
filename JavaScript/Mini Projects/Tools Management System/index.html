@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -19,31 +19,37 @@
         <div class="title fw-bold text-success">
             <h3 class="fw-bold ps-3 ">UTOC Engineering Pte Ltd</h3>
         </div>
-        
+
     </nav>
 
     <div class="container d-flex justify-content-center align-items-center flex-column gap-5">
         <h2 class="fw-bold display-3 fst-italic text-success">TOOLS MANAGEMENT SYSTEM</h2>
- <div class="d-flex gap-5">
-           <div>
-    
-               <button id="check-out" data-bs-target="#modal-check-out" data-bs-toggle="modal" class="btn btn-lg btn-primary">Check Out <i class="bi bi-box-arrow-right"></i></button>
-           </div>
-           <div>
-               <button id="check-in" data-bs-target="#modal-check-in" data-bs-toggle="modal" class="btn btn-success btn-lg">Check In <i class="bi bi-box-arrow-left"></i></button>
-           </div>
- </div>
- <div class="row">
-    <div class="col-12">
-        <button data-bs-target="#modal-data-entry-table" data-bs-toggle="modal" class="btn btn-danger">View Entry Data</button>
-    </div>
- </div>
- <div class="row">
-    <h5 class="text-center fst-italic text-primary">Think smart...  Work fast...</h5>
-    <h6 class="text-center mt-3 text-success">Thank You for All. </h6>
- </div>
+        <div class="mt-2" id="clock">8:10:45</div>
+        <div class="d-flex gap-5">
+            <div>
 
-        <div class="modal modal" tabindex="-1" id="modal-check-out">
+                <button id="check-out" data-bs-target="#modal-check-out" data-bs-toggle="modal"
+                    class="btn btn-lg btn-primary">Check Out <i class="bi bi-box-arrow-right"></i></button>
+            </div>
+            <div>
+                <button id="check-in" data-bs-target="#modal-check-in" data-bs-toggle="modal"
+                    class="btn btn-success btn-lg">Check In <i class="bi bi-box-arrow-left"></i></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <button data-bs-target="#modal-data-entry-table" data-bs-toggle="modal" class="btn btn-danger">View
+                    Entry Data</button>
+            </div>
+        </div>
+        <div class="row">
+            <h5 class="text-center fst-italic text-primary">Think smart... Work fast...</h5>
+            <h6 class="text-center mt-3 text-success">Thank You for All. </h6>
+        </div>
+
+        <!------ Check-Out Modal Start-------->
+
+        <div class="modal" tabindex="-1" id="modal-check-out">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -54,35 +60,59 @@
                         <form action="#">
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-4" hidden>
+                                    <div class="col-md-6">
                                         <label class="form-label" for="date-out">Date</label>
                                         <input class="form-control" type="date" name="date-out" id="date-out">
                                     </div>
-                                    <div class="col-md-4" hidden>
+                                    <div class="col-md-6">
                                         <label class="form-label" for="time-out">Time</label>
                                         <input class="form-control" type="time" name="time-out" id="time-out">
                                     </div>
-                                    <div class="col-md-4" hidden>
+
+                                </div>
+                                <div class="row mt-5">
+                                    <div class="col-md-6">
                                         <label class="form-label" for="type-out">Choose Type</label>
                                         <select name="type-out" id="type-out" class="form-select">
-                                            <option value="Check Out">Check Out</option>
+                                            <option selected value="Check Out">Check Out</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label" for="person-name-out">Person Name</label>
+                                        <select class="form-select" name="person-name-out" id="person-name-out">
+                                            <option value="">Choose your name</option>
+                                            <option value="Name-1">Name-1</option>
+                                            <option value="Name-2">Name-2</option>
+                                            <option value="Name-3">Name-3</option>
+                                            <option value="Name-4">Name-4</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row mt-5">
                                     <div class="col-12">
+                                        <label class="form-label" for="check-out-tool">Check Out Tools</label>
+                                        <select class="form-select" name="check-out-tool" id="check-out-tool">
+                                            <option value="">Choose your tool</option>
+                                            <option value="Tool-1">Tool-1</option>
+                                            <option value="Tool-2">Tool-2</option>
+                                            <option value="Tool-3">Tool-3</option>
+                                            <option value="Tool-4">Tool-4</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Submit</button>
+                        <button type="button" onclick="clearAllCheckOutInputs()" class="btn btn-secondary">Clear</button>
+                        <button type="button" id="btn-check-out" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
             </div>
         </div>
+        <!------ Check-Out Modal End-------->
+
+        <!------ Check-In Modal Start-------->
         <div class="modal" tabindex="-1" id="modal-check-in">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -94,46 +124,70 @@
                         <form action="#">
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-4" hidden>
+                                    <div class="col-md-6">
                                         <label class="form-label" for="date-in">Date</label>
                                         <input class="form-control" type="date" name="date-in" id="date-in">
                                     </div>
-                                    <div class="col-md-4" hidden>
+                                    <div class="col-md-6">
                                         <label class="form-label" for="time-in">Time</label>
                                         <input class="form-control" type="time" name="time-in" id="time-in">
                                     </div>
-                                    <div class="col-md-4" hidden>
+
+                                </div>
+                                <div class="row mt-5">
+                                    <div class="col-md-6">
                                         <label class="form-label" for="type-in">Choose Type</label>
                                         <select name="type-in" id="type-in" class="form-select">
-                                            <option value="Check Out">Check In</option>
+                                            <option selected value="Check in">Check In</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label" for="person-name-in">Person Name</label>
+                                        <select class="form-select" name="person-name-in" id="person-name-in">
+                                            <option value="">Choose your name</option>
+                                            <option value="Name-1">Name-1</option>
+                                            <option value="Name-2">Name-2</option>
+                                            <option value="Name-3">Name-3</option>
+                                            <option value="Name-4">Name-4</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row mt-5">
                                     <div class="col-12">
+                                        <label class="form-label" for="check-in-tool">Check Out Tools</label>
+                                        <select class="form-select" name="check-in-tool" id="check-in-tool">
+                                            <option value="">Choose your tool</option>
+                                            <option value="Tool-1">Tool-1</option>
+                                            <option value="Tool-2">Tool-2</option>
+                                            <option value="Tool-3">Tool-3</option>
+                                            <option value="Tool-4">Tool-4</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Submit</button>
+                        <button type="button" onclick="clearAllCheckInInputs()" class="btn btn-secondary">Clear</button>
+                        <button type="button" id="btn-check-in" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
             </div>
         </div>
+        <!------ Check-In Modal End-------->
 
-        <div class="modal modal-lg" tabindex="-1" id="modal-data-entry-table">
+        <!------ Main Data Table Start-------->
+
+        <div class="modal modal-xl" tabindex="-1" id="modal-data-entry-table">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Tools In / Out Data</h5>
+                        <h5 class="modal-title fw-bold">Tools In / Out Data</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <table class="table table-hover">
-                            <thead>
+                        <table class="table table-hover table-bordered table-responsive">
+                            <thead class="text-center">
                                 <th>Sl.No</th>
                                 <th>Date</th>
                                 <th>Tools Name</th>
@@ -141,15 +195,17 @@
                                 <th>Time In/Out</th>
                             </thead>
                             <tbody id="tbody"></tbody>
-                      </table>
+                        </table>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-primary">Expert</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!------ Main Data Table End-------->
     </div>
     </div>
 
