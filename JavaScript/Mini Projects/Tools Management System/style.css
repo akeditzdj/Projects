@@ -6,3 +6,8 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+
+nav img{
+ width: 70px;
+ height: 70px;
+}
