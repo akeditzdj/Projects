@@ -27,36 +27,44 @@
  <div class="d-flex gap-5">
            <div>
     
-               <button id="check-out" data-bs-target="#modal" data-bs-toggle="modal" class="btn btn-lg btn-primary">Check Out <i class="bi bi-box-arrow-right"></i></button>
+               <button id="check-out" data-bs-target="#modal-check-out" data-bs-toggle="modal" class="btn btn-lg btn-primary">Check Out <i class="bi bi-box-arrow-right"></i></button>
            </div>
            <div>
-               <button id="check-in" data-bs-target="#modal" data-bs-toggle="modal" class="btn btn-success btn-lg">Check In <i class="bi bi-box-arrow-left"></i></button>
+               <button id="check-in" data-bs-target="#modal-check-in" data-bs-toggle="modal" class="btn btn-success btn-lg">Check In <i class="bi bi-box-arrow-left"></i></button>
            </div>
  </div>
+ <div class="row">
+    <div class="col-12">
+        <button data-bs-target="#modal-data-entry-table" data-bs-toggle="modal" class="btn btn-danger">View Entry Data</button>
+    </div>
+ </div>
+ <div class="row">
+    <h5 class="text-center fst-italic text-primary">Think smart...  Work fast...</h5>
+    <h6 class="text-center mt-3 text-success">Thank You for All. </h6>
+ </div>
 
-        <div class="modal modal-lg" tabindex="-1" id="modal">
+        <div class="modal modal" tabindex="-1" id="modal-check-out">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Register Your Tools Here</h5>
+                        <h5 class="modal-title">Check Out Your Tools</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form action="#">
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <label class="form-label" for="date">Date</label>
-                                        <input class="form-control" type="date" name="date" id="date">
+                                    <div class="col-md-4" hidden>
+                                        <label class="form-label" for="date-out">Date</label>
+                                        <input class="form-control" type="date" name="date-out" id="date-out">
                                     </div>
-                                    <div class="col-md-4">
-                                        <label class="form-label" for="time">Time</label>
-                                        <input class="form-control" type="time" name="time" id="time">
+                                    <div class="col-md-4" hidden>
+                                        <label class="form-label" for="time-out">Time</label>
+                                        <input class="form-control" type="time" name="time-out" id="time-out">
                                     </div>
-                                    <div class="col-md-4">
-                                        <label class="form-label" for="type">Choose Type</label>
-                                        <select name="type" id="type" class="form-select">
-                                            <option value="Check In">Check In</option>
+                                    <div class="col-md-4" hidden>
+                                        <label class="form-label" for="type-out">Choose Type</label>
+                                        <select name="type-out" id="type-out" class="form-select">
                                             <option value="Check Out">Check Out</option>
                                         </select>
                                     </div>
@@ -67,6 +75,73 @@
                                 </div>
                             </div>
                         </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" tabindex="-1" id="modal-check-in">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Check In Your Tools</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4" hidden>
+                                        <label class="form-label" for="date-in">Date</label>
+                                        <input class="form-control" type="date" name="date-in" id="date-in">
+                                    </div>
+                                    <div class="col-md-4" hidden>
+                                        <label class="form-label" for="time-in">Time</label>
+                                        <input class="form-control" type="time" name="time-in" id="time-in">
+                                    </div>
+                                    <div class="col-md-4" hidden>
+                                        <label class="form-label" for="type-in">Choose Type</label>
+                                        <select name="type-in" id="type-in" class="form-select">
+                                            <option value="Check Out">Check In</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal modal-lg" tabindex="-1" id="modal-data-entry-table">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Tools In / Out Data</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table table-hover">
+                            <thead>
+                                <th>Sl.No</th>
+                                <th>Date</th>
+                                <th>Tools Name</th>
+                                <th>Person name</th>
+                                <th>Time In/Out</th>
+                            </thead>
+                            <tbody id="tbody"></tbody>
+                      </table>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
