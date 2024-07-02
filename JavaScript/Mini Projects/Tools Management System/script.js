@@ -58,6 +58,7 @@ function clearAllCheckInInputs() {
 // Load Data in Table
 
 function loadData() {
+ 
   let output = "";
   tools.forEach((tool, index) => {
     output += `<tr>
@@ -66,6 +67,8 @@ function loadData() {
      <td>${tool.time}</td>
      <td>${tool.personName}</td>
     <td>${tool.toolsName}</td>
+    <td>${edit}</td>
+    <td>${edit}</td>
     </tr>
     `;
   });
