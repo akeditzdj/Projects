@@ -1,4 +1,13 @@
-let tools = [];
+let tools = [
+  {
+    id: 1,
+    date: "01-01-2024",
+    time: "8:30",
+    toolsName: "Impact Wrench",
+    type: "Check Out",
+    personName: "Ajith",
+  },
+];
 console.log(tools);
 const idTxt = document.getElementById("id");
 let dateOutElement = document.getElementById("date-out");
@@ -32,9 +41,9 @@ btnCheckOut.addEventListener("click", function () {
             ...tools,
             date: dateOut,
             time: timeOut,
+            toolsName: toolsNameOut,
             type: typeOut,
             personName: personNameOut,
-            toolsName: toolsNameOut,
           };
         } else {
           return tools;
@@ -48,9 +57,9 @@ btnCheckOut.addEventListener("click", function () {
         id: Date.now(),
         date: dateOut,
         time: timeOut,
+        toolsName: toolsNameOut,
         type: typeOut,
         personName: personNameOut,
-        toolsName: toolsNameOut,
       };
 
       tools.push(toolObj);
@@ -62,8 +71,6 @@ btnCheckOut.addEventListener("click", function () {
     alert("Please fill the all data!");
   }
 });
-
-
 
 // Clear all Input Data
 let btnClearCheckOut = document.getElementById("btn-check-out");
@@ -90,9 +97,10 @@ function loadData() {
     <td>${index + 1}</td>
     <td>${tool.date}</td>
      <td>${tool.time}</td>
+      <td>${tool.toolsName}</td>
        <td>${tool.type}</td>
      <td>${tool.personName}</td>
-    <td>${tool.toolsName}</td>
+  
     <td><button class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></button></td>
     <td><button class="btn btn-sm btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
     </tr>
