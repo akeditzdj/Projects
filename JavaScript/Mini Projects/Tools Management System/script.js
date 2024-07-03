@@ -1,8 +1,8 @@
 let tools = [
   {
     id: 1,
-    date: "01-01-2024",
-    time: "8:30",
+    date: "2024-07-03",
+    time: "08:30",
     toolsName: "Impact Wrench",
     type: "Check Out",
     personName: "Ajith",
