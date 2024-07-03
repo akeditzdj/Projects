@@ -67,8 +67,8 @@ function loadData() {
      <td>${tool.time}</td>
      <td>${tool.personName}</td>
     <td>${tool.toolsName}</td>
-    <td>${edit}</td>
-    <td>${edit}</td>
+    <td><button class"btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></button></td>
+    <td><button class"btn btn-sm btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
     </tr>
     `;
   });
