@@ -30,11 +30,11 @@ btnCheckOut.addEventListener("click", function () {
 
           return {
             ...tools,
-            dateOut: dateOut,
-            timeOut: timeOut,
-            typeOut: typeOut,
-            personNameOut: personNameOut,
-            toolsNameOut: toolsNameOut,
+            date: dateOut,
+            time: timeOut,
+            type: typeOut,
+            personName: personNameOut,
+            toolsName: toolsNameOut,
           };
         } else {
           return tools;
@@ -90,6 +90,7 @@ function loadData() {
     <td>${index + 1}</td>
     <td>${tool.date}</td>
      <td>${tool.time}</td>
+       <td>${tool.type}</td>
      <td>${tool.personName}</td>
     <td>${tool.toolsName}</td>
     <td><button class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></button></td>
