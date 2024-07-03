@@ -22,10 +22,14 @@
 
     </nav>
 
-    <div class="container d-flex justify-content-center align-items-center flex-column gap-5">
-        <h2 class="fw-bold display-3 fst-italic text-success">TOOLS MANAGEMENT SYSTEM</h2>
-        <div class="mt-2" id="clock">8:10:45</div>
-        <div class="d-flex gap-5">
+    <div class="container">
+        <h2 class="fw-bold display-3 fst-italic text-success text-center mt-3">TOOLS MANAGEMENT SYSTEM</h2>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="mt-2 mt-3 text-center" id="clock">8:10:45</div>
+            <div class="d-flex gap-5 mt-5"></div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center gap-5 mt-5">
             <div>
 
                 <button id="check-out" data-bs-target="#modal-check-out" data-bs-toggle="modal"
@@ -36,13 +40,14 @@
                     class="btn btn-success btn-lg">Check In <i class="bi bi-box-arrow-left"></i></button>
             </div>
         </div>
+
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 d-flex justify-content-center align-items-center mt-5">
                 <button data-bs-target="#modal-data-entry-table" data-bs-toggle="modal" class="btn btn-danger">View
                     Entry Data</button>
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-4">
             <h5 class="text-center fst-italic text-primary">Think smart... Work fast...</h5>
             <h6 class="text-center mt-3 text-success">Thank You for All. </h6>
         </div>
@@ -104,7 +109,8 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" onclick="clearAllCheckOutInputs()" class="btn btn-secondary">Clear</button>
+                        <button type="button" onclick="clearAllCheckOutInputs()"
+                            class="btn btn-secondary">Clear</button>
                         <button type="button" id="btn-check-out" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
