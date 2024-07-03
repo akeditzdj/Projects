@@ -1,5 +1,6 @@
 let tools = [];
-
+console.log(tools);
+const idTxt = document.getElementById("id");
 let dateOutElement = document.getElementById("date-out");
 let timeOutElement = document.getElementById("time-out");
 let typeOutElement = document.getElementById("type-out");
@@ -14,6 +15,7 @@ let toolsNameInElement = document.getElementById("check-in-tool");
 
 let btnCheckOut = document.getElementById("btn-check-out");
 btnCheckOut.addEventListener("click", function () {
+  const id = idTxt.value;
   const dateOut = dateOutElement.value;
   const timeOut = timeOutElement.value;
   const typeOut = typeOutElement.value;
@@ -21,23 +23,47 @@ btnCheckOut.addEventListener("click", function () {
   const toolsNameOut = toolsNameOutElement.value.trim();
 
   if (dateOut && timeOut && typeOut && personNameOut && toolsNameOut) {
-    tools.push({
-      id: Date.now(),
-      date: dateOut,
-      time: timeOut,
-      type: typeOut,
-      personName: personNameOut,
-      toolsName: toolsNameOut,
-    });
-    saveToolsLocalStorage();
-    clearAllCheckOutInputs();
-    loadData();
+    if (id) {
+      let updatedTools = tools.map((tool) => {
+        if (tools.id == id) {
+          alert("User data successfully updated");
+
+          return {
+            ...tools,
+            dateOut: dateOut,
+            timeOut: timeOut,
+            typeOut: typeOut,
+            personNameOut: personNameOut,
+            toolsNameOut: toolsNameOut,
+          };
+        } else {
+          return tools;
+        }
+      });
+
+      tools = updatedTools;
+      loadData();
+    } else {
+      const toolObj = {
+        id: Date.now(),
+        date: dateOut,
+        time: timeOut,
+        type: typeOut,
+        personName: personNameOut,
+        toolsName: toolsNameOut,
+      };
+
+      tools.push(toolObj);
+      saveToolsLocalStorage();
+      clearAllCheckOutInputs();
+      loadData();
+    }
   } else {
     alert("Please fill the all data!");
   }
 });
 
-console.log(tools);
+
 
 // Clear all Input Data
 let btnClearCheckOut = document.getElementById("btn-check-out");
@@ -97,13 +123,9 @@ function currentDate() {
   var yyyy = today.getFullYear();
 
   today = dd + "/" + mm + "/" + yyyy;
-  dateOutElement.innerHTML = "hi"
+  dateOutElement.innerHTML = "hi";
 }
 currentDate();
-
-
-
-
 
 // Get Current Timer
 // Calling showTime function at every second
