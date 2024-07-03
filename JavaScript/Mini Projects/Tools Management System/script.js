@@ -90,14 +90,20 @@ function getToolsDetail() {
 //get current date
 
 function currentDate() {
+  let dateOutElement = document.getElementById("date-out");
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, "0");
   var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
   var yyyy = today.getFullYear();
 
   today = dd + "/" + mm + "/" + yyyy;
+  dateOutElement.innerHTML = "hi"
 }
 currentDate();
+
+
+
+
 
 // Get Current Timer
 // Calling showTime function at every second
@@ -138,7 +144,7 @@ function showTime() {
   min = min < 10 ? "0" + min : min;
   sec = sec < 10 ? "0" + sec : sec;
 
-  let currentTime = hour + ":" + min + ":" + sec + am_pm;
+  let currentTime = hour + ":" + min + ":" + sec + " " + am_pm;
 
   // Displaying the time
   document.getElementById("clock").innerHTML = currentTime + " - " + day;
