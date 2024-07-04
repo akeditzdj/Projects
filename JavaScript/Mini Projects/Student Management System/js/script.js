@@ -147,22 +147,6 @@ function deleteStudent(e) {
   }
 }
 
-// function deleteUserWithConfirmation(id) {
-//   if (id) {
-//     deleteUser(id);
-//   }
-// }
-
-// function deleteStudent(e) {
-//   const id = e.target.dataset.id;
-//   if (confirm("Are You sure to delete ?")) {
-//     students = students.filter((student) => student.id != id);
-//     loadStudentData();
-//     top3Students();
-//     genderwise();
-//     subjectwise();
-//   }
-// }
 
 // Modal Update Form - Validate //
 

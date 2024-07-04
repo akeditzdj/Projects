@@ -1,14 +1,5 @@
-let tools = [
-  {
-    id: 1,
-    date: "2024-07-03",
-    time: "08:30",
-    toolsName: "Impact Wrench",
-    type: "Check Out",
-    personName: "Ajith",
-  },
-];
-console.log(tools);
+
+
 const idTxt = document.getElementById("id");
 let dateOutElement = document.getElementById("date-out");
 let timeOutElement = document.getElementById("time-out");
@@ -16,13 +7,8 @@ let typeOutElement = document.getElementById("type-out");
 let personNameOutElement = document.getElementById("person-name-out");
 let toolsNameOutElement = document.getElementById("check-out-tool");
 
-let dateInElement = document.getElementById("date-in");
-let timeInElement = document.getElementById("time-in");
-let typeInElement = document.getElementById("type-in");
-let personNameInElement = document.getElementById("person-name-in");
-let toolsNameInElement = document.getElementById("check-in-tool");
 
-let btnCheckOut = document.getElementById("btn-check-out");
+let btnCheckOut = document.getElementById("btnAdd");
 btnCheckOut.addEventListener("click", function () {
   const id = idTxt.value;
   const dateOut = dateOutElement.value;
@@ -53,19 +39,20 @@ btnCheckOut.addEventListener("click", function () {
       tools = updatedTools;
       loadData();
     } else {
-      const toolObj = {
+      tools.push({
         id: Date.now(),
         date: dateOut,
         time: timeOut,
         toolsName: toolsNameOut,
         type: typeOut,
         personName: personNameOut,
-      };
+      });
 
-      tools.push(toolObj);
       saveToolsLocalStorage();
       clearAllCheckOutInputs();
       loadData();
+
+      
     }
   } else {
     alert("Please fill the all data!");
@@ -75,18 +62,21 @@ btnCheckOut.addEventListener("click", function () {
 // Clear all Input Data
 let btnClearCheckOut = document.getElementById("btn-check-out");
 
-function clearAllCheckOutInputs() {
+function clearAllInputs() {
   dateOutElement.value = "";
   timeOutElement.value = "";
   personNameOutElement.value = "";
   toolsNameOutElement.value = "";
 }
-function clearAllCheckInInputs() {
-  dateInElement.value = "";
-  timeInElement.value = "";
-  personNameInElement.value = "";
-  toolsNameInElement.value = "";
+
+function getTools() {
+  let tools = [];
+  if (localStorage.getItem("tools")) {
+    tools = JSON.parse(localStorage.getItem("tools"));
+  }
+  return tools;
 }
+getTools();
 
 // Load Data in Table
 
@@ -100,7 +90,6 @@ function loadData() {
       <td>${tool.toolsName}</td>
        <td>${tool.type}</td>
      <td>${tool.personName}</td>
-  
     <td><button class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></button></td>
     <td><button class="btn btn-sm btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
     </tr>
