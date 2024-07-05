@@ -35,7 +35,7 @@
         <div class="row">
             <div class="col-md-12 d-flex justify-content-between">
                 <div class="mt-3">
-                    <button id="btnShow" data-bs-target="#modal-check-out" data-bs-toggle="modal" onclick="clearAllInputs()"
+                    <button id="btnShow" data-bs-target="#myModal" data-bs-toggle="modal" onclick="clearAllInputs()"
                         class="btn btn-lg btn-success">Check Out / Check In <i class="bi bi-tools"></i></button>
 
                 </div>
@@ -55,15 +55,15 @@
 
         <!------ Check-Out Modal Start-------->
 
-        <div class="modal" tabindex="-1" id="modal-check-out">
+        <div class="modal" tabindex="-1" id="myModal">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Check Out Your Tools</h5>
+                        <h5 class="modal-title">Register Your Tools</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="#">
+                        <form action="#" id="toolForm">
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-12">
@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                           <label class="form-label" for="date">Date</label>
+                                        <label class="form-label" for="date">Date</label>
                                         <p class="mt-3 p-1 bg-warning text-center fw-bold" id="date"></p>
                                     </div>
                                     <div class="col-md-6 mt-3 mt-md-0">
@@ -83,16 +83,15 @@
                                 </div>
                                 <div class="row mt-3 mt-md-5">
                                     <div class="col-md-6">
-                                        <label class="form-label" for="type-out"> Tool In / Out</label>
-                                        <select name="type-out" id="type-out" class="form-select">
-
+                                        <label class="form-label" for="type"> Tool In / Out</label>
+                                        <select name="type" id="type" class="form-select">
                                             <option value="Check Out">In</option>
                                             <option value="Check In">Out</option>
                                         </select>
                                     </div>
                                     <div class="col-md-6 mt-3 mt-md-0">
-                                        <label class="form-label" for="person-name-out">Person Name</label>
-                                        <select class="form-select" name="person-name-out" id="person-name-out">
+                                        <label class="form-label" for="person-name">Person Name</label>
+                                        <select class="form-select" name="personName" id="personName">
                                             <option value="Name-1">Name-1</option>
                                             <option value="Name-2">Name-2</option>
                                             <option value="Name-3">Name-3</option>
@@ -102,8 +101,8 @@
                                 </div>
                                 <div class="row mt-3 mt-md-5">
                                     <div class="col-12">
-                                        <label class="form-label" for="check-out-tool">Tools Name</label>
-                                        <select class="form-select" name="check-out-tool" id="check-out-tool">
+                                        <label class="form-label" for="toolsName">Tools Name</label>
+                                        <select class="form-select" name="toolsName" id="toolsName">
                                             <option value="Tool-1">Tool-1</option>
                                             <option value="Tool-2">Tool-2</option>
                                             <option value="Tool-3">Tool-3</option>
@@ -141,7 +140,7 @@
                         <th>Edit</th>
                         <th>Delete</th>
                     </thead>
-                    <tbody class="text-center" id="tbody"></tbody>
+                    <tbody class="text-center" id="toolList"></tbody>
                 </table>
             </div>
         </div>
