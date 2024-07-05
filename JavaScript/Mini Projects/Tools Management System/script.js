@@ -1,18 +1,23 @@
-
-
+let tools = [];
+// let todayDate;
+// let todayTime;
 const idTxt = document.getElementById("id");
-let dateOutElement = document.getElementById("date-out");
-let timeOutElement = document.getElementById("time-out");
+let dateOutElement = (document.getElementById("date").innerHTML =
+  currentDate());
+let timeOutElement = (document.getElementById("time").innerHTML = showTime());
 let typeOutElement = document.getElementById("type-out");
 let personNameOutElement = document.getElementById("person-name-out");
 let toolsNameOutElement = document.getElementById("check-out-tool");
 
+console.log(dateOutElement);
+console.log(timeOutElement);
+console.log(tools);
 
 let btnCheckOut = document.getElementById("btnAdd");
 btnCheckOut.addEventListener("click", function () {
   const id = idTxt.value;
-  const dateOut = dateOutElement.value;
-  const timeOut = timeOutElement.value;
+  const dateOut = currentDate()
+  const timeOut = showTime()
   const typeOut = typeOutElement.value;
   const personNameOut = personNameOutElement.value.trim();
   const toolsNameOut = toolsNameOutElement.value.trim();
@@ -49,10 +54,8 @@ btnCheckOut.addEventListener("click", function () {
       });
 
       saveToolsLocalStorage();
-      clearAllCheckOutInputs();
+      clearAllInputs();
       loadData();
-
-      
     }
   } else {
     alert("Please fill the all data!");
@@ -63,8 +66,7 @@ btnCheckOut.addEventListener("click", function () {
 let btnClearCheckOut = document.getElementById("btn-check-out");
 
 function clearAllInputs() {
-  dateOutElement.value = "";
-  timeOutElement.value = "";
+  typeOutElement.value = "";
   personNameOutElement.value = "";
   toolsNameOutElement.value = "";
 }
@@ -114,14 +116,14 @@ function getToolsDetail() {
 //get current date
 
 function currentDate() {
-  let dateOutElement = document.getElementById("date-out");
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, "0");
   var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
   var yyyy = today.getFullYear();
 
   today = dd + "/" + mm + "/" + yyyy;
-  dateOutElement.innerHTML = "hi";
+  document.getElementById("date").innerHTML = today;
+  return today;
 }
 currentDate();
 
@@ -168,6 +170,9 @@ function showTime() {
 
   // Displaying the time
   document.getElementById("clock").innerHTML = currentTime + " - " + day;
+  document.getElementById("time").innerHTML = currentTime;
+
+  return currentTime;
 }
 
 showTime();
