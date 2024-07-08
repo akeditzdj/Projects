@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Metal&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/*-------------- Globle CSS Reset ---------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+ul li {
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+svg {
+  width: 50px;
+  height: 50px;
+  fill: var(--design-color-yellow);
+}
+
+/*-------------- Font Family ---------------*/
+
+:root {
+  --ff-poppins: "Poppins", sans-serif;
+  --ff-inter: "Inter", sans-serif;
+  --ff-metal: "Metal", serif;
+}
+
+/*-------------- Colors ---------------*/
+:root {
+  --primary-color-black: #0000;
+  --secondary-color-white: #ffff;
+  --design-color-yellow: #f5af00;
+  --paragraph-color: #ccc;
+  --btn-hover-color: #363535;
+}
+
+/*-------------- Transition ---------------*/
+:root {
+  --transiton-3s: all 0.3s linear;
+}
+
+/*-------------- Common Style ---------------*/
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+
+p {
+  font-size: 1.3rem;
+  color: var(--paragraph-color);
+  margin-top: 20px;
+}
+
+.btn {
+  width: 150px;
+  height: 45px;
+  background-color: var(--design-color-yellow);
+  color: var(--secondary-color-white);
+  font-size: 0.875rem;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/*-------------- Custom Style ---------------*/
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffff;
+ 
+}
+
+.navbar {
+  width: 60%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.nav-brand img {
+  width: 110px;
+  height: auto;
+}
+.nav-links ul {
+  padding: 0 10px;
+}
+
+.nav-links li {
+  display: inline;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.nav-links li a {
+  color: var(--secondary-color-white);
+  font-family: var(--ff-poppins);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: var(--transiton-3s);
+}
+
+.nav-links li a:hover {
+  color: var(--design-color-yellow);
+}
+
+header {
+  width: 100%;
+  height: 100%;
+  position: relative;
+   background: linear-gradient(rgba(62, 61, 61, 0.5), rgba(58, 58, 58, 0.5)),
+    url("images/hero-1.jpg") center/cover no-repeat;
+}
+
+.banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.banner h1 {
+  color: var(--secondary-color-white);
+  font-family: var(--ff-poppins);
+  font-size: 4rem;
+  font-weight: 400;
+}
+.banner p {
+  color: var(--secondary-color-white);
+  font-family: var(--ff-metal);
+}
+
+.banner button {
+  margin-top: 35px;
+  transition: var(--transiton-3s);
+}
+.banner button:hover {
+  background-color: var(--btn-hover-color);
+}
+
+.container {
+  width: 60%;
+  height: auto;
+  margin: 0 auto;
+  background: red;
+}
