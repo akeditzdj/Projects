@@ -22,4 +22,27 @@ function changeNavbarBg() {
   }
 }
 
+function hover() {
+  let navLinks = document.querySelectorAll(".nav-light-links li a");
+  let scrollValue = window.scrollY;
+  navLinks.forEach((link) => {
+    if (scrollValue < 900) {
+      link.addEventListener("mouseover", () => {
+        link.style.color = "#f5af00";
+      });
+      link.addEventListener("mouseout", () => {
+        link.style.color = "#ffff";
+      });
+    } else {
+      link.addEventListener("mouseover", () => {
+        link.style.color = "#f5af00";
+      });
+      link.addEventListener("mouseout", () => {
+        link.style.color = "#000000";
+      });
+    }
+  });
+}
+
 window.addEventListener("scroll", changeNavbarBg);
+window.addEventListener("scroll", hover);
