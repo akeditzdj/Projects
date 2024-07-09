@@ -12,45 +12,51 @@
     <link href="images/fav-icon.png" rel="icon">
 </head>
 
-<body>
+<body id="home">
 
-    <!----------------- Navbar Start --------------------->
-    <nav class="navbar">
-        <div class="nav-brand">
-            <img src="images/logo-light.png" alt="logo">
-        </div>
-         
-        <div class="nav-links">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Work</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Testimonial</a></li>
-                <li><a href="#">Map</a></li>
-            </ul>
-        </div>
+    <!----------------- Navbar Transparent Start --------------------->
+
+    <nav id="navbar" class="navbar">
+        <div class="navbar-nav">
+            <div class="nav-brand">
+                <img id="logo" src="images/logo-light.png" alt="logo">
+            </div>
+
+            <div class="nav-links nav-light-links">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#testimonial">Testimonial</a></li>
+                    <li><a href="#map">Map</a></li>
+                </ul>
+            </div>
             <div class="menu">
                 <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
                         fill="#e8eaed">
                         <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
                     </svg></a>
             </div>
-      
-    </nav>
-        <div class="off-canvas">
-            <div class="nav-links">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Work</a></li>
-                    <li><a href="#">Skills</a></li>
-                    <li><a href="#">Testimonial</a></li>
-                    <li><a href="#">Map</a></li>
-                </ul>
-            </div>
         </div>
-    <!----------------- Navbar End --------------------->
+
+    </nav>
+
+    <!----------------- Mobile off-canvas start --------------------->
+    <div class="off-canvas">
+        <div class="nav-links">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#testimonial">Testimonial</a></li>
+                <li><a href="#map">Map</a></li>
+            </ul>
+        </div>
+    </div>
+    <!----------------- Mobile off-canvas End --------------------->
+    <!----------------- Navbar Transparent End --------------------->
     <!----------------- Header Start --------------------->
     <header class="header">
         <div class="banner">
@@ -62,7 +68,7 @@
     <!----------------- Header End --------------------->
     <div class="container">
         <!----------------- Our Service Start --------------------->
-        <div class="our-services">
+        <div class="our-services" id="services">
             <div class="section-center">
                 <div class="service-content">
                     <h2>Our Services</h2>
@@ -111,7 +117,7 @@
         </div>
         <!----------------- Our Service End --------------------->
         <!----------------- Feature Start --------------------->
-        <div class="featured-work">
+        <div class="featured-work" id="work">
             <div class="section-center">
                 <div class="feature-content">
                     <h2>Featured Work</h2>
@@ -197,7 +203,7 @@
         </div>
         <!----------------- Feature End --------------------->
         <!----------------- Progressive Start --------------------->
-        <div class="progressive-section">
+        <div class="progressive-section" id="skills">
             <div class="section-center">
                 <div class="progressive">
                     <div class="progressive-content">
@@ -214,10 +220,14 @@
                             <span class="title">Buildings</span>
                             <span class="value">85%</span>
                         </div>
+
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                                aria-valuemax="100">
+
+                            <div class="progress-bar" style="width:85%;" role="progressbar" aria-valuenow="85"
+                                aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar-bottom"></div>
                             </div>
+
                         </div>
                     </div><!-- .progressbar end -->
 
@@ -228,8 +238,9 @@
                             <span class="value">60%</span>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                                aria-valuemax="100">
+                            <div class="progress-bar" style="width:60%;" role="progressbar" aria-valuenow="60"
+                                aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar-bottom"></div>
                             </div>
                         </div>
                     </div><!-- .progressbar end -->
@@ -241,8 +252,9 @@
                             <span class="value">70%</span>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
-                                aria-valuemax="100">
+                            <div class="progress-bar" style="width:70%;" role="progressbar" aria-valuenow="70"
+                                aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar-bottom"></div>
                             </div>
                         </div>
                     </div><!-- .progressbar end -->
@@ -254,8 +266,9 @@
                             <span class="value">40%</span>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0"
-                                aria-valuemax="100">
+                            <div class="progress-bar" style="width:40%;" role="progressbar" aria-valuenow="40"
+                                aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar-bottom"></div>
                             </div>
                         </div>
                     </div><!-- .progressbar end -->
@@ -277,7 +290,7 @@
         </div>
         <!----------------- Promotion Add End --------------------->
         <!----------------- Our Clients Start --------------------->
-        <div class="ourclient-section">
+        <div class="ourclient-section" id="testimonial">
             <div class="section-center">
                 <div class="client-content">
                     <h2>Our Clients Say</h2>
@@ -311,7 +324,7 @@
         </div>
         <!----------------- Our Clients End --------------------->
         <!----------------- Contact US Start --------------------->
-        <div class="contact-section">
+        <div class="contact-section" id="map">
             <div class="section-center">
                 <div class="address">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
@@ -376,11 +389,7 @@
         </footer>
         <!----------------- Footer End --------------------->
     </div>
-    <script>
-        document.querySelector(".menu").onclick = function () {
-            document.querySelector(".off-canvas").classList.toggle("hide");
-        };
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
