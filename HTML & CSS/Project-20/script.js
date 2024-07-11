@@ -7,7 +7,7 @@ function changeNavbarBg() {
   let navLinks = document.querySelectorAll(".nav-light-links li a");
   let navBrand = document.getElementById("logo");
   let scrollValue = window.scrollY;
-  if (scrollValue < 900) {
+  if (scrollValue < 80) {
     navbar.classList.remove("navbar-light");
     navBrand.src = "images/logo-light.png";
     for (let i = 0; i < navLinks.length; i++) {
@@ -26,7 +26,7 @@ function hover() {
   let navLinks = document.querySelectorAll(".nav-light-links li a");
   let scrollValue = window.scrollY;
   navLinks.forEach((link) => {
-    if (scrollValue < 900) {
+    if (scrollValue < 80) {
       link.addEventListener("mouseover", () => {
         link.style.color = "#f5af00";
       });
