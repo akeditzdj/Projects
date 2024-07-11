@@ -1,4 +1,4 @@
-
+tools = [];
 const idTxt = document.getElementById("id");
 const dateElement = (document.getElementById("date").innerHTML = currentDate());
 const timeElement = (document.getElementById("time").innerHTML = showTime());
@@ -15,7 +15,6 @@ const toolForm = document.getElementById("toolForm");
 // Load Data in Table
 
 function loadTools(isForSearch = 0, filteredTool = []) {
-
   if (isForSearch == 0) {
     tools = getTools();
   } else {
@@ -44,11 +43,8 @@ function loadTools(isForSearch = 0, filteredTool = []) {
   });
 }
 
-
-
 //------ Add and Update ------------//
 btnAdd.addEventListener("click", function () {
- 
   const id = idTxt.value;
   const date = currentDate();
   const time = showTime();
@@ -58,10 +54,8 @@ btnAdd.addEventListener("click", function () {
 
   if (date && time && type && personName && toolsName) {
     if (id) {
- 
       //update
       let updatedTools = tools.map((tool) => {
-
         if (tool.id == id) {
           return {
             ...tool,
@@ -74,12 +68,11 @@ btnAdd.addEventListener("click", function () {
         } else {
           return tool;
         }
-      }); 
+      });
       tools = updatedTools;
       saveLocalStorage();
-       clearAllInputs();
+      clearAllInputs();
       loadTools();
-     
     } else {
       //Add
       const toolObj = {
@@ -92,7 +85,7 @@ btnAdd.addEventListener("click", function () {
       };
 
       tools.push(toolObj);
-    saveLocalStorage();
+      saveLocalStorage();
       clearAllInputs();
       loadTools();
     }
@@ -146,12 +139,11 @@ function saveLocalStorage() {
 
 function getTools() {
   let data = [];
-  if (localStorage.getItem("tools")!==null) {
+  if (localStorage.getItem("tools") !== null) {
     data = JSON.parse(localStorage.getItem("tools"));
   }
   return data;
 }
-
 
 //Filter tools
 searchInput.addEventListener("input", function () {
@@ -226,4 +218,3 @@ function showTime() {
 }
 
 showTime();
-
