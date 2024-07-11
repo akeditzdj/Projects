@@ -1,11 +1,10 @@
-let tools = [];
 
 const idTxt = document.getElementById("id");
-let dateElement = (document.getElementById("date").innerHTML = currentDate());
-let timeElement = (document.getElementById("time").innerHTML = showTime());
-let typeElement = document.getElementById("type");
-let personNameElement = document.getElementById("personName");
-let toolsNameElement = document.getElementById("toolsName");
+const dateElement = (document.getElementById("date").innerHTML = currentDate());
+const timeElement = (document.getElementById("time").innerHTML = showTime());
+const typeElement = document.getElementById("type");
+const personNameElement = document.getElementById("personName");
+const toolsNameElement = document.getElementById("toolsName");
 const mymodalElement = document.getElementById("myModal");
 const myModal = new bootstrap.Modal(mymodalElement);
 const modalTitle = document.querySelector(".modal-title");
@@ -13,144 +12,17 @@ const searchInput = document.querySelector("#filter-tools");
 const btnAdd = document.getElementById("btnAdd");
 const toolForm = document.getElementById("toolForm");
 
-
-
-//Delete Task
-function deleteTools(toolId) {
-  if (confirm("Are you sure to delete?")) {
-    const tools = getTools();
-    const updatedTools = tools.filter((tool) => tool.id != toolId);
-    saveToolsLocalStorage(updatedTools);
-    loadData();
-  }
-}
-
-//Edit task
-
-function editTools(id) {
-  const tools = getTools();
-  const tool = tools.find((tool) => tool.id === id);
-  if (tool) {
-    dateElement.value = tool.date;
-    timeElement.value = tool.time;
-    typeElement.value = tool.type;
-    personNameElement.value = tool.personName;
-    toolsNameElement.value = tool.toolsName;
-
-    btnAdd.setAttribute("data-toolkid", tool.id);
-    modalTitle.innerHTML = " Update Task";
-    myModal.show();
-  }
-  loadData();
-}
-
-//------ Add and Update ------------//
-btnAdd.addEventListener("click", function addtools() {
-  const id = idTxt.value;
-  const date = currentDate();
-  const time = showTime();
-  const type = typeElement.value;
-  const personName = personNameElement.value;
-  const toolsName = toolsNameElement.value;
-
-  if (date && time && type && personName && toolsName) {
-    if (id) {
-      //update
-      let updatedTools = tools.map((tool) => {
-        if (tool.id == id) {
-          return {
-            ...tool,
-            date: date,
-            time: time,
-            type: type,
-            personName: personName,
-            toolsName: toolsName,
-          };
-        } else {
-          return tool;
-        }
-      });
-      tools = updatedTools;
-      loadData();
-      clearAllInputs();
-      saveToolsLocalStorage();
-    } else {
-      //Add
-      const toolObj = {
-        id: Date.now(),
-        date: date,
-        time: time,
-        type: type,
-        personName: personName,
-        toolsName: toolsName,
-      };
-
-      tools.push(toolObj);
-      loadData();
-      clearAllInputs();
-      saveToolsLocalStorage();
-    }
-  } else {
-    alert("Please fill the all data");
-  }
-});
-
-loadData();
-
-// //Add new task
-
-// btnAdd.addEventListener("click",function addNewTools(date, time, type, personName, toolsName) {
-//     const tools = getTools();
-//     const newTools = {
-//       id: Date.now(),
-//       date,
-//       time,
-//       type,
-//       personName,
-//       toolsName,
-//     };
-//     tools.push(newTools);
-//     saveToolsLocalStorage(tools);
-//     loadData();
-//   }
-// );
-
-// //Upade existing task
-
-// function updateTools(id, type, personName, toolsName) {
-//   const tools = getTools();
-//   const updatedTools = tools.map((tool) => {
-//     if (tool.id == id) {
-//       // tool.date = date;
-//       // tool.time = time;
-//       tool.type = type;
-//       tool.personName = personName;
-//       tool.toolsName = toolsName;
-//     }
-//     return tool;
-//   });
-//   saveToolsLocalStorage(updatedTools);
-//   loadData();
-// }
-
-// Clear all Input Data
-
-function clearAllInputs() {
-  typeElement.value = "";
-  personNameElement.value = "";
-  toolsNameElement.value = "";
-}
-
 // Load Data in Table
 
-function loadData(isForSearch = 0, filteredTool = []) {
-  let tools = [];
+function loadTools(isForSearch = 0, filteredTool = []) {
+
   if (isForSearch == 0) {
     tools = getTools();
   } else {
     tools = filteredTool;
   }
-  const toolList = document.getElementById("toolList");
+  tools = getTools();
+  const toolList = document.querySelector("#toolList");
   toolList.innerHTML = "";
   tools.forEach((tool, index) => {
     const row = `<tr>
@@ -172,31 +44,123 @@ function loadData(isForSearch = 0, filteredTool = []) {
   });
 }
 
-loadData();
 
-function saveToolsLocalStorage() {
+
+//------ Add and Update ------------//
+btnAdd.addEventListener("click", function () {
+ 
+  const id = idTxt.value;
+  const date = currentDate();
+  const time = showTime();
+  const type = typeElement.value;
+  const personName = personNameElement.value;
+  const toolsName = toolsNameElement.value;
+
+  if (date && time && type && personName && toolsName) {
+    if (id) {
+ 
+      //update
+      let updatedTools = tools.map((tool) => {
+
+        if (tool.id == id) {
+          return {
+            ...tool,
+            date: date,
+            time: time,
+            type: type,
+            toolsName: toolsName,
+            personName: personName,
+          };
+        } else {
+          return tool;
+        }
+      }); 
+      tools = updatedTools;
+      saveLocalStorage();
+       clearAllInputs();
+      loadTools();
+     
+    } else {
+      //Add
+      const toolObj = {
+        id: Date.now(),
+        date: date,
+        time: time,
+        type: type,
+        toolsName: toolsName,
+        personName: personName,
+      };
+
+      tools.push(toolObj);
+    saveLocalStorage();
+      clearAllInputs();
+      loadTools();
+    }
+  } else {
+    alert("Please fill the all data");
+  }
+});
+loadTools();
+
+//Edit Tools
+
+function editTools(id) {
+  const tools = getTools();
+  const tool = tools.find((tool) => tool.id === id);
+  if (tool) {
+    dateElement.value = tool.date;
+    timeElement.value = tool.time;
+    typeElement.value = tool.type;
+    personNameElement.value = tool.personName;
+    toolsNameElement.value = tool.toolsName;
+
+    // btnAdd.setAttribute("data-toolkid", tool.id);
+    modalTitle.innerHTML = " Update Task";
+    myModal.show();
+  }
+  loadTools();
+}
+
+//Delete Tools
+function deleteTools(toolId) {
+  if (confirm("Are you sure to delete?")) {
+    const tools = getTools();
+    const updatedTools = tools.filter((tool) => tool.id != toolId);
+    saveLocalStorage(updatedTools);
+    loadTools();
+  }
+}
+
+// Clear all Input Data
+
+function clearAllInputs() {
+  typeElement.value = "";
+  personNameElement.value = "";
+  toolsNameElement.value = "";
+}
+
+function saveLocalStorage() {
   localStorage.setItem("tools", JSON.stringify(tools));
   console.log("Data Saved to localStorage");
 }
 
 function getTools() {
-  let tools = [];
-  if (localStorage.getItem("tools")) {
-    tools = JSON.parse(localStorage.getItem("tools"));
+  let data = [];
+  if (localStorage.getItem("tools")!==null) {
+    data = JSON.parse(localStorage.getItem("tools"));
   }
-  return tools;
+  return data;
 }
-getTools();
 
-//Search Function
 
+//Filter tools
 searchInput.addEventListener("input", function () {
   const searchQuery = this.value.toLowerCase();
   const tools = getTools();
   const filteredTool = tools.filter((tool) =>
     tool.toolsName.toLowerCase().includes(searchQuery)
   );
-  loadData(1, filteredTool);
+  loadTools(1, filteredTool);
 });
 
 //get current date
@@ -262,3 +226,4 @@ function showTime() {
 }
 
 showTime();
+
