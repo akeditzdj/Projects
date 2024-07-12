@@ -9,8 +9,6 @@ const btnAdd = document.getElementById("btnAdd");
 const btnClear = document.getElementById("btnClear");
 const regTool = document.getElementById("regTool");
 
-
-
 // Load Data in Table
 function loadTools(isForSearch = 0, filteredTool = []) {
   if (isForSearch == 0) {
@@ -42,7 +40,6 @@ function loadTools(isForSearch = 0, filteredTool = []) {
 
 loadTools();
 
-
 //Modal show and Hide
 function modalShow() {
   const Modal = new bootstrap.Modal(myModal, {
@@ -65,7 +62,7 @@ btnAdd.addEventListener("click", function () {
   const personName = personNameElement.value;
   const toolsName = toolsNameElement.value;
 
-  if ( date && time && type && personName && toolsName) {
+  if (date && time && type && personName && toolsName) {
     if (id) {
       //Update Tools
       let updatedTools = tools.map((tool) => {
@@ -86,7 +83,6 @@ btnAdd.addEventListener("click", function () {
       saveTools();
       clearAll();
       loadTools();
-      
     } else {
       //Add Tools
       const toolObj = {
