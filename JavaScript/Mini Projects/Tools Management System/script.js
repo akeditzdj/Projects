@@ -9,42 +9,11 @@ const btnAdd = document.getElementById("btnAdd");
 const btnClear = document.getElementById("btnClear");
 const regTool = document.getElementById("regTool");
 
-// Load Data in Table
-function loadTools(isForSearch = 0, filteredTool = []) {
-  if (isForSearch == 0) {
-    tools = getTools();
-  } else {
-    tools = filteredTool;
-  }
-  const toolList = document.querySelector("#toolList");
-  toolList.innerHTML = "";
-  tools.forEach((tool, index) => {
-    const output = `<tr>
-    <td>${index + 1}</td>
-    <td>${tool.date}</td>
-     <td>${tool.time}</td>
-      <td>${tool.toolsName}</td>
-       <td>${tool.type}</td>
-     <td>${tool.personName}</td>
-    <td><button onclick="editTools(${
-      tool.id
-    })" class="btn btn-sm btn-primary btnEdit">Edit</button></td>
-    <td><button onclick="deleteTools(${
-      tool.id
-    })" class="btn btn-sm btn-danger btnDel">Delete</button></td>
-    </tr>
-    `;
-    toolList.innerHTML += output;
-  });
-}
-
-loadTools();
-
 //Modal show and Hide
+const Modal = new bootstrap.Modal(myModal, {
+  keyboard: false,
+});
 function modalShow() {
-  const Modal = new bootstrap.Modal(myModal, {
-    keyboard: false,
-  });
   Modal.show();
 }
 
@@ -61,6 +30,9 @@ btnAdd.addEventListener("click", function () {
   const type = typeElement.value;
   const personName = personNameElement.value;
   const toolsName = toolsNameElement.value;
+  let remark = "";
+  let timeIn = "";
+  let tools = getTools();
 
   if (date && time && type && personName && toolsName) {
     if (id) {
@@ -79,8 +51,7 @@ btnAdd.addEventListener("click", function () {
           return tool;
         }
       });
-      tools = updatedTools;
-      saveTools();
+      saveTools(updatedTools);
       clearAll();
       loadTools();
     } else {
@@ -92,11 +63,15 @@ btnAdd.addEventListener("click", function () {
         type: type,
         personName: personName,
         toolsName: toolsName,
+        timeIn: timeIn,
+        remark: remark,
       };
       tools.push(toolObj);
-      saveTools();
+      saveTools(tools);
+      clearAll();
       loadTools();
     }
+    Modal.hide();
   } else {
     alert("Please fill the all details");
   }
@@ -105,6 +80,7 @@ btnAdd.addEventListener("click", function () {
 //Edit tools
 function editTools(id) {
   modalShow();
+  let tools = getTools();
   const selectedTools = tools.filter((tool) => tool.id == id)[0];
   idElement.value = selectedTools.id;
   typeElement.value = selectedTools.type;
@@ -120,12 +96,11 @@ function deleteTools(id) {
     let updatedTools = tools.filter((tool) => tool.id != id);
     tools = updatedTools;
     saveTools();
-    loadTools();
   }
 }
 
 // Save tools to localStorage
-function saveTools() {
+function saveTools(tools) {
   localStorage.setItem("tools", JSON.stringify(tools));
   loadTools();
 }
@@ -139,6 +114,34 @@ function getTools() {
   return data;
 }
 
+// Load Data in Table
+function loadTools(isForSearch = 0, filteredTool = []) {
+  let tools = getTools();
+
+  const toolList = document.querySelector("#toolList");
+  toolList.innerHTML = "";
+  tools.forEach((tool, index) => {
+    const output = `<tr>
+    <td>${index + 1}</td>
+    <td>${tool.date}</td>
+     <td>${tool.time}</td>
+      <td>${tool.toolsName}</td>
+       <td>${tool.type}</td>
+     <td>${tool.personName}</td>
+        <td id="time-in">${tool.timeIn}</td>
+    <td>${tool.remark}</td>
+    <td><button onclick="editTools(${tool.id})" class="btn btn-sm btn-primary btnEdit">Edit</button></td>
+    <td><button onclick="deleteTools(${tool.id})" class="btn btn-sm btn-danger btnDel">Delete</button></td>
+    <td><button data-id=${tool.id} class="btn btn-success btn-sm btnReturn">Retuned</button></td>
+ 
+    </tr>
+    `;
+    toolList.innerHTML += output;
+  });
+}
+
+loadTools();
+
 //ClearAll input elements
 function clearAll() {
   typeElement.value = "";
@@ -150,70 +153,31 @@ function clearAll() {
 searchElement.addEventListener("input", function () {
   const searchQuery = this.value.toLowerCase();
   const tools = getTools();
-  const filteredTool = tools.filter((tool) =>
-    tool.toolsName.toLowerCase().includes(searchQuery)
-  );
+  const filteredTool = tools.filter((tool) => tool.toolsName.toLowerCase().includes(searchQuery));
   loadTools(1, filteredTool);
 });
 
-//get current date
-function currentDate() {
-  var today = new Date();
-  var dd = String(today.getDate()).padStart(2, "0");
-  var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
-  var yyyy = today.getFullYear();
 
-  today = dd + "/" + mm + "/" + yyyy;
-  document.getElementById("date").innerHTML = today;
-  return today;
-}
-currentDate();
-// Get Current Timer
-// Calling showTime function at every second
-setInterval(showTime, 1000);
-
-// Defining showTime funcion
-function showTime() {
-  // Getting current time and date
-  let time = new Date();
-  let hour = time.getHours();
-  let min = time.getMinutes();
-  let sec = time.getSeconds();
-  am_pm = "AM";
-
-  const weekday = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-
-  const d = new Date();
-  let day = weekday[d.getDay()];
-
-  // Setting time for 12 Hrs format
-  if (hour >= 12) {
-    if (hour > 12) hour -= 12;
-    am_pm = "PM";
-  } else if (hour == 0) {
-    hr = 12;
-    am_pm = "AM";
+// Return tools
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("btnReturn")) {
+    const remark = prompt("Enter Remarks");
+    if (remark) {
+      let timeIn = showTime();
+      let id = e.target.dataset.id;
+      let data = getTools();
+      let updatedData = data.map((tool) => {
+        if (tool.id === Number(id)) {
+          tool.remark = remark;
+          tool.timeIn = timeIn;
+          return tool;
+        } else {
+          return tool;
+        }
+      });
+      //console.log(updatedData);
+      saveTools(updatedData);
+      loadTools();
+    }
   }
-
-  hour = hour < 10 ? "0" + hour : hour;
-  min = min < 10 ? "0" + min : min;
-  sec = sec < 10 ? "0" + sec : sec;
-
-  let currentTime = hour + ":" + min + ":" + sec + " " + am_pm;
-
-  // Displaying the time
-  document.getElementById("clock").innerHTML = currentTime + " - " + day;
-  document.getElementById("time").innerHTML = currentTime;
-
-  return currentTime;
-}
-
-showTime();
+});
