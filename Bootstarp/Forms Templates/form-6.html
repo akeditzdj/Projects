@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home-4</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body class="bg-body-tertiary">
+  <div class="container-fluid w-75 d-flex justify-content-center align-items-center flex-column mt-5">
+    <img class="img-fluid" width="100px" src="images/Bootstrap_logo.svg.png" alt="">
+    <h2 class="mt-3">Checkout form</h2>
+    <p class="w-75 px-xl-5 fs-5 text-center mt-2">Below is an example from built entirely with Bootstrap's from controls.
+      Each
+      required form group has a validation state that can be triggered by attempting to submit the form without
+      completing it.</p>
+  </div>
+   <form action="#">
+    <div class="container-fluid w-75">
+      <div class="row mt-5">
+        <div class="col-lg-8">
+          <h4>Billing address</h4>
+          <div class="row mt-4">
+            <div class="col-lg-6">
+              <label class="form-label" for="f-name">First name</label>
+              <input class="form-control" type="text" name="f-name" id="f-name" required>
+            </div>
+            <div class="col-lg-6">
+              <label class="form-label" for="l-name">Last name</label>
+              <input class="form-control" type="text" name="l-name" id="l-name" required>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-lg-12">
+              <label class="form-label" for="user-name">Username</label>
+              <div class="input-group">
+                <span class="input-group-text">@</span>
+                <input class="form-control" type="text" name="user-name" id="user-name" required>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-lg-12">
+              <label class="form-label" for="email">Email <span class="text-secondary">(Optional)</span></label>
+              <input class="form-control" type="email" name="email" id="email" placeholder="you@example.com">
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-lg-12">
+              <label class="form-label" for="address">Address</label>
+              <input class="form-control" type="text" name="address" id="address" placeholder="1234 Main St" required>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-lg-12">
+              <label class="form-label" for="address2">Address 2 <span class="text-secondary">(Optional)</span></label>
+              <input class="form-control" type="text" name="address2" id="address2" placeholder="Appartment or Suit">
+            </div>
+          </div>
+          <div class="row border-bottom pb-4 mt-4">
+            <div class="col-lg-5">
+              <label class="form-label" for="country">Country</label>
+              <select class="form-select" required>
+                <option value="" selected>Choose...</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <option value="Australia">Australia</option>
+                <option value="Russia">Russia</option>
+                <option value="China">China</option>
+              </select>
+            </div>
+            <div class="col-lg-4">
+              <label class="form-label" for="state">State</label>
+              <select class="form-select" required>
+                <option value="" selected>Choose...</option>
+                <option value="TamilNadu">TamilNadu</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Karnataka">KarnatakaK</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Punjab">Punjab</option>
+              </select>
+            </div>
+            <div class="col-lg-3">
+              <label class="form-label" for="zip">Zip</label>
+              <input class="form-control" type="text" name="zip" id="zip" required>
+            </div>
+          </div>
+          <div class="row mt-4 border-bottom pb-4">
+            <div class="col-lg-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="ship-address" id="ship-address">
+                <label class="form-check-label" for="ship-address">Shipping address is the same as my billing
+                  address</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="save-info" id="save-info">
+                <label class="form-check-label" for="save-info">Save this information for next time</label>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-lg-12">
+              <h4 class="mt-4 " required>Payment</h4>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="card" id="creditCard">
+                <label class="form-check-label" for="creditCard">Credit card</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="card" id="debitCard">
+                <label class="form-check-label" for="debitCard">Debit card</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="card" id="payPal">
+                <label class="form-check-label" for="payPal">PayPal</label>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-lg-6">
+              <label class="form-label" for="name-on-card">Name on card</label>
+              <input class="form-control" type="text" name="name-on-card" id="name-on-card" required>
+              <small class="form-text">Fullname as displayed on card</small>
+            </div>
+            <div class="col-lg-6">
+              <label class="form-label" for="card-number">Credit card number</label>
+              <input class="form-control" type="text" name="card-number" id="card-number" required>
+            </div>
+          </div>
+          <div class="row mt-4 border-bottom pb-4">
+            <div class="col-lg-3">
+              <label class="form-label" for="expiry">Expiration</label>
+              <input class="form-control" type="text" name="expiry" id="expiry" required>
+            </div>
+            <div class="col-lg-3">
+              <label class="form-label" for="cvv">CVV</label>
+              <input class="form-control" type="text" name="cvv" id="cvv" required>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-lg-12">
+              <button class="btn btn-primary w-100" type="submit">Continue to checkout</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mt-5 mt-xl-0">
+          <div class="d-flex justify-content-between align-items-center px-5">
+            <h4 class="text-primary fw-semibold">Your Cart</h4>
+            <span class="badge bg-primary rounded-pill fs-6">3</span>
+          </div>
+          <ol class="list-group mt-2 px-5">
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="text-secondary">
+                <div class="fw-bold text-dark">Product Name</div>
+                Brief description
+              </div>
+              <span class="text-secondary">$12</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="text-secondary">
+                <div class="fw-bold text-dark">Second Product</div>
+                Brief description
+              </div>
+              <span class="text-secondary">$8</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="text-secondary">
+                <div class="fw-bold text-dark">Third item</div>
+                Brief description
+              </div>
+              <span class="text-secondary">$5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="text-success">
+                <div class="fw-bold text-success">Promo code</div>
+                EXAMPLECODE
+              </div>
+              <span class="text-success">-$5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div>
+                <div class="fw-bold text-secondary">Total (USD)</div>
+              </div>
+              <span class="fw-bold">$20</span>
+            </li>
+          </ol>
+          <ol class="list-group px-5 py-4">
+            <li class="list-group-item">
+              <div class="input-group">
+                <input class="form-control" type="text" name="redeem" id="redeem" placeholder="Promo code">
+                <button class="btn btn-secondary">Redeem</button>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+   </form>
+  <footer class="my-5">
+    <div class="container-fluid w-75 d-flex justify-content-center align-items-center flex-column">
+      <p>&copy 2017-2021 Company Name</p>
+      <div>
+        <a class="link-primary ps-1" href="#">Privacy</a>
+        <a class="link-primary ps-1" href="#">Terms</a>
+        <a class="link-primary ps-1" href="#">Support</a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

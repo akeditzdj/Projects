@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="base.css" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-10">
+          <div class="mb-3">
+            <label for="name">Name</label>
+            <input type="text" class="form-control is-valid" />
+            <p class="invalid-feedback">Please Enter Name</p>
+          </div>
+          <div class="mb-3">
+            <label for="name">Email</label>
+            <input type="text" class="form-control is-invalid" />
+            <p class="invalid-feedback">Please Enter Email</p>
+          </div>
+          <hr />
+        </div>
+      </div>
+      <form class="row g-2 needs-validation" novalidate>
+        <div class="col-md-6 mb-3">
+          <label for="fname" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="fname" required />
+          <p class="invalid-feedback">Enter First Name</p>
+          <p class="valid-feedback">Looks good!</p>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="lname" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="lname" required />
+          <p class="invalid-feedback">Enter Last Name</p>
+          <p class="valid-feedback">Looks good!</p>
+        </div>
+        <div class="col-md-12 mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="email" required />
+          <p class="invalid-feedback">Enter Email</p>
+          <p class="valid-feedback">Looks good!</p>
+        </div>
+
+        <div class="col-md-6 mb-3 position-relative">
+          <label for="city" class="form-label">City</label>
+          <input type="text" class="form-control" id="city" required />
+          <p class="invalid-tooltip">Enter City</p>
+          <p class="valid-tooltip">Looks good!</p>
+        </div>
+        <div class="col-md-6 mb-3 position-relative">
+          <label for="state" class="form-label">State</label>
+          <input type="text" class="form-control" value="Tamilnadu" id="state" required />
+          <p class="valid-tooltip">Looks good!</p>
+        </div>
+
+        <div class="col-md-12 mb-3">
+          <button class="btn btn-primary" type="submit">Register Now</button>
+          <button class="btn btn-danger" type="reset">Clear All</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (() => {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            "submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>
