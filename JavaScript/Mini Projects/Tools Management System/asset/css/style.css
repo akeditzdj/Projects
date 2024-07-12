@@ -25,6 +25,12 @@ nav img {
   padding: 5px;
 }
 
-.container-fluid #btnShow {
-  width: fit-content;
+.btnReturn:disabled {
+  background-color: antiquewhite !important ;
+  pointer-events: none !important;
 }
+
+#remark {
+  resize: none;
+}
+
