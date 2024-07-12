@@ -26,7 +26,11 @@ class csvExport {
     return lines.join("\n");
   }
   _longestRow() {
-    return this.rows.reduce((length, row) => (row.childElementCount > length ? row.childElementCount : length), 0);
+    return this.rows.reduce(
+      (length, row) =>
+        row.childElementCount > length ? row.childElementCount : length,
+      0
+    );
   }
   static safeData(td) {
     let data = td.textContent;
@@ -48,7 +52,7 @@ btnExport.addEventListener("click", () => {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "file.csv";
+  a.download = currentDate() + " " + "Tools In/Out List.csv";
   a.click();
 
   setTimeout(() => {

@@ -1,7 +1,6 @@
 const idElement = document.getElementById("id");
 const deteElement = document.getElementById("date");
 const timeElement = document.getElementById("time");
-const typeElement = document.getElementById("type");
 const personNameElement = document.getElementById("personName");
 const toolsNameElement = document.getElementById("toolsName");
 const searchElement = document.getElementById("filter-tools");
@@ -27,14 +26,13 @@ btnAdd.addEventListener("click", function () {
   const id = idElement.value;
   const date = currentDate();
   const time = showTime();
-  const type = typeElement.value;
   const personName = personNameElement.value;
   const toolsName = toolsNameElement.value;
   let remark = "";
   let timeIn = "";
   let tools = getTools();
 
-  if (date && time && type && personName && toolsName) {
+  if (date && time && personName && toolsName) {
     if (id) {
       //Update Tools
       let updatedTools = tools.map((tool) => {
@@ -43,7 +41,6 @@ btnAdd.addEventListener("click", function () {
             ...tool,
             date: date,
             time: time,
-            type: type,
             personName: personName,
             toolsName: toolsName,
           };
@@ -60,7 +57,6 @@ btnAdd.addEventListener("click", function () {
         id: Date.now(),
         date: date,
         time: time,
-        type: type,
         personName: personName,
         toolsName: toolsName,
         timeIn: timeIn,
@@ -83,7 +79,6 @@ function editTools(id) {
   let tools = getTools();
   const selectedTools = tools.filter((tool) => tool.id == id)[0];
   idElement.value = selectedTools.id;
-  typeElement.value = selectedTools.type;
   personNameElement.value = selectedTools.personName;
   toolsNameElement.value = selectedTools.toolsName;
   loadTools();
@@ -95,7 +90,7 @@ function deleteTools(id) {
     tools = getTools();
     let updatedTools = tools.filter((tool) => tool.id != id);
     tools = updatedTools;
-    saveTools();
+    saveTools(updatedTools);
   }
 }
 
@@ -116,7 +111,12 @@ function getTools() {
 
 // Load Data in Table
 function loadTools(isForSearch = 0, filteredTool = []) {
-  let tools = getTools();
+  let tools = [];
+  if (isForSearch == 0) {
+    tools = getTools();
+  } else {
+    tools = filteredTool;
+  }
 
   const toolList = document.querySelector("#toolList");
   toolList.innerHTML = "";
@@ -126,13 +126,18 @@ function loadTools(isForSearch = 0, filteredTool = []) {
     <td>${tool.date}</td>
      <td>${tool.time}</td>
       <td>${tool.toolsName}</td>
-       <td>${tool.type}</td>
      <td>${tool.personName}</td>
         <td id="time-in">${tool.timeIn}</td>
     <td>${tool.remark}</td>
-    <td><button onclick="editTools(${tool.id})" class="btn btn-sm btn-primary btnEdit">Edit</button></td>
-    <td><button onclick="deleteTools(${tool.id})" class="btn btn-sm btn-danger btnDel">Delete</button></td>
-    <td><button data-id=${tool.id} class="btn btn-success btn-sm btnReturn">Retuned</button></td>
+    <td><button onclick="editTools(${
+      tool.id
+    })" class="btn btn-sm btn-primary btnEdit">Edit</button></td>
+    <td><button onclick="deleteTools(${
+      tool.id
+    })" class="btn btn-sm btn-danger btnDel">Delete</button></td>
+    <td><button data-id=${
+      tool.id
+    } class="btn btn-success btn-sm btnReturn">Retuned</button></td>
  
     </tr>
     `;
@@ -144,7 +149,6 @@ loadTools();
 
 //ClearAll input elements
 function clearAll() {
-  typeElement.value = "";
   personNameElement.value = "";
   toolsNameElement.value = "";
 }
@@ -153,10 +157,11 @@ function clearAll() {
 searchElement.addEventListener("input", function () {
   const searchQuery = this.value.toLowerCase();
   const tools = getTools();
-  const filteredTool = tools.filter((tool) => tool.toolsName.toLowerCase().includes(searchQuery));
+  const filteredTool = tools.filter((tool) =>
+    tool.toolsName.toLowerCase().includes(searchQuery)
+  );
   loadTools(1, filteredTool);
 });
-
 
 // Return tools
 document.addEventListener("click", function (e) {
