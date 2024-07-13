@@ -16,6 +16,8 @@ nav img {
   height: 70px;
 }
 
+
+
 .clock {
   font-size: 30px;
   width: 50%;
@@ -24,9 +26,3 @@ nav img {
   background-color: rgb(127, 255, 244);
   padding: 5px;
 }
-
-
-#remark {
-  resize: none;
-}
-
