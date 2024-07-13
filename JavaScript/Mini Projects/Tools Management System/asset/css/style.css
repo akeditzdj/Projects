@@ -25,10 +25,6 @@ nav img {
   padding: 5px;
 }
 
-.btnReturn:disabled {
-  background-color: antiquewhite !important ;
-  pointer-events: none !important;
-}
 
 #remark {
   resize: none;

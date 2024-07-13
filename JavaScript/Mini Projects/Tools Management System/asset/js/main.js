@@ -150,15 +150,15 @@ function loadTools(isForSearch = 0, filteredTool = []) {
      <td>${tool.personName}</td>
         <td id="time-in">${tool.timeIn}</td>
     <td>${tool.remark}</td>
-    <td><button onclick="editTools(${
+    <td><button id="btnEdit" onclick="editTools(${
       tool.id
     })" class="btn btn-sm btn-primary btnEdit">Edit</button></td>
-    <td><button onclick="deleteTools(${
+    <td><button id="btnDel" onclick="deleteTools(${
       tool.id
     })" class="btn btn-sm btn-danger btnDel">Delete</button></td>
     <td><button data-id=${
       tool.id
-    } class="btn btn-success btn-sm btnReturn">Retuned</button></td>
+    } class="btn btn-success btn-sm btnReturn">Return</button></td>
  
     </tr>
     `;
@@ -192,7 +192,6 @@ document.addEventListener("click", function (e) {
     const ModalStatus = new bootstrap.Modal(modal, {
       keyboard: false,
     });
-
     const remark = prompt("Enter Remarks");
     if (remark) {
       let timeIn = showTime();
@@ -207,7 +206,6 @@ document.addEventListener("click", function (e) {
           return tool;
         }
       });
-
       modalTitle.innerHTML = "Tools Return Status...";
       alertMsg.innerHTML = "Tools Returned Successfully...";
       ModalStatus.show();
@@ -217,16 +215,3 @@ document.addEventListener("click", function (e) {
     }
   }
 });
-
-setTimeout(() => {
-    const ModalStatus = new bootstrap.Modal(modal, {
-      keyboard: false,
-    });
-  function myFunction() {
-    alert("Hi")
-    ModalStatus.hide();
-  }
-  myFunction();
-}, 3000);
-
-
