@@ -13,38 +13,42 @@
 
 <body>
 
-    <nav class="nav navbar-expand-lg px-md-4 py-md-2 py-1 shadow bg-light sticky-top">
-        <div class="container-fluid d-flex align-items-center">
+  <nav class="nav navbar-expand-lg px-md-4 py-2 shadow bg-white sticky-top">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
       <div class="navbar-brand fw-bold text-success">
         <a href="index.html"><img class="image-fluid" src="./asset/images/logo.png" alt="#" /></a>
       </div>
       <div class="title fw-bold text-success">
-        <h3 class="fw-bold ps-3">UTOC Engineering Pte Ltd</h3>
+        <h3 class="fw-bold ps-3 d-none d-md-block">UTOC Engineering Pte Ltd</h3>
+        <h3 class="fw-bold ps-3 d-block d-md-none">UTOC</h3>
       </div>
-      </div>
-    </nav>
-      <div class="container-fluid">
+      <div><img class="image-fluid" src="./asset/images/utoc logo.png" alt="#" /></div>
+    </div>
+  </nav>
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
         <div class="title">
-          <h2 class="fw-bold display-3 fst-italic text-success text-center mt-3">TOOLS MANAGEMENT SYSTEM</h2>
+          <h2 class="fw-bold display-3 fst-italic text-success text-center mt-3 d-none d-md-block">TOOLS MANAGEMENT
+            SYSTEM</h2>
+          <h1 class="fw-bold  fst-italic text-success text-center mt-3 d-block d-md-none">TOOLS MANAGEMENT SYSTEM</h1>
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12 d-flex justify-content-center align-items-center">
-          <div class="mt-2 mt-3 text-center clock" id="clock">8:10:45</div>
-        </div>
+        <div class="mt-2 mt-3 text-center clock" id="clock">8:10:45</div>
       </div>
-   
+    </div>
 
     <div class="row mt-3">
-      <div class="col-md-12 d-flex justify-content-between">
+      <div
+        class="col-md-12 d-md-flex d-flex justify-content-md-between justify-content-center align-items-md-center align-items-center flex-column flex-md-row">
         <div class="mt-3">
           <button id="regTool" class="btn btn-lg btn-success">Check Out / Check In <i class="bi bi-tools"></i></button>
         </div>
-          <div class="mt-3"><button id="btnExport" class="btn btn-primary">Export Data</button></div>
+        <div class="mt-3"><button id="btnExport" class="btn btn-primary">Export Data</button></div>
         <div class="mt-3">
           <div class="input-group">
             <span class="input-group-text">Search</span>
@@ -54,71 +58,61 @@
         </div>
       </div>
     </div>
-    </div>
-    <!-- <div class="row mt-4">
+  </div>
+  <!-- <div class="row mt-4">
             <h5 class="text-center fst-italic text-primary">Think smart... Work fast...</h5>
             <h6 class="text-center mt-3 text-success">Thank You for All. </h6>
         </div> -->
 
-    <!------ Check-Out Modal Start-------->
+  <!------ Check-Out Modal Start-------->
 
-    <div class="modal" tabindex="-1" id="myModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Register Your Tools</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form action="#" id="toolForm">
-              <div class="form-group">
-                <div class="row">
-                  <div class="col-12">
-                    <input class="form-control" type="text" name="id" id="id" hidden />
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <label class="form-label" for="date">Date</label>
-                    <p class="mt-3 p-1 bg-warning text-center fw-bold" id="date"></p>
-                  </div>
-                  <div class="col-md-6 mt-3 mt-md-0">
-                    <label class="form-label" for="time">Time</label>
-                    <p class="mt-3 p-1 bg-warning text-center fw-bold time" id="time"></p>
-                  </div>
-                </div>
-                <div class="row mt-3 mt-md-5">
-                  <div class="col-md-12 mt-3 mt-md-0">
-                    <label class="form-label" for="person-name">Person Name</label>
-                    <select class="form-select" name="personName" id="personName">
-                      <option value="Name-1">Name-1</option>
-                      <option value="Name-2">Name-2</option>
-                      <option value="Name-3">Name-3</option>
-                      <option value="Name-4">Name-4</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="row mt-3 mt-md-5">
-                  <div class="col-12">
-                    <label class="form-label" for="toolsName">Tools Name</label>
-                    <select class="form-select" name="toolsName" id="toolsName">
-                      <option value="Tool-1">Tool-1</option>
-                      <option value="Tool-2">Tool-2</option>
-                      <option value="Tool-3">Tool-3</option>
-                      <option value="Tool-4">Tool-4</option>
-                    </select>
-                  </div>
+  <div class="modal" tabindex="-1" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Register Your Tools</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="#" id="toolForm">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-12">
+                  <input class="form-control" type="text" name="id" id="id" hidden />
                 </div>
               </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" id="btnClear" class="btn btn-secondary">Clear</button>
-            <button type="button" id="btnAdd" class="btn btn-primary">Submit</button>
-          </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label class="form-label" for="date">Date</label>
+                  <p class="mt-3 p-1 bg-warning text-center fw-bold" id="date"></p>
+                </div>
+                <div class="col-md-6 mt-3 mt-md-0">
+                  <label class="form-label" for="time">Time</label>
+                  <p class="mt-3 p-1 bg-warning text-center fw-bold time" id="time"></p>
+                </div>
+              </div>
+              <div class="row mt-3 mt-md-5">
+                <div class="col-md-12 mt-3 mt-md-0">
+                  <label class="form-label" for="person-name">Person Name</label>
+                  <select class="form-select" name="personName" id="personName"></select>
+                </div>
+              </div>
+              <div class="row mt-3 mt-md-5">
+                <div class="col-12">
+                  <label class="form-label" for="toolsName">Tools Name</label>
+                  <select class="form-select" name="toolsName" id="toolsName"></select>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="btnClear" class="btn btn-secondary">Clear</button>
+          <button type="button" id="btnAdd" class="btn btn-primary">Submit</button>
         </div>
       </div>
     </div>
+  </div>
   </div>
   <!------ Check-Out and Check-In Modal End-------->
   <!------ Remark Modal Start -------->
@@ -171,6 +165,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="asset/js/time.js"></script>
+  <script src="asset/js/data.js"></script>
   <script src="asset/js/main.js"></script>
   <script src="asset/js/export.js"></script>
 </body>
