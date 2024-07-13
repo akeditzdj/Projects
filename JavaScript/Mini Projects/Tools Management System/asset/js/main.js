@@ -8,6 +8,11 @@ const btnAdd = document.getElementById("btnAdd");
 const btnClear = document.getElementById("btnClear");
 const regTool = document.getElementById("regTool");
 
+
+  const alertMsg = document.getElementById("alert");
+  const modalTitle = document.getElementById("title");
+
+
 //Modal show and Hide
 const Modal = new bootstrap.Modal(myModal, {
   keyboard: false,
@@ -30,10 +35,9 @@ btnAdd.addEventListener("click", function () {
   const toolsName = toolsNameElement.value;
   let remark = "";
   let timeIn = "";
+  let returnPersonName = "";
   let tools = getTools();
 
-  const alertMsg = document.getElementById("alert");
-  const modalTitle = document.getElementById("title");
 
   const ModalStatus = new bootstrap.Modal(modal, {
     keyboard: false,
@@ -70,6 +74,7 @@ btnAdd.addEventListener("click", function () {
         personName: personName,
         toolsName: toolsName,
         timeIn: timeIn,
+        returnPersonName: returnPersonName,
         remark: remark,
       };
       tools.push(toolObj);
@@ -82,7 +87,10 @@ btnAdd.addEventListener("click", function () {
     }
     Modal.hide();
   } else {
-    alert("Please fill the all details");
+    ModalStatus.show();
+    modalTitle.innerHTML = "Warning";
+    alertMsg.innerHTML = "Plaese fill all the details"
+    
   }
 });
 
@@ -99,20 +107,28 @@ function editTools(id) {
 
 // Delete tools
 function deleteTools(id) {
+  if (id) {
+    tools = getTools();
+    let updatedTools = tools.filter((tool) => tool.id != id);
+    tools = updatedTools;
+    saveTools(updatedTools);
+    msgModal.hide();
+    const myTimeout = setTimeout(DeleteSuccessMessage, 1000);
+    myTimeout();
+  }
+}
+
+// Delete Success message with timer
+
+function DeleteSuccessMessage() {
   const modalTitle = document.getElementById("title");
   const alertMsg = document.getElementById("alert");
   const ModalStatus = new bootstrap.Modal(modal, {
     keyboard: false,
   });
-  if (confirm("Are you sure to delete?")) {
-    tools = getTools();
-    let updatedTools = tools.filter((tool) => tool.id != id);
-    tools = updatedTools;
-    saveTools(updatedTools);
-    ModalStatus.show();
-    modalTitle.innerHTML = "Delete Tools";
-    alertMsg.innerHTML = "Tools Deleted Successfully...";
-  }
+  ModalStatus.show();
+  modalTitle.innerHTML = "Delete Tools";
+  alertMsg.innerHTML = "Tools Deleted Successfully...";
 }
 
 // Save tools to localStorage
@@ -149,11 +165,12 @@ function loadTools(isForSearch = 0, filteredTool = []) {
       <td>${tool.toolsName}</td>
      <td>${tool.personName}</td>
         <td id="time-in">${tool.timeIn}</td>
+           <td>${tool.returnPersonName}</td>
     <td>${tool.remark}</td>
     <td><button id="btnEdit" onclick="editTools(${
       tool.id
     })" class="btn btn-sm btn-primary btnEdit">Edit</button></td>
-    <td><button id="btnDel" onclick="deleteTools(${
+    <td><button id="btnDel" onclick="deleteUserWithConfirmation(${
       tool.id
     })" class="btn btn-sm btn-danger btnDel">Delete</button></td>
     <td><button data-id=${
@@ -192,8 +209,9 @@ document.addEventListener("click", function (e) {
     const ModalStatus = new bootstrap.Modal(modal, {
       keyboard: false,
     });
+    const returnPersonName = prompt("Enter Name");
     const remark = prompt("Enter Remarks");
-    if (remark) {
+    if ((remark, returnPersonName)) {
       let timeIn = showTime();
       let id = e.target.dataset.id;
       let data = getTools();
@@ -201,6 +219,7 @@ document.addEventListener("click", function (e) {
         if (tool.id === Number(id)) {
           tool.remark = remark;
           tool.timeIn = timeIn;
+          tool.returnPersonName = returnPersonName;
           return tool;
         } else {
           return tool;
@@ -215,3 +234,31 @@ document.addEventListener("click", function (e) {
     }
   }
 });
+
+// Custom modal with confirmation
+
+const msgModal = new bootstrap.Modal(staticBackdrop, {
+  keyboard: false,
+});
+
+function showModal(callback) {
+  msgModal.show();
+
+  document.getElementById("yes").addEventListener("click", function () {
+    callback(true);
+    msgModal.hide();
+  });
+
+  document.getElementById("no").addEventListener("click", function () {
+    callback(false);
+    msgModal.hide();
+  });
+}
+
+function deleteUserWithConfirmation(id) {
+  showModal(function (confirmed) {
+    if (confirmed) {
+      deleteTools(id);
+    }
+  });
+}

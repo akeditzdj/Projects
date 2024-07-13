@@ -70,7 +70,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Register Your Tools</h5>
+          <h5 class="modal-title" id="modalTitle">Register Your Tools</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -115,9 +115,9 @@
   </div>
   </div>
   <!------ Check-Out and Check-In Modal End-------->
-  <!------ Remark Modal Start -------->
+  <!------ Message Modal Start -------->
 
-  <div class="modal modal" tabindex="-1" id="modal">
+  <div class="modal fade" tabindex="-1" id="modal">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header bg-success">
@@ -133,7 +133,29 @@
       </div>
     </div>
   </div>
-  <!------ Remark Modal End -------->
+  <!------ Message Modal End -------->
+    <!------ Return and  Remark Modal Start -------->
+    
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Delete Tools</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure to <span class="fw-bold">Delete</span> ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="no" data-bs-dismiss="modal">No</button>
+        <button type="button" class="btn btn-danger" id="yes">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <!------ Return and  Remark Modal -------->
+
 
   <!------ Main Data Table Start-------->
 
@@ -146,8 +168,9 @@
             <th>Date</th>
             <th>Tool (Time Out)</th>
             <th>Tools Name</th>
-            <th>Person name</th>
+            <th>Take (Person name)</th>
             <th>Tool (Time In)</th>
+            <th>Return (Person Name)</th>
             <th>Remarks</th>
             <th>Edit</th>
             <th>Delete</th>
