@@ -66,7 +66,7 @@
 
   <!------ Check-Out Modal Start-------->
 
-  <div class="modal" tabindex="-1" id="myModal">
+  <div class="modal" id="myModalRegister">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -115,13 +115,14 @@
   </div>
   </div>
   <!------ Check-Out and Check-In Modal End-------->
+
   <!------ Message Modal Start -------->
 
-  <div class="modal fade" tabindex="-1" id="modal">
+  <div class="modal fade" id="myModalMessage">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header bg-success">
-          <h5 id="title" class="modal-title text-light"></h5>
+        <div class="modal-header bg-warning">
+          <h5 id="title" class="modal-title text-dark"></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -134,10 +135,10 @@
     </div>
   </div>
   <!------ Message Modal End -------->
-    <!------ Return and  Remark Modal Start -------->
-    
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop">
+
+    <!------ Delete Modal Start -------->
+  
+<div class="modal fade" id="myModalDelete">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header bg-danger text-white">
@@ -154,7 +155,36 @@
     </div>
   </div>
 </div>
-    <!------ Return and  Remark Modal -------->
+    <!------ Delete Remark Modal -------->
+
+
+        <!------ Return and  Remark Modal Start -------->
+        
+        <div class="modal fade" id="myModalReturn">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header bg-success text-white">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Return Tools</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                   <div class="form-group mt-2">
+                    <label class="form-label" for="returnPersonName"></label>
+                    <select class="form-select" name="returnPersonName" id="returnPersonName"></select>
+                   </div>
+                    <div class="form-group mt-2">
+                      <label class="form-label" for="remark"></label>
+                      <textarea class="form-control" name="remark" id="remark"></textarea>
+                    </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="Rno" data-bs-dismiss="modal">No</button>
+                <button type="button" class="btn btn-primary  " id="Ryes">Yes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!------ Return and  Remark Modal -------->
 
 
   <!------ Main Data Table Start-------->
@@ -168,7 +198,7 @@
             <th>Date</th>
             <th>Tool (Time Out)</th>
             <th>Tools Name</th>
-            <th>Take (Person name)</th>
+            <th>Take (Person Name)</th>
             <th>Tool (Time In)</th>
             <th>Return (Person Name)</th>
             <th>Remarks</th>

@@ -24,3 +24,7 @@ nav img {
   background-color: rgb(127, 255, 244);
   padding: 5px;
 }
+
+textarea{
+  resize: none;
+}

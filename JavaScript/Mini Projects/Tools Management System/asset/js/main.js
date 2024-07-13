@@ -8,21 +8,18 @@ const btnAdd = document.getElementById("btnAdd");
 const btnClear = document.getElementById("btnClear");
 const regTool = document.getElementById("regTool");
 
-
-  const alertMsg = document.getElementById("alert");
-  const modalTitle = document.getElementById("title");
-
-
 //Modal show and Hide
-const Modal = new bootstrap.Modal(myModal, {
+
+const modalTitle = document.getElementById("title");
+const alertMsg = document.getElementById("alert");
+const mainModalTitle = document.getElementById("modalTitle");
+
+const Modal = new bootstrap.Modal(myModalRegister, {
   keyboard: false,
 });
-function modalShow() {
-  Modal.show();
-}
 
 regTool.addEventListener("click", function () {
-  modalShow();
+  Modal.show();
   clearAll();
 });
 
@@ -37,9 +34,7 @@ btnAdd.addEventListener("click", function () {
   let timeIn = "";
   let returnPersonName = "";
   let tools = getTools();
-
-
-  const ModalStatus = new bootstrap.Modal(modal, {
+  const ModalStatus = new bootstrap.Modal(myModalMessage, {
     keyboard: false,
   });
 
@@ -59,10 +54,13 @@ btnAdd.addEventListener("click", function () {
           return tool;
         }
       });
+
+      saveTools(updatedTools);
+      Modal.hide();
       ModalStatus.show();
       modalTitle.innerHTML = "Tools Update Status";
       alertMsg.innerHTML = "Tools Updated Successfully...";
-      saveTools(updatedTools);
+
       clearAll();
       loadTools();
     } else {
@@ -89,14 +87,13 @@ btnAdd.addEventListener("click", function () {
   } else {
     ModalStatus.show();
     modalTitle.innerHTML = "Warning";
-    alertMsg.innerHTML = "Plaese fill all the details"
-    
+    alertMsg.innerHTML = "Plaese fill all the details";
   }
 });
 
 //Edit tools
 function editTools(id) {
-  modalShow();
+  Modal.show();
   let tools = getTools();
   const selectedTools = tools.filter((tool) => tool.id == id)[0];
   idElement.value = selectedTools.id;
@@ -113,22 +110,52 @@ function deleteTools(id) {
     tools = updatedTools;
     saveTools(updatedTools);
     msgModal.hide();
-    const myTimeout = setTimeout(DeleteSuccessMessage, 1000);
-    myTimeout();
+     setTimeout(deleteSuccessMessage, 1000);
   }
+
 }
+
 
 // Delete Success message with timer
 
-function DeleteSuccessMessage() {
+function deleteSuccessMessage(id) {
   const modalTitle = document.getElementById("title");
   const alertMsg = document.getElementById("alert");
-  const ModalStatus = new bootstrap.Modal(modal, {
+  const ModalStatus = new bootstrap.Modal(myModalMessage, {
     keyboard: false,
   });
   ModalStatus.show();
   modalTitle.innerHTML = "Delete Tools";
   alertMsg.innerHTML = "Tools Deleted Successfully...";
+
+}
+
+// Custom modal delete with confirmation
+
+const msgModal = new bootstrap.Modal(myModalDelete, {
+  keyboard: false,
+});
+
+function showDeleteModal(callback) {
+  msgModal.show();
+
+  document.getElementById("yes").addEventListener("click", function () {
+    callback(true);
+    msgModal.hide();
+  });
+
+  document.getElementById("no").addEventListener("click", function () {
+    callback(false);
+    msgModal.hide();
+  });
+}
+
+function deleteUserWithConfirmation(id) {
+  showDeleteModal(function (confirmed) {
+    if (confirmed) {
+      deleteTools(id);
+    }
+  });
 }
 
 // Save tools to localStorage
@@ -202,63 +229,68 @@ searchElement.addEventListener("input", function () {
 });
 
 // Return tools
-document.addEventListener("click", function (e) {
-  if (e.target.classList.contains("btnReturn")) {
-    const modalTitle = document.getElementById("title");
-    const alertMsg = document.getElementById("alert");
-    const ModalStatus = new bootstrap.Modal(modal, {
-      keyboard: false,
-    });
-    const returnPersonName = prompt("Enter Name");
-    const remark = prompt("Enter Remarks");
-    if ((remark, returnPersonName)) {
-      let timeIn = showTime();
-      let id = e.target.dataset.id;
-      let data = getTools();
-      let updatedData = data.map((tool) => {
-        if (tool.id === Number(id)) {
-          tool.remark = remark;
-          tool.timeIn = timeIn;
-          tool.returnPersonName = returnPersonName;
-          return tool;
-        } else {
-          return tool;
-        }
-      });
-      modalTitle.innerHTML = "Tools Return Status...";
-      alertMsg.innerHTML = "Tools Returned Successfully...";
-      ModalStatus.show();
 
-      saveTools(updatedData);
-      loadTools();
-    }
-  }
-});
-
-// Custom modal with confirmation
-
-const msgModal = new bootstrap.Modal(staticBackdrop, {
+const returnModal = new bootstrap.Modal(myModalReturn, {
   keyboard: false,
 });
 
-function showModal(callback) {
-  msgModal.show();
+// function returnToolsWithRemark() {
+  document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("btnReturn")) {
+      const modalTitle = document.getElementById("title");
+      const alertMsg = document.getElementById("alert");
+      const ModalStatus = new bootstrap.Modal(myModalMessage, {
+        keyboard: false,
+      });
 
-  document.getElementById("yes").addEventListener("click", function () {
-    callback(true);
-    msgModal.hide();
-  });
+      // let returnPersonNameElement =document.getElementById("returnPersonName");
+      // let remarkElement = document.getElementById("remark");
 
-  document.getElementById("no").addEventListener("click", function () {
-    callback(false);
-    msgModal.hide();
-  });
-}
+       const returnPersonName = prompt("Enter Name")
+       const remark = prompt("Enter Remaraks")
 
-function deleteUserWithConfirmation(id) {
-  showModal(function (confirmed) {
-    if (confirmed) {
-      deleteTools(id);
+      if ((remark, returnPersonName)) {
+        let timeIn = showTime();
+        let id = e.target.dataset.id;
+        let data = getTools();
+        let updatedData = data.map((tool) => {
+          if (tool.id === Number(id)) {
+            tool.remark = remark;
+            tool.timeIn = timeIn;
+            tool.returnPersonName = returnPersonName;
+            return tool;
+          } else {
+            return tool;
+          }
+        });
+        modalTitle.innerHTML = "Tools Return Status...";
+        alertMsg.innerHTML = "Tools Returned Successfully...";
+        ModalStatus.show();
+
+        saveTools(updatedData);
+        loadTools();
+      }
     }
   });
-}
+// }
+
+// function showReturnModal(callback) {
+//   returnModal.show();
+//   document.getElementById("Ryes").addEventListener("click", function () {
+//     callback(true);
+//     returnModal.hide();
+//   });
+
+//   document.getElementById("Rno").addEventListener("click", function () {
+//     callback(false);
+//     returnModal.hide();
+//   });
+// }
+
+// function returnTools(id) {
+//   showReturnModal(function (confirmed) {
+//     if (confirmed) {
+//       returnToolsWithRemark(id);
+//     }
+//   });
+// }

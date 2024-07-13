@@ -51,7 +51,15 @@ employeeName.forEach(function (item) {
     let name = document.createElement("option");
     name.text = item;
     name.value = item;
-    personName.appendChild(name);
+  personName.appendChild(name);
+  
+});
+
+employeeName.forEach(function (item) {
+  let nameReturn = document.createElement("option");
+  nameReturn.text = item;
+  nameReturn.value = item;
+  returnPersonName.appendChild(nameReturn);
 });
 
 
