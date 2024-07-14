@@ -32,6 +32,7 @@ btnAdd.addEventListener("click", function () {
   const personName = personNameElement.value;
   const toolsName = toolsNameElement.value;
   const unit = unitNameElement.value;
+  let returnDate = "";
   let remark = "";
   let timeIn = "";
   let returnPersonName = "";
@@ -74,9 +75,9 @@ btnAdd.addEventListener("click", function () {
         time: time,
         personName: personName,
         toolsName: toolsName,
-        returnDate:returnDate,
         timeIn: timeIn,
         unit: unit,
+        returnDate:returnDate,
         returnPersonName: returnPersonName,
         remark: remark,
       };
@@ -104,6 +105,7 @@ function editTools(id) {
   idElement.value = selectedTools.id;
   personNameElement.value = selectedTools.personName;
   toolsNameElement.value = selectedTools.toolsName;
+  unitNameElement.value = selectedTools.unit
   loadTools();
 }
 
@@ -230,7 +232,8 @@ searchElement.addEventListener("input", function () {
   const searchQuery = this.value.toLowerCase();
   const tools = getTools();
   const filteredTool = tools.filter((tool) =>
-    tool.toolsName.toLowerCase().includes(searchQuery)
+    tool.toolsName.toLowerCase().includes(searchQuery) ||
+    tool.personName.toLowerCase().includes(searchQuery)
   );
   loadTools(1, filteredTool);
 });
