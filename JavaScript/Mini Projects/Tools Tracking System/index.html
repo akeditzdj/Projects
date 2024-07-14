@@ -59,10 +59,6 @@
       </div>
     </div>
   </div>
-  <!-- <div class="row mt-4">
-            <h5 class="text-center fst-italic text-primary">Think smart... Work fast...</h5>
-            <h6 class="text-center mt-3 text-success">Thank You for All. </h6>
-        </div> -->
 
   <!------ Check-Out Modal Start-------->
 
@@ -103,12 +99,12 @@
                   <select class="form-select" name="toolsName" id="toolsName"></select>
                 </div>
               </div>
-                  <div class="row mt-3 mt-md-5">
-                    <div class="col-12">
-                      <label class="form-label" for="unitName">Location (Unit)</label>
-                      <select class="form-select" name="unitName" id="unitName"></select>
-                    </div>
-                  </div>
+              <div class="row mt-3 mt-md-5">
+                <div class="col-12">
+                  <label class="form-label" for="unitName">Location (Unit)</label>
+                  <select class="form-select" name="unitName" id="unitName"></select>
+                </div>
+              </div>
             </div>
           </form>
         </div>
@@ -142,62 +138,60 @@
   </div>
   <!------ Message Modal End -------->
 
-    <!------ Delete Modal Start -------->
-  
-<div class="modal fade" id="myModalDelete">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header bg-danger text-white">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Delete Tools</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Are you sure to <span class="fw-bold">Delete</span> ?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" id="no" data-bs-dismiss="modal">No</button>
-        <button type="button" class="btn btn-danger" id="yes">Yes</button>
+  <!------ Delete Modal Start -------->
+
+  <div class="modal fade" id="myModalDelete">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Delete Tools</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure to <span class="fw-bold">Delete</span> ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="no" data-bs-dismiss="modal">No</button>
+          <button type="button" class="btn btn-danger" id="yes">Yes</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-    <!------ Delete Remark Modal -------->
+  <!------ Delete Remark Modal -------->
 
+  <!------ Return and  Remark Modal Start -------->
 
-        <!------ Return and  Remark Modal Start -------->
-        
-        <div class="modal fade" id="myModalReturn">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header bg-success text-white">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Return Tools</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                   <div class="form-group mt-2">
-                    <label class="form-label" for="returnPersonName"></label>
-                    <select class="form-select" name="returnPersonName" id="returnPersonName"></select>
-                   </div>
-                    <div class="form-group mt-2">
-                      <label class="form-label" for="remark"></label>
-                      <textarea class="form-control" name="remark" id="remark"></textarea>
-                    </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" id="Rno" data-bs-dismiss="modal">No</button>
-                <button type="button" class="btn btn-primary  " id="Ryes">Yes</button>
-              </div>
-            </div>
+  <div class="modal fade" id="myModalReturn">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Return Tools</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group mt-2">
+            <label class="form-label" for="returnPersonName"></label>
+            <select class="form-select" name="returnPersonName" id="returnPersonName"></select>
+          </div>
+          <div class="form-group mt-2">
+            <label class="form-label" for="remark"></label>
+            <textarea class="form-control" name="remark" id="remark"></textarea>
           </div>
         </div>
-        <!------ Return and  Remark Modal -------->
-
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="Rno" data-bs-dismiss="modal">No</button>
+          <button type="button" class="btn btn-primary  " id="Ryes">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!------ Return and  Remark Modal -------->
 
   <!------ Main Data Table Start-------->
 
   <div class="container-fluid">
-    <div class="row mt-3">
-      <div class="col-12" style="height: 600px; overflow-y: auto">
+    <div class="row mt-3 mb-0">
+      <div class="col-12" style="height: 550px; overflow-y: auto">
         <table class="table table-hover table-bordered">
           <thead class="text-center">
             <th>Sl.No</th>
@@ -220,7 +214,13 @@
     </div>
 
     <!------ Main Data Table End-------->
+
   </div>
+  <footer class="bg-body-light shadow py-2">
+      <h5 class="text-center fst-italic text-primary mt-1">Think smart... Work fast...</h5>
+      <p class="text-center mb-2">Copyright &copy; 2024 <a class="fw-bold link-underline-opacity-0 link-primary" target="_blank"
+          href="https://akeditz.com">AK Editz</a>. All Rights Reserved.</p>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
