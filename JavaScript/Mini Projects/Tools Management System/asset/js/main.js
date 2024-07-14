@@ -3,6 +3,7 @@ const deteElement = document.getElementById("date");
 const timeElement = document.getElementById("time");
 const personNameElement = document.getElementById("personName");
 const toolsNameElement = document.getElementById("toolsName");
+const unitNameElement = document.getElementById("unitName");
 const searchElement = document.getElementById("filter-tools");
 const btnAdd = document.getElementById("btnAdd");
 const btnClear = document.getElementById("btnClear");
@@ -30,6 +31,7 @@ btnAdd.addEventListener("click", function () {
   const time = showTime();
   const personName = personNameElement.value;
   const toolsName = toolsNameElement.value;
+  const unit = unitNameElement.value;
   let remark = "";
   let timeIn = "";
   let returnPersonName = "";
@@ -38,7 +40,7 @@ btnAdd.addEventListener("click", function () {
     keyboard: false,
   });
 
-  if (date && time && personName && toolsName) {
+  if (date && time && personName && toolsName && unit) {
     if (id) {
       //Update Tools
       let updatedTools = tools.map((tool) => {
@@ -49,6 +51,7 @@ btnAdd.addEventListener("click", function () {
             time: time,
             personName: personName,
             toolsName: toolsName,
+            unit: unit,
           };
         } else {
           return tool;
@@ -71,7 +74,9 @@ btnAdd.addEventListener("click", function () {
         time: time,
         personName: personName,
         toolsName: toolsName,
+        returnDate:returnDate,
         timeIn: timeIn,
+        unit: unit,
         returnPersonName: returnPersonName,
         remark: remark,
       };
@@ -110,25 +115,24 @@ function deleteTools(id) {
     tools = updatedTools;
     saveTools(updatedTools);
     msgModal.hide();
-     setTimeout(deleteSuccessMessage, 1000);
+     loadTools();
+    setTimeout(deleteSuccessMessage, 200);
+    }
   }
-
-}
-
 
 // Delete Success message with timer
 
-function deleteSuccessMessage(id) {
+function deleteSuccessMessage() {
+    const ModalStatus = new bootstrap.Modal(myModalMessage, {
+      keyboard: false,
+    });
   const modalTitle = document.getElementById("title");
   const alertMsg = document.getElementById("alert");
-  const ModalStatus = new bootstrap.Modal(myModalMessage, {
-    keyboard: false,
-  });
   ModalStatus.show();
   modalTitle.innerHTML = "Delete Tools";
   alertMsg.innerHTML = "Tools Deleted Successfully...";
+  }
 
-}
 
 // Custom modal delete with confirmation
 
@@ -191,6 +195,8 @@ function loadTools(isForSearch = 0, filteredTool = []) {
      <td>${tool.time}</td>
       <td>${tool.toolsName}</td>
      <td>${tool.personName}</td>
+     <td>${tool.unit}</td>
+     <td>${tool.returnDate}</td>
         <td id="time-in">${tool.timeIn}</td>
            <td>${tool.returnPersonName}</td>
     <td>${tool.remark}</td>
@@ -216,6 +222,7 @@ loadTools();
 function clearAll() {
   personNameElement.value = "";
   toolsNameElement.value = "";
+  unitNameElement.value = "";
 }
 
 //Filter tools
@@ -237,12 +244,12 @@ const returnModal = new bootstrap.Modal(myModalReturn, {
 // function returnToolsWithRemark() {
   document.addEventListener("click", function (e) {
     if (e.target.classList.contains("btnReturn")) {
+         const ModalStatus = new bootstrap.Modal(myModalMessage, {
+           keyboard: false,
+         });
       const modalTitle = document.getElementById("title");
       const alertMsg = document.getElementById("alert");
-      const ModalStatus = new bootstrap.Modal(myModalMessage, {
-        keyboard: false,
-      });
-
+   
       // let returnPersonNameElement =document.getElementById("returnPersonName");
       // let remarkElement = document.getElementById("remark");
 
@@ -251,12 +258,14 @@ const returnModal = new bootstrap.Modal(myModalReturn, {
 
       if ((remark, returnPersonName)) {
         let timeIn = showTime();
+        let returnDate = currentDate()
         let id = e.target.dataset.id;
         let data = getTools();
         let updatedData = data.map((tool) => {
           if (tool.id === Number(id)) {
             tool.remark = remark;
             tool.timeIn = timeIn;
+            tool.returnDate=returnDate
             tool.returnPersonName = returnPersonName;
             return tool;
           } else {

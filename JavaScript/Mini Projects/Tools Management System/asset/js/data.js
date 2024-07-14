@@ -1,6 +1,5 @@
 
 // Employee Name Array
-
 let employeeName = [
   "Abdul Rahman",
   "Ajithkumar",
@@ -72,4 +71,29 @@ equipName.forEach(function (item) {
   tool.text = item;
   tool.value = item;
   toolsName.appendChild(tool);
+});
+
+
+// Unit Name Array
+
+
+let locationName = [
+  "U6300",
+  "U6200",
+  "U5500",
+  "U5100",
+  "U2300",
+  "U3200",
+  "CA Regen",
+  "S1",
+  "S2",
+  "Mech Workshop",
+  "U6100",
+];
+
+locationName.forEach(function (item) {
+  let unit = document.createElement("option");
+  unit.text = item;
+  unit.value = item;
+  unitName.appendChild(unit);
 });
