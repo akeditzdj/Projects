@@ -202,15 +202,9 @@ function loadTools(isForSearch = 0, filteredTool = []) {
         <td id="time-in">${tool.timeIn}</td>
            <td>${tool.returnPersonName}</td>
     <td>${tool.remark}</td>
-    <td><button id="btnEdit" onclick="editTools(${
-      tool.id
-    })" class="btn btn-sm btn-primary btnEdit">Edit</button></td>
-    <td><button id="btnDel" onclick="deleteUserWithConfirmation(${
-      tool.id
-    })" class="btn btn-sm btn-danger btnDel">Delete</button></td>
-    <td><button data-id=${
-      tool.id
-    } class="btn btn-success btn-sm btnReturn">Return</button></td>
+    <td><button id="btnEdit" onclick="editTools(${tool.id})" class="btn btn-sm btn-primary btnEdit">Edit</button></td>
+    <td><button id="btnDel" onclick="deleteUserWithConfirmation(${tool.id})" class="btn btn-sm btn-danger btnDel">Delete<button></td>
+    <td><button data-id=${tool.id} class="btn btn-success btn-sm btnReturn">Return</button></td>
  
     </tr>
     `;
@@ -247,6 +241,8 @@ const returnModal = new bootstrap.Modal(myModalReturn, {
 // function returnToolsWithRemark() {
   document.addEventListener("click", function (e) {
     if (e.target.classList.contains("btnReturn")) {
+      // let prev = event.node.previousSibling;
+  
          const ModalStatus = new bootstrap.Modal(myModalMessage, {
            keyboard: false,
          });
@@ -255,7 +251,6 @@ const returnModal = new bootstrap.Modal(myModalReturn, {
    
       // let returnPersonNameElement =document.getElementById("returnPersonName");
       // let remarkElement = document.getElementById("remark");
-
        const returnPersonName = prompt("Enter Name")
        const remark = prompt("Enter Remaraks")
 
@@ -306,3 +301,16 @@ const returnModal = new bootstrap.Modal(myModalReturn, {
 //     }
 //   });
 // }
+
+
+// function disabledButton() {
+//   const btnReturn = document.querySelectorAll(".btnReturn");
+//   btnReturn.forEach(btn => {
+//     btn.addEventListener("click", function () {
+//       btn.parentNode;
+//       console.log(btn)
+//     })
+//   });
+// }
+
+// disabledButton();
