@@ -195,15 +195,15 @@ function loadTools(isForSearch = 0, filteredTool = []) {
     <td>${index + 1}</td>
     <td>${tool.date}</td>
      <td>${tool.time}</td>
-      <td>${tool.toolsName}</td>
+     <td>${tool.toolsName}</td>
      <td>${tool.personName}</td>
      <td>${tool.unit}</td>
      <td>${tool.returnDate}</td>
-        <td id="time-in">${tool.timeIn}</td>
-           <td>${tool.returnPersonName}</td>
+      <td id="time-in">${tool.timeIn}</td>
+      <td>${tool.returnPersonName}</td>
     <td>${tool.remark}</td>
     <td><button id="btnEdit" onclick="editTools(${tool.id})" class="btn btn-sm btn-primary btnEdit">Edit</button></td>
-    <td><button id="btnDel" onclick="deleteUserWithConfirmation(${tool.id})" class="btn btn-sm btn-danger btnDel">Delete<button></td>
+    <td><button id="btnDel" onclick="deleteUserWithConfirmation(${tool.id})" class="btn btn-sm btn-danger btnDel">Delete</button></td>
     <td><button data-id=${tool.id} class="btn btn-success btn-sm btnReturn">Return</button></td>
  
     </tr>
@@ -307,10 +307,12 @@ const returnModal = new bootstrap.Modal(myModalReturn, {
 //   const btnReturn = document.querySelectorAll(".btnReturn");
 //   btnReturn.forEach(btn => {
 //     btn.addEventListener("click", function () {
-//       btn.parentNode;
-//       console.log(btn)
+//      let rename= btn.parentElement;
+//        console.log(btn);
 //     })
+  
 //   });
+   
 // }
 
 // disabledButton();
