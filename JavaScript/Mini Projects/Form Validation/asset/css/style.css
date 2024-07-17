@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ecf0f1;
+  display: grid;
+  place-content: center;
+}
+.container {
+  width: 500px;
+  height: auto;
+  background-color: #ffff;
+  padding: 20px;
+  border-top: 5px solid orange;
+}
+
+.container .title {
+  width: 75%;
+  text-align: center;
+  margin: 30px auto;
+}
+
+form .form-group {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+form .user-name {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+form .form-group input[type="text"],
+.container .form-group select {
+  width: 100%;
+  height: 40px;
+  outline: none;
+  border: 1px solid #ccc;
+  padding: 0 10px;
+ 
+}
+
+input[type="text"]:focus + label,  input[type="text"]:active + label , input[type="text"]:valid + label {
+  pointer-events: none;
+transform: translateY(-20px) scale(0.8);
+background-color: #fff;
+
+}
+
+form .form-group label {
+  position: absolute;
+  z-index: 1;
+  font-size: 14px;
+  left: 45px;
+  color: #696868;
+  font-weight: 500;
+ transition: 0.3s ease;
+}
+
+form .radio,
+form .check-box {
+  margin-top: 30px;
+  color: #696868;
+  font-size: 14px;
+  font-weight: 500;
+}
+form .radio label[for="female"] {
+  margin-left: 20px;
+}
+
+form .check-box .newsletter {
+  margin-top: 10px;
+}
+form .form-group .icon {
+  border: 1px solid #ccc;
+  width: 40px;
+  height: 40px;
+}
+form .form-group .visible,
+.container .form-group .visible-off {
+  position: absolute;
+  right: 10px;
+  fill: #696868;
+}
+form .form-group .visible-off {
+  display: none;
+}
+
+form .form-group svg {
+  fill: #000;
+  text-align: center;
+  width: 20px;
+  margin: 7px 7px;
+}
+
+form button {
+  width: 100%;
+  height: 40px;
+  margin-top: 30px;
+  border: none;
+  background-color: orange;
+  color: #ffff;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+form button:hover{
+    background-color: rgb(243, 186, 79);
+}
