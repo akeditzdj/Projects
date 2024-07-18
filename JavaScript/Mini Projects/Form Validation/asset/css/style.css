@@ -51,7 +51,7 @@ form .form-group input[type="text"],
   width: 100%;
   height: 40px;
   outline: none;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   padding: 0 10px;
 }
 
@@ -60,6 +60,11 @@ form .form-group input[type="text"],
   transform: translateY(-20px) scale(0.8);
   background-color: #fff;
   color: orange;
+  border: 1px solid orange;
+}
+
+.form-group input:focus, .form-group select:focus{
+    border: 1px solid orange;
 }
 
 form .form-group label {
@@ -89,7 +94,7 @@ form .check-box .newsletter {
   margin-top: 10px;
 }
 form .form-group .icon {
-  border: 1px solid #ccc;
+  border: 2px solid orange;
   width: 40px;
   height: 40px;
 }
@@ -131,4 +136,12 @@ form .form-group .errorMsg{
   margin-top: 5px;
   width: 100%;
   height: 10px;
+ 
+}
+
+.form-group.error input {
+  border-color: red !important;
+}
+.form-group.success input {
+  border-color: #0cc477 !important;
 }
