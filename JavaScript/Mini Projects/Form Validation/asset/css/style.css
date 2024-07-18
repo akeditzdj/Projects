@@ -30,9 +30,13 @@ body {
 
 form .form-group {
   margin-top: 30px;
-  display: flex;
-  align-items: center;
   position: relative;
+}
+
+form .form-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 form .user-name {
@@ -41,6 +45,7 @@ form .user-name {
   gap: 30px;
 }
 
+
 form .form-group input[type="text"],
 .container .form-group select {
   width: 100%;
@@ -48,14 +53,13 @@ form .form-group input[type="text"],
   outline: none;
   border: 1px solid #ccc;
   padding: 0 10px;
- 
 }
 
-input[type="text"]:focus + label,  input[type="text"]:active + label , input[type="text"]:valid + label {
-  pointer-events: none;
-transform: translateY(-20px) scale(0.8);
-background-color: #fff;
-
+.form-group input[type="text"]:focus + label ,
+.form-group input:valid + label {
+  transform: translateY(-20px) scale(0.8);
+  background-color: #fff;
+  color: orange;
 }
 
 form .form-group label {
@@ -65,7 +69,9 @@ form .form-group label {
   left: 45px;
   color: #696868;
   font-weight: 500;
- transition: 0.3s ease;
+  transition: 0.3s ease;
+  padding: 0 3px;
+  pointer-events: none;
 }
 
 form .radio,
@@ -116,6 +122,13 @@ form button {
   cursor: pointer;
   transition: 0.3s ease;
 }
-form button:hover{
-    background-color: rgb(243, 186, 79);
+form button:hover {
+  background-color: rgb(243, 186, 79);
+}
+form .form-group .errorMsg{
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  width: 100%;
+  height: 10px;
 }
