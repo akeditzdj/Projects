@@ -16,7 +16,7 @@ btnSubmit.addEventListener("click", function () {
   const cpassword = confirm_PasswordElement.value.trim();
   const fName = f_NameElement.value.trim();
   const lName = l_NameElement.value.trim();
-  const gender = male.checked ? "Male" : female.checked ? "Female" : "Others";
+  // const gender = male.checked ? "Male" : female.checked ? "Female" : "Others";
   const country = countryElement.value;
   //   const terms = termsElement.value;
   //   const newsletter = newsLetterElement.value;
@@ -24,46 +24,46 @@ btnSubmit.addEventListener("click", function () {
   //  e.preventDefault();
 
   if (email === "") {
-    setError(emailElement, "Please enter your email");
+    setError(email, "Please enter your email");
   } else {
     setSuccess(emailElement, "Looks Good");
     console.log(email);
   }
 
-  if (password === "") {
-    setError(passwordElement, "Please enter your email");
-  } else {
-    setSuccess(passwordElement, "Looks Good");
-    console.log(password);
-  }
+  // if (password === "") {
+  //   setError(passwordElement, "Please enter your email");
+  // } else {
+  //   setSuccess(passwordElement, "Looks Good");
+  //   console.log(password);
+  // }
 
-  if (cpassword === "") {
-    setError(confirm_PasswordElement, "Please enter your email");
-  } else {
-    setSuccess(confirm_PasswordElement, "Looks Good");
-    console.log(cpassword);
-  }
+  // if (cpassword === "") {
+  //   setError(confirm_PasswordElement, "Please enter your email");
+  // } else {
+  //   setSuccess(confirm_PasswordElement, "Looks Good");
+  //   console.log(cpassword);
+  // }
 
-  if (fName === "") {
-    setError(f_NameElement, "Please enter your email");
-  } else {
-    setSuccess(f_NameElement, "Looks Good");
-    console.log(fName);
-  }
+  // if (fName === "") {
+  //   setError(f_NameElement, "Please enter your email");
+  // } else {
+  //   setSuccess(f_NameElement, "Looks Good");
+  //   console.log(fName);
+  // }
 
-  if (lName === "") {
-    setError(l_NameElement, "Please enter your email");
-  } else {
-    setSuccess(l_NameElement, "Looks Good");
-    console.log(lName);
-  }
+  // if (lName === "") {
+  //   setError(l_NameElement, "Please enter your email");
+  // } else {
+  //   setSuccess(l_NameElement, "Looks Good");
+  //   console.log(lName);
+  // }
 
-  if (country === "") {
-    setError(countryElement, "Please enter your email");
-  } else {
-    setSuccess(countryElement, "Looks Good");
-    console.log(country);
-  }
+  // if (country === "") {
+  //   setError(countryElement, "Please enter your email");
+  // } else {
+  //   setSuccess(countryElement, "Looks Good");
+  //   console.log(country);
+  // }
 
   //   console.log(email);
   //   console.log(password);
@@ -74,7 +74,9 @@ btnSubmit.addEventListener("click", function () {
   //   console.log(country);
   //   console.log(terms);
   //   console.log(newsletter);
+
 });
+
 
 function setError(element, message) {
   const formGroup = element.parentElement;
