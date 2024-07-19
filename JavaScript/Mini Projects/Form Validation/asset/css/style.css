@@ -33,19 +33,18 @@ form .form-group {
   position: relative;
 }
 
-
-form .form-item .icon{
+form .form-item .icon {
   position: absolute;
 }
 
 form .user-name {
   display: flex;
   align-items: center;
-  gap:30px;
+  gap: 30px;
 }
 
-
-form .form-group input, form .form-group select{
+form .form-group input,
+form .form-group select {
   width: 100%;
   height: 40px;
   outline: none;
@@ -53,7 +52,7 @@ form .form-group input, form .form-group select{
   padding: 0 45px;
 }
 
-.form-group input[type="text"]:focus + label ,
+.form-group input[type="text"]:focus + label,
 .form-group input:valid + label {
   transform: translateY(-20px) scale(0.8);
   background-color: #fff;
@@ -61,8 +60,9 @@ form .form-group input, form .form-group select{
   border: 1px solid orange;
 }
 
-.form-group input:focus, .form-group select:focus{
-    border: 1px solid orange;
+.form-group input:focus,
+.form-group select:focus {
+  border: 1px solid orange;
 }
 
 form .form-group label {
@@ -129,16 +129,20 @@ form button {
 form button:hover {
   background-color: rgb(243, 186, 79);
 }
-form .form-group .form-item .error{
+form .form-group .form-item .error {
   color: red;
   font-size: 12px;
   width: 100%;
   padding: 10px 0;
 }
 
-.form-group .error input , .form-group .error select, .form-group .error .icon{
+.form-group .error input,
+.form-group .error select,
+.form-group .error .icon {
   border-color: red;
 }
-.form-group .success input , .form-group .success select, .form-group .success .icon {
+.form-group .success input,
+.form-group .success select,
+.form-group .success .icon {
   border-color: #0cc477;
 }
