@@ -29,30 +29,28 @@ body {
 }
 
 form .form-group {
-  margin-top: 30px;
+  margin: 30px 0;
   position: relative;
 }
 
-form .form-item{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+form .form-item .icon{
+  position: absolute;
 }
 
 form .user-name {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap:30px;
 }
 
 
-form .form-group input[type="text"],
-.container .form-group select {
+form .form-group input, form .form-group select{
   width: 100%;
   height: 40px;
   outline: none;
-  /* border: 1px solid #ccc; */
-  padding: 0 10px;
+  border: 1px solid #ccc;
+  padding: 0 45px;
 }
 
 .form-group input[type="text"]:focus + label ,
@@ -72,6 +70,7 @@ form .form-group label {
   z-index: 1;
   font-size: 14px;
   left: 45px;
+  top: 12px;
   color: #696868;
   font-weight: 500;
   transition: 0.3s ease;
@@ -81,7 +80,6 @@ form .form-group label {
 
 form .radio,
 form .check-box {
-  margin-top: 30px;
   color: #696868;
   font-size: 14px;
   font-weight: 500;
@@ -94,7 +92,7 @@ form .check-box .newsletter {
   margin-top: 10px;
 }
 form .form-group .icon {
-  border: 2px solid orange;
+  border: 1px solid orange;
   width: 40px;
   height: 40px;
 }
@@ -103,6 +101,7 @@ form .form-group .visible,
   position: absolute;
   right: 10px;
   fill: #696868;
+  top: 3px;
 }
 form .form-group .visible-off {
   display: none;
@@ -130,18 +129,16 @@ form button {
 form button:hover {
   background-color: rgb(243, 186, 79);
 }
-form .form-group .error{
+form .form-group .form-item .error{
   color: red;
   font-size: 12px;
-  margin-top: 5px;
   width: 100%;
-  height: 10px;
- 
+  padding: 10px 0;
 }
 
-.form-group.error input {
-  border-color: red !important;
+.form-group .error input , .form-group .error select, .form-group .error .icon{
+  border-color: red;
 }
-.form-group.success input {
-  border-color: #0cc477 !important;
+.form-group .success input , .form-group .success select, .form-group .success .icon {
+  border-color: #0cc477;
 }

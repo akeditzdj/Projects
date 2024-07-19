@@ -4,7 +4,7 @@ const passwordElement = document.getElementById("password");
 const confirm_PasswordElement = document.getElementById("confirm-password");
 const f_NameElement = document.getElementById("f-name");
 const l_NameElement = document.getElementById("l-name");
-// const gederElement = document.querySelectorAll("gender");
+const gederElement = document.querySelectorAll("gender");
 const countryElement = document.getElementById("country");
 const termsElement = document.getElementById("terms");
 const newsLetterElement = document.getElementById("newsletter");
@@ -16,67 +16,67 @@ btnSubmit.addEventListener("click", function () {
   const cpassword = confirm_PasswordElement.value.trim();
   const fName = f_NameElement.value.trim();
   const lName = l_NameElement.value.trim();
-  // const gender = male.checked ? "Male" : female.checked ? "Female" : "Others";
+  const gender = male.checked ? "Male" : female.checked ? "Female" : "Others";
   const country = countryElement.value;
-  //   const terms = termsElement.value;
-  //   const newsletter = newsLetterElement.value;
+  const terms = termsElement.value;
+  const newsletter = newsLetterElement.value;
 
-  //  e.preventDefault();
 
   if (email === "") {
-    setError(email, "Please enter your email");
+    setError(emailElement, "Please enter your email");
+   
   } else {
     setSuccess(emailElement, "Looks Good");
-    console.log(email);
+    
   }
 
-  // if (password === "") {
-  //   setError(passwordElement, "Please enter your email");
-  // } else {
-  //   setSuccess(passwordElement, "Looks Good");
-  //   console.log(password);
-  // }
+  if (password === "") {
+    setError(passwordElement, "Please enter your password");
+      
+  } else {
+    setSuccess(passwordElement, "Looks Good");
+    
+  }
 
-  // if (cpassword === "") {
-  //   setError(confirm_PasswordElement, "Please enter your email");
-  // } else {
-  //   setSuccess(confirm_PasswordElement, "Looks Good");
-  //   console.log(cpassword);
-  // }
+  if (cpassword === "") {
+    setError(confirm_PasswordElement, "Please enter your confirm password");
+     
+  } else {
+    setSuccess(confirm_PasswordElement, "Looks Good");
+    
+  }
 
-  // if (fName === "") {
-  //   setError(f_NameElement, "Please enter your email");
-  // } else {
-  //   setSuccess(f_NameElement, "Looks Good");
-  //   console.log(fName);
-  // }
+  if (fName === "") {
+    setError(f_NameElement, "Please enter your first name");
+    
+  } else {
+    setSuccess(f_NameElement, "Looks Good");
+    
+  }
 
-  // if (lName === "") {
-  //   setError(l_NameElement, "Please enter your email");
-  // } else {
-  //   setSuccess(l_NameElement, "Looks Good");
-  //   console.log(lName);
-  // }
+  if (lName === "") {
+    setError(l_NameElement, "Please enter your last name");
+     
+  } else {
+    setSuccess(l_NameElement, "Looks Good");
+    
+  }
 
-  // if (country === "") {
-  //   setError(countryElement, "Please enter your email");
-  // } else {
-  //   setSuccess(countryElement, "Looks Good");
-  //   console.log(country);
-  // }
-
-  //   console.log(email);
-  //   console.log(password);
-  //   console.log(cpassword);
-  //   console.log(fName);
-  //   console.log(lName);
-  //   console.log(gender);
-  //   console.log(country);
-  //   console.log(terms);
-  //   console.log(newsletter);
-
+  if (country === "") {
+    setError(countryElement, "Please select your country");
+     
+  } else {
+    setSuccess(countryElement, "Looks Good");
+    
+  }
+    if (terms!= (terms.checked)) {
+      console.log("Not agreed")
+    } else {
+      console.log("Agreed")
+    }
 });
 
+// form validation error message
 
 function setError(element, message) {
   const formGroup = element.parentElement;
