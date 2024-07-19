@@ -130,7 +130,7 @@ form button {
 form button:hover {
   background-color: rgb(243, 186, 79);
 }
-form .form-group .errorMsg{
+form .form-group .error{
   color: red;
   font-size: 12px;
   margin-top: 5px;
