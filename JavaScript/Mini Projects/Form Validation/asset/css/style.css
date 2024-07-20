@@ -41,6 +41,7 @@ form .user-name {
   display: flex;
   align-items: center;
   gap: 30px;
+  width: 100%;
 }
 
 form .form-group input,
@@ -52,7 +53,7 @@ form .form-group select {
   padding: 0 45px;
 }
 
-.form-group input[type="text"]:focus + label,
+.form-group input[type="text"]:focus + label, .form-group input[type="password"]:focus + label, 
 .form-group input:valid + label {
   transform: translateY(-20px) scale(0.8);
   background-color: #fff;
@@ -96,16 +97,17 @@ form .form-group .icon {
   width: 40px;
   height: 40px;
 }
-form .form-group .visible,
-.container .form-group .visible-off {
+form .form-group i{
   position: absolute;
   right: 10px;
-  fill: #696868;
-  top: 3px;
+  color: #696868;
+  top: 13px;
 }
-form .form-group .visible-off {
+
+.fa-eye-slash{
   display: none;
 }
+
 
 form .form-group svg {
   fill: #000;
