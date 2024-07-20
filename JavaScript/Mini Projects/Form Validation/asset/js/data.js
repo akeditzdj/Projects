@@ -251,8 +251,8 @@ let countryList = [
 ];
 
 countryList.forEach(function (item) {
-  let country = document.createElement("option");
-  country.text = item;
-    country.value = item;
-    countryElement.appendChild(country);
+  let countryList = document.createElement("option");
+  countryList.text = item;
+    countryList.value = item;
+    country.appendChild(countryList);
 });
