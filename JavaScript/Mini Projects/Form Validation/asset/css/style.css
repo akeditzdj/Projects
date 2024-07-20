@@ -40,8 +40,8 @@ form .form-item .icon {
 form .user-name {
   display: flex;
   align-items: center;
-  gap: 30px;
-  width: 100%;
+  justify-content: space-between;
+  gap: 30px
 }
 
 form .form-group input,
@@ -85,6 +85,7 @@ form .check-box {
   color: #696868;
   font-size: 14px;
   font-weight: 500;
+  margin: 10px 0;
 }
 form .radio label[for="female"] {
   margin-left: 20px;
@@ -135,8 +136,8 @@ form button:hover {
 form .form-group .form-item .error {
   color: red;
   font-size: 12px;
-  width: 100%;
   padding: 10px 0;
+  width: 100%;
 }
 
 .form-group .error input,
@@ -149,3 +150,39 @@ form .form-group .form-item .error {
 .form-group .success .icon {
   border-color: #0cc477;
 }
+
+
+
+@media screen and (max-width:576px) {
+
+.container {
+  width: auto;
+  height: auto;
+  background-color: #ffff;
+  padding: 20px;
+  border-top: 5px solid orange;
+}
+
+.container .title {
+  width: auto;
+  text-align: center;
+  margin: 30px auto;
+}
+
+form .form-group {
+  margin: 30px 0;
+  position: relative;
+}
+form .user-name{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 0;
+
+}
+.user-name .form-group{
+  width: 100%;
+  margin: 20px 0;
+ }
+} 

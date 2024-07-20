@@ -18,7 +18,8 @@ const formSubmit = (event) => {
     newsletter,
   } = formEl;
 
-if( email,
+  if (
+    (email,
     password,
     confirmPassword,
     firstName,
@@ -26,10 +27,13 @@ if( email,
     gender,
     country,
     terms,
-  newsletter) {
+    newsletter)
+  ) {
     //Form custom validation
     if (email.value === "") {
+      email.focus();
       setError(email, "Please enter your email");
+
       return;
     } else {
       const emailformat =
@@ -38,6 +42,7 @@ if( email,
       if (emailformat.test(email.value)) {
         setSuccess(email);
       } else {
+        email.focus();
         setError(email, "Please enter valid email");
         return;
       }
@@ -45,25 +50,33 @@ if( email,
     }
 
     if (password.value === "") {
-      setError(passwordElement, "Please enter your password");
+      password.focus();
+      setError(password, "Please enter your password");
       return;
     } else {
       if (password.value.length < 8) {
+        password.focus();
         setError(password, "Password should be at least 8 characters");
         return;
       } else if (password.value.length > 16) {
+        password.focus();
         setError(password, "Password should not exceed 16 characters");
         return;
       } else if (!/[A-Z]/.test(password.value)) {
+        password.focus();
         setError(password, "Password should have at least 1 uppercase");
+
         return;
       } else if (!/[a-z]/.test(password.value)) {
+        password.focus();
         setError(password, "Password should have at least 1 lowercase");
         return;
       } else if (!/[0-9]/.test(password.value)) {
+        password.focus();
         setError(password, "Password should have at least 1 number");
         return;
       } else if (!/(?=.[$#%£&§@])/.test(password.value)) {
+        password.focus();
         setError(password, "Password should have at least 1 special character");
         return;
       } else {
@@ -71,34 +84,68 @@ if( email,
       }
     }
     if (confirmPassword.value === "") {
+      confirmPassword.focus();
       setError(confirmPassword, "Please enter your confirm password");
       return;
     } else {
       if (confirmPassword.value != password.value) {
+        confirmPassword.focus();
         setError(confirmPassword, "Confirm password dose not match");
         return;
       } else setSuccess(confirmPassword);
     }
 
     if (firstName.value === "") {
+      firstName.focus();
       setError(firstName, "First name is required");
       return;
     } else {
+      if (firstName.value.length < 3) {
+        firstName.focus();
+        setError(firstName, "Name should have atleast 3 charecters");
+        return;
+      }
       setSuccess(firstName);
     }
 
     if (lastName.value === "") {
+      lastName.focus();
       setError(lastName, "Last name is required");
       return;
     } else {
+      if (lastName.value.length < 3) {
+        lastName.focus();
+        setError(lastName, "Name should have atleast 3 charecters");
+        return;
+      }
       setSuccess(lastName);
     }
 
     if (country.value === "") {
+      country.focus();
       setError(country, "Please select your country");
       return;
     } else {
       setSuccess(country);
+    }
+
+    if (!terms.checked) {
+      const check = document.querySelector(".checkbox");
+      check.style.color = "red";
+      return;
+    } else {
+      const check = document.querySelector(".checkbox");
+
+      check.style.color = "black";
+    }
+
+    if (!newsletter.checked) {
+      const news = document.querySelector(".newsletter");
+      news.style.color = "red";
+      return;
+    } else {
+      const news = document.querySelector(".newsletter");
+       news.style.color = "black";
     }
 
     const formData = new FormData(formEl);
@@ -115,10 +162,9 @@ if( email,
     console.log("Terms Of Condition:" + " " + terms.value);
     console.log("Newsletter:" + " " + newsletter.value);
   }
-
 };
 
-formEl.addEventListener("submit", formSubmit);
+btnEl.addEventListener("click", formSubmit);
 
 // form validation error message
 

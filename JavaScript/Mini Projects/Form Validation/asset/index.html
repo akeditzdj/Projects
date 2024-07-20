@@ -84,6 +84,7 @@
                         <small class="error"></small>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <div class="form-item">
                         <div class="icon">
@@ -97,14 +98,18 @@
                         <label for="lastName">Last Name</label>
                         <small class="error"></small>
                     </div>
-
                 </div>
             </div>
 
 
             <div class="radio">
-                <label for="male"><input type="radio" name="gender"  value="Male" required> Male</label>
-                <label for="female"><input type="radio" name="gender" value="Female" required> Female</label>
+                <div>
+                    <label for="gender">Gender</label>
+                </div>
+             <div class="radio">
+                   <label for="male"><input type="radio" name="gender" id="male"  value="Male" required> Male</label>
+                   <label for="female"><input type="radio" name="gender" id="female" value="Female" required> Female</label>
+             </div>
             </div>
             <div class="form-group">
                 <div class="form-item">
@@ -127,7 +132,7 @@
             <div class="check-box">
                 <div class="checkbox">
                     <input type="checkbox" value="Yes" name="terms" id="terms" required>
-                    <label for="terms">I agree with terms and conditions</label>
+                    <label  for="terms">I agree with terms and conditions</label>
                 </div>
                 <div class="newsletter">
                     <input type="checkbox" value="Yes" name="newsletter" id="newsletter" required>
