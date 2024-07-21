@@ -52,6 +52,11 @@ nav ul li {
   transition: 0.3s all;
 }
 
+
+nav ul li button{
+  width: 100px !important;
+}
+
 nav ul li:hover {
   transform: translateY(-10px);
 }
@@ -67,10 +72,8 @@ nav ul li:hover {
   max-width: 350px;
 }
 .nav-btn {
-  margin-left: 370px;
   background-color: #1f2831;
-
-  width: 100px;
+  width: 150px !important;
 }
 
 .nav-btn:hover {
@@ -98,11 +101,30 @@ nav ul li:hover {
   color: #000 !important;
 }
 
-/* -------------  Forms -----------------*/
-.tab-container {
-  width: 100%;
-  height: 100%;
+.card {
+  width: 360px;
+  height: 180px;
+  transition: 0.3s all;
+  display: block;
+  background: linear-gradient(to right, #fff 50%, #212a33 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.5s ease-out;
+  text-align: center;
 }
+.card:hover {
+  transform: scale(1.1);
+  background-position: left bottom;
+  color: #000 !important;
+}
+
+.vertical-library-poster{
+  width: 350px;
+  max-width: 335px;
+  height:100vh;
+}
+
+/* -------------  Forms -----------------*/
 
 .form-main-container {
   width: 100%;
@@ -110,8 +132,9 @@ nav ul li:hover {
 }
 
 .form-container {
-  width: 60%;
+  width: 70%;
   height: 100%;
+   
 }
 
 input::placeholder,
@@ -120,7 +143,7 @@ textarea::placeholder {
   font-size: 14px;
 }
 
-select {
+form select {
   background-color: #1f2831 !important;
   color: #fff !important;
 }
@@ -141,4 +164,8 @@ select {
 .tab-container ul {
   width: 75%;
   margin: 0 auto;
+  
+}
+.tab-container .nav-item button {
+  width: 486px;
 }
