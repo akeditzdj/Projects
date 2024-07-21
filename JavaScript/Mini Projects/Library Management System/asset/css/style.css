@@ -10,15 +10,137 @@
 body {
   width: 100vw;
   height: 100vh;
-  background-color: #2c3a47;
+  background-color: #1f2831;
   color: white;
 }
-.container-fluid{
-    width: 100vw;
-    height: 100vh;
+
+/* -------------  Main Page -----------------*/
+.mainPage {
+  width: 75%;
+  height: 75%;
+  background-color: #2c3a47;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  transition: 0.3s;
+  border-radius: 10px;
 }
 
-.container-fluid img {
-  width: 250px;
-  height: 250px;
+.mainPage img {
+  width: 300px;
+  height: 300px;
+}
+
+.mainPage button {
+  width: 350px;
+  height: 70px;
+}
+
+/* ------------- Library Page  -----------------*/
+
+
+nav {
+  background-color: #1f2831;
+}
+nav .nav-brand img {
+  width: 100px;
+  height: 100px;
+  transition: 0.3s all;
+}
+nav .nav-brand img:hover {
+  transform: rotate(-8deg) scale(1.05);
+}
+nav ul li {
+  transition: 0.3s all;
+}
+
+nav ul li:hover {
+  transform: translateY(-10px);
+}
+
+.side-nav-bar {
+  max-width: 300px;
+  height: 100vh;
+  position: fixed;
+}
+.offcanvas {
+  margin-top: 117px;
+  background-color: #1f2831;
+   max-width: 350px;
+}
+.nav-btn {
+  margin-left: 370px;
+  background-color: #1f2831;
+
+  width: 100px;
+}
+
+.nav-btn:hover {
+  background-color: #fff !important;
+  color: #000 !important;
+  background-color: #1f2831;
+}
+
+ .side-bar-btn button {
+     padding: 9px 10px;
+}
+
+
+.button {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  display: block;
+  background: linear-gradient(to right, #fff 50%, #1f2831 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .5s ease-out;
+  
+}
+
+.button:hover {
+  background-position: left bottom;
+  color: #000 !important;
+}
+
+
+/* -------------  Forms -----------------*/
+/* .tab-container{
+    width: 100vw;
+    height: 100vh;
+} */
+.form-main-container{
+    width: 100%;
+    height: 100%;
+}
+
+.form-container{
+    width: 60%;
+    height: 100%;
+}
+
+input::placeholder, textarea::placeholder{
+    color: #ada9a9 !important;
+    font-size: 14px;
+}
+
+select{
+    background-color: #1f2831 !important;
+    color: #fff !important;
+}
+
+.form-container form .form-group{
+    margin-top: 35px;
+}
+
+.form-container form .form-group textarea{
+    height: 143px;
+    resize:none;
+}
+
+.form-container form button {
+    width: 150px;
+}
+
+.tabs ul{
+    width: 75%;
+    margin: 0 auto;
 }
