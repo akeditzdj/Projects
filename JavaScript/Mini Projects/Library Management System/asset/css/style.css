@@ -37,7 +37,6 @@ body {
 
 /* ------------- Library Page  -----------------*/
 
-
 nav {
   background-color: #1f2831;
 }
@@ -65,7 +64,7 @@ nav ul li:hover {
 .offcanvas {
   margin-top: 117px;
   background-color: #1f2831;
-   max-width: 350px;
+  max-width: 350px;
 }
 .nav-btn {
   margin-left: 370px;
@@ -80,10 +79,9 @@ nav ul li:hover {
   background-color: #1f2831;
 }
 
- .side-bar-btn button {
-     padding: 9px 10px;
+.side-bar-btn button {
+  padding: 9px 10px;
 }
-
 
 .button {
   border-top-right-radius: 50px;
@@ -92,8 +90,7 @@ nav ul li:hover {
   background: linear-gradient(to right, #fff 50%, #1f2831 50%);
   background-size: 200% 100%;
   background-position: right bottom;
-  transition: all .5s ease-out;
-  
+  transition: all 0.5s ease-out;
 }
 
 .button:hover {
@@ -101,46 +98,47 @@ nav ul li:hover {
   color: #000 !important;
 }
 
-
 /* -------------  Forms -----------------*/
-/* .tab-container{
-    width: 100vw;
-    height: 100vh;
-} */
-.form-main-container{
-    width: 100%;
-    height: 100%;
+.tab-container {
+  width: 100%;
+  height: 100%;
 }
 
-.form-container{
-    width: 60%;
-    height: 100%;
+.form-main-container {
+  width: 100%;
+  height: 100%;
 }
 
-input::placeholder, textarea::placeholder{
-    color: #ada9a9 !important;
-    font-size: 14px;
+.form-container {
+  width: 60%;
+  height: 100%;
 }
 
-select{
-    background-color: #1f2831 !important;
-    color: #fff !important;
+input::placeholder,
+textarea::placeholder {
+  color: #ada9a9 !important;
+  font-size: 14px;
 }
 
-.form-container form .form-group{
-    margin-top: 35px;
+select {
+  background-color: #1f2831 !important;
+  color: #fff !important;
 }
 
-.form-container form .form-group textarea{
-    height: 143px;
-    resize:none;
+.form-container form .form-group {
+  margin-top: 35px;
+}
+
+.form-container form .form-group textarea {
+  height: 143px;
+  resize: none;
 }
 
 .form-container form button {
-    width: 150px;
+  width: 150px;
 }
 
-.tabs ul{
-    width: 75%;
-    margin: 0 auto;
+.tab-container ul {
+  width: 75%;
+  margin: 0 auto;
 }
