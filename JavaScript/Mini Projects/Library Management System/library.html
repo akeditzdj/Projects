@@ -13,7 +13,7 @@
 
 </head>
 
-<nav class="navbar navbar-expand-lg shadow top-0 sticky-top ">
+<nav class="navbar navbar-expand-lg shadow top-0 sticky-top">
     <div class="container-fluid">
         <a href="index.html" class="nav-brand"><img src="asset/images/logo.png" alt="logo"></a>
         <div>
@@ -39,291 +39,326 @@
 </nav>
 <!-- <img class=" vertical-library-poster d-none opacity-25" src="asset/images/vertical-library-poster.png"
                 alt=""> -->
-<div class="offcanvas offcanvas-start shadow" data-bs-scroll="true" data-bs-backdrop="true" tabindex="1"
-    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-    <div class="offcanvas-header bg-light shadow text-center">
-        <h2 class="offcanvas-title fw-bold" id="offcanvasScrollingLabel"><i class="bi bi-book"></i>
-            Library Menu
-        </h2>
-        <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body text-light side-bar-btn">
-        <div id="pills-tab" role="tablist">
-            <div class="row mt-3">
-                <button class="btn w-100 button text-white text-start active" id="dashboard-tab" data-bs-toggle="tab"
-                    data-bs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="true">
-                    <h5><i class="bi bi-speedometer"></i> Dashboard</h5>
-                </button>
-            </div>
-            <div class="row mt-3">
-                <button class="btn w-100 button text-white text-start" id="manageMembers-tab" data-bs-toggle="tab"
-                    data-bs-target="#manageMembers" type="button" role="tab" aria-controls="manageMembers"
-                    aria-selected="false">
-                    <h5><i class="bi bi-people-fill"></i> Manage Members</h5>
-                </button>
-            </div>
-            <div class="row mt-3">
-                <button class="btn w-100 button text-white text-start" id="category-tab" data-bs-toggle="tab"
-                    data-bs-target="#category" type="button" role="tab" aria-controls="category" aria-selected="false">
-                    <h5><i class="bi bi-journals"></i> Book Categories</h5>
-                </button>
-            </div>
-            <div class="row mt-3">
-                <button class="btn w-100 button text-white text-start" id="manageBooks-tab" data-bs-toggle="tab"
-                    data-bs-target="#manageBooks" type="button" role="tab" aria-controls="manageBooks"
-                    aria-selected="false">
-                    <h5><i class="bi bi-journal-arrow-up"></i> Manage Books</h5>
-                </button>
-            </div>
-            <div class="row mt-3">
-                <button class="btn w-100 button text-white text-start" id="leandBooks-tab" data-bs-toggle="tab"
-                    data-bs-target="#leandBooks" type="button" role="tab" aria-controls="leandBooks"
-                    aria-selected="false">
-                    <h5><i class="bi bi-person-raised-hand"></i> Leand Books</h5>
-                </button>
-            </div>
-            <div class="row mt-3">
-                <button class="btn w-100 button text-white text-start" id="returnBooks-tab" data-bs-toggle="tab"
-                    data-bs-target="#returnBooks" type="button" role="tab" aria-controls="returnBooks"
-                    aria-selected="false">
-                    <h5><i class="bi bi-arrow-return-right"></i> Return Books</h5>
-                </button>
-            </div>
-            <div class="row mt-3">
-                <a class="nav-link" href="user_reg.html"><button class="btn w-100 button text-white text-start">
-                        <h5><i class="bi bi-person-fill-add"></i> Add User</h5>
-                    </button></a>
-            </div>
-            <div class="row mt-3">
-                <button class="btn w-100 button text-white text-start">
-                    <h5><i class="bi bi-person-fill-gear"></i> Update User</h5>
-                </button>
-            </div>
-            <div class="row mt-3">
-                <button class="btn w-100 button text-white text-start" id="report-tab" data-bs-toggle="tab"
-                    data-bs-target="#report" type="button" role="tab" aria-controls="report" aria-selected="false">
-                    <h5><i class="bi bi-bar-chart-line-fill"></i> Reports</h5>
-                </button>
-            </div>
-            <div class="row mt-3">
-                <button class="btn w-100 button text-white text-start">
-                    <h5><i class="bi bi-box-arrow-right"></i> Logout</h5>
-                </button>
-            </div>
-            <div class="row mt-3">
-                <button class="btn w-100 button text-white text-start">
-                    <h5><i class="bi bi-power"></i> Exit</h5>
-                </button>
-            </div>
+
+
+    <div class="offcanvas offcanvas-start shadow" data-bs-scroll="true" data-bs-backdrop="false" tabindex="1"
+        id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header bg-light shadow text-center">
+            <h2 class="offcanvas-title fw-bold" id="offcanvasScrollingLabel"><i class="bi bi-book"></i>
+                Library Menu
+            </h2>
+            <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
         </div>
-    </div>
-</div>
-<div class="container-fluid tab-container">
-    <div class="row">
-        <div class="col-md-12 mb-5 mb-md-0">
-            <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade active show" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab"
-                    tabindex="0">
-                    <div class="row mt-5">
-                        <div class=" mb-5 bg-light py-1 rounded-5 page-title">
-                            <h3 class="text-center text-dark fw-bold">Dashboard</h3>
-                        </div>
-                        <div class="col-md-3 ">
-                            <div class="card border-0 text-light shadow ">
-                                <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                                    <i class="bi bi-people-fill display-5"></i>
-                                    <h4 class=" fw-bold">Total Users</h4>
-                                    <h2 class="fw-bold">80</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mt-4 mt-md-0">
-                            <div class="card border-0 text-light shadow ">
-                                <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                                    <i class="bi bi-book-half display-5"></i>
-                                    <h4 class=" fw-bold">Total Books</h4>
-                                    <h2 class="fw-bold">125</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mt-4 mt-md-0">
-                            <div class="card border-0 text-light shadow ">
-                                <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                                    <i class="bi bi-journal-arrow-up display-5"></i>
-                                    <h4 class=" fw-bold">Total Book Issue</h4>
-                                    <h2 class="fw-bold">50</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mt-4 mt-md-0">
-                            <div class="card border-0 text-light shadow ">
-                                <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                                    <i class="bi bi-journal-arrow-down display-5"></i>
-                                    <h4 class=" fw-bold">Total Book Returned</h4>
-                                    <h2 class="fw-bold">25</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row  mt-4">
-                        <div class="col-md-3">
-                            <div class="card border-0 text-light shadow ">
-                                <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                                    <i class="bi bi-journal-x display-5"></i>
-                                    <h4 class=" fw-bold">Total Book Not Returned</h4>
-                                    <h2 class="fw-bold">25</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mt-4 mt-md-0">
-                            <div class="card border-0 text-light shadow ">
-                                <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                                    <i class="bi bi-currency-rupee display-5"></i>
-                                    <h4 class=" fw-bold">Total Fines Received</h4>
-                                    <h2 class="fw-bold">100</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mt-4 mt-md-0">
-                            <div class="card border-0 text-light shadow ">
-                                <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                                    <i class="bi bi-person-workspace display-5"></i>
-                                    <h4 class=" fw-bold ">Total Author</h4>
-                                    <h2 class="fw-bold">35</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mt-4 mt-md-0">
-                            <div class="card border-0 text-light shadow ">
-                                <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                                    <i class="bi bi-journal-text display-4"></i>
-                                    <h4 class=" fw-bold">Total Category</h4>
-                                    <h2 class="fw-bold">80</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="offcanvas-body text-light side-bar-btn">
+            <div id="pills-tab" role="tablist">
+                <div class="row mt-3">
+                    <button class="btn w-100 button text-white text-start active" id="dashboard-tab"
+                        data-bs-toggle="tab" data-bs-target="#dashboard" type="button" role="tab"
+                        aria-controls="dashboard" aria-selected="true">
+                        <h5><i class="bi bi-speedometer"></i> Dashboard</h5>
+                    </button>
                 </div>
-
-                <div class="tab-pane fade" id="manageMembers" role="tabpanel" aria-labelledby="manageMembers-tab"
-                    tabindex="0">
-                    <div class="row mt-5">
-                        <div class=" mb-5 bg-light py-1 rounded-5">
-                            <h3 class="text-center text-dark fw-bold">Manage Members</h3>
-                        </div>
-                    </div>
+                <div class="row mt-3">
+                    <button class="btn w-100 button text-white text-start" id="manageMembers-tab" data-bs-toggle="tab"
+                        data-bs-target="#manageMembers" type="button" role="tab" aria-controls="manageMembers"
+                        aria-selected="false">
+                        <h5><i class="bi bi-people-fill"></i> Manage Members</h5>
+                    </button>
                 </div>
-                <div class="tab-pane fade" id="category" role="tabpanel" aria-labelledby="category-tab" tabindex="0">
-                    <div class="row mt-5">
-                        <div class=" mb-5 bg-light py-1 rounded-5">
-                            <h3 class="text-center text-dark fw-bold">Book Categories</h3>
-                        </div>
-                    </div>
+                <div class="row mt-3">
+                    <button class="btn w-100 button text-white text-start" id="category-tab" data-bs-toggle="tab"
+                        data-bs-target="#category" type="button" role="tab" aria-controls="category"
+                        aria-selected="false">
+                        <h5><i class="bi bi-journals"></i> Book Categories</h5>
+                    </button>
                 </div>
-                <div class="tab-pane fade" id="manageBooks" role="tabpanel" aria-labelledby="manageBooks-tab"
-                    tabindex="0">
-                    <div class="row mt-5">
-                        <div class=" mb-5 bg-light py-1 rounded-5">
-                            <h3 class="text-center text-dark fw-bold">Manage Books</h3>
-                        </div>
-                    </div>
+                <div class="row mt-3">
+                    <button class="btn w-100 button text-white text-start" id="manageBooks-tab" data-bs-toggle="tab"
+                        data-bs-target="#manageBooks" type="button" role="tab" aria-controls="manageBooks"
+                        aria-selected="false">
+                        <h5><i class="bi bi-journal-arrow-up"></i> Manage Books</h5>
+                    </button>
                 </div>
-
-                <div class="tab-pane fade" id="leandBooks" role="tabpanel" aria-labelledby="leandBooks-tab"
-                    tabindex="0">
-                    <div class="row mt-5">
-                        <div class=" mb-5 bg-light py-1 rounded-5">
-                            <h3 class="text-center text-dark fw-bold">Leand Book</h3>
-                        </div>
-                    </div>
+                <div class="row mt-3">
+                    <button class="btn w-100 button text-white text-start" id="leandBooks-tab" data-bs-toggle="tab"
+                        data-bs-target="#leandBooks" type="button" role="tab" aria-controls="leandBooks"
+                        aria-selected="false">
+                        <h5><i class="bi bi-person-raised-hand"></i> Leand Books</h5>
+                    </button>
                 </div>
-
-                <div class="tab-pane fade" id="returnBooks" role="tabpanel" aria-labelledby="returnBooks-tab"
-                    tabindex="0">
-                    <div class="row mt-5">
-                        <div class=" mb-5 bg-light py-1 rounded-5">
-                            <h3 class="text-center text-dark fw-bold">Return Books</h3>
-                        </div>
-                    </div>
+                <div class="row mt-3">
+                    <button class="btn w-100 button text-white text-start" id="returnBooks-tab" data-bs-toggle="tab"
+                        data-bs-target="#returnBooks" type="button" role="tab" aria-controls="returnBooks"
+                        aria-selected="false">
+                        <h5><i class="bi bi-arrow-return-right"></i> Return Books</h5>
+                    </button>
                 </div>
-                <div class="tab-pane fade" id="report" role="tabpanel" aria-labelledby="report-tab" tabindex="0">
-                    <div class="row mt-5">
-                        <div class=" mb-5 bg-light py-1 rounded-5">
-                            <h3 class="text-center text-dark fw-bold">Library Data Report</h3>
-                        </div>
-                        <div class="col-md-6">
-                            <p>A library management system (LMS) report may describe the purpose of an LMS, how it helps
-                                librarians, and
-                                its benefits
-                                to the public. Here are some things that an LMS report may cover:</p>
-                            <h6 class="fw-bold mt-4">Purpose</h6>
-                            <p>
-                                The purpose of an LMS is to computerize a library's daily operations and help public
-                                libraries digitize
-                                their libraries.</p>
-                            <h6 class="fw-bold mt-4">Benefits</h6>
-                            <p>
-                                An LMS can help librarians manage multiple issues at once, reduce wait times for users,
-                                and store all
-                                data on a single</p>
-                            <h6 class="fw-bold mt-4">Features</h6>
-                            <p>
-                                An LMS can help librarians maintain databases of new books and borrowed books, including
-                                due dates. It
-                                can also include
-                                a report module that provides information on registered users, books, and issues and
-                                returns.</p>
-                        </div>
-                        <div class="col-md-6">
-                            <canvas class="border" id="myChart"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-md-12 mt-4">
-                        <h6 class="fw-bold">Abstract</h6>
-                        <p class="lh-lg">Library management system is a project which aims in developing a
-                            computerizedsystem to
-                            maintain all the daily work of
-                            library .This project has many featureswhich are generally not available in normal
-                            library management
-                            systems
-                            likefacility of user login and a facility of teachers login .It also has a facility of
-                            adminlogin
-                            through which the
-                            admin can monitor the whole system .It also has facility ofan online notice board where
-                            teachers can
-                            student can put up
-                            information aboutworkshops or seminars being held in our colleges or nearby colleges and
-                            librarianafter
-                            proper
-                            verification from the concerned institution organizing the seminar canadd it to the
-                            notice board . It
-                            has also a
-                            facility where student after logging in theiraccounts can see list of books issued and
-                            its issue date
-                            and return date
-                            and also thestudents can request the librarian to add new books by filling the book
-                            requestform. The
-                            librarian after
-                            logging into his account that is admin account cangenerate various reports such as
-                            student report ,
-                            issue report,
-                            teacher report andbook reportOverall this project of ours is being developed to help the
-                            students as
-                            well as staffof
-                            library to maintain the library in the best way possible and also reduce thehuman
-                            effort.</p>
-                    </div>
+                <div class="row mt-3">
+                    <a class="nav-link" href="user_reg.html"><button class="btn w-100 button text-white text-start">
+                            <h5><i class="bi bi-person-fill-add"></i> Add User</h5>
+                        </button></a>
+                </div>
+                <div class="row mt-3">
+                    <button class="btn w-100 button text-white text-start">
+                        <h5><i class="bi bi-person-fill-gear"></i> Update User</h5>
+                    </button>
+                </div>
+                <div class="row mt-3">
+                    <button class="btn w-100 button text-white text-start" id="report-tab" data-bs-toggle="tab"
+                        data-bs-target="#report" type="button" role="tab" aria-controls="report" aria-selected="false">
+                        <h5><i class="bi bi-bar-chart-line-fill"></i> Reports</h5>
+                    </button>
+                </div>
+                <div class="row mt-3">
+                    <button class="btn w-100 button text-white text-start">
+                        <h5><i class="bi bi-box-arrow-right"></i> Logout</h5>
+                    </button>
+                </div>
+                <div class="row mt-3">
+                    <button class="btn w-100 button text-white text-start">
+                        <h5><i class="bi bi-power"></i> Exit</h5>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <div class="container-fluid tab-container">
+        <div class="row">
+            <div class="col-md-12 mb-5 mb-md-0">
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade active show" id="dashboard" role="tabpanel"
+                        aria-labelledby="dashboard-tab" tabindex="0">
+                        <div class="row mt-5">
+                            <div class=" mb-5 bg-light py-1 rounded-5 page-title">
+                                <h3 class="text-center text-dark fw-bold">Dashboard</h3>
+                            </div>
+                            <div class="col-md-3 ">
+                                <div class="card border-0 text-light shadow ">
+                                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                        <i class="bi bi-people-fill display-5"></i>
+                                        <h4 class=" fw-bold">Total Users</h4>
+                                        <h2 class="fw-bold">80</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mt-4 mt-md-0">
+                                <div class="card border-0 text-light shadow ">
+                                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                        <i class="bi bi-book-half display-5"></i>
+                                        <h4 class=" fw-bold">Total Books</h4>
+                                        <h2 class="fw-bold">125</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mt-4 mt-md-0">
+                                <div class="card border-0 text-light shadow ">
+                                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                        <i class="bi bi-journal-arrow-up display-5"></i>
+                                        <h4 class=" fw-bold">Total Book Issue</h4>
+                                        <h2 class="fw-bold">50</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mt-4 mt-md-0">
+                                <div class="card border-0 text-light shadow ">
+                                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                        <i class="bi bi-journal-arrow-down display-5"></i>
+                                        <h4 class=" fw-bold">Total Book Returned</h4>
+                                        <h2 class="fw-bold">25</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row  mt-4">
+                            <div class="col-md-3">
+                                <div class="card border-0 text-light shadow ">
+                                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                        <i class="bi bi-journal-x display-5"></i>
+                                        <h4 class=" fw-bold">Total Book Not Returned</h4>
+                                        <h2 class="fw-bold">25</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mt-4 mt-md-0">
+                                <div class="card border-0 text-light shadow ">
+                                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                        <i class="bi bi-currency-rupee display-5"></i>
+                                        <h4 class=" fw-bold">Total Fines Received</h4>
+                                        <h2 class="fw-bold">100</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mt-4 mt-md-0">
+                                <div class="card border-0 text-light shadow ">
+                                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                        <i class="bi bi-person-workspace display-5"></i>
+                                        <h4 class=" fw-bold ">Total Author</h4>
+                                        <h2 class="fw-bold">35</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mt-4 mt-md-0">
+                                <div class="card border-0 text-light shadow ">
+                                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                        <i class="bi bi-journal-text display-4"></i>
+                                        <h4 class=" fw-bold">Total Category</h4>
+                                        <h2 class="fw-bold">80</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="manageMembers" role="tabpanel" aria-labelledby="manageMembers-tab"
+                        tabindex="0">
+                        <div class="row mt-5">
+                            <div class=" mb-5 bg-light py-1 rounded-5">
+                                <h3 class="text-center text-dark fw-bold">Manage Members</h3>
+                            </div>
+                            <div class="col-md-12">
+                                <table class="table table-responsive table-hover table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Sl No</th>
+                                            <th>Roll</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Password</th>
+                                            <th>Confirm Passeord</th>
+                                            <th>Mobile Number</th>
+                                            <th>Date of Birth</th>
+                                            <th>Gender</th>
+                                            <th>City</th>
+                                            <th>Pincode</th>
+                                            <th>Address</th>
+                                            <th>T&C</th>
+                                            <th>Newsletter</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="usertable"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="category" role="tabpanel" aria-labelledby="category-tab"
+                        tabindex="0">
+                        <div class="row mt-5">
+                            <div class=" mb-5 bg-light py-1 rounded-5">
+                                <h3 class="text-center text-dark fw-bold">Book Categories</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="manageBooks" role="tabpanel" aria-labelledby="manageBooks-tab"
+                        tabindex="0">
+                        <div class="row mt-5">
+                            <div class=" mb-5 bg-light py-1 rounded-5">
+                                <h3 class="text-center text-dark fw-bold">Manage Books</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="leandBooks" role="tabpanel" aria-labelledby="leandBooks-tab"
+                        tabindex="0">
+                        <div class="row mt-5">
+                            <div class=" mb-5 bg-light py-1 rounded-5">
+                                <h3 class="text-center text-dark fw-bold">Leand Book</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="returnBooks" role="tabpanel" aria-labelledby="returnBooks-tab"
+                        tabindex="0">
+                        <div class="row mt-5">
+                            <div class=" mb-5 bg-light py-1 rounded-5">
+                                <h3 class="text-center text-dark fw-bold">Return Books</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="report" role="tabpanel" aria-labelledby="report-tab" tabindex="0">
+                        <div class="row mt-5">
+                            <div class=" mb-5 bg-light py-1 rounded-5">
+                                <h3 class="text-center text-dark fw-bold">Library Data Report</h3>
+                            </div>
+                            <div class="col-md-6">
+                                <p>A library management system (LMS) report may describe the purpose of an LMS, how it
+                                    helps
+                                    librarians, and
+                                    its benefits
+                                    to the public. Here are some things that an LMS report may cover:</p>
+                                <h6 class="fw-bold mt-4">Purpose</h6>
+                                <p>
+                                    The purpose of an LMS is to computerize a library's daily operations and help public
+                                    libraries digitize
+                                    their libraries.</p>
+                                <h6 class="fw-bold mt-4">Benefits</h6>
+                                <p>
+                                    An LMS can help librarians manage multiple issues at once, reduce wait times for
+                                    users,
+                                    and store all
+                                    data on a single</p>
+                                <h6 class="fw-bold mt-4">Features</h6>
+                                <p>
+                                    An LMS can help librarians maintain databases of new books and borrowed books,
+                                    including
+                                    due dates. It
+                                    can also include
+                                    a report module that provides information on registered users, books, and issues and
+                                    returns.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <canvas class="border" id="myChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <h6 class="fw-bold">Abstract</h6>
+                            <p class="lh-lg">Library management system is a project which aims in developing a
+                                computerizedsystem to
+                                maintain all the daily work of
+                                library .This project has many featureswhich are generally not available in normal
+                                library management
+                                systems
+                                likefacility of user login and a facility of teachers login .It also has a facility of
+                                adminlogin
+                                through which the
+                                admin can monitor the whole system .It also has facility ofan online notice board where
+                                teachers can
+                                student can put up
+                                information aboutworkshops or seminars being held in our colleges or nearby colleges and
+                                librarianafter
+                                proper
+                                verification from the concerned institution organizing the seminar canadd it to the
+                                notice board . It
+                                has also a
+                                facility where student after logging in theiraccounts can see list of books issued and
+                                its issue date
+                                and return date
+                                and also thestudents can request the librarian to add new books by filling the book
+                                requestform. The
+                                librarian after
+                                logging into his account that is admin account cangenerate various reports such as
+                                student report ,
+                                issue report,
+                                teacher report andbook reportOverall this project of ours is being developed to help the
+                                students as
+                                well as staffof
+                                library to maintain the library in the best way possible and also reduce thehuman
+                                effort.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 <script src="asset/js/chart.js"></script>
 <script src="asset/js/script.js"></script>
+<script src="asset/js/input_data.js"></script>
 </body>
 
 </html>
