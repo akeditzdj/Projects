@@ -109,7 +109,7 @@ nav ul li:hover {
   position: fixed;
 }
 .offcanvas {
-  margin-top: 117px;
+  margin-top: 0px;
   background-color: #1f2831;
   max-width: 350px;
 }
@@ -128,8 +128,10 @@ nav ul li:hover {
   background-color: #1f2831;
 }
 
+
 .side-bar-btn button {
   padding: 9px 10px;
+  
 }
 
 .button {
@@ -235,12 +237,17 @@ form select {
   width: 150px;
 }
 
+
 .tab-container ul {
-  width: 75%;
+  width: 70%;
   margin: 0 auto;
 }
 .tab-container .nav-item button {
-  width: 486px;
+  width: 378.7px;
+}
+
+ .modal-content{
+  background-color: #1f2831;
 }
 
 @media screen and (max-width: 576px) {
@@ -263,3 +270,7 @@ form select {
     width: 100%;
   }
 }
+
+
+/*-----------  All data table ----------*/
+

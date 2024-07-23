@@ -1,120 +1,35 @@
-// Get data from new user
+//Get data from new user
 
-// formEl = document.forms.registration;
-// const btnEl = document.querySelector("form button");
+const rollEl = document.getElementById("roll");
+const userNameEl = document.getElementById("username");
+const emailEl = document.getElementById("email");
+const passwordEl = document.getElementById("password");
+const cpasswordEl = document.getElementById("cpassword");
+const numberEl = document.getElementById("number");
+const dobEl = document.getElementById("dob");
+const genderEl = document.getElementById("gender");
+const cityEl = document.getElementById("city");
+const pincodeEl = document.getElementById("pincode");
+const addressEl = document.getElementById("address");
+const termsEl = document.getElementById("terms");
+const newsletterEl = document.getElementById("newsletter");
 
-// let = userData = [];
 
-// const formSubmit = (event) => {
-//   event.preventDefault();
 
-//   const {
-//     roll,
-//     name,
-//     email,
-//     password,
-//     cpassword,
-//     number,
-//     dob,
-//     gender,
-//     city,
-//     pincode,
-//     address,
-//     terms,
-//     newsletter,
-//   } = formEl;
 
-//   if (
-//     (roll,
-//     name,
-//     email,
-//     password,
-//     cpassword,
-//     number,
-//     dob,
-//     gender,
-//     city,
-//     pincode,
-//     address,
-//     terms,
-//     newsletter)
-//   ) {
-//     console.log("Data submitted successfully.");
-//     const formData = new FormData(formEl);
 
-//       let userArrayData = [...formData.values()];
 
-//       console.log(userArrayData);
 
-//         // userData.push({
-//         //   id: Date.now(),
-//         //   roll,
-//         //   name,
-//         //   email,
-//         //   password,
-//         //   cpassword,
-//         //   number,
-//         //   dob,
-//         //   gender,
-//         //   city,
-//         //   pincode,
-//         //   address,
-//         //   terms,
-//         //   newsletter,
-//         // });
+// Load user data
 
-//     //   saveUsersLocalStorage();
-
-//   } else {
-//     console.log("Plz fill all details.");
-//   }
-// };
-
-// formEl.addEventListener("submit", formSubmit);
-
-// // Save user data to localStorage...
-
-// function saveUsersLocalStorage() {
-//   localStorage.setItem("userArrayData", JSON.stringify(userArrayData));
-//   console.log("Data Saved to localStorage");
-// }
-
-// // Get user data from localStorage...
-
-// function getUserDetails() {
-//   if (localStorage.getItem("userData")) {
-//     userData = JSON.parse(localStorage.getItem("userData"));
-//   }
-// }
-
-let = userData = [
-  {
-    id: 1,
-    roll: "Admin",
-    name: "Ajithkumar",
-    email: "akeditz@gmail.com",
-    password: "123456",
-    cpassword: "123456",
-    number: "9786000352",
-    dob: "23-04-2024",
-    gender: "male",
-    city: "Trichy",
-    pincode: "622515",
-    address: "207/A, North Street",
-    terms: "Agreed",
-    newsletter: "Agreed",
-  },
-];
-
-const tbody = document.getElementById("usertable");
-
+const tbody = document.querySelector("#usertable");
 function loadUser() {
   tbody.innerHTML = "";
-  userData.forEach((user) => {
+  userData.forEach((user, index) => {
     tbody.innerHTML += `<tr>
-          <td>${user.index + 1}</td>
+          <td>${index + 1}</td>
           <td>${user.roll}</td>
-          <td>${user.name}</td>
+          <td>${user.userName}</td>
           <td>${user.email}</td>
           <td>${user.password}</td>
           <td>${user.cpassword}</td>
@@ -126,9 +41,44 @@ function loadUser() {
           <td>${user.address}</td>
           <td>${user.terms}</td>
           <td>${user.newsletter}</td>
-          <td><button>Edit</button></td>
-          <td><button>Delete</button></td>
-
+          <td><button class="btn btn-sm btn-primary">Edit</button></td>
+          <td><button class="btn btn-sm btn-danger">Delete</button></td>
           </tr>`;
   });
+}
+loadUser();
+
+// Save user data to localStorage...
+
+function saveUsersLocalStorage() {
+  localStorage.setItem("userData", userData);
+  console.log("Data Saved to localStorage");
+}
+
+// Get user data from localStorage...
+
+function getUserDetails() {
+  if (localStorage.getItem("userData")) {
+    userData = JSON.parse(localStorage.getItem("userData"));
+  }
+}
+getUserDetails();
+
+
+
+// ClearAll
+
+function clearAll() {
+  rollEl.value = "";
+  userNameEl.value = "";
+  emailEl.value = "";
+  passwordEl.value = "";
+  cpasswordEl.value = "";
+  numberEl.value = "";
+  dobEl.value = "";
+  cityEl.value = "";
+  pincodeEl.value = "";
+  addressEl.value = "";
+  termsEl.value = "";
+  newsletterEl.value = "";
 }
