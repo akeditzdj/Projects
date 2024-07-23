@@ -1,5 +1,3 @@
-let userData = [];
-
 //Get data from new user
 const idEl = document.getElementById("id");
 const rollEl = document.getElementById("roll");
@@ -16,12 +14,15 @@ const addressEl = document.getElementById("address");
 const termsEl = document.getElementById("terms");
 const newsletterEl = document.getElementById("newsletter");
 
+// Buttons 
+const btnAdd = document.getElementById("btnAdd");
 const btnSave = document.getElementById("submit");
 const btnClear = document.getElementById("clear");
+
+// Load data in table
 const tbody = document.getElementById("usertable");
 
 // Modal open and hide
-
 const Modal = new bootstrap.Modal(exampleModal, {
   keyboard: false,
 });
@@ -32,22 +33,22 @@ btnAdd.addEventListener("click", function () {
 });
 
 // Add new user
-
 btnSave.addEventListener("click", function () {
-   const id = idEl.value;
-  const roll = rollEl.value.trim();
-  const userName = userNameEl.value.trim();
-  const email = emailEl.value.trim();
-  const password = passwordEl.value.trim();
-  const cpassword = cpasswordEl.value.trim();
-  const number = numberEl.value.trim();
+  const id = idEl.value;
+  const roll = rollEl.value;
+  const userName = userNameEl.value;
+  const email = emailEl.value;
+  const password = passwordEl.value;
+  const cpassword = cpasswordEl.value;
+  const number = numberEl.value;
   const dob = dobEl.value;
   const gender = maleEl.checked ? "Male" : "Female";
-  const city = cityEl.value.trim();
-  const pincode = pincodeEl.value.trim();
-  const address = addressEl.value.trim();
+  const city = cityEl.value;
+  const pincode = pincodeEl.value;
+  const address = addressEl.value;
   const terms = termsEl.value;
   const newsletter = newsletterEl.value;
+  let userData = getUserDetails();
 
   if (
     roll &&
@@ -64,6 +65,19 @@ btnSave.addEventListener("click", function () {
     terms &&
     newsletter
   ) {
+
+    console.log(roll)
+    console.log(userName);
+    console.log(email);
+    console.log(password);
+    console.log(cpassword);
+    console.log(number);
+    console.log(dob);
+    console.log(gender);
+    console.log(pincode);
+    console.log(address);
+    console.log(terms);
+    console.log(newsletter);
     if (id) {
       //Update tools
       let updatedUsers = userData.map((user) => {
@@ -90,6 +104,8 @@ btnSave.addEventListener("click", function () {
       });
       saveUsersLocalStorage(updatedUsers);
       Modal.hide();
+      clearAll();
+      loadUser();
     } else {
       //Add Tools
       const userObj = {
@@ -110,8 +126,7 @@ btnSave.addEventListener("click", function () {
 
       userData.push(userObj);
       console.log("User added succesfully");
-
-      saveUsersLocalStorage();
+      saveUsersLocalStorage(userData);
       clearAll();
       loadUser();
     }
@@ -139,6 +154,7 @@ function getUserDetails() {
 // Load user data
 
 function loadUser() {
+  let userData = [];
   tbody.innerHTML = "";
   userData.forEach((user, index) => {
     tbody.innerHTML += `<tr>
