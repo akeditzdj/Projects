@@ -58,8 +58,7 @@
             </div>
             <div class="row mt-3">
                 <button class="btn w-100 button text-white text-start" id="manageMembers-tab" data-bs-toggle="tab"
-                    data-bs-target="#manageMembers" type="button" role="tab" aria-controls="manageMembers"
-                    aria-selected="false">
+                    data-bs-target="#manageMembers" role="tab" aria-controls="manageMembers" aria-selected="false">
                     <h5><i class="bi bi-people-fill"></i> Manage Members</h5>
                 </button>
             </div>
@@ -90,17 +89,7 @@
                     <h5><i class="bi bi-arrow-return-right"></i> Return Books</h5>
                 </button>
             </div>
-            <div class="row mt-3">
-                <button class="btn w-100 button text-white text-start" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal" type="button">
-                    <h5><i class="bi bi-person-fill-add"></i> Add User</h5>
-                </button>
-            </div>
-            <div class="row mt-3">
-                <button class="btn w-100 button text-white text-start">
-                    <h5><i class="bi bi-person-fill-gear"></i> Update User</h5>
-                </button>
-            </div>
+
             <div class="row mt-3">
                 <button class="btn w-100 button text-white text-start" id="report-tab" data-bs-toggle="tab"
                     data-bs-target="#report" type="button" role="tab" aria-controls="report" aria-selected="false">
@@ -205,6 +194,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
 
                 <div class="tab-pane fade" id="manageMembers" role="tabpanel" aria-labelledby="manageMembers-tab"
@@ -213,30 +203,330 @@
                         <div class=" mb-5 bg-light py-1 rounded-5">
                             <h3 class="text-center text-dark fw-bold">Manage Members</h3>
                         </div>
-                        <div class="col-md-12">
-                            <table class="table table-responsive table-hover table-bordered table-dark">
-                                <thead class="text-center">
-                                    <tr>
-                                        <th>Sl No</th>
-                                        <th>Roll</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Password</th>
-                                        <th>Confirm Passeord</th>
-                                        <th>Mobile Number</th>
-                                        <th>Date of Birth</th>
-                                        <th>Gender</th>
-                                        <th>City</th>
-                                        <th>Pincode</th>
-                                        <th>Address</th>
-                                        <th>T&C</th>
-                                        <th>Newsletter</th>
-                                        <th>Edit</th>
-                                        <th>Delete</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="usertable" class="text-center"></tbody>
-                            </table>
+                        <div class="row mb-3 ">
+                            <div class="col-12 d-flex justify-content-center align-items-center">
+                                <div>
+                                    <button class="btn btn-outline-light" id="btnAdd">
+                                        <h5><i class="bi bi-person-fill-add"></i> Add User</h5>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-mt-5">
+                            <div class="col-md-12">
+                                <table class="table table-responsive table-hover table-bordered table-dark">
+                                    <thead class="text-center">
+                                        <tr>
+                                            <th>Sl No</th>
+                                            <th>Roll</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Password</th>
+                                            <th>Confirm Passeord</th>
+                                            <th>Mobile Number</th>
+                                            <th>Date of Birth</th>
+                                            <th>Gender</th>
+                                            <th>City</th>
+                                            <th>Pincode</th>
+                                            <th>Address</th>
+                                            <th>T&C</th>
+                                            <th>Newsletter</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="usertable" class="text-center"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- Modal - User registration and Login form -->
+
+                        <div class="modal fade modal-xl" id="exampleModal" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5 fst-italic" id="exampleModalLabel">Library
+                                            Management System</h1>
+                                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container tab-container mt-3">
+                                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                                        data-bs-target="#home-tab-pane" type="button" role="tab"
+                                                        aria-controls="home-tab-pane"
+                                                        aria-selected="true">Register</button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                                        data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                                        aria-controls="profile-tab-pane"
+                                                        aria-selected="false">Login</button>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content" id="myTabContent">
+                                                <div class="tab-pane fade show active" id="home-tab-pane"
+                                                    role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                                    <div
+                                                        class="container form-main-container d-flex justify-content-center align-items-center ">
+                                                        <div class="form-container mt-5 shadow px-md-5 py-md-3 pb-5">
+                                                            <div class="row my-3">
+                                                                <div class="col text-center">
+                                                                    <div class="bg-white py-1 rounded-3">
+                                                                        <h3 class="text-dark">Registration Form</h3>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <form action="#" name="registration">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="text" name="id" id="id"
+                                                                                        hidden>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="roll">Roll</label>
+                                                                                    <select class="form-select"
+                                                                                        name="roll" id="roll">
+                                                                                        <option class="bg-transparent"
+                                                                                            value="">Select Your Roll
+                                                                                        </option>
+                                                                                        <option value="Admin">Admin
+                                                                                        </option>
+                                                                                        <option value="User">User
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="userName">Name</label>
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="text" name="userName"
+                                                                                        id="userName"
+                                                                                        placeholder="Enter your name">
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="email">Email</label>
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="email" name="email"
+                                                                                        id="email"
+                                                                                        placeholder="Enter your email">
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="password">Password</label>
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="password" name="password"
+                                                                                        id="password"
+                                                                                        placeholder="Enter your password"
+                                                                                        autocomplete="off">
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="cpassword">Confirm
+                                                                                        Password</label>
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="password" name="cpassword"
+                                                                                        id="cpassword"
+                                                                                        placeholder="Enter your confirm password"
+                                                                                        autocomplete="off">
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="number">Mobile
+                                                                                        Number</label>
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="text" name="number"
+                                                                                        id="number"
+                                                                                        placeholder="Enter your mobile number">
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="dob">Date of Birth</label>
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="date" name="dob" id="dob">
+                                                                                </div>
+                                                                                <div class="form-group mt-5">
+                                                                                    <label class="form-label"
+                                                                                        for="gender">Gender</label>
+                                                                                    <div
+                                                                                        class="d-flex gap-3 align-items-center">
+                                                                                        <div>
+                                                                                            <label
+                                                                                                class="form-check-label"
+                                                                                                for="male"><input
+                                                                                                    class="form-check-input bg-transparent text-white"
+                                                                                                    type="radio"
+                                                                                                    name="gender"
+                                                                                                    value="Male"
+                                                                                                    id="male">
+                                                                                                Male</label>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <label
+                                                                                                class="form-check-label"
+                                                                                                for="female"><input
+                                                                                                    class="form-check-input bg-transparent text-white"
+                                                                                                    type="radio"
+                                                                                                    name="gender"
+                                                                                                    value="Female"
+                                                                                                    id="female">
+                                                                                                Female</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="city">City</label>
+                                                                                    <select class="form-select"
+                                                                                        name="city" id="city">
+                                                                                        <option value="">Select your
+                                                                                            city</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="pincode">Pin Code</label>
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="text" name="pincode"
+                                                                                        id="pincode"
+                                                                                        placeholder="Enter your area pin code">
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="address">Address</label>
+                                                                                    <textarea
+                                                                                        class="form-control  bg-transparent text-white"
+                                                                                        name="address" id="address"
+                                                                                        placeholder="Enter your address">
+                                                                            </textarea>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <div
+                                                                                    class="col-12 d-md-flex justify-content-around align-items-center">
+                                                                                    <label class="form-label"
+                                                                                        for="terms"><input
+                                                                                            class="form-check-input bg-transparent text-light"
+                                                                                            type="checkbox" name="terms"
+                                                                                            id="terms" value="Agreed"> I
+                                                                                        agree with terms
+                                                                                        and conditions</label>
+                                                                                    <label class="form-label"
+                                                                                        for="newsletter"><input
+                                                                                            class="form-check-input bg-transparent text-light"
+                                                                                            type="checkbox"
+                                                                                            name="newsletter"
+                                                                                            id="newsletter"
+                                                                                            value="Agreed"> I want
+                                                                                        receive the newsletter</label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div
+                                                                                class="col-lg-12 mt-4 d-flex justify-content-center align-items-center gap-3">
+                                                                                <div><button id="submit"
+                                                                                        class="btn btn-primary">Submit</button>
+                                                                                </div>
+                                                                                <div><button id="clear"
+                                                                                        class="btn btn-danger">Clear</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel"
+                                                    aria-labelledby="profile-tab" tabindex="0">
+                                                    <div
+                                                        class="container form-main-container d-flex justify-content-center align-items-center">
+                                                        <div
+                                                            class="login-form-container form-container mt-5  shadow p-md-5">
+                                                            <div class="row my-3">
+                                                                <div class="col-md-12 text-center">
+                                                                    <div class="bg-white py-1 rounded-3">
+                                                                        <h3 class="text-dark">Log In</h3>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <form action="#" name="login">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="loginEmail">Email</label>
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="email" name="loginEmail"
+                                                                                        id="loginEmail"
+                                                                                        placeholder="Enter your email">
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="loginPassword">Password</label>
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="password"
+                                                                                        name="loginPassword"
+                                                                                        id="loginPassword"
+                                                                                        placeholder="Enter your password"
+                                                                                        autocomplete="off">
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <button
+                                                                                        class="btn btn-primary w-100">Login</button>
+                                                                                </div>
+                                                                                <div class="form-group text-center">
+                                                                                    <a class="link-light link-opacity-50-hover text-decoration-none"
+                                                                                        href="#">Forgot
+                                                                                        password</a>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div> -->
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -345,238 +635,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal - User registration and Login form -->
-
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-</button> -->
-
-<!-- Modal -->
-<div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5 fst-italic" id="exampleModalLabel">Library Management System</h1>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="container tab-container mt-3">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
-                                aria-selected="true">Register</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
-                                data-bs-target="#profile-tab-pane" type="button" role="tab"
-                                aria-controls="profile-tab-pane" aria-selected="false">Login</button>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
-                            aria-labelledby="home-tab" tabindex="0">
-                            <div
-                                class="container form-main-container d-flex justify-content-center align-items-center ">
-                                <div class="form-container mt-5 shadow px-md-5 py-md-3 pb-5">
-                                    <div class="row my-3">
-                                        <div class="col text-center">
-                                            <div class="bg-white py-1 rounded-3">
-                                                <h3 class="text-dark">Registration Form</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <form action="#" name="registration">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <input class="form-control bg-transparent text-white"
-                                                                type="text" name="id" id="id" hidden>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="form-label" for="roll">Roll</label>
-                                                            <select class="form-select" name="roll" id="roll" required>
-                                                                <option class="bg-transparent" value="">Select Your Roll
-                                                                </option>
-                                                                <option value="Admin">Admin</option>
-                                                                <option value="User">User</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="form-label" for="userName">Name</label>
-                                                            <input class="form-control bg-transparent text-white"
-                                                                type="text" name="userName" id="userName"
-                                                                placeholder="Enter your name" required>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="form-label" for="email">Email</label>
-                                                            <input class="form-control bg-transparent text-white"
-                                                                type="email" name="email" id="email"
-                                                                placeholder="Enter your email" required>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="form-label" for="password">Password</label>
-                                                            <input class="form-control bg-transparent text-white"
-                                                                type="password" name="password" id="password"
-                                                                placeholder="Enter your password" autocomplete="off"
-                                                                required>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="form-label" for="cpassword">Confirm
-                                                                Password</label>
-                                                            <input class="form-control bg-transparent text-white"
-                                                                type="password" name="cpassword" id="cpassword"
-                                                                placeholder="Enter your confirm password"
-                                                                autocomplete="off" required>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="form-label" for="number">Mobile Number</label>
-                                                            <input class="form-control bg-transparent text-white"
-                                                                type="text" name="number" id="number"
-                                                                placeholder="Enter your mobile number" required>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <label class="form-label" for="dob">Date of Birth</label>
-                                                            <input class="form-control bg-transparent text-white"
-                                                                type="date" name="dob" id="dob" required>
-                                                        </div>
-                                                        <div class="form-group mt-5">
-                                                            <label class="form-label" for="gender">Gender</label>
-                                                            <div class="d-flex gap-3 align-items-center">
-                                                                <div>
-                                                                    <label class="form-check-label" for="male"><input
-                                                                            class="form-check-input bg-transparent text-white"
-                                                                            type="radio" name="gender" value="Male"
-                                                                            id="male">
-                                                                        Male</label>
-                                                                </div>
-                                                                <div>
-                                                                    <label class="form-check-label" for="female"><input
-                                                                            class="form-check-input bg-transparent text-white"
-                                                                            type="radio" name="gender" value="Female"
-                                                                            id="female">
-                                                                        Female</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="form-label" for="city">City</label>
-                                                            <select class="form-select" name="city" id="city" required>
-                                                                <option value="">Select your city</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="form-label" for="pincode">Pin Code</label>
-                                                            <input class="form-control bg-transparent text-white"
-                                                                type="text" name="pincode" id="pincode"
-                                                                placeholder="Enter your area pin code" required>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="form-label" for="address">Address</label>
-                                                            <textarea class="form-control  bg-transparent text-white"
-                                                                name="address" id="address"
-                                                                placeholder="Enter your address" required>
-                                                        </textarea>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div
-                                                            class="col-12 d-md-flex justify-content-around align-items-center">
-                                                            <label class="form-label" for="terms"><input
-                                                                    class="form-check-input bg-transparent text-light"
-                                                                    type="checkbox" name="terms" id="terms"
-                                                                    value="Agreed" required> I agree with terms
-                                                                and conditions</label>
-                                                            <label class="form-label" for="newsletter"><input
-                                                                    class="form-check-input bg-transparent text-light"
-                                                                    type="checkbox" name="newsletter" id="newsletter"
-                                                                    value="Agreed" required> I want
-                                                                receive the newsletter</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div
-                                                        class="col-lg-12 mt-4 d-flex justify-content-center align-items-center gap-3">
-                                                        <div><button type="submit" id="submit"
-                                                                class="btn btn-primary">Submit</button>
-                                                        </div>
-                                                        <div><button type="reset" id="clear"
-                                                                class="btn btn-danger">Clear</button></div>
-                                                    </div>
-                                                </div>
-
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
-                            tabindex="0">
-                            <div class="container form-main-container d-flex justify-content-center align-items-center">
-                                <div class="login-form-container form-container mt-5  shadow p-md-5">
-                                    <div class="row my-3">
-                                        <div class="col-md-12 text-center">
-                                            <div class="bg-white py-1 rounded-3">
-                                                <h3 class="text-dark">Log In</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <form action="#" name="login">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label class="form-label" for="loginEmail">Email</label>
-                                                            <input class="form-control bg-transparent text-white"
-                                                                type="email" name="loginEmail" id="loginEmail"
-                                                                placeholder="Enter your email">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="form-label"
-                                                                for="loginPassword">Password</label>
-                                                            <input class="form-control bg-transparent text-white"
-                                                                type="password" name="loginPassword" id="loginPassword"
-                                                                placeholder="Enter your password" autocomplete="off">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <button class="btn btn-primary w-100">Login</button>
-                                                        </div>
-                                                        <div class="form-group text-center">
-                                                            <a class="link-light link-opacity-50-hover text-decoration-none"
-                                                                href="#">Forgot
-                                                                password</a>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div> -->
         </div>
     </div>
 </div>
