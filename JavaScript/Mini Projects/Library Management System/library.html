@@ -10,9 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link rel="stylesheet" href="asset/css/style.css">
-
 </head>
-
 <nav class="navbar navbar-expand-lg shadow top-0 sticky-top">
     <div class="container-fluid">
         <a href="index.html" class="nav-brand"><img src="asset/images/logo.png" alt="logo"></a>
@@ -237,6 +235,7 @@
                                             <th>Newsletter</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
+
                                         </tr>
                                     </thead>
                                     <tbody id="usertable" class="text-center"></tbody>
@@ -245,13 +244,12 @@
                         </div>
 
                         <!-- Modal - User delete warning message -->
-
                         <div class="modal" tabindex="-1" id="myModalDelete">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Modal title</h5>
-                                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                    <div class="modal-header bg-white">
+                                        <h5 class="modal-title text-dark">Delete User</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
@@ -266,21 +264,44 @@
                             </div>
                         </div>
 
+                        <!------ Message Modal Start -------->
+
+                        <div class="modal fade" id="myModalMessage">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-white ">
+                                        <h5 id="title" class="modal-title text-dark"></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p id="alert"></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Modal - User registration and Login form -->
 
                         <div class="modal fade modal-xl" id="exampleModal" tabindex="-1"
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5 fst-italic" id="exampleModalLabel">Library
-                                            Management System</h1>
-                                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                    <div class="modal-header bg-white">
+                                        <h3 class="modal-title text-dark fw-bold fst-italic" id="exampleModalLabel"
+                                            id="modalTitle">
+                                            Library
+                                            Management System</h3>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
-    <div class="modal-body">
-        <div class="container tab-container mt-3">
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <div class="modal-body">
+                                        <div class="container tab-container mt-3">
+                                            <ul class="nav nav-tabs" id="myTab" role="tablist">
                                                 <li class="nav-item" role="presentation">
                                                     <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
                                                         data-bs-target="#home-tab-pane" type="button" role="tab"
@@ -546,7 +567,6 @@
                                                                                         password</a>
                                                                                 </div>
                                                                             </div>
-
                                                                         </div>
                                                                     </form>
                                                                 </div>
@@ -556,8 +576,7 @@
                                                 </div>
                                             </div>
                                         </div>
-
-                                    </div>                                
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -13,8 +13,6 @@ const addressEl = document.getElementById("address");
 const termsEl = document.getElementById("terms");
 const newsletterEl = document.getElementById("newsletter");
 
-
-
 const maleEl = document.getElementById("male");
 const femaleEl = document.getElementById("female");
 const othersEl = document.getElementById("others");
@@ -24,8 +22,13 @@ const btnAdd = document.getElementById("btnAdd");
 const btnSave = document.getElementById("submit");
 const btnClear = document.getElementById("clear");
 
-//Filter
+// Modal title change
 
+const modalTitle = document.getElementById("title");
+const alertMsg = document.getElementById("alert");
+const mainModalTitle = document.getElementById("modalTitle");
+
+//Filter
 const filterUser = document.getElementById("filterUser");
 
 // Load data in table
@@ -58,6 +61,9 @@ btnSave.addEventListener("click", function () {
   const terms = termsEl.checked ? "Agreed" : "Disagree";
   const newsletter = newsletterEl.checked ? "Agreed" : "Disagree";
   let userData = getUserDetails();
+  const ModalStatus = new bootstrap.Modal(myModalMessage, {
+    keyboard: false,
+  });
 
   if (
     roll &&
@@ -74,19 +80,6 @@ btnSave.addEventListener("click", function () {
     terms &&
     newsletter
   ) {
-    console.log(roll);
-    console.log(userName);
-    console.log(email);
-    console.log(password);
-    console.log(cpassword);
-    console.log(number);
-    console.log(dob);
-    console.log(gender);
-    console.log(city);
-    console.log(pincode);
-    console.log(address);
-    console.log(terms);
-    console.log(newsletter);
     if (id) {
       //Update tools
       let updatedUsers = userData.map((user) => {
@@ -113,6 +106,9 @@ btnSave.addEventListener("click", function () {
       });
       saveUsersLocalStorage(updatedUsers);
       Modal.hide();
+      ModalStatus.show();
+      mainModalTitle.innerHTML = "User Update Status";
+      alertMsg.innerHTML = "User Updated Successfully...";
       clearAll();
       loadUser();
     } else {
@@ -135,14 +131,18 @@ btnSave.addEventListener("click", function () {
       };
 
       userData.push(userObj);
-      console.log("User added succesfully");
+      ModalStatus.show();
+      mainModalTitle.innerHTML = "New User Registration";
+      alertMsg.innerHTML = "User Added Successfully...";
       saveUsersLocalStorage(userData);
       clearAll();
       loadUser();
     }
     Modal.hide();
   } else {
-    alert("Plaese fill all the details");
+    ModalStatus.show();
+    modalTitle.innerHTML = "Warning";
+    alertMsg.innerHTML = "Plaese fill all the details";
   }
 });
 
@@ -164,11 +164,11 @@ function editUsers(id) {
   pincodeEl.value = selectedUsers.pincode;
   addressEl.value = selectedUsers.address;
 
-    genderVal == "Male"
-      ? (maleEl.checked = true)
-      : genderVal == "Female"
-      ? (femaleEl.checked = true)
-      : (othersEl.checked = true);
+  genderVal == "Male"
+    ? (maleEl.checked = true)
+    : genderVal == "Female"
+    ? (femaleEl.checked = true)
+    : (othersEl.checked = true);
 
   loadUser();
 }
@@ -181,9 +181,23 @@ function deleteUser(id) {
     let updatedUsers = userData.filter((user) => user.id != id);
     userData = updatedUsers;
     saveUsersLocalStorage(updatedUsers);
-
+    msgModal.hide();
     loadUser();
+    setTimeout(deleteSuccessMessage, 200);
   }
+}
+
+// Delete Success message with timer
+
+function deleteSuccessMessage() {
+  const ModalStatus = new bootstrap.Modal(myModalMessage, {
+    keyboard: false,
+  });
+  const modalTitle = document.getElementById("title");
+  const alertMsg = document.getElementById("alert");
+  ModalStatus.show();
+  modalTitle.innerHTML = "Delete User";
+  alertMsg.innerHTML = "User Deleted Successfully...";
 }
 
 // Custom modal delete with confirmation
@@ -299,3 +313,7 @@ filterUser.addEventListener("input", function () {
   );
   loadUser(1, filterUser);
 });
+
+function reloadPage() {
+  location.reload();
+}
