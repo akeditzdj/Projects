@@ -51,13 +51,13 @@
         <div id="pills-tab" role="tablist">
             <div class="row mt-3">
                 <button class="btn w-100 button text-white text-start active" id="dashboard-tab" data-bs-toggle="tab"
-                    data-bs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">
+                    data-bs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="true">
                     <h5><i class="bi bi-speedometer"></i> Dashboard</h5>
                 </button>
             </div>
             <div class="row mt-3">
                 <button class="btn w-100 button text-white text-start" id="manageMembers-tab" data-bs-toggle="tab"
-                    data-bs-target="#manageMembers" role="tab" aria-controls="manageMembers" aria-selected="true">
+                    data-bs-target="#manageMembers" role="tab" aria-controls="manageMembers" aria-selected="false">
                     <h5><i class="bi bi-people-fill"></i> Manage Members</h5>
                 </button>
             </div>
@@ -112,7 +112,7 @@
     <div class="row">
         <div class="col-md-12 mb-5 mb-md-0">
             <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab"
+                <div class="tab-pane fade active show" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab"
                     tabindex="0">
                     <div class="row mt-5">
                         <div class=" mb-5 bg-light py-1 rounded-5 page-title">
@@ -196,18 +196,23 @@
 
                 </div>
 
-                <div class="tab-pane fade active show" id="manageMembers" role="tabpanel" aria-labelledby="manageMembers-tab"
+                <div class="tab-pane fade" id="manageMembers" role="tabpanel" aria-labelledby="manageMembers-tab"
                     tabindex="0">
                     <div class="row mt-5">
                         <div class=" mb-5 bg-light py-1 rounded-5">
                             <h3 class="text-center text-dark fw-bold">Manage Members</h3>
                         </div>
                         <div class="row mb-3 ">
-                            <div class="col-12 d-flex justify-content-center align-items-center">
+                            <div class="col-12 d-flex justify-content-between align-items-center">
                                 <div>
                                     <button class="btn btn-outline-light" id="btnAdd">
                                         <h5><i class="bi bi-person-fill-add"></i> Add User</h5>
                                     </button>
+                                </div>
+                                <div class=" w-25">
+                                    <input class="form-control bg-transparent text-light" type="text" name="filterUser"
+                                        id="filterUser" placeholder="Flter your user">
+
                                 </div>
                             </div>
                         </div>
@@ -221,7 +226,7 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Password</th>
-                                            <th>Confirm Passeord</th>
+                                            <th>Confirm Password</th>
                                             <th>Mobile Number</th>
                                             <th>Date of Birth</th>
                                             <th>Gender</th>
@@ -238,6 +243,29 @@
                                 </table>
                             </div>
                         </div>
+
+                        <!-- Modal - User delete warning message -->
+
+                        <div class="modal" tabindex="-1" id="myModalDelete">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Modal title</h5>
+                                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Are you sure to delete</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                            id="no">No</button>
+                                        <button type="button" class="btn btn-primary" id="yes">Yes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Modal - User registration and Login form -->
 
                         <div class="modal fade modal-xl" id="exampleModal" tabindex="-1"
@@ -250,9 +278,9 @@
                                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body">
-                                        <div class="container tab-container mt-3">
-                                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <div class="modal-body">
+        <div class="container tab-container mt-3">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
                                                 <li class="nav-item" role="presentation">
                                                     <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
                                                         data-bs-target="#home-tab-pane" type="button" role="tab"
@@ -375,7 +403,6 @@
                                                                                                     class="form-check-input bg-transparent text-white"
                                                                                                     type="radio"
                                                                                                     name="gender"
-                                                                                                    value="Male"
                                                                                                     id="male">
                                                                                                 Male</label>
                                                                                         </div>
@@ -386,9 +413,18 @@
                                                                                                     class="form-check-input bg-transparent text-white"
                                                                                                     type="radio"
                                                                                                     name="gender"
-                                                                                                    value="Female"
                                                                                                     id="female">
                                                                                                 Female</label>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <label
+                                                                                                class="form-check-label"
+                                                                                                for="others"><input
+                                                                                                    class="form-check-input bg-transparent text-white"
+                                                                                                    type="radio"
+                                                                                                    name="gender"
+                                                                                                    id="others">
+                                                                                                Others</label>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -445,12 +481,14 @@
                                                                         <div class="row">
                                                                             <div
                                                                                 class="col-lg-12 mt-4 d-flex justify-content-center align-items-center gap-3">
-                                                                                <div><button id="submit"
-                                                                                        class="btn btn-primary">Submit</button>
-                                                                                </div>
-                                                                                <div><button id="clear"
+
+                                                                                <div><button type="reset" id="clear"
                                                                                         class="btn btn-danger">Clear</button>
                                                                                 </div>
+                                                                                <div><button type="button" id="submit"
+                                                                                        class="btn btn-primary">Submit</button>
+                                                                                </div>
+
                                                                             </div>
                                                                         </div>
 
@@ -519,11 +557,7 @@
                                             </div>
                                         </div>
 
-                                    </div>
-                                    <!-- <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div> -->
+                                    </div>                                
                                 </div>
                             </div>
                         </div>

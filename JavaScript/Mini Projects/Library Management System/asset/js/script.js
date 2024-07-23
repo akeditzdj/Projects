@@ -7,20 +7,29 @@ const passwordEl = document.getElementById("password");
 const cpasswordEl = document.getElementById("cpassword");
 const numberEl = document.getElementById("number");
 const dobEl = document.getElementById("dob");
-const maleEl = document.getElementById("male");
 const cityEl = document.getElementById("city");
 const pincodeEl = document.getElementById("pincode");
 const addressEl = document.getElementById("address");
 const termsEl = document.getElementById("terms");
 const newsletterEl = document.getElementById("newsletter");
 
-// Buttons 
+
+
+const maleEl = document.getElementById("male");
+const femaleEl = document.getElementById("female");
+const othersEl = document.getElementById("others");
+let genderVal = "";
+// Buttons
 const btnAdd = document.getElementById("btnAdd");
 const btnSave = document.getElementById("submit");
 const btnClear = document.getElementById("clear");
 
+//Filter
+
+const filterUser = document.getElementById("filterUser");
+
 // Load data in table
-const tbody = document.getElementById("usertable");
+const tbody = document.querySelector("#usertable");
 
 // Modal open and hide
 const Modal = new bootstrap.Modal(exampleModal, {
@@ -42,12 +51,12 @@ btnSave.addEventListener("click", function () {
   const cpassword = cpasswordEl.value;
   const number = numberEl.value;
   const dob = dobEl.value;
-  const gender = maleEl.checked ? "Male" : "Female";
+  const gender = male.checked ? "Male" : female.checked ? "Female" : "Others";
   const city = cityEl.value;
   const pincode = pincodeEl.value;
   const address = addressEl.value;
-  const terms = termsEl.value;
-  const newsletter = newsletterEl.value;
+  const terms = termsEl.checked ? "Agreed" : "Disagree";
+  const newsletter = newsletterEl.checked ? "Agreed" : "Disagree";
   let userData = getUserDetails();
 
   if (
@@ -65,8 +74,7 @@ btnSave.addEventListener("click", function () {
     terms &&
     newsletter
   ) {
-
-    console.log(roll)
+    console.log(roll);
     console.log(userName);
     console.log(email);
     console.log(password);
@@ -74,6 +82,7 @@ btnSave.addEventListener("click", function () {
     console.log(number);
     console.log(dob);
     console.log(gender);
+    console.log(city);
     console.log(pincode);
     console.log(address);
     console.log(terms);
@@ -92,10 +101,10 @@ btnSave.addEventListener("click", function () {
             number: number,
             dob: dob,
             gender: gender,
+            city: city,
             pincode: pincode,
             address: address,
             terms: terms,
-            unit: unit,
             newsletter: newsletter,
           };
         } else {
@@ -118,6 +127,7 @@ btnSave.addEventListener("click", function () {
         number: number,
         dob: dob,
         gender: gender,
+        city: city,
         pincode: pincode,
         address: address,
         terms: terms,
@@ -136,25 +146,102 @@ btnSave.addEventListener("click", function () {
   }
 });
 
+//Edit users
+function editUsers(id) {
+  Modal.show();
+
+  let userData = getUserDetails();
+  const selectedUsers = userData.filter((user) => user.id == id)[0];
+  idEl.value = selectedUsers.id;
+  rollEl.value = selectedUsers.roll;
+  userNameEl.value = selectedUsers.userName;
+  emailEl.value = selectedUsers.email;
+  passwordEl.value = selectedUsers.password;
+  cpasswordEl.value = selectedUsers.cpassword;
+  numberEl.value = selectedUsers.number;
+  dobEl.value = selectedUsers.dob;
+  cityEl.value = selectedUsers.city;
+  pincodeEl.value = selectedUsers.pincode;
+  addressEl.value = selectedUsers.address;
+
+    genderVal == "Male"
+      ? (maleEl.checked = true)
+      : genderVal == "Female"
+      ? (femaleEl.checked = true)
+      : (othersEl.checked = true);
+
+  loadUser();
+}
+
+// Delete user
+
+function deleteUser(id) {
+  if (id) {
+    userData = getUserDetails();
+    let updatedUsers = userData.filter((user) => user.id != id);
+    userData = updatedUsers;
+    saveUsersLocalStorage(updatedUsers);
+
+    loadUser();
+  }
+}
+
+// Custom modal delete with confirmation
+
+const msgModal = new bootstrap.Modal(myModalDelete, {
+  keyboard: false,
+});
+
+function showDeleteModal(callback) {
+  msgModal.show();
+
+  document.getElementById("yes").addEventListener("click", function () {
+    callback(true);
+    msgModal.hide();
+  });
+
+  document.getElementById("no").addEventListener("click", function () {
+    callback(false);
+    msgModal.hide();
+  });
+}
+
+function deleteUserWithConfirmation(id) {
+  showDeleteModal(function (confirmed) {
+    if (confirmed) {
+      deleteUser(id);
+    }
+  });
+}
+
 // Save user data to localStorage...
 
-function saveUsersLocalStorage() {
+function saveUsersLocalStorage(userData) {
   localStorage.setItem("userData", JSON.stringify(userData));
   console.log("Data Saved to localStorage");
+  loadUser();
 }
 
 // Get user data from localStorage...
 
 function getUserDetails() {
-  if (localStorage.getItem("userData")) {
-    userData = JSON.parse(localStorage.getItem("userData"));
+  let data = [];
+  if (localStorage.getItem("userData") !== null) {
+    data = JSON.parse(localStorage.getItem("userData"));
   }
+  return data;
 }
 
 // Load user data
 
-function loadUser() {
+function loadUser(isForSearch = 0, filterUser = []) {
   let userData = [];
+  if (isForSearch == 0) {
+    userData = getUserDetails();
+  } else {
+    userData = filterUser;
+  }
+
   tbody.innerHTML = "";
   userData.forEach((user, index) => {
     tbody.innerHTML += `<tr>
@@ -172,8 +259,12 @@ function loadUser() {
           <td>${user.address}</td>
           <td>${user.terms}</td>
           <td>${user.newsletter}</td>
-          <td><button class="btn btn-sm btn-primary">Edit</button></td>
-          <td><button class="btn btn-sm btn-danger">Delete</button></td>
+          <td><button id="btnEdit" onclick="editUsers(${
+            user.id
+          })" class="btn btn-sm btn-primary">Edit</button></td>
+          <td><button id="btnDel" onclick="deleteUserWithConfirmation(${
+            user.id
+          })" class="btn btn-sm btn-danger">Delete</button></td>
           </tr>`;
   });
 }
@@ -193,8 +284,18 @@ function clearAll() {
   cityEl.value = "";
   pincodeEl.value = "";
   addressEl.value = "";
-  termsEl.value = "";
-  newsletterEl.value = "";
 }
 
 btnClear.addEventListener("click", clearAll);
+
+//Filter users
+filterUser.addEventListener("input", function () {
+  const searchQuery = this.value.toLowerCase();
+  const userData = getUserDetails();
+  const filterUser = userData.filter(
+    (user) =>
+      user.userName.toLowerCase().includes(searchQuery) ||
+      user.number.toLowerCase().includes(searchQuery)
+  );
+  loadUser(1, filterUser);
+});

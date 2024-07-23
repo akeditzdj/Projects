@@ -179,11 +179,7 @@ function editUser(id) {
   courseTxt.value = selectedUser.course;
 
   // male.checked ? "Male" : female.checked ? "Female" : "Others";
-  genderVal == "Male"
-    ? (male.checked = true)
-    : genderVal == "Female"
-    ? (female.checked = true)
-    : (others.checked = true);
+  genderVal == "Male"? (male.checked = true) : genderVal == "Female" ? (female.checked = true): (others.checked = true);
   openSignUp();
   loadUser();
 }
