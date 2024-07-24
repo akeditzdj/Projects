@@ -22,7 +22,8 @@
             <ul class="navbar-nav">
                 <li class="nav-item"><button class="btn btn-sm text-light text-center nav-btn" type="button"
                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
-                        aria-controls="offcanvasScrolling"><i class="bi bi-list fs-5"></i> Sidebar Menu</button></li>
+                        aria-controls="offcanvasScrolling"><i class="bi bi-list fs-6"></i> Sidebar
+                        Menu</button></li>
                 <li class="nav-item p-2 d-none d-md-block"><a class="navlink link-light text-decoration-none"
                         href="index.html">Home</a>
                 </li>
@@ -128,7 +129,7 @@
                                 <div class="card-body d-flex flex-column align-items-center justify-content-center">
                                     <i class="bi bi-people-fill display-5"></i>
                                     <h4 class=" fw-bold">Total Users</h4>
-                                    <h2 class="fw-bold">100</h2>
+                                    <h2 id="totalUser" class="fw-bold">100</h2>
                                 </div>
                             </div>
                         </div>
@@ -137,7 +138,7 @@
                                 <div class="card-body d-flex flex-column align-items-center justify-content-center">
                                     <i class="bi bi-person-badge display-5"></i>
                                     <h4 class=" fw-bold">Total Staffs</h4>
-                                    <h2 class="fw-bold">25</h2>
+                                    <h2 id="totalStaff" class="fw-bold">25</h2>
                                 </div>
                             </div>
                         </div>
@@ -146,7 +147,7 @@
                                 <div class="card-body d-flex flex-column align-items-center justify-content-center">
                                     <i class="bi bi-person-vcard display-5"></i>
                                     <h4 class=" fw-bold">Total Students</h4>
-                                    <h2 class="fw-bold">75</h2>
+                                    <h2 id="totalStudent" class="fw-bold">75</h2>
                                 </div>
                             </div>
                         </div>
@@ -156,8 +157,9 @@
                                     <i class="bi bi-gender-ambiguous display-5"></i>
                                     <h4 class=" fw-bold">Gender</h4>
                                     <div class="d-flex align-items-center gap-3">
-                                        <h5 class="fw-bold"><Span>Male</Span> 65</h5> /
-                                        <h5 class="fw-bold"><Span>Female</Span> 35</h5>
+                                        <h5 id="totalMale" class="fw-bold"><Span>Male</Span> 65</h5> /
+                                        <h5 id="totalFemale" class="fw-bold"><Span>Female</Span> 25</h5> /
+                                        <h5 id="totalOthers" class="fw-bold"><Span>Others</Span> 10</h5>
                                     </div>
                                 </div>
                             </div>
@@ -170,13 +172,13 @@
                             <h3 class="text-center text-dark fw-bold">Add / Manage Users</h3>
                         </div>
                         <div class="row mb-3 ">
-                            <div class="col-12 d-flex justify-content-between align-items-center">
+                            <div class="col d-md-flex justify-content-between align-items-center">
                                 <div>
-                                    <button class="btn btn-outline-light" id="btnAdd">
-                                        <h5><i class="bi bi-person-fill-add"></i> Add User</h5>
+                                    <button class="btn btn-outline-light w-100" id="btnAdd">
+                                        <i class="bi bi-person-fill-add"></i> Add User
                                     </button>
                                 </div>
-                                <div class=" w-25">
+                                <div class=" w-25 mt-3 mt-md-0 filter-Input">
                                     <input class="form-control bg-transparent text-light" type="text" name="filterUser"
                                         id="filterUser" placeholder="Flter your user">
                                 </div>
@@ -186,7 +188,8 @@
                         <!-- User Data Table - Start-->
                         <div class="row-mt-5">
                             <div class="col-md-12">
-                                <table class="table table-responsive table-hover table-bordered table-dark">
+                                <table class="table table-responsive table-hover table-bordered table-dark"
+                                    id="userReg">
                                     <thead class="text-center">
                                         <tr>
                                             <th>Sl No</th>
@@ -205,7 +208,6 @@
                                             <th>Newsletter</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
-
                                         </tr>
                                     </thead>
                                     <tbody id="usertable" class="text-center"></tbody>
@@ -264,8 +266,7 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header bg-white">
-                                        <h3 class="modal-title text-dark fw-bold fst-italic" id="exampleModalLabel"
-                                            id="modalTitle">
+                                        <h3 class="modal-title text-dark fw-bold fst-italic" id="exampleModalLabel">
                                             Library
                                             Management System</h3>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -573,26 +574,17 @@
                 <!-- Manage Users - Tab End -->
 
                 <!-- Manage Books - Tab Start -->
-                <div class="tab-pane fade" id="manageBooks" role="tabpanel" aria-labelledby="manageBooks-tab"
+                <div class="tab-pane fade " id="manageBooks" role="tabpanel" aria-labelledby="manageBooks-tab"
                     tabindex="0">
                     <div class="row mt-1">
                         <!-- Dashboard Content - Start -->
                         <div class="row mt-2">
-                            <div class="col-md-3">
-                                <div class="card border-0 text-light shadow ">
-                                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                                        <i class="bi bi-people-fill display-5"></i>
-                                        <h4 class=" fw-bold">Total Users</h4>
-                                        <h2 class="fw-bold">80</h2>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="col-md-3 mt-4 mt-md-0">
                                 <div class="card border-0 text-light shadow ">
                                     <div class="card-body d-flex flex-column align-items-center justify-content-center">
                                         <i class="bi bi-book-half display-5"></i>
                                         <h4 class=" fw-bold">Total Books</h4>
-                                        <h2 class="fw-bold">125</h2>
+                                        <h2 id="totalBook" class="fw-bold">100</h2>
                                     </div>
                                 </div>
                             </div>
@@ -600,8 +592,8 @@
                                 <div class="card border-0 text-light shadow ">
                                     <div class="card-body d-flex flex-column align-items-center justify-content-center">
                                         <i class="bi bi-journal-arrow-up display-5"></i>
-                                        <h4 class=" fw-bold">Total Book Issue</h4>
-                                        <h2 class="fw-bold">50</h2>
+                                        <h4 class=" fw-bold">Total Authors</h4>
+                                        <h2 id="totalAuthor" class="fw-bold">25</h2>
                                     </div>
                                 </div>
                             </div>
@@ -609,8 +601,18 @@
                                 <div class="card border-0 text-light shadow ">
                                     <div class="card-body d-flex flex-column align-items-center justify-content-center">
                                         <i class="bi bi-journal-arrow-down display-5"></i>
-                                        <h4 class=" fw-bold">Total Book Returned</h4>
-                                        <h2 class="fw-bold">25</h2>
+                                        <h4 class=" fw-bold">Total Publications</h4>
+                                        <h2 id="totalPublications" class="fw-bold">16</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mt-4 mt-md-0">
+                                <div class="card border-0 text-light shadow ">
+                                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                        <i class="bi bi-people-fill display-5"></i>
+                                        <h4 class=" fw-bold">Total Book Price</h4>
+                                        <h2 id="totalPrice" class="fw-bold"><i class="bi bi-currency-rupee"></i> 10000/-
+                                        </h2>
                                     </div>
                                 </div>
                             </div>
@@ -620,7 +622,214 @@
                         <div class=" my-3 bg-light py-1 rounded-5">
                             <h3 class="text-center text-dark fw-bold">Add / Manage Bookss</h3>
                         </div>
+                        <div class="row mb-3">
+                            <div class="col d-md-flex justify-content-center align-items-center">
+                                <div>
+                                    <button class="btn btn-outline-light w-100" id="bookAdd">
+                                        <i class="bi bi-journal-plus"></i> Add Books
+                                    </button>
+                                </div>
+                                <div class=" w-25 mt-3 mt-md-0 filter-Input">
+                                    <input class="form-control bg-transparent text-light" type="text" name="filterBook"
+                                        id="filterBook" placeholder="Flter your book">
+                                </div>
+                            </div>
+                        </div>
                         <!-- Page Header and Title - End-->
+                        <!-- Book Data Table - Start-->
+                        <div class="row-mt-5">
+                            <div class="col-md-12">
+                                <table class="table table-responsive table-hover table-bordered table-dark"
+                                    id="bookReg">
+                                    <thead class="text-center">
+                                        <tr>
+                                            <th>Sl No</th>
+                                            <th>Book Name</th>
+                                            <th>Author Name</th>
+                                            <th>Publications</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
+                                            <th>Book Details</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="booktable" class="text-center"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- Book Data Table - End-->
+
+                        <!-- Modal - Book delete warning message - Start -->
+                        <div class="modal" tabindex="-1" id="myModalDeleteBook">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-white">
+                                        <h5 class="modal-title text-dark">Delete User</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Are you sure to delete</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                            id="noBook">No</button>
+                                        <button type="button" class="btn btn-primary" id="yesBook">Yes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal - Book delete warning message - End -->
+                        <!------ Message Modal - Start -------->
+
+                        <div class="modal fade" id="myModalMessageBook">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-white ">
+                                        <h5 id="titleBook" class="modal-title text-dark"></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p id="alertBook"></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!------ Message Modal - End -------->
+
+                        <!-- Modal - Books register Form- Start-->
+
+                        <div class="modal fade modal-xl" id="exampleModalBook" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-white">
+                                        <h3 class="modal-title text-dark fw-bold fst-italic" id="exampleModalLabelBook"
+                                            id="modalTitleBook">
+                                            Library
+                                            Management System</h3>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container tab-container mt-3">
+                                            <div class="tab-content" id="myBookTabContent">
+                                                <div class="tab-pane fade show active" id="home-tab-pane"
+                                                    role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                                    <div
+                                                        class="container form-main-container d-flex justify-content-center align-items-center ">
+                                                        <div class="form-container mt-5 shadow px-md-5 py-md-3 pb-5">
+                                                            <div class="row my-3">
+                                                                <div class="col text-center">
+                                                                    <div class="bg-white py-1 rounded-3">
+                                                                        <h3 class="text-dark">Book Register Form</h3>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <form action="#" name="book_registration">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <input class="form-control"
+                                                                                        type="text" name="bookId"
+                                                                                        id="bookId" hidden>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="bookName">Book
+                                                                                        Name</label>
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="text" name="bookName"
+                                                                                        id="bookName"
+                                                                                        placeholder="Enter book name">
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="authorName">Author
+                                                                                        Name</label>
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="text" name="authorName"
+                                                                                        id="authorName"
+                                                                                        placeholder="Enter author name">
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="publications">Publications</label>
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="text" name="publications"
+                                                                                        id="publications"
+                                                                                        placeholder="Enter publication">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="qty">Quantity</label>
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="number" min="1" max="10"
+                                                                                        name="qty" id="qty"
+                                                                                        placeholder="Select quantity of book">
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="price">Price</label>
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="text" name="price"
+                                                                                        id="price"
+                                                                                        placeholder="Enter book price">
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="details">Book
+                                                                                        Details</label>
+                                                                                    <input type="text"
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        name="details" id="details"
+                                                                                        placeholder="Enter book details">
+
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <div class="form-group">
+                                                                                    <div
+                                                                                        class="d-flex justify-content-center align-items-center gap-3 my-3">
+                                                                                        <button type="reset"
+                                                                                            id="bookClear"
+                                                                                            class="btn btn-danger">Clear</button>
+                                                                                        <button type="submit"
+                                                                                            id="bookSave"
+                                                                                            class="btn btn-primary">Submit</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal - User registration and Login form - End-->
                     </div>
                 </div>
                 <!-- Manage Books - Tab End -->
@@ -768,7 +977,8 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
-<script src="asset/js/script.js"></script>
+<script src="asset/js/manage_users.js"></script>
+<script src="asset/js/manage_books.js"></script>
 <script src="asset/js/input_data.js"></script>
 <script src="asset/js/chart.js"></script>
 

@@ -26,13 +26,13 @@ const btnClear = document.getElementById("clear");
 
 const modalTitle = document.getElementById("title");
 const alertMsg = document.getElementById("alert");
-const mainModalTitle = document.getElementById("modalTitle");
+// const mainModalTitle = document.getElementById("exampleModalLabel");
 
 //Filter
 const filterUser = document.getElementById("filterUser");
 
 // Load data in table
-const tbody = document.querySelector("#usertable");
+const userTableBody = document.querySelector("#usertable");
 
 // Modal open and hide
 const Modal = new bootstrap.Modal(exampleModal, {
@@ -107,14 +107,15 @@ btnSave.addEventListener("click", function () {
       saveUsersLocalStorage(updatedUsers);
       Modal.hide();
       ModalStatus.show();
-      mainModalTitle.innerHTML = "User Update Status";
+      // mainModalTitle.innerHTML = "UPDATE USER";
+      modalTitle.innerHTML = "User Update Status";
       alertMsg.innerHTML = "User Updated Successfully...";
       clearAll();
       loadUser();
     } else {
       //Add Tools
       const userObj = {
-        id: Date.now(),
+        id: Math.floor(1000 + Math.random() * 9000),
         roll: roll,
         userName: userName,
         email: email,
@@ -132,11 +133,13 @@ btnSave.addEventListener("click", function () {
 
       userData.push(userObj);
       ModalStatus.show();
-      mainModalTitle.innerHTML = "New User Registration";
+      // mainModalTitle.innerHTML = "ADD NEW USER";
+      modalTitle.innerHTML = "New User Registration";
       alertMsg.innerHTML = "User Added Successfully...";
       saveUsersLocalStorage(userData);
       clearAll();
       loadUser();
+      counter();
     }
     Modal.hide();
   } else {
@@ -183,6 +186,7 @@ function deleteUser(id) {
     saveUsersLocalStorage(updatedUsers);
     msgModal.hide();
     loadUser();
+    counter();
     setTimeout(deleteSuccessMessage, 200);
   }
 }
@@ -256,9 +260,9 @@ function loadUser(isForSearch = 0, filterUser = []) {
     userData = filterUser;
   }
 
-  tbody.innerHTML = "";
+  userTableBody.innerHTML = "";
   userData.forEach((user, index) => {
-    tbody.innerHTML += `<tr>
+    userTableBody.innerHTML += `<tr>
           <td>${index + 1}</td>
           <td>${user.roll}</td>
           <td>${user.userName}</td>
@@ -317,3 +321,51 @@ filterUser.addEventListener("input", function () {
 function reloadPage() {
   location.reload();
 }
+
+// Table row count and show on dashboard
+function counter() {
+  const rowCount = document.getElementById("userReg").rows.length - 1;
+  const totalUser = document.getElementById("totalUser");
+  totalUser.innerHTML = rowCount;
+  const totalStaff = document.getElementById("totalStaff");
+  const totalStudent = document.getElementById("totalStudent");
+  const totalMale = document.getElementById("totalMale");
+  const totalFemale = document.getElementById("totalFemale");
+  const totalOthers = document.getElementById("totalOthers");
+
+  const userData = getUserDetails();
+  let staff = 0;
+  let student = 0;
+  let male = 0;
+  let female = 0;
+  let others = 0;
+
+  userData.forEach((user) => {
+    user.roll;
+    user.gender;
+    if (user.roll == "Staff") {
+      staff++;
+    }
+    if (user.roll == "Student") {
+      student++;
+    }
+    if (user.gender == "Male") {
+      male++;
+    }
+    if (user.gender == "Female") {
+      female++;
+    }
+    if (user.gender == "Others") {
+      others++;
+    }
+
+    totalStaff.innerHTML = staff;
+    totalStudent.innerHTML = student;
+    totalMale.innerHTML = "Male" + " - " + male;
+    totalFemale.innerHTML = "Female" + " - " + female;
+    totalOthers.innerHTML = "Others" + " - " + others;
+  });
+}
+counter();
+
+Modal.show();
