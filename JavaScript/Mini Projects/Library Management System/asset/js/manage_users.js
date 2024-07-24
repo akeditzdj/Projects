@@ -368,4 +368,7 @@ function counter() {
 }
 counter();
 
-Modal.show();
+function reload() {
+  Modal.show();
+}
+reload();

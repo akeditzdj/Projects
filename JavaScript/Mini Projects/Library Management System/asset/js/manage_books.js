@@ -272,5 +272,4 @@ function counter() {
   }
   console.log(price);
 }
-
 counter();
