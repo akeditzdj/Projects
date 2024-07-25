@@ -120,8 +120,8 @@
         <div class="col-md-12 mb-5 mb-md-0">
             <div class="tab-content" id="pills-tabContent">
                 <!-- Manage Users - Tab End -->
-                <div class="tab-pane fade show active" id="manageMembers" role="tabpanel"
-                    aria-labelledby="manageMembers-tab" tabindex="0">
+                <div class="tab-pane fade " id="manageMembers" role="tabpanel" aria-labelledby="manageMembers-tab"
+                    tabindex="0">
                     <!-- Dashboard Content - Start -->
                     <div class="row mt-2">
                         <div class="col-md-3">
@@ -193,6 +193,7 @@
                                     <thead class="text-center">
                                         <tr>
                                             <th>Sl No</th>
+                                            <th>ID No</th>
                                             <th>Roll</th>
                                             <th>Name</th>
                                             <th>Email</th>
@@ -266,6 +267,8 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header bg-white">
+                                        <img class="img-fluid" src="asset/images/logo.png"
+                                            style="width: 50px;height: 50px;" alt="">
                                         <h3 class="modal-title text-dark fw-bold fst-italic" id="exampleModalLabel">
                                             Library
                                             Management System</h3>
@@ -574,8 +577,8 @@
                 <!-- Manage Users - Tab End -->
 
                 <!-- Manage Books - Tab Start -->
-                <div class="tab-pane fade " id="manageBooks" role="tabpanel" aria-labelledby="manageBooks-tab"
-                    tabindex="0">
+                <div class="tab-pane fade show active" id="manageBooks" role="tabpanel"
+                    aria-labelledby="manageBooks-tab" tabindex="0">
                     <div class="row mt-1">
                         <!-- Dashboard Content - Start -->
                         <div class="row mt-2">
@@ -620,10 +623,10 @@
                         <!-- Dashboard Content - End -->
                         <!-- Page Header and Title - Start-->
                         <div class=" my-3 bg-light py-1 rounded-5">
-                            <h3 class="text-center text-dark fw-bold">Add / Manage Bookss</h3>
+                            <h3 class="text-center text-dark fw-bold">Add / Manage Books</h3>
                         </div>
                         <div class="row mb-3">
-                            <div class="col d-md-flex justify-content-center align-items-center">
+                            <div class="col d-md-flex justify-content-between align-items-center">
                                 <div>
                                     <button class="btn btn-outline-light w-100" id="bookAdd">
                                         <i class="bi bi-journal-plus"></i> Add Books
@@ -631,14 +634,14 @@
                                 </div>
                                 <div class=" w-25 mt-3 mt-md-0 filter-Input">
                                     <input class="form-control bg-transparent text-light" type="text" name="filterBook"
-                                        id="filterBook" placeholder="Flter your book">
+                                        id="filterBook" placeholder="Flter your register book">
                                 </div>
                             </div>
                         </div>
                         <!-- Page Header and Title - End-->
                         <!-- Book Data Table - Start-->
-                        <div class="row-mt-5">
-                            <div class="col-md-12">
+                        <div class="row-mt-5 d-flex gap-2">
+                            <div class="col-md-6">
                                 <table class="table table-responsive table-hover table-bordered table-dark"
                                     id="bookReg">
                                     <thead class="text-center">
@@ -652,9 +655,26 @@
                                             <th>Book Details</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
+                                            <th>Borrow Book</th>
                                         </tr>
                                     </thead>
                                     <tbody id="booktable" class="text-center"></tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <table class="table table-responsive table-dark table-bordered table-hover"
+                                    id="bookRtn">
+                                    <thead class="text-center">
+                                        <tr>
+                                            <th>Sl No</th>
+                                            <th>Borrow Person ID</th>
+                                            <th>Borrow Person Name</th>
+                                            <th>Borrow Date</th>
+                                            <th>Book Name</th>
+                                            <th>Book Qty</th>
+                                            <th>Return</th>
+                                        </tr>
+                                    </thead>
                                 </table>
                             </div>
                         </div>
@@ -704,12 +724,13 @@
                         <!------ Message Modal - End -------->
 
                         <!-- Modal - Books register Form- Start-->
-
                         <div class="modal fade modal-xl" id="exampleModalBook" tabindex="-1"
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header bg-white">
+                                        <img class="img-fluid" src="asset/images/logo.png"
+                                            style="width: 50px;height: 50px;" alt="">
                                         <h3 class="modal-title text-dark fw-bold fst-italic" id="exampleModalLabelBook"
                                             id="modalTitleBook">
                                             Library
@@ -829,7 +850,146 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Modal - User registration and Login form - End-->
+                        <!-- Modal - Books register Form- End-->
+                        <!-- Modal - Books return Form- Start-->
+
+                        <div class="modal fade modal-xl" id="exampleModalBookReturn" tabindex="-1"
+                            aria-labelledby="exampleModalBookReturn" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-white">
+                                        <img class="img-fluid" src="asset/images/logo.png"
+                                            style="width: 50px;height: 50px;" alt="">
+                                        <h3 class="modal-title text-dark fw-bold fst-italic" id="exampleModalBookReturn"
+                                            id="modalTitleBookReturn">
+                                            Library
+                                            Management System</h3>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container tab-container mt-3">
+                                            <div class="tab-content" id="myBookBorrowTabContent">
+                                                <div class="tab-pane fade show active" id="home-tab-pane"
+                                                    role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                                    <div
+                                                        class="container form-main-container d-flex justify-content-center align-items-center ">
+                                                        <div class="form-container mt-5 shadow px-md-5 py-md-3 pb-5">
+                                                            <div class="row my-3">
+                                                                <div class="col text-center">
+                                                                    <div class="bg-white py-1 rounded-3">
+                                                                        <h3 class="text-dark">Book Borrow Form</h3>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <form action="#" name="book_return">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="personId">Person ID</label>
+                                                                                    <select class="form-control"
+                                                                                        name="personId" id="personId">
+                                                                                        <option value="">Select your ID
+                                                                                        </option>
+                                                                                        <option value="0001">0001
+                                                                                        </option>
+                                                                                        <option value="0002">0002
+                                                                                        </option>
+                                                                                        <option value="0003">0003
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="personName">Person
+                                                                                        Name</label>
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="text" name="personName"
+                                                                                        id="personName"
+                                                                                        placeholder="Enter borrow person name">
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="borrowDate">Borrow
+                                                                                        Date</label>
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="date" name="borrowDate"
+                                                                                        id="borrowDate">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="borrowBookName">Borrow Book
+                                                                                        Name</label>
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="text"
+                                                                                        name="borrowBookName"
+                                                                                        id="borrowBookName"
+                                                                                        placeholder="Enter borrow book name">
+                                                                                </div>
+
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="borrowBookQty">Book
+                                                                                        Quantity</label>
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="number" min="1" max="10"
+                                                                                        name="borrowBookQty"
+                                                                                        id="borrowBookQty"
+                                                                                        placeholder="Select quantity of book borrow">
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label"
+                                                                                        for="borrowBookPrice">Borrow
+                                                                                        Book
+                                                                                        Price</label>
+                                                                                    <input
+                                                                                        class="form-control bg-transparent text-white"
+                                                                                        type="text"
+                                                                                        name="borrowBookPrice"
+                                                                                        id="borrowBookPrice"
+                                                                                        placeholder="Enter borrow book price">
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                            <div class="col">
+                                                                                <div class="form-group">
+                                                                                    <div
+                                                                                        class="d-flex justify-content-center align-items-center gap-3 my-3">
+                                                                                        <button type="reset"
+                                                                                            id="bookBorrowClear"
+                                                                                            class="btn btn-danger">Clear</button>
+                                                                                        <button type="submit"
+                                                                                            id="bookBorrowSave"
+                                                                                            class="btn btn-primary">Submit</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal - Books return Form- End-->
+
                     </div>
                 </div>
                 <!-- Manage Books - Tab End -->
@@ -883,6 +1043,9 @@
                             <h3 class="text-center text-dark fw-bold">Issue / Return Books</h3>
                         </div>
                         <!-- Page Header and Title - End-->
+                        <div class="col">
+
+                        </div>
                     </div>
                 </div>
                 <!-- Manage Issued and Return Books - Tab End -->
@@ -976,7 +1139,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-
+<script src="asset/js/return_book.js"></script>
 <script src="asset/js/manage_users.js"></script>
 <script src="asset/js/manage_books.js"></script>
 <script src="asset/js/input_data.js"></script>

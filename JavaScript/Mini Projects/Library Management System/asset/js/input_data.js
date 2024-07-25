@@ -44,3 +44,19 @@ districtList.forEach(function (item) {
   district.text = item;
   city.appendChild(district);
 });
+
+// userData = getUserDetails();
+
+// userData.forEach((user) => {
+//   const userID = user.id;
+//   userID;
+// });
+
+// console.log(userID);
+
+// userID.forEach(function (item) {
+//   let userIdList = document.createElement("option");
+//   userIdList.list = item;
+//   userIdList.text = item;
+//   city.appendChild(userIdList);
+// });

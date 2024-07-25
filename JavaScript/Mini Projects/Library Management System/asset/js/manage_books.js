@@ -222,6 +222,8 @@ function loadBook(isForSearch = 0, filterBook = []) {
           <td><button id="btnDelBook" onclick="deleteBookWithConfirmation(${
             book.id
           })" class="btn btn-sm btn-danger">Delete</button></td>
+          <td><button id="btnBorrowBook" data-bs-toggle="modal" data-bs-target="#exampleModalBookReturn" class="btn btn-sm btn-warning">Borrow</button></td>
+
           </tr>`;
   });
 }

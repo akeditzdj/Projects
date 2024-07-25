@@ -286,6 +286,15 @@ form select {
   height: 500px;
 }
 
+#bookReg,
+#return {
+  display: block;
+  height: 500px !important;
+  width: 100%;
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+}
+
 @media screen and (max-width: 576px) {
   #bookReg {
     display: block;

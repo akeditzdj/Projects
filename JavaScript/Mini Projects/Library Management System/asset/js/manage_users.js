@@ -264,6 +264,7 @@ function loadUser(isForSearch = 0, filterUser = []) {
   userData.forEach((user, index) => {
     userTableBody.innerHTML += `<tr>
           <td>${index + 1}</td>
+          <td>${user.id}</td>
           <td>${user.roll}</td>
           <td>${user.userName}</td>
           <td>${user.email}</td>
@@ -368,7 +369,7 @@ function counter() {
 }
 counter();
 
-function reload() {
-  Modal.show();
-}
-reload();
+// function reload() {
+//   Modal.show();
+// }
+// reload();
