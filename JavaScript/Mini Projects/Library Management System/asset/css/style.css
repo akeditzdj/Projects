@@ -284,13 +284,18 @@ table {
   height: 500px !important;
   display: block;
   overflow: scroll !important;
-  max-width: 1500px !important;
+  max-width: 1920px !important;
 }
 
-/* table thead{
+table thead {
   position: sticky;
   top: 0;
-} */
+}
+
+table thead th {
+  background-color: #fff !important;
+  color: #000 !important;
+}
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -307,4 +312,5 @@ table {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #fff;
+  
 }
