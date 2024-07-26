@@ -261,17 +261,29 @@ function counter() {
   const totalBook = document.getElementById("totalBook");
   const totalAuthor = document.getElementById("totalAuthor");
   const totalPublications = document.getElementById("totalPublications");
+  const totalPrice = document.getElementById("totalPrice");
   totalBook.innerHTML = rowBookCount;
   totalAuthor.innerHTML = rowBookCount;
   totalPublications.innerHTML = rowBookCount;
-
+  // Total book price
   const bookData = getBookDetails();
-  let price = 0;
-  for (let price in bookData) {
-    if (bookData.hasOwnProperty(price)) {
-      price += bookData[price];
-    }
-  }
-  console.log(price);
+  const bookPrice = bookData.map(({ price }) => price);
+  const total = bookPrice.reduce((a, b) => a + b, 0);
+  totalPrice.innerHTML =
+    `<i class="bi bi-currency-rupee">` + total + " " + "/-";
+
+  // Total Authors
+  let authorCount = 0;
+  const author = bookData.map(({ authorName }) => authorName);
+
+  const indexOfAll = (arr, val) =>
+    arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc), []);
+
+  indexOfAll([1, 2, 3, 1, 2, 3], 1); // [0, 3]
+  indexOfAll([1, 2, 3], 4); // []
+
+  console.log(author);
+
+  console.log(authorCount);
 }
 counter();

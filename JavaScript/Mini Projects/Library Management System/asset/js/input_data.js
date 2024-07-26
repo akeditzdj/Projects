@@ -49,11 +49,14 @@ districtList.forEach(function (item) {
 
 userData = getUserDetails();
 
-console.log(userData);
+let UserId = userData.map(({ id }) => id);
 
-userID.forEach(function (item) {
+UserId.forEach(function (item) {
   let userIdList = document.createElement("option");
   userIdList.list = item;
   userIdList.text = item;
-  city.appendChild(userIdList);
+  personId.appendChild(userIdList);
 });
+
+
+
