@@ -45,18 +45,15 @@ districtList.forEach(function (item) {
   city.appendChild(district);
 });
 
-// userData = getUserDetails();
+//Get user id from the userData array
 
-// userData.forEach((user) => {
-//   const userID = user.id;
-//   userID;
-// });
+userData = getUserDetails();
 
-// console.log(userID);
+console.log(userData);
 
-// userID.forEach(function (item) {
-//   let userIdList = document.createElement("option");
-//   userIdList.list = item;
-//   userIdList.text = item;
-//   city.appendChild(userIdList);
-// });
+userID.forEach(function (item) {
+  let userIdList = document.createElement("option");
+  userIdList.list = item;
+  userIdList.text = item;
+  city.appendChild(userIdList);
+});

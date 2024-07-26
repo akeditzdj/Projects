@@ -9,9 +9,10 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: #1f2831;
   color: white;
 }
@@ -209,7 +210,7 @@ canvas {
 }
 
 .form-container {
-  width: 70%;
+  max-width: 70%;
   height: 100%;
 }
 
@@ -279,25 +280,31 @@ form select {
 
 /*-----------  Table content   ----------*/
 
-#userReg {
-  display: block;
-  overflow-y: scroll !important;
-  overflow-x: hidden !important;
-  height: 500px;
-}
-
-#bookReg,
-#return {
-  display: block;
+table {
   height: 500px !important;
-  width: 100%;
-  overflow-y: scroll !important;
-  overflow-x: hidden !important;
+  display: block;
+  overflow: scroll !important;
+  max-width: 1500px !important;
 }
 
-@media screen and (max-width: 576px) {
-  #bookReg {
-    display: block;
-    height: 500px !important;
-  }
+/* table thead{
+  position: sticky;
+  top: 0;
+} */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2831;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
 }

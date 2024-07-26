@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link rel="stylesheet" href="asset/css/style.css">
 </head>
+<div class="body-wrapper">
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg shadow top-0 sticky-top">
     <div class="container-fluid">
@@ -168,24 +169,25 @@
                     <!-- Dashboard Content - End -->
                     <div class="row mt-3">
                         <!-- Page Header and Title - Start-->
-                        <div class=" my-3 bg-light py-1 rounded-5">
-                            <h3 class="text-center text-dark fw-bold">Add / Manage Users</h3>
-                        </div>
-                        <div class="row mb-3 ">
-                            <div class="col d-md-flex justify-content-between align-items-center">
-                                <div>
-                                    <button class="btn btn-outline-light w-100" id="btnAdd">
-                                        <i class="bi bi-person-fill-add"></i> Add User
-                                    </button>
-                                </div>
-                                <div class=" w-25 mt-3 mt-md-0 filter-Input">
-                                    <input class="form-control bg-transparent text-light" type="text" name="filterUser"
-                                        id="filterUser" placeholder="Flter your user">
+                            <div class=" my-3 bg-light py-1 rounded-5 w-100">
+                                <h3 class="text-center text-dark fw-bold">Add / Manage Users</h3>
+                            </div>
+                            <div class="row mb-3 ">
+                                <div class="col d-md-flex justify-content-between align-items-center">
+                                    <div>
+                                        <button class="btn btn-outline-light w-100" id="btnAdd">
+                                            <i class="bi bi-person-fill-add"></i> Add User
+                                        </button>
+                                    </div>
+                                    <div class=" w-25 mt-3 mt-md-0 filter-Input">
+                                        <input class="form-control bg-transparent text-light" type="text" name="filterUser"
+                                            id="filterUser" placeholder="Flter your user">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         <!-- Page Header and Title - End-->
                         <!-- User Data Table - Start-->
+
                         <div class="row-mt-5">
                             <div class="col-md-12">
                                 <table class="table table-responsive table-hover table-bordered table-dark"
@@ -215,6 +217,7 @@
                                 </table>
                             </div>
                         </div>
+
                         <!-- User Data Table - End-->
 
                         <!-- Modal - User delete warning message - Start -->
@@ -262,7 +265,7 @@
 
                         <!-- Modal - User registration and Login form - Start-->
 
-                        <div class="modal fade modal-xl" data-bs-backdrop="true" id="exampleModal" tabindex="-1"
+                        <div class="modal fade modal-xl " data-bs-backdrop="true" id="exampleModal" tabindex="-1"
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -577,7 +580,7 @@
                 <!-- Manage Users - Tab End -->
 
                 <!-- Manage Books - Tab Start -->
-                <div class="tab-pane fade show active" id="manageBooks" role="tabpanel"
+                <div class="tab-pane fade show active " id="manageBooks" role="tabpanel"
                     aria-labelledby="manageBooks-tab" tabindex="0">
                     <div class="row mt-1">
                         <!-- Dashboard Content - Start -->
@@ -641,7 +644,9 @@
                         <!-- Page Header and Title - End-->
                         <!-- Book Data Table - Start-->
                         <div class="row-mt-5 d-flex gap-2">
+
                             <div class="col-md-6">
+                                <h5 class="text-center">Book Registered Record</h5>
                                 <table class="table table-responsive table-hover table-bordered table-dark"
                                     id="bookReg">
                                     <thead class="text-center">
@@ -650,26 +655,27 @@
                                             <th>Book Name</th>
                                             <th>Author Name</th>
                                             <th>Publications</th>
-                                            <th>Quantity</th>
+                                            <th>Qty</th>
                                             <th>Price</th>
                                             <th>Book Details</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
-                                            <th>Borrow Book</th>
+                                            <th>Borrow</th>
                                         </tr>
                                     </thead>
                                     <tbody id="booktable" class="text-center"></tbody>
                                 </table>
                             </div>
                             <div class="col-md-6">
+                                <h5 class="text-center">Book Borrow Record</h5>
                                 <table class="table table-responsive table-dark table-bordered table-hover"
                                     id="bookRtn">
                                     <thead class="text-center">
                                         <tr>
                                             <th>Sl No</th>
-                                            <th>Borrow Person ID</th>
-                                            <th>Borrow Person Name</th>
-                                            <th>Borrow Date</th>
+                                            <th>Person ID</th>
+                                            <th>Person Name</th>
+                                            <th>Date</th>
                                             <th>Book Name</th>
                                             <th>Book Qty</th>
                                             <th>Return</th>
@@ -1135,7 +1141,7 @@
     </div>
 </div>
 <!-- Tabs Control End -->
-
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
