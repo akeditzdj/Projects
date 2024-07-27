@@ -182,12 +182,12 @@ canvas {
     height: 100px;
   }
   nav h2 {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   nav .nav-brand img {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     transition: 0.3s all;
   }
 
@@ -201,6 +201,15 @@ canvas {
   #totalOthers {
     font-size: 14px;
     margin-top: 15px;
+  }
+
+  .card{
+    width: 335px;
+  }
+
+  .tab-container{
+    width: 100%;
+    margin: 10px auto;
   }
 
 }
@@ -269,15 +278,15 @@ form select {
   padding: 0;
   padding-bottom: 10px;
 }
-  .tab-container {
+  .form-tab-container {
     width: 100% !important;
-    margin: 10px auto;
+    margin: 10px auto !important;
   }
 
-  .tab-container .nav-item button {
-    width: 165.5px !important;
+  .form-tab-container .nav-item button {
+    width: 154px !important;
   }
-  .tab-container ul {
+  .form-tab-container ul {
     width: 100% !important;
     margin: 0 auto !important;
   }
@@ -364,7 +373,7 @@ table thead th {
 }
 
   .books-tab button{
-  width: 180px!important;
+  width: 168px!important;
 }
 
 
