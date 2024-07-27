@@ -87,6 +87,7 @@ body {
 
 nav {
   background-color: #1f2831;
+  width: 100% !important;
 }
 nav .nav-brand img {
   width: 100px;
@@ -110,7 +111,7 @@ nav ul li:hover {
 
 .side-nav-bar {
   max-width: 300px;
-  height: 100vh;
+  height: 100%;
   position: fixed;
 }
 .offcanvas {
@@ -169,16 +170,12 @@ nav ul li:hover {
   color: #000 !important;
 }
 
-/* .vertical-library-poster {
-  width: 350px;
-  max-width: 335px;
-  height: 100vh;
-} */
 
 canvas {
   width: 100%;
   height: 350px;
 }
+
 
 @media screen and (max-width: 576px) {
   nav {
@@ -274,11 +271,11 @@ form select {
 }
   .tab-container {
     width: 100% !important;
-    padding: 0;
+    margin: 10px auto;
   }
 
   .tab-container .nav-item button {
-    width: 171.7px !important;
+    width: 165.5px !important;
   }
   .tab-container ul {
     width: 100% !important;
@@ -287,7 +284,7 @@ form select {
 
   .login-form-container {
     width:100%;
-    padding: 0;
+    padding: 10px;
   }
   .filter-Input {
     width: 100% !important;
@@ -327,7 +324,6 @@ table thead th {
   background-color: #fff !important;
   color: #000 !important;
 }
-
 #bookReg,
 #bookRtn {
   margin: 0 auto !important;
@@ -359,7 +355,7 @@ table thead th {
 }
 
 .books-tab button {
-  width: 375.5px !important;
+  width: 471.5px !important;
 }
  @media screen and (max-width:576px) {
   .books-tab {
