@@ -266,6 +266,30 @@ form select {
   background-color: #1f2831;
 }
 
+form .form-group .form-item .error {
+  color: red;
+  font-size: 12px;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.form-group.error input,
+.form-group.error select,
+.form-group.error .icon {
+  border-color: red !important;
+}
+/* .form-group .success input,
+.form-group .success select,
+.form-group .success .icon {
+  border-color: #0cc477 !important;
+} */
+
+
+.form-group small{
+  color: red;
+  margin-top: 10px;
+}
+
 @media screen and (max-width: 576px) {
   .form-container {
     width: 100%;

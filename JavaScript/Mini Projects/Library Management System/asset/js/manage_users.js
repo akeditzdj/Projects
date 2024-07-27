@@ -44,6 +44,26 @@ btnAdd.addEventListener("click", function () {
   clearAll();
 });
 
+// form validation error message
+
+function setError(element, message) {
+  const formGroup = element.parentElement;
+  const errorElement = formGroup.querySelector(".error");
+
+  errorElement.innerHTML = message;
+  formGroup.classList.add("error");
+  formGroup.classList.remove("success");
+}
+
+function setSuccess(element) {
+  const formGroup = element.parentElement;
+  const errorElement = formGroup.querySelector(".error");
+
+  errorElement.innerText = "";
+  formGroup.classList.add("success");
+  formGroup.classList.remove("error");
+}
+
 // Add new user
 btnSave.addEventListener("click", function () {
   const id = idEl.value;
@@ -143,9 +163,171 @@ btnSave.addEventListener("click", function () {
     }
     Modal.hide();
   } else {
-    ModalStatus.show();
-    modalTitle.innerHTML = "Warning";
-    alertMsg.innerHTML = "Plaese fill all the details";
+    // ModalStatus.show();
+    // modalTitle.innerHTML = "Warning";
+    // alertMsg.innerHTML = "Plaese fill all the details";
+    //Form custom validation
+
+    if (roll === "") {
+      rollEl.focus();
+      setError(rollEl, "Please select your roll");
+      return;
+    } else {
+      setSuccess(rollEl);
+    }
+
+    if (userName === "") {
+      userNameEl.focus();
+      setError(userNameEl, "Name is required");
+      return;
+    } else {
+      if (userName.length < 3) {
+        userNameEl.focus();
+        setError(userNameEl, "Name should have atleast 3 charecters");
+        return;
+      }
+      setSuccess(userNameEl);
+    }
+    if (email === "") {
+      emailEl.focus();
+      setError(emailEl, "Please enter your email");
+
+      return;
+    } else {
+      const emailformat =
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+      if (emailformat.test(email)) {
+        setSuccess(emailEl);
+      } else {
+        emailEl.focus();
+        setError(emailEl, "Please enter valid email");
+        return;
+      }
+      setSuccess(emailEl);
+    }
+
+    if (password === "") {
+      passwordEl.focus();
+      setError(passwordEl, "Please enter your password");
+      return;
+    } else {
+      if (password.length < 8) {
+        passwordEl.focus();
+        setError(passwordEl, "Password should be at least 8 characters");
+        return;
+      } else if (password.length > 16) {
+        passwordEl.focus();
+        setError(passwordEl, "Password should not exceed 16 characters");
+        return;
+      } else if (!/[A-Z]/.test(password)) {
+        passwordEl.focus();
+        setError(passwordEl, "Password should have at least 1 uppercase");
+
+        return;
+      } else if (!/[a-z]/.test(password)) {
+        passwordEl.focus();
+        setError(passwordEl, "Password should have at least 1 lowercase");
+        return;
+      } else if (!/[0-9]/.test(password)) {
+        passwordEl.focus();
+        setError(passwordEl, "Password should have at least 1 number");
+        return;
+      } else if (!/(?=.[$#%£&§@])/.test(password)) {
+        passwordEl.focus();
+        setError(
+          passwordEl,
+          "Password should have at least 1 special character"
+        );
+        return;
+      } else {
+        setSuccess(passwordEl);
+      }
+    }
+    if (cpassword === "") {
+      cpasswordEl.focus();
+      setError(cpasswordEl, "Please enter your confirm password");
+      return;
+    } else {
+      if (cpassword != password) {
+        cpasswordEl.focus();
+        setError(cpasswordEl, "Confirm password dose not match");
+        return;
+      } else setSuccess(cpasswordEl);
+    }
+    let numberReg = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+    if (!numberReg.test(number)) {
+      numberEl.focus();
+      setError(numberEl, "Please 10 digits number only");
+    } else {
+      if (number === "") {
+        numberEl.focus();
+        setError(numberEl, "Please enter your mobile number");
+        return;
+      } else {
+        setSuccess(numberEl);
+      }
+    }
+
+    if (dob === "") {
+      dobEl.focus();
+      setError(dobEl, "Please enter your date of birth");
+    } else {
+      setSuccess(dobEl);
+    }
+
+    if (city === "") {
+      cityEl.focus();
+      setError(cityEl, "Please select your country");
+      return;
+    } else {
+      setSuccess(cityEl);
+    }
+
+    if (pincode === "") {
+      pincodeEl.focus();
+      setError(pincodeEl, "Please enter your pin code");
+      return;
+    } else {
+      if (pincode.length != 6) {
+        pincodeEl.focus();
+        setError(pincodeEl, "Please enter 6 digits pin code");
+        return;
+      } else if (/^\d{10}$/.test(!pincode)) {
+        pincodeEl.focus();
+        setError(pincodeEl, "Please enter number only");
+        return;
+      } else {
+        setSuccess(pincodeEl);
+      }
+    }
+
+    if (address === "") {
+      addressEl.focus();
+      setError(addressEl, "Please enter your address");
+      return;
+    } else {
+      setSuccess(addressEl);
+    }
+
+    if (!terms.checked) {
+      const check = document.querySelector(".checkbox");
+      check.style.color = "red";
+      return;
+    } else {
+      const check = document.querySelector(".checkbox");
+
+      check.style.color = "black";
+    }
+
+    if (!newsletter.checked) {
+      const news = document.querySelector(".newsletter");
+      news.style.color = "red";
+      return;
+    } else {
+      const news = document.querySelector(".newsletter");
+      news.style.color = "black";
+    }
   }
 });
 
@@ -323,7 +505,6 @@ function reloadPage() {
   location.reload();
 }
 
-
 // Table row count and show on dashboard
 function counter() {
   const rowCount = document.getElementById("userReg").rows.length - 1;
@@ -366,8 +547,6 @@ function counter() {
     totalMale.innerHTML = "Male" + " - " + male;
     totalFemale.innerHTML = "Female" + " - " + female;
     totalOthers.innerHTML = "Others" + " - " + others;
-
-
   });
 }
 
