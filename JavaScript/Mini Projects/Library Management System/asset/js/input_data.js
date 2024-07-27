@@ -47,7 +47,7 @@ districtList.forEach(function (item) {
 
 //Get user id from the userData array
 
-userData = getUserDetails();
+ userData = getUserDetails();
 
 let UserId = userData.map(({ id }) => id);
 
@@ -58,5 +58,12 @@ UserId.forEach(function (item) {
   personId.appendChild(userIdList);
 });
 
+bookData = getBookDetails();
+let bookId = bookData.map(({ id }) => id);
 
-
+bookId.forEach(function (item) {
+  let bookIdList = document.createElement("option");
+  bookIdList.list = item;
+  bookIdList.text = item;
+  bookRegId.appendChild(bookIdList);
+});

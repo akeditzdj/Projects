@@ -212,6 +212,7 @@ function loadBook(isForSearch = 0, filterBook = []) {
   bookData.forEach((book, index) => {
     bookTableBody.innerHTML += `<tr>
           <td>${index + 1}</td>
+          <td>${book.id}</td>
           <td>${book.bookName}</td>
           <td>${book.authorName}</td>
           <td>${book.publications}</td>
@@ -243,7 +244,7 @@ function clearAllBookInput() {
   detailsEl.value = "";
 }
 
-btnBookClear.addEventListener("click", clearAll);
+btnBookClear.addEventListener("click", clearAllBookInput());
 
 //Filter Books
 filterBook.addEventListener("input", function () {
@@ -306,3 +307,7 @@ function counter() {
   totalPublications.innerHTML = totalPublication;
 }
 counter();
+
+
+
+

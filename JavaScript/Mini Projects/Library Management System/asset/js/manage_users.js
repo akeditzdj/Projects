@@ -323,6 +323,7 @@ function reloadPage() {
   location.reload();
 }
 
+
 // Table row count and show on dashboard
 function counter() {
   const rowCount = document.getElementById("userReg").rows.length - 1;
@@ -365,8 +366,11 @@ function counter() {
     totalMale.innerHTML = "Male" + " - " + male;
     totalFemale.innerHTML = "Female" + " - " + female;
     totalOthers.innerHTML = "Others" + " - " + others;
+
+
   });
 }
+
 counter();
 
 // function reload() {

@@ -122,8 +122,8 @@
             <div class="col-md-12 mb-5 mb-md-0">
                 <div class="tab-content" id="pills-tabContent">
                     <!-- Manage Users - Tab End -->
-                    <div class="tab-pane fade " id="manageMembers" role="tabpanel" aria-labelledby="manageMembers-tab"
-                        tabindex="0">
+                    <div class="tab-pane fade show active" id="manageMembers" role="tabpanel"
+                        aria-labelledby="manageMembers-tab" tabindex="0">
                         <!-- Dashboard Content - Start -->
                         <div class="row mt-2">
                             <div class="col-md-3">
@@ -210,8 +210,7 @@
                                                 <th>Address</th>
                                                 <th>T&C</th>
                                                 <th>Newsletter</th>
-                                                <th>Edit</th>
-                                                <th>Delete</th>
+                                                <th colspan="2">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody id="usertable" class="text-center"></tbody>
@@ -245,7 +244,7 @@
 
                             <!-- Modal - User registration and Login form - Start-->
 
-                            <div class="modal fade modal-xl " data-bs-backdrop="true" id="exampleModal" tabindex="-1"
+                            <div class="modal fade modal-xl" data-bs-backdrop="true" id="exampleModal" tabindex="-1"
                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -598,8 +597,8 @@
                     <!-- Manage Users - Tab End -->
 
                     <!-- Manage Books - Tab Start -->
-                    <div class="tab-pane fade show active " id="manageBooks" role="tabpanel"
-                        aria-labelledby="manageBooks-tab" tabindex="0">
+                    <div class="tab-pane fade " id="manageBooks" role="tabpanel" aria-labelledby="manageBooks-tab"
+                        tabindex="0">
                         <div class="row mt-1">
                             <!-- Dashboard Content - Start -->
                             <div class="row mt-2">
@@ -648,7 +647,7 @@
                             </div>
                             <!-- Dashboard Content - End -->
                             <!-- Page Header and Title - Start-->
-                            <div class=" my-3 bg-light py-1 rounded-5">
+                            <div class=" my-3 bg-light py-1 w-100 rounded-5">
                                 <h3 class="text-center text-dark fw-bold">Add / Manage Books</h3>
                             </div>
                             <div class="row mb-3">
@@ -687,15 +686,14 @@
                                                 <thead class="text-center">
                                                     <tr>
                                                         <th>Sl No</th>
+                                                        <th>Book ID</th>
                                                         <th>Book Name</th>
                                                         <th>Author Name</th>
                                                         <th>Publications</th>
                                                         <th>Qty</th>
                                                         <th>Price/Book</th>
                                                         <th>Book Details</th>
-                                                        <th>Edit</th>
-                                                        <th>Delete</th>
-                                                        <th>Borrow</th>
+                                                        <th colspan="3">Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="booktable" class="text-center"></tbody>
@@ -715,7 +713,7 @@
                                                         <th>Date</th>
                                                         <th>Book Name</th>
                                                         <th>Book Qty</th>
-                                                        <th>Return</th>
+                                                        <th>Action</th>
                                                     </tr>
                                                 </thead>
                                             </table>
@@ -941,12 +939,26 @@
                                                                                 <div class="col-lg-6">
                                                                                     <div class="form-group">
                                                                                         <label class="form-label"
+                                                                                            for="bookRegId">Book
+                                                                                            ID</label>
+                                                                                        <select class="form-control"
+                                                                                            name="bookRegId"
+                                                                                            id="bookRegId">
+                                                                                            <option value="">Select your
+                                                                                                book
+                                                                                                ID
+                                                                                            </option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label class="form-label"
                                                                                             for="personId">Person
                                                                                             ID</label>
                                                                                         <select class="form-control"
                                                                                             name="personId"
                                                                                             id="personId">
                                                                                             <option value="">Select your
+                                                                                                registered
                                                                                                 ID
                                                                                             </option>
                                                                                         </select>

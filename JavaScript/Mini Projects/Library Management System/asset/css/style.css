@@ -76,6 +76,11 @@ body {
     width: 250px;
     height: 50px;
   }
+  .contact {
+    width: 100%;
+    flex-direction: column;
+    bottom: 20px;
+  }
 }
 
 /* ------------- Library Page  -----------------*/
@@ -175,8 +180,6 @@ canvas {
   height: 350px;
 }
 
-
-
 @media screen and (max-width: 576px) {
   nav {
     height: 100px;
@@ -202,6 +205,7 @@ canvas {
     font-size: 14px;
     margin-top: 15px;
   }
+
 }
 
 /* -------------  Forms -----------------*/
@@ -256,30 +260,52 @@ form select {
   background-color: #1f2831;
 }
 
-
-
 @media screen and (max-width: 576px) {
   .form-container {
     width: 100%;
     height: 100%;
+    padding: 10px;
+    max-width: fit-content;
+  }
+.form-main-container {
+  width: 100% !important;
+  padding: 0;
+  padding-bottom: 10px;
+}
+  .tab-container {
+    width: 100% !important;
+    padding: 0;
   }
 
   .tab-container .nav-item button {
-    width: 100%;
+    width: 171.7px !important;
   }
   .tab-container ul {
-    width: 100%;
-    margin: 0 auto;
+    width: 100% !important;
+    margin: 0 auto !important;
   }
-  .tab-container .nav-item button {
-    width: 168px;
-  }
+
   .login-form-container {
-    width: 100%;
+    width:100%;
+    padding: 0;
   }
   .filter-Input {
     width: 100% !important;
   }
+  .modal {
+    width: 100%;
+    padding: 0;
+}
+  .modal-body {
+    width: 100%;
+    padding: 0;
+}
+
+.modal-title{
+  font-size: 16px;
+  padding: 0 5px;
+}
+
 }
 
 /*-----------  Table content   ----------*/
@@ -287,6 +313,7 @@ form select {
 table {
   height: 500px !important;
   display: block;
+  width: fit-content;
   overflow: scroll !important;
   max-width: 1920px !important;
 }
@@ -301,11 +328,12 @@ table thead th {
   color: #000 !important;
 }
 
-#bookReg, #bookRtn{
+#bookReg,
+#bookRtn {
   margin: 0 auto !important;
- display: block !important;
- width: fit-content;
- max-width: 1920px;
+  display: block !important;
+  width: fit-content;
+  max-width: 1920px;
 }
 
 ::-webkit-scrollbar {
@@ -323,14 +351,31 @@ table thead th {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #fff;
-
 }
 
-.books-tab{
+.books-tab {
   width: 50%;
-  margin:  0 auto;
+  margin: 0 auto;
 }
 
-.books-tab button{
+.books-tab button {
   width: 375.5px !important;
 }
+ @media screen and (max-width:576px) {
+  .books-tab {
+  width: 100%;
+  margin: 0 auto;
+}
+
+  .books-tab button{
+  width: 180px!important;
+}
+
+
+#bookReg,
+#bookRtn {
+  width: 100% !important;
+  margin: 0;
+}
+
+ }
