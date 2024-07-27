@@ -175,6 +175,8 @@ canvas {
   height: 350px;
 }
 
+
+
 @media screen and (max-width: 576px) {
   nav {
     height: 100px;
@@ -254,6 +256,8 @@ form select {
   background-color: #1f2831;
 }
 
+
+
 @media screen and (max-width: 576px) {
   .form-container {
     width: 100%;
@@ -297,6 +301,13 @@ table thead th {
   color: #000 !important;
 }
 
+#bookReg, #bookRtn{
+  margin: 0 auto !important;
+ display: block !important;
+ width: fit-content;
+ max-width: 1920px;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -312,5 +323,14 @@ table thead th {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #fff;
-  
+
+}
+
+.books-tab{
+  width: 50%;
+  margin:  0 auto;
+}
+
+.books-tab button{
+  width: 375.5px !important;
 }

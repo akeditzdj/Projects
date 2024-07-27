@@ -77,15 +77,16 @@ btnBookSave.addEventListener("click", function () {
       alertBookMsg.innerHTML = "Book Updated Successfully...";
       clearAllBookInput();
       loadBook();
+      counter();
     } else {
-      //Add Tools
+      //Add Books
       const bookObj = {
         id: Math.floor(1000 + Math.random() * 9000),
         bookName: bookName,
         authorName: authorName,
         publications: publications,
         quantity: quantity,
-        price: price,
+        price: quantity * price,
         details: details,
       };
 
@@ -97,6 +98,7 @@ btnBookSave.addEventListener("click", function () {
       saveBooksLocalStorage(bookData);
       clearAllBookInput();
       loadBook();
+      counter();
     }
     ModalBook.hide();
   } else {
@@ -214,7 +216,7 @@ function loadBook(isForSearch = 0, filterBook = []) {
           <td>${book.authorName}</td>
           <td>${book.publications}</td>
           <td>${book.quantity}</td>
-          <td>${book.price}</td>
+          <td>${"Rs." + book.price + "/-"}</td>
           <td>${book.details}</td>
           <td><button id="btnEditBook" onclick="editBooks(${
             book.id
@@ -263,27 +265,44 @@ function counter() {
   const totalPublications = document.getElementById("totalPublications");
   const totalPrice = document.getElementById("totalPrice");
   totalBook.innerHTML = rowBookCount;
-  totalAuthor.innerHTML = rowBookCount;
-  totalPublications.innerHTML = rowBookCount;
+
   // Total book price
   const bookData = getBookDetails();
   const bookPrice = bookData.map(({ price }) => price);
   const total = bookPrice.reduce((a, b) => a + b, 0);
   totalPrice.innerHTML =
-    `<i class="bi bi-currency-rupee">` + total + " " + "/-";
+    `<i class="bi bi-currency-rupee"> ` + total + " " + "/-";
 
   // Total Authors
-  let authorCount = 0;
-  const author = bookData.map(({ authorName }) => authorName);
 
-  const indexOfAll = (arr, val) =>
-    arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc), []);
+  let author = bookData.map(({ authorName }) => authorName);
+  let nameCount = {};
 
-  indexOfAll([1, 2, 3, 1, 2, 3], 1); // [0, 3]
-  indexOfAll([1, 2, 3], 4); // []
+  // Count occurrences of each name
+  author.forEach(function (author) {
+    if (nameCount[author]) {
+      nameCount[author];
+    } else {
+      nameCount[author] = 1;
+    }
+  });
+  let totalAuthors = Object.keys(nameCount).length;
+  totalAuthor.innerHTML = totalAuthors;
+  // Total Publications
 
-  console.log(author);
+  let publications = bookData.map(({ publications }) => publications);
+  let publicationsCount = {};
 
-  console.log(authorCount);
+  // Count occurrences of each name
+  publications.forEach(function (publications) {
+    if (publicationsCount[publications]) {
+      publicationsCount[publications];
+    } else {
+      publicationsCount[publications] = 1;
+    }
+  });
+  let totalPublication = Object.keys(publicationsCount).length;
+
+  totalPublications.innerHTML = totalPublication;
 }
 counter();
