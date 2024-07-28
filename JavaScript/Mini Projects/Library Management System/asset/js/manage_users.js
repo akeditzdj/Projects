@@ -1,5 +1,4 @@
 //Get data from new user
-
 //Get Registration inputs
 const formEl = document.querySelector("form");
 const idEl = document.getElementById("id");
@@ -308,7 +307,8 @@ btnSave.addEventListener("click", function () {
     ModalStatus.show();
     // mainModalTitle.innerHTML = "ADD NEW USER";
     modalTitle.innerHTML = "New User Registration";
-    alertMsg.innerHTML = "User Added Successfully...";
+    alertMsg.innerHTML =
+      "User Added Successfully..." + "Your user ID is" + id;
     saveUsersLocalStorage(userData);
     clearAll();
     loadUser();
@@ -545,6 +545,23 @@ reload();
 
 // Login
 
+function getUserById(userId) {
+  userData = getUserDetails();
+  // Find the user with the matching ID
+  const user = userData.find((user) => user.id === userId);
+
+  // Check if the user was found
+  if (user) {
+    return {
+      roll: user.roll,
+      email: user.email,
+      password: user.password,
+    };
+  } else {
+    return null; // User not found
+  }
+}
+
 btnLogin.addEventListener("click", function () {
   let loginRoll = loginRollEl.value;
   let loginEmail = loginEmailEl.value;
@@ -555,15 +572,20 @@ btnLogin.addEventListener("click", function () {
     keyboard: false,
   });
 
-  let rollList = userData.map(({ roll }) => roll);
-  rollValue = rollList.includes(loginRoll);
 
-  let emailList = userData.map(({ email }) => email);
-  emailValue = emailList.includes(loginEmail);
+// Example usage:
+const userId = 7475;
+const userCredentials = getUserById(userId);
 
-  let passwordList = userData.map(({ password }) => password);
-  passwordValue = passwordList.includes(loginPassword);
 
+  // let rollList = userData.map(({ roll }) => roll);
+  rollValue = userCredentials.roll;
+
+  // let emailList = userData.map(({ email }) => email);
+  emailValue = userCredentials.email;
+
+  // let passwordList = userData.map(({ password }) => password);
+  passwordValue = userCredentials.password;
 
   if (loginRoll === "") {
     loginRollEl.focus();
@@ -598,33 +620,32 @@ btnLogin.addEventListener("click", function () {
     setSuccess(loginPasswordEl);
   }
 
-  if (rollValue == true && emailValue == true && passwordValue == true) {
+  if (rollValue == loginRoll && emailValue == loginEmail && passwordValue == loginPassword) {
     loginRollEl = "";
     loginEmailEl = "";
     loginPasswordEl = "";
     Modal.hide();
     ModalStatus.show();
     modalTitle.innerHTML = "User Login";
-    alertMsg.innerHTML = "User Login Successfully...";
+    alertMsg.innerHTML = "User Login Successfull..." ;
   } else {
     ModalStatus.show();
     modalTitle.innerHTML = "Warning";
     alertMsg.innerHTML = "User details does not match";
-    setError(loginRollEl,"")
-    setError(loginEmailEl,"")
-    setError(loginPasswordEl,"")
+    setError(loginRollEl, "");
+    setError(loginEmailEl, "");
+    setError(loginPasswordEl, "");
   }
 
+  // console.log(loginRoll);
+  // console.log(loginEmail);
+  // console.log(loginPassword);
 
-    // console.log(loginRoll);
-    // console.log(loginEmail);
-    // console.log(loginPassword);
+  // console.log(rollList);
+  // console.log(emailList);
+  // console.log(passwordList);
 
-    // console.log(rollList);
-    // console.log(emailList);
-    // console.log(passwordList);
-
-    // console.log(rollValue);
-    // console.log(emailValue);
-    // console.log(passwordValue);
+  // console.log(rollValue);
+  // console.log(emailValue);
+  // console.log(passwordValue);
 });
