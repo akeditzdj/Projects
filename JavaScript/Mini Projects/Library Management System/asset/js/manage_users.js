@@ -543,12 +543,12 @@ function counter() {
 
 counter();
 
-// Window and div refresh
+// Window refresh
 
-function reload() {
-  Modal.show();
-}
-reload();
+// function reload() {
+//   Modal.show();
+// }
+// reload();
 
 // Login
 
