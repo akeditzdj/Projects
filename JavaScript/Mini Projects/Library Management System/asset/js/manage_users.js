@@ -305,14 +305,19 @@ btnSave.addEventListener("click", function () {
 
     userData.push(userObj);
     ModalStatus.show();
-    // mainModalTitle.innerHTML = "ADD NEW USER";
-    modalTitle.innerHTML = "New User Registration";
-    alertMsg.innerHTML =
-      "User Added Successfully..." + "Your user ID is" + id;
+
     saveUsersLocalStorage(userData);
     clearAll();
     loadUser();
     counter();
+    modalTitle.innerHTML = "New User Registration";
+    // Get last index value
+    let userIndex = getUserDetails();
+    const userId = userIndex.map(({ id }) => id);
+    const lastvalue = userId.at(-1);
+    alertMsg.innerHTML =
+      "User Added Successfully..." +
+      `<br> <div class=" text-center mt-2">Please take note your user ID </div> <br><div class="fw-bold display-2 text-center">${lastvalue}</div> <br> <br> <div class="text-center">Please refersh the page before login</div>`;
   }
   bsTab.show();
 });
@@ -538,6 +543,8 @@ function counter() {
 
 counter();
 
+// Window and div refresh
+
 function reload() {
   Modal.show();
 }
@@ -563,6 +570,7 @@ function getUserById(userId) {
 }
 
 btnLogin.addEventListener("click", function () {
+  let loginPersonId = document.getElementById("loginPersonId").value;
   let loginRoll = loginRollEl.value;
   let loginEmail = loginEmailEl.value;
   let loginPassword = loginPasswordEl.value;
@@ -572,20 +580,18 @@ btnLogin.addEventListener("click", function () {
     keyboard: false,
   });
 
-
-// Example usage:
-const userId = 7475;
-const userCredentials = getUserById(userId);
-
+  // Example usage:
+  const userId = Number(loginPersonId);
+  const userCredentials = getUserById(userId);
 
   // let rollList = userData.map(({ roll }) => roll);
-  rollValue = userCredentials.roll;
+  let rollValue = userCredentials.roll;
 
   // let emailList = userData.map(({ email }) => email);
-  emailValue = userCredentials.email;
+  let emailValue = userCredentials.email;
 
   // let passwordList = userData.map(({ password }) => password);
-  passwordValue = userCredentials.password;
+  let passwordValue = userCredentials.password;
 
   if (loginRoll === "") {
     loginRollEl.focus();
@@ -620,14 +626,19 @@ const userCredentials = getUserById(userId);
     setSuccess(loginPasswordEl);
   }
 
-  if (rollValue == loginRoll && emailValue == loginEmail && passwordValue == loginPassword) {
+  if (
+    rollValue == loginRoll &&
+    emailValue == loginEmail &&
+    passwordValue == loginPassword
+  ) {
     loginRollEl = "";
     loginEmailEl = "";
     loginPasswordEl = "";
     Modal.hide();
     ModalStatus.show();
     modalTitle.innerHTML = "User Login";
-    alertMsg.innerHTML = "User Login Successfull..." ;
+    alertMsg.innerHTML = "User Login Successfull...";
+    btnAdd.style.display = "none";
   } else {
     ModalStatus.show();
     modalTitle.innerHTML = "Warning";
@@ -636,7 +647,7 @@ const userCredentials = getUserById(userId);
     setError(loginEmailEl, "");
     setError(loginPasswordEl, "");
   }
-
+  loadUser();
   // console.log(loginRoll);
   // console.log(loginEmail);
   // console.log(loginPassword);

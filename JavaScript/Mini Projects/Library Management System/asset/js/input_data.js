@@ -58,6 +58,15 @@ UserId.forEach(function (item) {
   personId.appendChild(userIdList);
 });
 
+UserId.forEach(function (item) {
+  let loginUserserIdList = document.createElement("option");
+  loginUserserIdList.list = item;
+  loginUserserIdList.text = item;
+  loginPersonId.appendChild(loginUserserIdList);
+});
+
+
+
 bookData = getBookDetails();
 let bookId = bookData.map(({ id }) => id);
 
