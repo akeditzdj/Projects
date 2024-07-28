@@ -236,6 +236,17 @@ textarea::placeholder {
   font-size: 14px;
 }
 
+.form-group{
+  position: relative;
+}
+.form-group .bi-eye, .form-group .bi-eye-slash{
+  position: absolute;
+  top: 40px;
+  right: 15px;
+}
+
+
+
 form select {
   background-color: #1f2831 !important;
   color: #fff !important;

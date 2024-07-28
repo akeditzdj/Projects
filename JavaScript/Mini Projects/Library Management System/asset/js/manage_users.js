@@ -545,10 +545,10 @@ counter();
 
 // Window refresh
 
-// function reload() {
-//   Modal.show();
-// }
-// reload();
+function reload() {
+  Modal.show();
+}
+reload();
 
 // Login
 
@@ -648,15 +648,32 @@ btnLogin.addEventListener("click", function () {
     setError(loginPasswordEl, "");
   }
   loadUser();
-  // console.log(loginRoll);
-  // console.log(loginEmail);
-  // console.log(loginPassword);
-
-  // console.log(rollList);
-  // console.log(emailList);
-  // console.log(passwordList);
-
-  // console.log(rollValue);
-  // console.log(emailValue);
-  // console.log(passwordValue);
 });
+
+// //password show/hide
+function passwordShowAndHide() {
+  let pass = document.querySelector(".bi-eye");
+  let cPass = document.querySelector(".cpass");
+  let password_input = document.querySelector("#password");
+  let c_password_input = document.querySelector("#cpassword");
+
+  pass.addEventListener("click", function () {
+    if (password_input.getAttribute("type") == "password") {
+      password_input.setAttribute("type", "text");
+      pass.classList.toggle("bi-eye-slash");
+    } else {
+      password_input.setAttribute("type", "password");
+    }
+  });
+
+  cPass.addEventListener("click", function () {
+    if (c_password_input.getAttribute("type") == "password") {
+      c_password_input.setAttribute("type", "text");
+      cPass.classList.toggle("bi-eye-slash");
+    } else {
+      c_password_input.setAttribute("type", "password");
+    }
+  });
+}
+
+passwordShowAndHide();
