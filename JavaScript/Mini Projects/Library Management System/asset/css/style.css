@@ -275,6 +275,7 @@ form .form-group .form-item .error {
 
 .form-group.error input,
 .form-group.error select,
+.form-group.error textarea,
 .form-group.error .icon {
   border-color: red !important;
 }

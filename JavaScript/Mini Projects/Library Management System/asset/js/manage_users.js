@@ -1,4 +1,7 @@
 //Get data from new user
+
+//Get Registration inputs
+const formEl = document.querySelector("form");
 const idEl = document.getElementById("id");
 const rollEl = document.getElementById("roll");
 const userNameEl = document.getElementById("userName");
@@ -17,10 +20,17 @@ const maleEl = document.getElementById("male");
 const femaleEl = document.getElementById("female");
 const othersEl = document.getElementById("others");
 let genderVal = "";
+
+//Get Login inputs
+let loginRollEl = document.getElementById("loginRoll");
+let loginEmailEl = document.getElementById("loginEmail");
+let loginPasswordEl = document.getElementById("loginPassword");
+
 // Buttons
 const btnAdd = document.getElementById("btnAdd");
 const btnSave = document.getElementById("submit");
 const btnClear = document.getElementById("clear");
+const btnLogin = document.getElementById("btnLogin");
 
 // Modal title change
 
@@ -42,6 +52,14 @@ const Modal = new bootstrap.Modal(exampleModal, {
 btnAdd.addEventListener("click", function () {
   Modal.show();
   clearAll();
+});
+
+// Show and hide tab
+
+const bsTab = new bootstrap.Tab("#profile-tab");
+
+btnSave.addEventListener("click", function () {
+  show.bs.tab();
 });
 
 // form validation error message
@@ -84,251 +102,219 @@ btnSave.addEventListener("click", function () {
   const ModalStatus = new bootstrap.Modal(myModalMessage, {
     keyboard: false,
   });
+  // Form validation
 
-  if (
-    roll &&
-    userName &&
-    email &&
-    password &&
-    cpassword &&
-    number &&
-    dob &&
-    gender &&
-    city &&
-    pincode &&
-    address &&
-    terms &&
-    newsletter
-  ) {
-    if (id) {
-      //Update tools
-      let updatedUsers = userData.map((user) => {
-        if (user.id == id) {
-          return {
-            ...user,
-            roll: roll,
-            userName: userName,
-            email: email,
-            password: password,
-            cpassword: cpassword,
-            number: number,
-            dob: dob,
-            gender: gender,
-            city: city,
-            pincode: pincode,
-            address: address,
-            terms: terms,
-            newsletter: newsletter,
-          };
-        } else {
-          return user;
-        }
-      });
-      saveUsersLocalStorage(updatedUsers);
-      Modal.hide();
-      ModalStatus.show();
-      // mainModalTitle.innerHTML = "UPDATE USER";
-      modalTitle.innerHTML = "User Update Status";
-      alertMsg.innerHTML = "User Updated Successfully...";
-      clearAll();
-      loadUser();
-    } else {
-      //Add Tools
-      const userObj = {
-        id: Math.floor(1000 + Math.random() * 9000),
-        roll: roll,
-        userName: userName,
-        email: email,
-        password: password,
-        cpassword: cpassword,
-        number: number,
-        dob: dob,
-        gender: gender,
-        city: city,
-        pincode: pincode,
-        address: address,
-        terms: terms,
-        newsletter: newsletter,
-      };
-
-      userData.push(userObj);
-      ModalStatus.show();
-      // mainModalTitle.innerHTML = "ADD NEW USER";
-      modalTitle.innerHTML = "New User Registration";
-      alertMsg.innerHTML = "User Added Successfully...";
-      saveUsersLocalStorage(userData);
-      clearAll();
-      loadUser();
-      counter();
-    }
-    Modal.hide();
+  if (roll === "") {
+    rollEl.focus();
+    setError(rollEl, "Please select your roll");
+    return;
   } else {
-    // ModalStatus.show();
-    // modalTitle.innerHTML = "Warning";
-    // alertMsg.innerHTML = "Plaese fill all the details";
-    //Form custom validation
+    setSuccess(rollEl);
+  }
 
-    if (roll === "") {
-      rollEl.focus();
-      setError(rollEl, "Please select your roll");
-      return;
-    } else {
-      setSuccess(rollEl);
-    }
-
-    if (userName === "") {
+  if (userName === "") {
+    userNameEl.focus();
+    setError(userNameEl, "Name is required");
+    return;
+  } else {
+    if (userName.length < 3) {
       userNameEl.focus();
-      setError(userNameEl, "Name is required");
+      setError(userNameEl, "Name should have atleast 3 charecters");
       return;
-    } else {
-      if (userName.length < 3) {
-        userNameEl.focus();
-        setError(userNameEl, "Name should have atleast 3 charecters");
-        return;
-      }
-      setSuccess(userNameEl);
     }
-    if (email === "") {
-      emailEl.focus();
-      setError(emailEl, "Please enter your email");
+    setSuccess(userNameEl);
+  }
+  if (email === "") {
+    emailEl.focus();
+    setError(emailEl, "Please enter your email");
+    return;
+  } else {
+    const emailformat =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-      return;
-    } else {
-      const emailformat =
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-      if (emailformat.test(email)) {
-        setSuccess(emailEl);
-      } else {
-        emailEl.focus();
-        setError(emailEl, "Please enter valid email");
-        return;
-      }
+    if (emailformat.test(email)) {
       setSuccess(emailEl);
+    } else {
+      emailEl.focus();
+      setError(emailEl, "Please enter valid email");
+      return;
     }
+    setSuccess(emailEl);
+  }
 
-    if (password === "") {
+  if (password === "") {
+    passwordEl.focus();
+    setError(passwordEl, "Please enter your password");
+    return;
+  } else {
+    if (password.length < 8) {
       passwordEl.focus();
-      setError(passwordEl, "Please enter your password");
+      setError(passwordEl, "Password should be at least 8 characters");
+      return;
+    } else if (password.length > 16) {
+      passwordEl.focus();
+      setError(passwordEl, "Password should not exceed 16 characters");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      passwordEl.focus();
+      setError(passwordEl, "Password should have at least 1 uppercase");
+
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      passwordEl.focus();
+      setError(passwordEl, "Password should have at least 1 lowercase");
+      return;
+    } else if (!/[0-9]/.test(password)) {
+      passwordEl.focus();
+      setError(passwordEl, "Password should have at least 1 number");
+      return;
+    } else if (!/(?=.[$#%£&§@])/.test(password)) {
+      passwordEl.focus();
+      setError(passwordEl, "Password should have at least 1 special character");
       return;
     } else {
-      if (password.length < 8) {
-        passwordEl.focus();
-        setError(passwordEl, "Password should be at least 8 characters");
-        return;
-      } else if (password.length > 16) {
-        passwordEl.focus();
-        setError(passwordEl, "Password should not exceed 16 characters");
-        return;
-      } else if (!/[A-Z]/.test(password)) {
-        passwordEl.focus();
-        setError(passwordEl, "Password should have at least 1 uppercase");
-
-        return;
-      } else if (!/[a-z]/.test(password)) {
-        passwordEl.focus();
-        setError(passwordEl, "Password should have at least 1 lowercase");
-        return;
-      } else if (!/[0-9]/.test(password)) {
-        passwordEl.focus();
-        setError(passwordEl, "Password should have at least 1 number");
-        return;
-      } else if (!/(?=.[$#%£&§@])/.test(password)) {
-        passwordEl.focus();
-        setError(
-          passwordEl,
-          "Password should have at least 1 special character"
-        );
-        return;
-      } else {
-        setSuccess(passwordEl);
-      }
-    }
-    if (cpassword === "") {
-      cpasswordEl.focus();
-      setError(cpasswordEl, "Please enter your confirm password");
-      return;
-    } else {
-      if (cpassword != password) {
-        cpasswordEl.focus();
-        setError(cpasswordEl, "Confirm password dose not match");
-        return;
-      } else setSuccess(cpasswordEl);
-    }
-    let numberReg = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-    if (!numberReg.test(number)) {
-      numberEl.focus();
-      setError(numberEl, "Please 10 digits number only");
-    } else {
-      if (number === "") {
-        numberEl.focus();
-        setError(numberEl, "Please enter your mobile number");
-        return;
-      } else {
-        setSuccess(numberEl);
-      }
-    }
-
-    if (dob === "") {
-      dobEl.focus();
-      setError(dobEl, "Please enter your date of birth");
-    } else {
-      setSuccess(dobEl);
-    }
-
-    if (city === "") {
-      cityEl.focus();
-      setError(cityEl, "Please select your country");
-      return;
-    } else {
-      setSuccess(cityEl);
-    }
-
-    if (pincode === "") {
-      pincodeEl.focus();
-      setError(pincodeEl, "Please enter your pin code");
-      return;
-    } else {
-      if (pincode.length != 6) {
-        pincodeEl.focus();
-        setError(pincodeEl, "Please enter 6 digits pin code");
-        return;
-      } else if (/^\d{10}$/.test(!pincode)) {
-        pincodeEl.focus();
-        setError(pincodeEl, "Please enter number only");
-        return;
-      } else {
-        setSuccess(pincodeEl);
-      }
-    }
-
-    if (address === "") {
-      addressEl.focus();
-      setError(addressEl, "Please enter your address");
-      return;
-    } else {
-      setSuccess(addressEl);
-    }
-
-    if (!terms.checked) {
-      const check = document.querySelector(".checkbox");
-      check.style.color = "red";
-      return;
-    } else {
-      const check = document.querySelector(".checkbox");
-
-      check.style.color = "black";
-    }
-
-    if (!newsletter.checked) {
-      const news = document.querySelector(".newsletter");
-      news.style.color = "red";
-      return;
-    } else {
-      const news = document.querySelector(".newsletter");
-      news.style.color = "black";
+      setSuccess(passwordEl);
     }
   }
+  if (cpassword === "") {
+    cpasswordEl.focus();
+    setError(cpasswordEl, "Please enter your confirm password");
+    return;
+  } else {
+    if (cpassword != password) {
+      cpasswordEl.focus();
+      setError(cpasswordEl, "Confirm password dose not match");
+      return;
+    } else {
+      setSuccess(cpasswordEl);
+    }
+  }
+
+  // let numberReg = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  if (number === "") {
+    numberEl.focus();
+    setError(numberEl, "Please enter your mobile number");
+    return;
+  } else {
+    if (number.length != 10) {
+      numberEl.focus();
+      setError(numberEl, "Please 10 digits number only");
+      return;
+    }
+    if (isNaN(number)) {
+      numberEl.focus();
+      setError(numberEl, "Please enter number only");
+      return;
+    } else {
+      setSuccess(numberEl);
+    }
+  }
+
+  if (dob === "") {
+    dobEl.focus();
+    setError(dobEl, "Please enter your date of birth");
+    return;
+  } else {
+    setSuccess(dobEl);
+  }
+
+  if (city === "") {
+    cityEl.focus();
+    setError(cityEl, "Please select your country");
+    return;
+  } else {
+    setSuccess(cityEl);
+  }
+
+  if (pincode === "") {
+    pincodeEl.focus();
+    setError(pincodeEl, "Please enter your pin code");
+    return;
+  } else {
+    if (pincode.length != 6) {
+      pincodeEl.focus();
+      setError(pincodeEl, "Please enter 6 digits pin code");
+      return;
+    }
+    if (isNaN(pincode)) {
+      pincodeEl.focus();
+      setError(pincodeEl, "Please enter number only");
+      return;
+    } else {
+      setSuccess(pincodeEl);
+    }
+  }
+
+  if (address === "") {
+    addressEl.focus();
+    setError(addressEl, "Please enter your address");
+    return;
+  } else {
+    setSuccess(addressEl);
+  }
+
+  if (id) {
+    //Update tools
+    let updatedUsers = userData.map((user) => {
+      if (user.id == id) {
+        return {
+          ...user,
+          roll: roll,
+          userName: userName,
+          email: email,
+          password: password,
+          cpassword: cpassword,
+          number: number,
+          dob: dob,
+          gender: gender,
+          city: city,
+          pincode: pincode,
+          address: address,
+          terms: terms,
+          newsletter: newsletter,
+        };
+      } else {
+        return user;
+      }
+    });
+    saveUsersLocalStorage(updatedUsers);
+    Modal.hide();
+    ModalStatus.show();
+    // mainModalTitle.innerHTML = "UPDATE USER";
+    modalTitle.innerHTML = "User Update Status";
+    alertMsg.innerHTML = "User Updated Successfully...";
+    clearAll();
+    loadUser();
+  } else {
+    //Add Tools
+    const userObj = {
+      id: Math.floor(1000 + Math.random() * 9000),
+      roll: roll,
+      userName: userName,
+      email: email,
+      password: password,
+      cpassword: cpassword,
+      number: number,
+      dob: dob,
+      gender: gender,
+      city: city,
+      pincode: pincode,
+      address: address,
+      terms: terms,
+      newsletter: newsletter,
+    };
+
+    userData.push(userObj);
+    ModalStatus.show();
+    // mainModalTitle.innerHTML = "ADD NEW USER";
+    modalTitle.innerHTML = "New User Registration";
+    alertMsg.innerHTML = "User Added Successfully...";
+    saveUsersLocalStorage(userData);
+    clearAll();
+    loadUser();
+    counter();
+  }
+  bsTab.show();
 });
 
 //Edit users
@@ -349,9 +335,9 @@ function editUsers(id) {
   pincodeEl.value = selectedUsers.pincode;
   addressEl.value = selectedUsers.address;
 
-  genderVal == "Male"
+  genderVal === "Male"
     ? (maleEl.checked = true)
-    : genderVal == "Female"
+    : genderVal === "Female"
     ? (femaleEl.checked = true)
     : (othersEl.checked = true);
 
@@ -496,7 +482,7 @@ filterUser.addEventListener("input", function () {
   const filterUser = userData.filter(
     (user) =>
       user.userName.toLowerCase().includes(searchQuery) ||
-      user.number.toLowerCase().includes(searchQuery)
+      user.id.toString().includes(searchQuery)
   );
   loadUser(1, filterUser);
 });
@@ -552,7 +538,93 @@ function counter() {
 
 counter();
 
-// function reload() {
-//   Modal.show();
-// }
-// reload();
+function reload() {
+  Modal.show();
+}
+reload();
+
+// Login
+
+btnLogin.addEventListener("click", function () {
+  let loginRoll = loginRollEl.value;
+  let loginEmail = loginEmailEl.value;
+  let loginPassword = loginPasswordEl.value;
+  userData = getUserDetails();
+
+  const ModalStatus = new bootstrap.Modal(myModalMessage, {
+    keyboard: false,
+  });
+
+  let rollList = userData.map(({ roll }) => roll);
+  rollValue = rollList.includes(loginRoll);
+
+  let emailList = userData.map(({ email }) => email);
+  emailValue = emailList.includes(loginEmail);
+
+  let passwordList = userData.map(({ password }) => password);
+  passwordValue = passwordList.includes(loginPassword);
+
+
+  if (loginRoll === "") {
+    loginRollEl.focus();
+    setError(loginRollEl, "Please select your roll");
+    return;
+  } else {
+    setSuccess(loginRollEl);
+  }
+
+  if (loginEmail === "") {
+    loginEmailEl.focus();
+    setError(loginEmailEl, "Please enter your email");
+    return;
+  } else {
+    const emailformat =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (emailformat.test(loginEmail)) {
+      setSuccess(loginEmailEl);
+    } else {
+      loginEmailEl.focus();
+      setError(loginEmailEl, "Please enter valid email");
+      return;
+    }
+    setSuccess(loginEmailEl);
+  }
+  if (loginPassword === "") {
+    loginPasswordEl.focus();
+    setError(loginPasswordEl, "Please enter your password");
+    return;
+  } else {
+    setSuccess(loginPasswordEl);
+  }
+
+  if (rollValue == true && emailValue == true && passwordValue == true) {
+    loginRollEl = "";
+    loginEmailEl = "";
+    loginPasswordEl = "";
+    Modal.hide();
+    ModalStatus.show();
+    modalTitle.innerHTML = "User Login";
+    alertMsg.innerHTML = "User Login Successfully...";
+  } else {
+    ModalStatus.show();
+    modalTitle.innerHTML = "Warning";
+    alertMsg.innerHTML = "User details does not match";
+    setError(loginRollEl,"")
+    setError(loginEmailEl,"")
+    setError(loginPasswordEl,"")
+  }
+
+
+    // console.log(loginRoll);
+    // console.log(loginEmail);
+    // console.log(loginPassword);
+
+    // console.log(rollList);
+    // console.log(emailList);
+    // console.log(passwordList);
+
+    // console.log(rollValue);
+    // console.log(emailValue);
+    // console.log(passwordValue);
+});

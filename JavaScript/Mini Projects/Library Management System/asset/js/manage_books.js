@@ -36,6 +36,26 @@ btnBookAdd.addEventListener("click", function () {
   clearAllBookInput();
 });
 
+// form validation error message
+
+function setError(element, message) {
+  const formGroup = element.parentElement;
+  const errorElement = formGroup.querySelector(".error");
+
+  errorElement.innerHTML = message;
+  formGroup.classList.add("error");
+  formGroup.classList.remove("success");
+}
+
+function setSuccess(element) {
+  const formGroup = element.parentElement;
+  const errorElement = formGroup.querySelector(".error");
+
+  errorElement.innerText = "";
+  formGroup.classList.add("success");
+  formGroup.classList.remove("error");
+}
+
 // Add new book
 btnBookSave.addEventListener("click", function () {
   const id = bookIdEl.value;
@@ -51,61 +71,103 @@ btnBookSave.addEventListener("click", function () {
     keyboard: false,
   });
 
-  if (bookName && authorName && publications && quantity && price && details) {
-    if (id) {
-      //Update tools
-      let updatedBooks = bookData.map((book) => {
-        if (book.id == id) {
-          return {
-            ...book,
-            bookName: bookName,
-            authorName: authorName,
-            publications: publications,
-            quantity: quantity,
-            price: price,
-            details: details,
-          };
-        } else {
-          return book;
-        }
-      });
-      saveBooksLocalStorage(updatedBooks);
-      ModalBook.hide();
-      ModalStatusBook.show();
-      // mainModalTitle.innerHTML = "UPDATE USER";
-      modalBookTitle.innerHTML = "Book Update Status";
-      alertBookMsg.innerHTML = "Book Updated Successfully...";
-      clearAllBookInput();
-      loadBook();
-      counter();
-    } else {
-      //Add Books
-      const bookObj = {
-        id: Math.floor(1000 + Math.random() * 9000),
-        bookName: bookName,
-        authorName: authorName,
-        publications: publications,
-        quantity: quantity,
-        price: quantity * price,
-        details: details,
-      };
+  // Form validation
 
-      bookData.push(bookObj);
-      ModalStatusBook.show();
-      // mainModalTitle.innerHTML = "ADD NEW USER";
-      modalBookTitle.innerHTML = "New Book Registration";
-      alertBookMsg.innerHTML = "Book Added Successfully...";
-      saveBooksLocalStorage(bookData);
-      clearAllBookInput();
-      loadBook();
-      counter();
-    }
-    ModalBook.hide();
+  if (bookName == "") {
+    bookNameEl.focus();
+    setError(bookNameEl, "Please enter your book name");
+    return;
   } else {
-    ModalStatusBook.show();
-    modalBookTitle.innerHTML = "Warning";
-    alertBookMsg.innerHTML = "Plaese fill all the details";
+    setSuccess(bookNameEl);
   }
+
+  if (authorName == "") {
+    authorNameEl.focus();
+    setError(authorNameEl, "Please enter your author name");
+    return;
+  } else {
+    setSuccess(authorNameEl);
+  }
+
+  if (publications == "") {
+    publicationsEl.focus();
+    setError(publicationsEl, "Please enter your publications name");
+    return;
+  } else {
+    setSuccess(publicationsEl);
+  }
+
+  if (quantity == "") {
+    qtyEl.focus();
+    setError(qtyEl, "Please enter your qty");
+    return;
+  } else {
+    setSuccess(qtyEl);
+  }
+
+  if (price === "") {
+    priceEl.focus();
+    setError(priceEl, "Please enter your price");
+    return;
+  } else {
+    if (isNaN(price)) {
+      priceEl.focus();
+      setError(priceEl, "Please enter number only");
+      return;
+    } else {
+      setSuccess(priceEl);
+    }
+  }
+
+  if (id) {
+    //Update tools
+    let updatedBooks = bookData.map((book) => {
+      if (book.id == id) {
+        return {
+          ...book,
+          bookName: bookName,
+          authorName: authorName,
+          publications: publications,
+          quantity: quantity,
+          price: price,
+          details: details,
+        };
+      } else {
+        return book;
+      }
+    });
+    saveBooksLocalStorage(updatedBooks);
+    ModalBook.hide();
+    ModalStatusBook.show();
+    // mainModalTitle.innerHTML = "UPDATE USER";
+    modalBookTitle.innerHTML = "Book Update Status";
+    alertBookMsg.innerHTML = "Book Updated Successfully...";
+    clearAllBookInput();
+    loadBook();
+    counter();
+  } else {
+    //Add Books
+    const bookObj = {
+      id: Math.floor(1000 + Math.random() * 9000),
+      bookName: bookName,
+      authorName: authorName,
+      publications: publications,
+      quantity: quantity,
+      price: quantity * price,
+      details: details,
+    };
+
+    bookData.push(bookObj);
+    ModalStatusBook.show();
+    // mainModalTitle.innerHTML = "ADD NEW USER";
+    modalBookTitle.innerHTML = "New Book Registration";
+    alertBookMsg.innerHTML = "Book Added Successfully...";
+    saveBooksLocalStorage(bookData);
+    clearAllBookInput();
+    loadBook();
+    counter();
+  }
+  ModalBook.hide();
 });
 
 //Edit Books
@@ -253,7 +315,8 @@ filterBook.addEventListener("input", function () {
   const filterBook = bookData.filter(
     (book) =>
       book.bookName.toLowerCase().includes(searchQuery) ||
-      book.authorName.toLowerCase().includes(searchQuery)
+      book.authorName.toLowerCase().includes(searchQuery) ||
+      book.id.toString().includes(searchQuery)
   );
   loadBook(1, filterBook);
 });
@@ -307,7 +370,3 @@ function counter() {
   totalPublications.innerHTML = totalPublication;
 }
 counter();
-
-
-
-
