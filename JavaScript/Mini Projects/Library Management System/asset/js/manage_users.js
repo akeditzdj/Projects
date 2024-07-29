@@ -697,5 +697,4 @@ function passwordShowAndHide() {
       }
     });
 }
-
 passwordShowAndHide();

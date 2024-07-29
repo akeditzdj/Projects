@@ -253,12 +253,13 @@ form select {
 }
 
 .form-container form .form-group textarea {
-  height: 143px;
+  height: 143px !important;
   resize: none;
 }
 
 .form-container form button {
   width: 150px;
+
 }
 
 .tab-container ul {
@@ -273,11 +274,10 @@ form select {
   background-color: #1f2831;
 }
 
-form .form-group .form-item .error {
-  color: white;
-  font-size: 12px;
-  padding: 10px 0;
-  width: 100%;
+form .form-group .error {
+  color: red;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .form-group.error input,
@@ -295,6 +295,7 @@ form .form-group .form-item .error {
   color: red;
   margin-top: 10px;
 }
+
 
 @media screen and (max-width: 576px) {
   .form-container {
