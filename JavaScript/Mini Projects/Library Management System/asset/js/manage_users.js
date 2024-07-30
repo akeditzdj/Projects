@@ -545,10 +545,10 @@ counter();
 
 // Window refresh
 
-function reload() {
-  Modal.show();
-}
-reload();
+// function reload() {
+//   Modal.show();
+// }
+// reload();
 
 // Login
 
