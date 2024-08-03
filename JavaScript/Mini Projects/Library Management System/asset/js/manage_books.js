@@ -1019,7 +1019,7 @@ function loadBook(lang = "All") {
   if (data.length > 0) {
     let bookHTML = data.map(
       (book, index) => `  <div class="col">
-            <div class="card shadow">
+            <div class="card shadow book-card">
                 <img class="card-img-top" src="${book.imageLink}" alt=""
                     style="height: 200px;">
                     <div class="number">${index + 1}</div>
@@ -1030,9 +1030,9 @@ function loadBook(lang = "All") {
                       book.language
                     }</span>
                 </div>
-                <div class="not-available">Not Available</div>
+                   <div class="not-available">Book Not Available</div>
                    <div class="bookHover borrow">
-                   <button class="btn btn-sm btn-danger btnBorrow" >Borrow</button>
+                   <button class="btn btn-sm btn-danger btnBorrow">Borrow</button>
                    </div>
             </div>
 
@@ -1045,10 +1045,11 @@ function loadBook(lang = "All") {
 loadBook("All");
 
 document.addEventListener("click", (e) => {
+
   if (e.target.classList.contains("btnBorrow")) {
-    let notAvailable = document.querySelector(".not-available");
-    notAvailable.style.display = "flex";
-    e.target.style.display = "none";
+      let notAvailable = document.querySelector(".not-available");
+        notAvailable.style.display = "flex";
+        e.target.style.display = "none";
   }
 });
 
