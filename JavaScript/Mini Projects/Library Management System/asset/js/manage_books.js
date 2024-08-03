@@ -912,7 +912,7 @@ let bookData = [
   {
     author: "Leo Tolstoy",
     country: "Ruasset/ssia",
-    imageLink: "images/the-death-of-ivan-ilyich.jpg",
+    imageLink: "asset/images/the-death-of-ivan-ilyich.jpg",
     language: "Russian",
     link: "https://en.wikipedia.org/wiki/The_Death_of_Ivan_Ilyich\n",
     pages: 92,
@@ -1002,6 +1002,7 @@ let bookData = [
 ];
 
 const bookSelf = document.querySelector("#bookSelf");
+const selectLanguage = document.getElementById("selectLanguage");
 
 // Load book in the main page
 
@@ -1019,16 +1020,21 @@ function loadBook(lang = "All") {
       (book, index) => `  <div class="col">
             <div class="card shadow">
                 <img class="card-img-top" src="${book.imageLink}" alt=""
-                    style="height: 300px;">
+                    style="height: 250px;">
                     <div class="number">${index + 1}</div>
                 <div class="card-body">
                     <h6 class="card-title single-line">${book.title}</h6>
-                    <p class="card-text">${book.author}</p>
-                    <span class="badge bg-dark">Language: ${
+                    <p class="card-text single-line">${book.author}</p>
+                    <span class="badge bg-secondary lang">Language: ${
                       book.language
                     }</span>
                 </div>
+                <div class="not-available">Not Available</div>
+                   <div class="bookHover borrow">
+                   <button class="btn btn-sm btn-danger btnBorrow" >Borrow</button>
+                   </div>
             </div>
+
         </div>`
     );
     bookHTML = bookHTML.join(" ");
@@ -1036,3 +1042,22 @@ function loadBook(lang = "All") {
   }
 }
 loadBook("All");
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btnBorrow")) {
+    let notAvailable = document.querySelector(".not-available");
+    notAvailable.style.display = "flex";
+    e.target.style.display = "none";
+  }
+});
+
+function loadComboLanguages() {
+  const languages = [...new Set(bookData.map((book) => book.language))];
+  languages.forEach(function (item) {
+    let lang = document.createElement("option");
+    lang.list = item;
+    lang.text = item;
+    selectLanguage.appendChild(lang);
+  });
+}
+loadComboLanguages();
