@@ -132,63 +132,70 @@
                             <div class="col-md-3 mt-4 mt-md-0">
                                 <div class="card dashboard border-0 text-light shadow ">
                                     <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                                        <i class="bi bi-journal-arrow-down display-5"></i>
-                                        <h4 class=" fw-bold">Total Publications</h4>
-                                        <h2 id="totalPublications" class="fw-bold"></h2>
+                                        <i class="bi bi-people display-5"></i>
+                                        <h4 class=" fw-bold">Total Languages</h4>
+                                        <h2 id="totalLanguages" class="fw-bold"></h2>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3 mt-4 mt-md-0">
                                 <div class="card dashboard border-0 text-light shadow ">
                                     <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                                        <i class="bi bi-people-fill display-5"></i>
-                                        <h4 class=" fw-bold">Total Book Price</h4>
-                                        <h2 id="totalPrice" class="fw-bold"><i class="bi bi-currency-rupee"></i>
+                                        <i class="bi bi-globe display-5"></i>
+                                        <h4 class=" fw-bold">Total Country</h4>
+                                        <h2 id="totalCountry" class="fw-bold">
                                         </h2>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Dashboard Content - End -->
-                        <!-- Page Header and Title - Start-->
-                        <div class=" my-3 bg-light py-1 rounded-5 w-100">
-                            <h3 class="text-center text-dark fw-bold">Add / Manage Books</h3>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col d-md-flex justify-content-between align-items-center">
-                                <div>
-                                    <div class=" mt-3 mt-md-0 filter-Input">
-                                        <input class="form-control bg-transparent text-light" type="text" name="searchBook" id="searchBook"
-                                            placeholder="Search your register book">
+
+                        <div class="row mt-3">
+                            <!-- Page Header and Title - Start-->
+                            <div class=" my-3 bg-light py-1 rounded-5 w-100">
+                                <h3 class="text-center text-dark fw-bold">Add / Manage Books</h3>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col d-md-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class=" mt-3 mt-md-0 filter-Input">
+                                            <form autocomplete="off">
+                                                <input class="form-control bg-transparent text-light" type="text"
+                                                    name="searchBook" id="searchBook"
+                                                    placeholder="Search your register book">
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="mt-3 mt-md-0 filter-Input">
+                                        <form>
+                                            <div class="form-group">
+                                                <select name="selectLanguage" id="selectLanguage" class="form-select">
+                                                    <option class="bg-transparent" selected value="All">All</option>
+                                                </select>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
-                                <div class="mt-3 mt-md-0 filter-Input">
-                                <form>
-                                    <div class="form-group">
-                                            <select name="selectLanguage" id="selectLanguage" class="form-select">
-                                                <option class="bg-transparent" selected value="All">All</option>
-                                            </select>
+                            </div>
+                            <!-- Page Header and Title - End-->
+
+                            <!-- Book Data - Start-->
+                            <div class="row mb-5">
+                                <div class="col-md-12">
+                                    <div class="row g-4 row-cols-1 row-cols-sm-2  row-cols-md-4  row-cols-lg-6 d-flex"
+                                        id="bookSelf">
+
                                     </div>
-                                </form>
                                 </div>
                             </div>
+                            <!-- Book Data - End-->
                         </div>
-                        <!-- Page Header and Title - End-->
-                        <!-- Book Data - Start-->
-                        <div class="row mt-5">
-                            <div class="col-md-12">
-                                <div class="row g-4 row-cols-1 row-cols-sm-2  row-cols-md-3  row-cols-lg-6 d-flex"
-                                    id="bookSelf">
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Book Data - End-->
-
                     </div>
                 </div>
                 <!-- Manage Books - Tab End -->
-                <!-- Manage Users - Tab End -->
+
+                <!-- Manage Users - Tab Start -->
                 <div class="tab-pane fade" id="manageMembers" role="tabpanel" aria-labelledby="manageMembers-tab"
                     tabindex="0">
                     <!-- Dashboard Content - Start -->

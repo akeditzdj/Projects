@@ -1003,6 +1003,7 @@ let bookData = [
 
 const bookSelf = document.querySelector("#bookSelf");
 const selectLanguage = document.getElementById("selectLanguage");
+const searchBook = document.getElementById("searchBook");
 
 // Load book in the main page
 
@@ -1011,8 +1012,8 @@ function loadBook(lang = "All") {
   if (lang == "All") {
     data = bookData;
   } else {
-    const filterdBook = bookData.filter((book) => book.language == lang);
-    data = filterdBook;
+    const filteredBook = bookData.filter((book) => book.language == lang);
+    data = filteredBook;
   }
 
   if (data.length > 0) {
@@ -1020,7 +1021,7 @@ function loadBook(lang = "All") {
       (book, index) => `  <div class="col">
             <div class="card shadow">
                 <img class="card-img-top" src="${book.imageLink}" alt=""
-                    style="height: 250px;">
+                    style="height: 200px;">
                     <div class="number">${index + 1}</div>
                 <div class="card-body">
                     <h6 class="card-title single-line">${book.title}</h6>
@@ -1051,8 +1052,11 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// Filter book data in select option by language
+
 function loadComboLanguages() {
   const languages = [...new Set(bookData.map((book) => book.language))];
+  languages.sort();
   languages.forEach(function (item) {
     let lang = document.createElement("option");
     lang.list = item;
@@ -1061,3 +1065,81 @@ function loadComboLanguages() {
   });
 }
 loadComboLanguages();
+
+// Filter book data by search input
+
+selectLanguage.addEventListener("change", function () {
+  loadBook(this.value);
+});
+
+searchBook.addEventListener("input", function () {
+  const qry = this.value;
+  const searchBook = qry.trim().toLowerCase();
+  const lang = selectLanguage.value;
+
+  if (searchBook != "") {
+    let data = [];
+    if (lang == "All") {
+      data = bookData;
+    } else {
+      const filteredBook = bookData.filter((book) => book.language == lang);
+      data = filteredBook;
+    }
+
+    const serachFilterBook = data.filter(
+      (book) =>
+        book.title.toLocaleLowerCase().includes(searchBook) ||
+        book.author.toLocaleLowerCase().includes(searchBook)
+    );
+
+    if (serachFilterBook.length > 0) {
+      let bookHTML = serachFilterBook.map(
+        (book, index) => `  <div class="col">
+            <div class="card shadow">
+                <img class="card-img-top" src="${book.imageLink}" alt=""
+                    style="height: 200px;">
+                    <div class="number">${index + 1}</div>
+                <div class="card-body">
+                    <h6 class="card-title single-line">${book.title}</h6>
+                    <p class="card-text single-line">${book.author}</p>
+                    <span class="badge bg-secondary lang">Language: ${
+                      book.language
+                    }</span>
+                </div>
+                <div class="not-available">Not Available</div>
+                   <div class="bookHover borrow">
+                   <button class="btn btn-sm btn-danger btnBorrow" >Borrow</button>
+                   </div>
+            </div>
+
+        </div>`
+      );
+      bookHTML = bookHTML.join(" ");
+      bookSelf.innerHTML = bookHTML;
+    }
+  } else {
+    loadBook(lang);
+  }
+});
+
+function counter() {
+  const totalBook = document.getElementById("totalBook");
+  const totalAuthor = document.getElementById("totalAuthor");
+  const totalLanguages = document.getElementById("totalLanguages");
+  const totalCountry = document.getElementById("totalCountry");
+
+  let book = [...new Set(bookData.map((index) => index))];
+  totalBook.innerHTML = book.length;
+
+  let author = [...new Set(bookData.map((book) => book.author))];
+  totalAuthor.innerHTML = author.length;
+
+  let lang = [...new Set(bookData.map((book) => book.language))];
+  totalLanguages.innerHTML = lang.length;
+
+  let country = [...new Set(bookData.map((book) => book.country))];
+  totalCountry.innerHTML = country.length;
+
+  loadBook();
+}
+counter();
