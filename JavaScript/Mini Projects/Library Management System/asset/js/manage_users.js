@@ -292,7 +292,7 @@ btnSave.addEventListener("click", function () {
       userName: userName,
       email: email,
       password: password,
-      cpassword: cpassword,
+      cpassword:cpassword,
       number: number,
       dob: dob,
       gender: gender,
@@ -311,13 +311,6 @@ btnSave.addEventListener("click", function () {
     loadUser();
     counter();
     modalTitle.innerHTML = "New User Registration";
-    // Get last index value
-    let userIndex = getUserDetails();
-    const userId = userIndex.map(({ id }) => id);
-    const lastvalue = userId.at(-1);
-    alertMsg.innerHTML =
-      "User Added Successfully..." +
-      `<br> <div class=" text-center mt-2">Please take note your user ID </div> <br><div class="fw-bold display-2 text-center">${lastvalue}</div> <br> <br> <div class="text-center">Please refersh the page before login</div>`;
   }
   bsTab.show();
 });
@@ -442,7 +435,6 @@ function loadUser(isForSearch = 0, filterUser = []) {
           <td>${user.userName}</td>
           <td>${user.email}</td>
           <td>${user.password}</td>
-          <td>${user.cpassword}</td>
           <td>${user.number}</td>
           <td>${user.dob}</td>
           <td>${user.gender}</td>
@@ -552,101 +544,66 @@ counter();
 
 // Login
 
-function getUserById(userId) {
-  userData = getUserDetails();
-  // Find the user with the matching ID
-  const user = userData.find((user) => user.id === userId);
-
-  // Check if the user was found
-  if (user) {
-    return {
-      roll: user.roll,
-      email: user.email,
-      password: user.password,
-    };
-  } else {
-    return null; // User not found
-  }
-}
-
 btnLogin.addEventListener("click", function () {
-  let loginPersonId = document.getElementById("loginPersonId").value;
-  let loginRoll = loginRollEl.value;
-  let loginEmail = loginEmailEl.value;
-  let loginPassword = loginPasswordEl.value;
-  userData = getUserDetails();
+  function login() {
+    let loginEmailEl = document.getElementById("loginEmail");
+    let loginPasswordEl = document.getElementById("loginPassword");
+    userData = getUserDetails();
+    const storedEmail = userData.map((user) => user.email);
+    const storedPassword = userData.map((user) => user.password);
+    let loginEmail = loginEmailEl.value;
+    let loginPassword = loginPasswordEl.value;
+    console.log(storedEmail);
+    const ModalStatus = new bootstrap.Modal(myModalMessage, {
+      keyboard: false,
+    });
 
-  const ModalStatus = new bootstrap.Modal(myModalMessage, {
-    keyboard: false,
-  });
-
-  // Example usage:
-  const userId = Number(loginPersonId);
-  const userCredentials = getUserById(userId);
-
-  // let rollList = userData.map(({ roll }) => roll);
-  let rollValue = userCredentials.roll;
-
-  // let emailList = userData.map(({ email }) => email);
-  let emailValue = userCredentials.email;
-
-  // let passwordList = userData.map(({ password }) => password);
-  let passwordValue = userCredentials.password;
-
-  if (loginRoll === "") {
-    loginRollEl.focus();
-    setError(loginRollEl, "Please select your roll");
-    return;
-  } else {
-    setSuccess(loginRollEl);
-  }
-
-  if (loginEmail === "") {
-    loginEmailEl.focus();
-    setError(loginEmailEl, "Please enter your email");
-    return;
-  } else {
-    const emailformat =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    if (emailformat.test(loginEmail)) {
-      setSuccess(loginEmailEl);
-    } else {
+    if (loginEmail === "") {
       loginEmailEl.focus();
-      setError(loginEmailEl, "Please enter valid email");
+      setError(loginEmailEl, "Please enter your email");
       return;
+    } else {
+      const emailformat =
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+      if (emailformat.test(loginEmail)) {
+        setSuccess(loginEmailEl);
+      } else {
+        loginEmailEl.focus();
+        setError(loginEmailEl, "Please enter valid email");
+        return;
+      }
+      setSuccess(loginEmailEl);
     }
-    setSuccess(loginEmailEl);
-  }
-  if (loginPassword === "") {
-    loginPasswordEl.focus();
-    setError(loginPasswordEl, "Please enter your password");
-    return;
-  } else {
-    setSuccess(loginPasswordEl);
+    if (loginPassword === "") {
+      loginPasswordEl.focus();
+      setError(loginPasswordEl, "Please enter your password");
+      return;
+    } else {
+      setSuccess(loginPasswordEl);
+    }
+
+    if (
+      storedEmail.includes(loginEmail) &&
+      storedPassword.includes(loginPassword)
+    ) {
+      loginEmailEl = "";
+      loginPasswordEl = "";
+      Modal.hide();
+      ModalStatus.show();
+      modalTitle.innerHTML = "User Login";
+      alertMsg.innerHTML = "User Login Successfull...";
+      btnAdd.style.display = "none";
+    } else {
+      ModalStatus.show();
+      modalTitle.innerHTML = "Warning";
+      alertMsg.innerHTML = "User details does not match";
+      setError(loginEmailEl, "");
+      setError(loginPasswordEl, "");
+    }
   }
 
-  if (
-    rollValue == loginRoll &&
-    emailValue == loginEmail &&
-    passwordValue == loginPassword
-  ) {
-    loginRollEl = "";
-    loginEmailEl = "";
-    loginPasswordEl = "";
-    Modal.hide();
-    ModalStatus.show();
-    modalTitle.innerHTML = "User Login";
-    alertMsg.innerHTML = "User Login Successfull...";
-    btnAdd.style.display = "none";
-  } else {
-    ModalStatus.show();
-    modalTitle.innerHTML = "Warning";
-    alertMsg.innerHTML = "User details does not match";
-    setError(loginRollEl, "");
-    setError(loginEmailEl, "");
-    setError(loginPasswordEl, "");
-  }
+  login();
   loadUser();
 });
 
@@ -665,11 +622,10 @@ function passwordShowAndHide() {
       password_input.setAttribute("type", "text");
       pass.classList.add("bi-eye-slash");
       pass.classList.remove("bi-eye");
-
     } else {
       password_input.setAttribute("type", "password");
-       pass.classList.remove("bi-eye-slash");
-       pass.classList.add("bi-eye");
+      pass.classList.remove("bi-eye-slash");
+      pass.classList.add("bi-eye");
     }
   });
 
@@ -685,16 +641,16 @@ function passwordShowAndHide() {
     }
   });
 
-    lPass.addEventListener("click", function () {
-      if (l_password_input.getAttribute("type") == "password") {
-        l_password_input.setAttribute("type", "text");
-        lPass.classList.add("bi-eye-slash");
-        lPass.classList.remove("bi-eye");
-      } else {
-        l_password_input.setAttribute("type", "password");
-        lPass.classList.remove("bi-eye-slash");
-        lPass.classList.add("bi-eye");
-      }
-    });
+  lPass.addEventListener("click", function () {
+    if (l_password_input.getAttribute("type") == "password") {
+      l_password_input.setAttribute("type", "text");
+      lPass.classList.add("bi-eye-slash");
+      lPass.classList.remove("bi-eye");
+    } else {
+      l_password_input.setAttribute("type", "password");
+      lPass.classList.remove("bi-eye-slash");
+      lPass.classList.add("bi-eye");
+    }
+  });
 }
 passwordShowAndHide();

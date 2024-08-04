@@ -45,23 +45,5 @@ districtList.forEach(function (item) {
   city.appendChild(district);
 });
 
-//Get user id from the userData array
 
- userData = getUserDetails();
-
-let UserId = userData.map(({ id }) => id);
-
-UserId.forEach(function (item) {
-  let userIdList = document.createElement("option");
-  userIdList.list = item;
-  userIdList.text = item;
-  personId.appendChild(userIdList);
-});
-
-UserId.forEach(function (item) {
-  let loginUserserIdList = document.createElement("option");
-  loginUserserIdList.list = item;
-  loginUserserIdList.text = item;
-  loginPersonId.appendChild(loginUserserIdList);
-});
 
