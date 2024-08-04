@@ -1045,11 +1045,10 @@ function loadBook(lang = "All") {
 loadBook("All");
 
 document.addEventListener("click", (e) => {
-
   if (e.target.classList.contains("btnBorrow")) {
-      let notAvailable = document.querySelector(".not-available");
-        notAvailable.style.display = "flex";
-        e.target.style.display = "none";
+    let notAvailable = document.querySelector(".not-available");
+    notAvailable.style.display = "flex";
+    e.target.style.display = "none";
   }
 });
 
@@ -1096,7 +1095,7 @@ searchBook.addEventListener("input", function () {
     if (serachFilterBook.length > 0) {
       let bookHTML = serachFilterBook.map(
         (book, index) => `  <div class="col">
-            <div class="card shadow">
+            <div class="card">
                 <img class="card-img-top" src="${book.imageLink}" alt=""
                     style="height: 200px;">
                     <div class="number">${index + 1}</div>
