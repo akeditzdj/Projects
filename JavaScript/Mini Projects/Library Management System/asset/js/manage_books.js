@@ -8,6 +8,7 @@ let bookData = [
     pages: 209,
     title: "Things Fall Apart",
     year: 1958,
+    status: "Available",
   },
   {
     author: "Hans Christian Andersen",
@@ -18,6 +19,7 @@ let bookData = [
     pages: 784,
     title: "Fairy tales",
     year: 1836,
+    status: "Not Available",
   },
   {
     author: "Dante Alighieri",
@@ -28,6 +30,7 @@ let bookData = [
     pages: 928,
     title: "The Divine Comedy",
     year: 1315,
+    status: "Available",
   },
   {
     author: "Unknown",
@@ -37,7 +40,8 @@ let bookData = [
     link: "https://en.wikipedia.org/wiki/Epic_of_Gilgamesh\n",
     pages: 160,
     title: "The Epic Of Gilgamesh",
-    year: -1700,
+    year: 1700,
+    status: "Available",
   },
   {
     author: "Unknown",
@@ -47,7 +51,8 @@ let bookData = [
     link: "https://en.wikipedia.org/wiki/Book_of_Job\n",
     pages: 176,
     title: "The Book Of Job",
-    year: -600,
+    year: 600,
+    status: "Available",
   },
   {
     author: "Unknown",
@@ -58,6 +63,7 @@ let bookData = [
     pages: 288,
     title: "One Thousand and One Nights",
     year: 1200,
+    status: "Available",
   },
   {
     author: "Unknown",
@@ -68,6 +74,7 @@ let bookData = [
     pages: 384,
     title: "Nj\u00e1l's Saga",
     year: 1350,
+    status: "Available",
   },
   {
     author: "Jane Austen",
@@ -78,6 +85,7 @@ let bookData = [
     pages: 226,
     title: "Pride and Prejudice",
     year: 1813,
+    status: "Available",
   },
   {
     author: "Honor\u00e9 de Balzac",
@@ -88,6 +96,7 @@ let bookData = [
     pages: 443,
     title: "Le P\u00e8re Goriot",
     year: 1835,
+    status: "Available",
   },
   {
     author: "Samuel Beckett",
@@ -98,6 +107,7 @@ let bookData = [
     pages: 256,
     title: "Molloy, Malone Dies, The Unnamable, the trilogy",
     year: 1952,
+    status: "Available",
   },
   {
     author: "Giovanni Boccaccio",
@@ -108,6 +118,7 @@ let bookData = [
     pages: 1024,
     title: "The Decameron",
     year: 1351,
+    status: "Available",
   },
   {
     author: "Jorge Luis Borges",
@@ -118,6 +129,7 @@ let bookData = [
     pages: 224,
     title: "Ficciones",
     year: 1965,
+    status: "Available",
   },
   {
     author: "Emily Bront\u00eb",
@@ -128,6 +140,7 @@ let bookData = [
     pages: 342,
     title: "Wuthering Heights",
     year: 1847,
+    status: "Available",
   },
   {
     author: "Albert Camus",
@@ -138,6 +151,7 @@ let bookData = [
     pages: 185,
     title: "The Stranger",
     year: 1942,
+    status: "Available",
   },
   {
     author: "Paul Celan",
@@ -148,6 +162,7 @@ let bookData = [
     pages: 320,
     title: "Poems",
     year: 1952,
+    status: "Available",
   },
   {
     author: "Louis-Ferdinand C\u00e9line",
@@ -158,6 +173,7 @@ let bookData = [
     pages: 505,
     title: "Journey to the End of the Night",
     year: 1932,
+    status: "Available",
   },
   {
     author: "Miguel de Cervantes",
@@ -168,6 +184,7 @@ let bookData = [
     pages: 1056,
     title: "Don Quijote De La Mancha",
     year: 1610,
+    status: "Available",
   },
   {
     author: "Geoffrey Chaucer",
@@ -178,6 +195,7 @@ let bookData = [
     pages: 544,
     title: "The Canterbury Tales",
     year: 1450,
+    status: "Available",
   },
   {
     author: "Anton Chekhov",
@@ -188,6 +206,7 @@ let bookData = [
     pages: 194,
     title: "Stories",
     year: 1886,
+    status: "Available",
   },
   {
     author: "Joseph Conrad",
@@ -198,6 +217,7 @@ let bookData = [
     pages: 320,
     title: "Nostromo",
     year: 1904,
+    status: "Available",
   },
   {
     author: "Charles Dickens",
@@ -208,6 +228,7 @@ let bookData = [
     pages: 194,
     title: "Great Expectations",
     year: 1861,
+    status: "Available",
   },
   {
     author: "Denis Diderot",
@@ -218,6 +239,7 @@ let bookData = [
     pages: 596,
     title: "Jacques the Fatalist",
     year: 1796,
+    status: "Available",
   },
   {
     author: "Alfred D\u00f6blin",
@@ -228,6 +250,7 @@ let bookData = [
     pages: 600,
     title: "Berlin Alexanderplatz",
     year: 1929,
+    status: "Available",
   },
   {
     author: "Fyodor Dostoevsky",
@@ -238,6 +261,7 @@ let bookData = [
     pages: 551,
     title: "Crime and Punishment",
     year: 1866,
+    status: "Available",
   },
   {
     author: "Fyodor Dostoevsky",
@@ -248,6 +272,7 @@ let bookData = [
     pages: 656,
     title: "The Idiot",
     year: 1869,
+    status: "Available",
   },
   {
     author: "Fyodor Dostoevsky",
@@ -258,6 +283,7 @@ let bookData = [
     pages: 768,
     title: "The Possessed",
     year: 1872,
+    status: "Available",
   },
   {
     author: "Fyodor Dostoevsky",
@@ -268,6 +294,7 @@ let bookData = [
     pages: 824,
     title: "The Brothers Karamazov",
     year: 1880,
+    status: "Available",
   },
   {
     author: "George Eliot",
@@ -278,6 +305,7 @@ let bookData = [
     pages: 800,
     title: "Middlemarch",
     year: 1871,
+    status: "Available",
   },
   {
     author: "Ralph Ellison",
@@ -288,6 +316,7 @@ let bookData = [
     pages: 581,
     title: "Invisible Man",
     year: 1952,
+    status: "Available",
   },
   {
     author: "Euripides",
@@ -297,7 +326,8 @@ let bookData = [
     link: "https://en.wikipedia.org/wiki/Medea_(play)\n",
     pages: 104,
     title: "Medea",
-    year: -431,
+    year: 431,
+    status: "Available",
   },
   {
     author: "William Faulkner",
@@ -308,6 +338,7 @@ let bookData = [
     pages: 313,
     title: "Absalom, Absalom!",
     year: 1936,
+    status: "Available",
   },
   {
     author: "William Faulkner",
@@ -318,6 +349,7 @@ let bookData = [
     pages: 326,
     title: "The Sound and the Fury",
     year: 1929,
+    status: "Available",
   },
   {
     author: "Gustave Flaubert",
@@ -328,6 +360,7 @@ let bookData = [
     pages: 528,
     title: "Madame Bovary",
     year: 1857,
+    status: "Available",
   },
   {
     author: "Gustave Flaubert",
@@ -338,6 +371,7 @@ let bookData = [
     pages: 606,
     title: "Sentimental Education",
     year: 1869,
+    status: "Available",
   },
   {
     author: "Federico Garc\u00eda Lorca",
@@ -348,6 +382,7 @@ let bookData = [
     pages: 218,
     title: "Gypsy Ballads",
     year: 1928,
+    status: "Available",
   },
   {
     author: "Gabriel Garc\u00eda M\u00e1rquez",
@@ -358,6 +393,7 @@ let bookData = [
     pages: 417,
     title: "One Hundred Years of Solitude",
     year: 1967,
+    status: "Available",
   },
   {
     author: "Gabriel Garc\u00eda M\u00e1rquez",
@@ -368,6 +404,7 @@ let bookData = [
     pages: 368,
     title: "Love in the Time of Cholera",
     year: 1985,
+    status: "Available",
   },
   {
     author: "Johann Wolfgang von Goethe",
@@ -378,6 +415,7 @@ let bookData = [
     pages: 158,
     title: "Faust",
     year: 1832,
+    status: "Available",
   },
   {
     author: "Nikolai Gogol",
@@ -388,6 +426,7 @@ let bookData = [
     pages: 432,
     title: "Dead Souls",
     year: 1842,
+    status: "Available",
   },
   {
     author: "G\u00fcnter Grass",
@@ -398,6 +437,7 @@ let bookData = [
     pages: 600,
     title: "The Tin Drum",
     year: 1959,
+    status: "Available",
   },
   {
     author: "Jo\u00e3o Guimar\u00e3es Rosa",
@@ -408,6 +448,7 @@ let bookData = [
     pages: 494,
     title: "The Devil to Pay in the Backlands",
     year: 1956,
+    status: "Available",
   },
   {
     author: "Knut Hamsun",
@@ -418,6 +459,7 @@ let bookData = [
     pages: 176,
     title: "Hunger",
     year: 1890,
+    status: "Available",
   },
   {
     author: "Ernest Hemingway",
@@ -428,6 +470,7 @@ let bookData = [
     pages: 128,
     title: "The Old Man and the Sea",
     year: 1952,
+    status: "Available",
   },
   {
     author: "Homer",
@@ -437,7 +480,8 @@ let bookData = [
     link: "https://en.wikipedia.org/wiki/Iliad\n",
     pages: 608,
     title: "Iliad",
-    year: -735,
+    year: 735,
+    status: "Available",
   },
   {
     author: "Homer",
@@ -447,7 +491,8 @@ let bookData = [
     link: "https://en.wikipedia.org/wiki/Odyssey\n",
     pages: 374,
     title: "Odyssey",
-    year: -800,
+    year: 800,
+    status: "Available",
   },
   {
     author: "Henrik Ibsen",
@@ -458,6 +503,7 @@ let bookData = [
     pages: 68,
     title: "A Doll's House",
     year: 1879,
+    status: "Available",
   },
   {
     author: "James Joyce",
@@ -468,6 +514,7 @@ let bookData = [
     pages: 228,
     title: "Ulysses",
     year: 1922,
+    status: "Available",
   },
   {
     author: "Franz Kafka",
@@ -478,6 +525,7 @@ let bookData = [
     pages: 488,
     title: "Stories",
     year: 1924,
+    status: "Available",
   },
   {
     author: "Franz Kafka",
@@ -488,6 +536,7 @@ let bookData = [
     pages: 160,
     title: "The Trial",
     year: 1925,
+    status: "Available",
   },
   {
     author: "Franz Kafka",
@@ -498,6 +547,7 @@ let bookData = [
     pages: 352,
     title: "The Castle",
     year: 1926,
+    status: "Available",
   },
   {
     author: "K\u0101lid\u0101sa",
@@ -508,6 +558,7 @@ let bookData = [
     pages: 147,
     title: "The recognition of Shakuntala",
     year: 150,
+    status: "Available",
   },
   {
     author: "Yasunari Kawabata",
@@ -518,6 +569,7 @@ let bookData = [
     pages: 288,
     title: "The Sound of the Mountain",
     year: 1954,
+    status: "Available",
   },
   {
     author: "Nikos Kazantzakis",
@@ -528,6 +580,7 @@ let bookData = [
     pages: 368,
     title: "Zorba the Greek",
     year: 1946,
+    status: "Available",
   },
   {
     author: "D. H. Lawrence",
@@ -538,6 +591,7 @@ let bookData = [
     pages: 432,
     title: "Sons and Lovers",
     year: 1913,
+    status: "Available",
   },
   {
     author: "Halld\u00f3r Laxness",
@@ -548,6 +602,7 @@ let bookData = [
     pages: 470,
     title: "Independent People",
     year: 1934,
+    status: "Available",
   },
   {
     author: "Giacomo Leopardi",
@@ -558,6 +613,7 @@ let bookData = [
     pages: 184,
     title: "Poems",
     year: 1818,
+    status: "Available",
   },
   {
     author: "Doris Lessing",
@@ -568,6 +624,7 @@ let bookData = [
     pages: 688,
     title: "The Golden Notebook",
     year: 1962,
+    status: "Available",
   },
   {
     author: "Astrid Lindgren",
@@ -578,6 +635,7 @@ let bookData = [
     pages: 160,
     title: "Pippi Longstocking",
     year: 1945,
+    status: "Available",
   },
   {
     author: "Lu Xun",
@@ -588,6 +646,7 @@ let bookData = [
     pages: 389,
     title: "Diary of a Madman",
     year: 1918,
+    status: "Available",
   },
   {
     author: "Naguib Mahfouz",
@@ -598,6 +657,7 @@ let bookData = [
     pages: 355,
     title: "Children of Gebelawi",
     year: 1959,
+    status: "Available",
   },
   {
     author: "Thomas Mann",
@@ -608,6 +668,7 @@ let bookData = [
     pages: 736,
     title: "Buddenbrooks",
     year: 1901,
+    status: "Available",
   },
   {
     author: "Thomas Mann",
@@ -618,6 +679,7 @@ let bookData = [
     pages: 720,
     title: "The Magic Mountain",
     year: 1924,
+    status: "Available",
   },
   {
     author: "Herman Melville",
@@ -628,6 +690,7 @@ let bookData = [
     pages: 378,
     title: "Moby Dick",
     year: 1851,
+    status: "Available",
   },
   {
     author: "Michel de Montaigne",
@@ -638,6 +701,7 @@ let bookData = [
     pages: 404,
     title: "Essays",
     year: 1595,
+    status: "Available",
   },
   {
     author: "Elsa Morante",
@@ -648,6 +712,7 @@ let bookData = [
     pages: 600,
     title: "History",
     year: 1974,
+    status: "Available",
   },
   {
     author: "Toni Morrison",
@@ -658,6 +723,7 @@ let bookData = [
     pages: 321,
     title: "Beloved",
     year: 1987,
+    status: "Available",
   },
   {
     author: "Murasaki Shikibu",
@@ -668,6 +734,7 @@ let bookData = [
     pages: 1360,
     title: "The Tale of Genji",
     year: 1006,
+    status: "Available",
   },
   {
     author: "Robert Musil",
@@ -678,6 +745,7 @@ let bookData = [
     pages: 365,
     title: "The Man Without Qualities",
     year: 1931,
+    status: "Available",
   },
   {
     author: "Vladimir Nabokov",
@@ -688,6 +756,7 @@ let bookData = [
     pages: 317,
     title: "Lolita",
     year: 1955,
+    status: "Available",
   },
   {
     author: "George Orwell",
@@ -698,6 +767,7 @@ let bookData = [
     pages: 272,
     title: "Nineteen Eighty-Four",
     year: 1949,
+    status: "Available",
   },
   {
     author: "Ovid",
@@ -708,6 +778,7 @@ let bookData = [
     pages: 576,
     title: "Metamorphoses",
     year: 100,
+    status: "Available",
   },
   {
     author: "Fernando Pessoa",
@@ -718,6 +789,7 @@ let bookData = [
     pages: 272,
     title: "The Book of Disquiet",
     year: 1928,
+    status: "Available",
   },
   {
     author: "Edgar Allan Poe",
@@ -728,6 +800,7 @@ let bookData = [
     pages: 842,
     title: "Tales",
     year: 1950,
+    status: "Available",
   },
   {
     author: "Marcel Proust",
@@ -738,6 +811,7 @@ let bookData = [
     pages: 2408,
     title: "In Search of Lost Time",
     year: 1920,
+    status: "Available",
   },
   {
     author: "Fran\u00e7ois Rabelais",
@@ -748,6 +822,7 @@ let bookData = [
     pages: 623,
     title: "Gargantua and Pantagruel",
     year: 1533,
+    status: "Available",
   },
   {
     author: "Juan Rulfo",
@@ -758,6 +833,7 @@ let bookData = [
     pages: 124,
     title: "Pedro P\u00e1ramo",
     year: 1955,
+    status: "Available",
   },
   {
     author: "Rumi",
@@ -768,6 +844,7 @@ let bookData = [
     pages: 438,
     title: "The Masnavi",
     year: 1236,
+    status: "Available",
   },
   {
     author: "Salman Rushdie",
@@ -778,6 +855,7 @@ let bookData = [
     pages: 536,
     title: "Midnight's Children",
     year: 1981,
+    status: "Available",
   },
   {
     author: "Saadi",
@@ -788,6 +866,7 @@ let bookData = [
     pages: 298,
     title: "Bostan",
     year: 1257,
+    status: "Available",
   },
   {
     author: "Tayeb Salih",
@@ -798,6 +877,7 @@ let bookData = [
     pages: 139,
     title: "Season of Migration to the North",
     year: 1966,
+    status: "Available",
   },
   {
     author: "Jos\u00e9 Saramago",
@@ -808,6 +888,7 @@ let bookData = [
     pages: 352,
     title: "Blindness",
     year: 1995,
+    status: "Available",
   },
   {
     author: "William Shakespeare",
@@ -818,6 +899,7 @@ let bookData = [
     pages: 432,
     title: "Hamlet",
     year: 1603,
+    status: "Available",
   },
   {
     author: "William Shakespeare",
@@ -828,6 +910,7 @@ let bookData = [
     pages: 384,
     title: "King Lear",
     year: 1608,
+    status: "Available",
   },
   {
     author: "William Shakespeare",
@@ -838,6 +921,7 @@ let bookData = [
     pages: 314,
     title: "Othello",
     year: 1609,
+    status: "Available",
   },
   {
     author: "Sophocles",
@@ -847,7 +931,8 @@ let bookData = [
     link: "https://en.wikipedia.org/wiki/Oedipus_the_King\n",
     pages: 88,
     title: "Oedipus the King",
-    year: -430,
+    year: 430,
+    status: "Available",
   },
   {
     author: "Stendhal",
@@ -858,6 +943,7 @@ let bookData = [
     pages: 576,
     title: "The Red and the Black",
     year: 1830,
+    status: "Available",
   },
   {
     author: "Laurence Sterne",
@@ -868,6 +954,7 @@ let bookData = [
     pages: 640,
     title: "The Life And Opinions of Tristram Shandy",
     year: 1760,
+    status: "Available",
   },
   {
     author: "Italo Svevo",
@@ -878,6 +965,7 @@ let bookData = [
     pages: 412,
     title: "Confessions of Zeno",
     year: 1923,
+    status: "Available",
   },
   {
     author: "Jonathan Swift",
@@ -888,6 +976,7 @@ let bookData = [
     pages: 178,
     title: "Gulliver's Travels",
     year: 1726,
+    status: "Available",
   },
   {
     author: "Leo Tolstoy",
@@ -898,6 +987,7 @@ let bookData = [
     pages: 1296,
     title: "War and Peace",
     year: 1867,
+    status: "Available",
   },
   {
     author: "Leo Tolstoy",
@@ -908,6 +998,7 @@ let bookData = [
     pages: 864,
     title: "Anna Karenina",
     year: 1877,
+    status: "Available",
   },
   {
     author: "Leo Tolstoy",
@@ -918,6 +1009,7 @@ let bookData = [
     pages: 92,
     title: "The Death of Ivan Ilyich",
     year: 1886,
+    status: "Available",
   },
   {
     author: "Mark Twain",
@@ -928,6 +1020,7 @@ let bookData = [
     pages: 224,
     title: "The Adventures of Huckleberry Finn",
     year: 1884,
+    status: "Available",
   },
   {
     author: "Valmiki",
@@ -937,7 +1030,8 @@ let bookData = [
     link: "https://en.wikipedia.org/wiki/Ramayana\n",
     pages: 152,
     title: "Ramayana",
-    year: -450,
+    year: 450,
+    status: "Available",
   },
   {
     author: "Virgil",
@@ -947,7 +1041,8 @@ let bookData = [
     link: "https://en.wikipedia.org/wiki/Aeneid\n",
     pages: 442,
     title: "The Aeneid",
-    year: -23,
+    year: 23,
+    status: "Available",
   },
   {
     author: "Vyasa",
@@ -957,7 +1052,8 @@ let bookData = [
     link: "https://en.wikipedia.org/wiki/Mahabharata\n",
     pages: 276,
     title: "Mahabharata",
-    year: -700,
+    year: 700,
+    status: "Available",
   },
   {
     author: "Walt Whitman",
@@ -968,6 +1064,7 @@ let bookData = [
     pages: 152,
     title: "Leaves of Grass",
     year: 1855,
+    status: "Available",
   },
   {
     author: "Virginia Woolf",
@@ -978,6 +1075,7 @@ let bookData = [
     pages: 216,
     title: "Mrs Dalloway",
     year: 1925,
+    status: "Available",
   },
   {
     author: "Virginia Woolf",
@@ -988,6 +1086,7 @@ let bookData = [
     pages: 209,
     title: "To the Lighthouse",
     year: 1927,
+    status: "Available",
   },
   {
     author: "Marguerite Yourcenar",
@@ -998,6 +1097,7 @@ let bookData = [
     pages: 408,
     title: "Memoirs of Hadrian",
     year: 1951,
+    status: "Available",
   },
 ];
 
@@ -1030,10 +1130,8 @@ function loadBook(lang = "All") {
                       book.language
                     }</span>
                 </div>
-                   <div class="not-available">Book Not Available</div>
-                   <div class="bookHover borrow">
-                   <button class="btn btn-sm btn-danger btnBorrow">Borrow</button>
-                   </div>
+                   <div id="notAvailable">Book is Not Available</div>
+
             </div>
 
         </div>`
@@ -1043,14 +1141,6 @@ function loadBook(lang = "All") {
   }
 }
 loadBook("All");
-
-document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("btnBorrow")) {
-    let notAvailable = document.querySelector(".not-available");
-    notAvailable.style.display = "flex";
-    e.target.style.display = "none";
-  }
-});
 
 // Filter book data in select option by language
 
@@ -1106,10 +1196,7 @@ searchBook.addEventListener("input", function () {
                       book.language
                     }</span>
                 </div>
-                <div class="not-available">Not Available</div>
-                   <div class="bookHover borrow">
-                   <button class="btn btn-sm btn-danger btnBorrow" >Borrow</button>
-                   </div>
+               <div id="notAvailable">Book is Not Available</div>
             </div>
 
         </div>`
@@ -1143,3 +1230,21 @@ function counter() {
   loadBook();
 }
 counter();
+
+function bookStatus() {
+  const notAvailable = document.querySelector("#notAvailable");
+  let anyNotAvailable = false;
+
+  bookData.forEach((book) => {
+    if (book.status === "Not Available") {
+      anyNotAvailable = true;
+    }
+  });
+  if (anyNotAvailable) {
+    notAvailable.style.display = "flex";
+  } else {
+    notAvailable.style.display = "none";
+  }
+}
+
+bookStatus();
