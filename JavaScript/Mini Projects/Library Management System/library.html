@@ -646,6 +646,103 @@
                         </div>
                     </div>
                     <!-- Book Data - End-->
+                    <!-- Modal - Books return Form- Start-->
+
+                    <div class="modal fade modal-xl" data-bs-backdrop="static" id="exampleModalBorrow" tabindex="-1"
+                        aria-labelledby="exampleModalBorrow" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header bg-white">
+                                    <img class="img-fluid" src="asset/images/logo.png" style="width: 50px;height: 50px;"
+                                        alt="">
+                                    <h3 class="modal-title text-dark fw-bold fst-italic" id="exampleModalBorrow"
+                                        id="modalTitleBookBorrow">
+                                        Library
+                                        Management System</h3>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container tab-container mt-3">
+                                        <div class="tab-content" id="myBookBorrowTabContent">
+                                            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
+                                                aria-labelledby="home-tab" tabindex="0">
+                                                <div
+                                                    class="container form-main-container d-flex justify-content-center align-items-center ">
+                                                    <div class="form-container mt-5 shadow px-md-5 py-md-3 pb-5">
+                                                        <div class="row my-3">
+                                                            <div class="col text-center">
+                                                                <div class="bg-white py-1 rounded-3">
+                                                                    <h3 class="text-dark">Book Borrow Form</h3>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <form action="#" name="book_borrow">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                            <div class="form-group">
+                                                                                <label class="form-label"
+                                                                                    for="personId">Person
+                                                                                    ID</label>
+                                                                                <select class="form-control"
+                                                                                    name="personId" id="personId">
+                                                                                    <option value="">Select your
+                                                                                        registered
+                                                                                        ID
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label class="form-label"
+                                                                                    for="borrowDate">
+                                                                                    Date</label>
+                                                                                <input
+                                                                                    class="form-control bg-transparent text-white"
+                                                                                    type="date" name="borrowDate"
+                                                                                    id="borrowDate">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label class="form-label"
+                                                                                    for="borrowBookName">
+                                                                                    Book
+                                                                                    Name</label>
+                                                                                <input
+                                                                                    class="form-control bg-transparent text-white"
+                                                                                    type="text" name="borrowBookName"
+                                                                                    id="borrowBookName"
+                                                                                    placeholder="Enter borrow book name">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <div class="form-group">
+                                                                                <div
+                                                                                    class="d-flex justify-content-center align-items-center gap-3 my-3">
+                                                                                    <button type="reset"
+                                                                                        id="bookBorrowClear"
+                                                                                        class="btn btn-danger">Clear</button>
+                                                                                    <button type="submit"
+                                                                                        id="bookBorrowSave"
+                                                                                        class="btn btn-primary">Submit</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal - Books return Form- End-->
 
                 </div>
                 <!-- Manage Books - Tab End -->

@@ -45,5 +45,15 @@ districtList.forEach(function (item) {
   city.appendChild(district);
 });
 
+let userData = getUserDetails();
 
+let userIdList=userData.map((user)=> user.id)
 
+let personId = document.getElementById("personId");
+
+userIdList.forEach(function (item) {
+  let userId = document.createElement("option");
+  userId.list = item;
+  userId.text = item;
+  personId.appendChild(userId);
+});

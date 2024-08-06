@@ -8,7 +8,7 @@ let bookData = [
     pages: 209,
     title: "Things Fall Apart",
     year: 1958,
-    status: "Available",
+    status: "Not Available",
   },
   {
     author: "Hans Christian Andersen",
@@ -1120,17 +1120,25 @@ function loadBook(lang = "All") {
     let bookHTML = data.map(
       (book, index) => `  <div class="col">
             <div class="card shadow book-card">
-                <img class="card-img-top" src="${book.imageLink}" alt=""
-                    style="height: 200px;">
+              <div class="card-img position-relative"><img class="card-img-top" src="${
+                book.imageLink
+              }" alt=""
+                    style="height: 200px;"></div>
                     <div class="number">${index + 1}</div>
                 <div class="card-body">
                     <h6 class="card-title single-line">${book.title}</h6>
-                    <p class="card-text single-line">${book.author}</p>
+                    <p class="card-text single-line" style="font-size:14px;">${
+                      book.author
+                    }</p>
                     <span class="badge bg-secondary lang">Language: ${
                       book.language
                     }</span>
+                    <button class="btn btn-sm btn-primary btn-borrow" data-bs-toggle="modal" data-bs-target="#exampleModalBorrow" >Borrow</button>
+                    <button class="btn btn-sm btn-danger btn-return">Return</button>
                 </div>
-                   <div id="notAvailable">Book is Not Available</div>
+                           <div id="notAvailable" class="${
+                             book.status == "Not Available" ? "block" : ""
+                           }">Book is Not Available</div>
 
             </div>
 
@@ -1186,8 +1194,10 @@ searchBook.addEventListener("input", function () {
       let bookHTML = serachFilterBook.map(
         (book, index) => `  <div class="col">
             <div class="card">
-                <img class="card-img-top" src="${book.imageLink}" alt=""
-                    style="height: 200px;">
+              <div class="card-img"><img class="card-img-top" src="${
+                book.imageLink
+              }" alt=""
+                    style="height: 200px;"></div>
                     <div class="number">${index + 1}</div>
                 <div class="card-body">
                     <h6 class="card-title single-line">${book.title}</h6>
@@ -1195,8 +1205,12 @@ searchBook.addEventListener("input", function () {
                     <span class="badge bg-secondary lang">Language: ${
                       book.language
                     }</span>
+                       <button class="btn btn-sm btn-primary btn-borrow">Borrow</button>
+                    <button class="btn btn-sm btn-danger btn-return">Return</button>
                 </div>
-               <div id="notAvailable">Book is Not Available</div>
+               <div id="notAvailable" class="${
+                 book.status == "Not Available" ? "block" : ""
+               }">Book is Not Available</div>
             </div>
 
         </div>`
@@ -1208,6 +1222,8 @@ searchBook.addEventListener("input", function () {
     loadBook(lang);
   }
 });
+
+// Dashboard counter
 
 function counter() {
   const totalBook = document.getElementById("totalBook");
@@ -1231,20 +1247,14 @@ function counter() {
 }
 counter();
 
-function bookStatus() {
-  const notAvailable = document.querySelector("#notAvailable");
-  let anyNotAvailable = false;
+// Book borrow and hide borrow button
 
-  bookData.forEach((book) => {
-    if (book.status === "Not Available") {
-      anyNotAvailable = true;
-    }
+const btnBorrow = document.querySelectorAll(".btn-borrow");
+const btnReturn = document.querySelector(".btn-return");
+
+btnBorrow.forEach((btn) => {
+  btn.addEventListener("click", function () {
+    btnBorrow.style.display = "none";
+    btnReturn.style.display = "block";
   });
-  if (anyNotAvailable) {
-    notAvailable.style.display = "flex";
-  } else {
-    notAvailable.style.display = "none";
-  }
-}
-
-bookStatus();
+});
