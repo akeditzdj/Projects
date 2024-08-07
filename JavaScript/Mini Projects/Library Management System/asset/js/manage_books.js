@@ -1109,6 +1109,17 @@ const bookSelf = document.querySelector("#bookSelf");
 const selectLanguage = document.getElementById("selectLanguage");
 const searchBook = document.getElementById("searchBook");
 const bookTable = document.getElementById("bookBorrowTable");
+
+// Modal title change
+
+const modalBorrowTitle = document.getElementById("title-borrow");
+const alertMsgBorrow = document.getElementById("alert-borrow-delete");
+
+// Modal open and hide
+const modalBorrow = new bootstrap.Modal(exampleModalBorrow, {
+  keyboard: false,
+});
+
 // Load book in the main page
 function loadBook(lang = "All") {
   let data = [];
@@ -1276,6 +1287,9 @@ bookBorrow.addEventListener("click", function () {
   const borrowDate = borrowDateEl.value;
   const borrowBookName = borrowBookNameEl.value;
   const borrowBookData = getBookDetails();
+  const ModalBookBorrowStatus = new bootstrap.Modal(myModalBorrowBookMessage, {
+    keyboard: false,
+  });
 
   if (personId && borrowDate && borrowBookName) {
     if (id) {
@@ -1297,6 +1311,10 @@ bookBorrow.addEventListener("click", function () {
       clearAllBookInput();
       loadBorrowBookData();
       loadBook();
+      modalBorrow.hide();
+      ModalBookBorrowStatus.show();
+      modalBorrowTitle.innerHTML = "Book Update Status";
+      alertMsgBorrow.innerHTML = "Book Updated Successfully...";
     } else {
       const bookObj = {
         bookId: Math.floor(1000 + Math.random() * 9000),
@@ -1305,15 +1323,84 @@ bookBorrow.addEventListener("click", function () {
         borrowBookName: borrowBookName,
       };
       borrowBookData.push(bookObj);
+
       saveBookLocalStorage(borrowBookData);
       clearAllBookInput();
       loadBorrowBookData();
       loadBook();
+      modalBorrow.hide();
+      ModalBookBorrowStatus.show();
+      modalBorrowTitle.innerHTML = "Book Borrow Status";
+      alertMsgBorrow.innerHTML = "Book Added Successfully...";
     }
   } else {
-    alert("Please fill the all details");
+    ModalBookBorrowStatus.show();
+    modalBorrowTitle.innerHTML = "Warning...";
+    alertMsgBorrow.innerHTML = "Please fill the all details...";
   }
 });
+
+// Delete user
+
+function deleteBorrowBook(id) {
+  const ModalBookBorrowStatus = new bootstrap.Modal(myModalBorrowBookMessage, {
+    keyboard: false,
+  });
+  if (id) {
+    borrowBookData = getBookDetails();
+    let updatebook = borrowBookData.filter((book) => book.bookId != id);
+    borrowBookData = updatebook;
+    saveBookLocalStorage(updatebook);
+    ModalBookBorrowStatus.hide();
+    loadBorrowBookData();
+    loadBook();
+    counter();
+    setTimeout(deleteBookSuccessMessage, 200);
+  }
+}
+
+// Delete Success message with timer
+
+function deleteBookSuccessMessage() {
+  const ModalBookBorrowStatus = new bootstrap.Modal(myModalBorrowBookMessage, {
+    keyboard: false,
+  });
+  const modalBorrowTitle = document.getElementById("title-borrow");
+  const alertMsgBorrow = document.getElementById("alert-borrow-delete");
+  ModalBookBorrowStatus.show();
+  modalBorrowTitle.innerHTML = "Delete Book";
+  alertMsgBorrow.innerHTML = "Book Deleted Successfully...";
+}
+
+// Custom modal delete with confirmation
+
+const deleteModal = new bootstrap.Modal(myModalBorrowBookDelete, {
+  keyboard: false,
+});
+
+function showDeleteModal(callback) {
+  deleteModal.show();
+
+  document.getElementById("yess").addEventListener("click", function () {
+    callback(true);
+    deleteModal.hide();
+  });
+
+  document.getElementById("no0").addEventListener("click", function () {
+    callback(false);
+    deleteModal.hide();
+  });
+}
+
+function deleteBookWithConfirmation(id) {
+  showDeleteModal(function (confirmed) {
+    if (confirmed) {
+      deleteBorrowBook(id);
+    }
+  });
+}
+
+
 
 // ClearAll
 
@@ -1373,18 +1460,23 @@ todayDate();
 // Load book borrow data in table view
 
 function loadBorrowBookData() {
+  let borrowBookData = [];
   bookTable.innerHTML = "";
-  let bookBorrowData = getBookDetails();
+  borrowBookData = getBookDetails();
 
-  bookBorrowData.forEach((book, index) => {
+  borrowBookData.forEach((book, index) => {
     bookTable.innerHTML += `<tr>
   <td>${index + 1}</td>
   <td>${book.bookId}</td>
   <td>${book.borrowDate}</td>
   <td>${book.borrowBookName}</td>
   <td>${book.personId}</td>
-
+   <td><button class="btn btn-sm btn-warning">Return</button></td>
+   <td><button class="btn btn-sm btn-danger" onclick="deleteBookWithConfirmation(${
+     book.bookId
+   })">Delete</button></td>
   </tr>`;
   });
 }
 loadBorrowBookData();
+

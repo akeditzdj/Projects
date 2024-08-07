@@ -654,16 +654,14 @@
                     <!-- Book Data - End-->
                     <!-- Modal - Books return Form- Start-->
 
-                    <div class="modal fade modal-lg" data-bs-backdrop="static" id="exampleModalBorrow" tabindex="-1"
-                        aria-labelledby="exampleModalBorrow" aria-hidden="true">
+                    <div class="modal fade modal-lg" id="exampleModalBorrow" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header bg-white">
                                     <img class="img-fluid" src="asset/images/logo.png" style="width: 50px;height: 50px;"
                                         alt="">
-                                    <h3 class="modal-title text-dark fw-bold fst-italic" id="exampleModalBorrow"
-                                        id="modalTitleBookBorrow">
-                                        Library
+                                    <h3 class="modal-title text-dark fw-bold fst-italic" id="exampleModalLabel"> Library
                                         Management System</h3>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
@@ -752,11 +750,8 @@
                         </div>
                     </div>
 
-                    <!-- Modal - Books return Form- End-->
-
                     <!-- Modal - Book data table start-->
-
-                    <div class="modal fade modal-lg" id="borrowBookDataTable" data-bs-backdrop="static"
+                    <div class="modal fade modal-xl" id="borrowBookDataTable" data-bs-backdrop="static"
                         data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -766,22 +761,27 @@
                                     <h3 class="modal-title text-dark fw-bold fst-italic ps-1" id="staticBackdropLabel"
                                         id="staticBackdropLabel">
                                         Library
-                                        Management System - Borrow Book Data</h3>
+                                        Management System</h3>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body">
+                                <div class="modal-body d-flex justify-content-center">
                                     <div class="row">
                                         <div class="col">
+                                            <div class="py-1 my-4 round rounded-5 text-center bg-light">
+                                                <h4 class="text-dark fw-bold lh-1">Borrow Book Data</h4>
+                                            </div>
                                             <table class="table table-hover table-bordered table-responsive table-dark"
                                                 id="borrowDataTable">
-                                                <thead>
+                                                <thead class="text-center">
                                                     <tr>
                                                         <th>Sl No</th>
                                                         <th>Book Id</th>
                                                         <th>Borrow Date</th>
                                                         <th>Book Name</th>
                                                         <th>Person Id</th>
+                                                        <th colspan="2">Action</th>
+
                                                     </tr>
                                                 </thead>
                                                 <tbody id="bookBorrowTable" class="text-center"></tbody>
@@ -796,6 +796,49 @@
                         </div>
                     </div>
                     <!-- Modal - Book data table end-->
+                    <!-- Modal - Books return Form- End-->
+                    <!-- Modal - User delete warning message - Start -->
+                    <div class="modal" tabindex="-1" id="myModalBorrowBookDelete">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header bg-white">
+                                    <h5 class="modal-title text-dark">Delete User</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Are you sure to delete</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                        id="no0">No</button>
+                                    <button type="button" class="btn btn-primary" id="yess">Yes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal - User delete warning message - End -->
+                    <!------ Message Modal - Start -------->
+
+                    <div class="modal fade" id="myModalBorrowBookMessage">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header bg-white ">
+                                    <h5 id="title-borrow" class="modal-title text-dark"></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p id="alert-borrow-delete"></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!------ Message Modal - End -------->
                 </div>
                 <!-- Manage Books - Tab End -->
 
