@@ -57,3 +57,13 @@ userIdList.forEach(function (item) {
   userId.text = item;
   personId.appendChild(userId);
 });
+
+// let borrowBook = getBookDetails();
+
+// let userID = userData.map((user) => user.id);
+// let bookName = bookData.map((book) => book.title);
+// let personID = borrowBook.map((person) => person.personId);
+
+
+// console.log(userID);
+

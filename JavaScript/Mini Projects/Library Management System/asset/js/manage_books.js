@@ -1108,7 +1108,7 @@ const borrowBookNameEl = document.getElementById("borrowBookName");
 const bookSelf = document.querySelector("#bookSelf");
 const selectLanguage = document.getElementById("selectLanguage");
 const searchBook = document.getElementById("searchBook");
-
+const bookTable = document.getElementById("bookBorrowTable");
 // Load book in the main page
 function loadBook(lang = "All") {
   let data = [];
@@ -1141,7 +1141,7 @@ function loadBook(lang = "All") {
                  <div class="card-footer">
                     <button class="btn btn-sm  btn-primary btn-borrow ${
                       book.status == "Available" ? "block" : "none"
-                    }" data-bs-toggle="modal" data-bs-target="#exampleModalBorrow">Borrow</button>
+                    }" data-bs-toggle="modal" data-bs-target="#exampleModalBorrow" id="btnReturn">Borrow</button>
                           <button class="btn btn-sm btn-danger btn-return  ${
                             book.status == "Not Available" ? "block" : "none"
                           }" ">Return</button>
@@ -1268,14 +1268,14 @@ function counter() {
 counter();
 
 // Book borrow and return button
-
+let borrowBookData = [];
 const bookBorrow = document.getElementById("bookBorrowSave");
 bookBorrow.addEventListener("click", function () {
   const id = bookIdEl.value;
   const personId = personIdEl.value;
   const borrowDate = borrowDateEl.value;
   const borrowBookName = borrowBookNameEl.value;
-  let borrowBookData = [];
+  const borrowBookData = getBookDetails();
 
   if (personId && borrowDate && borrowBookName) {
     if (id) {
@@ -1295,6 +1295,7 @@ bookBorrow.addEventListener("click", function () {
 
       saveBookLocalStorage(updatedBook);
       clearAllBookInput();
+      loadBorrowBookData();
       loadBook();
     } else {
       const bookObj = {
@@ -1306,8 +1307,8 @@ bookBorrow.addEventListener("click", function () {
       borrowBookData.push(bookObj);
       saveBookLocalStorage(borrowBookData);
       clearAllBookInput();
+      loadBorrowBookData();
       loadBook();
-
     }
   } else {
     alert("Please fill the all details");
@@ -1339,3 +1340,51 @@ function getBookDetails() {
   }
   return data;
 }
+
+// Auto get book name when i click borrow button
+
+document.querySelectorAll(".card .btn-borrow").forEach((button) => {
+  button.addEventListener("click", handleButtonClick);
+});
+
+function handleButtonClick(event) {
+  const bookNameEl = document.getElementById("borrowBookName");
+  const btnReturn = document.querySelector(".btn-return");
+  const button = event.currentTarget;
+  const card = button.closest(".card");
+  const titleEl = card.querySelector(".card-title");
+  bookNameEl.value = titleEl.innerText;
+}
+
+// current Date
+function todayDate() {
+  const borrowDate = borrowDateEl;
+  let date = "";
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth() + 1; // Months are zero-indexed (0-11)
+  const day = now.getDate();
+  date = ` ${day}-${month}-${year}`;
+  borrowDate.value = date;
+  return borrowDate;
+}
+todayDate();
+
+// Load book borrow data in table view
+
+function loadBorrowBookData() {
+  bookTable.innerHTML = "";
+  let bookBorrowData = getBookDetails();
+
+  bookBorrowData.forEach((book, index) => {
+    bookTable.innerHTML += `<tr>
+  <td>${index + 1}</td>
+  <td>${book.bookId}</td>
+  <td>${book.borrowDate}</td>
+  <td>${book.borrowBookName}</td>
+  <td>${book.personId}</td>
+
+  </tr>`;
+  });
+}
+loadBorrowBookData();
