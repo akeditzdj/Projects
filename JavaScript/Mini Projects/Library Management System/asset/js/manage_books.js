@@ -30,7 +30,7 @@ let bookData = [
     pages: 928,
     title: "The Divine Comedy",
     year: 1315,
-    status: "Available",
+    status: "Not Available",
   },
   {
     author: "Unknown",
@@ -41,7 +41,7 @@ let bookData = [
     pages: 160,
     title: "The Epic Of Gilgamesh",
     year: 1700,
-    status: "Available",
+    status: "Not Available",
   },
   {
     author: "Unknown",
@@ -1100,13 +1100,16 @@ let bookData = [
     status: "Available",
   },
 ];
+const bookIdEl = document.getElementById("bookId");
+const personIdEl = document.getElementById("personId");
+const borrowDateEl = document.getElementById("borrowDate");
+const borrowBookNameEl = document.getElementById("borrowBookName");
 
 const bookSelf = document.querySelector("#bookSelf");
 const selectLanguage = document.getElementById("selectLanguage");
 const searchBook = document.getElementById("searchBook");
 
 // Load book in the main page
-
 function loadBook(lang = "All") {
   let data = [];
   if (lang == "All") {
@@ -1119,26 +1122,33 @@ function loadBook(lang = "All") {
   if (data.length > 0) {
     let bookHTML = data.map(
       (book, index) => `  <div class="col">
-            <div class="card shadow book-card">
-              <div class="card-img position-relative"><img class="card-img-top" src="${
-                book.imageLink
-              }" alt=""
-                    style="height: 200px;"></div>
-                    <div class="number">${index + 1}</div>
-                <div class="card-body">
-                    <h6 class="card-title single-line">${book.title}</h6>
-                    <p class="card-text single-line" style="font-size:14px;">${
-                      book.author
-                    }</p>
-                    <span class="badge bg-secondary lang">Language: ${
-                      book.language
-                    }</span>
-                    <button class="btn btn-sm btn-primary btn-borrow" data-bs-toggle="modal" data-bs-target="#exampleModalBorrow" >Borrow</button>
-                    <button class="btn btn-sm btn-danger btn-return">Return</button>
-                </div>
-                           <div id="notAvailable" class="${
-                             book.status == "Not Available" ? "block" : ""
-                           }">Book is Not Available</div>
+      <div class="card shadow book-card">
+        <div class="card-img position-relative"><img class="card-img-top" src="${
+          book.imageLink
+        }" alt=""style="height: 180px;"></div>
+          <div class="number">${index + 1}</div>
+            <div class="card-body">
+              <h6 class="card-title single-line">${book.title}</h6>
+                <p class="card-text single-line" style="font-size:14px;">${
+                  book.author
+                }</p>
+                  <span class="badge bg-secondary lang">Language: ${
+                    book.language
+                  }</span>
+
+                   </div>
+
+                 <div class="card-footer">
+                    <button class="btn btn-sm  btn-primary btn-borrow ${
+                      book.status == "Available" ? "block" : "none"
+                    }" data-bs-toggle="modal" data-bs-target="#exampleModalBorrow">Borrow</button>
+                          <button class="btn btn-sm btn-danger btn-return  ${
+                            book.status == "Not Available" ? "block" : "none"
+                          }" ">Return</button>
+                    </div>
+     <div id="notAvailable" class="${
+       book.status == "Not Available" ? "block" : ""
+     }">Book is Not Available</div>
 
             </div>
 
@@ -1193,24 +1203,34 @@ searchBook.addEventListener("input", function () {
     if (serachFilterBook.length > 0) {
       let bookHTML = serachFilterBook.map(
         (book, index) => `  <div class="col">
-            <div class="card">
-              <div class="card-img"><img class="card-img-top" src="${
-                book.imageLink
-              }" alt=""
-                    style="height: 200px;"></div>
-                    <div class="number">${index + 1}</div>
-                <div class="card-body">
-                    <h6 class="card-title single-line">${book.title}</h6>
-                    <p class="card-text single-line">${book.author}</p>
-                    <span class="badge bg-secondary lang">Language: ${
-                      book.language
-                    }</span>
-                       <button class="btn btn-sm btn-primary btn-borrow">Borrow</button>
-                    <button class="btn btn-sm btn-danger btn-return">Return</button>
-                </div>
-               <div id="notAvailable" class="${
-                 book.status == "Not Available" ? "block" : ""
-               }">Book is Not Available</div>
+      <div class="card shadow book-card">
+        <div class="card-img position-relative"><img class="card-img-top" src="${
+          book.imageLink
+        }" alt=""style="height: 180px;"></div>
+          <div class="number">${index + 1}</div>
+            <div class="card-body">
+              <h6 class="card-title single-line">${book.title}</h6>
+                <p class="card-text single-line" style="font-size:14px;">${
+                  book.author
+                }</p>
+                  <span class="badge bg-secondary lang">Language: ${
+                    book.language
+                  }</span>
+
+                   </div>
+
+                 <div class="card-footer">
+                    <button class="btn btn-sm  btn-primary btn-borrow ${
+                      book.status == "Available" ? "block" : "none"
+                    }" data-bs-toggle="modal" data-bs-target="#exampleModalBorrow">Borrow</button>
+                          <button class="btn btn-sm btn-danger btn-return  ${
+                            book.status == "Not Available" ? "block" : "none"
+                          }" ">Return</button>
+                    </div>
+     <div id="notAvailable" class="${
+       book.status == "Not Available" ? "block" : ""
+     }">Book is Not Available</div>
+
             </div>
 
         </div>`
@@ -1247,14 +1267,75 @@ function counter() {
 }
 counter();
 
-// Book borrow and hide borrow button
+// Book borrow and return button
 
-const btnBorrow = document.querySelectorAll(".btn-borrow");
-const btnReturn = document.querySelector(".btn-return");
+const bookBorrow = document.getElementById("bookBorrowSave");
+bookBorrow.addEventListener("click", function () {
+  const id = bookIdEl.value;
+  const personId = personIdEl.value;
+  const borrowDate = borrowDateEl.value;
+  const borrowBookName = borrowBookNameEl.value;
+  let borrowBookData = [];
 
-btnBorrow.forEach((btn) => {
-  btn.addEventListener("click", function () {
-    btnBorrow.style.display = "none";
-    btnReturn.style.display = "block";
-  });
+  if (personId && borrowDate && borrowBookName) {
+    if (id) {
+      //Update book
+      let updatedBook = borrowBookData.map((book) => {
+        if (book.bookId == id) {
+          return {
+            ...book,
+            personId: personId,
+            borrowDate: borrowDate,
+            borrowBookName: borrowBookName,
+          };
+        } else {
+          return book;
+        }
+      });
+
+      saveBookLocalStorage(updatedBook);
+      clearAllBookInput();
+      loadBook();
+    } else {
+      const bookObj = {
+        bookId: Math.floor(1000 + Math.random() * 9000),
+        personId: personId,
+        borrowDate: borrowDate,
+        borrowBookName: borrowBookName,
+      };
+      borrowBookData.push(bookObj);
+      saveBookLocalStorage(borrowBookData);
+      clearAllBookInput();
+      loadBook();
+
+    }
+  } else {
+    alert("Please fill the all details");
+  }
 });
+
+// ClearAll
+
+function clearAllBookInput() {
+  personIdEl.value = "";
+  borrowDateEl.value = "";
+  borrowBookNameEl.value = "";
+}
+
+// Save user data to localStorage...
+
+function saveBookLocalStorage(borrowBookData) {
+  localStorage.setItem("borrowBookData", JSON.stringify(borrowBookData));
+  console.log("Data Saved to localStorage");
+  loadBook();
+}
+
+// Get user data from localStorage...
+
+function getBookDetails() {
+  let data = [];
+  if (localStorage.getItem("borrowBookData") !== null) {
+    data = JSON.parse(localStorage.getItem("borrowBookData"));
+  }
+  return data;
+}

@@ -253,7 +253,7 @@ btnSave.addEventListener("click", function () {
   }
 
   if (id) {
-    //Update tools
+    //Update users
     let updatedUsers = userData.map((user) => {
       if (user.id == id) {
         return {
@@ -285,14 +285,14 @@ btnSave.addEventListener("click", function () {
     clearAll();
     loadUser();
   } else {
-    //Add Tools
+    //Add users
     const userObj = {
       id: Math.floor(1000 + Math.random() * 9000),
       roll: roll,
       userName: userName,
       email: email,
       password: password,
-      cpassword:cpassword,
+      cpassword: cpassword,
       number: number,
       dob: dob,
       gender: gender,

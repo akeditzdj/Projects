@@ -170,6 +170,7 @@ nav ul li:hover {
   color: #000 !important;
 }
 .card {
+  position: relative;
   transition: 0.3s ease-in-out;
   border: none;
   background-color: #fff;
@@ -188,6 +189,7 @@ nav ul li:hover {
   background-position: left bottom;
   color: green;
 }
+
 .number {
   position: absolute;
   width: 30px;
@@ -214,23 +216,6 @@ nav ul li:hover {
   padding: 5px;
   font-weight: 500;
 }
-/*
-.borrow {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: none;
-  border-radius: 5px;
-} */
-
-/* .card:hover .borrow {
-  display: flex;
-} */
 
 .card-img img {
   position: relative !important;
@@ -238,7 +223,7 @@ nav ul li:hover {
 
 #notAvailable {
   width: 100%;
-  height: 63%;
+  height: 52%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -255,37 +240,12 @@ nav ul li:hover {
 .block {
   display: flex !important;
 }
-.btn-borrow{
+
+.btn-borrow {
   display: none;
-  transition: all 0.5s ease;
-}
-
-.card:hover .btn-borrow {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  z-index: 11;
-  width: fit-content;
-  height: 30px;
-  font-size: 14px;
-  display: block;
-
 }
 
 .btn-return {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  z-index: 11;
-  width: fit-content;
-  height: 30px;
-  font-size: 14px;
   display: none;
 }
 
