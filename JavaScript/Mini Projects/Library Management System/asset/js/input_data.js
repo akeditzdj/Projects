@@ -47,23 +47,13 @@ districtList.forEach(function (item) {
 
 let userData = getUserDetails();
 
-let userIdList=userData.map((user)=> user.id)
+let userIdList = userData.map((user) => user);
 
 let personId = document.getElementById("personId");
 
-userIdList.forEach(function (item) {
-  let userId = document.createElement("option");
-  userId.list = item;
-  userId.text = item;
-  personId.appendChild(userId);
+personId.innerHTML = ` <option value="">Select your User </option>`;
+console.log(userIdList);
+
+userIdList.forEach((user) => {
+  personId.innerHTML += `<option value='${user.id}'>${user.userName} (${user.id})</option>`;
 });
-
-// let borrowBook = getBookDetails();
-
-// let userID = userData.map((user) => user.id);
-// let bookName = bookData.map((book) => book.title);
-// let personID = borrowBook.map((person) => person.personId);
-
-
-// console.log(userID);
-

@@ -1,27 +1,13 @@
 const xValues = [
-  "Total Users",
   "Total Books",
   "Total Book Issue",
   "Total Book Returned",
   "Total Book Not Return",
-  "Total Book Price",
-  "Total Author",
-  "Total Publications",
 ];
 
-let yValues = [80, 50, 85, 25, 75, 50, 37, 64];
+let yValues = [100, 100, 100, 100];
 
-const barColors = [
-  "red",
-  "green",
-  "blue",
-  "orange",
-  "brown",
-  "white",
-  "yellow",
-  "violet",
-];
-
+const barColors = ["red", "green", "blue", "orange"];
 
 new Chart("myChart", {
   type: "bar",
@@ -42,4 +28,3 @@ new Chart("myChart", {
     },
   },
 });
-
