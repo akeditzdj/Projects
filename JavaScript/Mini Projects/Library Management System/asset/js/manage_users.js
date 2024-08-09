@@ -704,3 +704,4 @@ function customModal(title, content) {
   });
   modalDialog.show();
 }
+

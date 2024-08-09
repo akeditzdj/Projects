@@ -98,8 +98,8 @@
             <div class="tab-content" id="pills-tabContent">
 
                 <!-- Manage Users - Tab Start -->
-                <div class="tab-pane fade show active" id="manageMembers" role="tabpanel"
-                    aria-labelledby="manageMembers-tab" tabindex="0">
+                <div class="tab-pane fade" id="manageMembers" role="tabpanel" aria-labelledby="manageMembers-tab"
+                    tabindex="0">
                     <!-- Dashboard Content - Start -->
                     <div class="row mt-2 ">
                         <div class="col-md-3">
@@ -225,7 +225,7 @@
                                     <h3 class="modal-title text-dark fw-bold fst-italic" id="exampleModalLabel">
                                         Library
                                         Management System</h3>
-                                    <button type="button" class="btn-close" data-bs-dismiss=""
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
@@ -530,8 +530,8 @@
                 <!-- Manage Users - Tab End -->
 
                 <!-- Manage Books - Tab Start -->
-                <div class="tab-pane fade " id="manageBooks" role="tabpanel" aria-labelledby="manageBooks-tab"
-                    tabindex="0">
+                <div class="tab-pane fade show active" id="manageBooks" role="tabpanel"
+                    aria-labelledby="manageBooks-tab" tabindex="0">
 
                     <!-- Dashboard Content - Start -->
                     <div class="row mt-2">
@@ -779,14 +779,13 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
                                         id="noo">No</button>
-                                    <button type="button" class="btn btn-primary" id="yess">Yes</button>
+                                    <button type="button" class="btn btn-danger" id="yess">Yes</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Modal - User delete warning message - End -->
                     <!------ Chart Modal - Start -------->
-
                     <div class="modal fade modal-xl" id="myModalBookChart">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -875,27 +874,6 @@
                         </div>
                     </div>
                     <!------ Chart Modal - End -------->
-                    <!------ Message Modal - Start -------->
-
-                    <div class="modal fade" id="myModalBorrowBookMessage">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header bg-white ">
-                                    <h5 id="title-borrow" class="modal-title text-dark"></h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p id="alert-borrow-delete"></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!------ Message Modal - End -------->
                 </div>
                 <!-- Manage Books - Tab End -->
             </div>

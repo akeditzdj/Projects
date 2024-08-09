@@ -1320,9 +1320,6 @@ bookBorrow.addEventListener("click", function () {
   const personId = personIdEl.value;
   const borrowDate = borrowDateEl.value;
   const borrowBookName = borrowBookNameEl.value;
-  const ModalBookBorrowStatus = new bootstrap.Modal(myModalBorrowBookMessage, {
-    keyboard: false,
-  });
 
   if (personId && borrowDate && borrowBookName) {
     if (id) {
@@ -1345,9 +1342,8 @@ bookBorrow.addEventListener("click", function () {
       loadBorrowBookData();
       loadBook();
       modalBorrow.hide();
-      ModalBookBorrowStatus.show();
-      modalBorrowTitle.innerHTML = "Book Update Status";
-      alertMsgBorrow.innerHTML = "Book Updated Successfully...";
+
+      customModal("Book Update Status", "Book Updated Successfully...");
     } else {
       const bookObj = {
         bookId: Math.floor(1000 + Math.random() * 9000),
@@ -1360,27 +1356,20 @@ bookBorrow.addEventListener("click", function () {
       loadBorrowBookData();
       loadBook();
       modalBorrow.hide();
-      ModalBookBorrowStatus.show();
-      modalBorrowTitle.innerHTML = "Book Borrow Status";
-      alertMsgBorrow.innerHTML = "Book Added Successfully...";
+
+      customModal("Book Borrow Status", "Book Added Successfully...");
     }
   } else {
-    ModalBookBorrowStatus.show();
-    modalBorrowTitle.innerHTML = "Warning...";
-    alertMsgBorrow.innerHTML = "Please fill the all details...";
+    customModal("Warning...", "Please fill the all details...");
   }
 });
 
 // Delete book
 
 function deleteBorrowBook(id) {
-  const ModalBookBorrowStatus = new bootstrap.Modal(myModalBorrowBookMessage, {
-    keyboard: false,
-  });
   if (id) {
     let updatebook = borrowBookData.filter((book) => book.bookId != id);
     borrowBookData = updatebook;
-    ModalBookBorrowStatus.hide();
     loadBorrowBookData();
     loadBook();
     counter();
@@ -1391,18 +1380,10 @@ function deleteBorrowBook(id) {
 // Delete Success message with timer
 
 function deleteBookSuccessMessage() {
-  const ModalBookBorrowStatus = new bootstrap.Modal(myModalBorrowBookMessage, {
-    keyboard: false,
-  });
-  const modalBorrowTitle = document.getElementById("title-borrow");
-  const alertMsgBorrow = document.getElementById("alert-borrow-delete");
-  ModalBookBorrowStatus.show();
-  modalBorrowTitle.innerHTML = "Delete Book";
-  alertMsgBorrow.innerHTML = "Book Deleted Successfully...";
+  customModal("Delete Book", "Book Deleted Successfully...");
 }
 
 // Custom modal delete with confirmation
-
 const deleteModal = new bootstrap.Modal(myModalBorrowBookDelete, {
   keyboard: false,
 });
