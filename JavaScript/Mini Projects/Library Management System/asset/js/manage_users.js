@@ -116,7 +116,6 @@ const btnAdd = document.getElementById("btnAdd");
 const btnSave = document.getElementById("submit");
 const btnClear = document.getElementById("clear");
 const btnLogin = document.getElementById("btnLogin");
-
 //Filter
 const filterUser = document.getElementById("filterUser");
 
@@ -124,16 +123,18 @@ const filterUser = document.getElementById("filterUser");
 const userTableBody = document.querySelector("#usertable");
 
 // Modal open and hide
-const Modal = new bootstrap.Modal(exampleModal, {
+const mainModal = new bootstrap.Modal(exampleModal, {
+  keyboard: false,
+});
+
+const modalDelete = new bootstrap.Modal(deleteModal, {
   keyboard: false,
 });
 
 btnAdd.addEventListener("click", function () {
-  Modal.show();
+  mainModal.show();
   clearAll();
 });
-
-const modalDelete = new bootstrap.Modal("#myModalDelete", {});
 
 // Show and hide tab
 const bsTab = new bootstrap.Tab("#login-tab");
@@ -351,7 +352,7 @@ btnSave.addEventListener("click", function () {
       }
     });
     users = updatedUsers;
-    Modal.hide();
+    mainModal.hide();
     customModal("User Update Status", "User Updated Successfully...");
     loadUser();
     clearAll();
@@ -385,7 +386,7 @@ btnSave.addEventListener("click", function () {
 
 //Edit users
 function editUsers(id) {
-  Modal.show();
+  mainModal.show();
   const selectedUsers = users.filter((user) => user.id == id)[0];
   idEl.value = selectedUsers.id;
   rollEl.value = selectedUsers.roll;
@@ -413,15 +414,19 @@ function deleteUser(id) {
   if (id) {
     let updatedUsers = users.filter((user) => user.id != id);
     users = updatedUsers;
-    modalDelete.hide();
     loadUser();
     counter();
     setTimeout(deleteSuccessMessage, 200);
   }
 }
 
+// Delete Success message with timer
+function deleteSuccessMessage() {
+  customModal("Delete User", "User Deleted Successfully...");
+}
+
 // Custom modal delete with confirmation
-function showDeleteModal(callback) {
+function showDeleteModalForConfirm(callback) {
   modalDelete.show();
 
   document.getElementById("yes").addEventListener("click", function () {
@@ -434,14 +439,8 @@ function showDeleteModal(callback) {
     modalDelete.hide();
   });
 }
-
-// Delete Success message with timer
-function deleteSuccessMessage() {
-  customModal("Delete User", "User Deleted Successfully...");
-}
-
 function deleteUserWithConfirmation(id) {
-  showDeleteModal(function (confirmed) {
+  showDeleteModalForConfirm(function (confirmed) {
     if (confirmed) {
       deleteUser(id);
     }
@@ -474,10 +473,10 @@ function loadUser(isForSearch = 0, filterUser = []) {
           <td>${user.address}</td>
           <td>${user.terms}</td>
           <td>${user.newsletter}</td>
-          <td><button id="btnEdit" onclick="editUsers(${
+          <td><button onclick="editUsers(${
             user.id
-          })" class="btn btn-sm btn-primary">Edit</button></td>
-          <td><button id="btnDel" onclick="deleteUserWithConfirmation(${
+          })" class="btn btn-sm btn-primary btnDel">Edit</button></td>
+          <td><button  onclick="deleteUserWithConfirmation(${
             user.id
           })" class="btn btn-sm btn-danger">Delete</button></td>
           </tr>`;
@@ -581,10 +580,6 @@ btnLogin.addEventListener("click", function () {
     const storedPassword = users.map((user) => user.password);
     let loginEmail = loginEmailEl.value;
     let loginPassword = loginPasswordEl.value;
-    console.log(storedEmail);
-    const ModalStatus = new bootstrap.Modal(myModalMessage, {
-      keyboard: false,
-    });
 
     if (loginEmail === "") {
       loginEmailEl.focus();
@@ -617,15 +612,11 @@ btnLogin.addEventListener("click", function () {
     ) {
       loginEmailEl = "";
       loginPasswordEl = "";
-      Modal.hide();
-      ModalStatus.show();
-      modalTitle.innerHTML = "User Login";
-      alertMsg.innerHTML = "User Login Successfull...";
+      mainModal.hide();
+      customModal("User Login", "User Login Successfull...");
       btnAdd.style.display = "none";
     } else {
-      ModalStatus.show();
-      modalTitle.innerHTML = "Warning";
-      alertMsg.innerHTML = "User details does not match";
+      customModal("Warning", "User details does not match");
       setError(loginEmailEl, "");
       setError(loginPasswordEl, "");
     }
@@ -683,7 +674,7 @@ function passwordShowAndHide() {
 }
 passwordShowAndHide();
 
-// custom pop-up modal
+// custom modal dialog box
 
 function customModal(title, content) {
   const modal = document.getElementById("modal");
@@ -707,8 +698,9 @@ function customModal(title, content) {
 
   modal.innerHTML = loadModal;
   // Modal open and hide
-  const myCustomModal = new bootstrap.Modal(myCustomModal, {
+
+  const modalDialog = new bootstrap.Modal(myCustomModal, {
     keyboard: false,
   });
-  myCustomModal.show();
+  modalDialog.show();
 }

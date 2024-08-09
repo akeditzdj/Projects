@@ -1415,7 +1415,7 @@ function showDeleteModal(callback) {
     deleteModal.hide();
   });
 
-  document.getElementById("no0").addEventListener("click", function () {
+  document.getElementById("noo").addEventListener("click", function () {
     callback(false);
     deleteModal.hide();
   });

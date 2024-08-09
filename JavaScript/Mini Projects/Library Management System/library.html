@@ -194,23 +194,25 @@
                     </div>
                     <!-- User Data Table - End-->
                     <!-- Modal - User delete warning message - Start -->
-                            <div class="modal" tabindex="-1" id="myModalDelete">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header bg-white">
-                                            <h5 class="modal-title text-dark">Delete User</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>Are you sure to delete</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="no">No</button>
-                                            <button type="button" class="btn btn-primary" id="yes">Yes</button>
-                                        </div>
-                                    </div>
+                    <div class="modal" tabindex="-1" id="deleteModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header bg-white">
+                                    <h5 class="modal-title text-dark">Delete User</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Are you sure to delete?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                        id="no">No</button>
+                                    <button type="button" class="btn btn-danger" id="yes">Yes</button>
                                 </div>
                             </div>
+                        </div>
+                    </div>
                     <!-- Modal - User delete warning message - End -->
                     <!-- Modal - User registration and Login form - Start-->
                     <div class="modal fade modal-xl" data-bs-backdrop="static" id="exampleModal" tabindex="-1"
@@ -776,7 +778,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                                        id="no0">No</button>
+                                        id="noo">No</button>
                                     <button type="button" class="btn btn-primary" id="yess">Yes</button>
                                 </div>
                             </div>
