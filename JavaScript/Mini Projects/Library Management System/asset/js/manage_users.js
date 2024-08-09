@@ -1,3 +1,89 @@
+// user details
+
+let users = [
+  {
+    address: "Assumenda quis provi",
+    city: "Namakkal",
+    cpassword: "Pa$$w0rd!",
+    dob: "2009-04-03",
+    email: "wesyzel@mailinator.com",
+    gender: "Others",
+    id: 2094,
+    newsletter: "Agreed",
+    number: "9786000352",
+    password: "Pa$$w0rd!",
+    pincode: "123456",
+    roll: "Student",
+    terms: "Agreed",
+    userName: "bekynof",
+  },
+  {
+    id: 1733,
+    roll: "Staff",
+    userName: "puhehulib",
+    email: "hafyzi@mailinator.com",
+    password: "Pa$$w0rd!",
+    cpassword: "Pa$$w0rd!",
+    number: "9786000352",
+    dob: "2012-04-09",
+    gender: "Male",
+    city: "Thoothukudi (Tuticorin)",
+    pincode: "123456",
+    address: "Sint dolor tempora ",
+    terms: "Agreed",
+    newsletter: "Agreed",
+  },
+  {
+    id: 9094,
+    roll: "Staff",
+    userName: "soved",
+    email: "volygasowa@mailinator.com",
+    password: "Pa$$w0rd!",
+    cpassword: "Pa$$w0rd!",
+    number: "1234567890",
+    dob: "2010-03-14",
+    gender: "Female",
+    city: "Tirunelveli",
+    pincode: "123456",
+    address: "Sunt quae sunt cill",
+    terms: "Agreed",
+    newsletter: "Agreed",
+  },
+  {
+    id: 7301,
+    roll: "Staff",
+    userName: "gexybor",
+    email: "litu@mailinator.com",
+    password: "Pa$$w0rd!",
+    cpassword: "Pa$$w0rd!",
+    number: "8486516511",
+    dob: "1990-07-09",
+    gender: "Others",
+    city: "Ramanathapuram",
+    pincode: "646316",
+    address: "Nisi non sit sint l",
+    terms: "Agreed",
+    newsletter: "Agreed",
+  },
+
+  {
+    id: 7623,
+    roll: "Staff",
+    userName: "ragiw",
+    email: "henykago@mailinator.com",
+    password: "Pa$$w0rd!",
+    cpassword: "Pa$$w0rd!",
+    number: "6616516515",
+    dob: "2005-11-10",
+    gender: "Female",
+    city: "Kanyakumari",
+    pincode: "212151",
+    address: "Et eum est debitis ",
+    terms: "Agreed",
+    newsletter: "Disagree",
+  },
+];
+
 //Get data from new user
 //Get Registration inputs
 const formEl = document.querySelector("form");
@@ -55,7 +141,7 @@ btnAdd.addEventListener("click", function () {
 
 // Show and hide tab
 
-const bsTab = new bootstrap.Tab("#profile-tab");
+const bsTab = new bootstrap.Tab("#login-tab");
 
 btnSave.addEventListener("click", function () {
   show.bs.tab();
@@ -97,7 +183,6 @@ btnSave.addEventListener("click", function () {
   const address = addressEl.value;
   const terms = termsEl.checked ? "Agreed" : "Disagree";
   const newsletter = newsletterEl.checked ? "Agreed" : "Disagree";
-  let userData = getUserDetails();
   const ModalStatus = new bootstrap.Modal(myModalMessage, {
     keyboard: false,
   });
@@ -254,7 +339,7 @@ btnSave.addEventListener("click", function () {
 
   if (id) {
     //Update users
-    let updatedUsers = userData.map((user) => {
+    let updatedUsers = users.map((user) => {
       if (user.id == id) {
         return {
           ...user,
@@ -276,14 +361,14 @@ btnSave.addEventListener("click", function () {
         return user;
       }
     });
-    saveUsersLocalStorage(updatedUsers);
+    users = updatedUsers;
     Modal.hide();
     ModalStatus.show();
     // mainModalTitle.innerHTML = "UPDATE USER";
     modalTitle.innerHTML = "User Update Status";
     alertMsg.innerHTML = "User Updated Successfully...";
-    clearAll();
     loadUser();
+    clearAll();
   } else {
     //Add users
     const userObj = {
@@ -303,14 +388,15 @@ btnSave.addEventListener("click", function () {
       newsletter: newsletter,
     };
 
-    userData.push(userObj);
+    users.push(userObj);
     ModalStatus.show();
 
-    saveUsersLocalStorage(userData);
+    // saveUsersLocalStorage(userData);
     clearAll();
     loadUser();
     counter();
     modalTitle.innerHTML = "New User Registration";
+    alertMsg.innerHTML = "User Added Successfully...";
   }
   bsTab.show();
 });
@@ -318,9 +404,7 @@ btnSave.addEventListener("click", function () {
 //Edit users
 function editUsers(id) {
   Modal.show();
-
-  let userData = getUserDetails();
-  const selectedUsers = userData.filter((user) => user.id == id)[0];
+  const selectedUsers = users.filter((user) => user.id == id)[0];
   idEl.value = selectedUsers.id;
   rollEl.value = selectedUsers.roll;
   userNameEl.value = selectedUsers.userName;
@@ -338,7 +422,6 @@ function editUsers(id) {
     : genderVal === "Female"
     ? (femaleEl.checked = true)
     : (othersEl.checked = true);
-
   loadUser();
 }
 
@@ -346,9 +429,8 @@ function editUsers(id) {
 
 function deleteUser(id) {
   if (id) {
-    userData = getUserDetails();
-    let updatedUsers = userData.filter((user) => user.id != id);
-    userData = updatedUsers;
+    let updatedUsers = users.filter((user) => user.id != id);
+    users = updatedUsers;
     saveUsersLocalStorage(updatedUsers);
     msgModal.hide();
     loadUser();
@@ -398,30 +480,11 @@ function deleteUserWithConfirmation(id) {
   });
 }
 
-// Save user data to localStorage...
-
-function saveUsersLocalStorage(userData) {
-  localStorage.setItem("userData", JSON.stringify(userData));
-  console.log("Data Saved to localStorage");
-  loadUser();
-}
-
-// Get user data from localStorage...
-
-function getUserDetails() {
-  let data = [];
-  if (localStorage.getItem("userData") !== null) {
-    data = JSON.parse(localStorage.getItem("userData"));
-  }
-  return data;
-}
-
 // Load user data
 
 function loadUser(isForSearch = 0, filterUser = []) {
-  let userData = [];
   if (isForSearch == 0) {
-    userData = getUserDetails();
+    userData = users;
   } else {
     userData = filterUser;
   }
@@ -475,8 +538,7 @@ btnClear.addEventListener("click", clearAll);
 //Filter users
 filterUser.addEventListener("input", function () {
   const searchQuery = this.value.toLowerCase();
-  const userData = getUserDetails();
-  const filterUser = userData.filter(
+  const filterUser = users.filter(
     (user) =>
       user.userName.toLowerCase().includes(searchQuery) ||
       user.id.toString().includes(searchQuery)
@@ -499,14 +561,13 @@ function counter() {
   const totalFemale = document.getElementById("totalFemale");
   const totalOthers = document.getElementById("totalOthers");
 
-  const userData = getUserDetails();
   let staff = 0;
   let student = 0;
   let male = 0;
   let female = 0;
   let others = 0;
 
-  userData.forEach((user) => {
+  users.forEach((user) => {
     user.roll;
     user.gender;
     if (user.roll == "Staff") {
@@ -548,9 +609,8 @@ btnLogin.addEventListener("click", function () {
   function login() {
     let loginEmailEl = document.getElementById("loginEmail");
     let loginPasswordEl = document.getElementById("loginPassword");
-    userData = getUserDetails();
-    const storedEmail = userData.map((user) => user.email);
-    const storedPassword = userData.map((user) => user.password);
+    const storedEmail = users.map((user) => user.email);
+    const storedPassword = users.map((user) => user.password);
     let loginEmail = loginEmailEl.value;
     let loginPassword = loginPasswordEl.value;
     console.log(storedEmail);

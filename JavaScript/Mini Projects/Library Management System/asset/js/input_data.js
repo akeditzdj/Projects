@@ -45,14 +45,13 @@ districtList.forEach(function (item) {
   city.appendChild(district);
 });
 
-let userData = getUserDetails();
+let userData = users;
 
 let userIdList = userData.map((user) => user);
 
 let personId = document.getElementById("personId");
 
 personId.innerHTML = ` <option value="">Select your User </option>`;
-console.log(userIdList);
 
 userIdList.forEach((user) => {
   personId.innerHTML += `<option value='${user.id}'>${user.userName} (${user.id})</option>`;

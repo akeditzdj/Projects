@@ -1100,6 +1100,39 @@ let bookData = [
     status: "Available",
   },
 ];
+
+let borrowBookData = [
+  {
+    bookId: 6143,
+    personId: "1733",
+    borrowDate: " 9-8-2024",
+    borrowBookName: "The Book Of Job",
+  },
+  {
+    bookId: 4470,
+    personId: "9094",
+    borrowDate: " 9-8-2024",
+    borrowBookName: "Jacques the Fatalist",
+  },
+  {
+    bookId: 8018,
+    personId: "1733",
+    borrowDate: " 9-8-2024",
+    borrowBookName: "The Golden Notebook",
+  },
+  {
+    bookId: 3739,
+    personId: "7301",
+    borrowDate: " 9-8-2024",
+    borrowBookName: "To the Lighthouse",
+  },
+  {
+    bookId: 8096,
+    personId: "1733",
+    borrowDate: " 9-8-2024",
+    borrowBookName: "The Death of Ivan Ilyich",
+  },
+];
 const bookIdEl = document.getElementById("bookId");
 const personIdEl = document.getElementById("personId");
 const borrowDateEl = document.getElementById("borrowDate");
@@ -1279,14 +1312,13 @@ function counter() {
 counter();
 
 // Book borrow and return button
-let borrowBookData = [];
+
 const bookBorrow = document.getElementById("bookBorrowSave");
 bookBorrow.addEventListener("click", function () {
   const id = bookIdEl.value;
   const personId = personIdEl.value;
   const borrowDate = borrowDateEl.value;
   const borrowBookName = borrowBookNameEl.value;
-  const borrowBookData = getBookDetails();
   const ModalBookBorrowStatus = new bootstrap.Modal(myModalBorrowBookMessage, {
     keyboard: false,
   });
@@ -1307,7 +1339,7 @@ bookBorrow.addEventListener("click", function () {
         }
       });
 
-      saveBookLocalStorage(updatedBook);
+     borrowBookData = updatedBook;
       clearAllBookInput();
       loadBorrowBookData();
       loadBook();
@@ -1323,8 +1355,6 @@ bookBorrow.addEventListener("click", function () {
         borrowBookName: borrowBookName,
       };
       borrowBookData.push(bookObj);
-
-      saveBookLocalStorage(borrowBookData);
       clearAllBookInput();
       loadBorrowBookData();
       loadBook();
@@ -1347,7 +1377,6 @@ function deleteBorrowBook(id) {
     keyboard: false,
   });
   if (id) {
-    borrowBookData = getBookDetails();
     let updatebook = borrowBookData.filter((book) => book.bookId != id);
     borrowBookData = updatebook;
     saveBookLocalStorage(updatebook);
@@ -1400,32 +1429,12 @@ function deleteBookWithConfirmation(id) {
   });
 }
 
-
-
 // ClearAll
 
 function clearAllBookInput() {
   personIdEl.value = "";
   borrowDateEl.value = "";
   borrowBookNameEl.value = "";
-}
-
-// Save user data to localStorage...
-
-function saveBookLocalStorage(borrowBookData) {
-  localStorage.setItem("borrowBookData", JSON.stringify(borrowBookData));
-  console.log("Data Saved to localStorage");
-  loadBook();
-}
-
-// Get user data from localStorage...
-
-function getBookDetails() {
-  let data = [];
-  if (localStorage.getItem("borrowBookData") !== null) {
-    data = JSON.parse(localStorage.getItem("borrowBookData"));
-  }
-  return data;
 }
 
 // Auto get book name when i click borrow button
@@ -1460,10 +1469,7 @@ todayDate();
 // Load book borrow data in table view
 
 function loadBorrowBookData() {
-  let borrowBookData = [];
   bookTable.innerHTML = "";
-  borrowBookData = getBookDetails();
-
   borrowBookData.forEach((book, index) => {
     bookTable.innerHTML += `<tr>
   <td>${index + 1}</td>
