@@ -117,12 +117,6 @@ const btnSave = document.getElementById("submit");
 const btnClear = document.getElementById("clear");
 const btnLogin = document.getElementById("btnLogin");
 
-// Modal title change
-
-const modalTitle = document.getElementById("title");
-const alertMsg = document.getElementById("alert");
-// const mainModalTitle = document.getElementById("exampleModalLabel");
-
 //Filter
 const filterUser = document.getElementById("filterUser");
 
@@ -138,6 +132,8 @@ btnAdd.addEventListener("click", function () {
   Modal.show();
   clearAll();
 });
+
+const modalDelete = new bootstrap.Modal("#myModalDelete", {});
 
 // Show and hide tab
 const bsTab = new bootstrap.Tab("#login-tab");
@@ -178,9 +174,7 @@ btnSave.addEventListener("click", function () {
   const address = addressEl.value;
   const terms = termsEl.checked ? "Agreed" : "Disagree";
   const newsletter = newsletterEl.checked ? "Agreed" : "Disagree";
-  const ModalStatus = new bootstrap.Modal(myModalMessage, {
-    keyboard: false,
-  });
+
   // Form validation
 
   if (roll === "") {
@@ -358,10 +352,7 @@ btnSave.addEventListener("click", function () {
     });
     users = updatedUsers;
     Modal.hide();
-    ModalStatus.show();
-    // mainModalTitle.innerHTML = "UPDATE USER";
-    modalTitle.innerHTML = "User Update Status";
-    alertMsg.innerHTML = "User Updated Successfully...";
+    customModal("User Update Status", "User Updated Successfully...");
     loadUser();
     clearAll();
   } else {
@@ -384,14 +375,10 @@ btnSave.addEventListener("click", function () {
     };
 
     users.push(userObj);
-    ModalStatus.show();
-
-    // saveUsersLocalStorage(userData);
     clearAll();
     loadUser();
     counter();
-    modalTitle.innerHTML = "New User Registration";
-    alertMsg.innerHTML = "User Added Successfully...";
+    customModal("New User Registration", "User Added Successfully...");
   }
   bsTab.show();
 });
@@ -426,45 +413,31 @@ function deleteUser(id) {
   if (id) {
     let updatedUsers = users.filter((user) => user.id != id);
     users = updatedUsers;
-    saveUsersLocalStorage(updatedUsers);
-    msgModal.hide();
+    modalDelete.hide();
     loadUser();
     counter();
     setTimeout(deleteSuccessMessage, 200);
   }
 }
 
-// Delete Success message with timer
-
-function deleteSuccessMessage() {
-  const ModalStatus = new bootstrap.Modal(myModalMessage, {
-    keyboard: false,
-  });
-  const modalTitle = document.getElementById("title");
-  const alertMsg = document.getElementById("alert");
-  ModalStatus.show();
-  modalTitle.innerHTML = "Delete User";
-  alertMsg.innerHTML = "User Deleted Successfully...";
-}
-
 // Custom modal delete with confirmation
-
-const msgModal = new bootstrap.Modal(myModalDelete, {
-  keyboard: false,
-});
-
 function showDeleteModal(callback) {
-  msgModal.show();
+  modalDelete.show();
 
   document.getElementById("yes").addEventListener("click", function () {
     callback(true);
-    msgModal.hide();
+    modalDelete.hide();
   });
 
   document.getElementById("no").addEventListener("click", function () {
     callback(false);
-    msgModal.hide();
+    modalDelete.hide();
   });
+}
+
+// Delete Success message with timer
+function deleteSuccessMessage() {
+  customModal("Delete User", "User Deleted Successfully...");
 }
 
 function deleteUserWithConfirmation(id) {
@@ -598,7 +571,7 @@ counter();
 // }
 // reload();
 
-// Login page 
+// Login page
 
 btnLogin.addEventListener("click", function () {
   function login() {
@@ -709,3 +682,33 @@ function passwordShowAndHide() {
   });
 }
 passwordShowAndHide();
+
+// custom pop-up modal
+
+function customModal(title, content) {
+  const modal = document.getElementById("modal");
+  let loadModal = `
+                <div class="modal fade" id="myCustomModal" >
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header bg-white ">
+                                    <h5 id="title" class="modal-title text-dark">${title}</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                              <p>${content}</p></div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+`;
+
+  modal.innerHTML = loadModal;
+  // Modal open and hide
+  const myCustomModal = new bootstrap.Modal(myCustomModal, {
+    keyboard: false,
+  });
+  myCustomModal.show();
+}

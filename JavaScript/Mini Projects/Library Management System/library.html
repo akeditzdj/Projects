@@ -98,8 +98,8 @@
             <div class="tab-content" id="pills-tabContent">
 
                 <!-- Manage Users - Tab Start -->
-                <div class="tab-pane fade" id="manageMembers" role="tabpanel" aria-labelledby="manageMembers-tab"
-                    tabindex="0">
+                <div class="tab-pane fade show active" id="manageMembers" role="tabpanel"
+                    aria-labelledby="manageMembers-tab" tabindex="0">
                     <!-- Dashboard Content - Start -->
                     <div class="row mt-2 ">
                         <div class="col-md-3">
@@ -164,8 +164,8 @@
                         </div>
                     </div>
                     <!-- Page Header and Title - End-->
-                    <!-- User Data Table - Start-->
 
+                    <!-- User Data Table - Start-->
                     <div class="row-mt-5">
                         <div class="col-md-12">
                             <table class="table table-responsive table-hover table-bordered table-dark" id="userReg">
@@ -193,31 +193,26 @@
                         </div>
                     </div>
                     <!-- User Data Table - End-->
-
                     <!-- Modal - User delete warning message - Start -->
-                    <div class="modal" tabindex="-1" id="myModalDelete">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header bg-white">
-                                    <h5 class="modal-title text-dark">Delete User</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Are you sure to delete</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                                        id="no">No</button>
-                                    <button type="button" class="btn btn-primary" id="yes">Yes</button>
+                            <div class="modal" tabindex="-1" id="myModalDelete">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-white">
+                                            <h5 class="modal-title text-dark">Delete User</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Are you sure to delete</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="no">No</button>
+                                            <button type="button" class="btn btn-primary" id="yes">Yes</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
                     <!-- Modal - User delete warning message - End -->
-
                     <!-- Modal - User registration and Login form - Start-->
-
                     <div class="modal fade modal-xl" data-bs-backdrop="static" id="exampleModal" tabindex="-1"
                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -528,34 +523,13 @@
                         </div>
                     </div>
                     <!-- Modal - User registration and Login form - End-->
-                    <!------ Message Modal - Start -------->
 
-                    <div class="modal fade" id="myModalMessage">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header bg-white ">
-                                    <h5 id="title" class="modal-title text-dark"></h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p id="alert"></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!------ Message Modal - End -------->
-                    <!--
-                    </div> -->
                 </div>
                 <!-- Manage Users - Tab End -->
+
                 <!-- Manage Books - Tab Start -->
-                <div class="tab-pane fade show active " id="manageBooks" role="tabpanel"
-                    aria-labelledby="manageBooks-tab" tabindex="0">
+                <div class="tab-pane fade " id="manageBooks" role="tabpanel" aria-labelledby="manageBooks-tab"
+                    tabindex="0">
 
                     <!-- Dashboard Content - Start -->
                     <div class="row mt-2">
@@ -923,8 +897,12 @@
                 </div>
                 <!-- Manage Books - Tab End -->
             </div>
+            <!-- custom pop-up modal-start -->
+            <div id="modal"></div>
+            <!-- custom pop-up modal-End -->
         </div>
     </div>
+
 </div>
 <!-- Tabs Control End -->
 

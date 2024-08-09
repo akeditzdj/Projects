@@ -7,9 +7,9 @@ const xValues = [
   "Total Languages",
 ];
 
-let yValues = [100, 80, 50, 30,25,24];
+let yValues = [100, 80, 50, 30, 25, 24];
 
-const barColors = ["green", "blue", "orange", "red","purple","pink"];
+const barColors = ["green", "blue", "orange", "red", "purple", "pink"];
 
 new Chart("myChart", {
   type: "bar",

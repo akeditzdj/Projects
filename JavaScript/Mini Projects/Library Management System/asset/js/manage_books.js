@@ -1315,7 +1315,6 @@ counter();
 
 // Book borrow and return button
 
-
 bookBorrow.addEventListener("click", function () {
   const id = bookIdEl.value;
   const personId = personIdEl.value;
@@ -1341,7 +1340,7 @@ bookBorrow.addEventListener("click", function () {
         }
       });
 
-     borrowBookData = updatedBook;
+      borrowBookData = updatedBook;
       clearAllBookInput();
       loadBorrowBookData();
       loadBook();
@@ -1372,7 +1371,7 @@ bookBorrow.addEventListener("click", function () {
   }
 });
 
-// Delete user
+// Delete book
 
 function deleteBorrowBook(id) {
   const ModalBookBorrowStatus = new bootstrap.Modal(myModalBorrowBookMessage, {
@@ -1486,4 +1485,3 @@ function loadBorrowBookData() {
   });
 }
 loadBorrowBookData();
-
