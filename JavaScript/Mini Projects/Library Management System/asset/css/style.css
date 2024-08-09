@@ -109,11 +109,6 @@ nav ul li:hover {
   transform: translateY(-10px);
 }
 
-/* .side-nav-bar {
-  max-width: 300px;
-  height: 100%;
-  position: fixed;
-} */
 .offcanvas {
   margin-top: 0px;
   background-color: #1f2831;
@@ -250,7 +245,7 @@ nav ul li:hover {
 }
 
 canvas {
-  width: 75% !important;
+  width: 100% !important;
   height: auto !important;
   margin: 0 auto;
 }
@@ -291,7 +286,7 @@ canvas {
   }
   canvas {
     width: 100% !important;
-    height: 350px !important;
+    height: auto !important;
     margin: 0 auto;
   }
 }

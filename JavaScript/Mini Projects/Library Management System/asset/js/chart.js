@@ -3,11 +3,13 @@ const xValues = [
   "Total Book Issue",
   "Total Book Returned",
   "Total Book Not Return",
+  "Total Authors",
+  "Total Languages",
 ];
 
-let yValues = [100, 100, 100, 100];
+let yValues = [100, 80, 50, 30,25,24];
 
-const barColors = ["red", "green", "blue", "orange"];
+const barColors = ["green", "blue", "orange", "red","purple","pink"];
 
 new Chart("myChart", {
   type: "bar",

@@ -1143,6 +1143,8 @@ const selectLanguage = document.getElementById("selectLanguage");
 const searchBook = document.getElementById("searchBook");
 const bookTable = document.getElementById("bookBorrowTable");
 
+const bookBorrow = document.getElementById("bookBorrowSave");
+
 // Modal title change
 
 const modalBorrowTitle = document.getElementById("title-borrow");
@@ -1313,7 +1315,7 @@ counter();
 
 // Book borrow and return button
 
-const bookBorrow = document.getElementById("bookBorrowSave");
+
 bookBorrow.addEventListener("click", function () {
   const id = bookIdEl.value;
   const personId = personIdEl.value;
@@ -1379,7 +1381,6 @@ function deleteBorrowBook(id) {
   if (id) {
     let updatebook = borrowBookData.filter((book) => book.bookId != id);
     borrowBookData = updatebook;
-    saveBookLocalStorage(updatebook);
     ModalBookBorrowStatus.hide();
     loadBorrowBookData();
     loadBook();

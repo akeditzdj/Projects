@@ -140,12 +140,7 @@ btnAdd.addEventListener("click", function () {
 });
 
 // Show and hide tab
-
 const bsTab = new bootstrap.Tab("#login-tab");
-
-btnSave.addEventListener("click", function () {
-  show.bs.tab();
-});
 
 // form validation error message
 
@@ -603,7 +598,7 @@ counter();
 // }
 // reload();
 
-// Login
+// Login page 
 
 btnLogin.addEventListener("click", function () {
   function login() {
