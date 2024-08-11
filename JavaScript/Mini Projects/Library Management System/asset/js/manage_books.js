@@ -1156,15 +1156,16 @@ const modalBorrow = new bootstrap.Modal(exampleModalBorrow, {
 });
 
 // Load book in the main page
-function loadBook(lang = "All") {
+function loadBook(lang = "All", type = "Filter", searchData = []) {
   let data = [];
   if (lang == "All") {
     data = bookData;
-  } else {
+  } else if (lang != "All" && type == "Filter") {
     const filteredBook = bookData.filter((book) => book.language == lang);
     data = filteredBook;
+  } else if (type == "Search") {
+    data = searchData;
   }
-
   if (data.length > 0) {
     let bookHTML = data.map(
       (book, index) => `  <div class="col">
@@ -1178,9 +1179,7 @@ function loadBook(lang = "All") {
                 <p class="card-text single-line" style="font-size:14px;">${
                   book.author
                 }</p>
-                  <span class="badge bg-secondary lang">Language: ${
-                    book.language
-                  }</span>
+                  <span class="badge bg-secondary lang"> ${book.language}</span>
 
                    </div>
 
@@ -1246,44 +1245,7 @@ searchBook.addEventListener("input", function () {
         book.author.toLocaleLowerCase().includes(searchBook)
     );
 
-    if (serachFilterBook.length > 0) {
-      let bookHTML = serachFilterBook.map(
-        (book, index) => `  <div class="col">
-      <div class="card shadow book-card">
-        <div class="card-img position-relative"><img class="card-img-top" src="${
-          book.imageLink
-        }" alt=""style="height: 180px;"></div>
-          <div class="number">${index + 1}</div>
-            <div class="card-body">
-              <h6 class="card-title single-line">${book.title}</h6>
-                <p class="card-text single-line" style="font-size:14px;">${
-                  book.author
-                }</p>
-                  <span class="badge bg-secondary lang">Language: ${
-                    book.language
-                  }</span>
-
-                   </div>
-
-                 <div class="card-footer">
-                    <button class="btn btn-sm  btn-primary btn-borrow ${
-                      book.status == "Available" ? "block" : "none"
-                    }" data-bs-toggle="modal" data-bs-target="#exampleModalBorrow">Borrow</button>
-                          <button class="btn btn-sm btn-danger btn-return  ${
-                            book.status == "Not Available" ? "block" : "none"
-                          }" ">Return</button>
-                    </div>
-     <div id="notAvailable" class="${
-       book.status == "Not Available" ? "block" : ""
-     }">Book is Not Available</div>
-
-            </div>
-
-        </div>`
-      );
-      bookHTML = bookHTML.join(" ");
-      bookSelf.innerHTML = bookHTML;
-    }
+    loadBook(lang, "Search", serachFilterBook);
   } else {
     loadBook(lang);
   }
@@ -1431,7 +1393,27 @@ function handleButtonClick(event) {
   const card = button.closest(".card");
   const titleEl = card.querySelector(".card-title");
   bookNameEl.value = titleEl.innerText;
+  const bookimageEl = document.getElementById("book-image");
+  // let bookPic = card.querySelector("img");
+  let bookPic = bookData.filter((book) => book.imageLink);
+  bookimageEl.innerHTML = `  <div class="card shadow">
+        <div><img class="card-img-top" src="${bookPic}" alt=""style="height: 180px;"></div>
+        </div>
+        `;
+
+  console.log(bookPic);
 }
+
+/*
+
+`  <div class="card shadow">
+        <div><img class="card-img-top" src="${bookPic.imageLink}" alt=""style="height: 180px;"></div>
+            <div class="card-body">
+              <h6 class="card-title single-line">${bookPic.title}</h6>
+                <p class="card-text single-line" style="font-size:14px;">${bookPic.author}</p>
+            </div> `;
+
+*/
 
 // current Date
 function todayDate() {
