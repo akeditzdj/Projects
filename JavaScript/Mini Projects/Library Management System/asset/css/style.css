@@ -180,7 +180,7 @@ nav ul li:hover {
   margin: 0 auto;
 }
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
   background-position: left bottom;
   color: green;
 }

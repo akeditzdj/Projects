@@ -1291,7 +1291,7 @@ function loadBook(lang = "All", type = "Filter", searchData = []) {
       })">Borrow</button>
                           <button class="btn btn-sm btn-danger btn-return  ${
                             book.status == "Not Available" ? "block" : "none"
-                          }" ">Return</button>
+                          }" onclick="returnBook(${book.id})">Return</button>
                     </div>
      <div id="notAvailable" class="${
        book.status == "Not Available" ? "block" : ""
@@ -1488,14 +1488,15 @@ document.querySelectorAll(".card .btn-borrow").forEach((button) => {
   button.addEventListener("click", handleButtonClick);
 });
 
-function handleButtonClick(event, id) {
+function handleButtonClick(event) {
   const bookNameEl = document.getElementById("borrowBookName");
-  const btnReturn = document.querySelector(".btn-return");
   const button = event.currentTarget;
   const card = button.closest(".card");
   const titleEl = card.querySelector(".card-title");
   bookNameEl.value = titleEl.innerText;
 }
+
+//book borrow and return
 
 function borrowBook(id) {
   const bookimageEl = document.querySelector("#book-image");
@@ -1516,6 +1517,10 @@ function borrowBook(id) {
                    <div class="number">${book.id}</div>
             </div>
     </div> `;
+}
+
+function returnBook() {
+
 }
 
 // current Date
@@ -1543,7 +1548,6 @@ function loadBorrowBookData() {
   <td>${book.borrowDate}</td>
   <td>${book.borrowBookName}</td>
   <td>${book.personId}</td>
-   <td><button class="btn btn-sm btn-warning">Return</button></td>
    <td><button class="btn btn-sm btn-danger" onclick="deleteBookWithConfirmation(${
      book.bookId
    })">Delete</button></td>
@@ -1551,3 +1555,10 @@ function loadBorrowBookData() {
   });
 }
 loadBorrowBookData();
+
+const modalRefresh = document.getElementById("exampleModalBorrow");
+
+
+modalRefresh.addEventListener("hidden.bs.modal", (event) => {
+  console.log("Referesh");
+});

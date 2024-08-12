@@ -626,50 +626,19 @@ btnLogin.addEventListener("click", function () {
   loadUser();
 });
 
-// //password show/hide
-
+// password show/hide
 function passwordShowAndHide() {
-  let pass = document.querySelector(".pass");
-  let cPass = document.querySelector(".cpass");
-  let lPass = document.querySelector(".lpass");
-  let password_input = document.querySelector("#password");
-  let c_password_input = document.querySelector("#cpassword");
-  let l_password_input = document.querySelector("#loginPassword");
-
-  pass.addEventListener("click", function () {
-    if (password_input.getAttribute("type") == "password") {
-      password_input.setAttribute("type", "text");
-      pass.classList.add("bi-eye-slash");
-      pass.classList.remove("bi-eye");
-    } else {
-      password_input.setAttribute("type", "password");
-      pass.classList.remove("bi-eye-slash");
-      pass.classList.add("bi-eye");
-    }
-  });
-
-  cPass.addEventListener("click", function () {
-    if (c_password_input.getAttribute("type") == "password") {
-      c_password_input.setAttribute("type", "text");
-      cPass.classList.add("bi-eye-slash");
-      cPass.classList.remove("bi-eye");
-    } else {
-      c_password_input.setAttribute("type", "password");
-      cPass.classList.remove("bi-eye-slash");
-      cPass.classList.add("bi-eye");
-    }
-  });
-
-  lPass.addEventListener("click", function () {
-    if (l_password_input.getAttribute("type") == "password") {
-      l_password_input.setAttribute("type", "text");
-      lPass.classList.add("bi-eye-slash");
-      lPass.classList.remove("bi-eye");
-    } else {
-      l_password_input.setAttribute("type", "password");
-      lPass.classList.remove("bi-eye-slash");
-      lPass.classList.add("bi-eye");
-    }
+  const passwordInputs = document.querySelectorAll(".password-text");
+  passwordInputs.forEach((password) => {
+    const eye = password.parentElement.querySelector("i");
+    eye.addEventListener("click", function () {
+      password.getAttribute("type") === "password"
+        ? password.setAttribute("type", "text")
+        : password.setAttribute("type", "password");
+      eye.getAttribute("class") === "bi-eye-slash"
+        ? eye.setAttribute("class", "bi-eye")
+        : eye.setAttribute("class", "bi-eye-slash");
+    });
   });
 }
 passwordShowAndHide();
@@ -704,4 +673,3 @@ function customModal(title, content) {
   });
   modalDialog.show();
 }
-
