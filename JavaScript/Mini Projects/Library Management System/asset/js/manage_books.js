@@ -1203,34 +1203,28 @@ let bookData = [
 
 let borrowBookData = [
   {
-    bookId: 6143,
+    id: 1,
     personId: "1733",
     borrowDate: " 9-8-2024",
     borrowBookName: "The Book Of Job",
   },
   {
-    bookId: 4470,
+    id: 2,
     personId: "9094",
     borrowDate: " 9-8-2024",
     borrowBookName: "Jacques the Fatalist",
   },
   {
-    bookId: 8018,
+    id: 3,
     personId: "1733",
     borrowDate: " 9-8-2024",
     borrowBookName: "The Golden Notebook",
   },
   {
-    bookId: 3739,
+    id: 4,
     personId: "7301",
     borrowDate: " 9-8-2024",
     borrowBookName: "To the Lighthouse",
-  },
-  {
-    bookId: 8096,
-    personId: "1733",
-    borrowDate: " 9-8-2024",
-    borrowBookName: "The Death of Ivan Ilyich",
   },
 ];
 const bookIdEl = document.getElementById("bookId");
@@ -1286,12 +1280,14 @@ function loadBook(lang = "All", type = "Filter", searchData = []) {
                  <div class="card-footer">
                     <button class="btn btn-sm  btn-primary btn-borrow ${
                       book.status == "Available" ? "block" : "none"
-                    }" data-bs-toggle="modal" data-bs-target="#exampleModalBorrow" id="btnReturn" onclick="borrowBook(${
+                    }" data-bs-toggle="modal" data-bs-target="#exampleModalBorrow" id="btnBorrow" onclick="borrowBook(${
         book.id
       })">Borrow</button>
                           <button class="btn btn-sm btn-danger btn-return  ${
                             book.status == "Not Available" ? "block" : "none"
-                          }" onclick="returnBook(${book.id})">Return</button>
+                          }" data-bs-toggle="modal" data-bs-target="#exampleModalBorrow" onclick="returnBook(${
+        book.id
+      })">Return</button>
                     </div>
      <div id="notAvailable" class="${
        book.status == "Not Available" ? "block" : ""
@@ -1377,57 +1373,6 @@ function counter() {
 }
 counter();
 
-// Book borrow and return button
-
-bookBorrow.addEventListener("click", function () {
-  const id = bookIdEl.value;
-  const personId = personIdEl.value;
-  const borrowDate = borrowDateEl.value;
-  const borrowBookName = borrowBookNameEl.value;
-
-  if (personId && borrowDate && borrowBookName) {
-    if (id) {
-      //Update book
-      let updatedBook = borrowBookData.map((book) => {
-        if (book.bookId == id) {
-          return {
-            ...book,
-            personId: personId,
-            borrowDate: borrowDate,
-            borrowBookName: borrowBookName,
-          };
-        } else {
-          return book;
-        }
-      });
-
-      borrowBookData = updatedBook;
-      clearAllBookInput();
-      loadBorrowBookData();
-      loadBook();
-      modalBorrow.hide();
-
-      customModal("Book Update Status", "Book Updated Successfully...");
-    } else {
-      const bookObj = {
-        bookId: Math.floor(1000 + Math.random() * 9000),
-        personId: personId,
-        borrowDate: borrowDate,
-        borrowBookName: borrowBookName,
-      };
-      borrowBookData.push(bookObj);
-      clearAllBookInput();
-      loadBorrowBookData();
-      loadBook();
-      modalBorrow.hide();
-
-      customModal("Book Borrow Status", "Book Added Successfully...");
-    }
-  } else {
-    customModal("Warning...", "Please fill the all details...");
-  }
-});
-
 // Delete book
 
 function deleteBorrowBook(id) {
@@ -1488,40 +1433,110 @@ document.querySelectorAll(".card .btn-borrow").forEach((button) => {
   button.addEventListener("click", handleButtonClick);
 });
 
+document.querySelectorAll(".card .btn-return").forEach((button) => {
+  button.addEventListener("click", handleButtonClick);
+});
+
 function handleButtonClick(event) {
   const bookNameEl = document.getElementById("borrowBookName");
   const button = event.currentTarget;
   const card = button.closest(".card");
   const titleEl = card.querySelector(".card-title");
   bookNameEl.value = titleEl.innerText;
+  const bookIdEl = document.getElementById("borrowBookId");
+  const idEl = card.querySelector(".number");
+  bookIdEl.value = idEl.innerHTML;
 }
 
 //book borrow and return
-
 function borrowBook(id) {
+  const heading = document.querySelector(".heading");
+  heading.innerHTML = "Book Borrow Form";
   const bookimageEl = document.querySelector("#book-image");
-  const book = bookData.filter((book,index) => book.id == id)[0];
+  const book = bookData.filter((book) => book.id == id)[0];
   bookimageEl.innerHTML = `
    <div class="card shadow" style="width:230px; height: 320px;">
         <div>
-            <img class="card-img-top" src="${
-              book.imageLink
-            }" alt="" style="height: 200px;">
+            <img class="card-img-top" src="${book.imageLink}" alt="" style="height: 200px;">
         </div>
               <div class="card-body">
               <h6 class="card-title single-line">${book.title}</h6>
-                <p class="card-text single-line" style="font-size:14px;">${
-                  book.author
-                }</p>
+                <p class="card-text single-line" style="font-size:14px;">${book.author}</p>
                  <span class="badge bg-success lang"> ${book.language}</span>
                    <div class="number">${book.id}</div>
             </div>
     </div> `;
 }
 
-function returnBook() {
-
+function returnBook(id) {
+  const heading = document.querySelector(".heading");
+  heading.innerHTML = "Book Return Form";
+  const bookimageEl = document.querySelector("#book-image");
+  const book = bookData.filter((book) => book.id == id)[0];
+  bookimageEl.innerHTML = `
+   <div class="card shadow" style="width:230px; height: 320px;">
+        <div>
+            <img class="card-img-top" src="${book.imageLink}" alt="" style="height: 200px;">
+        </div>
+              <div class="card-body">
+              <h6 class="card-title single-line">${book.title}</h6>
+                <p class="card-text single-line" style="font-size:14px;">${book.author}</p>
+                 <span class="badge bg-success lang"> ${book.language}</span>
+                   <div class="number">${book.id}</div>
+            </div>
+    </div> `;
 }
+
+// Book borrow and return button
+
+bookBorrow.addEventListener("click", function () {
+  const id = bookIdEl.value;
+  const personId = personIdEl.value;
+  const borrowDate = borrowDateEl.value;
+  const borrowBookName = borrowBookNameEl.value;
+
+  if (personId && borrowDate && borrowBookName) {
+    if (id) {
+      //Update book
+      let updatedBook = borrowBookData.map((book) => {
+        if (book.bookId == id) {
+          return {
+            ...book,
+            personId: personId,
+            borrowDate: borrowDate,
+            borrowBookName: borrowBookName,
+          };
+        } else {
+          return book;
+        }
+      });
+
+      borrowBookData = updatedBook;
+      clearAllBookInput();
+      loadBorrowBookData();
+      loadBook();
+      modalBorrow.hide();
+
+      customModal("Book Update Status", "Book Updated Successfully...");
+    } else {
+      const bookObj = {
+        bookId: bookIdEl.value,
+        personId: personId,
+        borrowDate: borrowDate,
+        borrowBookName: borrowBookName,
+      };
+      borrowBookData.push(bookObj);
+      clearAllBookInput();
+      loadBorrowBookData();
+      loadBook();
+      modalBorrow.hide();
+
+      customModal("Book Borrow Status", "Book Added Successfully...");
+    }
+  } else {
+    customModal("Warning...", "Please fill the all details...");
+  }
+});
 
 // current Date
 function todayDate() {
@@ -1556,9 +1571,7 @@ function loadBorrowBookData() {
 }
 loadBorrowBookData();
 
-const modalRefresh = document.getElementById("exampleModalBorrow");
+// const modalRefresh = document.getElementById("exampleModalBorrow");
+// modalRefresh.addEventListener("hidden.bs.modal", (event) => {
 
-
-modalRefresh.addEventListener("hidden.bs.modal", (event) => {
-  console.log("Referesh");
-});
+// });

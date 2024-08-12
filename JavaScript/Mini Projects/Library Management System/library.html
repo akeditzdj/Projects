@@ -525,10 +525,8 @@
                         </div>
                     </div>
                     <!-- Modal - User registration and Login form - End-->
-
                 </div>
                 <!-- Manage Users - Tab End -->
-
                 <!-- Manage Books - Tab Start -->
                 <div class="tab-pane fade show active" id="manageBooks" role="tabpanel"
                     aria-labelledby="manageBooks-tab" tabindex="0">
@@ -644,13 +642,15 @@
                                                         <div class="row my-3">
                                                             <div class="col text-center">
                                                                 <div class="bg-white py-1 rounded-3">
-                                                                    <h3 class="text-dark">Book Borrow Form</h3>
+                                                                    <h3 class="text-dark heading">Book Borrow Form</h3>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col">
-                                                                <div id="book-image" class="d-flex justify-content-center align-items-center"></div>
+                                                                <div id="book-image"
+                                                                    class="d-flex justify-content-center align-items-center">
+                                                                </div>
                                                                 <form action="#" name="book_borrow">
                                                                     <div class="row">
                                                                         <div class="col-lg-12">
@@ -660,7 +660,7 @@
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label class="form-label"
-                                                                                    for="personId">Person
+                                                                                    for="personId">Person Name &
                                                                                     ID</label>
                                                                                 <select class="form-control"
                                                                                     name="personId" id="personId">
@@ -690,6 +690,13 @@
                                                                                     id="borrowBookName"
                                                                                     placeholder="Enter borrow book name">
                                                                             </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label" for="borrowBookId">
+                                                                                        Book
+                                                                                        ID</label>
+                                                                                    <input class="form-control bg-transparent text-white" type="text" name="borrowBookId" id="borrowBookId"
+                                                                                        placeholder="Enter borrow book ID">
+                                                                                </div>
                                                                         </div>
                                                                         <div class="col">
                                                                             <div class="form-group">
