@@ -1,5 +1,6 @@
 let bookData = [
   {
+    id: 1,
     author: "Chinua Achebe",
     country: "Nigeria",
     imageLink: "asset/images/things-fall-apart.jpg",
@@ -11,6 +12,7 @@ let bookData = [
     status: "Not Available",
   },
   {
+    id: 2,
     author: "Hans Christian Andersen",
     country: "Denmark",
     imageLink: "asset/images/fairy-tales.jpg",
@@ -22,6 +24,7 @@ let bookData = [
     status: "Not Available",
   },
   {
+    id: 3,
     author: "Dante Alighieri",
     country: "Italy",
     imageLink: "asset/images/the-divine-comedy.jpg",
@@ -33,6 +36,7 @@ let bookData = [
     status: "Not Available",
   },
   {
+    id: 4,
     author: "Unknown",
     country: "Sumer and Akkadian Empire",
     imageLink: "asset/images/the-epic-of-gilgamesh.jpg",
@@ -44,6 +48,7 @@ let bookData = [
     status: "Not Available",
   },
   {
+    id: 5,
     author: "Unknown",
     country: "Achaemenid Empire",
     imageLink: "asset/images/the-book-of-job.jpg",
@@ -55,6 +60,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 6,
     author: "Unknown",
     country: "India/Iran/Iraq/Egypt/Tajikistan",
     imageLink: "asset/images/one-thousand-and-one-nights.jpg",
@@ -66,6 +72,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 7,
     author: "Unknown",
     country: "Iceland",
     imageLink: "asset/images/njals-saga.jpg",
@@ -77,6 +84,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 8,
     author: "Jane Austen",
     country: "United Kingdom",
     imageLink: "asset/images/pride-and-prejudice.jpg",
@@ -88,6 +96,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 9,
     author: "Honor\u00e9 de Balzac",
     country: "France",
     imageLink: "asset/images/le-pere-goriot.jpg",
@@ -99,6 +108,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 10,
     author: "Samuel Beckett",
     country: "Republic of Ireland",
     imageLink: "asset/images/molloy-malone-dies-the-unnamable.jpg",
@@ -110,6 +120,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 11,
     author: "Giovanni Boccaccio",
     country: "Italy",
     imageLink: "asset/images/the-decameron.jpg",
@@ -121,6 +132,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 12,
     author: "Jorge Luis Borges",
     country: "Argentina",
     imageLink: "asset/images/ficciones.jpg",
@@ -132,6 +144,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 13,
     author: "Emily Bront\u00eb",
     country: "United Kingdom",
     imageLink: "asset/images/wuthering-heights.jpg",
@@ -143,6 +156,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 14,
     author: "Albert Camus",
     country: "Algeria, French Empire",
     imageLink: "asset/images/l-etranger.jpg",
@@ -154,6 +168,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 15,
     author: "Paul Celan",
     country: "Romania, France",
     imageLink: "asset/images/poems-paul-celan.jpg",
@@ -165,6 +180,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 16,
     author: "Louis-Ferdinand C\u00e9line",
     country: "France",
     imageLink: "asset/images/voyage-au-bout-de-la-nuit.jpg",
@@ -176,6 +192,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 17,
     author: "Miguel de Cervantes",
     country: "Spain",
     imageLink: "asset/images/don-quijote-de-la-mancha.jpg",
@@ -187,6 +204,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 18,
     author: "Geoffrey Chaucer",
     country: "England",
     imageLink: "asset/images/the-canterbury-tales.jpg",
@@ -198,6 +216,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 19,
     author: "Anton Chekhov",
     country: "Russia",
     imageLink: "asset/images/stories-of-anton-chekhov.jpg",
@@ -209,6 +228,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 20,
     author: "Joseph Conrad",
     country: "United Kingdom",
     imageLink: "asset/images/nostromo.jpg",
@@ -220,6 +240,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 21,
     author: "Charles Dickens",
     country: "United Kingdom",
     imageLink: "asset/images/great-expectations.jpg",
@@ -231,6 +252,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 22,
     author: "Denis Diderot",
     country: "France",
     imageLink: "asset/images/jacques-the-fatalist.jpg",
@@ -242,6 +264,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 23,
     author: "Alfred D\u00f6blin",
     country: "Germany",
     imageLink: "asset/images/berlin-alexanderplatz.jpg",
@@ -253,6 +276,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 24,
     author: "Fyodor Dostoevsky",
     country: "Russia",
     imageLink: "asset/images/crime-and-punishment.jpg",
@@ -264,6 +288,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 25,
     author: "Fyodor Dostoevsky",
     country: "Russia",
     imageLink: "asset/images/the-idiot.jpg",
@@ -275,6 +300,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 26,
     author: "Fyodor Dostoevsky",
     country: "Russia",
     imageLink: "asset/images/the-possessed.jpg",
@@ -286,6 +312,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 27,
     author: "Fyodor Dostoevsky",
     country: "Russia",
     imageLink: "asset/images/the-brothers-karamazov.jpg",
@@ -297,6 +324,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 28,
     author: "George Eliot",
     country: "United Kingdom",
     imageLink: "asset/images/middlemarch.jpg",
@@ -308,6 +336,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 29,
     author: "Ralph Ellison",
     country: "United States",
     imageLink: "asset/images/invisible-man.jpg",
@@ -319,6 +348,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 30,
     author: "Euripides",
     country: "Greece",
     imageLink: "asset/images/medea.jpg",
@@ -330,6 +360,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 31,
     author: "William Faulkner",
     country: "United States",
     imageLink: "asset/images/absalom-absalom.jpg",
@@ -341,6 +372,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 32,
     author: "William Faulkner",
     country: "United States",
     imageLink: "asset/images/the-sound-and-the-fury.jpg",
@@ -352,6 +384,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 33,
     author: "Gustave Flaubert",
     country: "France",
     imageLink: "asset/images/madame-bovary.jpg",
@@ -363,6 +396,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 34,
     author: "Gustave Flaubert",
     country: "France",
     imageLink: "asset/images/l-education-sentimentale.jpg",
@@ -374,6 +408,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 35,
     author: "Federico Garc\u00eda Lorca",
     country: "Spain",
     imageLink: "asset/images/gypsy-ballads.jpg",
@@ -385,6 +420,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 36,
     author: "Gabriel Garc\u00eda M\u00e1rquez",
     country: "Colombia",
     imageLink: "asset/images/one-hundred-years-of-solitude.jpg",
@@ -396,6 +432,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 37,
     author: "Gabriel Garc\u00eda M\u00e1rquez",
     country: "Colombia",
     imageLink: "asset/images/love-in-the-time-of-cholera.jpg",
@@ -407,6 +444,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 38,
     author: "Johann Wolfgang von Goethe",
     country: "Saxe-Weimar",
     imageLink: "asset/images/faust.jpg",
@@ -418,6 +456,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 39,
     author: "Nikolai Gogol",
     country: "Russia",
     imageLink: "asset/images/dead-souls.jpg",
@@ -429,6 +468,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 40,
     author: "G\u00fcnter Grass",
     country: "Germany",
     imageLink: "asset/images/the-tin-drum.jpg",
@@ -440,6 +480,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 41,
     author: "Jo\u00e3o Guimar\u00e3es Rosa",
     country: "Brazil",
     imageLink: "asset/images/the-devil-to-pay-in-the-backlands.jpg",
@@ -451,6 +492,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 42,
     author: "Knut Hamsun",
     country: "Norway",
     imageLink: "asset/images/hunger.jpg",
@@ -462,6 +504,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 43,
     author: "Ernest Hemingway",
     country: "United States",
     imageLink: "asset/images/the-old-man-and-the-sea.jpg",
@@ -473,6 +516,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 44,
     author: "Homer",
     country: "Greece",
     imageLink: "asset/images/the-iliad-of-homer.jpg",
@@ -484,6 +528,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 45,
     author: "Homer",
     country: "Greece",
     imageLink: "asset/images/the-odyssey-of-homer.jpg",
@@ -495,6 +540,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 46,
     author: "Henrik Ibsen",
     country: "Norway",
     imageLink: "asset/images/a-Dolls-house.jpg",
@@ -506,6 +552,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 47,
     author: "James Joyce",
     country: "Irish Free State",
     imageLink: "asset/images/ulysses.jpg",
@@ -517,6 +564,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 48,
     author: "Franz Kafka",
     country: "Czechoslovakia",
     imageLink: "asset/images/stories-of-franz-kafka.jpg",
@@ -528,6 +576,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 49,
     author: "Franz Kafka",
     country: "Czechoslovakia",
     imageLink: "asset/images/the-trial.jpg",
@@ -539,6 +588,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 50,
     author: "Franz Kafka",
     country: "Czechoslovakia",
     imageLink: "asset/images/the-castle.jpg",
@@ -550,6 +600,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 51,
     author: "K\u0101lid\u0101sa",
     country: "India",
     imageLink: "asset/images/the-recognition-of-shakuntala.jpg",
@@ -561,6 +612,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 52,
     author: "Yasunari Kawabata",
     country: "Japan",
     imageLink: "asset/images/the-sound-of-the-mountain.jpg",
@@ -572,6 +624,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 53,
     author: "Nikos Kazantzakis",
     country: "Greece",
     imageLink: "asset/images/zorba-the-greek.jpg",
@@ -583,6 +636,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 54,
     author: "D. H. Lawrence",
     country: "United Kingdom",
     imageLink: "asset/images/sons-and-lovers.jpg",
@@ -594,6 +648,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 55,
     author: "Halld\u00f3r Laxness",
     country: "Iceland",
     imageLink: "asset/images/independent-people.jpg",
@@ -605,6 +660,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 56,
     author: "Giacomo Leopardi",
     country: "Italy",
     imageLink: "asset/images/poems-giacomo-leopardi.jpg",
@@ -616,6 +672,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 57,
     author: "Doris Lessing",
     country: "United Kingdom",
     imageLink: "asset/images/the-golden-notebook.jpg",
@@ -627,6 +684,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 58,
     author: "Astrid Lindgren",
     country: "Sweden",
     imageLink: "asset/images/pippi-longstocking.jpg",
@@ -638,6 +696,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 59,
     author: "Lu Xun",
     country: "China",
     imageLink: "asset/images/diary-of-a-madman.jpg",
@@ -649,6 +708,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 60,
     author: "Naguib Mahfouz",
     country: "Egypt",
     imageLink: "asset/images/children-of-gebelawi.jpg",
@@ -660,6 +720,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 61,
     author: "Thomas Mann",
     country: "Germany",
     imageLink: "asset/images/buddenbrooks.jpg",
@@ -671,6 +732,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 62,
     author: "Thomas Mann",
     country: "Germany",
     imageLink: "asset/images/the-magic-mountain.jpg",
@@ -682,6 +744,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 63,
     author: "Herman Melville",
     country: "United States",
     imageLink: "asset/images/moby-dick.jpg",
@@ -693,6 +756,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 64,
     author: "Michel de Montaigne",
     country: "France",
     imageLink: "asset/images/essais.jpg",
@@ -704,6 +768,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 65,
     author: "Elsa Morante",
     country: "Italy",
     imageLink: "asset/images/history.jpg",
@@ -715,6 +780,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 66,
     author: "Toni Morrison",
     country: "United States",
     imageLink: "asset/images/beloved.jpg",
@@ -726,6 +792,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 67,
     author: "Murasaki Shikibu",
     country: "Japan",
     imageLink: "asset/images/the-tale-of-genji.jpg",
@@ -737,6 +804,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 68,
     author: "Robert Musil",
     country: "Austria",
     imageLink: "asset/images/the-man-without-qualities.jpg",
@@ -748,6 +816,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 69,
     author: "Vladimir Nabokov",
     country: "Russia/United States",
     imageLink: "asset/images/lolita.jpg",
@@ -759,6 +828,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 70,
     author: "George Orwell",
     country: "United Kingdom",
     imageLink: "asset/images/nineteen-eighty-four.jpg",
@@ -770,6 +840,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 71,
     author: "Ovid",
     country: "Roman Empire",
     imageLink: "asset/images/the-metamorphoses-of-ovid.jpg",
@@ -781,6 +852,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 72,
     author: "Fernando Pessoa",
     country: "Portugal",
     imageLink: "asset/images/the-book-of-disquiet.jpg",
@@ -792,6 +864,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 73,
     author: "Edgar Allan Poe",
     country: "United States",
     imageLink: "asset/images/tales-and-poems-of-edgar-allan-poe.jpg",
@@ -803,6 +876,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 74,
     author: "Marcel Proust",
     country: "France",
     imageLink: "asset/images/a-la-recherche-du-temps-perdu.jpg",
@@ -814,6 +888,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 75,
     author: "Fran\u00e7ois Rabelais",
     country: "France",
     imageLink: "asset/images/gargantua-and-pantagruel.jpg",
@@ -825,6 +900,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 76,
     author: "Juan Rulfo",
     country: "Mexico",
     imageLink: "asset/images/pedro-paramo.jpg",
@@ -836,6 +912,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 77,
     author: "Rumi",
     country: "Sultanate of Rum",
     imageLink: "asset/images/the-masnavi.jpg",
@@ -847,6 +924,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 78,
     author: "Salman Rushdie",
     country: "United Kingdom, India",
     imageLink: "asset/images/midnights-children.jpg",
@@ -858,6 +936,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 79,
     author: "Saadi",
     country: "Persia, Persian Empire",
     imageLink: "asset/images/bostan.jpg",
@@ -869,6 +948,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 80,
     author: "Tayeb Salih",
     country: "Sudan",
     imageLink: "asset/images/season-of-migration-to-the-north.jpg",
@@ -880,6 +960,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 81,
     author: "Jos\u00e9 Saramago",
     country: "Portugal",
     imageLink: "asset/images/blindness.jpg",
@@ -891,6 +972,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 82,
     author: "William Shakespeare",
     country: "England",
     imageLink: "asset/images/hamlet.jpg",
@@ -902,6 +984,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 83,
     author: "William Shakespeare",
     country: "England",
     imageLink: "asset/images/king-lear.jpg",
@@ -913,6 +996,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 84,
     author: "William Shakespeare",
     country: "England",
     imageLink: "asset/images/othello.jpg",
@@ -924,6 +1008,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 85,
     author: "Sophocles",
     country: "Greece",
     imageLink: "asset/images/oedipus-the-king.jpg",
@@ -935,6 +1020,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 86,
     author: "Stendhal",
     country: "France",
     imageLink: "asset/images/le-rouge-et-le-noir.jpg",
@@ -946,6 +1032,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 87,
     author: "Laurence Sterne",
     country: "England",
     imageLink: "asset/images/the-life-and-opinions-of-tristram-shandy.jpg",
@@ -957,6 +1044,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 88,
     author: "Italo Svevo",
     country: "Italy",
     imageLink: "asset/images/confessions-of-zeno.jpg",
@@ -968,6 +1056,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 89,
     author: "Jonathan Swift",
     country: "Ireland",
     imageLink: "asset/images/gullivers-travels.jpg",
@@ -979,6 +1068,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 90,
     author: "Leo Tolstoy",
     country: "Russia",
     imageLink: "asset/images/war-and-peace.jpg",
@@ -990,6 +1080,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 91,
     author: "Leo Tolstoy",
     country: "Russia",
     imageLink: "asset/images/anna-karenina.jpg",
@@ -1001,6 +1092,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 92,
     author: "Leo Tolstoy",
     country: "Ruasset/ssia",
     imageLink: "asset/images/the-death-of-ivan-ilyich.jpg",
@@ -1012,6 +1104,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 93,
     author: "Mark Twain",
     country: "United States",
     imageLink: "asset/images/the-adventures-of-huckleberry-finn.jpg",
@@ -1023,6 +1116,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 94,
     author: "Valmiki",
     country: "India",
     imageLink: "asset/images/ramayana.jpg",
@@ -1034,6 +1128,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 95,
     author: "Virgil",
     country: "Roman Empire",
     imageLink: "asset/images/the-aeneid.jpg",
@@ -1045,6 +1140,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 96,
     author: "Vyasa",
     country: "India",
     imageLink: "asset/images/the-mahab-harata.jpg",
@@ -1056,6 +1152,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 97,
     author: "Walt Whitman",
     country: "United States",
     imageLink: "asset/images/leaves-of-grass.jpg",
@@ -1067,6 +1164,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 98,
     author: "Virginia Woolf",
     country: "United Kingdom",
     imageLink: "asset/images/mrs-dalloway.jpg",
@@ -1078,6 +1176,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 99,
     author: "Virginia Woolf",
     country: "United Kingdom",
     imageLink: "asset/images/to-the-lighthouse.jpg",
@@ -1089,6 +1188,7 @@ let bookData = [
     status: "Available",
   },
   {
+    id: 100,
     author: "Marguerite Yourcenar",
     country: "France/Belgium",
     imageLink: "asset/images/memoirs-of-hadrian.jpg",
