@@ -200,6 +200,10 @@ nav ul li:hover {
   font-size: 12px;
 }
 
+.card:hover .number {
+  background-color: green;
+}
+
 .single-line {
   white-space: nowrap;
   overflow: hidden;

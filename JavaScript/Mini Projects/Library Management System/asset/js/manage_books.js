@@ -1279,14 +1279,16 @@ function loadBook(lang = "All", type = "Filter", searchData = []) {
                 <p class="card-text single-line" style="font-size:14px;">${
                   book.author
                 }</p>
-                  <span class="badge bg-secondary lang"> ${book.language}</span>
+                  <span class="badge bg-success lang"> ${book.language}</span>
 
                    </div>
 
                  <div class="card-footer">
                     <button class="btn btn-sm  btn-primary btn-borrow ${
                       book.status == "Available" ? "block" : "none"
-                    }" data-bs-toggle="modal" data-bs-target="#exampleModalBorrow" id="btnReturn">Borrow</button>
+                    }" data-bs-toggle="modal" data-bs-target="#exampleModalBorrow" id="btnReturn" onclick="borrowBook(${
+        book.id
+      })">Borrow</button>
                           <button class="btn btn-sm btn-danger btn-return  ${
                             book.status == "Not Available" ? "block" : "none"
                           }" ">Return</button>
@@ -1486,34 +1488,35 @@ document.querySelectorAll(".card .btn-borrow").forEach((button) => {
   button.addEventListener("click", handleButtonClick);
 });
 
-function handleButtonClick(event) {
+function handleButtonClick(event, id) {
   const bookNameEl = document.getElementById("borrowBookName");
   const btnReturn = document.querySelector(".btn-return");
   const button = event.currentTarget;
   const card = button.closest(".card");
   const titleEl = card.querySelector(".card-title");
   bookNameEl.value = titleEl.innerText;
-  const bookimageEl = document.getElementById("book-image");
-  // let bookPic = card.querySelector("img");
-  let bookPic = bookData.filter((book) => book.imageLink);
-  bookimageEl.innerHTML = `  <div class="card shadow">
-        <div><img class="card-img-top" src="${bookPic}" alt=""style="height: 180px;"></div>
-        </div>
-        `;
-
-  console.log(bookPic);
 }
 
-/*
-
-`  <div class="card shadow">
-        <div><img class="card-img-top" src="${bookPic.imageLink}" alt=""style="height: 180px;"></div>
-            <div class="card-body">
-              <h6 class="card-title single-line">${bookPic.title}</h6>
-                <p class="card-text single-line" style="font-size:14px;">${bookPic.author}</p>
-            </div> `;
-
-*/
+function borrowBook(id) {
+  const bookimageEl = document.querySelector("#book-image");
+  const book = bookData.filter((book,index) => book.id == id)[0];
+  bookimageEl.innerHTML = `
+   <div class="card shadow" style="width:230px; height: 320px;">
+        <div>
+            <img class="card-img-top" src="${
+              book.imageLink
+            }" alt="" style="height: 200px;">
+        </div>
+              <div class="card-body">
+              <h6 class="card-title single-line">${book.title}</h6>
+                <p class="card-text single-line" style="font-size:14px;">${
+                  book.author
+                }</p>
+                 <span class="badge bg-success lang"> ${book.language}</span>
+                   <div class="number">${book.id}</div>
+            </div>
+    </div> `;
+}
 
 // current Date
 function todayDate() {
