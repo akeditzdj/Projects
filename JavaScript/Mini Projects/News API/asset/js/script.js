@@ -1,5 +1,7 @@
 const news = document.getElementById("news");
 
+// Convert date ISO format to local format
+
 function farmatDate(date) {
   const convertDate = new Date(date)
     .toLocaleDateString("en-GB")
@@ -7,6 +9,8 @@ function farmatDate(date) {
     .join("-");
   return convertDate;
 }
+
+// Set news description lenth limit
 
 function limitCharacter(data, limit = 100) {
   if (data.length <= limit) {
@@ -16,18 +20,31 @@ function limitCharacter(data, limit = 100) {
   }
 }
 
+// Fllter only english lang news only
+
 function isEnglish(text) {
   const englishChars = /^[A-Za-z\s.,!?'"()]+$/;
   return englishChars.test(text);
 }
 
+// Check img content have or not
+
+function checkImageAvailable(url) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve(true); // Image loaded successfully
+    img.onerror = () => resolve(false); // Error loading image
+    return (img.src = url); // Trigger image load
+  });
+}
+
+// Load news to dashboard
+
 function createCard(news) {
   let output = `
   <div class="col">
     <div class="card">
-     <img class="card-img-top" src="${
-       news.urlToImage
-     }" style="height:200px;">
+     <img class="card-img-top" src="${news.urlToImage}" style="height:200px;">
        <div class="card-body">
          <h6 class="text-primary text-nowrap text-truncate" title="${
            news.title
@@ -48,12 +65,12 @@ function createCard(news) {
   </div>
   </div>`;
 
-  console.log(news.urlToImage == "");
-
   return output;
 }
 
-function getNews(query = "tesla") {
+// Search news in the search input box
+
+function getNews(query = "network") {
   const apiKey = "6351e0ab666c4ae88f0360ddd353e9f2";
   const uri = `https://newsapi.org/v2/everything?q=${query}&from=2024-07-16&sortBy=publishedAt&apiKey=${apiKey}`;
   console.log(uri);
@@ -62,7 +79,11 @@ function getNews(query = "tesla") {
     .then((data) => {
       let htmlOutput = "";
       data.articles.forEach((news) => {
-        if (news.description != null && isEnglish(news.title))
+        if (
+          news.description != null &&
+          isEnglish(news.title) &&
+          checkImageAvailable(news.urlToImage)
+        )
           htmlOutput += createCard(news);
       });
       news.innerHTML = htmlOutput;
