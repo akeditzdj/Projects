@@ -43,7 +43,7 @@ function checkImageAvailable(url) {
 function createCard(news) {
   let output = `
   <div class="col">
-    <div class="card">
+    <div class="card border-0">
      <img class="card-img-top" src="${news.urlToImage}" style="height:200px;">
        <div class="card-body">
          <h6 class="text-primary text-nowrap text-truncate" title="${
@@ -55,7 +55,7 @@ function createCard(news) {
          <p class="my-2 description">${limitCharacter(news.description)}</p>
 
        </div>
-          <div class="card-footer d-flex justify-content-between align-items-center">
+          <div class="card-footer bg-white d-flex justify-content-between align-items-center">
                <a href="${
                  news.url
                }" class="btn btn-primary btn-sm" target="_blank">Read More</a>
