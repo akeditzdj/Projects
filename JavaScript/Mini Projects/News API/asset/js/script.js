@@ -16,29 +16,39 @@ function limitCharacter(data, limit = 100) {
   }
 }
 
+function isEnglish(text) {
+  const englishChars = /^[A-Za-z\s.,!?'"()]+$/;
+  return englishChars.test(text);
+}
+
 function createCard(news) {
   let output = `
   <div class="col">
-    <div class="card" style="height:450px;">
+    <div class="card">
      <img class="card-img-top" src="${
        news.urlToImage
-     }" style="height:200px; width:100%;">
+     }" style="height:200px;">
        <div class="card-body">
          <h6 class="text-primary text-nowrap text-truncate" title="${
            news.title
          }">${news.title}</h6>
-         <small class="text-secondary">${news.author}</small>
-         <p class="my-2">${limitCharacter(news.description)}</p>
-          <div class="d-flex justify-content-between align-items-center mt-3">
+         <p class="text-secondary author text-nowrap text-truncate fs-6">${
+           news.author
+         }</p>
+         <p class="my-2 description">${limitCharacter(news.description)}</p>
+
+       </div>
+          <div class="card-footer d-flex justify-content-between align-items-center">
                <a href="${
                  news.url
                }" class="btn btn-primary btn-sm" target="_blank">Read More</a>
             <small class="text-secondary">${farmatDate(
               news.publishedAt
             )}</small></div>
-       </div>
   </div>
   </div>`;
+
+  console.log(news.urlToImage == "");
 
   return output;
 }
@@ -52,8 +62,8 @@ function getNews(query = "tesla") {
     .then((data) => {
       let htmlOutput = "";
       data.articles.forEach((news) => {
-        if (news.description != null)
-        if (news.urlToImage != null) htmlOutput += createCard(news);
+        if (news.description != null && isEnglish(news.title))
+          htmlOutput += createCard(news);
       });
       news.innerHTML = htmlOutput;
     });
