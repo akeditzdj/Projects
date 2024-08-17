@@ -72,7 +72,7 @@ function createCard(news) {
 
 function getNews(query = "network") {
   const apiKey = "6351e0ab666c4ae88f0360ddd353e9f2";
-  const uri = `https://newsapi.org/v2/everything?q=${query}&from=2024-07-16&sortBy=publishedAt&apiKey=${apiKey}`;
+  const uri = `https://newsapi.org/v2/everything?q=${query}&from=2024-07-17&sortBy=publishedAt&apiKey=${apiKey}`;
   console.log(uri);
   fetch(uri)
     .then((response) => response.json())
