@@ -52,7 +52,7 @@ function createCard(news) {
          <p class="text-secondary author text-nowrap text-truncate fs-6">${
            news.author
          }</p>
-         <p class="my-2 description">${limitCharacter(news.description)}</p>
+         <p class="my-2 text-truncate description">${news.description}</p>
 
        </div>
           <div class="card-footer bg-white d-flex justify-content-between align-items-center">
@@ -72,16 +72,18 @@ function createCard(news) {
 
 function getNews(query = "network") {
   const apiKey = "6351e0ab666c4ae88f0360ddd353e9f2";
-  const uri = `https://newsapi.org/v2/everything?q=${query}&from=2024-07-17&sortBy=publishedAt&apiKey=${apiKey}`;
+  const uri = `https://newsapi.org/v2/everything?q=${query}&from=2024-08-18&sortBy=publishedAt&apiKey=${apiKey}`;
   console.log(uri);
   fetch(uri)
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
+
       let htmlOutput = "";
       data.articles.forEach((news) => {
         if (
           news.description != null &&
-          isEnglish(news.title) &&
+
           checkImageAvailable(news.urlToImage)
         )
           htmlOutput += createCard(news);
