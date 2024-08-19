@@ -81,11 +81,7 @@ function getNews(query = "network") {
 
       let htmlOutput = "";
       data.articles.forEach((news) => {
-        if (
-          news.description != null &&
 
-          checkImageAvailable(news.urlToImage)
-        )
           htmlOutput += createCard(news);
       });
       news.innerHTML = htmlOutput;
