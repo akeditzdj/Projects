@@ -1201,36 +1201,43 @@ let bookData = [
   },
 ];
 
-let borrowBookData = [
+let transection = [
   {
-    id: 1,
+    tid: 1000,
     personId: "1733",
-    borrowDate: " 9-8-2024",
-    borrowBookName: "The Book Of Job",
+    bookId: 1,
+    tDate: " 9-8-2024",
+    rDate: "",
+    status: "Borrow",
   },
   {
-    id: 2,
+    id: 1001,
     personId: "9094",
-    borrowDate: " 9-8-2024",
-    borrowBookName: "Jacques the Fatalist",
+    bookId: 2,
+    tDate: " 9-8-2024",
+    rDate: "",
+    status: "Borrow",
   },
   {
-    id: 3,
+    id: 1002,
     personId: "1733",
-    borrowDate: " 9-8-2024",
-    borrowBookName: "The Golden Notebook",
+    bookId: 3,
+    tDate: " 9-8-2024",
+    rDate: "",
+    status: "Borrow",
   },
   {
-    id: 4,
+    id: 1003,
     personId: "7301",
-    borrowDate: " 9-8-2024",
-    borrowBookName: "To the Lighthouse",
+    bookId: 4,
+    tDate: " 9-8-2024",
+    rDate: "",
+    status: "Borrow",
   },
 ];
 const bookIdEl = document.getElementById("bookId");
 const personIdEl = document.getElementById("personId");
 const borrowDateEl = document.getElementById("borrowDate");
-const borrowBookNameEl = document.getElementById("borrowBookName");
 
 const bookSelf = document.querySelector("#bookSelf");
 const selectLanguage = document.getElementById("selectLanguage");
@@ -1245,9 +1252,8 @@ const modalBorrowTitle = document.getElementById("title-borrow");
 const alertMsgBorrow = document.getElementById("alert-borrow-delete");
 
 // Modal open and hide
-const modalBorrow = new bootstrap.Modal(exampleModalBorrow, {
-  keyboard: false,
-});
+const modalBorrow = document.querySelector("#modalBorrow");
+const ourModal = new bootstrap.Modal(modalBorrow, {});
 
 // Load book in the main page
 function loadBook(lang = "All", type = "Filter", searchData = []) {
@@ -1278,16 +1284,15 @@ function loadBook(lang = "All", type = "Filter", searchData = []) {
                    </div>
 
                  <div class="card-footer">
-                    <button class="btn btn-sm  btn-primary btn-borrow ${
-                      book.status == "Available" ? "block" : "none"
-                    }" data-bs-toggle="modal" data-bs-target="#exampleModalBorrow" id="btnBorrow" onclick="borrowBook(${
-        book.id
-      })">Borrow</button>
-                          <button class="btn btn-sm btn-danger btn-return  ${
-                            book.status == "Not Available" ? "block" : "none"
-                          }" data-bs-toggle="modal" data-bs-target="#exampleModalBorrow" onclick="returnBook(${
-        book.id
-      })">Return</button>
+                       ${
+                         book.status == "Not Available"
+                           ? "<button type='button' onclick='returnBook(" +
+                             book.id +
+                             ")' class='btn btn-danger btn-sm'>Return</button>"
+                           : "<button  type='button' onclick='borrowBook(" +
+                             book.id +
+                             ")' class='btn btn-primary btn-sm'>Borrow</button>"
+                       }
                     </div>
      <div id="notAvailable" class="${
        book.status == "Not Available" ? "block" : ""
@@ -1422,9 +1427,7 @@ function deleteBookWithConfirmation(id) {
 // ClearAll
 
 function clearAllBookInput() {
-  personIdEl.value = "";
   borrowDateEl.value = "";
-  borrowBookNameEl.value = "";
 }
 
 // Auto get book name when i click borrow button
@@ -1438,20 +1441,18 @@ document.querySelectorAll(".card .btn-return").forEach((button) => {
 });
 
 function handleButtonClick(event) {
-  const bookNameEl = document.getElementById("borrowBookName");
   const button = event.currentTarget;
   const card = button.closest(".card");
-  const titleEl = card.querySelector(".card-title");
-  bookNameEl.value = titleEl.innerText;
-  const bookIdEl = document.getElementById("borrowBookId");
+  const bookIdEl = document.getElementById("bookId");
   const idEl = card.querySelector(".number");
   bookIdEl.value = idEl.innerHTML;
 }
 
 //book borrow and return
 function borrowBook(id) {
+ ourModal.show();
   const heading = document.querySelector(".heading");
-  heading.innerHTML = "Book Borrow Form";
+  heading.innerHTML = "Borrow Book";
   const bookimageEl = document.querySelector("#book-image");
   const book = bookData.filter((book) => book.id == id)[0];
   bookimageEl.innerHTML = `
@@ -1469,8 +1470,9 @@ function borrowBook(id) {
 }
 
 function returnBook(id) {
+  ourModal.show()
   const heading = document.querySelector(".heading");
-  heading.innerHTML = "Book Return Form";
+  heading.innerHTML = "Return Book";
   const bookimageEl = document.querySelector("#book-image");
   const book = bookData.filter((book) => book.id == id)[0];
   bookimageEl.innerHTML = `
@@ -1493,25 +1495,25 @@ bookBorrow.addEventListener("click", function () {
   const id = bookIdEl.value;
   const personId = personIdEl.value;
   const borrowDate = borrowDateEl.value;
-  const borrowBookName = borrowBookNameEl.value;
 
-  if (personId && borrowDate && borrowBookName) {
+  console.log(id);
+
+  if (personId && borrowDate) {
     if (id) {
       //Update book
-      let updatedBook = borrowBookData.map((book) => {
+      let updatedBook = transection.map((book) => {
         if (book.bookId == id) {
           return {
             ...book,
             personId: personId,
             borrowDate: borrowDate,
-            borrowBookName: borrowBookName,
           };
         } else {
           return book;
         }
       });
 
-      borrowBookData = updatedBook;
+      transection = updatedBook;
       clearAllBookInput();
       loadBorrowBookData();
       loadBook();
@@ -1523,9 +1525,8 @@ bookBorrow.addEventListener("click", function () {
         bookId: bookIdEl.value,
         personId: personId,
         borrowDate: borrowDate,
-        borrowBookName: borrowBookName,
       };
-      borrowBookData.push(bookObj);
+      transection.push(bookObj);
       clearAllBookInput();
       loadBorrowBookData();
       loadBook();
@@ -1556,13 +1557,12 @@ todayDate();
 
 function loadBorrowBookData() {
   bookTable.innerHTML = "";
-  borrowBookData.forEach((book, index) => {
+  transection.forEach((book, index) => {
     bookTable.innerHTML += `<tr>
   <td>${index + 1}</td>
+  <td>${book.personId}</td>
   <td>${book.bookId}</td>
   <td>${book.borrowDate}</td>
-  <td>${book.borrowBookName}</td>
-  <td>${book.personId}</td>
    <td><button class="btn btn-sm btn-danger" onclick="deleteBookWithConfirmation(${
      book.bookId
    })">Delete</button></td>
@@ -1575,3 +1575,4 @@ loadBorrowBookData();
 // modalRefresh.addEventListener("hidden.bs.modal", (event) => {
 
 // });
+
