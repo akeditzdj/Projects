@@ -10,5 +10,6 @@
   "json.format.keepLines": true,
   "files.autoSave": "afterDelay",
   "diffEditor.codeLens": true,
-  "diffEditor.wordWrap": "off"
+  "diffEditor.wordWrap": "off",
+  "typescript.check.npmIsInstalled": false
 }

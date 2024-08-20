@@ -419,27 +419,27 @@ function loadUser(isForSearch = 0, filterUser = []) {
   userTableBody.innerHTML = "";
   userData.forEach((user, index) => {
     userTableBody.innerHTML += `<tr>
-          <td>${index + 1}</td>
-          <td>${user.id}</td>
-          <td>${user.roll}</td>
-          <td>${user.userName}</td>
-          <td>${user.email}</td>
-          <td>${user.password}</td>
-          <td>${user.number}</td>
-          <td>${user.dob}</td>
-          <td>${user.gender}</td>
-          <td>${user.city}</td>
-          <td>${user.pincode}</td>
-          <td>${user.address}</td>
-          <td>${user.terms}</td>
-          <td>${user.newsletter}</td>
-          <td><button onclick="editUsers(${
-            user.id
-          })" class="btn btn-sm btn-primary btnDel">Edit</button></td>
-          <td><button  onclick="deleteUserWithConfirmation(${
-            user.id
-          })" class="btn btn-sm btn-danger">Delete</button></td>
-          </tr>`;
+  <td>${index + 1}</td>
+  <td>${user.id}</td>
+  <td>${user.roll}</td>
+  <td>${user.userName}</td>
+  <td>${user.email}</td>
+  <td>${user.password}</td>
+  <td>${user.number}</td>
+  <td>${user.dob}</td>
+  <td>${user.gender}</td>
+  <td>${user.city}</td>
+  <td>${user.pincode}</td>
+  <td>${user.address}</td>
+  <td>${user.terms}</td>
+  <td>${user.newsletter}</td>
+  <td><button onclick="editUsers(${
+    user.id
+  })" class="btn btn-sm btn-primary btnDel">Edit</button></td>
+  <td><button  onclick="deleteUserWithConfirmation(${
+    user.id
+  })" class="btn btn-sm btn-danger">Delete</button></td>
+  </tr>`;
   });
 }
 loadUser();
@@ -586,22 +586,21 @@ passwordShowAndHide();
 function customModal(title, content) {
   const modal = document.getElementById("modal");
   let loadModal = `
-                <div class="modal fade" id="myCustomModal" >
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header bg-white ">
-                                    <h5 id="title" class="modal-title text-dark">${title}</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                              <p>${content}</p></div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-`;
+   <div class="modal fade" id="myCustomModal" >
+   <div class="modal-dialog">
+       <div class="modal-content">
+           <div class="modal-header bg-white ">
+               <h5 id="title" class="modal-title text-dark">${title}</h5>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body">
+         <p>${content}</p></div>
+           <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+           </div>
+       </div>
+   </div>
+</div>`;
   modal.innerHTML = loadModal;
   // Modal open and hide
   const modalDialog = new bootstrap.Modal(myCustomModal, {

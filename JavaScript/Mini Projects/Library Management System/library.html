@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Library</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link rel="stylesheet" href="asset/css/style.css">
@@ -16,33 +15,24 @@
         <div class="d-flex justify-content-md-start align-items-center gap-2">
             <a href="index.html" class="nav-brand"><img src="asset/images/logo.png" alt="logo"></a>
             <h2 class="fw-bold text-uppercase fst-italic text-center">Library Management System</h2>
-            <button class="btn btn-sm text-light text-center nav-btn d-block d-md-none" type="button"
-                data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
-                    class="bi bi-list display-4"></i></button>
+            <button class="btn btn-sm text-light text-center nav-btn d-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="bi bi-list display-4"></i></button>
         </div>
         <div>
             <ul class="navbar-nav">
-                <li class="nav-item d-md-block d-none"><button class="btn btn-sm text-light text-center nav-btn"
-                        type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
-                        aria-controls="offcanvasScrolling"><i class="bi bi-list fs-6"></i> Sidebar
+                <li class="nav-item d-md-block d-none"><button class="btn btn-sm text-light text-center nav-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="bi bi-list fs-6"></i> Sidebar
                         Menu</button></li>
-                <li class="nav-item p-2 d-none d-md-block"><a class="navlink link-light text-decoration-none"
-                        href="index.html">Home</a>
+                <li class="nav-item p-2 d-none d-md-block"><a class="navlink link-light text-decoration-none" href="index.html">Home</a>
                 </li>
-                <li class="nav-item p-2 d-none d-md-block"><a class="navlink link-light text-decoration-none"
-                        href="#">Services</a></li>
-                <li class="nav-item p-2 d-none d-md-block"><a class="navlink link-light text-decoration-none"
-                        href="#">About</a></li>
-                <li class="nav-item p-2 d-none d-md-block"><a class="navlink link-light text-decoration-none"
-                        href="#">Contact Us</a></li>
+                <li class="nav-item p-2 d-none d-md-block"><a class="navlink link-light text-decoration-none" href="#">Services</a></li>
+                <li class="nav-item p-2 d-none d-md-block"><a class="navlink link-light text-decoration-none" href="#">About</a></li>
+                <li class="nav-item p-2 d-none d-md-block"><a class="navlink link-light text-decoration-none" href="#">Contact Us</a></li>
             </ul>
         </div>
     </div>
 </nav>
 <!-- Navbar End -->
 <!-- Offcanvas Start -->
-<div class="offcanvas offcanvas-start shadow" data-bs-scroll="true" data-bs-backdrop="true" tabindex="1"
-    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+<div class="offcanvas offcanvas-start shadow" data-bs-scroll="true" data-bs-backdrop="true" tabindex="1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
     <div class="offcanvas-header border-bottom shadow text-center">
         <h2 class="offcanvas-title text-light fw-bold" id="offcanvasScrollingLabel"><i class="bi bi-book"></i>
             Library Menu
@@ -55,18 +45,14 @@
         <div id="pills-tab" role="tablist">
             <!-- Tab Toggler Button Add and Manage Users - Start -->
             <div class="row mt-3">
-                <button class="btn w-100 button active text-white text-start" id="manageMembers-tab"
-                    data-bs-toggle="tab" data-bs-target="#manageMembers" role="tab" aria-controls="manageMembers"
-                    aria-selected="true">
+                <button class="btn w-100 button active text-white text-start" id="manageMembers-tab" data-bs-toggle="tab" data-bs-target="#manageMembers" role="tab" aria-controls="manageMembers" aria-selected="true">
                     <h5><i class="bi bi-people-fill"></i> Add / Manage Users</h5>
                 </button>
             </div>
             <!-- Tab Toggler Button Add and Manage Users - End -->
             <!-- Tab Toggler Button Add and Manage Books - Start -->
             <div class="row mt-3">
-                <button class="btn w-100 button  text-white text-start" id="manageBooks-tab" data-bs-toggle="tab"
-                    data-bs-target="#manageBooks" type="button" role="tab" aria-controls="manageBooks"
-                    aria-selected="false">
+                <button class="btn w-100 button  text-white text-start" id="manageBooks-tab" data-bs-toggle="tab" data-bs-target="#manageBooks" type="button" role="tab" aria-controls="manageBooks" aria-selected="false">
                     <h5><i class="bi bi-journal-arrow-up"></i> Add / Manage Books</h5>
                 </button>
             </div>
@@ -92,8 +78,7 @@
         <div class="col-md-12 mb-5 mb-md-0">
             <div class="tab-content" id="pills-tabContent">
                 <!-- Manage Users - Tab Start -->
-                <div class="tab-pane fade " id="manageMembers" role="tabpanel" aria-labelledby="manageMembers-tab"
-                    tabindex="0">
+                <div class="tab-pane fade " id="manageMembers" role="tabpanel" aria-labelledby="manageMembers-tab" tabindex="0">
                     <!-- Dashboard Content - Start -->
                     <div class="row mt-2 ">
                         <div class="col-md-3">
@@ -151,8 +136,7 @@
                                 </button>
                             </div>
                             <div class=" w-25 mt-3 mt-md-0 filter-Input">
-                                <input class="form-control bg-transparent text-light" type="text" name="filterUser"
-                                    id="filterUser" placeholder="Flter your user">
+                                <input class="form-control bg-transparent text-light" type="text" name="filterUser" id="filterUser" placeholder="Flter your user">
                             </div>
                         </div>
                     </div>
@@ -191,15 +175,13 @@
                             <div class="modal-content">
                                 <div class="modal-header bg-white">
                                     <h5 class="modal-title text-dark">Delete User</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <p>Are you sure to delete?</p>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                                        id="no">No</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="no">No</button>
                                     <button type="button" class="btn btn-danger" id="yes">Yes</button>
                                 </div>
                             </div>
@@ -207,38 +189,29 @@
                     </div>
                     <!-- Modal - User delete warning message - End -->
                     <!-- Modal - User registration and Login form - Start-->
-                    <div class="modal fade modal-xl" data-bs-backdrop="static" id="exampleModal" tabindex="-1"
-                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade modal-xl" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header bg-white">
-                                    <img class="img-fluid" src="asset/images/logo.png" style="width: 50px;height: 50px;"
-                                        alt="">
+                                    <img class="img-fluid" src="asset/images/logo.png" style="width: 50px;height: 50px;" alt="">
                                     <h3 class="modal-title text-dark fw-bold fst-italic" id="exampleModalLabel">
                                         Library
                                         Management System</h3>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <div class="container form-tab-container mt-3">
                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                                             <li class="nav-item" role="presentation">
-                                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                                    data-bs-target="#home-tab-pane" type="button" role="tab"
-                                                    aria-controls="home-tab-pane" aria-selected="true">Register</button>
+                                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Register</button>
                                             </li>
                                             <li class="nav-item" role="presentation">
-                                                <button class="nav-link" id="login-tab" data-bs-toggle="tab"
-                                                    data-bs-target="#login-tab-pane" type="button" role="tab"
-                                                    aria-controls="login-tab-pane" aria-selected="false">Login</button>
+                                                <button class="nav-link" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-tab-pane" type="button" role="tab" aria-controls="login-tab-pane" aria-selected="false">Login</button>
                                             </li>
                                         </ul>
                                         <div class="tab-content" id="myTabContent">
-                                            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
-                                                aria-labelledby="home-tab" tabindex="0">
-                                                <div
-                                                    class="container form-main-container d-flex justify-content-center align-items-center ">
+                                            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                                <div class="container form-main-container d-flex justify-content-center align-items-center ">
                                                     <div class="form-container mt-5 shadow px-md-5 py-md-3 pb-5">
                                                         <div class="row my-md-3">
                                                             <div class="col text-center">
@@ -253,18 +226,12 @@
                                                                     <div class="row">
                                                                         <div class="col-lg-6">
                                                                             <div class="form-group">
-                                                                                <input
-                                                                                    class="form-control bg-transparent text-white"
-                                                                                    type="text" name="id" id="id"
-                                                                                    hidden>
+                                                                                <input class="form-control bg-transparent text-white" type="text" name="id" id="id" hidden>
                                                                             </div>
                                                                             <div class="form-group">
-                                                                                <label class="form-label"
-                                                                                    for="roll">Roll</label>
-                                                                                <select class="form-select" name="roll"
-                                                                                    id="roll">
-                                                                                    <option class="bg-transparent"
-                                                                                        value="">Select
+                                                                                <label class="form-label" for="roll">Roll</label>
+                                                                                <select class="form-select" name="roll" id="roll">
+                                                                                    <option class="bg-transparent" value="">Select
                                                                                         Your
                                                                                         Roll
                                                                                     </option>
@@ -277,58 +244,32 @@
                                                                                 <small class="error"></small>
                                                                             </div>
                                                                             <div class="form-group">
-                                                                                <label class="form-label"
-                                                                                    for="userName">Name</label>
-                                                                                <input
-                                                                                    class="form-control bg-transparent text-white"
-                                                                                    type="text" name="userName"
-                                                                                    id="userName"
-                                                                                    placeholder="Enter your name">
+                                                                                <label class="form-label" for="userName">Name</label>
+                                                                                <input class="form-control bg-transparent text-white" type="text" name="userName" id="userName" placeholder="Enter your name">
                                                                                 <small class="error"></small>
                                                                             </div>
                                                                             <div class="form-group">
-                                                                                <label class="form-label"
-                                                                                    for="email">Email</label>
-                                                                                <input
-                                                                                    class="form-control bg-transparent text-white"
-                                                                                    type="email" name="email" id="email"
-                                                                                    placeholder="Enter your email">
+                                                                                <label class="form-label" for="email">Email</label>
+                                                                                <input class="form-control bg-transparent text-white" type="email" name="email" id="email" placeholder="Enter your email">
                                                                                 <small class="error"></small>
                                                                             </div>
                                                                             <div class="form-group position-relative ">
-                                                                                <label class="form-label"
-                                                                                    for="password">Password</label>
-                                                                                <input
-                                                                                    class="form-control bg-transparent text-white password-text"
-                                                                                    type="password" name="password"
-                                                                                    id="password"
-                                                                                    placeholder="Enter your password"
-                                                                                    autocomplete="off">
+                                                                                <label class="form-label" for="password">Password</label>
+                                                                                <input class="form-control bg-transparent text-white password-text" type="password" name="password" id="password" placeholder="Enter your password" autocomplete="off">
                                                                                 <i class="bi bi-eye"></i>
                                                                                 <small class="error"></small>
                                                                             </div>
                                                                             <div class="form-group">
-                                                                                <label class="form-label"
-                                                                                    for="cpassword">Confirm
+                                                                                <label class="form-label" for="cpassword">Confirm
                                                                                     Password</label>
-                                                                                <input
-                                                                                    class="form-control bg-transparent text-white password-text"
-                                                                                    type="password" name="cpassword"
-                                                                                    id="cpassword"
-                                                                                    placeholder="Enter your confirm password"
-                                                                                    autocomplete="off">
+                                                                                <input class="form-control bg-transparent text-white password-text" type="password" name="cpassword" id="cpassword" placeholder="Enter your confirm password" autocomplete="off">
                                                                                 <i class="bi bi-eye"></i>
                                                                                 <small class="error"></small>
                                                                             </div>
                                                                             <div class="form-group">
-                                                                                <label class="form-label"
-                                                                                    for="number">Mobile
+                                                                                <label class="form-label" for="number">Mobile
                                                                                     Number</label>
-                                                                                <input
-                                                                                    class="form-control bg-transparent text-white"
-                                                                                    type="text" name="number"
-                                                                                    id="number"
-                                                                                    placeholder="Enter your mobile number">
+                                                                                <input class="form-control bg-transparent text-white" type="text" name="number" id="number" placeholder="Enter your mobile number">
                                                                                 <small class="error"></small>
                                                                             </div>
                                                                         </div>
@@ -337,93 +278,54 @@
                                                                                 <label class="form-label" for="dob">Date
                                                                                     of
                                                                                     Birth</label>
-                                                                                <input
-                                                                                    class="form-control bg-transparent text-white"
-                                                                                    type="date" name="dob" id="dob">
+                                                                                <input class="form-control bg-transparent text-white" type="date" name="dob" id="dob">
                                                                                 <small class="error"></small>
                                                                             </div>
                                                                             <div class="form-group mt-5">
-                                                                                <label class="form-label"
-                                                                                    for="gender">Gender</label>
-                                                                                <div
-                                                                                    class="d-flex gap-3 align-items-center">
+                                                                                <label class="form-label" for="gender">Gender</label>
+                                                                                <div class="d-flex gap-3 align-items-center">
                                                                                     <div>
-                                                                                        <label class="form-check-label"
-                                                                                            for="male"><input checked
-                                                                                                class="form-check-input bg-transparent text-white"
-                                                                                                type="radio"
-                                                                                                name="gender" id="male">
+                                                                                        <label class="form-check-label" for="male"><input checked class="form-check-input bg-transparent text-white" type="radio" name="gender" id="male">
                                                                                             Male</label>
                                                                                     </div>
                                                                                     <div>
-                                                                                        <label class="form-check-label"
-                                                                                            for="female"><input
-                                                                                                class="form-check-input bg-transparent text-white"
-                                                                                                type="radio"
-                                                                                                name="gender"
-                                                                                                id="female">
+                                                                                        <label class="form-check-label" for="female"><input class="form-check-input bg-transparent text-white" type="radio" name="gender" id="female">
                                                                                             Female</label>
                                                                                     </div>
                                                                                     <div>
-                                                                                        <label class="form-check-label"
-                                                                                            for="others"><input
-                                                                                                class="form-check-input bg-transparent text-white"
-                                                                                                type="radio"
-                                                                                                name="gender"
-                                                                                                id="others">
+                                                                                        <label class="form-check-label" for="others"><input class="form-check-input bg-transparent text-white" type="radio" name="gender" id="others">
                                                                                             Others</label>
                                                                                     </div>
                                                                                 </div>
                                                                                 <small class="error"></small>
                                                                             </div>
                                                                             <div class="form-group">
-                                                                                <label class="form-label"
-                                                                                    for="city">City</label>
-                                                                                <select class="form-select" name="city"
-                                                                                    id="city">
+                                                                                <label class="form-label" for="city">City</label>
+                                                                                <select class="form-select" name="city" id="city">
                                                                                     <option value="">Select your
                                                                                         city</option>
                                                                                 </select>
                                                                                 <small class="error"></small>
                                                                             </div>
                                                                             <div class="form-group">
-                                                                                <label class="form-label"
-                                                                                    for="pincode">Pin
+                                                                                <label class="form-label" for="pincode">Pin
                                                                                     Code</label>
-                                                                                <input
-                                                                                    class="form-control bg-transparent text-white"
-                                                                                    type="text" name="pincode"
-                                                                                    id="pincode"
-                                                                                    placeholder="Enter your area pin code">
+                                                                                <input class="form-control bg-transparent text-white" type="text" name="pincode" id="pincode" placeholder="Enter your area pin code">
                                                                                 <small class="error"></small>
                                                                             </div>
                                                                             <div class="form-group">
-                                                                                <label class="form-label"
-                                                                                    for="address">Address</label>
-                                                                                <textarea
-                                                                                    class="form-control  bg-transparent text-white"
-                                                                                    name="address" id="address"
-                                                                                    placeholder="Enter your address">
+                                                                                <label class="form-label" for="address">Address</label>
+                                                                                <textarea class="form-control  bg-transparent text-white" name="address" id="address" placeholder="Enter your address">
                                                                                                     </textarea>
                                                                                 <small class="error"></small>
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group">
-                                                                            <div
-                                                                                class="col-12 d-md-flex justify-content-around align-items-center">
-                                                                                <label class="form-label checkbox"
-                                                                                    for="terms"><input
-                                                                                        class="form-check-input  bg-transparent text-light"
-                                                                                        type="checkbox" name="terms"
-                                                                                        id="terms" value="Agreed"> I
+                                                                            <div class="col-12 d-md-flex justify-content-around align-items-center">
+                                                                                <label class="form-label checkbox" for="terms"><input class="form-check-input  bg-transparent text-light" type="checkbox" name="terms" id="terms" value="Agreed"> I
                                                                                     agree with terms
                                                                                     and conditions</label>
-                                                                                <label class="form-label newsletter"
-                                                                                    for="newsletter"><input
-                                                                                        class="form-check-input  bg-transparent text-light"
-                                                                                        type="checkbox"
-                                                                                        name="newsletter"
-                                                                                        id="newsletter" value="Agreed">
+                                                                                <label class="form-label newsletter" for="newsletter"><input class="form-check-input  bg-transparent text-light" type="checkbox" name="newsletter" id="newsletter" value="Agreed">
                                                                                     I want
                                                                                     receive the
                                                                                     newsletter</label>
@@ -431,13 +333,10 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="row">
-                                                                        <div
-                                                                            class="col-lg-12 mt-4 d-flex justify-content-center align-items-center gap-3">
-                                                                            <div><button type="reset" id="clear"
-                                                                                    class="btn btn-danger">Clear</button>
+                                                                        <div class="col-lg-12 mt-4 d-flex justify-content-center align-items-center gap-3">
+                                                                            <div><button type="reset" id="clear" class="btn btn-danger">Clear</button>
                                                                             </div>
-                                                                            <div><button type="button" id="submit"
-                                                                                    class="btn btn-primary">Submit</button>
+                                                                            <div><button type="button" id="submit" class="btn btn-primary">Submit</button>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -447,12 +346,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="tab-pane fade" id="login-tab-pane" role="tabpanel"
-                                                aria-labelledby="login-tab" tabindex="0">
-                                                <div
-                                                    class="container form-main-container d-flex justify-content-center align-items-center">
-                                                    <div
-                                                        class="login-form-container form-container mt-5  shadow p-md-5">
+                                            <div class="tab-pane fade" id="login-tab-pane" role="tabpanel" aria-labelledby="login-tab" tabindex="0">
+                                                <div class="container form-main-container d-flex justify-content-center align-items-center">
+                                                    <div class="login-form-container form-container mt-5  shadow p-md-5">
                                                         <div class="row my-3">
                                                             <div class="col-md-12 text-center">
                                                                 <div class="bg-white py-1 rounded-3">
@@ -466,34 +362,21 @@
                                                                     <div class="row">
                                                                         <div class="col-md-12">
                                                                             <div class="form-group">
-                                                                                <label class="form-label"
-                                                                                    for="loginEmail">Email</label>
-                                                                                <input
-                                                                                    class="form-control bg-transparent text-white"
-                                                                                    type="email" name="loginEmail"
-                                                                                    id="loginEmail"
-                                                                                    placeholder="Enter your email">
+                                                                                <label class="form-label" for="loginEmail">Email</label>
+                                                                                <input class="form-control bg-transparent text-white" type="email" name="loginEmail" id="loginEmail" placeholder="Enter your email">
                                                                                 <small class="error"></small>
                                                                             </div>
                                                                             <div class="form-group">
-                                                                                <label class="form-label"
-                                                                                    for="loginPassword">Password</label>
-                                                                                <input
-                                                                                    class="form-control bg-transparent text-white password-text"
-                                                                                    type="password" name="loginPassword"
-                                                                                    id="loginPassword"
-                                                                                    placeholder="Enter your password"
-                                                                                    autocomplete="off">
+                                                                                <label class="form-label" for="loginPassword">Password</label>
+                                                                                <input class="form-control bg-transparent text-white password-text" type="password" name="loginPassword" id="loginPassword" placeholder="Enter your password" autocomplete="off">
                                                                                 <i class="bi bi-eye"></i>
                                                                                 <small class="error"></small>
                                                                             </div>
                                                                             <div class="form-group">
-                                                                                <button type="button" id="btnLogin"
-                                                                                    class="btn btn-primary w-100">Login</button>
+                                                                                <button type="button" id="btnLogin" class="btn btn-primary w-100">Login</button>
                                                                             </div>
                                                                             <div class="form-group text-center">
-                                                                                <a class="link-light link-opacity-50-hover text-decoration-none"
-                                                                                    href="#">Forgot
+                                                                                <a class="link-light link-opacity-50-hover text-decoration-none" href="#">Forgot
                                                                                     password</a>
                                                                             </div>
                                                                         </div>
@@ -514,8 +397,7 @@
                 </div>
                 <!-- Manage Users - Tab End -->
                 <!-- Manage Books - Tab Start -->
-                <div class="tab-pane fade  show active" id="manageBooks" role="tabpanel"
-                    aria-labelledby="manageBooks-tab" tabindex="0">
+                <div class="tab-pane fade  show active" id="manageBooks" role="tabpanel" aria-labelledby="manageBooks-tab" tabindex="0">
                     <!-- Dashboard Content - Start -->
                     <div class="row mt-2">
                         <div class="col-md-3 mt-4 mt-md-0">
@@ -566,16 +448,13 @@
                             <div class="col d-md-flex justify-content-between align-items-center">
                                 <div class=" mt-3 mt-md-0 filter-Input">
                                     <form autocomplete="off">
-                                        <input class="form-control bg-transparent text-light" type="text"
-                                            name="searchBook" id="searchBook" placeholder="Search your register book">
+                                        <input class="form-control bg-transparent text-light" type="text" name="searchBook" id="searchBook" placeholder="Search your register book">
                                     </form>
                                 </div>
                                 <div class="mt-3 mt-md-0 d-flex justify-content-center align-items-center gap-3">
-                                    <button class="btn btn-outline-light text-light bg-transparent"
-                                        data-bs-toggle="modal" data-bs-target="#borrowBookDataTable">Book Borrow
+                                    <button class="btn btn-outline-light text-light bg-transparent" data-bs-toggle="modal" data-bs-target="#borrowBookDataTable">Book Borrow
                                         Data</button>
-                                    <button class="btn btn-outline-light text-light bg-transparent"
-                                        data-bs-toggle="modal" data-bs-target="#myModalBookChart">Book Chart
+                                    <button class="btn btn-outline-light text-light bg-transparent" data-bs-toggle="modal" data-bs-target="#myModalBookChart">Book Chart
                                         Report</button>
                                 </div>
                                 <div class="mt-3 mt-md-0 filter-Input">
@@ -594,32 +473,26 @@
                     <!-- Book Data - Start-->
                     <div class="row mb-5 book-container">
                         <div class="col-md-12">
-                            <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-md-4  row-cols-lg-6 d-flex"
-                                id="bookSelf">
+                            <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-md-4  row-cols-lg-6 d-flex" id="bookSelf">
                             </div>
                         </div>
                     </div>
                     <!-- Book Data - End-->
                     <!-- Modal - Books return Form- Start-->
-                    <div class="modal fade modal-lg" id="modalBorrow" tabindex="-1" aria-labelledby="modalLabel"
-                        aria-hidden="true">
+                    <div class="modal fade modal-lg" id="modalBorrow" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header bg-white">
-                                    <img class="img-fluid" src="asset/images/logo.png" style="width: 50px;height: 50px;"
-                                        alt="">
+                                    <img class="img-fluid" src="asset/images/logo.png" style="width: 50px;height: 50px;" alt="">
                                     <h3 class="modal-title text-dark fw-bold fst-italic" id="modalLabel"> Library
                                         Management System</h3>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <div class="container tab-container mt-3">
                                         <div class="tab-content" id="myBookBorrowTabContent">
-                                            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
-                                                aria-labelledby="home-tab" tabindex="0">
-                                                <div
-                                                    class="container form-main-container d-flex justify-content-center align-items-center ">
+                                            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                                <div class="container form-main-container d-flex justify-content-center align-items-center ">
                                                     <div class="form-container shadow px-md-5 py-md-3 pb-5">
                                                         <div class="row my-3">
                                                             <div class="col text-center">
@@ -630,22 +503,18 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col">
-                                                                <div id="book-image"
-                                                                    class="d-flex justify-content-center align-items-center">
+                                                                <div id="book-image" class="d-flex justify-content-center align-items-center">
                                                                 </div>
                                                                 <form action="#" name="book_borrow">
                                                                     <div class="row">
                                                                         <div class="col-lg-12">
                                                                             <div class="form-group">
-                                                                                <input type="text" name="bookId"
-                                                                                    id="bookId" hidden>
+                                                                                <input type="text" name="bookId" id="bookId" hidden>
                                                                             </div>
                                                                             <div class="form-group">
-                                                                                <label class="form-label"
-                                                                                    for="personId">Person Name &
+                                                                                <label class="form-label" for="personId">Person Name &
                                                                                     ID</label>
-                                                                                <select class="form-control"
-                                                                                    name="personId" id="personId">
+                                                                                <select class="form-control" name="personId" id="personId">
                                                                                     <option value="">Select your
                                                                                         registered
                                                                                         ID
@@ -653,25 +522,16 @@
                                                                                 </select>
                                                                             </div>
                                                                             <div class="form-group">
-                                                                                <label class="form-label"
-                                                                                    for="borrowDate">
+                                                                                <label class="form-label" for="borrowDate">
                                                                                     Date</label>
-                                                                                <input
-                                                                                    class="form-control bg-transparent text-white"
-                                                                                    type="date" name="borrowDate"
-                                                                                    id="borrowDate">
+                                                                                <input class="form-control bg-transparent text-white" type="date" name="borrowDate" id="borrowDate">
                                                                             </div>
                                                                         </div>
                                                                         <div class="col">
                                                                             <div class="form-group">
-                                                                                <div
-                                                                                    class="d-flex justify-content-center align-items-center gap-3 my-3">
-                                                                                    <button type="reset"
-                                                                                        id="bookBorrowClear"
-                                                                                        class="btn btn-danger">Clear</button>
-                                                                                    <button type="button"
-                                                                                        id="bookBorrowSave"
-                                                                                        class="btn btn-primary">Submit</button>
+                                                                                <div class="d-flex justify-content-center align-items-center gap-3 my-3">
+                                                                                    <button type="reset" id="bookBorrowClear" class="btn btn-danger">Clear</button>
+                                                                                    <button type="button" id="bookBorrowSave" class="btn btn-primary">Submit</button>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -687,21 +547,16 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Modal - Book data table start-->
-                    <div class="modal fade modal-xl" id="borrowBookDataTable" data-bs-backdrop="static"
-                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    </div> <!-- Modal - Book data table start-->
+                    <div class="modal fade modal-xl" id="borrowBookDataTable" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header bg-white">
-                                    <img class="img-fluid" src="asset/images/logo.png" style="width: 50px;height: 50px;"
-                                        alt="">
-                                    <h3 class="modal-title text-dark fw-bold fst-italic ps-1" id="staticBackdropLabel"
-                                        id="staticBackdropLabel">
+                                    <img class="img-fluid" src="asset/images/logo.png" style="width: 50px;height: 50px;" alt="">
+                                    <h3 class="modal-title text-dark fw-bold fst-italic ps-1" id="staticBackdropLabel" id="staticBackdropLabel">
                                         Library
                                         Management System</h3>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body d-flex justify-content-center">
                                     <div class="row">
@@ -709,8 +564,7 @@
                                             <div class="py-1 my-4 round rounded-5 text-center bg-light">
                                                 <h4 class="text-dark fw-bold lh-1">Borrow Book Data</h4>
                                             </div>
-                                            <table class="table table-hover table-bordered table-responsive table-dark"
-                                                id="borrowDataTable">
+                                            <table class="table table-hover table-bordered table-responsive table-dark" id="borrowDataTable">
                                                 <thead class="text-center">
                                                     <tr>
                                                         <th>Sl No</th>
@@ -739,15 +593,13 @@
                             <div class="modal-content">
                                 <div class="modal-header bg-white">
                                     <h5 class="modal-title text-dark">Delete User</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <p>Are you sure to delete</p>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                                        id="noo">No</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="noo">No</button>
                                     <button type="button" class="btn btn-danger" id="yess">Yes</button>
                                 </div>
                             </div>
@@ -759,14 +611,11 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header bg-white">
-                                    <img class="img-fluid" src="asset/images/logo.png" style="width: 50px;height: 50px;"
-                                        alt="">
-                                    <h3 class="modal-title text-dark fw-bold fst-italic ps-1" id="staticBackdropLabel"
-                                        id="staticBackdropLabel">
+                                    <img class="img-fluid" src="asset/images/logo.png" style="width: 50px;height: 50px;" alt="">
+                                    <h3 class="modal-title text-dark fw-bold fst-italic ps-1" id="staticBackdropLabel" id="staticBackdropLabel">
                                         Library
                                         Management System</h3>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body w-75 m-0 m-auto">
                                     <div class="row mt-3">
@@ -835,8 +684,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
@@ -852,9 +700,7 @@
     </div>
 </div>
 <!-- Tabs Control End -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="asset/js/manage_users.js"></script>
 <script src="asset/js/manage_books.js"></script>
 <script src="asset/js/input_data.js"></script>
