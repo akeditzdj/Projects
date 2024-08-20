@@ -1271,33 +1271,30 @@ function loadBook(lang = "All", type = "Filter", searchData = []) {
   if (data.length > 0) {
     let bookHTML = data.map(
       (book, index) => `  <div class="col">
-      <div class="card shadow book-card">
-        <div class="card-img position-relative"><img class="card-img-top" src="${
-          book.imageLink
-        }" alt=""style="height: 180px;"></div>
-          <div class="number">${index + 1}</div>
-            <div class="card-body">
-              <h6 class="card-title single-line">${book.title}</h6>
-                <p class="card-text single-line" style="font-size:14px;">${
-                  book.author
-                }</p>
-                  <span class="badge bg-success lang"> ${book.language}</span>
-                   </div>
-                 <div class="card-footer">${
-                   book.status == "Not Available"
-                     ? "<button type='button' onclick='returnBook(" +
-                       book.id +
-                       ")' class='btn btn-danger btn-sm'>Return</button>"
-                     : "<button  type='button' onclick='borrowBook(" +
-                       book.id +
-                       ")' class='btn btn-primary btn-sm'>Borrow</button>"
-                 }
-                    </div>
-     <div id="notAvailable" class="${
-       book.status == "Not Available" ? "block" : ""
-     }">Book is Not Available</div>
-            </div>
-        </div>`
+<div class="card shadow book-card">
+<div class="card-img position-relative"><img class="card-img-top" src="${
+        book.imageLink
+      }" alt=""style="height: 180px;"></div>
+<div class="number">${index + 1}</div>
+<div class="card-body">
+<h6 class="card-title single-line">${book.title}</h6>
+<p class="card-text single-line" style="font-size:14px;">${book.author}</p>
+<span class="badge bg-success lang"> ${book.language}</span></div>
+<div class="card-footer">${
+        book.status == "Not Available"
+          ? "<button type='button' onclick='returnBook(" +
+            book.id +
+            ")' class='btn btn-danger btn-sm'>Return</button>"
+          : "<button  type='button' onclick='borrowBook(" +
+            book.id +
+            ")' class='btn btn-primary btn-sm'>Borrow</button>"
+      }
+</div>
+<div id="notAvailable" class="${
+        book.status == "Not Available" ? "block" : ""
+      }">Book is Not Available</div>
+</div>
+</div>`
     );
     bookHTML = bookHTML.join(" ");
     bookSelf.innerHTML = bookHTML;
@@ -1408,10 +1405,10 @@ function borrowBook(id) {
         <img class="card-img-top" src="${book.imageLink}" alt="" style="height: 200px;">
     </div>
     <div class="card-body">
-        <h6 class="card-title single-line">${book.title}</h6>
-            <p class="card-text single-line" style="font-size:14px;">${book.author}</p>
-                <span class="badge bg-success lang"> ${book.language}</span>
-                  <div class="number">${book.id}</div>
+      <h6 class="card-title single-line">${book.title}</h6>
+      <p class="card-text single-line" style="font-size:14px;">${book.author}</p>
+      <span class="badge bg-success lang"> ${book.language}</span>
+      <div class="number">${book.id}</div>
     </div>
   </div> `;
   bookBorrow.addEventListener("click", function () {
@@ -1454,16 +1451,16 @@ function returnBook(id) {
   const book = bookData.filter((book) => book.id == id)[0];
   bookimageEl.innerHTML = `
    <div class="card shadow" style="width:230px; height: 320px;">
-        <div>
-            <img class="card-img-top" src="${book.imageLink}" alt="" style="height: 200px;">
-        </div>
-              <div class="card-body">
-              <h6 class="card-title single-line">${book.title}</h6>
-                <p class="card-text single-line" style="font-size:14px;">${book.author}</p>
-                 <span class="badge bg-success lang"> ${book.language}</span>
-                   <div class="number">${book.id}</div>
-            </div>
-    </div> `;
+     <div>
+        <img class="card-img-top" src="${book.imageLink}" alt="" style="height: 200px;">
+    </div>
+     <div class="card-body">
+       <h6 class="card-title single-line">${book.title}</h6>
+       <p class="card-text single-line" style="font-size:14px;">${book.author}</p>
+       <span class="badge bg-success lang"> ${book.language}</span>
+       <div class="number">${book.id}</div>
+    </div>
+   </div> `;
   bookBorrow.addEventListener("click", function () {
     const tid = transections.map((transection) => transection.tid);
     const selectedPerson = personIdEl.value;
