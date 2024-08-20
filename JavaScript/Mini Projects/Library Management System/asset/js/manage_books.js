@@ -1211,7 +1211,7 @@ let transection = [
     status: "Borrow",
   },
   {
-    id: 1001,
+    tid: 1001,
     personId: "9094",
     bookId: 2,
     tDate: " 9-8-2024",
@@ -1219,7 +1219,7 @@ let transection = [
     status: "Borrow",
   },
   {
-    id: 1002,
+    tid: 1002,
     personId: "1733",
     bookId: 3,
     tDate: " 9-8-2024",
@@ -1227,7 +1227,7 @@ let transection = [
     status: "Borrow",
   },
   {
-    id: 1003,
+    tid: 1003,
     personId: "7301",
     bookId: 4,
     tDate: " 9-8-2024",
@@ -1235,6 +1235,7 @@ let transection = [
     status: "Borrow",
   },
 ];
+
 const bookIdEl = document.getElementById("bookId");
 const personIdEl = document.getElementById("personId");
 const borrowDateEl = document.getElementById("borrowDate");
@@ -1378,52 +1379,6 @@ function counter() {
 }
 counter();
 
-// Delete book
-
-function deleteBorrowBook(id) {
-  if (id) {
-    let updatebook = borrowBookData.filter((book) => book.bookId != id);
-    borrowBookData = updatebook;
-    loadBorrowBookData();
-    loadBook();
-    counter();
-    setTimeout(deleteBookSuccessMessage, 200);
-  }
-}
-
-// Delete Success message with timer
-
-function deleteBookSuccessMessage() {
-  customModal("Delete Book", "Book Deleted Successfully...");
-}
-
-// Custom modal delete with confirmation
-const deleteModal = new bootstrap.Modal(myModalBorrowBookDelete, {
-  keyboard: false,
-});
-
-function showDeleteModal(callback) {
-  deleteModal.show();
-
-  document.getElementById("yess").addEventListener("click", function () {
-    callback(true);
-    deleteModal.hide();
-  });
-
-  document.getElementById("noo").addEventListener("click", function () {
-    callback(false);
-    deleteModal.hide();
-  });
-}
-
-function deleteBookWithConfirmation(id) {
-  showDeleteModal(function (confirmed) {
-    if (confirmed) {
-      deleteBorrowBook(id);
-    }
-  });
-}
-
 // ClearAll
 
 function clearAllBookInput() {
@@ -1432,25 +1387,38 @@ function clearAllBookInput() {
 
 // Auto get book name when i click borrow button
 
-document.querySelectorAll(".card .btn-borrow").forEach((button) => {
-  button.addEventListener("click", handleButtonClick);
-});
+// document.querySelectorAll(".card .btn-borrow").forEach((button) => {
+//   button.addEventListener("click", handleButtonClick);
+// });
 
-document.querySelectorAll(".card .btn-return").forEach((button) => {
-  button.addEventListener("click", handleButtonClick);
-});
+// document.querySelectorAll(".card .btn-return").forEach((button) => {
+//   button.addEventListener("click", handleButtonClick);
+// });
 
-function handleButtonClick(event) {
-  const button = event.currentTarget;
-  const card = button.closest(".card");
-  const bookIdEl = document.getElementById("bookId");
-  const idEl = card.querySelector(".number");
-  bookIdEl.value = idEl.innerHTML;
+// function handleButtonClick(event) {
+//   const button = event.currentTarget;
+//   const card = button.closest(".card");
+//   const bookIdEl = document.getElementById("bookId");
+//   const idEl = card.querySelector(".number");
+//   bookIdEl.value = idEl.innerHTML;
+// }
+
+// Load Users in the input field
+
+function loadUserDetails() {
+  let userData = users;
+  let userIdList = userData.map((user) => user);
+  let personId = document.getElementById("personId");
+  personId.innerHTML = ` <option value="">Select your User </option>`;
+  userIdList.forEach((user) => {
+    personId.innerHTML += `<option value='${user.id}'>${user.userName} (${user.id})</option>`;
+  });
 }
+loadUserDetails();
 
 //book borrow and return
 function borrowBook(id) {
- ourModal.show();
+  ourModal.show();
   const heading = document.querySelector(".heading");
   heading.innerHTML = "Borrow Book";
   const bookimageEl = document.querySelector("#book-image");
@@ -1470,7 +1438,7 @@ function borrowBook(id) {
 }
 
 function returnBook(id) {
-  ourModal.show()
+  ourModal.show();
   const heading = document.querySelector(".heading");
   heading.innerHTML = "Return Book";
   const bookimageEl = document.querySelector("#book-image");
@@ -1495,42 +1463,42 @@ bookBorrow.addEventListener("click", function () {
   const id = bookIdEl.value;
   const personId = personIdEl.value;
   const borrowDate = borrowDateEl.value;
-
-  console.log(id);
+  const returnDate = "";
 
   if (personId && borrowDate) {
     if (id) {
       //Update book
-      let updatedBook = transection.map((book) => {
+      let returnBook = transection.map((book) => {
         if (book.bookId == id) {
           return {
             ...book,
-            personId: personId,
-            borrowDate: borrowDate,
+            returnDate: returnDate,
           };
         } else {
           return book;
         }
       });
 
-      transection = updatedBook;
+      transection = returnBook;
       clearAllBookInput();
       loadBorrowBookData();
       loadBook();
-      modalBorrow.hide();
+      ourModal.hide();
 
       customModal("Book Update Status", "Book Updated Successfully...");
     } else {
       const bookObj = {
+        tid: Math.floor(1000 + Math.random() * 9000),
         bookId: bookIdEl.value,
-        personId: personId,
+        personId: personIdEl.value,
         borrowDate: borrowDate,
+        returnDate: returnDate,
       };
       transection.push(bookObj);
       clearAllBookInput();
       loadBorrowBookData();
       loadBook();
-      modalBorrow.hide();
+      ourModal.hide();
 
       customModal("Book Borrow Status", "Book Added Successfully...");
     }
@@ -1562,10 +1530,9 @@ function loadBorrowBookData() {
   <td>${index + 1}</td>
   <td>${book.personId}</td>
   <td>${book.bookId}</td>
-  <td>${book.borrowDate}</td>
-   <td><button class="btn btn-sm btn-danger" onclick="deleteBookWithConfirmation(${
-     book.bookId
-   })">Delete</button></td>
+  <td>${book.tDate}</td>
+  <td>${book.rDate}</td>
+  <td>${book.status}</td>
   </tr>`;
   });
 }
@@ -1575,4 +1542,3 @@ loadBorrowBookData();
 // modalRefresh.addEventListener("hidden.bs.modal", (event) => {
 
 // });
-
