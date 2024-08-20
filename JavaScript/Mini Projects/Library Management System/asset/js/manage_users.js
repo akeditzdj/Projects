@@ -1,6 +1,5 @@
 // @ts-nocheck
 // user details
-
 let users = [
   {
     id: 1653,
@@ -66,7 +65,6 @@ let users = [
     terms: "Agreed",
     newsletter: "Agreed",
   },
-
   {
     id: 7623,
     roll: "Staff",
@@ -84,7 +82,6 @@ let users = [
     newsletter: "Disagree",
   },
 ];
-
 //Get data from new user
 //Get Registration inputs
 const formEl = document.querySelector("form");
@@ -101,17 +98,14 @@ const pincodeEl = document.getElementById("pincode");
 const addressEl = document.getElementById("address");
 const termsEl = document.getElementById("terms");
 const newsletterEl = document.getElementById("newsletter");
-
 const maleEl = document.getElementById("male");
 const femaleEl = document.getElementById("female");
 const othersEl = document.getElementById("others");
 let genderVal = "";
-
 //Get Login inputs
 let loginRollEl = document.getElementById("loginRoll");
 let loginEmailEl = document.getElementById("loginEmail");
 let loginPasswordEl = document.getElementById("loginPassword");
-
 // Buttons
 const btnAdd = document.getElementById("btnAdd");
 const btnSave = document.getElementById("submit");
@@ -119,47 +113,36 @@ const btnClear = document.getElementById("clear");
 const btnLogin = document.getElementById("btnLogin");
 //Filter
 const filterUser = document.getElementById("filterUser");
-
 // Load data in table
 const userTableBody = document.querySelector("#usertable");
-
 // Modal open and hide
 const mainModal = new bootstrap.Modal(exampleModal, {
   keyboard: false,
 });
-
 const modalDelete = new bootstrap.Modal(deleteModal, {
   keyboard: false,
 });
-
 btnAdd.addEventListener("click", function () {
   mainModal.show();
   clearAll();
 });
-
 // Show and hide tab
 const bsTab = new bootstrap.Tab("#login-tab");
-
 // form validation error message
-
 function setError(element, message) {
   const formGroup = element.parentElement;
   const errorElement = formGroup.querySelector(".error");
-
   errorElement.innerHTML = message;
   formGroup.classList.add("error");
   formGroup.classList.remove("success");
 }
-
 function setSuccess(element) {
   const formGroup = element.parentElement;
   const errorElement = formGroup.querySelector(".error");
-
   errorElement.innerText = "";
   formGroup.classList.add("success");
   formGroup.classList.remove("error");
 }
-
 // Add new user
 btnSave.addEventListener("click", function () {
   const id = idEl.value;
@@ -176,9 +159,7 @@ btnSave.addEventListener("click", function () {
   const address = addressEl.value;
   const terms = termsEl.checked ? "Agreed" : "Disagree";
   const newsletter = newsletterEl.checked ? "Agreed" : "Disagree";
-
   // Form validation
-
   if (roll === "") {
     rollEl.focus();
     setError(rollEl, "Please select your roll");
@@ -186,7 +167,6 @@ btnSave.addEventListener("click", function () {
   } else {
     setSuccess(rollEl);
   }
-
   if (userName === "") {
     userNameEl.focus();
     setError(userNameEl, "Name is required");
@@ -206,7 +186,6 @@ btnSave.addEventListener("click", function () {
   } else {
     const emailformat =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
     if (emailformat.test(email)) {
       setSuccess(emailEl);
     } else {
@@ -216,7 +195,6 @@ btnSave.addEventListener("click", function () {
     }
     setSuccess(emailEl);
   }
-
   if (password === "") {
     passwordEl.focus();
     setError(passwordEl, "Please enter your password");
@@ -233,7 +211,6 @@ btnSave.addEventListener("click", function () {
     } else if (!/[A-Z]/.test(password)) {
       passwordEl.focus();
       setError(passwordEl, "Password should have at least 1 uppercase");
-
       return;
     } else if (!/[a-z]/.test(password)) {
       passwordEl.focus();
@@ -264,7 +241,6 @@ btnSave.addEventListener("click", function () {
       setSuccess(cpasswordEl);
     }
   }
-
   // let numberReg = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
   if (number === "") {
     numberEl.focus();
@@ -284,7 +260,6 @@ btnSave.addEventListener("click", function () {
       setSuccess(numberEl);
     }
   }
-
   if (dob === "") {
     dobEl.focus();
     setError(dobEl, "Please enter your date of birth");
@@ -292,7 +267,6 @@ btnSave.addEventListener("click", function () {
   } else {
     setSuccess(dobEl);
   }
-
   if (city === "") {
     cityEl.focus();
     setError(cityEl, "Please select your country");
@@ -300,7 +274,6 @@ btnSave.addEventListener("click", function () {
   } else {
     setSuccess(cityEl);
   }
-
   if (pincode === "") {
     pincodeEl.focus();
     setError(pincodeEl, "Please enter your pin code");
@@ -319,7 +292,6 @@ btnSave.addEventListener("click", function () {
       setSuccess(pincodeEl);
     }
   }
-
   if (address === "") {
     addressEl.focus();
     setError(addressEl, "Please enter your address");
@@ -327,7 +299,6 @@ btnSave.addEventListener("click", function () {
   } else {
     setSuccess(addressEl);
   }
-
   if (id) {
     //Update users
     let updatedUsers = users.map((user) => {
@@ -375,7 +346,6 @@ btnSave.addEventListener("click", function () {
       terms: terms,
       newsletter: newsletter,
     };
-
     users.push(userObj);
     clearAll();
     loadUser();
@@ -384,7 +354,6 @@ btnSave.addEventListener("click", function () {
   }
   bsTab.show();
 });
-
 //Edit users
 function editUsers(id) {
   mainModal.show();
@@ -400,7 +369,6 @@ function editUsers(id) {
   cityEl.value = selectedUsers.city;
   pincodeEl.value = selectedUsers.pincode;
   addressEl.value = selectedUsers.address;
-
   genderVal === "Male"
     ? (maleEl.checked = true)
     : genderVal === "Female"
@@ -408,9 +376,7 @@ function editUsers(id) {
     : (othersEl.checked = true);
   loadUser();
 }
-
 // Delete user
-
 function deleteUser(id) {
   if (id) {
     let updatedUsers = users.filter((user) => user.id != id);
@@ -420,21 +386,17 @@ function deleteUser(id) {
     setTimeout(deleteSuccessMessage, 200);
   }
 }
-
 // Delete Success message with timer
 function deleteSuccessMessage() {
   customModal("Delete User", "User Deleted Successfully...");
 }
-
 // Custom modal delete with confirmation
 function showDeleteModalForConfirm(callback) {
   modalDelete.show();
-
   document.getElementById("yes").addEventListener("click", function () {
     callback(true);
     modalDelete.hide();
   });
-
   document.getElementById("no").addEventListener("click", function () {
     callback(false);
     modalDelete.hide();
@@ -447,16 +409,13 @@ function deleteUserWithConfirmation(id) {
     }
   });
 }
-
 // Load user data
-
 function loadUser(isForSearch = 0, filterUser = []) {
   if (isForSearch == 0) {
     userData = users;
   } else {
     userData = filterUser;
   }
-
   userTableBody.innerHTML = "";
   userData.forEach((user, index) => {
     userTableBody.innerHTML += `<tr>
@@ -483,11 +442,8 @@ function loadUser(isForSearch = 0, filterUser = []) {
           </tr>`;
   });
 }
-
 loadUser();
-
 // ClearAll
-
 function clearAll() {
   rollEl.value = "";
   userNameEl.value = "";
@@ -500,9 +456,7 @@ function clearAll() {
   pincodeEl.value = "";
   addressEl.value = "";
 }
-
 btnClear.addEventListener("click", clearAll);
-
 //Filter users
 filterUser.addEventListener("input", function () {
   const searchQuery = this.value.toLowerCase();
@@ -513,11 +467,9 @@ filterUser.addEventListener("input", function () {
   );
   loadUser(1, filterUser);
 });
-
 function reloadPage() {
   location.reload();
 }
-
 // Table row count and show on dashboard
 function counter() {
   const rowCount = document.getElementById("userReg").rows.length - 1;
@@ -528,13 +480,11 @@ function counter() {
   const totalMale = document.getElementById("totalMale");
   const totalFemale = document.getElementById("totalFemale");
   const totalOthers = document.getElementById("totalOthers");
-
   let staff = 0;
   let student = 0;
   let male = 0;
   let female = 0;
   let others = 0;
-
   users.forEach((user) => {
     user.roll;
     user.gender;
@@ -553,7 +503,6 @@ function counter() {
     if (user.gender == "Others") {
       others++;
     }
-
     totalStaff.innerHTML = staff;
     totalStudent.innerHTML = student;
     totalMale.innerHTML = "Male" + " - " + male;
@@ -561,18 +510,13 @@ function counter() {
     totalOthers.innerHTML = "Others" + " - " + others;
   });
 }
-
 counter();
-
 // Window refresh
-
 // function reload() {
 //   Modal.show();
 // }
 // reload();
-
 // Login page
-
 btnLogin.addEventListener("click", function () {
   function login() {
     let loginEmailEl = document.getElementById("loginEmail");
@@ -581,7 +525,6 @@ btnLogin.addEventListener("click", function () {
     const storedPassword = users.map((user) => user.password);
     let loginEmail = loginEmailEl.value;
     let loginPassword = loginPasswordEl.value;
-
     if (loginEmail === "") {
       loginEmailEl.focus();
       setError(loginEmailEl, "Please enter your email");
@@ -589,7 +532,6 @@ btnLogin.addEventListener("click", function () {
     } else {
       const emailformat =
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
       if (emailformat.test(loginEmail)) {
         setSuccess(loginEmailEl);
       } else {
@@ -606,7 +548,6 @@ btnLogin.addEventListener("click", function () {
     } else {
       setSuccess(loginPasswordEl);
     }
-
     if (
       storedEmail.includes(loginEmail) &&
       storedPassword.includes(loginPassword)
@@ -622,11 +563,9 @@ btnLogin.addEventListener("click", function () {
       setError(loginPasswordEl, "");
     }
   }
-
   login();
   loadUser();
 });
-
 // password show/hide
 function passwordShowAndHide() {
   const passwordInputs = document.querySelectorAll(".password-text");
@@ -643,9 +582,7 @@ function passwordShowAndHide() {
   });
 }
 passwordShowAndHide();
-
 // custom modal dialog box
-
 function customModal(title, content) {
   const modal = document.getElementById("modal");
   let loadModal = `
@@ -665,10 +602,8 @@ function customModal(title, content) {
                         </div>
                     </div>
 `;
-
   modal.innerHTML = loadModal;
   // Modal open and hide
-
   const modalDialog = new bootstrap.Modal(myCustomModal, {
     keyboard: false,
   });

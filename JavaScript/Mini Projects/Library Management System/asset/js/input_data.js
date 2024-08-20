@@ -38,7 +38,6 @@ const districtList = [
   "Viluppuram",
   "Virudhunagar",
 ];
-
 districtList.forEach(function (item) {
   let district = document.createElement("option");
   district.list = item;

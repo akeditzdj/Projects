@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -9,16 +8,13 @@
 html {
   scroll-behavior: smooth;
 }
-
 body {
   width: 100%;
   height: 100%;
   background-color: #1f2831;
   color: white;
 }
-
 /* -------------  Main Page -----------------*/
-
 .bg-image {
   width: 100%;
   height: 100%;
@@ -29,7 +25,6 @@ body {
   background-size: cover;
   position: fixed;
 }
-
 .main-page-text {
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
@@ -45,17 +40,14 @@ body {
   padding: 50px;
   text-align: center;
 }
-
 .mainPage img {
   width: 300px;
   height: 300px;
 }
-
 .mainPage button {
   width: 350px;
   height: 70px;
 }
-
 @media screen and (max-width: 576px) {
   .main-page-text {
     width: 100%;
@@ -66,12 +58,10 @@ body {
     align-items: center;
     justify-content: center;
   }
-
   .main-page-text h2 {
     width: 100%;
     padding: 0;
   }
-
   .mainPage button {
     width: 250px;
     height: 50px;
@@ -82,9 +72,7 @@ body {
     bottom: 20px;
   }
 }
-
 /* ------------- Library Page  -----------------*/
-
 nav {
   background-color: #1f2831;
   width: 100% !important;
@@ -100,15 +88,12 @@ nav .nav-brand img:hover {
 nav ul li {
   transition: 0.3s all;
 }
-
 nav ul li button {
   width: 100px !important;
 }
-
 nav ul li:hover {
   transform: translateY(-10px);
 }
-
 .offcanvas {
   margin-top: 0px;
   background-color: #1f2831;
@@ -117,23 +102,19 @@ nav ul li:hover {
 .offcanvas-body::-webkit-scrollbar {
   display: none;
 }
-
 .nav-btn {
   background-color: #1f2831;
   width: 150px !important;
 }
-
 .nav-btn:hover {
   background-color: #fff !important;
   color: #000 !important;
   background-color: #1f2831;
 }
-
 .side-bar-btn button {
   padding: 15px 10px;
   margin-top: 5%;
 }
-
 .button {
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -143,12 +124,10 @@ nav ul li:hover {
   background-position: right bottom;
   transition: all 0.5s ease-out;
 }
-
 .button:hover {
   background-position: left bottom;
   color: #000 !important;
 }
-
 .dashboard {
   width: 100%;
   height: 180px;
@@ -174,7 +153,6 @@ nav ul li:hover {
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px !important;
   color: black;
 }
-
 .book-container {
   width: 80%;
   margin: 0 auto;
@@ -184,7 +162,6 @@ nav ul li:hover {
   background-position: left bottom;
   color: green;
 }
-
 .number {
   position: absolute;
   width: 30px;
@@ -199,27 +176,22 @@ nav ul li:hover {
   line-height: 30px;
   font-size: 12px;
 }
-
 .card:hover .number {
   background-color: green;
 }
-
 .single-line {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .lang {
   font-size: 11px !important;
   padding: 3px 10px;
   font-weight: 500;
 }
-
 .card-img img {
   position: relative !important;
 }
-
 #notAvailable {
   width: 100%;
   height: 52%;
@@ -235,25 +207,20 @@ nav ul li:hover {
   display: none;
   border-radius: 5px;
 }
-
 .block {
   display: flex !important;
 }
-
 .btn-borrow {
   display: none;
 }
-
 .btn-return {
   display: none;
 }
-
 canvas {
   width: 100% !important;
   height: auto !important;
   margin: 0 auto;
 }
-
 @media screen and (max-width: 576px) {
   nav {
     height: 100px;
@@ -261,13 +228,11 @@ canvas {
   nav h2 {
     font-size: 15px;
   }
-
   nav .nav-brand img {
     width: 70px;
     height: 70px;
     transition: 0.3s all;
   }
-
   .offcanvas {
     margin: 0;
     background-color: #1f2831;
@@ -279,11 +244,9 @@ canvas {
     font-size: 14px;
     margin-top: 15px;
   }
-
   .dashboard {
     width: 335px;
   }
-
   .tab-container {
     width: 100%;
     margin: 10px auto;
@@ -294,29 +257,23 @@ canvas {
     margin: 0 auto;
   }
 }
-
 /* -------------  Forms -----------------*/
-
 .form-main-container {
   width: 100%;
   height: 100%;
 }
-
 .form-container {
   max-width: 70%;
   height: 100%;
 }
-
 .login-form-container {
   width: 50%;
 }
-
 input::placeholder,
 textarea::placeholder {
   color: #ada9a9 !important;
   font-size: 14px;
 }
-
 .form-group {
   position: relative;
 }
@@ -326,25 +283,20 @@ textarea::placeholder {
   top: 40px;
   right: 15px;
 }
-
 form select {
   background-color: #1f2831 !important;
   color: #fff !important;
 }
-
 .form-container form .form-group {
   margin-top: 35px;
 }
-
 .form-container form .form-group textarea {
   height: 143px !important;
   resize: none;
 }
-
 .form-container form button {
   width: 150px;
 }
-
 .tab-container ul {
   width: 70%;
   margin: 0 auto;
@@ -352,28 +304,23 @@ form select {
 .tab-container .nav-item button {
   width: 378.7px;
 }
-
 .modal-content {
   background-color: #1f2831;
 }
-
 form .form-group .error {
   color: red;
   font-size: 13px;
   font-weight: 600;
 }
-
 .form-group.error input,
 .form-group.error select,
 .form-group.error textarea {
   border-color: red !important;
 }
-
 .form-group small {
   color: red;
   margin-top: 10px;
 }
-
 @media screen and (max-width: 576px) {
   .form-container {
     width: 100%;
@@ -390,7 +337,6 @@ form .form-group .error {
     width: 100% !important;
     margin: 10px auto !important;
   }
-
   .form-tab-container .nav-item button {
     width: 154px !important;
   }
@@ -398,7 +344,6 @@ form .form-group .error {
     width: 100% !important;
     margin: 0 auto !important;
   }
-
   .login-form-container {
     width: 100%;
     padding: 10px;
@@ -414,45 +359,36 @@ form .form-group .error {
     width: 100%;
     padding: 0;
   }
-
   .modal-title {
     font-size: 16px;
     padding: 0 5px;
   }
 }
-
 /*-----------  Table content   ----------*/
-
 table {
   height: 500px !important;
   display: block;
   overflow: scroll !important;
   max-width: 1920px !important;
 }
-
 table thead {
   position: sticky;
   top: 0;
 }
-
 table thead th {
   background-color: #fff !important;
   color: #000 !important;
 }
-
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
-
 ::-webkit-scrollbar-track {
   background: #1f2831;
 }
-
 ::-webkit-scrollbar-thumb {
   background: #555;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: #fff;
 }

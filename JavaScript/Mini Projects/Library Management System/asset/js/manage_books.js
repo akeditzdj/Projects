@@ -1201,7 +1201,6 @@ let bookData = [
     status: "Available",
   },
 ];
-
 let transections = [
   {
     tid: 1000,
@@ -1236,27 +1235,20 @@ let transections = [
     status: "Borrow",
   },
 ];
-
 const bookIdEl = document.getElementById("bookId");
 const personIdEl = document.getElementById("personId");
 const borrowDateEl = document.getElementById("borrowDate");
-
 const bookSelf = document.querySelector("#bookSelf");
 const selectLanguage = document.getElementById("selectLanguage");
 const searchBook = document.getElementById("searchBook");
 const bookTable = document.getElementById("bookBorrowTable");
-
 const bookBorrow = document.getElementById("bookBorrowSave");
-
 // Modal title change
-
 const modalBorrowTitle = document.getElementById("title-borrow");
 const alertMsgBorrow = document.getElementById("alert-borrow-delete");
-
 // Modal open and hide
 const modalBorrow = document.querySelector("#modalBorrow");
 const ourModal = new bootstrap.Modal(modalBorrow, {});
-
 // Load book in the main page
 function loadBook(lang = "All", type = "Filter", searchData = []) {
   let data = [];
@@ -1268,42 +1260,26 @@ function loadBook(lang = "All", type = "Filter", searchData = []) {
   } else if (type == "Search") {
     data = searchData;
   }
-  if (data.length > 0) {
-    let bookHTML = data.map(
-      (book, index) => `  <div class="col">
+  if (data.length > 0) {let bookHTML = data.map( ( book, index ) =>
+`<div class="col">
 <div class="card shadow book-card">
-<div class="card-img position-relative"><img class="card-img-top" src="${
-        book.imageLink
-      }" alt=""style="height: 180px;"></div>
+<div class="card-img position-relative"><img class="card-img-top" src="${book.imageLink}" alt=""style="height: 180px;"></div>
 <div class="number">${index + 1}</div>
 <div class="card-body">
 <h6 class="card-title single-line">${book.title}</h6>
 <p class="card-text single-line" style="font-size:14px;">${book.author}</p>
 <span class="badge bg-success lang"> ${book.language}</span></div>
-<div class="card-footer">${
-        book.status == "Not Available"
-          ? "<button type='button' onclick='returnBook(" +
-            book.id +
-            ")' class='btn btn-danger btn-sm'>Return</button>"
-          : "<button  type='button' onclick='borrowBook(" +
-            book.id +
-            ")' class='btn btn-primary btn-sm'>Borrow</button>"
-      }
+<div class="card-footer">${book.status == "Not Available" ? "<button type='button' onclick='returnBook(" + book.id + ")' class='btn btn-danger btn-sm'>Return</button>"
+:"<button  type='button' onclick='borrowBook(" + book.id + ")' class='btn btn-primary btn-sm'>Borrow</button>"}</div>
+<div id="notAvailable" class="${book.status == "Not Available" ? "block" : ""}">Book is Not Available</div>
 </div>
-<div id="notAvailable" class="${
-        book.status == "Not Available" ? "block" : ""
-      }">Book is Not Available</div>
-</div>
-</div>`
-    );
+</div>`);
     bookHTML = bookHTML.join(" ");
     bookSelf.innerHTML = bookHTML;
   }
 }
 loadBook("All");
-
 // Filter book data in select option by language
-
 function loadComboLanguages() {
   const languages = [...new Set(bookData.map((book) => book.language))];
   languages.sort();
@@ -1315,18 +1291,14 @@ function loadComboLanguages() {
   });
 }
 loadComboLanguages();
-
 // Filter book data by search input
-
 selectLanguage.addEventListener("change", function () {
   loadBook(this.value);
 });
-
 searchBook.addEventListener("input", function () {
   const qry = this.value;
   const searchBook = qry.trim().toLowerCase();
   const lang = selectLanguage.value;
-
   if (searchBook != "") {
     let data = [];
     if (lang == "All") {
@@ -1335,51 +1307,38 @@ searchBook.addEventListener("input", function () {
       const filteredBook = bookData.filter((book) => book.language == lang);
       data = filteredBook;
     }
-
     const serachFilterBook = data.filter(
       (book) =>
         book.title.toLocaleLowerCase().includes(searchBook) ||
         book.author.toLocaleLowerCase().includes(searchBook)
     );
-
     loadBook(lang, "Search", serachFilterBook);
   } else {
     loadBook(lang);
   }
 });
-
 // Dashboard counter
-
 function counter() {
   const totalBook = document.getElementById("totalBook");
   const totalAuthor = document.getElementById("totalAuthor");
   const totalLanguages = document.getElementById("totalLanguages");
   const totalCountry = document.getElementById("totalCountry");
-
   let book = [...new Set(bookData.map((index) => index))];
   totalBook.innerHTML = book.length;
-
   let author = [...new Set(bookData.map((book) => book.author))];
   totalAuthor.innerHTML = author.length;
-
   let lang = [...new Set(bookData.map((book) => book.language))];
   totalLanguages.innerHTML = lang.length;
-
   let country = [...new Set(bookData.map((book) => book.country))];
   totalCountry.innerHTML = country.length;
-
   loadBook();
 }
 counter();
-
 // ClearAll
-
 function clearAllBookInput() {
   borrowDateEl.value = "";
 }
-
 // Load Users in the input field
-
 function loadUserDetails() {
   let userData = users;
   let userIdList = userData.map((user) => user);
@@ -1390,7 +1349,6 @@ function loadUserDetails() {
   });
 }
 loadUserDetails();
-
 //book borrow and return
 function borrowBook(id) {
   ourModal.show();
@@ -1399,17 +1357,14 @@ function borrowBook(id) {
   const bookimageEl = document.querySelector("#book-image");
   const book = bookData.filter((book) => book.id == id)[0];
   bookimageEl.innerHTML = `
-
   <div class="card shadow" style="width:230px; height: 320px;">
-      <div>
-        <img class="card-img-top" src="${book.imageLink}" alt="" style="height: 200px;">
-    </div>
-    <div class="card-body">
-      <h6 class="card-title single-line">${book.title}</h6>
-      <p class="card-text single-line" style="font-size:14px;">${book.author}</p>
-      <span class="badge bg-success lang"> ${book.language}</span>
-      <div class="number">${book.id}</div>
-    </div>
+  <div><img class="card-img-top" src="${book.imageLink}" alt="" style="height: 200px;"></div>
+  <div class="card-body">
+  <h6 class="card-title single-line">${book.title}</h6>
+  <p class="card-text single-line" style="font-size:14px;">${book.author}</p>
+  <span class="badge bg-success lang"> ${book.language}</span>
+  <div class="number">${book.id}</div>
+  </div>
   </div> `;
   bookBorrow.addEventListener("click", function () {
     const personId = personIdEl.value;
@@ -1425,7 +1380,6 @@ function borrowBook(id) {
         rDate: rDate,
         status: status,
       };
-
       bookData.forEach((book) => {
         if (book.id === id) {
           book.status = "Not Available";
@@ -1442,7 +1396,6 @@ function borrowBook(id) {
     }
   });
 }
-
 function returnBook(id) {
   ourModal.show();
   const heading = document.querySelector(".heading");
@@ -1451,15 +1404,13 @@ function returnBook(id) {
   const book = bookData.filter((book) => book.id == id)[0];
   bookimageEl.innerHTML = `
    <div class="card shadow" style="width:230px; height: 320px;">
-     <div>
-        <img class="card-img-top" src="${book.imageLink}" alt="" style="height: 200px;">
-    </div>
-     <div class="card-body">
-       <h6 class="card-title single-line">${book.title}</h6>
-       <p class="card-text single-line" style="font-size:14px;">${book.author}</p>
-       <span class="badge bg-success lang"> ${book.language}</span>
-       <div class="number">${book.id}</div>
-    </div>
+   <div><img class="card-img-top" src="${book.imageLink}" alt="" style="height: 200px;"></div>
+   <div class="card-body">
+   <h6 class="card-title single-line">${book.title}</h6>
+   <p class="card-text single-line" style="font-size:14px;">${book.author}</p>
+   <span class="badge bg-success lang"> ${book.language}</span>
+   <div class="number">${book.id}</div>
+   </div>
    </div> `;
   bookBorrow.addEventListener("click", function () {
     const tid = transections.map((transection) => transection.tid);
@@ -1467,9 +1418,6 @@ function returnBook(id) {
     const matchPersonID = transections.find(
       (transection) => transection.personId === selectedPerson
     );
-    console.log(selectedPerson);
-    console.log(matchPersonID);
-
     const returnDate = borrowDateEl.value;
     const status = "Return";
     if (returnDate) {
@@ -1486,13 +1434,11 @@ function returnBook(id) {
             return book;
           }
         });
-
         bookData.forEach((book) => {
           if (book.id === id) {
             book.status = "Available";
           }
         });
-
         transections = returnBook;
         clearAllBookInput();
         loadBorrowBookData();
@@ -1507,9 +1453,7 @@ function returnBook(id) {
     }
   });
 }
-
 // Load book borrow data in table view
-
 function loadBorrowBookData() {
   bookTable.innerHTML = "";
   transections.forEach((book, index) => {
@@ -1524,8 +1468,6 @@ function loadBorrowBookData() {
   });
 }
 loadBorrowBookData();
-
 // const modalRefresh = document.getElementById("exampleModalBorrow");
 // modalRefresh.addEventListener("hidden.bs.modal", (event) => {
-
 // });

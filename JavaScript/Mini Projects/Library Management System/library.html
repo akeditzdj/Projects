@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +10,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link rel="stylesheet" href="asset/css/style.css">
 </head>
-
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg shadow top-0 sticky-top">
     <div class="container-fluid d-flex justify-content-between">
@@ -42,7 +40,6 @@
     </div>
 </nav>
 <!-- Navbar End -->
-
 <!-- Offcanvas Start -->
 <div class="offcanvas offcanvas-start shadow" data-bs-scroll="true" data-bs-backdrop="true" tabindex="1"
     id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
@@ -56,7 +53,6 @@
     <div class="offcanvas-body text-light side-bar-btn">
         <!-- Pills tab List Start -->
         <div id="pills-tab" role="tablist">
-
             <!-- Tab Toggler Button Add and Manage Users - Start -->
             <div class="row mt-3">
                 <button class="btn w-100 button active text-white text-start" id="manageMembers-tab"
@@ -90,13 +86,11 @@
     <!-- Offcanvas Body End -->
 </div>
 <!-- Offcanvas End -->
-
 <!-- Tabs Control Start -->
 <div class="container-fluid tab-container">
     <div class="row">
         <div class="col-md-12 mb-5 mb-md-0">
             <div class="tab-content" id="pills-tabContent">
-
                 <!-- Manage Users - Tab Start -->
                 <div class="tab-pane fade " id="manageMembers" role="tabpanel" aria-labelledby="manageMembers-tab"
                     tabindex="0">
@@ -150,7 +144,6 @@
                         <div class=" my-3 bg-light py-1 rounded-5 w-100">
                             <h3 class="text-center text-dark fw-bold">Add / Manage Users</h3>
                         </div>
-
                         <div class="col d-md-flex justify-content-between align-items-center">
                             <div>
                                 <button class="btn btn-outline-light w-100" id="btnAdd">
@@ -164,7 +157,6 @@
                         </div>
                     </div>
                     <!-- Page Header and Title - End-->
-
                     <!-- User Data Table - Start-->
                     <div class="row-mt-5">
                         <div class="col-md-12">
@@ -313,7 +305,6 @@
                                                                                     placeholder="Enter your password"
                                                                                     autocomplete="off">
                                                                                 <i class="bi bi-eye"></i>
-
                                                                                 <small class="error"></small>
                                                                             </div>
                                                                             <div class="form-group">
@@ -340,7 +331,6 @@
                                                                                     placeholder="Enter your mobile number">
                                                                                 <small class="error"></small>
                                                                             </div>
-
                                                                         </div>
                                                                         <div class="col-lg-6">
                                                                             <div class="form-group">
@@ -417,7 +407,6 @@
                                                                                                     </textarea>
                                                                                 <small class="error"></small>
                                                                             </div>
-
                                                                         </div>
                                                                         <div class="form-group">
                                                                             <div
@@ -444,17 +433,14 @@
                                                                     <div class="row">
                                                                         <div
                                                                             class="col-lg-12 mt-4 d-flex justify-content-center align-items-center gap-3">
-
                                                                             <div><button type="reset" id="clear"
                                                                                     class="btn btn-danger">Clear</button>
                                                                             </div>
                                                                             <div><button type="button" id="submit"
                                                                                     class="btn btn-primary">Submit</button>
                                                                             </div>
-
                                                                         </div>
                                                                     </div>
-
                                                                 </form>
                                                             </div>
                                                         </div>
@@ -530,7 +516,6 @@
                 <!-- Manage Books - Tab Start -->
                 <div class="tab-pane fade  show active" id="manageBooks" role="tabpanel"
                     aria-labelledby="manageBooks-tab" tabindex="0">
-
                     <!-- Dashboard Content - Start -->
                     <div class="row mt-2">
                         <div class="col-md-3 mt-4 mt-md-0">
@@ -606,7 +591,6 @@
                         </div>
                     </div>
                     <!-- Page Header and Title - End-->
-
                     <!-- Book Data - Start-->
                     <div class="row mb-5 book-container">
                         <div class="col-md-12">
@@ -617,7 +601,6 @@
                     </div>
                     <!-- Book Data - End-->
                     <!-- Modal - Books return Form- Start-->
-
                     <div class="modal fade modal-lg" id="modalBorrow" tabindex="-1" aria-labelledby="modalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">
@@ -705,7 +688,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Modal - Book data table start-->
                     <div class="modal fade modal-xl" id="borrowBookDataTable" data-bs-backdrop="static"
                         data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -745,7 +727,6 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-
                                 </div>
                             </div>
                         </div>
@@ -794,7 +775,6 @@
                                             <h3 class="text-center text-dark fw-bold">Library Data Report</h3>
                                         </div>
                                         <!-- Page Header and Title - End-->
-
                                         <!-- Chart - Start-->
                                         <div class="col">
                                             <canvas class="border" id="myChart"></canvas>
@@ -870,19 +850,14 @@
             <!-- custom pop-up modal-End -->
         </div>
     </div>
-
 </div>
 <!-- Tabs Control End -->
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-
 <script src="asset/js/manage_users.js"></script>
 <script src="asset/js/manage_books.js"></script>
 <script src="asset/js/input_data.js"></script>
 <script src="asset/js/chart.js"></script>
-
 </body>
-
 </html>
