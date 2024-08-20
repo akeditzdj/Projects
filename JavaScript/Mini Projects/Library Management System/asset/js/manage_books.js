@@ -1201,12 +1201,12 @@ let bookData = [
   },
 ];
 
-let transection = [
+let transections = [
   {
     tid: 1000,
     personId: "1733",
     bookId: 1,
-    tDate: " 9-8-2024",
+    tDate: " 2024-08-12",
     rDate: "",
     status: "Borrow",
   },
@@ -1214,7 +1214,7 @@ let transection = [
     tid: 1001,
     personId: "9094",
     bookId: 2,
-    tDate: " 9-8-2024",
+    tDate: " 2024-08-10",
     rDate: "",
     status: "Borrow",
   },
@@ -1222,7 +1222,7 @@ let transection = [
     tid: 1002,
     personId: "1733",
     bookId: 3,
-    tDate: " 9-8-2024",
+    tDate: "2024-07-27",
     rDate: "",
     status: "Borrow",
   },
@@ -1230,7 +1230,7 @@ let transection = [
     tid: 1003,
     personId: "7301",
     bookId: 4,
-    tDate: " 9-8-2024",
+    tDate: "2024-08-20",
     rDate: "",
     status: "Borrow",
   },
@@ -1435,6 +1435,37 @@ function borrowBook(id) {
                    <div class="number">${book.id}</div>
             </div>
     </div> `;
+
+  bookBorrow.addEventListener("click", function () {
+    const personId = personIdEl.value;
+    const tDate = borrowDateEl.value;
+    const status = "Borrow";
+    let rDate = "";
+    if (personId && tDate) {
+      const bookObj = {
+        tid: Math.floor(1000 + Math.random() * 9000),
+        bookId: id,
+        personId: personIdEl.value,
+        tDate: tDate,
+        rDate: rDate,
+        status: status,
+      };
+
+      bookData.forEach((book) => {
+        if (book.id === id) {
+          book.status = "Not Available";
+        }
+      });
+      transections.push(bookObj);
+      clearAllBookInput();
+      loadBorrowBookData();
+      loadBook();
+      ourModal.hide();
+      customModal("Book Borrow Status", "Book borrowed Successfully...");
+    } else {
+      customModal("Warning...", "Please fill the all details...");
+    }
+  });
 }
 
 function returnBook(id) {
@@ -1455,77 +1486,58 @@ function returnBook(id) {
                    <div class="number">${book.id}</div>
             </div>
     </div> `;
-}
+  bookBorrow.addEventListener("click", function () {
+    const tid = transections.map((transection) => transection.tid);
+    const selectedPerson = personIdEl.value;
+    const matchPersonID = transections.find(
+      (transection) => transection.personId === selectedPerson
+    );
+    console.log(selectedPerson);
+    console.log(matchPersonID);
 
-// Book borrow and return button
+    const returnDate = borrowDateEl.value;
+    const status = "Return";
+    if (returnDate) {
+      if (tid && matchPersonID) {
+        //Return book
+        let returnBook = transections.map((book) => {
+          if (book.bookId == id) {
+            return {
+              ...book,
+              rDate: returnDate,
+              status: status,
+            };
+          } else {
+            return book;
+          }
+        });
 
-bookBorrow.addEventListener("click", function () {
-  const id = bookIdEl.value;
-  const personId = personIdEl.value;
-  const borrowDate = borrowDateEl.value;
-  const returnDate = "";
+        bookData.forEach((book) => {
+          if (book.id === id) {
+            book.status = "Available";
+          }
+        });
 
-  if (personId && borrowDate) {
-    if (id) {
-      //Update book
-      let returnBook = transection.map((book) => {
-        if (book.bookId == id) {
-          return {
-            ...book,
-            returnDate: returnDate,
-          };
-        } else {
-          return book;
-        }
-      });
-
-      transection = returnBook;
-      clearAllBookInput();
-      loadBorrowBookData();
-      loadBook();
-      ourModal.hide();
-
-      customModal("Book Update Status", "Book Updated Successfully...");
+        transections = returnBook;
+        clearAllBookInput();
+        loadBorrowBookData();
+        loadBook();
+        ourModal.hide();
+        customModal("Book Return Status", "Book Returned Successfully...");
+      } else {
+        customModal("Warning...", "No persons found with the selected ID.");
+      }
     } else {
-      const bookObj = {
-        tid: Math.floor(1000 + Math.random() * 9000),
-        bookId: bookIdEl.value,
-        personId: personIdEl.value,
-        borrowDate: borrowDate,
-        returnDate: returnDate,
-      };
-      transection.push(bookObj);
-      clearAllBookInput();
-      loadBorrowBookData();
-      loadBook();
-      ourModal.hide();
-
-      customModal("Book Borrow Status", "Book Added Successfully...");
+      customModal("Warning...", "Please fill the all details...");
     }
-  } else {
-    customModal("Warning...", "Please fill the all details...");
-  }
-});
-
-// current Date
-function todayDate() {
-  const borrowDate = borrowDateEl;
-  let date = "";
-  const now = new Date();
-  const year = now.getFullYear();
-  const month = now.getMonth() + 1; // Months are zero-indexed (0-11)
-  const day = now.getDate();
-  date = ` ${day}-${month}-${year}`;
-  borrowDate.value = date;
-  return borrowDate;
+  });
 }
-todayDate();
 
 // Load book borrow data in table view
 
 function loadBorrowBookData() {
   bookTable.innerHTML = "";
-  transection.forEach((book, index) => {
+  transections.forEach((book, index) => {
     bookTable.innerHTML += `<tr>
   <td>${index + 1}</td>
   <td>${book.personId}</td>
