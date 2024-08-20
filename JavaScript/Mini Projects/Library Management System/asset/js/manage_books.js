@@ -1,3 +1,4 @@
+// @ts-nocheck
 let bookData = [
   {
     id: 1,
@@ -1281,26 +1282,21 @@ function loadBook(lang = "All", type = "Filter", searchData = []) {
                   book.author
                 }</p>
                   <span class="badge bg-success lang"> ${book.language}</span>
-
                    </div>
-
-                 <div class="card-footer">
-                       ${
-                         book.status == "Not Available"
-                           ? "<button type='button' onclick='returnBook(" +
-                             book.id +
-                             ")' class='btn btn-danger btn-sm'>Return</button>"
-                           : "<button  type='button' onclick='borrowBook(" +
-                             book.id +
-                             ")' class='btn btn-primary btn-sm'>Borrow</button>"
-                       }
+                 <div class="card-footer">${
+                   book.status == "Not Available"
+                     ? "<button type='button' onclick='returnBook(" +
+                       book.id +
+                       ")' class='btn btn-danger btn-sm'>Return</button>"
+                     : "<button  type='button' onclick='borrowBook(" +
+                       book.id +
+                       ")' class='btn btn-primary btn-sm'>Borrow</button>"
+                 }
                     </div>
      <div id="notAvailable" class="${
        book.status == "Not Available" ? "block" : ""
      }">Book is Not Available</div>
-
             </div>
-
         </div>`
     );
     bookHTML = bookHTML.join(" ");
@@ -1385,24 +1381,6 @@ function clearAllBookInput() {
   borrowDateEl.value = "";
 }
 
-// Auto get book name when i click borrow button
-
-// document.querySelectorAll(".card .btn-borrow").forEach((button) => {
-//   button.addEventListener("click", handleButtonClick);
-// });
-
-// document.querySelectorAll(".card .btn-return").forEach((button) => {
-//   button.addEventListener("click", handleButtonClick);
-// });
-
-// function handleButtonClick(event) {
-//   const button = event.currentTarget;
-//   const card = button.closest(".card");
-//   const bookIdEl = document.getElementById("bookId");
-//   const idEl = card.querySelector(".number");
-//   bookIdEl.value = idEl.innerHTML;
-// }
-
 // Load Users in the input field
 
 function loadUserDetails() {
@@ -1424,18 +1402,18 @@ function borrowBook(id) {
   const bookimageEl = document.querySelector("#book-image");
   const book = bookData.filter((book) => book.id == id)[0];
   bookimageEl.innerHTML = `
-   <div class="card shadow" style="width:230px; height: 320px;">
-        <div>
-            <img class="card-img-top" src="${book.imageLink}" alt="" style="height: 200px;">
-        </div>
-              <div class="card-body">
-              <h6 class="card-title single-line">${book.title}</h6>
-                <p class="card-text single-line" style="font-size:14px;">${book.author}</p>
-                 <span class="badge bg-success lang"> ${book.language}</span>
-                   <div class="number">${book.id}</div>
-            </div>
-    </div> `;
 
+  <div class="card shadow" style="width:230px; height: 320px;">
+      <div>
+        <img class="card-img-top" src="${book.imageLink}" alt="" style="height: 200px;">
+    </div>
+    <div class="card-body">
+        <h6 class="card-title single-line">${book.title}</h6>
+            <p class="card-text single-line" style="font-size:14px;">${book.author}</p>
+                <span class="badge bg-success lang"> ${book.language}</span>
+                  <div class="number">${book.id}</div>
+    </div>
+  </div> `;
   bookBorrow.addEventListener("click", function () {
     const personId = personIdEl.value;
     const tDate = borrowDateEl.value;

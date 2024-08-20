@@ -1,3 +1,14 @@
 {
-  "fiveServer.highlight": true
+  "fiveServer.highlight": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnType": true,
+  "notebook.formatOnCellExecution": true,
+  "notebook.formatOnSave.enabled": true,
+  "prettier.experimentalTernaries": true,
+  "json.format.keepLines": true,
+  "files.autoSave": "afterDelay",
+  "diffEditor.codeLens": true,
+  "diffEditor.wordWrap": "off"
 }

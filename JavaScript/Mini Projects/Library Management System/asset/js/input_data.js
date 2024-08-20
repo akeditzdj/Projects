@@ -1,3 +1,4 @@
+// @ts-nocheck
 const districtList = [
   "Ariyalur",
   "Chengalpattu",
@@ -44,4 +45,3 @@ districtList.forEach(function (item) {
   district.text = item;
   city.appendChild(district);
 });
-
