@@ -1352,14 +1352,15 @@ function clearAllBookInput() {
   borrowDateEl.value = "";
 }
 // Load Users in the input field
-function loadUserDetails() {
+function loadUserDetails () {
+  loadUser();
   let userData = users;
   let userIdList = userData.map((user) => user);
   let personId = document.getElementById("personId");
   personId.innerHTML = ` <option value="">Select your User </option>`;
   userIdList.forEach((user) => {
     personId.innerHTML += `<option value='${user.userName} (${user.id})'>${user.userName} (${user.id})</option>`;
-  });
+  } );
 }
 loadUserDetails();
 //book borrow and return

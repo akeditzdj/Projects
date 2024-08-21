@@ -4,8 +4,8 @@ let users = [
     id: 1653,
     roll: "Student",
     userName: "Ajith Kumar",
-    email: "ajith@mailinator.com",
-    password: "Pa$$w0rd!",
+    email: "ajithkumar@gmail.com",
+    password: "Ajith195@",
     cpassword: "Pa$$w0rd!",
     number: "9786000352",
     dob: "2012-04-09",
@@ -511,10 +511,10 @@ function counter() {
 }
 counter();
 // Window refresh
-// function reload() {
-//   Modal.show();
-// }
-// reload();
+function reload() {
+  mainModal.show();
+}
+reload();
 // Login page
 btnLogin.addEventListener("click", function () {
   function login() {
@@ -547,10 +547,7 @@ btnLogin.addEventListener("click", function () {
     } else {
       setSuccess(loginPasswordEl);
     }
-    if (
-      storedEmail.includes(loginEmail) &&
-      storedPassword.includes(loginPassword)
-    ) {
+    if (storedEmail == loginEmail && storedPassword == loginPassword) {
       loginEmailEl = "";
       loginPasswordEl = "";
       mainModal.hide();
