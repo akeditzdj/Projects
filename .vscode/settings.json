@@ -11,5 +11,11 @@
   "files.autoSave": "afterDelay",
   "diffEditor.codeLens": true,
   "diffEditor.wordWrap": "off",
-  "typescript.check.npmIsInstalled": false
+  "typescript.check.npmIsInstalled": false,
+  "typescript.validate.enable": false,
+  "typescript.workspaceSymbols.excludeLibrarySymbols": false,
+  "typescript.tsserver.web.projectWideIntellisense.enabled": false,
+  "js/ts.implicitProjectConfig.strictNullChecks": true,
+  "breadcrumbs.showNull": true,
+  "outline.showNull": true
 }

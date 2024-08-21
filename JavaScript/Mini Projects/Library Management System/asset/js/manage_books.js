@@ -1204,7 +1204,7 @@ let bookData = [
 let transections = [
   {
     tid: 1000,
-    personId: "1733",
+    personId: "Ram Kumar (1733)",
     bookId: 1,
     tDate: " 2024-08-12",
     rDate: "",
@@ -1212,7 +1212,7 @@ let transections = [
   },
   {
     tid: 1001,
-    personId: "9094",
+    personId: "Senthil (9094)",
     bookId: 2,
     tDate: " 2024-08-10",
     rDate: "",
@@ -1220,7 +1220,7 @@ let transections = [
   },
   {
     tid: 1002,
-    personId: "1733",
+    personId: "Ram Kumar (1733)",
     bookId: 3,
     tDate: "2024-07-27",
     rDate: "",
@@ -1228,7 +1228,7 @@ let transections = [
   },
   {
     tid: 1003,
-    personId: "7301",
+    personId: "Balamurugan (7301)",
     bookId: 4,
     tDate: "2024-08-20",
     rDate: "",
@@ -1260,20 +1260,34 @@ function loadBook(lang = "All", type = "Filter", searchData = []) {
   } else if (type == "Search") {
     data = searchData;
   }
-  if (data.length > 0) {let bookHTML = data.map( ( book, index ) =>
-`<div class="col">
+  if (data.length > 0) {
+    let bookHTML = data.map(
+      (book, index) =>
+        `<div class="col">
 <div class="card shadow book-card">
-<div class="card-img position-relative"><img class="card-img-top" src="${book.imageLink}" alt=""style="height: 180px;"></div>
+<div class="card-img position-relative"><img class="card-img-top" src="${
+          book.imageLink
+        }" alt=""style="height: 180px;"></div>
 <div class="number">${index + 1}</div>
 <div class="card-body">
 <h6 class="card-title single-line">${book.title}</h6>
 <p class="card-text single-line" style="font-size:14px;">${book.author}</p>
 <span class="badge bg-success lang"> ${book.language}</span></div>
-<div class="card-footer">${book.status == "Not Available" ? "<button type='button' onclick='returnBook(" + book.id + ")' class='btn btn-danger btn-sm'>Return</button>"
-:"<button  type='button' onclick='borrowBook(" + book.id + ")' class='btn btn-primary btn-sm'>Borrow</button>"}</div>
-<div id="notAvailable" class="${book.status == "Not Available" ? "block" : ""}">Book is Not Available</div>
+<div class="card-footer">${
+          book.status == "Not Available"
+            ? "<button type='button' onclick='returnBook(" +
+              book.id +
+              ")' class='btn btn-danger btn-sm'>Return</button>"
+            : "<button  type='button' onclick='borrowBook(" +
+              book.id +
+              ")' class='btn btn-primary btn-sm'>Borrow</button>"
+        }</div>
+<div id="notAvailable" class="${
+          book.status == "Not Available" ? "block" : ""
+        }">Book is Not Available</div>
 </div>
-</div>`);
+</div>`
+    );
     bookHTML = bookHTML.join(" ");
     bookSelf.innerHTML = bookHTML;
   }
@@ -1345,7 +1359,7 @@ function loadUserDetails() {
   let personId = document.getElementById("personId");
   personId.innerHTML = ` <option value="">Select your User </option>`;
   userIdList.forEach((user) => {
-    personId.innerHTML += `<option value='${user.id}'>${user.userName} (${user.id})</option>`;
+    personId.innerHTML += `<option value='${user.userName} (${user.id})'>${user.userName} (${user.id})</option>`;
   });
 }
 loadUserDetails();
@@ -1459,7 +1473,7 @@ function loadBorrowBookData() {
   transections.forEach((book, index) => {
     bookTable.innerHTML += `<tr>
   <td>${index + 1}</td>
-  <td>${book.personId}</td>
+  <td class="text-start">${book.personId}</td>
   <td>${book.bookId}</td>
   <td>${book.tDate}</td>
   <td>${book.rDate}</td>
@@ -1471,3 +1485,5 @@ loadBorrowBookData();
 // const modalRefresh = document.getElementById("exampleModalBorrow");
 // modalRefresh.addEventListener("hidden.bs.modal", (event) => {
 // });
+function saveAllTransectionsToLocalStorage () {
+}
