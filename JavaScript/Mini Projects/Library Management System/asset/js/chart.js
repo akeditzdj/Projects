@@ -6,11 +6,8 @@ const xValues = [
   "Total Authors",
   "Total Languages",
 ];
-
-let yValues = [100, 80, 50, 30, 25, 24];
-
+let yValues = [100, 80, 50, 30, 82, 22];
 const barColors = ["green", "blue", "orange", "red", "purple", "pink"];
-
 new Chart("myChart", {
   type: "bar",
   data: {

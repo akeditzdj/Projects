@@ -1,4 +1,3 @@
-// @ts-nocheck
 let bookData = [
   {
     id: 1,
@@ -1482,8 +1481,5 @@ function loadBorrowBookData() {
   });
 }
 loadBorrowBookData();
-// const modalRefresh = document.getElementById("exampleModalBorrow");
-// modalRefresh.addEventListener("hidden.bs.modal", (event) => {
-// });
-function saveAllTransectionsToLocalStorage () {
-}
+// const modalRefresh = document.getElementById("modalBorrow");
+// modalRefresh.addEventListener("hidden.bs.modal", (event) => {});

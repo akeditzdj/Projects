@@ -251,7 +251,7 @@ canvas {
     width: 100%;
     margin: 10px auto;
   }
-  canvas {
+  .border {
     width: 100% !important;
     height: auto !important;
     margin: 0 auto;

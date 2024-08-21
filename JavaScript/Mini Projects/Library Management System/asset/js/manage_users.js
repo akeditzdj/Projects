@@ -1,4 +1,3 @@
-// @ts-nocheck
 // user details
 let users = [
   {
