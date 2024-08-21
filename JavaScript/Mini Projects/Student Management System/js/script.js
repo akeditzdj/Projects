@@ -1,8 +1,6 @@
 let students = [];
-// @ts-ignore
 const btnAdd = document.getElementById("btnAdd");
 const btnUpdate = document.getElementById("btnUpdate");
-// @ts-ignore
 const btnClear = document.getElementById("btnClear");
 const nameElement = document.getElementById("name");
 const maleElement = document.getElementById("male");
@@ -60,11 +58,9 @@ function calculateAcadamic(student) {
   return data;
 }
 function loadStudentData(initial = false) {
-  // @ts-ignore
   tbody.innerHTML = "";
   students = students.map((student, index) => {
     const data = calculateAcadamic(student);
-    // @ts-ignore
     tbody.innerHTML += `<tr>
         <td>${index + 1}</td>
         <td>${student.name}</td>
@@ -109,31 +105,20 @@ function loadStudentData(initial = false) {
   if (initial == false) saveStudentsLocalStorage();
 }
 const myModalEl = document.getElementById("myModal");
-// @ts-ignore
 const myModal = new bootstrap.Modal(myModalEl, {});
 function editStudent(e) {
   const id = e.target.dataset.id;
   const student = students.filter((student) => student.id == id)[0];
-  // @ts-ignore
   mnameElement.value = student.name.trim();
   student.gender == "Male"
-    // @ts-ignore
     ? (mmaleElement.checked = true)
-    // @ts-ignore
     : (mfemaleElement.checked = true);
-  // @ts-ignore
   mrollnoElement.value = student.rollno.trim();
-  // @ts-ignore
   menglishElement.value = student.english;
-  // @ts-ignore
   mmathsElement.value = student.maths;
-  // @ts-ignore
   mscienceElement.value = student.science;
-  // @ts-ignore
   msocialElement.value = student.social;
-  // @ts-ignore
   mtamilElement.value = student.tamil;
-  // @ts-ignore
   midElement.value = id;
   myModal.show();
 }
@@ -162,30 +147,19 @@ function setModalSuccess(element) {
   formGroupModal.classList.add("modal-success");
   formGroupModal.classList.remove("modal-error");
 }
-// @ts-ignore
 btnUpdate.addEventListener("click", function () {
-  // @ts-ignore
   const name = mnameElement.value;
-  // @ts-ignore
   const gender = mmaleElement.checked ? "Male" : "Female";
-  // @ts-ignore
   const rollno = mrollnoElement.value;
-  // @ts-ignore
   const english = Number(menglishElement.value);
-  // @ts-ignore
   const maths = Number(mmathsElement.value);
-  // @ts-ignore
   const science = Number(mscienceElement.value);
-  // @ts-ignore
   const social = Number(msocialElement.value);
-  // @ts-ignore
   const tamil = Number(mtamilElement.value);
-  // @ts-ignore
   const id = midElement.value;
   if (name == "") {
     setModalError(mnameElement, "Name is required");
     // mnameElement.value = "";
-    // @ts-ignore
     mnameElement.focus();
     return;
   } else {
@@ -194,22 +168,18 @@ btnUpdate.addEventListener("click", function () {
   if (rollno == 0) {
     setModalError(mrollnoElement, "Roll No is required");
     // mrollnoElement.value = "";
-    // @ts-ignore
     mrollnoElement.focus();
     return;
   } else {
-    // @ts-ignore
     if (mrollnoElement.value.length != 4) {
       setModalError(mrollnoElement, "Please enter 4 digits number");
       // mrollnoElement.value = "";
-      // @ts-ignore
       mrollnoElement.focus();
       return;
     }
     if (isNaN(rollno)) {
       setModalError(mrollnoElement, "Please input numeric characters only");
       // mrollnoElement.value = "";
-      // @ts-ignore
       mrollnoElement.focus();
       return;
     }
@@ -219,156 +189,121 @@ btnUpdate.addEventListener("click", function () {
     }
     setModalSuccess(mrollnoElement);
   }
-  // @ts-ignore
   if (english == "") {
     setModalError(menglishElement, "Mark is required");
     // menglishElement.value = "";
-    // @ts-ignore
     menglishElement.focus();
     return;
   } else {
     if (
-      // @ts-ignore
       menglishElement.value.length != 2 &&
-      // @ts-ignore
       menglishElement.value.length != 1 &&
-      // @ts-ignore
       menglishElement.value != 100
     ) {
       setModalError(menglishElement, "Please enter valid marks");
       // menglishElement.value = "";
-      // @ts-ignore
       menglishElement.focus();
       return;
     }
     if (isNaN(english)) {
       setModalError(menglishElement, "Please input numeric characters only");
       // menglishElement.value = "";
-      // @ts-ignore
       menglishElement.focus();
       return;
     }
     setModalSuccess(menglishElement);
   }
-  // @ts-ignore
   if (maths == "") {
     setModalError(mmathsElement, "Mark is required");
     // mmathsElement.value = "";
-    // @ts-ignore
     mmathsElement.focus();
     return;
   } else {
     if (
-      // @ts-ignore
       mmathsElement.value.length != 2 &&
-      // @ts-ignore
       mmathsElement.value.length != 1 &&
-      // @ts-ignore
       mmathsElement.value != 100
     ) {
       setModalError(mmathsElement, "Please enter valid marks");
       // mmathsElement.value = "";
-      // @ts-ignore
       mmathsElement.focus();
       return;
     }
     if (isNaN(maths)) {
       setModalError(mmathsElement, "Please input numeric characters only");
       // mmathsElement.value = "";
-      // @ts-ignore
       mmathsElement.focus();
       return;
     }
     setModalSuccess(mmathsElement);
   }
-  // @ts-ignore
   if (science == "") {
     setModalError(mscienceElement, "Mark is required");
     // mscienceElement.value = "";
-    // @ts-ignore
     mscienceElement.focus();
     return;
   } else {
     if (
-      // @ts-ignore
       mscienceElement.value.length != 2 &&
-      // @ts-ignore
       mscienceElement.value.length != 1 &&
-      // @ts-ignore
       mscienceElement.value != 100
     ) {
       setModalError(mscienceElement, "Please enter valid marks");
       // mscienceElement.value = "";
-      // @ts-ignore
       mscienceElement.focus();
       return;
     }
     if (isNaN(science)) {
       setModalError(mscienceElement, "Please input numeric characters only");
       // mscienceElement.value = "";
-      // @ts-ignore
       mscienceElement.focus();
       return;
     }
     setModalSuccess(mscienceElement);
   }
-  // @ts-ignore
   if (social == "") {
     setModalError(msocialElement, "Mark is required");
     // msocialElement.value = "";
-    // @ts-ignore
     msocialElement.focus();
     return;
   } else {
     if (
-      // @ts-ignore
       msocialElement.value.length != 2 &&
-      // @ts-ignore
       msocialElement.value.length != 1 &&
-      // @ts-ignore
       msocialElement.value != 100
     ) {
       setModalError(msocialElement, "Please enter valid marks");
       // msocialElement.value = "";
-      // @ts-ignore
       msocialElement.focus();
       return;
     }
     if (isNaN(social)) {
       setModalError(msocialElement, "Please input numeric characters only");
       // msocialElement.value = "";
-      // @ts-ignore
       msocialElement.focus();
       return;
     }
     setModalSuccess(msocialElement);
   }
-  // @ts-ignore
   if (tamil == "") {
     setModalError(mtamilElement, "Mark is required");
     // mtamilElement.value = "";
-    // @ts-ignore
     mtamilElement.focus();
     return;
   } else {
     if (
-      // @ts-ignore
       mtamilElement.value.length != 2 &&
-      // @ts-ignore
       mtamilElement.value.length != 1 &&
-      // @ts-ignore
       mtamilElement.value != 100
     ) {
       setModalError(mtamilElement, "Please enter valid marks");
       // mtamilElement.value = "";
-      // @ts-ignore
       mtamilElement.focus();
       return;
     }
     if (isNaN(tamil)) {
       setModalError(mtamilElement, "Please input numeric characters only");
       // mtamilElement.value = "";
-      // @ts-ignore
       mtamilElement.focus();
       return;
     }
@@ -388,26 +323,17 @@ btnUpdate.addEventListener("click", function () {
   genderwise();
   subjectwise();
   myModal.hide();
-  // @ts-ignore
   mnameElement.value = "";
-  // @ts-ignore
   mmaleElement.checked ? "Male" : "Female";
-  // @ts-ignore
   mrollnoElement.value = "";
-  // @ts-ignore
   menglishElement.value = "";
-  // @ts-ignore
   mmathsElement.value = "";
-  // @ts-ignore
   mscienceElement.value = "";
-  // @ts-ignore
   msocialElement.value = "";
-  // @ts-ignore
   mtamilElement.value = "";
 });
 function top3Students() {
   const rankBody = document.getElementById("rankBody");
-  // @ts-ignore
   rankBody.innerHTML = "";
   let passedStudents = students.filter((student) => {
     return student.result == "Pass";
@@ -415,11 +341,9 @@ function top3Students() {
   passedStudents.sort((a, b) => {
     return b.average - a.average;
   });
-  // @ts-ignore
   top3 = passedStudents.slice(0, 3);
   let currentrank = 1;
   let currentAverage = null;
-  // @ts-ignore
   top3.forEach((student, index) => {
     if (student.average != currentAverage) {
       student.rank = currentrank;
@@ -429,9 +353,7 @@ function top3Students() {
     }
     currentAverage = student.average;
   });
-  // @ts-ignore
   top3.forEach((student, index) => {
-    // @ts-ignore
     rankBody.innerHTML += `<tr>
   <td>${student.rank}</td>
   <td>${student.name}</td>
@@ -441,13 +363,11 @@ function top3Students() {
 }
 function genderwise() {
   const genBody = document.getElementById("genBody");
-  // @ts-ignore
   genBody.innerHTML = "";
   let obj = [
     { gender: "Male", strength: 0, pass: 0, percentage: 0 },
     { gender: "Female", strength: 0, pass: 0, percentage: 0 },
   ];
-  // @ts-ignore
   obj = obj.map((o, index) => {
     o.strength = students.filter(
       (student) => student.gender == o.gender
@@ -456,7 +376,6 @@ function genderwise() {
       (student) => student.gender == o.gender && student.result == "Pass"
     ).length;
     o.percentage = (o.pass / o.strength) * 100;
-    // @ts-ignore
     genBody.innerHTML += `<tr>
     <td>${o.gender}</td>
     <td>${o.strength}</td>
@@ -490,7 +409,6 @@ function passPercentSubject(subjectKey) {
 }
 function subjectwise() {
   const subjBody = document.getElementById("subjBody");
-  // @ts-ignore
   subjBody.innerHTML = "";
   let obj = [
     { subject: "english", name: [], mark: 0, percentage: 0 },
@@ -501,11 +419,8 @@ function subjectwise() {
   ];
   obj = obj.map((o) => {
     o.mark = getMaxMark(o.subject);
-    // @ts-ignore
     o.name = getNamesByMark(o.mark, o.subject);
-    // @ts-ignore
     o.percentage = passPercentSubject(o.subject);
-    // @ts-ignore
     subjBody.innerHTML += `<tr>
     <td>${capitalizeFirstLetter(o.subject)}</td>
     <td>${o.name}</td>
@@ -526,28 +441,18 @@ function rollnoAlreadyExist(rollno, id = 0) {
     return result;
   }
 }
-// @ts-ignore
 btnAdd.addEventListener("click", function () {
-  // @ts-ignore
   const name = nameElement.value.trim();
-  // @ts-ignore
   const gender = maleElement.checked ? "Male" : "Female";
-  // @ts-ignore
   const rollno = rollnoElement.value.trim();
-  // @ts-ignore
   const english = Number(englishElement.value.trim());
-  // @ts-ignore
   const maths = Number(mathsElement.value.trim());
-  // @ts-ignore
   const science = Number(scienceElement.value.trim());
-  // @ts-ignore
   const social = Number(socialElement.value.trim());
-  // @ts-ignore
   const tamil = Number(tamilElement.value.trim());
   if (name === "") {
     setError(nameElement, "Name is required");
     // nameElement.value = "";
-    // @ts-ignore
     nameElement.focus();
     return;
   } else {
@@ -556,22 +461,18 @@ btnAdd.addEventListener("click", function () {
   if (rollno == 0) {
     setError(rollnoElement, "Roll No is required");
     // rollnoElement.value = "";
-    // @ts-ignore
     rollnoElement.focus();
     return;
   } else {
-    // @ts-ignore
     if (rollnoElement.value.length != 4) {
       setError(rollnoElement, "Please enter 4 digits number");
       // rollnoElement.value = "";
-      // @ts-ignore
       rollnoElement.focus();
       return;
     }
     if (isNaN(rollno)) {
       setError(rollnoElement, "Please input numeric characters only");
       // rollnoElement.value = "";
-      // @ts-ignore
       rollnoElement.focus();
       return;
     }
@@ -581,156 +482,121 @@ btnAdd.addEventListener("click", function () {
     }
     setSuccess(rollnoElement);
   }
-  // @ts-ignore
   if (english == "") {
     setError(englishElement, "Mark is required");
     // englishElement.value = "";
-    // @ts-ignore
     englishElement.focus();
     return;
   } else {
     if (
-      // @ts-ignore
       englishElement.value.length != 2 &&
-      // @ts-ignore
       englishElement.value.length != 1 &&
-      // @ts-ignore
       englishElement.value != 100
     ) {
       setError(englishElement, "Please enter valid marks");
       // englishElement.value = "";
-      // @ts-ignore
       englishElement.focus();
       return;
     }
     if (isNaN(english)) {
       setError(englishElement, "Please input numeric characters only");
       // englishElement.value = "";
-      // @ts-ignore
       englishElement.focus();
       return;
     }
     setSuccess(englishElement);
   }
-  // @ts-ignore
   if (maths == "") {
     setError(mathsElement, "Mark is required");
     // mathsElement.value = "";
-    // @ts-ignore
     mathsElement.focus();
     return;
   } else {
     if (
-      // @ts-ignore
       mathsElement.value.length != 2 &&
-      // @ts-ignore
       mathsElement.value.length != 1 &&
-      // @ts-ignore
       mathsElement.value != 100
     ) {
       setError(mathsElement, "Please enter valid marks");
       // mathsElement.value = "";
-      // @ts-ignore
       mathsElement.focus();
       return;
     }
     if (isNaN(maths)) {
       setError(mathsElement, "Please input numeric characters only");
       // mathsElement.value = "";
-      // @ts-ignore
       mathsElement.focus();
       return;
     }
     setSuccess(mathsElement);
   }
-  // @ts-ignore
   if (science == "") {
     setError(scienceElement, "Mark is required");
     // scienceElement.value = "";
-    // @ts-ignore
     scienceElement.focus();
     return;
   } else {
     if (
-      // @ts-ignore
       scienceElement.value.length != 2 &&
-      // @ts-ignore
       scienceElement.value.length != 1 &&
-      // @ts-ignore
       scienceElement.value != 100
     ) {
       setError(scienceElement, "Please enter valid marks");
       // scienceElement.value = "";
-      // @ts-ignore
       scienceElement.focus();
       return;
     }
     if (isNaN(science)) {
       setError(scienceElement, "Please input numeric characters only");
       // scienceElement.value = "";
-      // @ts-ignore
       scienceElement.focus();
       return;
     }
     setSuccess(scienceElement);
   }
-  // @ts-ignore
   if (social == "") {
     setError(socialElement, "Mark is required");
     // socialElement.value = "";
-    // @ts-ignore
     socialElement.focus();
     return;
   } else {
     if (
-      // @ts-ignore
       socialElement.value.length != 2 &&
-      // @ts-ignore
       socialElement.value.length != 1 &&
-      // @ts-ignore
       socialElement.value != 100
     ) {
       setError(socialElement, "Please enter valid marks");
       // socialElement.value = "";
-      // @ts-ignore
       socialElement.focus();
       return;
     }
     if (isNaN(social)) {
       setError(socialElement, "Please input numeric characters only");
       // socialElement.value = "";
-      // @ts-ignore
       socialElement.focus();
       return;
     }
     setSuccess(socialElement);
   }
-  // @ts-ignore
   if (tamil == "") {
     setError(tamilElement, "Mark is required");
     // tamilElement.value = "";
-    // @ts-ignore
     tamilElement.focus();
     return;
   } else {
     if (
-      // @ts-ignore
       tamilElement.value.length != 2 &&
-      // @ts-ignore
       tamilElement.value.length != 1 &&
-      // @ts-ignore
       tamilElement.value != 100
     ) {
       setError(tamilElement, "Please enter valid marks");
       // tamilElement.value = "";
-      // @ts-ignore
       tamilElement.focus();
       return;
     }
     if (isNaN(tamil)) {
       setError(tamilElement, "Please input numeric characters only");
       // tamilElement.value = "";
-      // @ts-ignore
       tamilElement.focus();
       return;
     }
@@ -769,38 +635,25 @@ function setSuccess(element) {
   formGroup.classList.remove("error");
 }
 function clearAll() {
-  // @ts-ignore
   nameElement.value = "";
-  // @ts-ignore
   maleElement.checked = true;
-  // @ts-ignore
   rollnoElement.value = "";
-  // @ts-ignore
   englishElement.value = "";
-  // @ts-ignore
   mathsElement.value = "";
-  // @ts-ignore
   scienceElement.value = "";
-  // @ts-ignore
   socialElement.value = "";
-  // @ts-ignore
   tamilElement.value = "";
 }
-// @ts-ignore
 btnClear.addEventListener("click", clearAll);
-// @ts-ignore
 searchTxtElement.addEventListener("input", function () {
-  // @ts-ignore
   const query = this.value.toLowerCase();
   const filteredData = students.filter(
     (student) =>
       student.name.toLowerCase().includes(query) ||
       student.rollno.toLowerCase().includes(query)
   );
-  // @ts-ignore
   mainBody.innerHTML = "";
   filteredData.forEach((student, index) => {
-    // @ts-ignore
     mainBody.innerHTML += `<tr>
       <td>${index + 1}</td>
       <td>${student.name}</td>
@@ -830,7 +683,6 @@ function saveStudentsLocalStorage() {
 }
 function getStudentsDetail() {
   if (localStorage.getItem("students")) {
-    // @ts-ignore
     students = JSON.parse(localStorage.getItem("students"));
   }
 }
