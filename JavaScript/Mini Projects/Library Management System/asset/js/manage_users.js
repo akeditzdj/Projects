@@ -6,7 +6,7 @@ let users = [
     userName: "Ajith Kumar",
     email: "ajithkumar@gmail.com",
     password: "Ajith195@",
-    cpassword: "Pa$$w0rd!",
+    cpassword: "Ajith195@",
     number: "9786000352",
     dob: "2012-04-09",
     gender: "Male",
@@ -520,10 +520,15 @@ btnLogin.addEventListener("click", function () {
   function login() {
     let loginEmailEl = document.getElementById("loginEmail");
     let loginPasswordEl = document.getElementById("loginPassword");
-    const storedEmail = users.map((user) => user.email);
-    const storedPassword = users.map((user) => user.password);
     let loginEmail = loginEmailEl.value;
     let loginPassword = loginPasswordEl.value;
+    function validateCredentials(loginEmail, loginPassword) {
+      const user = users.find((user) => user.email === loginEmail);
+      if (user && user.password === loginPassword) {
+        return true;
+      }
+      return false;
+    }
     if (loginEmail === "") {
       loginEmailEl.focus();
       setError(loginEmailEl, "Please enter your email");
@@ -547,7 +552,7 @@ btnLogin.addEventListener("click", function () {
     } else {
       setSuccess(loginPasswordEl);
     }
-    if (storedEmail == loginEmail && storedPassword == loginPassword) {
+    if (validateCredentials(loginEmail, loginPassword)) {
       loginEmailEl = "";
       loginPasswordEl = "";
       mainModal.hide();
