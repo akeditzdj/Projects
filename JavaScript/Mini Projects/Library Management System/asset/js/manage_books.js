@@ -1322,8 +1322,8 @@ searchBook.addEventListener("input", function () {
     }
     const serachFilterBook = data.filter(
       (book) =>
-        book.title.toLocaleLowerCase().includes(searchBook) ||
-        book.author.toLocaleLowerCase().includes(searchBook)
+        book.title.toLowerCase().includes(searchBook) ||
+        book.author.toLowerCase().includes(searchBook)
     );
     loadBook(lang, "Search", serachFilterBook);
   } else {
