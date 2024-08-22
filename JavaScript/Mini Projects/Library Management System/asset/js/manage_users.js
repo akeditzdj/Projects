@@ -513,10 +513,10 @@ function counter() {
 }
 counter();
 // Window refresh
-// function reload() {
-//   mainModal.show();
-// }
-// reload();
+function reload() {
+  mainModal.show();
+}
+reload();
 // Login page
 btnLogin.addEventListener("click", function () {
   function login() {
