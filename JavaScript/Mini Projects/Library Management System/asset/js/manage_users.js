@@ -326,6 +326,7 @@ btnSave.addEventListener("click", function () {
     mainModal.hide();
     customModal("User Update Status", "User Updated Successfully...");
     loadUser();
+    loadUserDetails();
     clearAll();
   } else {
     //Add users
@@ -349,6 +350,7 @@ btnSave.addEventListener("click", function () {
     clearAll();
     loadUser();
     counter();
+    loadUserDetails();
     customModal("New User Registration", "User Added Successfully...");
   }
   bsTab.show();
@@ -511,10 +513,10 @@ function counter() {
 }
 counter();
 // Window refresh
-function reload() {
-  mainModal.show();
-}
-reload();
+// function reload() {
+//   mainModal.show();
+// }
+// reload();
 // Login page
 btnLogin.addEventListener("click", function () {
   function login() {

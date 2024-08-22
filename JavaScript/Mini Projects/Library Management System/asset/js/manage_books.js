@@ -1360,9 +1360,10 @@ function loadUserDetails () {
   personId.innerHTML = ` <option value="">Select your User </option>`;
   userIdList.forEach((user) => {
     personId.innerHTML += `<option value='${user.userName} (${user.id})'>${user.userName} (${user.id})</option>`;
-  } );
+  });
 }
 loadUserDetails();
+
 //book borrow and return
 function borrowBook(id) {
   ourModal.show();
@@ -1399,7 +1400,7 @@ function borrowBook(id) {
           book.status = "Not Available";
         }
       });
-      transections.push(bookObj);
+      transections.push( bookObj );
       clearAllBookInput();
       loadBorrowBookData();
       loadBook();
@@ -1468,7 +1469,7 @@ function returnBook(id) {
   });
 }
 // Load book borrow data in table view
-function loadBorrowBookData() {
+function loadBorrowBookData () {
   bookTable.innerHTML = "";
   transections.forEach((book, index) => {
     bookTable.innerHTML += `<tr>
@@ -1482,5 +1483,9 @@ function loadBorrowBookData() {
   });
 }
 loadBorrowBookData();
-// const modalRefresh = document.getElementById("modalBorrow");
-// modalRefresh.addEventListener("hidden.bs.modal", (event) => {});
+
+const ourModalRefresh = document.querySelector("#modalBorrow");
+ourModalRefresh.addEventListener("hidden.bs.modal", (event) => {
+  console.log("Refereshed");
+  loadUserDetails();
+});
