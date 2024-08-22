@@ -1274,12 +1274,12 @@ function loadBook(lang = "All", type = "Filter", searchData = []) {
 <span class="badge bg-success lang"> ${book.language}</span></div>
 <div class="card-footer">${
           book.status == "Not Available"
-            ? "<button type='button' onclick='returnBook(" +
+            ? "<button  type='button' onclick='returnBook(" +
               book.id +
-              ")' class='btn btn-danger btn-sm'>Return</button>"
+              ")' class='btn btn-danger btn-sm btn-return'>Return</button>"
             : "<button  type='button' onclick='borrowBook(" +
               book.id +
-              ")' class='btn btn-primary btn-sm'>Borrow</button>"
+              ")' class='btn btn-primary btn-sm btn-borrow'>Borrow</button>"
         }</div>
 <div id="notAvailable" class="${
           book.status == "Not Available" ? "block" : ""
@@ -1352,7 +1352,7 @@ function clearAllBookInput() {
   borrowDateEl.value = "";
 }
 // Load Users in the input field
-function loadUserDetails () {
+function loadUserDetails() {
   loadUser();
   let userData = users;
   let userIdList = userData.map((user) => user);
@@ -1372,7 +1372,7 @@ function borrowBook(id) {
   const bookimageEl = document.querySelector("#book-image");
   const book = bookData.filter((book) => book.id == id)[0];
   bookimageEl.innerHTML = `
-  <div class="card shadow" style="width:230px; height: 320px;">
+  <div class="card shadow modal-card" style="width:230px; height: 320px;">
   <div><img class="card-img-top" src="${book.imageLink}" alt="" style="height: 200px;"></div>
   <div class="card-body">
   <h6 class="card-title single-line">${book.title}</h6>
@@ -1395,12 +1395,13 @@ function borrowBook(id) {
         rDate: rDate,
         status: status,
       };
+
       bookData.forEach((book) => {
         if (book.id === id) {
           book.status = "Not Available";
         }
       });
-      transections.push( bookObj );
+      transections.push(bookObj);
       clearAllBookInput();
       loadBorrowBookData();
       loadBook();
@@ -1411,6 +1412,7 @@ function borrowBook(id) {
     }
   });
 }
+
 function returnBook(id) {
   ourModal.show();
   const heading = document.querySelector(".heading");
@@ -1418,7 +1420,7 @@ function returnBook(id) {
   const bookimageEl = document.querySelector("#book-image");
   const book = bookData.filter((book) => book.id == id)[0];
   bookimageEl.innerHTML = `
-   <div class="card shadow" style="width:230px; height: 320px;">
+   <div class="card shadow modal-card" style="width:230px; height: 320px;">
    <div><img class="card-img-top" src="${book.imageLink}" alt="" style="height: 200px;"></div>
    <div class="card-body">
    <h6 class="card-title single-line">${book.title}</h6>
@@ -1468,8 +1470,9 @@ function returnBook(id) {
     }
   });
 }
+
 // Load book borrow data in table view
-function loadBorrowBookData () {
+function loadBorrowBookData() {
   bookTable.innerHTML = "";
   transections.forEach((book, index) => {
     bookTable.innerHTML += `<tr>
@@ -1488,4 +1491,5 @@ const ourModalRefresh = document.querySelector("#modalBorrow");
 ourModalRefresh.addEventListener("hidden.bs.modal", (event) => {
   console.log("Refereshed");
   loadUserDetails();
+  loadBook();
 });

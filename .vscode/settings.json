@@ -17,5 +17,6 @@
   "typescript.tsserver.web.projectWideIntellisense.enabled": false,
   "js/ts.implicitProjectConfig.strictNullChecks": true,
   "breadcrumbs.showNull": true,
-  "outline.showNull": true
+  "outline.showNull": true,
+  "editor.defaultColorDecorators": false
 }
