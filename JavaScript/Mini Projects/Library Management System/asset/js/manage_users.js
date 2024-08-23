@@ -425,7 +425,6 @@ function loadUser(isForSearch = 0, filterUser = []) {
   <td>${user.roll}</td>
   <td>${user.userName}</td>
   <td>${user.email}</td>
-  <td>${user.password}</td>
   <td>${user.number}</td>
   <td>${user.dob}</td>
   <td>${user.gender}</td>
@@ -513,10 +512,10 @@ function counter() {
 }
 counter();
 // Window refresh
-function reload() {
-  mainModal.show();
-}
-reload();
+// function reload() {
+//   mainModal.show();
+// }
+// reload();
 // Login page
 btnLogin.addEventListener("click", function () {
   function login() {

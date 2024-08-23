@@ -1491,4 +1491,5 @@ const ourModalRefresh = document.querySelector("#modalBorrow");
 ourModalRefresh.addEventListener("hidden.bs.modal", (event) => {
   loadUserDetails();
   loadBook();
-});
+} );
+
