@@ -529,8 +529,8 @@ section .container-fluid:hover {
   right: 0 !important;
 }
 
-.trust img{
-  width: 200px;
+.trust img {
+  width: 250px;
   object-fit: cover;
   margin-top: 20px;
 }
@@ -553,5 +553,10 @@ section .container-fluid:hover {
     width: 100px !important;
     top: 150px !important;
     left: 100px !important;
+  }
+  .trust img {
+    width: 150px;
+    object-fit: cover;
+    margin-top: 20px;
   }
 }
