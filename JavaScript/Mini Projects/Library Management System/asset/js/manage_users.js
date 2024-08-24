@@ -470,9 +470,7 @@ filterUser.addEventListener("input", function () {
   );
   loadUser(1, filterUser);
 });
-function reloadPage() {
-  location.reload();
-}
+
 // Table row count and show on dashboard
 function counter() {
   const rowCount = document.getElementById("userReg").rows.length - 1;
