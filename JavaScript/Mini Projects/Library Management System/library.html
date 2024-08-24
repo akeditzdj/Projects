@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link rel="stylesheet" href="asset/css/style.css">
+
 </head>
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg shadow top-0 sticky-top">
@@ -128,10 +130,13 @@
                             <h3 class="text-center text-dark fw-bold">Add / Manage Users</h3>
                         </div>
                         <div class="col d-md-flex justify-content-between align-items-center">
-                            <div>
+                            <div >
                                 <button class="btn btn-outline-light w-100" id="btnAdd">
                                     <i class="bi bi-person-fill-add"></i> Add User
                                 </button>
+                            </div>
+                            <div class="mt-3 mt-md-0">
+                                <button class="btn btn-outline-light w-100" data-bs-toggle="modal" data-bs-target="#userDataModal">User Data</button>
                             </div>
                             <div class=" w-25 mt-3 mt-md-0 filter-Input">
                                 <input class="form-control bg-transparent text-light" type="text" name="filterUser" id="filterUser" placeholder="Flter your user">
@@ -140,30 +145,47 @@
                     </div>
                     <!-- Page Header and Title - End-->
                     <!-- User Data Table - Start-->
-                    <div class="row-mt-5">
-                        <div class="col-md-12">
-                            <table class="table table-responsive table-hover table-bordered table-dark" id="userReg">
-                                <thead class="text-center">
-                                    <tr>
-                                        <th>Sl No</th>
-                                        <th>ID No</th>
-                                        <th>Roll</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <!-- <th>Password</th> -->
-                                        <th>Mobile Number</th>
-                                        <th>Date of Birth</th>
-                                        <th>Gender</th>
-                                        <th>City</th>
-                                        <th>Pincode</th>
-                                        <th>Address</th>
-                                        <th>T&C</th>
-                                        <th>Newsletter</th>
-                                        <th colspan="2">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="usertable" class="text-center"></tbody>
-                            </table>
+                    <div class="modal modal-xl" tabindex="-1" id="userDataModal">
+                        <div class="modal-dialog modal-fullscreen">
+                            <div class="modal-content">
+                                <div class="modal-header bg-white">
+                                    <img class="img-fluid" src="asset/images/logo.png" style="width: 50px;height: 50px;" alt="">
+                                    <h3 class="modal-title text-dark fw-bold fst-italic" id="userDataModalLable">
+                                        Library
+                                        Management System</h3>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="row-mt-5">
+                                        <div class="col-md-12">
+                                            <table class="table table-responsive table-hover table-bordered table-dark" id="userReg">
+                                                <thead class="text-center">
+                                                    <tr>
+                                                        <th>Sl No</th>
+                                                        <th>ID No</th>
+                                                        <th>Roll</th>
+                                                        <th>Name</th>
+                                                        <th>Email</th>
+                                                        <th>Password</th>
+                                                        <th>Mobile Number</th>
+                                                        <th>Date of Birth</th>
+                                                        <th>Gender</th>
+                                                        <th>City</th>
+                                                        <th>Pincode</th>
+                                                        <th>Address</th>
+                                                        <th>T&C</th>
+                                                        <th>Newsletter</th>
+                                                        <th colspan="2">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="usertable" class="text-center"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- User Data Table - End-->
@@ -372,7 +394,7 @@
                 </div>
                 <!-- Manage Users - Tab End -->
                 <!-- Manage Books - Tab Start -->
-                <div class="tab-pane fade" id="manageBooks" role="tabpanel" aria-labelledby="manageBooks-tab" tabindex="0">
+                <div class="tab-pane fade " id="manageBooks" role="tabpanel" aria-labelledby="manageBooks-tab" tabindex="0">
                     <!-- Dashboard Content - Start -->
                     <div class="row mt-2">
                         <div class="col-md-3 mt-4 mt-md-0">
@@ -427,8 +449,8 @@
                                     </form>
                                 </div>
                                 <div class="mt-3 mt-md-0 d-flex justify-content-center align-items-center gap-3">
-                                    <button class="btn btn-outline-light text-light bg-transparent" data-bs-toggle="modal" data-bs-target="#borrowBookDataTable">Book Borrow Data</button>
-                                    <button class="btn btn-outline-light text-light bg-transparent" data-bs-toggle="modal" data-bs-target="#myModalBookChart">Book Chart Report</button>
+                                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#borrowBookDataTable">Book Borrow Data</button>
+                                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#myModalBookChart">Book Chart Report</button>
                                 </div>
                                 <div class="mt-3 mt-md-0 filter-Input">
                                     <form>
@@ -497,8 +519,8 @@
                                                                         <div class="col">
                                                                             <div class="form-group">
                                                                                 <div class="d-flex justify-content-center align-items-center gap-3 my-3">
-                                                                                    <button type="reset" id="bookBorrowClear" class="btn btn-danger">Clear</button>
-                                                                                    <button type="button" id="bookBorrowSave" class="btn btn-primary">Submit</button>
+                                                                                    <button type="reset" id="clearBook" class="btn btn-danger">Clear</button>
+                                                                                    <button type="button" id="saveBook" class="btn btn-primary">Submit</button>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -535,6 +557,7 @@
                                                 <thead class="text-center">
                                                     <tr>
                                                         <th>Sl No</th>
+                                                        <th>Transection Id</th>
                                                         <th>Person Id</th>
                                                         <th>Book Id</th>
                                                         <th>Borrow Date</th>
@@ -547,31 +570,12 @@
                                         </div>
                                     </div>
                                 </div>
-                              <div class="modal-footer"></div>
+                                <div class="modal-footer"></div>
                             </div>
                         </div>
                     </div>
                     <!-- Modal - Book data table end-->
                     <!-- Modal - Books return Form- End-->
-                    <!-- Modal - User delete warning message - Start -->
-                    <div class="modal" tabindex="-1" id="myModalBorrowBookDelete">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header bg-white">
-                                    <h5 class="modal-title text-dark">Delete User</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Are you sure to delete</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="noo">No</button>
-                                    <button type="button" class="btn btn-danger" id="yess">Yes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Modal - User delete warning message - End -->
                     <!------ Chart Modal - Start -------->
                     <div class="modal fade modal-xl" id="myModalBookChart">
                         <div class="modal-dialog">
@@ -618,7 +622,7 @@
                 <!-- Manage Books - Tab End -->
             </div>
             <!-- custom pop-up modal-start -->
-            <div id="modal"></div>
+            <div id="customModal"></div>
             <!-- custom pop-up modal-End -->
         </div>
     </div>
@@ -630,4 +634,5 @@
 <script src="asset/js/input_data.js"></script>
 <script src="asset/js/chart.js"></script>
 </body>
+
 </html>

@@ -81,6 +81,7 @@ let users = [
     newsletter: "Disagree",
   },
 ];
+
 //Get data from new user
 //Get Registration inputs
 const formEl = document.querySelector("form");
@@ -425,6 +426,7 @@ function loadUser(isForSearch = 0, filterUser = []) {
   <td>${user.roll}</td>
   <td>${user.userName}</td>
   <td>${user.email}</td>
+  <td>${user.password}</td>
   <td>${user.number}</td>
   <td>${user.dob}</td>
   <td>${user.gender}</td>
@@ -586,7 +588,7 @@ function passwordShowAndHide() {
 passwordShowAndHide();
 // custom modal dialog box
 function customModal(title, content) {
-  const modal = document.getElementById("modal");
+  const modal = document.getElementById("customModal");
   let loadModal = `
    <div class="modal fade" id="myCustomModal" >
    <div class="modal-dialog">

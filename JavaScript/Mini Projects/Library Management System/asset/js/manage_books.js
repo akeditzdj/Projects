@@ -1234,6 +1234,7 @@ let transections = [
     status: "Borrow",
   },
 ];
+
 const bookIdEl = document.getElementById("bookId");
 const personIdEl = document.getElementById("personId");
 const borrowDateEl = document.getElementById("borrowDate");
@@ -1241,7 +1242,7 @@ const bookSelf = document.querySelector("#bookSelf");
 const selectLanguage = document.getElementById("selectLanguage");
 const searchBook = document.getElementById("searchBook");
 const bookTable = document.getElementById("bookBorrowTable");
-const bookBorrow = document.getElementById("bookBorrowSave");
+const addBook = document.querySelector("#saveBook");
 // Modal title change
 const modalBorrowTitle = document.getElementById("title-borrow");
 const alertMsgBorrow = document.getElementById("alert-borrow-delete");
@@ -1349,6 +1350,7 @@ function counter() {
 counter();
 // ClearAll
 function clearAllBookInput() {
+  personIdEl.value = "";
   borrowDateEl.value = "";
 }
 // Load Users in the input field
@@ -1366,109 +1368,154 @@ loadUserDetails();
 
 //book borrow and return
 function borrowBook(id) {
+  // Show the modal
   ourModal.show();
+
+  // Update modal heading
   const heading = document.querySelector(".heading");
   heading.innerHTML = "Borrow Book";
+
+  // Populate modal content with book details
   const bookimageEl = document.querySelector("#book-image");
-  const book = bookData.filter((book) => book.id == id)[0];
+  const book = bookData.find((book) => book.id === id);
+
+  if (!book) {
+    console.error("Book not found!");
+    return;
+  }
+
   bookimageEl.innerHTML = `
-  <div class="card shadow modal-card" style="width:230px; height: 320px;">
-  <div><img class="card-img-top" src="${book.imageLink}" alt="" style="height: 200px;"></div>
-  <div class="card-body">
-  <h6 class="card-title single-line">${book.title}</h6>
-  <p class="card-text single-line" style="font-size:14px;">${book.author}</p>
-  <span class="badge bg-success lang"> ${book.language}</span>
-  <div class="number">${book.id}</div>
-  </div>
-  </div> `;
-  bookBorrow.addEventListener("click", function () {
+    <div class="card shadow modal-card" style="width:230px; height: 320px;">
+      <div><img class="card-img-top" src="${book.imageLink}" alt="" style="height: 200px;"></div>
+      <div class="card-body">
+        <h6 class="card-title single-line">${book.title}</h6>
+        <p class="card-text single-line" style="font-size:14px;">${book.author}</p>
+        <span class="badge bg-success lang">${book.language}</span>
+        <div class="number">${book.id}</div>
+      </div>
+    </div>`;
+
+  // Handler for the addBook button click
+  const handleAddBookClick = () => {
     const personId = personIdEl.value;
     const tDate = borrowDateEl.value;
     const status = "Borrow";
-    let rDate = "";
+    const rDate = "";
+
     if (personId && tDate) {
       const bookObj = {
         tid: Math.floor(1000 + Math.random() * 9000),
         bookId: id,
-        personId: personIdEl.value,
+        personId: personId,
         tDate: tDate,
         rDate: rDate,
         status: status,
       };
 
-      bookData.forEach((book) => {
-        if (book.id === id) {
-          book.status = "Not Available";
-        }
-      });
+      // Update book status in the data
+      const bookIndex = bookData.findIndex((book) => book.id === id);
+      if (bookIndex !== -1) {
+        bookData[bookIndex].status = "Not Available";
+      }
+
       transections.push(bookObj);
       clearAllBookInput();
       loadBorrowBookData();
-      loadBook();
       ourModal.hide();
-      customModal("Book Borrow Status", "Book borrowed Successfully...");
+      loadUserDetails();
+      loadBook();
+      customModal("Book Borrow Status", "Book borrowed successfully...");
     } else {
-      customModal("Warning...", "Please fill the all details...");
+      customModal("Warning...", "Please fill all details...");
     }
-  });
+  };
+
+  // Ensure the button listener is added only once
+  if (addBook) {
+    addBook.removeEventListener("click", handleAddBookClick); // Remove previous listener if any
+    addBook.addEventListener("click", handleAddBookClick);
+  } else {
+    customModal("Warning...", "AddBook button element is not defined");
+  }
 }
 
 function returnBook(id) {
   ourModal.show();
   const heading = document.querySelector(".heading");
   heading.innerHTML = "Return Book";
+
+  // Find the book from the bookData array
+  const book = bookData.find((book) => book.id === id);
+  if (!book) {
+    console.error("Book not found.");
+    return;
+  }
+
+  // Populate the modal with book details
   const bookimageEl = document.querySelector("#book-image");
-  const book = bookData.filter((book) => book.id == id)[0];
   bookimageEl.innerHTML = `
-   <div class="card shadow modal-card" style="width:230px; height: 320px;">
-   <div><img class="card-img-top" src="${book.imageLink}" alt="" style="height: 200px;"></div>
-   <div class="card-body">
-   <h6 class="card-title single-line">${book.title}</h6>
-   <p class="card-text single-line" style="font-size:14px;">${book.author}</p>
-   <span class="badge bg-success lang"> ${book.language}</span>
-   <div class="number">${book.id}</div>
-   </div>
-   </div> `;
-  bookBorrow.addEventListener("click", function () {
-    const tid = transections.map((transection) => transection.tid);
+    <div class="card shadow modal-card" style="width:230px; height: 320px;">
+      <div><img class="card-img-top" src="${book.imageLink}" alt="${book.title}" style="height: 200px;"></div>
+      <div class="card-body">
+        <h6 class="card-title single-line">${book.title}</h6>
+        <p class="card-text single-line" style="font-size:14px;">${book.author}</p>
+        <span class="badge bg-success lang">${book.language}</span>
+        <div class="number">${book.id}</div>
+      </div>
+    </div>
+  `;
+
+  // Event listener for the addBook button
+  const handleReturnBookClick = () => {
     const selectedPerson = personIdEl.value;
-    const matchPersonID = transections.find(
-      (transection) => transection.personId === selectedPerson
-    );
     const returnDate = borrowDateEl.value;
     const status = "Return";
-    if (returnDate) {
-      if (tid && matchPersonID) {
-        //Return book
-        let returnBook = transections.map((book) => {
-          if (book.bookId == id) {
-            return {
-              ...book,
-              rDate: returnDate,
-              status: status,
-            };
-          } else {
-            return book;
-          }
-        });
-        bookData.forEach((book) => {
-          if (book.id === id) {
-            book.status = "Available";
-          }
-        });
-        transections = returnBook;
+
+    if (returnDate && selectedPerson) {
+      const transaction = transections.find(
+        (tran) => tran.personId === selectedPerson && tran.bookId === id
+      );
+
+      console.log(personId.value);
+      console.log(selectedPerson);
+      console.log(book);
+      console.log(id);
+
+      if (transaction) {
+        // Update transaction to indicate the book is returned
+        transections = transections.map((tran) =>
+          tran.bookId === id ? { ...tran, rDate: returnDate, status } : tran
+        );
+
+        // Update the book status to "Available"
+        bookData = bookData.map((b) =>
+          b.id === id ? { ...b, status: "Available" } : b
+        );
+
         clearAllBookInput();
         loadBorrowBookData();
-        loadBook();
         ourModal.hide();
-        customModal("Book Return Status", "Book Returned Successfully...");
+        loadUserDetails();
+        loadBook();
+        customModal("Book Return Status", "Book returned successfully...");
       } else {
-        customModal("Warning...", "No persons found with the selected ID.");
+        customModal(
+          "Warning...",
+          "No transactions found for the selected person and book."
+        );
       }
     } else {
-      customModal("Warning...", "Please fill the all details...");
+      customModal("Warning...", "Please fill in all details.");
     }
-  });
+  };
+
+  // Ensure the button listener is added only once
+  if (addBook) {
+    addBook.removeEventListener("click", handleReturnBookClick); // Remove previous listener if any
+    addBook.addEventListener("click", handleReturnBookClick);
+  } else {
+    customModal("Warning...", "AddBook button element is not defined");
+  }
 }
 
 // Load book borrow data in table view
@@ -1477,6 +1524,7 @@ function loadBorrowBookData() {
   transections.forEach((book, index) => {
     bookTable.innerHTML += `<tr>
   <td>${index + 1}</td>
+    <td>${book.tid}</td>
   <td class="text-start">${book.personId}</td>
   <td>${book.bookId}</td>
   <td>${book.tDate}</td>
@@ -1487,9 +1535,9 @@ function loadBorrowBookData() {
 }
 loadBorrowBookData();
 
-const ourModalRefresh = document.querySelector("#modalBorrow");
-ourModalRefresh.addEventListener("hidden.bs.modal", (event) => {
-  loadUserDetails();
-  loadBook();
-} );
+// const ourModalRefresh = document.querySelector("#modalBorrow");
+// ourModalRefresh.addEventListener("hidden.bs.modal", (event) => {
+//   loadUserDetails();
+//   loadBook();
+// });
 
