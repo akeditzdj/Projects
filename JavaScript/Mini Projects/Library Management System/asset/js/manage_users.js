@@ -628,7 +628,7 @@ function customModal(title, content) {
 }
 
 // Window refresh
-function reload() {
-  mainModal.show();
-}
-reload();
+// function reload() {
+//   mainModal.show();
+// }
+// reload();

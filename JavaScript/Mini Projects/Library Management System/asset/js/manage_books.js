@@ -1200,7 +1200,7 @@ let bookData = [
     status: "Available",
   },
 ];
-let transections = [
+let transactions = [
   {
     tid: 1000,
     personId: "Ram Kumar (1733)",
@@ -1418,7 +1418,7 @@ function borrowBook(id) {
         bookData[bookIndex].status = "Not Available";
       }
 
-      transections.push(bookObj);
+      transactions.push(bookObj);
       clearAllBookInput();
       loadBorrowBookData();
       ourModal.hide();
@@ -1472,18 +1472,13 @@ function returnBook(id) {
     const status = "Return";
 
     if (returnDate && selectedPerson) {
-      const transaction = transections.find(
+      const transaction = transactions.find(
         (tran) => tran.personId === selectedPerson && tran.bookId === id
       );
 
-      console.log(personId.value);
-      console.log(selectedPerson);
-      console.log(book);
-      console.log(id);
-
       if (transaction) {
         // Update transaction to indicate the book is returned
-        transections = transections.map((tran) =>
+        transactions = transactions.map((tran) =>
           tran.bookId === id ? { ...tran, rDate: returnDate, status } : tran
         );
 
@@ -1521,7 +1516,7 @@ function returnBook(id) {
 // Load book borrow data in table view
 function loadBorrowBookData() {
   bookTable.innerHTML = "";
-  transections.forEach((book, index) => {
+  transactions.forEach((book, index) => {
     bookTable.innerHTML += `<tr>
   <td>${index + 1}</td>
     <td>${book.tid}</td>
