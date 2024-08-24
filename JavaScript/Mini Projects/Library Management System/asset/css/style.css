@@ -437,10 +437,19 @@ form .form-group .error {
 }
 /*-----------  Table content   ----------*/
 table {
-  height: 500px !important;
+  height: 778px !important;
   display: block;
   overflow: scroll !important;
   max-width: 1920px !important;
+  margin: 0 auto;
+}
+@media screen and (max-width: 576px) {
+  table {
+  height: 600px !important;
+  display: block;
+  overflow: scroll !important;
+  max-width: 1920px !important;
+}
 }
 table thead {
   position: sticky;

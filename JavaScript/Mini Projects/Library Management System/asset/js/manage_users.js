@@ -110,7 +110,8 @@ let loginPasswordEl = document.getElementById("loginPassword");
 const btnAdd = document.getElementById("btnAdd");
 const btnSave = document.getElementById("submit");
 const btnClear = document.getElementById("clear");
-const btnLogin = document.getElementById("btnLogin");
+const btnLogin = document.getElementById( "btnLogin" );
+const btnUserData = document.getElementById( "btnUserData" );
 //Filter
 const filterUser = document.getElementById("filterUser");
 // Load data in table
@@ -560,7 +561,6 @@ btnLogin.addEventListener("click", function () {
       loginPasswordEl = "";
       mainModal.hide();
       customModal("User Login", "User Login Successfull...");
-      btnAdd.style.display = "none";
     } else {
       customModal("Warning", "User details does not match");
       setError(loginEmailEl, "");
