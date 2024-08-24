@@ -81,7 +81,6 @@ let users = [
     newsletter: "Disagree",
   },
 ];
-
 //Get data from new user
 //Get Registration inputs
 const formEl = document.querySelector("form");
@@ -512,11 +511,6 @@ function counter() {
   });
 }
 counter();
-// Window refresh
-function reload() {
-  mainModal.show();
-}
-reload();
 
 btnLogin.addEventListener("click", function () {
   function login() {
@@ -695,3 +689,9 @@ function customModal(title, content) {
   });
   modalDialog.show();
 }
+
+// Window refresh
+// function reload() {
+//   mainModal.show();
+// }
+// reload();
