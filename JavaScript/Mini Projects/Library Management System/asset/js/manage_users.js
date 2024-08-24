@@ -512,6 +512,8 @@ function counter() {
 }
 counter();
 
+// Login page
+
 btnLogin.addEventListener("click", function () {
   function login() {
     let loginEmailEl = document.getElementById("loginEmail");
@@ -581,71 +583,6 @@ btnLogin.addEventListener("click", function () {
   login();
   loadUser();
 });
-// Login page
-
-// btnLogin.addEventListener("click", function () {
-//   function login() {
-//     let loginEmailEl = document.getElementById("loginEmail");
-//     let loginPasswordEl = document.getElementById("loginPassword");
-//     let loginEmail = loginEmailEl.value;
-//     let loginPassword = loginPasswordEl.value;
-//     let role = "Staff";
-
-//      function validateCredentials(loginEmail, loginPassword) {
-//       const user = users.find((user) => user.email === loginEmail);
-//       if (user && user.password === loginPassword) {
-//         return true;
-//       }
-//       return false;
-//     }
-
-//     if (loginEmail === "") {
-//       loginEmailEl.focus();
-//       setError(loginEmailEl, "Please enter your email");
-//       return;
-//     } else {
-//       const emailformat =
-//         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//       if (emailformat.test(loginEmail)) {
-//         setSuccess(loginEmailEl);
-//       } else {
-//         loginEmailEl.focus();
-//         setError(loginEmailEl, "Please enter valid email");
-//         return;
-//       }
-//       setSuccess(loginEmailEl);
-//     }
-//     if (loginPassword === "") {
-//       loginPasswordEl.focus();
-//       setError(loginPasswordEl, "Please enter your password");
-//       return;
-//     } else {
-//       setSuccess(loginPasswordEl);
-//     }
-//     if (validateCredentials(loginEmail, loginPassword) && userRoll === role) {
-//       loginEmailEl = "";
-//       loginPasswordEl = "";
-//       mainModal.hide();
-//       customModal("Staff Login", "Staff Login Successfull...");
-//     } else if (
-//       validateCredentials(loginEmail, loginPassword) &&
-//       userRoll != role
-//     ) {
-//       loginEmailEl = "";
-//       loginPasswordEl = "";
-//       mainModal.hide();
-//       btnUserData.style.display = "none";
-//       customModal("User Login", "User Login Successfull...");
-//     } else {
-//       customModal("Warning", "User details does not match");
-//       setError(loginEmailEl, "");
-//       setError(loginPasswordEl, "");
-//     }
-//   }
-//   login();
-//   loadUser();
-
-// });
 
 // password show/hide
 function passwordShowAndHide() {
@@ -691,7 +628,7 @@ function customModal(title, content) {
 }
 
 // Window refresh
-// function reload() {
-//   mainModal.show();
-// }
-// reload();
+function reload() {
+  mainModal.show();
+}
+reload();
