@@ -529,6 +529,12 @@ section .container-fluid:hover {
   right: 0 !important;
 }
 
+.trust img{
+  width: 200px;
+  object-fit: cover;
+  margin-top: 20px;
+}
+
 @media screen and (max-width: 576px) {
   .hero-inner-content {
     width: 100%;
