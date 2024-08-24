@@ -2,7 +2,7 @@
 let users = [
   {
     id: 1653,
-    roll: "Student",
+    role: "Staff",
     userName: "Ajith Kumar",
     email: "ajithkumar@gmail.com",
     password: "Ajith195@",
@@ -18,11 +18,11 @@ let users = [
   },
   {
     id: 1733,
-    roll: "Staff",
+    role: "Student",
     userName: "Ram Kumar",
-    email: "hafyzi@mailinator.com",
-    password: "Pa$$w0rd!",
-    cpassword: "Pa$$w0rd!",
+    email: "ram@gmail.com",
+    password: "Ajith195@",
+    cpassword: "Ajith195@",
     number: "9786000352",
     dob: "2012-04-09",
     gender: "Male",
@@ -34,7 +34,7 @@ let users = [
   },
   {
     id: 9094,
-    roll: "Staff",
+    role: "Student",
     userName: "Senthil",
     email: "volygasowa@mailinator.com",
     password: "Pa$$w0rd!",
@@ -50,7 +50,7 @@ let users = [
   },
   {
     id: 7301,
-    roll: "Student",
+    role: "Student",
     userName: "Balamurugan",
     email: "litu@mailinator.com",
     password: "Pa$$w0rd!",
@@ -66,7 +66,7 @@ let users = [
   },
   {
     id: 7623,
-    roll: "Staff",
+    role: "Student",
     userName: "Syamlal",
     email: "henykago@mailinator.com",
     password: "Pa$$w0rd!",
@@ -86,7 +86,7 @@ let users = [
 //Get Registration inputs
 const formEl = document.querySelector("form");
 const idEl = document.getElementById("id");
-const rollEl = document.getElementById("roll");
+const roleEl = document.getElementById("role");
 const userNameEl = document.getElementById("userName");
 const emailEl = document.getElementById("email");
 const passwordEl = document.getElementById("password");
@@ -110,8 +110,8 @@ let loginPasswordEl = document.getElementById("loginPassword");
 const btnAdd = document.getElementById("btnAdd");
 const btnSave = document.getElementById("submit");
 const btnClear = document.getElementById("clear");
-const btnLogin = document.getElementById( "btnLogin" );
-const btnUserData = document.getElementById( "btnUserData" );
+const btnLogin = document.getElementById("btnLogin");
+const btnUserData = document.getElementById("btnUserData");
 //Filter
 const filterUser = document.getElementById("filterUser");
 // Load data in table
@@ -147,7 +147,7 @@ function setSuccess(element) {
 // Add new user
 btnSave.addEventListener("click", function () {
   const id = idEl.value;
-  const roll = rollEl.value;
+  const role = roleEl.value;
   const userName = userNameEl.value;
   const email = emailEl.value;
   const password = passwordEl.value;
@@ -161,12 +161,12 @@ btnSave.addEventListener("click", function () {
   const terms = termsEl.checked ? "Agreed" : "Disagree";
   const newsletter = newsletterEl.checked ? "Agreed" : "Disagree";
   // Form validation
-  if (roll === "") {
-    rollEl.focus();
-    setError(rollEl, "Please select your roll");
+  if (role === "") {
+    roleEl.focus();
+    setError(roleEl, "Please select your role");
     return;
   } else {
-    setSuccess(rollEl);
+    setSuccess(roleEl);
   }
   if (userName === "") {
     userNameEl.focus();
@@ -306,7 +306,7 @@ btnSave.addEventListener("click", function () {
       if (user.id == id) {
         return {
           ...user,
-          roll: roll,
+          role: role,
           userName: userName,
           email: email,
           password: password,
@@ -334,7 +334,7 @@ btnSave.addEventListener("click", function () {
     //Add users
     const userObj = {
       id: Math.floor(1000 + Math.random() * 9000),
-      roll: roll,
+      role: role,
       userName: userName,
       email: email,
       password: password,
@@ -362,7 +362,7 @@ function editUsers(id) {
   mainModal.show();
   const selectedUsers = users.filter((user) => user.id == id)[0];
   idEl.value = selectedUsers.id;
-  rollEl.value = selectedUsers.roll;
+  roleEl.value = selectedUsers.role;
   userNameEl.value = selectedUsers.userName;
   emailEl.value = selectedUsers.email;
   passwordEl.value = selectedUsers.password;
@@ -424,7 +424,7 @@ function loadUser(isForSearch = 0, filterUser = []) {
     userTableBody.innerHTML += `<tr>
   <td>${index + 1}</td>
   <td>${user.id}</td>
-  <td>${user.roll}</td>
+  <td>${user.role}</td>
   <td>${user.userName}</td>
   <td>${user.email}</td>
   <td>${user.password}</td>
@@ -448,7 +448,7 @@ function loadUser(isForSearch = 0, filterUser = []) {
 loadUser();
 // ClearAll
 function clearAll() {
-  rollEl.value = "";
+  roleEl.value = "";
   userNameEl.value = "";
   emailEl.value = "";
   passwordEl.value = "";
@@ -489,12 +489,12 @@ function counter() {
   let female = 0;
   let others = 0;
   users.forEach((user) => {
-    user.roll;
+    user.role;
     user.gender;
-    if (user.roll == "Staff") {
+    if (user.role == "Staff") {
       staff++;
     }
-    if (user.roll == "Student") {
+    if (user.role == "Student") {
       student++;
     }
     if (user.gender == "Male") {
@@ -515,40 +515,46 @@ function counter() {
 }
 counter();
 // Window refresh
-// function reload() {
-//   mainModal.show();
-// }
-// reload();
-// Login page
+function reload() {
+  mainModal.show();
+}
+reload();
+
 btnLogin.addEventListener("click", function () {
   function login() {
     let loginEmailEl = document.getElementById("loginEmail");
     let loginPasswordEl = document.getElementById("loginPassword");
     let loginEmail = loginEmailEl.value;
     let loginPassword = loginPasswordEl.value;
-    function validateCredentials(loginEmail, loginPassword) {
-      const user = users.find((user) => user.email === loginEmail);
-      if (user && user.password === loginPassword) {
-        return true;
+    let role = "Staff";
+
+    // Function to validate user credentials
+    function validateCredentials(email, password) {
+      const user = users.find((user) => user.email === email);
+      if (user && user.password === password) {
+        return user; // Return the user object to get the role
       }
-      return false;
+      return null;
     }
+
+    // Check email field
     if (loginEmail === "") {
       loginEmailEl.focus();
       setError(loginEmailEl, "Please enter your email");
       return;
     } else {
-      const emailformat =
+      const emailFormat =
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      if (emailformat.test(loginEmail)) {
+      if (emailFormat.test(loginEmail)) {
         setSuccess(loginEmailEl);
       } else {
         loginEmailEl.focus();
-        setError(loginEmailEl, "Please enter valid email");
+        setError(loginEmailEl, "Please enter a valid email");
         return;
       }
-      setSuccess(loginEmailEl);
     }
+
+    // Check password field
     if (loginPassword === "") {
       loginPasswordEl.focus();
       setError(loginPasswordEl, "Please enter your password");
@@ -556,20 +562,99 @@ btnLogin.addEventListener("click", function () {
     } else {
       setSuccess(loginPasswordEl);
     }
-    if (validateCredentials(loginEmail, loginPassword)) {
-      loginEmailEl = "";
-      loginPasswordEl = "";
-      mainModal.hide();
-      customModal("User Login", "User Login Successfull...");
+
+    // Validate credentials and check role
+    const user = validateCredentials(loginEmail, loginPassword);
+    if (user) {
+      if (user.role === role) {
+        loginEmailEl.value = "";
+        loginPasswordEl.value = "";
+        mainModal.hide();
+        btnUserData.style.display = "block";
+        customModal("Staff Login", "Staff Login Successful...");
+      } else {
+        loginEmailEl.value = "";
+        loginPasswordEl.value = "";
+        mainModal.hide();
+        btnUserData.style.display = "none";
+        customModal("User Login", "User Login Successful...");
+      }
     } else {
-      customModal("Warning", "User details does not match");
+      customModal("Warning", "User details do not match");
       setError(loginEmailEl, "");
       setError(loginPasswordEl, "");
     }
   }
+
   login();
   loadUser();
 });
+// Login page
+
+// btnLogin.addEventListener("click", function () {
+//   function login() {
+//     let loginEmailEl = document.getElementById("loginEmail");
+//     let loginPasswordEl = document.getElementById("loginPassword");
+//     let loginEmail = loginEmailEl.value;
+//     let loginPassword = loginPasswordEl.value;
+//     let role = "Staff";
+
+//      function validateCredentials(loginEmail, loginPassword) {
+//       const user = users.find((user) => user.email === loginEmail);
+//       if (user && user.password === loginPassword) {
+//         return true;
+//       }
+//       return false;
+//     }
+
+//     if (loginEmail === "") {
+//       loginEmailEl.focus();
+//       setError(loginEmailEl, "Please enter your email");
+//       return;
+//     } else {
+//       const emailformat =
+//         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//       if (emailformat.test(loginEmail)) {
+//         setSuccess(loginEmailEl);
+//       } else {
+//         loginEmailEl.focus();
+//         setError(loginEmailEl, "Please enter valid email");
+//         return;
+//       }
+//       setSuccess(loginEmailEl);
+//     }
+//     if (loginPassword === "") {
+//       loginPasswordEl.focus();
+//       setError(loginPasswordEl, "Please enter your password");
+//       return;
+//     } else {
+//       setSuccess(loginPasswordEl);
+//     }
+//     if (validateCredentials(loginEmail, loginPassword) && userRoll === role) {
+//       loginEmailEl = "";
+//       loginPasswordEl = "";
+//       mainModal.hide();
+//       customModal("Staff Login", "Staff Login Successfull...");
+//     } else if (
+//       validateCredentials(loginEmail, loginPassword) &&
+//       userRoll != role
+//     ) {
+//       loginEmailEl = "";
+//       loginPasswordEl = "";
+//       mainModal.hide();
+//       btnUserData.style.display = "none";
+//       customModal("User Login", "User Login Successfull...");
+//     } else {
+//       customModal("Warning", "User details does not match");
+//       setError(loginEmailEl, "");
+//       setError(loginPasswordEl, "");
+//     }
+//   }
+//   login();
+//   loadUser();
+
+// });
+
 // password show/hide
 function passwordShowAndHide() {
   const passwordInputs = document.querySelectorAll(".password-text");
