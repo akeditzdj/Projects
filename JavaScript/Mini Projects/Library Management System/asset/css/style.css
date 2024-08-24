@@ -477,3 +477,75 @@ table thead th {
     height: 5px;
   }
 }
+
+/*-----------  Dashboard section   ----------*/
+.hero-1 {
+  position: relative;
+}
+.hero-image {
+  width: 100%;
+  height: 100vh;
+  background: url("../images/header-hero-banner.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-blur {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.089),
+    rgba(3, 3, 3, 0.438)
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hero-inner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  filter: drop-shadow(10px 10px 10px rgb(22, 22, 22));
+}
+section .container-fluid {
+  transition: 0.3s ease-in-out;
+}
+
+section .container-fluid:hover {
+  background-color: #1f2831;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.customer-svg {
+  position: absolute !important;
+  width: 200px !important;
+  top: 0px !important;
+  right: 0 !important;
+}
+
+@media screen and (max-width: 576px) {
+  .hero-inner-content {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    filter: drop-shadow(10px 10px 10px rgb(22, 22, 22));
+  }
+  section .container-fluid .container .row p {
+    font-size: 16px !important;
+  }
+  .customer-svg {
+    position: absolute !important;
+    width: 100px !important;
+    top: 150px !important;
+    left: 100px !important;
+  }
+}

@@ -111,6 +111,8 @@ const btnSave = document.getElementById("submit");
 const btnClear = document.getElementById("clear");
 const btnLogin = document.getElementById("btnLogin");
 const btnUserData = document.getElementById("btnUserData");
+const btnTransaction = document.getElementById("btnTransaction");
+const btnChart = document.getElementById("btnChart");
 //Filter
 const filterUser = document.getElementById("filterUser");
 // Load data in table
@@ -565,12 +567,16 @@ btnLogin.addEventListener("click", function () {
         loginPasswordEl.value = "";
         mainModal.hide();
         btnUserData.style.display = "block";
+        btnTransaction.style.display = "block";
+        btnChart.style.display = "block";
         customModal("Staff Login", "Staff Login Successful...");
       } else {
         loginEmailEl.value = "";
         loginPasswordEl.value = "";
         mainModal.hide();
         btnUserData.style.display = "none";
+        btnTransaction.style.display = "none";
+        btnChart.style.display = "none";
         customModal("User Login", "User Login Successful...");
       }
     } else {
