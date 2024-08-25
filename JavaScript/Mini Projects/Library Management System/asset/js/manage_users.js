@@ -610,7 +610,7 @@ passwordShowAndHide();
 function customModal(title, content) {
   const modal = document.getElementById("customModal");
   let loadModal = `
-   <div class="modal fade" id="myCustomModal" >
+   <div class="modal fade" id="myCustomModal">
    <div class="modal-dialog">
        <div class="modal-content">
            <div class="modal-header bg-white ">
@@ -633,8 +633,59 @@ function customModal(title, content) {
   modalDialog.show();
 }
 
+// Terms and Condition
+function termsAndCondition() {
+  customModal(
+    `<h3 class="text-dark fw-bold fst-italic">Terms and Conditions</h3>`,
+
+    `  <div class="p-2">                       <h5> 1. Introduction </h5>
+                               <p> Welcome to Library Management System. These Terms and Conditions govern your use of our website and services. By accessing or using our Website, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our Website.</p>
+
+                               <h5>2. Services</h5>
+
+                               <p>Library Management System provides a platform for managing library resources, including cataloging books, managing user accounts, and facilitating the borrowing and returning of library materials.</p>
+
+                               <h5> 3. User Accounts</h5>
+
+                               <p> Registration: To access certain features of our Website, you may need to register for an account. You agree to provide accurate and complete information during registration and to update your information as necessary.
+                                Responsibility: You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</p>
+                              <h5> 4. Use of Website</h5>
+
+                               <p> Permitted Use: You agree to use the Website only for lawful purposes and in accordance with these Terms. You shall not use the Website to engage in any illegal or unauthorized activities.
+                                Prohibited Activities: You agree not to engage in activities such as hacking, data scraping, or any other form of unauthorized access or use of the Website.</p>
+                               <h5>5. Intellectual Property</h5>
+
+                              <p>Ownership: All content, including text, graphics, logos, and software on the Website, is the property of [Your Library Management System] or its licensors and is protected by intellectual property laws.
+                                Restrictions: You may not reproduce, distribute, or create derivative works based on the content without our express written permission.</p>
+                              <h5> 6. Privacy Policy</h5>
+
+                               <p> Your use of the Website is also governed by our Privacy Policy, which explains how we collect, use, and protect your personal information. By using the Website, you consent to the practices described in the Privacy Policy.</p>
+
+                               <h5>7. Limitation of Liability</h5>
+
+                              <p> Disclaimer: The Website is provided "as is" without any warranties, express or implied. We do not guarantee that the Website will be available at all times or that it will be free from errors or viruses.
+                                Limitation: In no event shall [Your Library Management System] be liable for any indirect, incidental, or consequential damages arising out of or in connection with your use of the Website.</p>
+                              <h5> 8. Changes to Terms</h5>
+
+                              <p>  We may update these Terms from time to time. We will notify you of any material changes by posting the new Terms on the Website. Your continued use of the Website after any changes constitutes your acceptance of the updated Terms.</p>
+
+                               <h5>9. Termination</h5>
+
+                              <p> We reserve the right to suspend or terminate your access to the Website at any time, with or without cause, if we believe you have violated these Terms.</p>
+
+                               <h5>10. Governing Law</h5>
+
+                               <p> These Terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction]. Any disputes arising out of or relating to these Terms or the Website shall be subject to the exclusive jurisdiction of the courts in [Your Jurisdiction].</p>
+
+                               <h5>11. Contact Us</h5>
+
+                              <p>  If you have any questions about these Terms, please contact us at <a target="_blank" href="https://akeditz.com">akeditz.com</a>.</p>
+                              </div>
+`
+  );
+}
 // Window refresh
-// function reload() {
-//   mainModal.show();
-// }
-// reload();
+function reload() {
+  mainModal.show();
+}
+reload();
