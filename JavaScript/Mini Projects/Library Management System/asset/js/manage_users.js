@@ -80,6 +80,22 @@ let users = [
     terms: "Agreed",
     newsletter: "Disagree",
   },
+  {
+    id: 7623,
+    role: "Student",
+    userName: "Syamlal",
+    email: "henykago@mailinator.com",
+    password: "Pa$$w0rd!",
+    cpassword: "Pa$$w0rd!",
+    number: "6616516515",
+    dob: "2005-11-10",
+    gender: "Female",
+    city: "Kanyakumari",
+    pincode: "212151",
+    address: "Et eum est debitis ",
+    terms: "Agreed",
+    newsletter: "Disagree",
+  },
 ];
 //Get data from new user
 //Get Registration inputs
@@ -351,8 +367,8 @@ btnSave.addEventListener("click", function () {
     };
     users.push(userObj);
     clearAll();
-    loadUser();
     counter();
+    loadUser();
     loadUserDetails();
     customModal("New User Registration", "User Added Successfully...");
   }
@@ -490,19 +506,19 @@ function counter() {
   users.forEach((user) => {
     user.role;
     user.gender;
-    if (user.role == "Staff") {
+    if (user.role === "Staff") {
       staff++;
     }
-    if (user.role == "Student") {
+    if (user.role === "Student") {
       student++;
     }
-    if (user.gender == "Male") {
+    if (user.gender === "Male") {
       male++;
     }
-    if (user.gender == "Female") {
+    if (user.gender === "Female") {
       female++;
     }
-    if (user.gender == "Others") {
+    if (user.gender === "Others") {
       others++;
     }
     totalStaff.innerHTML = staff;
