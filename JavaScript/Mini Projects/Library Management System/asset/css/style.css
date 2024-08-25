@@ -8,6 +8,9 @@
 html {
   scroll-behavior: smooth;
 }
+ul li {
+  list-style: none;
+}
 body {
   width: 100%;
   height: 100%;
@@ -535,6 +538,26 @@ section .container-fluid:hover {
   margin-top: 20px;
 }
 
+.btn-app img {
+  width: 45%;
+  height: auto;
+  object-fit: cover;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-app .apple img:hover,
+.btn-app .play img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(3px 3px 10px #ffff);
+}
+footer img {
+  width: 80px;
+  object-fit: cover;
+}
+footer p {
+  width: 350px;
+}
+
 @media screen and (max-width: 576px) {
   .hero-inner-content {
     width: 100%;
@@ -558,5 +581,15 @@ section .container-fluid:hover {
     width: 150px;
     object-fit: cover;
     margin-top: 20px;
+  }
+  .btn-app img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: 0.3s ease-in-out;
+  }
+  footer img {
+    width: 150px;
+    object-fit: cover;
   }
 }
