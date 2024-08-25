@@ -135,7 +135,7 @@ nav ul li:hover {
   width: 100%;
   height: 180px;
   display: block;
-  background: linear-gradient(to right, #fff 50%, #2b3641 50%);
+  background: linear-gradient(to right, #fff 50%, #1f2831 50%);
   background-size: 200% 100%;
   background-position: right bottom;
   transition: all 0.5s ease-out;
@@ -514,6 +514,9 @@ table thead th {
   transform: translate(-50%, 50%);
   filter: drop-shadow(10px 10px 10px rgb(22, 22, 22));
 }
+/* section{
+  width: 100%;
+} */
 section .container-fluid {
   transition: 0.3s ease-in-out;
 }
@@ -558,6 +561,10 @@ footer p {
   width: 350px;
 }
 
+footer ul li:hover {
+  border-bottom: 3px solid #fff;
+  width: fit-content;
+}
 @media screen and (max-width: 576px) {
   .hero-inner-content {
     width: 100%;
@@ -570,6 +577,10 @@ footer p {
   }
   section .container-fluid .container .row p {
     font-size: 16px !important;
+  }
+  section video{
+    width: 100%;
+    height: 100%;
   }
   .customer-svg {
     position: absolute !important;
@@ -592,4 +603,8 @@ footer p {
     width: 150px;
     object-fit: cover;
   }
+  footer p {
+    width: 330px !important;
+  }
+
 }
