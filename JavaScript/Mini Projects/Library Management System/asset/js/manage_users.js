@@ -675,11 +675,11 @@ function termsAndCondition() {
 
                                <h5>10. Governing Law</h5>
 
-                               <p> These Terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction]. Any disputes arising out of or relating to these Terms or the Website shall be subject to the exclusive jurisdiction of the courts in [Your Jurisdiction].</p>
+                               <p> These Terms shall be governed by and construed in accordance with the laws of authority . Any disputes arising out of or relating to these Terms or the Website shall be subject to the exclusive jurisdiction of the courts in authority .</p>
 
                                <h5>11. Contact Us</h5>
 
-                              <p>  If you have any questions about these Terms, please contact us at <a target="_blank" href="https://akeditz.com">akeditz.com</a>.</p>
+                              <p>  If you have any questions about these Terms, please contact us at <a target="_blank" href="https://akeditz.com">www.akeditz.com</a></p>
                               </div>
 `
   );
