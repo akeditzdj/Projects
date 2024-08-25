@@ -19,12 +19,17 @@ body {
 }
 /* -------------  Main Page -----------------*/
 #bgVideo {
-  filter: blur(1px);
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.089),
+    rgba(3, 3, 3, 0.438)
+  );
   position: fixed;
   left: 0;
-  top: 10px;
+  top: 0px;
   min-width: 100%;
   min-height: 100%;
+  z-index: 1;
 }
 .main-page-text {
   background-color: rgba(0, 0, 0, 0.616);
@@ -39,14 +44,21 @@ body {
   width: 70%;
   padding: 50px;
   text-align: center;
+  opacity: 0;
 }
-.mainPage img {
-  width: 300px;
-  height: 300px;
+
+#bgVideo:hover + .main-page-text,
+.main-page-text:hover {
+  opacity: 1;
+  z-index: 10;
 }
+
 .mainPage button {
   width: 350px;
   height: 70px;
+}
+.contact {
+  z-index: 10;
 }
 @media screen and (max-width: 576px) {
   .main-page-text {
@@ -57,6 +69,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    opacity: 1;
   }
   .main-page-text h2 {
     width: 100%;
@@ -70,6 +83,7 @@ body {
     width: 100%;
     flex-direction: column;
     bottom: 20px;
+    z-index: 10;
   }
 }
 /* ------------- Library Page  -----------------*/
@@ -524,7 +538,11 @@ section .container-fluid:hover {
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-
+section button:hover {
+  background-color: transparent !important;
+  border: 1px solid #ffff !important;
+  color: #ffff !important;
+}
 .customer-svg {
   position: absolute !important;
   width: 200px !important;
