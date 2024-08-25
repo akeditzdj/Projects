@@ -80,22 +80,6 @@ let users = [
     terms: "Agreed",
     newsletter: "Disagree",
   },
-  {
-    id: 7623,
-    role: "Student",
-    userName: "Syamlal",
-    email: "henykago@mailinator.com",
-    password: "Pa$$w0rd!",
-    cpassword: "Pa$$w0rd!",
-    number: "6616516515",
-    dob: "2005-11-10",
-    gender: "Female",
-    city: "Kanyakumari",
-    pincode: "212151",
-    address: "Et eum est debitis ",
-    terms: "Agreed",
-    newsletter: "Disagree",
-  },
 ];
 //Get data from new user
 //Get Registration inputs
@@ -526,7 +510,10 @@ function counter() {
     totalMale.innerHTML = "Male" + " - " + male;
     totalFemale.innerHTML = "Female" + " - " + female;
     totalOthers.innerHTML = "Others" + " - " + others;
-  });
+  } );
+  console.log(staff);
+  console.log(student);
+
 }
 counter();
 
@@ -701,7 +688,7 @@ function termsAndCondition() {
   );
 }
 // Window refresh
-function reload() {
-  mainModal.show();
-}
-reload();
+// function reload() {
+//   mainModal.show();
+// }
+// reload();

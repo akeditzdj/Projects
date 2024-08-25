@@ -129,6 +129,9 @@ nav ul li:hover {
   padding: 15px 10px;
   margin-top: 5%;
 }
+.side-bar-btn button h5 i {
+  font-size: 22px;
+}
 .button {
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -341,6 +344,10 @@ canvas {
     width: 14%;
     line-height: 23px;
   }
+  canvas {
+    width: 470px !important;
+    height: 300px !important;
+  }
 }
 /* -------------  Forms -----------------*/
 .form-main-container {
@@ -454,7 +461,7 @@ table {
   height: 708px !important;
   display: block;
   overflow: scroll !important;
-  max-width: 1920px !important;
+  /* max-width: 1920px !important; */
   margin: 0 auto;
 }
 
@@ -483,7 +490,13 @@ table thead th {
 
 @media screen and (max-width: 576px) {
   table {
-    height: 600px !important;
+    height: 400px !important;
+    display: block !important;
+    overflow: scroll !important;
+  }
+
+  #borrowDataTable {
+    height: 470px !important;
     display: block !important;
     overflow: scroll !important;
   }

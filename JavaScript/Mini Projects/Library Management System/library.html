@@ -56,7 +56,7 @@
                 <!-- Tab Toggler Button Add and Manage Users - Start -->
                 <div class="row mt-3">
                     <button type="button" class="btn w-100 button text-white text-start" id="btnUserData" data-bs-toggle="modal" data-bs-target="#userDataModal" role="tab" aria-selected="true">
-                        <h5><i class="bi bi-people-fill"></i> Manage Users</h5>
+                        <h5><i class="bi bi-people"></i> Manage Users</h5>
                     </button>
                 </div>
                 <!-- Tab Toggler Button Add and Manage Users - End -->
@@ -70,14 +70,14 @@
                 <!-- Tab Toggler Button Add and Manage Users - Start -->
                 <div class="row mt-3">
                     <button type="button" class="btn w-100 button text-white text-start" id="btnTransaction" data-bs-toggle="modal" data-bs-target="#borrowBookDataTable" role="tab" aria-selected="true">
-                        <h5><i class="bi bi-people-fill"></i> Transaction Reports</h5>
+                        <h5><i class="bi bi-journal-check"></i> Transaction Reports</h5>
                     </button>
                 </div>
                 <!-- Tab Toggler Button Add and Manage Users - End -->
                 <!-- Tab Toggler Button Add and Manage Users - Start -->
                 <div class="row mt-3">
                     <button type="button" class="btn w-100 button text-white text-start" id="btnChart" data-bs-toggle="modal" data-bs-target="#myModalBookChart" role="tab" aria-selected="true">
-                        <h5><i class="bi bi-people-fill"></i> Chart Report</h5>
+                        <h5><i class="bi bi-graph-up-arrow"></i> Chart Report</h5>
                     </button>
                 </div>
                 <!-- Tab Toggler Button Add and Manage Users - End -->
@@ -296,8 +296,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="container pt-md-5 pt-2">
-                                <footer>
+                            <footer class="border-top">
+                                <div class="container pt-md-5 pt-2 ">
                                     <div class=" row pt-md-5 pt-2 row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
                                         <div>
                                             <ul class="navbar-nav">
@@ -346,70 +346,70 @@
                                     <div class="row text-center pt-5">
                                         <p>&copy; <a class="link-light" target="_blank" href="https://akeditz.com">akeditz.com</a> / All rights reserved</p>
                                     </div>
-                                </footer>
-                            </div>
+                                </div>
+                            </footer>
                         </section>
                         <!-- Main page content - End-->
                     </div>
                     <!-- Manage Users - Tab End -->
-                                <!-- User Data Table - Start-->
-                                <div class="modal modal-xl" tabindex="-1" id="userDataModal">
-                                    <div class="modal-dialog modal-fullscreen">
-                                        <div class="modal-content">
-                                            <div class="modal-header bg-white">
-                                                <img class="img-fluid" src="asset/images/logo.png" style="width: 50px;height: 50px;" alt="">
-                                                <h3 class="modal-title text-dark fw-bold fst-italic" id="userDataModalLable">
-                                                    Library
-                                                    Management System</h3>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body d-md-flex justify-content-center align-items-start">
-                                                <div class="row-mt-5">
-                                                    <div class="col-md-12">
-                                                        <div class="row my-3">
-                                                            <div class=" my-3 bg-light py-1 rounded-5 w-100">
-                                                                <h3 class="text-center text-dark fw-bold">Add / Manage Users</h3>
-                                                            </div>
-                                                            <div class="col d-md-flex justify-content-between align-items-center">
-                                                                <div>
-                                                                    <button class="btn btn-outline-light w-100" id="btnAdd">
-                                                                        <i class="bi bi-person-fill-add"></i> Add User
-                                                                    </button>
-                                                                </div>
-                                                                <div class="  mt-3 mt-md-0 filter-Input">
-                                                                    <input class="form-control bg-transparent text-light" type="text" name="filterUser" id="filterUser" placeholder="Flter your user">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <table class="table table-responsive table-hover table-bordered table-dark" id="userReg">
-                                                            <thead class="text-center">
-                                                                <tr>
-                                                                    <th>Sl No</th>
-                                                                    <th>ID No</th>
-                                                                    <th>Roll</th>
-                                                                    <th>Name</th>
-                                                                    <th>Email</th>
-                                                                    <th>Password</th>
-                                                                    <th>Mobile Number</th>
-                                                                    <th>Date of Birth</th>
-                                                                    <th>Gender</th>
-                                                                    <th>City</th>
-                                                                    <th>Pincode</th>
-                                                                    <th>Address</th>
-                                                                    <th>T&C</th>
-                                                                    <th>Newsletter</th>
-                                                                    <th colspan="2">Action</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody id="usertable" class="text-center"></tbody>
-                                                        </table>
+                    <!-- User Data Table - Start-->
+                    <div class="modal modal-xl" tabindex="-1" id="userDataModal">
+                        <div class="modal-dialog modal-fullscreen">
+                            <div class="modal-content">
+                                <div class="modal-header bg-white">
+                                    <img class="img-fluid" src="asset/images/logo.png" style="width: 50px;height: 50px;" alt="">
+                                    <h3 class="modal-title text-dark fw-bold fst-italic" id="userDataModalLable">
+                                        Library
+                                        Management System</h3>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body d-md-flex justify-content-center align-items-start p-3">
+                                    <div class="row-mt-5 ">
+                                        <div class="col-md-12">
+                                            <div class="row my-3 p-md-0 p-3">
+                                                <div class=" my-3 bg-light py-1 rounded-5">
+                                                    <h3 class="text-center text-dark fw-bold">Add / Manage Users</h3>
+                                                </div>
+                                                <div class="col d-md-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <button class="btn btn-outline-light w-100" id="btnAdd">
+                                                            <i class="bi bi-person-fill-add"></i> Add User
+                                                        </button>
+                                                    </div>
+                                                    <div class="mt-3 mt-md-0 filter-Input">
+                                                        <input class="form-control bg-transparent text-light" type="text" name="filterUser" id="filterUser" placeholder="Flter your user">
                                                     </div>
                                                 </div>
                                             </div>
+                                            <table class="table table-responsive table-hover table-bordered table-dark" id="userReg">
+                                                <thead class="text-center">
+                                                    <tr>
+                                                        <th>Sl No</th>
+                                                        <th>ID No</th>
+                                                        <th>Roll</th>
+                                                        <th>Name</th>
+                                                        <th>Email</th>
+                                                        <th>Password</th>
+                                                        <th>Mobile Number</th>
+                                                        <th>Date of Birth</th>
+                                                        <th>Gender</th>
+                                                        <th>City</th>
+                                                        <th>Pincode</th>
+                                                        <th>Address</th>
+                                                        <th>T&C</th>
+                                                        <th>Newsletter</th>
+                                                        <th colspan="2">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="usertable" class="text-center"></tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- User Data Table - End-->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- User Data Table - End-->
                     <!-- Modal - User registration and Login form - Start-->
                     <div class="modal" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-fullscreen">
@@ -530,7 +530,7 @@
                                                                         <div class="form-group">
                                                                             <div class="col-12 d-md-flex justify-content-around align-items-center">
                                                                                 <label class="form-label checkbox" for="terms"><input class="form-check-input  bg-transparent text-light" type="checkbox" name="terms" id="terms" value="Agreed"> I agree with <span onclick="termsAndCondition()" class="text-primary cursor-pointer text-decoration-underline">terms and conditions</span></label>
-                                                                                <label class="form-label newsletter" for="newsletter"><input class="form-check-input  bg-transparent text-light" type="checkbox" name="newsletter" id="newsletter" value="Agreed"> I want receive the newsletter</label>
+                                                                                <label class="form-label newsletter" for="newsletter"><input class="form-check-input  bg-transparent text-light" type="checkbox" name="newsletter" id="newsletter" value="Agreed"> I want to receive the newsletter</label>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -768,13 +768,13 @@
                                         Management System</h3>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body d-flex justify-content-center">
+                                <div class="modal-body m-auto">
                                     <div class="row">
                                         <div class="col">
                                             <div class="py-1 my-4 round rounded-5 text-center bg-light">
                                                 <h4 class="text-dark fw-bold lh-1">Borrow Book Data</h4>
                                             </div>
-                                            <table class="table table-hover table-bordered table-responsive table-dark" id="borrowDataTable">
+                                            <table class="table table-responsive table-hover table-bordered table-dark" id="borrowDataTable">
                                                 <thead class="text-center">
                                                     <tr>
                                                         <th>Sl No</th>
