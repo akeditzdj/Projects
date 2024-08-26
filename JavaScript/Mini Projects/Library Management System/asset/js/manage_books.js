@@ -1491,11 +1491,7 @@ function loadBorrowBookData() {
 }
 loadBorrowBookData();
 
-// const ourModalRefresh = document.querySelector("#modalBorrow");
-// ourModalRefresh.addEventListener("hidden.bs.modal", (event) => {
-//   loadUserDetails();
-//   loadBook();
-// });
+// Load book & Borrow & Return book details
 
 function loadBook(
   lang = "All",
