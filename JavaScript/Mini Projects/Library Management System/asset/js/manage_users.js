@@ -329,6 +329,7 @@ btnSave.addEventListener("click", function () {
     mainModal.hide();
     customModal("User Update Status", "User Updated Successfully...");
     loadUser();
+    counter();
     loadUserDetails();
     clearAll();
   } else {
@@ -350,10 +351,10 @@ btnSave.addEventListener("click", function () {
       newsletter: newsletter,
     };
     users.push(userObj);
-    clearAll();
-    counter();
     loadUser();
+    counter();
     loadUserDetails();
+    clearAll();
     customModal("New User Registration", "User Added Successfully...");
   }
   bsTab.show();
@@ -473,46 +474,51 @@ filterUser.addEventListener("input", function () {
 });
 
 // Table row count and show on dashboard
+
+console.log(users);
+// counter();
 function counter() {
   const rowCount = document.getElementById("userReg").rows.length - 1;
   const totalUser = document.getElementById("totalUser");
   totalUser.innerHTML = rowCount;
+
   const totalStaff = document.getElementById("totalStaff");
   const totalStudent = document.getElementById("totalStudent");
   const totalMale = document.getElementById("totalMale");
   const totalFemale = document.getElementById("totalFemale");
   const totalOthers = document.getElementById("totalOthers");
+
   let staff = 0;
   let student = 0;
   let male = 0;
   let female = 0;
   let others = 0;
+  console.log(users);
+
   users.forEach((user) => {
-    user.role;
-    user.gender;
     if (user.role === "Staff") {
       staff++;
-    }
-    if (user.role === "Student") {
+    } else if (user.role === "Student") {
       student++;
     }
+
     if (user.gender === "Male") {
       male++;
-    }
-    if (user.gender === "Female") {
+    } else if (user.gender === "Female") {
       female++;
-    }
-    if (user.gender === "Others") {
+    } else if (user.gender === "Others") {
       others++;
     }
-    totalStaff.innerHTML = staff;
-    totalStudent.innerHTML = student;
-    totalMale.innerHTML = "Male" + " - " + male;
-    totalFemale.innerHTML = "Female" + " - " + female;
-    totalOthers.innerHTML = "Others" + " - " + others;
   });
-
+  // Update the counts
+  totalStaff.innerHTML = staff;
+  totalStudent.innerHTML = student;
+  totalMale.innerHTML = "Male - " + male;
+  totalFemale.innerHTML = "Female - " + female;
+  totalOthers.innerHTML = "Others - " + others;
 }
+
+// Call the function
 counter();
 
 // Login page
