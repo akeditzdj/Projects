@@ -511,8 +511,7 @@ function counter() {
     totalFemale.innerHTML = "Female" + " - " + female;
     totalOthers.innerHTML = "Others" + " - " + others;
   });
-  console.log(staff);
-  console.log(student);
+
 }
 counter();
 
@@ -610,7 +609,7 @@ function passwordShowAndHide() {
 passwordShowAndHide();
 // custom modal dialog box
 function customModal(title, content) {
-  const modal = document.getElementById("customModal");
+  const modal = document.querySelector("#customModal");
   let loadModal = `
    <div class="modal fade" id="myCustomModal">
    <div class="modal-dialog">

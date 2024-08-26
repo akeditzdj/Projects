@@ -580,7 +580,7 @@ section button:hover {
 .btn-app .apple img:hover,
 .btn-app .play img:hover {
   transform: scale(1.05);
-  filter: drop-shadow(3px 3px 10px #ffff);
+  filter: drop-shadow(3px 3px 10px #807f7f);
 }
 footer img {
   width: 80px;
