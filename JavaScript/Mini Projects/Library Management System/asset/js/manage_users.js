@@ -510,10 +510,9 @@ function counter() {
     totalMale.innerHTML = "Male" + " - " + male;
     totalFemale.innerHTML = "Female" + " - " + female;
     totalOthers.innerHTML = "Others" + " - " + others;
-  } );
+  });
   console.log(staff);
   console.log(student);
-
 }
 counter();
 
