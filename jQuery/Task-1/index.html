@@ -16,7 +16,7 @@
         </div>
         <div class="container">
             <div class="form-container my-2 lg:m-auto p-3 lg:p-0 w-100">
-                <form action="#">
+                <form action="#" class="position-relative">
                     <div class="lg:flex justify-content-around">
                         <div class="form-group mb-2">
                             <label class="form-label" for="name">Name</label>
@@ -24,7 +24,7 @@
                         </div>
                         <div class="form-group mb-2">
                             <label class="form-label" for="emeil">Email</label>
-                            <input class="form-control" type="text" name="email" id="email" placeholder="Your email">
+                            <input class="form-control " type="text" name="email" id="email" placeholder="Your email">
                         </div>
                         <div class="form-group mb-2">
                             <label class="form-label" for="city">City</label>
@@ -39,30 +39,31 @@
                         <button class="btn btn btn-danger btn-sm px-3" type="reset" id="btnClear">Clear</button>
                         <button class="btn btn-primary btn-sm px-3" type="button" id="btnSave">Submit</button>
                     </div>
-                    <div class="msg text-danger w-100  text-center fw-semibold"></div>
+                    <div class="msg text-danger w-100  position-absolute top-75 left-50 text-center fw-semibold"></div>
                 </form>
             </div>
         </div>
 
-        <div class="container overflow-auto lg:h-[38rem] h-dvh">
-            <table class="table table-responsive table-hover table-light table-bordered">
-                <thead class="sticky-top">
-                    <tr class="text-center">
-                        <th>Sl No</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>City</th>
-                        <th>Date of Birth</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+        <div class="container p-0">
+            <div class="row-count text-end pe-2 py-1"></div>
+            <div class="container p-0 overflow-auto lg:h-[42rem] h-dvh">
+                <table class=" table table-responsive table-hover table-light table-bordered" id="userTable">
+                    <thead class="sticky-top">
+                        <tr class="text-center">
+                            <th>Sl No</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>City</th>
+                            <th>Date of Birth</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
         </div>
-
     </div>
-
 
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

@@ -33,9 +33,17 @@ $(document).ready(function () {
     const dob = $("#dob").val();
 
     if (!name || !email || !city || !dob) {
-      // $("input").focus
+      $("input").each(function () {
+        if ($(this).val().trim() === "") {
+          $(this).addClass("border border-danger");
+          hasErrors = true;
+        }
+      });
       alert("Please fill in all details.");
       return;
+    } else {
+      $("input").removeClass("border border-danger");
+      $("input").addClass("border border-success");
     }
 
     const user = {
@@ -49,8 +57,7 @@ $(document).ready(function () {
     users.push(user);
     localStorage.setItem("users", JSON.stringify(users));
     showMessage("User added successfully...");
-    // $(".msg").fadeIn(400);
-    // $(".msg").fadeOut(400);
+    count();
     loadData();
   }
 
@@ -116,7 +123,6 @@ $(document).ready(function () {
   // Add user on save button click
   $("#btnSave").click(addUser);
   $("#btnSave").click(clearForm);
-  // $("#btnSave").click(showMessage);
 
   // Handle edit and delete button clicks
   $("tbody").on("click", ".btn-edit", function () {
@@ -130,19 +136,29 @@ $(document).ready(function () {
       deleteUser(id);
     }
     showMessage("User deleted successfully...");
+    count();
   });
 
   // show success message in timeout function
   function showMessage(message) {
     let msg = $(".msg").hide();
-    msg.html(message).show(500);
+    msg.html(message).fadeIn(1000);
 
     setTimeout(function () {
-      msg.hide(500); // Fade out over 400ms
+      msg.fadeOut(1000); // Fade out over 400ms
+      $("input").removeClass("border border-success");
     }, 3000);
   }
+
+  // User count function
+
+  function count() {
+    const users = JSON.parse(localStorage.getItem("users")) || [].length;
+    const rowCount = users.length;
+    $(".row-count").html("Total user : " + rowCount);
+  }
+  count();
 
   // Initial Load
   loadData();
 });
-
