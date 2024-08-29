@@ -47,6 +47,9 @@ $(document).ready(function () {
     const users = JSON.parse(localStorage.getItem("users")) || [];
     users.push(user);
     localStorage.setItem("users", JSON.stringify(users));
+    showMessage("User added successfully...");
+    // $(".msg").fadeIn(400);
+    // $(".msg").fadeOut(400);
     loadData();
   }
 
@@ -87,6 +90,7 @@ $(document).ready(function () {
     if (index > -1) {
       users[index] = { id, name, email, city, dob };
       localStorage.setItem("users", JSON.stringify(users));
+      showMessage("User updated successfully...");
       loadData();
       clearForm();
     }
@@ -111,6 +115,7 @@ $(document).ready(function () {
   // Add user on save button click
   $("#btnSave").click(addUser);
   $("#btnSave").click(clearForm);
+  // $("#btnSave").click(showMessage);
 
   // Handle edit and delete button clicks
   $("tbody").on("click", ".btn-edit", function () {
@@ -123,7 +128,19 @@ $(document).ready(function () {
     if (confirm("Are you sure you want to delete this user?")) {
       deleteUser(id);
     }
+     showMessage("User deleted successfully...");
   });
+
+  // show message
+
+  function showMessage(message) {
+    let msg = $(".msg").hide();
+    msg.html(message).show(500);
+
+    setTimeout(function () {
+      msg.hide(500); // Fade out over 400ms
+    }, 3000);
+  }
 
   // Initial Load
   loadData();
