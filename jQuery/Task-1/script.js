@@ -145,13 +145,12 @@ $(document).ready(function () {
     msg.html(message).fadeIn(1000);
 
     setTimeout(function () {
-      msg.fadeOut(1000); // Fade out over 400ms
+      msg.fadeOut(1000);
       $("input").removeClass("border border-success");
     }, 3000);
   }
 
   // User count function
-
   function count() {
     const users = JSON.parse(localStorage.getItem("users")) || [].length;
     const rowCount = users.length;
