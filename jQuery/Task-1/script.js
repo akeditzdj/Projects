@@ -128,11 +128,10 @@ $(document).ready(function () {
     if (confirm("Are you sure you want to delete this user?")) {
       deleteUser(id);
     }
-     showMessage("User deleted successfully...");
+    showMessage("User deleted successfully...");
   });
 
-  // show message
-
+  // show success message in timeout function
   function showMessage(message) {
     let msg = $(".msg").hide();
     msg.html(message).show(500);
