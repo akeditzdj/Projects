@@ -33,6 +33,7 @@ $(document).ready(function () {
     const dob = $("#dob").val();
 
     if (!name || !email || !city || !dob) {
+      // $("input").focus
       alert("Please fill in all details.");
       return;
     }
@@ -144,3 +145,4 @@ $(document).ready(function () {
   // Initial Load
   loadData();
 });
+
