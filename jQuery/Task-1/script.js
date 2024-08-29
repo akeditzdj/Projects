@@ -37,7 +37,13 @@ $(document).ready(function () {
       return;
     }
 
-    const user = { id: Date.now(), name, email, city, dob };
+    const user = {
+      id: Math.floor(1000 + Math.random() * 9000),
+      name,
+      email,
+      city,
+      dob,
+    };
     const users = JSON.parse(localStorage.getItem("users")) || [];
     users.push(user);
     localStorage.setItem("users", JSON.stringify(users));
@@ -100,11 +106,11 @@ $(document).ready(function () {
     $("#email").val("");
     $("#city").val("");
     $("#dob").val("");
-    $("#btnSave").off("click").click(addUser);
   }
 
   // Add user on save button click
   $("#btnSave").click(addUser);
+  $("#btnSave").click(clearForm);
 
   // Handle edit and delete button clicks
   $("tbody").on("click", ".btn-edit", function () {
