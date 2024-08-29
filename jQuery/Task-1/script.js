@@ -12,10 +12,10 @@ $(document).ready(function () {
           <td>${user.email}</td>
           <td>${user.city}</td>
           <td>${user.dob}</td>
-          <td><button class="btn btn-sm btn-primary px-1 py-0 btn-edit" data-id="${
+          <td><button class="btn btn-sm btn-primary px-3  py-[1px] btn-edit" data-id="${
             user.id
           }">Edit</button></td>
-          <td><button class="btn btn-sm btn-danger px-1 py-0 btn-delete" data-id="${
+          <td><button class="btn btn-sm btn-danger px-3  py-[1px]  btn-delete" data-id="${
             user.id
           }">Delete</button></td>
         </tr>

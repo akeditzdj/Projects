@@ -10,54 +10,56 @@
 </head>
 
 <body>
-
-    <div class="container">
+    <div class="container-fluid">
         <div class="header">
             <h2 class="md:text-3xl text-2xl font-bold text-center mt-3 bg-body-secondary lg:py-2 ">CRUD - Operation for jQuery</h2>
         </div>
-        <div class="form-container mt-2 lg:m-auto p-3 lg:p-0 w-100">
-            <form action="#">
-                <div class="lg:flex justify-content-around">
-                    <div class="form-group mb-2">
-                        <label class="form-label" for="name">Name</label>
-                        <input class="form-control" type="text" name="name" id="name" placeholder="Your name">
+        <div class="container">
+            <div class="form-container mt-2 lg:m-auto p-3 lg:p-0 w-100">
+                <form action="#">
+                    <div class="lg:flex justify-content-around">
+                        <div class="form-group mb-2">
+                            <label class="form-label" for="name">Name</label>
+                            <input class="form-control" type="text" name="name" id="name" placeholder="Your name">
+                        </div>
+                        <div class="form-group mb-2">
+                            <label class="form-label" for="emeil">Email</label>
+                            <input class="form-control" type="text" name="email" id="email" placeholder="Your email">
+                        </div>
+                        <div class="form-group mb-2">
+                            <label class="form-label" for="city">City</label>
+                            <input class="form-control" type="text" name="city" id="city" placeholder="Your city">
+                        </div>
+                        <div class="form-group mb-2">
+                            <label class="form-label" for="dob">Date of Birth</label>
+                            <input class="form-control" type="date" name="dob" id="dob">
+                        </div>
                     </div>
-                    <div class="form-group mb-2">
-                        <label class="form-label" for="emeil">Email</label>
-                        <input class="form-control" type="text" name="email" id="email" placeholder="Your email">
+                    <div class="text-center py-3">
+                        <button class="btn btn btn-danger btn-sm px-3" type="reset" id="btnClear">Clear</button>
+                        <button class="btn btn-primary btn-sm px-3" type="button" id="btnSave">Submit</button>
                     </div>
-                    <div class="form-group mb-2">
-                        <label class="form-label" for="city">City</label>
-                        <input class="form-control" type="text" name="city" id="city" placeholder="Your city">
-                    </div>
-                    <div class="form-group mb-2">
-                        <label class="form-label" for="dob">Date of Birth</label>
-                        <input class="form-control" type="date" name="dob" id="dob">
-                    </div>
-                </div>
-                <div class="text-center py-3">
-                    <button class="btn btn btn-danger btn-sm px-3" type="reset" id="btnClear">Clear</button>
-                    <button class="btn btn-primary btn-sm px-3" type="button" id="btnSave">Submit</button>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <div class="container  overflow-scroll">
-        <table class="table table-responsive table-hover table-light table-bordered">
-            <thead>
-                <tr class="text-center">
-                    <th>Sl No</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>City</th>
-                    <th>Date of Birth</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+        <div class="container overflow-auto lg:h-[44rem] sm:h-[5rem]">
+            <table class="table table-responsive table-hover table-light table-bordered">
+                <thead class="sticky-top">
+                    <tr class="text-center">
+                        <th>Sl No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>City</th>
+                        <th>Date of Birth</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
