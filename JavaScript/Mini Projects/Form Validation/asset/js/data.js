@@ -253,6 +253,6 @@ let countryList = [
 countryList.forEach(function (item) {
   let countryList = document.createElement("option");
   countryList.text = item;
-    countryList.value = item;
-    country.appendChild(countryList);
+  countryList.value = item;
+  country.appendChild(countryList);
 });
