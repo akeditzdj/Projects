@@ -490,9 +490,10 @@ table thead th {
 
 @media screen and (max-width: 576px) {
   table {
-    height: 400px !important;
+    height: 350px !important;
     display: block !important;
     overflow: scroll !important;
+    text-wrap: nowrap;
   }
 
   #borrowDataTable {
