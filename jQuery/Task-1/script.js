@@ -12,10 +12,10 @@ $(document).ready(function () {
           <td>${user.email}</td>
           <td>${user.city}</td>
           <td>${user.dob}</td>
-          <td><button class="btn btn-sm btn-primary px-3  py-[1px] btn-edit" data-id="${
+          <td><button class="btn btn-sm btn-primary px-3 py-[1px] btn-edit" data-id="${
             user.id
           }">Edit</button></td>
-          <td><button class="btn btn-sm btn-danger px-3  py-[1px]  btn-delete" data-id="${
+          <td><button class="btn btn-sm btn-danger px-3 py-[1px] btn-delete" data-id="${
             user.id
           }">Delete</button></td>
         </tr>
@@ -27,24 +27,24 @@ $(document).ready(function () {
 
   // Add user
   function addUser() {
-    const name = $("#name").val();
-    const email = $("#email").val();
-    const city = $("#city").val();
-    const dob = $("#dob").val();
+    const name = $("#name").val().trim();
+    const email = $("#email").val().trim();
+    const city = $("#city").val().trim();
+    const dob = $("#dob").val().trim();
 
     if (!name || !email || !city || !dob) {
       $("input").each(function () {
         if ($(this).val().trim() === "") {
           $(this).addClass("border border-danger");
-          hasErrors = true;
+        } else {
+          $(this).removeClass("border-danger");
         }
       });
       alert("Please fill in all details.");
       return;
-    } else {
-      $("input").removeClass("border border-danger");
-      $("input").addClass("border border-success");
     }
+
+    $("input").removeClass("border-danger").addClass("border-success");
 
     const user = {
       id: Math.floor(1000 + Math.random() * 9000),
@@ -59,6 +59,7 @@ $(document).ready(function () {
     showMessage("User added successfully...");
     count();
     loadData();
+    clearForm();
   }
 
   // Edit user
@@ -82,10 +83,10 @@ $(document).ready(function () {
 
   // Update user
   function updateUser(id) {
-    const name = $("#name").val();
-    const email = $("#email").val();
-    const city = $("#city").val();
-    const dob = $("#dob").val();
+    const name = $("#name").val().trim();
+    const email = $("#email").val().trim();
+    const city = $("#city").val().trim();
+    const dob = $("#dob").val().trim();
 
     if (!name || !email || !city || !dob) {
       alert("Please fill in all details.");
@@ -110,6 +111,7 @@ $(document).ready(function () {
     const updatedUsers = users.filter((user) => user.id !== id);
     localStorage.setItem("users", JSON.stringify(updatedUsers));
     loadData();
+    clearForm();
   }
 
   // Clear form fields
@@ -122,7 +124,6 @@ $(document).ready(function () {
 
   // Add user on save button click
   $("#btnSave").click(addUser);
-  $("#btnSave").click(clearForm);
 
   // Handle edit and delete button clicks
   $("tbody").on("click", ".btn-edit", function () {
@@ -134,25 +135,25 @@ $(document).ready(function () {
     const id = $(this).data("id");
     if (confirm("Are you sure you want to delete this user?")) {
       deleteUser(id);
+      showMessage("User deleted successfully...");
+      count();
     }
-    showMessage("User deleted successfully...");
-    count();
   });
 
-  // show success message in timeout function
+  // Show success message with fade effect
   function showMessage(message) {
     let msg = $(".msg").hide();
     msg.html(message).fadeIn(1000);
 
     setTimeout(function () {
       msg.fadeOut(1000);
-      $("input").removeClass("border border-success");
+      $("input").removeClass("border-success");
     }, 3000);
   }
 
   // User count function
   function count() {
-    const users = JSON.parse(localStorage.getItem("users")) || [].length;
+    const users = JSON.parse(localStorage.getItem("users")) || [];
     const rowCount = users.length;
     $(".row-count").html("Total user : " + rowCount);
   }
