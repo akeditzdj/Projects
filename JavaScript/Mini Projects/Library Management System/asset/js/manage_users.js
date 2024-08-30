@@ -475,7 +475,6 @@ filterUser.addEventListener("input", function () {
 
 // Table row count and show on dashboard
 
-console.log(users);
 // counter();
 function counter() {
   const rowCount = document.getElementById("userReg").rows.length - 1;
@@ -493,7 +492,6 @@ function counter() {
   let male = 0;
   let female = 0;
   let others = 0;
-  console.log(users);
 
   users.forEach((user) => {
     if (user.role === "Staff") {

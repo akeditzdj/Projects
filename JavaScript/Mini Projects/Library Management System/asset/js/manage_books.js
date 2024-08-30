@@ -1466,6 +1466,7 @@ function loadBook(
             bookData = bookData.map((b) =>
               b.id === bookId ? { ...b, status: "Available" } : b
             );
+
             loadBook();
             loadUserDetails();
             customModal("Book Return Status", "Book returned successfully...");
@@ -1477,10 +1478,11 @@ function loadBook(
           }
         }
 
-        clearAllBookInput();
         loadBorrowBookData();
+        clearAllBookInput();
         ourModal.hide();
         loadUserDetails();
+
         loadBook(lang, type, searchData); // Reload books after action
       } else {
         customModal("Warning...", "Please fill all details.");
