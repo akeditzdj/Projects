@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="#" id="form">
+            <h2>Leave Form</h2>
+            <div class="form-group">
+                <div class="row">
+
+                    <div class="col">
+                        <div class="input-group">
+                            <label for="staffId">Staff Id</label>
+                            <input type="text" name="staffId" id="staffId" placeholder="Enter Your Id">
+                            <div class="error"></div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="staffName">Staff Name</label>
+                            <input type="text" name="staffName" id="staffName" placeholder="Enter Your Name">
+                            <div class="error"></div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="leaveType">Leave Type</label>
+                            <select name="leaveType" id="leaveType">
+                                <option value="">Select your leave type</option>
+                                <option value="MC">MC</option>
+                                <option value="AL">AL</option>
+                                <option value="NPL">NPL</option>
+                            </select>
+                            <div class="error"></div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="startDate">Start Date</label>
+                            <input type="date" name="startDate" id="startDate">
+                            <div class="error"></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="endDate">End Date</label>
+                            <input type="date" name="endDate" id="endDate">
+                            <div class="error"></div>
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <div class="input-group">
+                            <label for="reason">Reason</label>
+                            <input type="text" name="reason" id="reason" placeholder="Enter your reason">
+                            <div class="error"></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="command">Command</label>
+                            <textarea name="command" id="command" placeholder="Write your command"></textarea>
+                            <div class="error"></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="status">Status</label>
+                            <div class="status-group">
+                                <div>
+                                    <input type="radio" checked name="status" value="Accept" id="accept">
+                                    <label for="accept">Accept</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="status" value="Reject" id="reject">
+                                    <label for="reject">Reject</label>
+                                </div>
+                            </div>
+                            <div class="error"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
