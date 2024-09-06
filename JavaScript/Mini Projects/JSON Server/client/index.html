@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSON Server CRUD with Fetch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>User Management</h1>
+    <button class="btn btn-add" onclick="openModal()">Add User</button>
+
+    <!-- User table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>City</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="userList">
+        <!-- Users will be displayed here -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div id="userModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">×</span>
+      <h2 id="modalTitle">Add User</h2>
+
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" />
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" id="age" />
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" />
+      </div>
+      <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" id="city" />
+      </div>
+      <button class="btn btn-add" id="saveUserBtn" onclick="saveUser()">Save User</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
