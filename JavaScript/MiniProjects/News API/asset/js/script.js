@@ -72,7 +72,7 @@ function createCard(news) {
 
 function getNews(query = "network") {
   const apiKey = "6351e0ab666c4ae88f0360ddd353e9f2";
-  const uri = `https://newsapi.org/v2/everything?q=${query}&from=2024-08-18&sortBy=publishedAt&apiKey=${apiKey}`;
+  const uri = `https://newsapi.org/v2/everything?q=${query}&from=2024-09-09&sortBy=publishedAt&apiKey=${apiKey}`;
   console.log(uri);
   fetch(uri)
     .then((response) => response.json())
@@ -81,8 +81,7 @@ function getNews(query = "network") {
 
       let htmlOutput = "";
       data.articles.forEach((news) => {
-
-          htmlOutput += createCard(news);
+        htmlOutput += createCard(news);
       });
       news.innerHTML = htmlOutput;
     });
