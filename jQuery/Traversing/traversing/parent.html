@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parent</title>
+    <style>
+      .box * {
+        padding: 5px;
+        border: 2px solid #ccc;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div>
+        div
+        <ul>
+          ul
+          <li>
+            li
+            <span>Span</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <p>
+          p
+          <span>Span</span>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      /*
+      //Parent
+      $(document).ready(function () {
+        $("span").parent().css("border", "2px solid green");
+      });
+  
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const span_elements = document.querySelectorAll("span");
+        span_elements.forEach((span) => {
+          const parent = span.parentElement;
+          parent.style.border = "2px solid green";
+        });
+      });
+          */
+    </script>
+  </body>
+</html>

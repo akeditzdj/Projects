@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parent</title>
+    <style>
+      .box * {
+        padding: 5px;
+        margin: 5px;
+        border: 2px solid #ccc;
+        margin-bottom: 5px;
+      }
+      span {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <p>
+        p-(child)
+        <span>Span-(grandchild)</span>
+      </p>
+      <p>
+        p-(child)
+        <span>Span-(grandchild)</span>
+      </p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      //children
+      // $(document).ready(function () {
+      //   $(".box").find("span").css("border", "2px solid green");
+      // });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const span_element = document.querySelectorAll(".box span");
+        span_element.forEach((span) => (span.style.border = "2px solid red"));
+      });
+    </script>
+  </body>
+</html>

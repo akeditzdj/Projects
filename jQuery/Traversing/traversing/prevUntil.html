@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parent</title>
+    <style>
+        .box * {
+            padding: 5px;
+            margin: 5px;
+            border: 2px solid #ccc;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h3>This is H3</h3>
+        <p>this is para-1</p>
+        <p>this is para-2</p>
+        <h2>This is H2</h2>
+        <p>this is para-3</p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        //prevUntil
+        /*
+              $( document ).ready( function () {
+                  $( "h2" ).prevUntil( "h3" ).css( { color: "red" } );
+              } );
+
+
+        */
+        document.addEventListener( "DOMContentLoaded", function () {
+            const h2 = document.querySelector( "h2" );
+            let prevElement = h2.previousElementSibling;
+            while ( prevElement && prevElement.tagName !== "H3" ) {
+                prevElement.style.color = "red";
+                prevElement = prevElement.previousElementSibling;
+            }
+        } );
+
+
+    </script>
+</body>
+
+</html>
