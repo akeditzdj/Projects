@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parent</title>
+    <style>
+      * {
+        padding: 5px;
+      }
+      .parent *,
+      .parent {
+        padding: 5px;
+        border: 2px solid #ccc;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      parent
+      <h3>H3 Tag-1</h3>
+      <p>Para Tag</p>
+      <p>Para Tag</p>
+      <h2>H2 Tag</h2>
+      <div>
+        <p>para inside div</p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      /*
+      $(document).ready(function () {
+        $("h3").siblings().css({
+          border: "2px solid green",
+        });
+      });
+      */
+      document.addEventListener("DOMContentLoaded", function () {
+        const h3 = document.querySelector("h3");
+        const siblings = Array.from(h3.parentElement.children);
+        console.log(siblings);
+
+        siblings.forEach((sib) => {
+          if (sib != h3) {
+            sib.style.border = "2px solid green";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

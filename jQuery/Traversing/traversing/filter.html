@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parent</title>
+    <style>
+      div {
+        padding: 5px;
+        margin: 5px;
+        border: 2px solid #ccc;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>this is div 1</div>
+    <div class="box">this is div 2</div>
+    <div class="box">this is div 3</div>
+    <div>this is div 4</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      //filter
+      /*
+      $(document).ready(function () {
+        $("div").filter(".box").css({ background: "red" });
+      });
+
+      */
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const divs = document.querySelectorAll("div.box");
+        divs.forEach((div) => {
+          div.style.backgroundColor = "yellow";
+        });
+      });
+    </script>
+  </body>
+</html>
