@@ -152,7 +152,7 @@
     "new_price": 49900,
     "brand": "Apple",
     "color": "Starlight",
-    "ram": "128GB",
+    "ram": "12GB",
     "internal": "256GB"
   },
   {
@@ -165,7 +165,7 @@
     "new_price": 69900,
     "brand": "Apple",
     "color": "Black",
-    "ram": "129GB",
+    "ram": "12GB",
     "internal": "256GB"
   },
   {
@@ -490,7 +490,7 @@
     "new_price": 35349,
     "brand": "Oppo",
     "color": "Space Brown",
-    "ram": "12G",
+    "ram": "12GB",
     "internal": "256GB"
   },
   {

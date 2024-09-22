@@ -41,6 +41,7 @@
                 <ul>
                     <li>
                         <a href="#">Electronics <i class="fa-solid fa-chevron-down"></i></a>
+
                     </li>
                     <li>
                         <a href="#">TVs & Appliances <i class="fa-solid fa-chevron-down"></i></a>
@@ -66,7 +67,69 @@
             </div>
         </div>
     </div>
-
+    <div class="product-container">
+        <section class="sidebar-menu">
+            <h3>Product Filter By</h3>
+            <div class="type">
+                <h4>Brand</h4>
+                <select id="brand">
+                    <option value="all">All</option>
+                    <option value="all">All</option>
+                    <option value="all">All</option>
+                    <option value="all">All</option>
+                </select>
+            </div>
+            <div class="type ram">
+                <h4>RAM</h4>
+                <div class="ram-size">
+                    <label for="4gb"><input type="radio" name="ram" id="4gb"> 4GB</label>
+                    <label for="6gb"><input type="radio" name="ram" id="6gb"> 6GB</label>
+                </div>
+                <div class="ram-size">
+                    <label for="8gb"><input type="radio" name="ram" id="8gb"> 8GB</label>
+                    <label for="12gb"><input type="radio" name="ram" id="12gb"> 12GB</label>
+                </div>
+            </div>
+            <div class="type">
+                <h4>Price</h4>
+                <p id="priceValue">Rs.</p>
+                <input type="range" id="price-range" min="6000" max="50000" onchange="updateTextInput(this.value);">
+                <small for="range">Min Rs.6000 to Max Rs.50000</small>
+            </div>
+        </section>
+        <section class="product-list">
+            <h1>Products List</h1>
+            <div id="showProduct">
+                <div class="row">
+                    <div class="card">
+                        <img src="assets/images/sample.png" alt="">
+                        <h2>Redmi 13C 5G</h2>
+                        <div class="star-rating" id="starRating">
+                            <span class="star" data-value="1">&#9733;</span>
+                            <span class="star" data-value="2">&#9733;</span>
+                            <span class="star" data-value="3">&#9733;</span>
+                            <span class="star" data-value="4">&#9733;</span>
+                            <span class="star" data-value="5">&#9733;</span>
+                            <p>Review : 4K</p>
+                        </div>
+                        <div class="price">
+                            <h4 class="old-price">Rs.13999/-</h4>
+                            <h4>Rs.10498/-</h4>
+                        </div>
+                        <div class="varient">
+                            <p>Brand : Redmi</p>
+                            <p>Color : Silver</p>
+                        </div>
+                        <div class="storage">
+                            <p>Ram : 4GB</p>
+                            <p>Internal : 256GB</p>
+                        </div>
+                        <button class="btn-cart">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
     <footer>
         <div class="foot-links">
             <div class="col-1">
