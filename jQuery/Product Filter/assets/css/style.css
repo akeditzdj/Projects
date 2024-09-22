@@ -139,6 +139,7 @@ body {
   height: 40px;
   background-color: var(--font2-color);
   border-bottom: 1px ridge rgb(207, 203, 203);
+  position: fixed;
 }
 .nav2-items {
   display: flex;
@@ -175,16 +176,17 @@ body {
 
 .product-container {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
 }
 
 .sidebar-menu {
   width: 350px;
   height: 100%;
-  /* background-color: #ccc; */
   padding: 15px;
-  border-right: 1px solid #ccc;
+  position: fixed;
+  margin-top: 40px;
+  background-color: white;
 }
 .sidebar-menu h3 {
   font-size: 26px;
@@ -202,6 +204,7 @@ body {
   height: 40px;
   outline: none;
   border: 0;
+  border: 1px solid #ccc;
 }
 .sidebar-menu .type input {
   width: 100%;
@@ -220,16 +223,31 @@ body {
   gap: 20px;
 }
 
+.sidebar-menu .type .storage {
+  display: flex;
+  gap: 20px;
+}
+
 .product-list {
   width: 100%;
   max-width: 1550px;
   height: 100%;
-  padding: 10px 50px;
+  padding: 30px 30px;
+  margin-left: 370px;
+  margin-top: 20px;
 }
 .product-list h1 {
   font-size: 32px;
   text-align: center;
   margin-bottom: 30px;
+}
+
+.product-list .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
@@ -252,6 +270,7 @@ body {
 
 .card h2 {
   margin-top: 5px;
+  font-size: large;
 }
 
 .card .varient,
@@ -266,7 +285,7 @@ body {
   font-weight: 500;
   color: #696868;
 }
-.star-rating{
+.star-rating {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -277,10 +296,14 @@ body {
   color: gold;
   transition: color 0.2s;
 }
+.card .price .new-price {
+  font-size: 18px;
+}
 
 .card .old-price {
   color: red;
   text-decoration-line: line-through;
+  font-size: 14px;
 }
 
 .btn-cart {
@@ -308,6 +331,7 @@ footer {
   height: 320px;
   background: linear-gradient(to bottom, #172337, #172337);
   display: inline-block;
+  position: absolute;
 }
 .foot-links {
   display: flex;

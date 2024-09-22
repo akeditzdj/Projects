@@ -703,9 +703,46 @@ let products = [
   },
 ];
 
-
 // Range value
 
 function updateTextInput(val) {
   document.getElementById("priceValue").innerHTML = "Rs." + val;
 }
+
+// Load products
+let showProduct = document.getElementById("showProduct");
+let output = "";
+function loadProducts() {
+  products.forEach((product) => {
+    output += `
+               <div class="card">
+                        <img src="${product.img}" alt="">
+                        <h2>${product.title}</h2>
+                        <div class="star-rating" id="starRating">
+                            <span class="star" data-value="1">&#9733;</span>
+                            <span class="star" data-value="2">&#9733;</span>
+                            <span class="star" data-value="3">&#9733;</span>
+                            <span class="star" data-value="4">&#9733;</span>
+                            <span class="star" data-value="5">&#9733;</span>
+                            <p>Review : ${product.review}</p>
+                        </div>
+                        <div class="price">
+                            <h4 class="old-price">Rs.${product.old_price}/-</h4>
+                            <h4 class="new-price">Rs.${product.new_price}/-</h4>
+                        </div>
+                        <div class="varient">
+                            <p>Brand : ${product.brand}</p>
+                            <p>Color : ${product.color}</p>
+                        </div>
+                        <div class="storage">
+                            <p>Ram : ${product.ram}</p>
+                            <p>Internal : ${product.internal}</p>
+                        </div>
+                        <button class="btn-cart">Add To Cart</button>
+                    </div>
+`;
+    showProduct.innerHTML = output;
+  });
+}
+
+loadProducts();
