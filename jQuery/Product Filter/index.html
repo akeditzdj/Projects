@@ -73,73 +73,66 @@
                 <h3>Product Filter By</h3>
                 <div class="type">
                     <h4>Brand</h4>
-                    <select id="brand">
-                        <option value="all">All</option>
-                        <option value="all">All</option>
-                        <option value="all">All</option>
-                        <option value="all">All</option>
-                    </select>
+                    <div class="filter-type">
+                        <select id="brand">
+                            <option value="all">All</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="type ram">
                     <h4>RAM</h4>
-                    <div class="ram-size">
-                        <label for="4gb"><input type="radio" name="ram" id="4gb"> 4GB</label>
-                        <label for="6gb"><input type="radio" name="ram" id="6gb"> 6GB</label>
-                    </div>
-                    <div class="ram-size">
-                        <label for="8gb"><input type="radio" name="ram" id="8gb"> 8GB</label>
-                        <label for="12gb"><input type="radio" name="ram" id="12gb"> 12GB</label>
+                    <div class="filter-type">
+                        <div class="ram-size">
+                            <label for="4gb"><input type="radio" value="4GB" name="ram" id="4gb"> 4GB</label>
+                            <label for="6gb"><input type="radio" value="6GB" name="ram" id="6gb"> 6GB</label>
+                        </div>
+                        <div class="ram-size">
+                            <label for="8gb"><input type="radio" value="8GB" name="ram" id="8gb"> 8GB</label>
+                            <label for="12gb"><input type="radio" value="12GB" name="ram" id="12gb"> 12GB</label>
+                        </div>
                     </div>
                 </div>
                 <div class="type ram">
                     <h4>Internal Storage</h4>
-                    <div class="storage">
-                        <label for="4gb"><input type="checkbox" name="size" id="4gb"> 4GB</label>
-                        <label for="6gb"><input type="checkbox" name="size" id="6gb"> 6GB</label>
-                        <label for="8gb"><input type="checkbox" name="size" id="8gb"> 8GB</label>
+                    <div class="filter-type">
+                        <div class="storage">
+                            <label for="4_gb"><input type="checkbox" value="4GB" name="size" id="4_gb"> 4GB</label>
+                            <label for="64gb"><input type="checkbox" value="64GB" name="size" id="64gb"> 64GB</label>
+                            <label for="128gb"><input type="checkbox" value="128GB" name="size" id="128gb"> 128GB</label>
+                        </div>
+                        <div class="storage">
+                            <label for="256gb"><input type="checkbox" value="256GB" name="size" id="256gb"> 256GB</label>
+                            <label for="512gb"><input type="checkbox" value="512GB" name="size" id="512gb"> 512GB</label>
+                        </div>
                     </div>
-                    <div class="storage">
-                        <label for="8gb"><input type="checkbox" name="size" id="8gb"> 8GB</label>
-                        <label for="12gb"><input type="checkbox" name="size" id="12gb"> 12GB</label>
-                        <label for="8gb"><input type="checkbox" name="size" id="8gb"> 8GB</label>
+                </div>
+                <div class="type price">
+                    <h4>Price</h4>
+                    <div class="filter-type">
+                        <p id="priceValue">Rs.</p>
+                        <input type="range" class="custom-range" id="price-range" min="6000" max="170000" onchange="updateTextInput(this.value);">
+                        <div class="price-range">
+                            <p>Min Rs.6000</p>
+                            <p>Max Rs.170000</p>
+                        </div>
                     </div>
                 </div>
                 <div class="type">
-                    <h4>Price</h4>
-                    <p id="priceValue">Rs.</p>
-                    <input type="range" id="price-range" min="6000" max="170000" onchange="updateTextInput(this.value);">
-                    <small for="range">Min Rs.6000 to Max Rs.170000</small>
+                    <h4>Customer Rating</h4>
+                    <div class="filter-type">
+                        <div class="reviewList">
+                            <label for="bad"><input type="radio" name="review" id="bad"> Bad</label>
+                            <label for="good"><input type="radio" name="review" id="good"> Good</label>
+                            <label for="best"><input type="radio" name="review" id="best"> Best</label>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section class="product-list">
                 <h1>Products List</h1>
                 <div>
                     <div class="row" id="showProduct">
-                        <!-- <div class="card">
-                        <img src="assets/images/sample.png" alt="">
-                        <h2>Redmi 13C 5G</h2>
-                        <div class="star-rating" id="starRating">
-                            <span class="star" data-value="1">&#9733;</span>
-                            <span class="star" data-value="2">&#9733;</span>
-                            <span class="star" data-value="3">&#9733;</span>
-                            <span class="star" data-value="4">&#9733;</span>
-                            <span class="star" data-value="5">&#9733;</span>
-                            <p>Review : 4K</p>
-                        </div>
-                        <div class="price">
-                            <h4 class="old-price">Rs.13999/-</h4>
-                            <h4 class="new-price">Rs.10498/-</h4>
-                        </div>
-                        <div class="varient">
-                            <p>Brand : Redmi</p>
-                            <p>Color : Silver</p>
-                        </div>
-                        <div class="storage">
-                            <p>Ram : 4GB</p>
-                            <p>Internal : 256GB</p>
-                        </div>
-                        <button class="btn-cart">Add To Cart</button>
-                    </div> -->
+
                     </div>
                 </div>
             </section>
@@ -243,6 +236,7 @@
         </div>
     </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>
