@@ -23,7 +23,7 @@ let products = [
     brand: "Redmi",
     color: "green",
     ram: "4GB",
-    internal: "4GB",
+    internal: "128GB",
   },
   {
     id: 3,
@@ -716,8 +716,8 @@ function loadProducts() {
   products.forEach((product) => {
     output += `
                <div class="card product">
-                        <img src="${product.img}" alt="">
-                        <h2>${product.title}</h2>
+                        <img src="${product.img}" alt="${product.title}" title="${product.title}">
+                        <h2 title="${product.title}">${product.title}</h2>
                         <div class="star-rating" id="starRating">
                             <span class="star" data-value="1">&#9733;</span>
                             <span class="star" data-value="2">&#9733;</span>
@@ -748,7 +748,7 @@ function loadProducts() {
 loadProducts();
 
 // Load brand in selecet box
-let uniqueBrand = [...new Set(products.map((product) => product.brand))];
+let uniqueBrand = [...new Set(products.map((product) => product.brand).sort())];
 let brandList = document.getElementById("brand");
 
 uniqueBrand.forEach(function (item) {
