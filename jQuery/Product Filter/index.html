@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Filter</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -74,35 +74,35 @@
                 <div class="type">
                     <h4>Brand</h4>
                     <div class="filter-type">
-                        <select id="brand">
-                            <option value="all">All</option>
+                        <select id="brandList">
+
                         </select>
                     </div>
                 </div>
                 <div class="type ram">
                     <h4>RAM</h4>
-                    <div class="filter-type">
-                        <div class="ram-size">
+                    <div class="filter-type" id="ramList">
+                        <!-- <div class="ram-size">
                             <label for="4gb"><input type="radio" value="4GB" name="ram" id="4gb"> 4GB</label>
                             <label for="6gb"><input type="radio" value="6GB" name="ram" id="6gb"> 6GB</label>
                         </div>
                         <div class="ram-size">
                             <label for="8gb"><input type="radio" value="8GB" name="ram" id="8gb"> 8GB</label>
                             <label for="12gb"><input type="radio" value="12GB" name="ram" id="12gb"> 12GB</label>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="type ram">
                     <h4>Internal Storage</h4>
-                    <div class="filter-type">
-                        <div class="storage">
+                    <div class="filter-type" id="internalList">
+                        <!-- <div class="storage">
                             <label for="64gb"><input type="checkbox" value="64GB" name="size" id="64gb"> 64GB</label>
                             <label for="128gb"><input type="checkbox" value="128GB" name="size" id="128gb"> 128GB</label>
                         </div>
                         <div class="storage">
                             <label for="256gb"><input type="checkbox" value="256GB" name="size" id="256gb"> 256GB</label>
                             <label for="512gb"><input type="checkbox" value="512GB" name="size" id="512gb"> 512GB</label>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="type price">
@@ -117,13 +117,13 @@
                     </div>
                 </div>
                 <div class="type">
-                    <h4>Customer Rating</h4>
-                    <div class="filter-type">
-                        <div class="reviewList">
+                    <h4>Customer Review</h4>
+                    <div class="filter-type" id="reviewList">
+                        <!-- <div class="reviewList">
                             <label for="bad"><input type="radio" name="review" id="bad"> Bad</label>
                             <label for="good"><input type="radio" name="review" id="good"> Good</label>
                             <label for="best"><input type="radio" name="review" id="best"> Best</label>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </section>
@@ -231,13 +231,13 @@
                 <p>&copy 2007-2023 Flipkart.com </p>
             </div>
             <div class="cards">
-                <img src="assets/images/card-1.svg" alt="Payment Cards">
+                <!-- <img src="assets/images/card-1.svg" alt="Payment Cards"> -->
             </div>
         </div>
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -35,7 +35,7 @@
     "new_price": 13998,
     "brand": "Redmi",
     "color": "silver",
-    "ram": " 8",
+    "ram": "8",
     "internal": "256"
   },
   {
@@ -48,7 +48,7 @@
     "new_price": 11998,
     "brand": "Redmi",
     "color": "green",
-    "ram": " 6",
+    "ram": "6",
     "internal": "128"
   },
   {
@@ -61,7 +61,7 @@
     "new_price": 15689,
     "brand": "Redmi",
     "color": "Chromatic Purple",
-    "ram": " 6",
+    "ram": "6",
     "internal": "128"
   },
   {
@@ -74,7 +74,7 @@
     "new_price": 16998,
     "brand": "Redmi",
     "color": "Arctic White",
-    "ram": " 6",
+    "ram": "6",
     "internal": "128"
   },
   {
@@ -100,7 +100,7 @@
     "new_price": 8269,
     "brand": "Samsung",
     "color": "Arctic Blue",
-    "ram": " 8",
+    "ram": "8",
     "internal": "256"
   },
   {
@@ -113,7 +113,7 @@
     "new_price": 19998,
     "brand": "Samsung",
     "color": "Moonlight Blue",
-    "ram": " 6",
+    "ram": "6",
     "internal": "128"
   },
   {
@@ -126,7 +126,7 @@
     "new_price": 13525,
     "brand": "Samsung",
     "color": "Ash Black",
-    "ram": " 6",
+    "ram": "6",
     "internal": "128"
   },
   {
@@ -139,7 +139,7 @@
     "new_price": 39840,
     "brand": "Samsung",
     "color": "green",
-    "ram": " 8",
+    "ram": "8",
     "internal": "256"
   },
   {
@@ -178,7 +178,7 @@
     "new_price": 59900,
     "brand": "Apple",
     "color": "Starlight",
-    "ram": " 6",
+    "ram": "6",
     "internal": "128"
   },
   {
@@ -191,7 +191,7 @@
     "new_price": 69900,
     "brand": "Apple",
     "color": "Pink",
-    "ram": " 6",
+    "ram": "6",
     "internal": "128"
   },
   {
@@ -204,7 +204,7 @@
     "new_price": 59900,
     "brand": "Apple",
     "color": "Purple",
-    "ram": " 6",
+    "ram": "6",
     "internal": "128"
   },
   {
@@ -217,7 +217,7 @@
     "new_price": 59900,
     "brand": "Apple",
     "color": "Midnight",
-    "ram": " 6",
+    "ram": "6",
     "internal": "128"
   },
   {
@@ -230,7 +230,7 @@
     "new_price": 79900,
     "brand": "Apple",
     "color": "Green",
-    "ram": " 6",
+    "ram": "6",
     "internal": "256"
   },
   {
@@ -243,7 +243,7 @@
     "new_price": 61999,
     "brand": "Apple",
     "color": "Midnight",
-    "ram": " 6",
+    "ram": "6",
     "internal": "256"
   },
   {
@@ -256,7 +256,7 @@
     "new_price": 166600,
     "brand": "Apple",
     "color": "Black Titanium",
-    "ram": " 8",
+    "ram": "8",
     "internal": "512"
   },
   {
@@ -269,7 +269,7 @@
     "new_price": 156500,
     "brand": "Apple",
     "color": "White Titanium",
-    "ram": " 8",
+    "ram": "8",
     "internal": "512"
   },
   {
@@ -282,7 +282,7 @@
     "new_price": 24999,
     "brand": "Oppo",
     "color": "Emerald Green",
-    "ram": " 8",
+    "ram": "8",
     "internal": "256"
   },
   {
@@ -295,7 +295,7 @@
     "new_price": 27999,
     "brand": "Oppo",
     "color": "Midnight Navy",
-    "ram": " 8",
+    "ram": "8",
     "internal": "128"
   },
   {
@@ -321,7 +321,7 @@
     "new_price": 17999,
     "brand": "Oppo",
     "color": "Moonlight Purple",
-    "ram": " 8",
+    "ram": "8",
     "internal": "128"
   },
   {
@@ -347,7 +347,7 @@
     "new_price": 23999,
     "brand": "Oppo",
     "color": "Lava Red",
-    "ram": " 8",
+    "ram": "8",
     "internal": "128"
   },
   {
@@ -373,7 +373,7 @@
     "new_price": 23999,
     "brand": "Oppo",
     "color": "Ocean Blue",
-    "ram": " 8",
+    "ram": "8",
     "internal": "128"
   },
   {
@@ -399,7 +399,7 @@
     "new_price": 29999,
     "brand": "Oppo",
     "color": "Dusk Pink",
-    "ram": " 8",
+    "ram": "8",
     "internal": "256"
   },
   {
@@ -412,7 +412,7 @@
     "new_price": 19190,
     "brand": "Oppo",
     "color": "Dawnlight Gold",
-    "ram": " 8",
+    "ram": "8",
     "internal": "128"
   },
   {
@@ -425,7 +425,7 @@
     "new_price": 22999,
     "brand": "Oppo",
     "color": "Amber Orange",
-    "ram": " 8",
+    "ram": "8",
     "internal": "128"
   },
   {
@@ -438,7 +438,7 @@
     "new_price": 19999,
     "brand": "Oppo",
     "color": "Starry Black",
-    "ram": " 8",
+    "ram": "8",
     "internal": "256"
   },
   {
@@ -464,7 +464,7 @@
     "new_price": 30799,
     "brand": "Oppo",
     "color": "Sunset Peach",
-    "ram": " 8",
+    "ram": "8",
     "internal": "256"
   },
   {
@@ -478,7 +478,7 @@
     "brand": "Oppo",
     "color": "Lake Blue",
     "ram": "4",
-    "internal": "64GB"
+    "internal": "64"
   },
   {
     "id": 38,
@@ -516,7 +516,7 @@
     "new_price": 29499,
     "brand": "Oppo",
     "color": "Matte Brown",
-    "ram": " 8",
+    "ram": "8",
     "internal": "256"
   },
   {
@@ -529,7 +529,7 @@
     "new_price": 29499,
     "brand": "Oppo",
     "color": "Astro Silver",
-    "ram": " 8",
+    "ram": "8",
     "internal": "256"
   },
   {
@@ -555,7 +555,7 @@
     "new_price": 27849,
     "brand": "Oppo",
     "color": "Wave Green",
-    "ram": " 8",
+    "ram": "8",
     "internal": "128"
   },
   {
@@ -568,7 +568,7 @@
     "new_price": 22390,
     "brand": "Oppo",
     "color": "Starlight Black",
-    "ram": " 8",
+    "ram": "8",
     "internal": "128"
   },
   {
@@ -582,7 +582,7 @@
     "brand": "Oppo",
     "color": "Midnight Black",
     "ram": "4",
-    "internal": "64GB"
+    "internal": "64"
   },
   {
     "id": 46,
@@ -595,7 +595,7 @@
     "brand": "Vivo",
     "color": "Gem Green",
     "ram": "4",
-    "internal": "64GB"
+    "internal": "64"
   },
   {
     "id": 47,
@@ -608,7 +608,7 @@
     "brand": "Vivo",
     "color": "Space Black",
     "ram": "4",
-    "internal": "64GB"
+    "internal": "64"
   },
   {
     "id": 48,
@@ -620,7 +620,7 @@
     "new_price": 10999,
     "brand": "Vivo",
     "color": "Garden Green",
-    "ram": " 6",
+    "ram": "6",
     "internal": "128"
   },
   {
@@ -646,7 +646,7 @@
     "new_price": 14185,
     "brand": "Vivo",
     "color": "Celestial Green",
-    "ram": " 6",
+    "ram": "6",
     "internal": "128"
   },
   {
@@ -660,7 +660,7 @@
     "brand": "Vivo",
     "color": "Vintage Red",
     "ram": "4",
-    "internal": "64GB"
+    "internal": "64"
   },
   {
     "id": 52,
@@ -672,7 +672,7 @@
     "new_price": 22999,
     "brand": "Vivo",
     "color": "Desert Gold",
-    "ram": " 8",
+    "ram": "8",
     "internal": "256"
   },
   {
@@ -685,7 +685,7 @@
     "new_price": 11000,
     "brand": "Vivo",
     "color": "Sea Blue",
-    "ram": " 6",
+    "ram": "6",
     "internal": "128"
   },
   {
@@ -699,6 +699,6 @@
     "brand": "Vivo",
     "color": "Gem Green",
     "ram": "4",
-    "internal": "64GB"
+    "internal": "64"
   }
 ]

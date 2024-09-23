@@ -225,23 +225,6 @@ body {
   font-size: 16px;
 }
 
-.sidebar-menu .ram div {
-  margin-top: 10px;
-}
-.sidebar-menu .ram input {
-  width: 15px;
-  height: 15px;
-}
-
-.sidebar-menu .ram .ram-size {
-  display: flex;
-  gap: 20px;
-}
-
-.sidebar-menu .type .storage {
-  display: flex;
-  gap: 20px;
-}
 .sidebar-menu .price input {
   width: 100%;
 }
@@ -267,7 +250,6 @@ body {
   margin-left: 370px;
   margin-top: 20px;
   overflow-y: scroll;
-
 }
 .product-list h1 {
   font-size: 32px;
@@ -281,6 +263,11 @@ body {
   gap: 50px;
   justify-content: center;
   align-items: center;
+}
+
+#ramList li,
+#internalList li {
+  padding: 5px 0;
 }
 
 .card {
