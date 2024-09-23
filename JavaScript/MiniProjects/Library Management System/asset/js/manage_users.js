@@ -689,8 +689,9 @@ function termsAndCondition() {
 `
   );
 }
+
 // Window refresh
-// function reload() {
-//   mainModal.show();
-// }
-// reload();
+function reload() {
+  mainModal.show();
+}
+reload();
