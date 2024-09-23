@@ -701,13 +701,19 @@ let products = [
     ram: "4GB",
     internal: "64GB",
   },
+
 ];
 
 // Range value
 
+
+
+
+
 function updateTextInput(val) {
   document.getElementById("priceValue").innerHTML = "Rs." + val;
 }
+
 
 // Load products
 let showProduct = document.getElementById("showProduct");
@@ -837,7 +843,7 @@ $(document).ready(function () {
       } else if (review < 2000) {
         return "Good";
       } else {
-        return "Best"; // Assume best is for reviews above 2000
+        return "Best";
       }
     }
   });
