@@ -10,7 +10,7 @@ const internalList = document.getElementById("internalList");
 async function fetchProduct() {
   let products = [];
   try {
-    const url = "products.json";
+    const url = "assets/js/products.json";
     const response = await fetch(url);
     const products = await response.json();
     return products;
