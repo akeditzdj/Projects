@@ -188,11 +188,13 @@ body {
 
 .sidebar-menu {
   width: 350px;
-  height: 100%;
+  height: auto;
+  max-height: 900px;
   padding: 15px;
   position: fixed;
   margin-top: 40px;
   background-color: white;
+  overflow-y: scroll;
 }
 .sidebar-menu h3 {
   font-size: 26px;
@@ -264,6 +266,8 @@ body {
   padding: 30px 30px;
   margin-left: 370px;
   margin-top: 20px;
+  overflow-y: scroll;
+
 }
 .product-list h1 {
   font-size: 32px;
