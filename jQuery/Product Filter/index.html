@@ -69,24 +69,36 @@
         </div>
         <div class="product-container">
             <section class="sidebar-menu">
-                <h3>Product Filter By</h3>
+                <div class="sidebar-heading">
+                    <h3>Product Filter By</h3>
+                </div>
+                <div class="type search filter-type">
+                    <h4>Search</h4>
+                    <input type="search" id="searchTxt" placeholder="Search Products">
+                </div>
                 <div class="type">
-                    <h4>Brand</h4>
+
                     <div class="filter-type">
-                        <select id="brandList"></select>
+                        <h4>Brand</h4>
+                        <div id="brandList"></div>
                     </div>
                 </div>
                 <div class="type ram">
-                    <h4>RAM</h4>
-                    <div class="filter-type" id="ramList"></div>
+
+                    <div class="filter-type">
+                        <h4>RAM</h4>
+                        <div id="ramList"></div>
+                    </div>
                 </div>
                 <div class="type ram">
-                    <h4>Internal Storage</h4>
-                    <div class="filter-type" id="internalList"></div>
+                    <div class="filter-type">
+                        <h4>Internal Storage</h4>
+                        <div id="internalList"></div>
+                    </div>
                 </div>
                 <div class="type price">
-                    <h4>Price</h4>
                     <div class="filter-type">
+                        <h4>Price</h4>
                         <p id="priceValue">Rs.</p>
                         <input type="range" class="custom-range" id="price-range" min="6000" max="170000" onchange="updateTextInput(this.value);">
                         <div class="price-range">
@@ -96,14 +108,32 @@
                     </div>
                 </div>
                 <div class="type">
-                    <h4>Customer Review</h4>
-                    <div class="filter-type" id="reviewList"></div>
+                    <div class="filter-type">
+                        <h4>Customer Review</h4>
+                        <div id="reviewList"></div>
+                    </div>
                 </div>
             </section>
             <section class="product-list">
                 <h1>Products List</h1>
+                <div class="product-head">
+                    <div>
+                       <button><i class="fa fa-list" title="List" aria-hidden="true"></i></button>
+                    </div>
+                    <div>
+                       <button><i class="fa fa-th" title="Grid" aria-hidden="true"></i></button>
+                    </div>
+                </div>
                 <div>
                     <div class="row" id="showProduct"></div>
+                </div>
+                <div class="page-number">
+                    <div><a href="#">Prev</a></div>
+                    <div><a href="#">1</a></div>
+                    <div><a href="#">2</a></div>
+                    <div><a href="#">3</a></div>
+                    <div><a href="#">4</a></div>
+                    <div><a href="#">Next</a></div>
                 </div>
             </section>
         </div>
