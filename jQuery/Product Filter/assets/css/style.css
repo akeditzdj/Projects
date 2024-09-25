@@ -191,8 +191,8 @@ body {
 
 .sidebar-menu {
   width: 350px;
-  height: auto;
-  max-height: 900px;
+  height: 100vh;
+  max-height:600px;
   padding: 15px;
   position: fixed;
   margin-top: 40px;
@@ -209,7 +209,7 @@ body {
   background-color: white;
 }
 .sidebar-menu h3 {
-  font-size: 26px;
+  font-size: 24px;
   background-color: var(--nav-bg-color);
   width: 100%;
   padding: 5px 0;
@@ -223,8 +223,8 @@ body {
   margin-top: 30px;
   width: 100%;
 }
-.sidebar-menu .search input {
-  width: 100%;
+#searchTxt {
+  width: 250px;
   height: 35px;
   padding: 0 10px;
   outline: none;
@@ -232,11 +232,12 @@ body {
   border: 0;
   font-size: 14px;
   transition: 0.3s ease-in-out;
+  margin-right: 10px;
 }
 
-.sidebar-menu .search input:focus {
+#searchTxt:focus {
   border: 1px solid #2874f0;
-  box-shadow: 2px 2px 10px #2874f0;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .sidebar-menu .type h4 {
   font-size: 18px;
@@ -273,11 +274,16 @@ body {
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 70px;
+  padding: 10px 70px;
   margin-bottom: 20px;
   gap: 5px;
+  border-bottom: 1px solid #2874f0;
+  position: sticky;
+  top: -10px;
+  background-color: var(--bg-color);
+  transition: 0.3s ease-in-out;
 }
 .product-head i {
   padding: 5px;
@@ -300,12 +306,12 @@ body {
   margin-top: 20px;
   overflow-y: scroll;
 }
-.product-list h1 {
-  font-size: 32px;
+.product-list .product-head h1 {
+  font-size: 24px;
   text-align: center;
-  margin-bottom: 30px;
   font-weight: 600;
   font-style: italic;
+  color: var(--font4-color);
 }
 
 .product-list .row {
@@ -547,4 +553,19 @@ footer {
   font-size: 14px;
   font-family: var(--roboto);
   font-weight: 400;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--nav-bg-color);
 }
