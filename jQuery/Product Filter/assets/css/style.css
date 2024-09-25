@@ -192,7 +192,7 @@ body {
 .sidebar-menu {
   width: 350px;
   height: 100vh;
-  max-height:600px;
+  max-height: 900px;
   padding: 15px;
   position: fixed;
   margin-top: 40px;
@@ -358,8 +358,22 @@ body {
   background-color: white;
   transition: 0.3s ease-in-out;
   border-radius: 8px;
+  transition: 1s ease;
 }
 
+.card-list {
+  width: 600px;
+  height: auto;
+  text-align: center;
+  padding: 0 20px;
+  background-color: white;
+  transition: 0.3s ease-in-out;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s ease;
+}
 
 .card:hover {
   box-shadow: 5px 5px 25px #ccc;

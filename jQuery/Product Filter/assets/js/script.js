@@ -180,7 +180,20 @@ function updateTextInput(val) {
   document.getElementById("priceValue").innerHTML = "Rs." + val;
 }
 
-
+document.getElementById("list").addEventListener("click", function () {
+  let products = document.querySelectorAll(".product");
+  products.forEach(function (product) {
+    // product.classList.remove("card"); // No dot here
+    product.classList.add("card-list");
+  });
+});
+document.getElementById("grid").addEventListener("click", function () {
+  let products = document.querySelectorAll(".product");
+  products.forEach(function (product) {
+    product.classList.add("card"); // No dot here
+    product.classList.remove("card-list");
+  });
+});
 // Initialize the app
 window.addEventListener("load", async function () {
   fetchedProducts = await fetchProduct();
@@ -190,4 +203,3 @@ window.addEventListener("load", async function () {
   loadProducts(fetchedProducts);
   setUpEventListeners();
 });
-
