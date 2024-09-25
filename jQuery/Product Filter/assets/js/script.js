@@ -180,6 +180,12 @@ function updateTextInput(val) {
   document.getElementById("priceValue").innerHTML = "Rs." + val;
 }
 
+
+
+
+
+
+
 // Initialize the app
 window.addEventListener("load", async function () {
   fetchedProducts = await fetchProduct();
@@ -189,3 +195,4 @@ window.addEventListener("load", async function () {
   loadProducts(fetchedProducts);
   setUpEventListeners();
 });
+
