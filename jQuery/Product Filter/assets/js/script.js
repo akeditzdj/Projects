@@ -181,11 +181,6 @@ function updateTextInput(val) {
 }
 
 
-
-
-
-
-
 // Initialize the app
 window.addEventListener("load", async function () {
   fetchedProducts = await fetchProduct();
