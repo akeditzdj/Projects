@@ -20,62 +20,59 @@ async function fetchProduct() {
   return products;
 }
 
+
+
 function categoryFilter(categoryType, element, products) {
+  // Get unique categories from products
   const uniqueCategories = Array.from(
     new Set(products.map((product) => product[categoryType]))
   );
 
-  // Sort and prepare data based on category type
-  let sortedData;
-  if (categoryType === "brand") {
-    sortedData = uniqueCategories.sort();
-  } else {
-    sortedData = uniqueCategories.map(Number).sort((a, b) => a - b);
-  }
+  // Sort categories based on type
+  const sortedData =
+    categoryType === "brand"
+      ? uniqueCategories.sort()
+      : uniqueCategories.map(Number).sort((a, b) => a - b);
 
   // Clear the element's innerHTML
   element.innerHTML = "";
 
-  // Create select element for brands with 'All' option
   if (categoryType === "brand") {
-    const selectElement = document.createElement("select");
-    selectElement.innerHTML = `<option value="" data-${categoryType}='All'>All</option>`;
-
-    sortedData.forEach((item) => {
-      const option = document.createElement("option");
-      option.setAttribute(`data-${categoryType}`, item);
-      option.value = item; // This value can be customized
-      option.textContent = item;
-      selectElement.appendChild(option);
-    });
-
-    element.appendChild(selectElement);
+    // Create a dropdown for brands with 'All' option
+    const options = sortedData
+      .map((item) => `<option value='${item}'>${item}</option>`)
+      .join("");
+    element.innerHTML = `<option value="All">All</option>${options}`;
   } else {
-    // Create checkboxes for other categories
-    element.innerHTML += `
+    // Create checkboxes for other categories with 'All' option
+    const checkboxes =
+      `
       <li>
         <label><input data-${categoryType}='All' type="checkbox"> All</label>
       </li>
-    `;
+    ` +
+      sortedData
+        .map(
+          (item) => `
+      <ul>
+        <li>
+          <label>
+            <input data-${categoryType}='${item}' type='checkbox'> ${item} ${
+            categoryType !== "brand" ? "GB" : ""
+          }
+          </label>
+        </li>
+      </ul>
+    `
+        )
+        .join("");
 
-    sortedData.forEach((item) => {
-      const dataAttr = `data-${categoryType}='${item}'`;
-      const listItem = `
-        <ul>
-          <li>
-            <label><input ${dataAttr} type='checkbox'> ${item} ${
-        categoryType !== "brand" ? "GB" : ""
-      }</label>
-          </li>
-        </ul>`;
-
-      element.innerHTML += listItem;
-    });
+    element.innerHTML += checkboxes;
   }
 }
 
-// Load products
 
+// Load products
 function loadProducts(products) {
   let output = "";
   if (products.length > 0) {
@@ -136,8 +133,10 @@ function filterProducts() {
   }
 
   // Filter by brand
-  const selectedBrands = getSelectedOptions(brandList, "data-brand");
-  if (selectedBrands.length > 0) {
+
+  const selectedBrands = brandList.value;
+
+  if (selectedBrands) {
     filteredProducts = filteredProducts.filter((product) =>
       selectedBrands.includes(product.brand)
     );
