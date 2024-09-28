@@ -27,6 +27,10 @@
   font-size: 14px;
   font-weight: 600;
 }
+.dropdown-menu li a:hover {
+  background-color: #fe5005;
+  color: white;
+}
 
 .header {
   position: relative;
@@ -48,4 +52,26 @@
   background-color: #fe5005 !important ;
   color: #ffff;
   border: none;
+}
+
+.sidebar-section {
+  width: 300px;
+  height: 100vh;
+  background-color: #fe5005;
+}
+select {
+  outline: none !important;
+  border: none !important;
+}
+
+select option:hover {
+  box-shadow: 0 0 10px 100px #fe5005 inset !important;
+  color: white;
+}
+select option:checked {
+  box-shadow: 0 0 10px 100px #fe5005 inset !important;
+}
+
+select option {
+  padding: 5px;
 }
