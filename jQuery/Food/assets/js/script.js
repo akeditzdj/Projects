@@ -5,6 +5,7 @@ const categoryList = document.querySelector("#categoryList");
 const foodItemList = document.querySelector("#foodList");
 const searchFood = document.querySelector("#searchFood");
 
+// Fetch food data from server
 async function fetchFood() {
   try {
     const url = "assets/js/fooditems.json";
@@ -16,28 +17,7 @@ async function fetchFood() {
   }
 }
 
-// function categoryFilter(categoryType, element, foodItems) {
-//   // Extract unique categories based on the categoryType
-//   const uniqueCategories = Array.from(
-//     new Set(foodItems.map((item) => item[categoryType]))
-//   );
-
-//   // Sort the categories based on categoryType
-//   const sortedData =
-//     categoryType === "category"
-//       ? uniqueCategories.sort()
-//       : uniqueCategories.map(Number).sort((a, b) => a - b);
-
-//   // Clear the element's innerHTML
-//   element.innerHTML = "";
-//   if (categoryType === "category") {
-//     const options = sortedData
-//       .map((item) => `<option value='${item}'>${item}</option>`)
-//       .join("");
-//     element.innerHTML = `<option value="All">All</option>${options}`;
-//   }
-// }
-
+// Load categoryList and food name list in select box
 function loadCategories() {
   const categories = [...new Set(fetchedFood.map((item) => item.category))];
   categories.sort();
@@ -97,7 +77,7 @@ function loadFood(cat = "All", type = "Filter", searchData = []) {
   if (data.length > 0) {
     data.forEach((item) => {
       output += `
-        <div class="col g-4">
+        <div class="col">
           <div class="card border-0 shadow">
             <div class="card-img">
               <img class="img-fluid" src="${item.img}" alt="food">
@@ -127,7 +107,7 @@ function loadFood(cat = "All", type = "Filter", searchData = []) {
         </div>
       `;
     });
-    showFoodItems.innerHTML = output; // Update DOM once after the loop
+    showFoodItems.innerHTML = output;
   } else {
     showFoodItems.innerHTML = "Food Items Not Found";
   }
@@ -186,6 +166,8 @@ function counter() {
   });
 }
 
+// Set price in range bar
+
 function setPrices() {
   const priceList = fetchedFood.map((item) => item.offer_price);
   const minPrice = Math.min(...priceList);
@@ -199,6 +181,8 @@ function setPrices() {
     // displayProducts(data.filter((product) => product.amt <= e.target.value));
   });
 }
+
+// DOM Content Loader
 
 window.addEventListener("load", async function () {
   fetchedFood = await fetchFood();

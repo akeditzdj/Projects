@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
+/* Universal Style */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+/* Navbar */
 
 .navbar {
   width: 100%;
@@ -71,12 +73,16 @@
   color: white;
 }
 
+/* Header */
+
 .header {
   position: relative;
   width: 100%;
   height: 500px;
   background-color: #fe5005;
 }
+
+/* Nav-pills Button */
 
 .nav-pills .nav-item button {
   width: 200px;
@@ -92,6 +98,9 @@
   color: #ffff;
   border: none;
 }
+
+/* Food Items header */
+
 .food-items-header {
   width: 100%;
   height: 100px;
@@ -127,12 +136,14 @@ select option {
   padding: 5px;
 }
 
+/* Food items container */
+
 .show-food-items {
   display: grid;
   grid-template-columns: repeat(4, 305px);
   grid-auto-flow: row;
-  gap: 16px; /* Space between grid items */
-  padding: 16px; /* Optional: padding around the grid */
+  gap: 16px;
+  padding: 16px;
 }
 
 .card {
@@ -142,7 +153,7 @@ select option {
   transition: 0.3s ease;
 }
 .card:hover {
-  scale: 1.05;
+  scale: 1.02;
 }
 
 .card .card-img {
@@ -158,6 +169,8 @@ select option {
   height: 100%;
   object-fit: cover;
 }
+
+/* Responsive Multiple Device Style */
 
 @media (max-width: 1200px) {
   .navbar {
@@ -186,7 +199,7 @@ select option {
     height: auto;
   }
   .show-food-items {
-    grid-template-columns: repeat(3, 305px); /* 3 columns on medium screens */
+    grid-template-columns: repeat(3, 305px);
   }
 }
 
@@ -222,7 +235,7 @@ select option {
     height: auto;
   }
   .show-food-items {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
   }
@@ -254,7 +267,7 @@ select option {
     height: auto;
   }
   .show-food-items {
-    grid-template-columns: 305px; /* 1 column on extra small screens */
+    grid-template-columns: 305px;
     justify-content: center;
     place-content: center;
   }

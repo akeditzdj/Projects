@@ -12,6 +12,8 @@
 
 <body>
 
+    <!-- Navbar Start -->
+
     <div class="navbar navbar-expand-lg d-flex justify-content-center align-items-center sticky-top">
         <div class="container">
             <div class="navbar-brand ">
@@ -21,7 +23,7 @@
                 </a>
             </div>
 
-
+            <!-- Mobile and Offcanvas Nav-Items Start -->
             <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
                 <div class="offcanvas-header border-bottom border-white">
                     <h5 class="offcanvas-title" id="staticBackdropLabel">
@@ -66,7 +68,8 @@
                     </div>
                 </div>
             </div>
-
+            <!-- Mobile and Offcanvas Nav-Items End -->
+            <!-- Desktop Nav-Items Start -->
             <ul class="navbar-nav d-none d-lg-flex">
                 <li class="nav-item pe-4 dropdown"><a class="nav-link link-light dropdown-toggle" area-expanded="false" data-bs-toggle="dropdown" role="button" href="#">About Swiggy</a>
                     <ul class="dropdown-menu">
@@ -96,7 +99,8 @@
                 <li class="nav-item pe-4"><a class="nav-link link-light" href="#">Invester Relations</a></li>
                 <li class="nav-item pe-4"><a class="nav-link link-light" href="#">Coract Us</a></li>
             </ul>
-
+            <!-- Desktop Nav-Items End -->
+            <!-- Cart and Fav Button Start -->
             <div class="icon  d-md-flex d-flex gap-4 align-items-center justify-content-center">
                 <a href="#" class="cart nav-link ">
                     <i class="bi bi-cart-check-fill fs-3 link-light"></i>
@@ -107,11 +111,16 @@
                     <span id="favItemCount">0</span>
                 </a>
             </div>
+            <!-- Cart and Fav Button End -->
+            <!-- Mobile Menu-bar Button Start -->
             <button class="btn  bg-transparent text-white d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
                 <i class="bi bi-list fs-1"></i>
             </button>
+            <!-- Mobile Menu-bar Button End -->
         </div>
     </div>
+    <!-- Navbar End -->
+    <!-- Header Start -->
     <div class="header d-md-flex justify-content-center align-items-center">
         <img class="img-fluid" src="assets/images/DE-on-bike-2-2.png" alt="DE-on-bike-2">
         <div class="header-content m-auto text-center">
@@ -120,8 +129,10 @@
         </div>
         <img class="img-fluid" src="assets/images/03-Instamart_3_front_view_2_skycolour.png" alt="Instamart_3_front_view_2">
     </div>
+    <!-- Header End -->
+    <!-- Main Tab Control Start -->
     <div class="container-fluid">
-
+        <!-- Main Tab Control Button Start -->
         <ul class="nav nav-pills pt-5  d-flex justify-content-center align-items-start gap-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
@@ -130,14 +141,19 @@
                 <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Products</button>
             </li>
         </ul>
+        <!-- Main Tab Control Button End -->
+        <!-- Tab Content Start -->
         <div class="tab-content" id="pills-tabContent">
+            <!-- Home Tab Start-->
             <div class="container">
-                <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                <div class="tab-pane fade fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
                     <h3>This is the Home Page...</h3>
                 </div>
             </div>
+            <!-- Home Tab End-->
+            <!-- Product Tab Start-->
             <div class="container">
-                <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
                     <div class="food-items-header  d-md-flex h-auto  justify-content-around align-items-center rounded">
                         <div class="food-items-header-content p-3">
                             <label class="form-label text-white">Search</label>
@@ -170,10 +186,12 @@
                         <div class="row show-food-items flex-wrap"></div>
                     </div>
                 </div>
-
             </div>
+            <!-- Product Tab End-->
         </div>
+        <!-- Tab Content End -->
     </div>
+    <!-- Main Tab Control End -->
     </div>
 
 
