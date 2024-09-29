@@ -245,6 +245,7 @@ footer {
 footer h5 {
   text-align: left;
   font-size: 18px;
+  font-weight: bold;
 }
 footer ul {
   list-style-type: none;
@@ -265,8 +266,12 @@ footer ul li a {
 footer ul li a:hover {
   color: #111111;
 }
-footer .social-link li a:hover  i {
+footer .social-link li a:hover i {
   color: #fe5005;
+}
+
+footer .footer-content .content-1 {
+  width: 340px;
 }
 
 footer .app-link img {
@@ -372,5 +377,35 @@ footer .app-link img {
     grid-template-columns: 305px;
     justify-content: center;
     place-content: center;
+  }
+  footer {
+    width: 100%;
+    height: auto;
+  }
+  footer .footer-content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  footer .footer-content div {
+    margin-bottom: 10px;
+  }
+  footer .footer-content p {
+    width: 100% !important;
+  }
+
+  footer .footer-content .content-1 {
+    width: 100%;
+  }
+
+  footer .footer-content div img {
+    width: 100%;
+  }
+  footer .app-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
