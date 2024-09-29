@@ -12,6 +12,15 @@
   height: auto;
   background-color: #fe5005;
 }
+
+.offcanvas-body,
+.offcanvas-header {
+  background-color: #fe5005;
+}
+
+.offcanvas-header img {
+  width: 70px;
+}
 .navbar-brand .logo-1 {
   width: 50px;
   height: auto;
@@ -87,15 +96,13 @@
   width: 100%;
   height: 100px;
   background-color: #fe5005;
-  z-index: 1;
-  position: sticky;
 }
 
 .food-items-header .range {
   width: 250px;
   height: auto;
 }
-.food-items-header .range label{
+.food-items-header .range label {
   width: 100%;
 }
 
@@ -120,10 +127,22 @@ select option {
   padding: 5px;
 }
 
+.show-food-items {
+  display: grid;
+  grid-template-columns: repeat(4, 305px);
+  grid-auto-flow: row;
+  gap: 16px; /* Space between grid items */
+  padding: 16px; /* Optional: padding around the grid */
+}
+
 .card {
   width: 300px;
   height: 470px;
   overflow: hidden;
+  transition: 0.3s ease;
+}
+.card:hover {
+  scale: 1.05;
 }
 
 .card .card-img {
@@ -138,4 +157,105 @@ select option {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+    background-color: #fe5005;
+  }
+
+  .header {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #fe5005;
+  }
+
+  .food-items-header {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .header .header-content p {
+    width: 100%;
+  }
+
+  .food-items-header .range {
+    width: 100%;
+    height: auto;
+  }
+  .show-food-items {
+    grid-template-columns: repeat(3, 305px); /* 3 columns on medium screens */
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+    background-color: #fe5005;
+  }
+
+  .header {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #fe5005;
+  }
+  .header img {
+    width: 250px;
+    height: auto;
+  }
+
+  .header .header-content p {
+    width: 100%;
+  }
+
+  .food-items-header {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .food-items-header .range {
+    width: 100%;
+    height: auto;
+  }
+  .show-food-items {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+    background-color: #fe5005;
+  }
+  .header {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #fe5005;
+  }
+  .header img {
+    width: 100%;
+    height: auto;
+  }
+  .food-items-header {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .food-items-header .range {
+    width: 100%;
+    height: auto;
+  }
+  .show-food-items {
+    grid-template-columns: 305px; /* 1 column on extra small screens */
+    justify-content: center;
+    place-content: center;
+  }
 }

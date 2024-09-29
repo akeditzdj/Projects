@@ -1,6 +1,9 @@
-let foodList = document.querySelector(".food-list");
+let showFoodItems = document.querySelector(".show-food-items");
 const priceRange = document.querySelector("#priceRange");
 const priceValue = document.querySelector("#priceValue");
+const categoryList = document.querySelector("#categoryList");
+const foodItemList = document.querySelector("#foodList");
+const searchFood = document.querySelector("#searchFood");
 
 async function fetchFood() {
   try {
@@ -13,37 +16,120 @@ async function fetchFood() {
   }
 }
 
-function loadFood(fooditems) {
-  let output = "";
-  if (fooditems.length > 0) {
-    fooditems.forEach((item) => {
-      output += `
+// function categoryFilter(categoryType, element, foodItems) {
+//   // Extract unique categories based on the categoryType
+//   const uniqueCategories = Array.from(
+//     new Set(foodItems.map((item) => item[categoryType]))
+//   );
 
-<div class="col g-4">
-     <div class="card">
-        <div class="card-img">
-            <img class="img-fluid" src="${item.img}" alt="food">
-        </div>
-      <div class="card-body p-3 text-center">
+//   // Sort the categories based on categoryType
+//   const sortedData =
+//     categoryType === "category"
+//       ? uniqueCategories.sort()
+//       : uniqueCategories.map(Number).sort((a, b) => a - b);
+
+//   // Clear the element's innerHTML
+//   element.innerHTML = "";
+//   if (categoryType === "category") {
+//     const options = sortedData
+//       .map((item) => `<option value='${item}'>${item}</option>`)
+//       .join("");
+//     element.innerHTML = `<option value="All">All</option>${options}`;
+//   }
+// }
+
+function loadCategories() {
+  const categories = [...new Set(fetchedFood.map((item) => item.category))];
+  categories.sort();
+  categories.forEach(function (item) {
+    let cat = document.createElement("option");
+    cat.value = item; // Set the value properly
+    cat.text = item;
+    categoryList.appendChild(cat);
+  });
+}
+
+function loadFoodNameList() {
+  const foodNames = [...new Set(fetchedFood.map((item) => item.name))];
+  foodNames.sort();
+  foodNames.forEach(function (item) {
+    let foodName = document.createElement("option");
+    foodName.value = item; // Set the value properly
+    foodName.text = item;
+    foodItemList.appendChild(foodName);
+  });
+}
+
+// Filter food data by search input
+categoryList.addEventListener("change", function () {
+  loadFood(this.value);
+});
+
+searchFood.addEventListener("input", function () {
+  const qry = this.value.trim().toLowerCase();
+  const cat = categoryList.value;
+
+  let data =
+    cat === "All"
+      ? fetchedFood
+      : fetchedFood.filter((food) => food.category === cat);
+
+  const searchFilterFood = data.filter((food) =>
+    food.name.toLowerCase().includes(qry)
+  );
+
+  loadFood(cat, "Search", searchFilterFood);
+});
+
+// Load food items based on category and search
+function loadFood(cat = "All", type = "Filter", searchData = []) {
+  let output = "";
+
+  let data =
+    cat === "All"
+      ? fetchedFood
+      : fetchedFood.filter((food) => food.category === cat);
+
+  if (type === "Search") {
+    data = searchData;
+  }
+
+  if (data.length > 0) {
+    data.forEach((item) => {
+      output += `
+        <div class="col g-4">
+          <div class="card border-0 shadow">
+            <div class="card-img">
+              <img class="img-fluid" src="${item.img}" alt="food">
+            </div>
+            <div class="card-body p-3 text-center">
               <div class="food-info">
-              <h4 class="text-truncate" title="${item.name}">${item.name}</h4>
-              <p>${item.category}</p>
-              <p>Price : Rs.${item.price}</p>
-              <p>Offer Price : Rs.${item.offer_price}</p>
-              <p>Customer Review : ${item.ratings}</p>
-      </div>
-      <div class="d-flex justify-content-center align-items-center gap-5 ">
-        <div><button title="Add to Cart" class="btn btn-sm  text-white fs-4 "><i class="bi bi-cart-plus"></i></button></div>
-        <div><button title="Add to Favourite" class="btn btn-sm text-white fs-4"><i class="bi bi-heart"></i></button></div>
-      </div>
-    </div>
-    </div>
-</div>
-    `;
-      foodList.innerHTML = output;
+                <h4 class="text-truncate" title="${item.name}">${item.name}</h4>
+                <p>${item.category}</p>
+                <p class="text-decoration-line-through">Price: Rs.${item.price}</p>
+                <p>Offer Price: Rs.${item.offer_price}</p>
+                <p>Customer Review: ${item.ratings}</p>
+              </div>
+              <div class="d-flex justify-content-center align-items-center gap-5">
+                <div>
+                  <button title="Add to Cart" class="btn btn-sm text-white fs-4">
+                    <i class="bi bi-cart-plus"></i>
+                  </button>
+                </div>
+                <div>
+                  <button title="Add to Favourite" class="btn btn-sm text-white fs-4">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
     });
+    showFoodItems.innerHTML = output; // Update DOM once after the loop
   } else {
-    foodList.innerHTML = "Food Items Not Found";
+    showFoodItems.innerHTML = "Food Items Not Found";
   }
 }
 
@@ -116,7 +202,11 @@ function setPrices() {
 
 window.addEventListener("load", async function () {
   fetchedFood = await fetchFood();
+  // categoryFilter( "category", categoryList, fetchedFood );
+  loadCategories();
+  loadFoodNameList();
   loadFood(fetchedFood);
+  loadFood();
   setPrices();
   counter();
 });
