@@ -18,6 +18,7 @@
 .offcanvas-body,
 .offcanvas-header {
   background-color: #fe5005;
+  color: white;
 }
 
 .offcanvas-header img {
@@ -35,7 +36,7 @@
 }
 
 .navbar-nav li a {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
 }
 .icon .cart,
@@ -162,6 +163,7 @@ select option {
 .card .card-img {
   width: 300px;
   height: 200px;
+  overflow: hidden;
 }
 .card .card-body {
   background-color: #fe5005;
@@ -171,8 +173,105 @@ select option {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: 0.5s ease;
+}
+.card .card-img img:hover {
+  scale: 1.5;
 }
 
+/* Cart item  */
+
+/* --#{$prefix}offcanvas-width: #{$offcanvas-horizontal-width}; */
+
+.offcanvas,
+.offcanvas-xxl,
+.offcanvas-xl,
+.offcanvas-lg,
+.offcanvas-md,
+.offcanvas-sm {
+  --bs-offcanvas-zindex: 1045;
+  --bs-offcanvas-width: 600px;
+  /* --bs-offcanvas-height: 30vh; */
+  /* --bs-offcanvas-padding-x: 3rem;
+  --bs-offcanvas-padding-y: 2rem; */
+  /* --bs-offcanvas-color: green; */
+  /* --bs-offcanvas-bg: #fff; */
+  /* --bs-offcanvas-border-width: 6px; */
+  /* --bs-offcanvas-border-color: green; */
+  --bs-offcanvas-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+#cartItems {
+  width: 100%;
+  height: 100vh;
+  max-height: 680px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  padding: 10px;
+}
+.cart-list {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 50px;
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  border-radius: 10px;
+  color: #fe5005;
+  transition: 0.3s ease;
+}
+.cart-list:hover {
+  scale: 1.02;
+}
+.cart-list img {
+  width: 300px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Footer Section */
+
+footer {
+  width: 100%;
+  height: 350px;
+}
+footer h5 {
+  text-align: left;
+  font-size: 18px;
+}
+footer ul {
+  list-style-type: none;
+  text-align: left;
+  padding: 0;
+}
+footer ul li {
+  text-align: left;
+  width: 100%;
+  padding: 5px;
+}
+footer ul li a {
+  text-decoration: none;
+  text-align: left;
+  color: #929090;
+  font-size: 15px;
+}
+footer ul li a:hover {
+  color: #111111;
+}
+footer .social-link li a:hover  i {
+  color: #fe5005;
+}
+
+footer .app-link img {
+  width: 200px;
+}
 /* Responsive Multiple Device Style */
 
 @media (max-width: 1200px) {
