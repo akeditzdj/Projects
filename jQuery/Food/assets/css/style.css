@@ -27,6 +27,36 @@
   font-size: 14px;
   font-weight: 600;
 }
+.icon .cart,
+.icon .fav {
+  position: relative;
+}
+.icon .cart span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #fe5005;
+  position: absolute;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  left: 22px;
+  top: -5px;
+}
+.icon .fav span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #fe5005;
+  position: absolute;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  left: 22px;
+  top: -5px;
+}
 .dropdown-menu li a:hover {
   background-color: #fe5005;
   color: white;
@@ -53,12 +83,26 @@
   color: #ffff;
   border: none;
 }
-
-.sidebar-section {
-  width: 300px;
-  height: 100vh;
+.food-items-header {
+  width: 100%;
+  height: 100px;
   background-color: #fe5005;
+  z-index: 1;
+  position: sticky;
 }
+
+.food-items-header .range {
+  width: 250px;
+  height: auto;
+}
+.food-items-header .range label{
+  width: 100%;
+}
+
+.food-items-header .range span {
+  width: 150px;
+}
+
 select {
   outline: none !important;
   border: none !important;
@@ -74,4 +118,24 @@ select option:checked {
 
 select option {
   padding: 5px;
+}
+
+.card {
+  width: 300px;
+  height: 470px;
+  overflow: hidden;
+}
+
+.card .card-img {
+  width: 300px;
+  height: 200px;
+}
+.card .card-body {
+  background-color: #fe5005;
+  color: #ffff;
+}
+.card .card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

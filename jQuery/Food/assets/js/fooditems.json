@@ -398,5 +398,13 @@
     "offer_price": 210,
     "ratings": 4.3,
     "img": "https://media.istockphoto.com/id/1273709352/photo/pizza.jpg?s=612x612&w=0&k=20&c=6gNg2UHY55hgqpmXmo7nmsICSX1lYSkRr3MBQxpYRiw="
+  },
+    {
+    "name": "Plain Pizza",
+    "category": "Pizza",
+    "price": 230,
+    "offer_price": 210,
+    "ratings": 4.3,
+    "img": "https://media.istockphoto.com/id/1273709352/photo/pizza.jpg?s=612x612&w=0&k=20&c=6gNg2UHY55hgqpmXmo7nmsICSX1lYSkRr3MBQxpYRiw="
   }
 ]
