@@ -11,14 +11,13 @@ body {
 }
 
 #root {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
   flex-wrap: wrap;
-  margin: 50px 0;
 }
 
 .card {
@@ -26,11 +25,17 @@ body {
   height: 550px;
   border-radius: 10px;
   overflow: hidden;
+  transition: 0.5s ease;
+}
+
+.card:hover {
+  scale: 1.03;
 }
 
 .card-img {
   width: 400px;
   height: 250px;
+  overflow: hidden;
 }
 
 .card-body {
@@ -42,6 +47,10 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: 0.5s ease;
+}
+.card-img img:hover {
+  scale: 1.4;
 }
 
 .card-body .profile-img {
