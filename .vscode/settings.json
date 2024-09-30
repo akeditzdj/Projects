@@ -18,5 +18,8 @@
   "js/ts.implicitProjectConfig.strictNullChecks": true,
   "breadcrumbs.showNull": true,
   "outline.showNull": true,
-  "editor.defaultColorDecorators": false
+  "editor.defaultColorDecorators": false,
+  "workbench.preferredLightColorTheme": "Monokai",
+  "window.autoDetectColorScheme": false,
+  "errorLens.statusBarColorsEnabled": false
 }

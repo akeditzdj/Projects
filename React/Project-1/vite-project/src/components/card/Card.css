@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui;
+}
+body {
+  background-color: #01a3a4;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 50px 0;
+}
+
+.card {
+  width: 400px;
+  height: 550px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 400px;
+  height: 250px;
+}
+
+.card-body {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body .profile-img {
+  width: 70px;
+  height: 70px;
+  padding: 5px;
+}
+
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-info p {
+  font-size: 14px;
+}
+
+.card .tag {
+  background-color: #ccc;
+  width: fit-content;
+  padding: 0 10px;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 50px;
+  color: white;
+  margin-top: 10px;
+}
+
+.card .tag.technology {
+  background-color: #01a3a4;
+}
+
+.card .tag.food {
+  background-color: #2e7a27;
+}
+
+.card .tag.automobile {
+  background-color: #7e215f;
+}
