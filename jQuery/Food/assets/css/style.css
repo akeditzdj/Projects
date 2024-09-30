@@ -9,6 +9,12 @@
 
 /* Navbar */
 
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
 .navbar {
   width: 100%;
   height: auto;
@@ -190,7 +196,7 @@ select option {
 .offcanvas-md,
 .offcanvas-sm {
   --bs-offcanvas-zindex: 1045;
-  --bs-offcanvas-width: 600px;
+  --bs-offcanvas-width: 550px;
   /* --bs-offcanvas-height: 30vh; */
   /* --bs-offcanvas-padding-x: 3rem;
   --bs-offcanvas-padding-y: 2rem; */
@@ -199,6 +205,26 @@ select option {
   /* --bs-offcanvas-border-width: 6px; */
   /* --bs-offcanvas-border-color: green; */
   --bs-offcanvas-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fe5005;
 }
 
 #cartItems {
@@ -229,11 +255,42 @@ select option {
   scale: 1.02;
 }
 .cart-list img {
-  width: 300px;
+  width: 400px;
   height: 100px;
   object-fit: cover;
   border-radius: 10px;
   overflow: hidden;
+}
+
+/* Blog */
+
+.blog .card {
+  width: 400px;
+  height: auto;
+  border-radius: 25px;
+}
+.blog .card .card-img-top {
+  overflow: hidden;
+}
+.blog .card img {
+  width: 100%;
+  height: 200px;
+  transition: 0.3s ease-in-out;
+  object-fit: cover;
+}
+.blog .card img:hover {
+  scale: 1.4;
+}
+
+.section-break {
+  width: 100%;
+  height: 250px;
+  margin-left: 2px;
+}
+.section-break img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Footer Section */
@@ -408,4 +465,36 @@ footer .app-link img {
     justify-content: center;
     align-items: center;
   }
+}
+
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  left: 1%;
+  bottom: 1%;
+  padding: 10px;
+  background-color: #fe5005;
+  color: #fff;
+  border-radius: 5px;
+  z-index: 1000;
+  text-align: center;
+  opacity: 0; /* Start hidden */
+  width: auto;
+  height: 50px;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0; /* Fully transparent */
+    transform: translateY(20px); /* Start slightly below */
+  }
+  100% {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Final position */
+  }
+}
+
+.popup.show {
+  display: block; /* Show the popup */
+  animation: slideUp 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; /* Apply slide-up animation */
 }

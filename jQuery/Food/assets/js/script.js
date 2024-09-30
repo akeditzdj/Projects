@@ -102,7 +102,7 @@ function loadFood(cat = "All", type = "Filter", searchData = []) {
               </div>
               <div class="d-flex justify-content-center align-items-center gap-5">
                 <div>
-                  <button title="Add to Cart" class="btn btn-sm text-white fs-4 add-to-cart" data-id="${item.id}">
+                  <button title="Add to Cart" id="addToCartBtn" class="btn btn-sm text-white fs-4 add-to-cart" data-id="${item.id}">
                     <i class="bi bi-cart-plus"></i>
                   </button>
                 </div>
@@ -135,6 +135,15 @@ function attachAddToCartEvent() {
 
       // Check if item is already in cart
       if (!cart.some((item) => item.id === foodItem.id)) {
+        // Show the success popup
+        const popup = document.getElementById("successPopup");
+        popup.classList.add("show");
+
+        // Auto-hide the popup after 3 seconds
+        setTimeout(() => {
+          popup.classList.remove("show");
+        }, 3000);
+
         cart.push(foodItem);
         countCartItem++;
         saveCart();
