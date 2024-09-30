@@ -96,8 +96,8 @@ function loadFood(cat = "All", type = "Filter", searchData = []) {
               <div class="food-info">
                 <h4 class="text-truncate" title="${item.name}">${item.name}</h4>
                 <p>${item.category}</p>
-                <p class="text-decoration-line-through">Price: Rs.${item.price}</p>
-                <p>Offer Price: Rs.${item.offer_price}</p>
+                <p class="text-decoration-line-through">Price: Rs.${item.price}.00</p>
+                <p>Offer Price: Rs.${item.offer_price}.00</p>
                 <p>Customer Review: ${item.ratings}</p>
               </div>
               <div class="d-flex justify-content-center align-items-center gap-5">
@@ -169,7 +169,7 @@ function loadCartItems() {
         <button class="btn" onclick="removeFromCart(${item.id})">
           <h5><i class="bi bi-trash3-fill"></i></h5>
         </button>
-        <h5 class="fs-6 text-end fw-bold">Rs.${item.offer_price}/-</h5>
+        <h5 class="fs-6 text-end fw-bold">Rs.${item.offer_price}.00</h5>
       </div>
     `;
     total += item.offer_price; // Calculate the total before GST
@@ -242,7 +242,7 @@ function loadFavItems() {
 <h5 class=" ms-0 fs-6 fw-bold w-100">${item.name}</h5>
 <button class="btn" onclick="removeFromFav(${item.id})">
 <h5><i class="bi bi-trash3-fill"></i></h5></button>
-<h5 class="fs-6 text-end fw-bold ">Rs.${item.offer_price}/-</h5>
+<h5 class="fs-6 text-end fw-bold ">Rs.${item.offer_price}.00</h5>
 </div>
   `;
     favItems.innerHTML = output;
