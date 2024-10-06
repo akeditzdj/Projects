@@ -1,3 +1,7 @@
+.navbar {
+  width: 100%;
+}
+
 .navbar ul li {
   font-size: 18px;
   padding-right: 5px;
@@ -26,3 +30,4 @@
   color: #dc3545;
   text-align: center;
 }
+

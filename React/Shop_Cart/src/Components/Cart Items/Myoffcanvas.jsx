@@ -18,7 +18,9 @@ const Myoffcanvas = () => {
           aria-label="Close"
         ></button>
       </div>
-      <div className="offcanvas-body">This is body</div>
+      <div className="offcanvas-body">
+      <p>This is body</p>
+      </div>
     </div>
   );
 };

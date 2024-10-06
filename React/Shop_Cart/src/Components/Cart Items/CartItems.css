@@ -1,3 +1,7 @@
 .offcanvas {
   width: 600px !important;
 }
+
+#offcanvasRightMenu {
+  background-color: #dc3545 !important;
+}

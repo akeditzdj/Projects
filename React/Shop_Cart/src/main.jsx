@@ -9,10 +9,12 @@ import ProductList from "./Components/Product Container/ProductList";
 import CartItems from "./Components/Cart Items/CartItems";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Myoffcanvas from "./Components/Cart Items/Myoffcanvas";
+import Myoffcanvasmenu from "./Components/Cart Items/Myoffcanvasmenu";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Navbar />
+    <Myoffcanvasmenu />
     <Myoffcanvas />
     <ProductList />
     <CartItems />

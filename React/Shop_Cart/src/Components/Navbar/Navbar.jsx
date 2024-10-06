@@ -1,15 +1,21 @@
-
-
 const Navbar = () => {
   return (
     <>
-      <div className="navbar navbar-expand-lg bg-danger w-100 py-3">
+      <div className="navbar navbar-expand-lg bg-danger py-3 sticky-top">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             <h3 className="text-white">AK Editz</h3>
           </a>
 
-          <ul className="navbar-nav">
+          <button
+            className=" d-lg-none btn  btn-outline-light"
+            data-bs-target="#offcanvasRightMenu"
+            data-bs-toggle="offcanvas"
+          >
+            <i className="bi bi-list text-white"></i>
+          </button>
+
+          <ul className="navbar-nav d-lg-flex d-none">
             <li className="nav-item">
               <a className="nav-link text-white" href="#">
                 Home
