@@ -1,6 +1,9 @@
+import PropTypes from "prop-types";
+import CartItems from "./CartItems";
+import CartTotal from "./CartTotal";
 
-
-const Myoffcanvas = () => {
+// Offcanvas Component
+const Myoffcanvas = ({ cartItems, addToCart }) => {
   return (
     <div
       className="offcanvas offcanvas-end"
@@ -19,10 +22,19 @@ const Myoffcanvas = () => {
         ></button>
       </div>
       <div className="offcanvas-body">
-      <p>This is body</p>
+        <div className="cart-item-container">
+          <CartItems cartItems={cartItems} addToCart={addToCart} />
+        </div>
+        <CartTotal cartItems={cartItems} />
       </div>
     </div>
   );
+};
+
+// PropTypes for Myoffcanvas
+Myoffcanvas.propTypes = {
+  cartItems: PropTypes.array.isRequired, // Array of items in the cart
+  addToCart: PropTypes.func, // Function to add items to cart (optional)
 };
 
 export default Myoffcanvas;

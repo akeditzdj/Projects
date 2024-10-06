@@ -1,3 +1,4 @@
+
 const Navbar = () => {
   return (
     <>
@@ -44,7 +45,7 @@ const Navbar = () => {
               data-bs-toggle="offcanvas"
             >
               <i className="bi text-white bi-cart-check-fill"></i>
-              <span>0</span>
+              <span></span>
             </button>
           </ul>
         </div>
