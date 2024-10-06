@@ -1,7 +1,9 @@
+
+
 const Navbar = () => {
   return (
     <>
-      <div className="navbar navbar-expand-lg bg-danger py-3">
+      <div className="navbar navbar-expand-lg bg-danger w-100 py-3">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             <h3 className="text-white">AK Editz</h3>
@@ -28,12 +30,16 @@ const Navbar = () => {
                 Services
               </a>
             </li>
-            <li className="nav-item icon">
-              <a className="nav-link text-white" href="#">
-                <i className="bi bi-cart-check-fill"></i>
-                <span>0</span>
-              </a>
-            </li>
+
+            <button
+              type="button"
+              className="btn btn-trasparent"
+              data-bs-target="#offcanvasRight"
+              data-bs-toggle="offcanvas"
+            >
+              <i className="bi text-white bi-cart-check-fill"></i>
+              <span>0</span>
+            </button>
           </ul>
         </div>
       </div>

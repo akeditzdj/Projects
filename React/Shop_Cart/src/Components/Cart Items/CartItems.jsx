@@ -1,9 +1,8 @@
 
 
 const CartItems = () => {
-  return (
-    <div>CartItems</div>
-  )
-}
+  return <div>Cart Items</div>;
 
-export default CartItems
+};
+
+export default CartItems;
