@@ -45,7 +45,7 @@ const Navbar = () => {
               data-bs-toggle="offcanvas"
             >
               <i className="bi text-white bi-cart-check-fill"></i>
-              <span></span>
+              <span>10</span>
             </button>
           </ul>
         </div>

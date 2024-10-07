@@ -1,5 +1,5 @@
 .navbar {
-  width: 100%;
+  width: 100% !important;
 }
 
 .navbar ul li {
@@ -20,7 +20,7 @@
 
 .navbar ul button span {
   position: absolute;
-  font-size: 14px;
+  font-size: 12px;
   top: 5px;
   right: 0px;
   width: 20px;
@@ -30,4 +30,3 @@
   color: #dc3545;
   text-align: center;
 }
-
