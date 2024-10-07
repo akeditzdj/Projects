@@ -17,11 +17,11 @@ const CartTotal = ({ cartItems }) => {
         <div className="cart-total-info p-5 border-top border-2 border-dark py-2">
           <div className="d-flex justify-content-between align-items-center my-2">
             <h5>Order Subtotal </h5>
-            <h5>Rs.{totalPrice}</h5>
+            <h5>Rs.{totalPrice.toFixed(2)}</h5>
           </div>
           <div className="d-flex justify-content-between align-items-center my-2">
             <h6 className="text-secondary">Delivery Fee</h6>
-            <h6 className="text-secondary">Rs.{deliveryFee}</h6>
+            <h6 className="text-secondary">Rs.{deliveryFee.toFixed(2)}</h6>
           </div>
           <div className="d-flex justify-content-between align-items-center my-2">
             <h6 className="text-secondary">Sales Tax</h6>

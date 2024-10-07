@@ -1,5 +1,5 @@
-
-const Navbar = () => {
+import PropTypes from "prop-types";
+const Navbar = ({ cartItems }) => {
   return (
     <>
       <div className="navbar navbar-expand-lg bg-danger py-3 sticky-top">
@@ -45,7 +45,7 @@ const Navbar = () => {
               data-bs-toggle="offcanvas"
             >
               <i className="bi text-white bi-cart-check-fill"></i>
-              <span>10</span>
+              <span>{cartItems.length}</span>
             </button>
           </ul>
         </div>
@@ -55,3 +55,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+Navbar.propTypes = {
+  cartItems: PropTypes.array.isRequired,
+};

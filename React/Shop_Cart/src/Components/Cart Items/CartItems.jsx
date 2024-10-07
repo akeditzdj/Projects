@@ -13,12 +13,12 @@ const CartItems = ({ cartItems }) => {
               <h5 className="text-truncate">{item.name}</h5>
             </div>
             <div className="d-flex flex-wrap justify-content-end align-items-center gap-2">
-              <div className="cart-price">Rs.{item.offer_price}</div>
+              <div className="cart-price">Rs.{item.offer_price.toFixed(2)}</div>
               <div>
                 <input
                   className="form-control form-control-sm"
                   type="number"
-                  value="1"
+
                   id="qty"
                 />
               </div>

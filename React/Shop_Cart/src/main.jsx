@@ -26,7 +26,7 @@ const App = () => {
 
   return (
     <StrictMode>
-      <Navbar />
+      <Navbar cartItems={cartItems} />
       <Myoffcanvas cartItems={cartItems} addToCart={addToCart} />
       <Myoffcanvasmenu />
       <ProductList addToCart={addToCart} />
