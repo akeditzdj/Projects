@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 // Product Component
-const Products = ({ food_item, addToCart }) => {
+const Products = ({ food_item, addToCart, isAdded }) => {
   return (
     <div className="container">
       <div className="card shadow">
@@ -22,8 +22,9 @@ const Products = ({ food_item, addToCart }) => {
             <button
               onClick={() => addToCart(food_item)}
               className="btn btn-sm btn-danger"
+              disabled={isAdded} // Disable button if added
             >
-              Add to Cart
+              {isAdded ? "Added to Cart" : "Add to Cart"}
             </button>
           </div>
         </div>
@@ -45,4 +46,5 @@ Products.propTypes = {
     ratings: PropTypes.number.isRequired,
   }).isRequired,
   addToCart: PropTypes.func.isRequired,
+  isAdded: PropTypes.bool.isRequired, // New prop for tracking if added
 };

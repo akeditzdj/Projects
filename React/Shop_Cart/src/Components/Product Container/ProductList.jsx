@@ -1,19 +1,25 @@
+import React, { useState } from "react";
 import Products from "./Products.jsx";
 import fooditems from "../Product Container/fooditems.json";
 import PropTypes from "prop-types";
+
 // Product List Component
 const ProductList = ({ addToCart }) => {
+  const [cartItems, setCartItems] = useState([]);
+
   const validateItem = (item) => {
     return item && item.name && item.price;
   };
 
   const handleAddToCart = (item) => {
     if (validateItem(item)) {
+      setCartItems((prevItems) => [...prevItems, item]); // Update state
       addToCart(item);
-      console.log(`${item.name} has been added to your cart.`);
-    } else {
-      console.error("Item is invalid or already in cart.");
     }
+  };
+
+  const isItemAdded = (itemId) => {
+    return cartItems.some((item) => item.id === itemId);
   };
 
   return (
@@ -25,6 +31,7 @@ const ProductList = ({ addToCart }) => {
             food_item={food_item}
             addToCart={handleAddToCart}
             key={food_item.id}
+            isAdded={isItemAdded(food_item.id)} // Check if the item is added
           />
         ))}
       </div>
@@ -35,5 +42,5 @@ const ProductList = ({ addToCart }) => {
 export default ProductList;
 
 ProductList.propTypes = {
-  addToCart: PropTypes.func, // Specifying that addToCart is a required function
+  addToCart: PropTypes.func.isRequired, // Marking as required
 };
