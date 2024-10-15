@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Products from "./Products.jsx";
 import fooditems from "../Product Container/fooditems.json";
 import PropTypes from "prop-types";
