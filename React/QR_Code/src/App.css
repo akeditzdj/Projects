@@ -7,9 +7,27 @@
   font-family: poppins, sans-serif;
 }
 
-body{
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    place-items: center;
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.container {
+  width: 500px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container img {
+  width: 250px;
+  height: 250px;
+  text-align: center;
+}
+.container div {
+  width: 100%;
 }
