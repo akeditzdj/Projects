@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
 const clearIcon = <i className="bi bi-cloud-sun-fill text-warning"></i>;
 const cloudIcon = <i className="bi bi-cloud-fog2-fill text-warning"></i>;
 const drizzleIcon = <i className="bi bi-cloud-drizzle-fill text-warning"></i>;
-const rainIcon = <i className="bi bi-cloud-lightning-rain-fill text-warning"></i>;
+const rainIcon = (
+  <i className="bi bi-cloud-lightning-rain-fill text-warning"></i>
+);
 const snowIcon = <i className="bi bi-cloud-snow-fill text-warning"></i>;
 const humidity = <i className="bi bi-water text-warning"></i>;
 const wind = <i className="bi bi-wind text-warning"></i>;
@@ -28,7 +30,9 @@ const WeatherDetails = ({
         <div className="fs-1 fw-bold text-center">{temp}°C</div>
       </div>
       <div className="city">
-        <div className="fs-1 text-center text-uppercase fw-semibold text-warning">{city}</div>
+        <div className="fs-1 text-center text-uppercase fw-semibold text-warning">
+          {city}
+        </div>
       </div>
       <div className="country">
         <div className="fs-4 text-center fw-semibold text-uppercase">
@@ -61,18 +65,18 @@ const WeatherDetails = ({
   );
 };
 
- WeatherDetails.propTypes={
-  icon:PropTypes.string.isrequired,
-  temp:PropTypes.number.isrequired,
-  city:PropTypes.string.isRequired,
-  country:PropTypes.string.isRequired,
-  lat:PropTypes.number.isRequired,
-  long:PropTypes.number.isRequired,
-  humi:PropTypes.number.isRequired,
-  win:PropTypes.number.isRequired,
+WeatherDetails.propTypes = {
+  icon: PropTypes.string.isrequired,
+  temp: PropTypes.number.isrequired,
+  city: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
+  lat: PropTypes.number.isRequired,
+  long: PropTypes.number.isRequired,
+  humi: PropTypes.number.isRequired,
+  win: PropTypes.number.isRequired,
 };
 
-function App () {
+function App() {
   let api_key = "95d7dcbff59c4c3639999ac1537cc902";
   const [text, setText] = useState("Singapore");
   const [icon, setIcon] = useState(clearIcon);
@@ -86,25 +90,24 @@ function App () {
   const [cityNotFound, setCityNotFound] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const [error, setError]=useState(null)
+  const [error, setError] = useState(null);
 
-const weatherIconMap={
-  "01d":clearIcon,
-  "01n":clearIcon,
-  "02d":cloudIcon,
-  "02n":cloudIcon,
-  "03d":drizzleIcon,
-  "03n":drizzleIcon,
-  "04d":drizzleIcon,
-  "04n":drizzleIcon,
-  "09d":rainIcon,
-  "09n":rainIcon,
-  "10d":rainIcon,
-  "10n":rainIcon,
-  "13d":snowIcon,
-  "13n":snowIcon
-}
-
+  const weatherIconMap = {
+    "01d": clearIcon,
+    "01n": clearIcon,
+    "02d": cloudIcon,
+    "02n": cloudIcon,
+    "03d": drizzleIcon,
+    "03n": drizzleIcon,
+    "04d": drizzleIcon,
+    "04n": drizzleIcon,
+    "09d": rainIcon,
+    "09n": rainIcon,
+    "10d": rainIcon,
+    "10n": rainIcon,
+    "13d": snowIcon,
+    "13n": snowIcon,
+  };
 
   const search = async () => {
     setLoading(true);
@@ -127,13 +130,15 @@ const weatherIconMap={
       setHumi(data.main.humidity);
       setWin(data.wind.speed);
       const weatherIconCode = data.weather[0].icon;
-      setIcon(weatherIconMap[weatherIconCode] || clearIcon)
-     setCityNotFound(false)
+      setIcon(weatherIconMap[weatherIconCode] || clearIcon);
+      setCityNotFound( false );
+      setError("");
     } catch (error) {
       console.error("An error occured:", error.message);
-      setError("An error occured while fetching weather data")
+      setError("An error occured while fetching weather data");
     } finally {
       setLoading(false);
+
     }
   };
 
@@ -147,9 +152,9 @@ const weatherIconMap={
     }
   };
 
-  useEffect(function(){
+  useEffect(function () {
     search();
-  },[]);
+  }, []);
 
   return (
     <>
@@ -169,21 +174,33 @@ const weatherIconMap={
             <i className="bi bi-search fs-5"></i>
           </button>
         </div>
-     
-      {loading && <div className="loading-message text-center fw-bold fs-3 my-4 text-warning">Loading...</div>}
-      {error && <div className="error-message text-center fw-bold my-4">{error}</div>}
-      {cityNotFound &&<div className="city-not-found text-center fw-bold fs-3 my-4 text-danger">City not found !</div>}
 
- {!loading && !cityNotFound && <WeatherDetails
-          icon={icon}
-          temp={temp}
-          city={city}
-          country={country}
-          lat={lat}
-          long={long}
-          humi={humi}
-          win={win}
-        />}
+        {loading && (
+          <div className="loading-message text-center fw-bold fs-3 my-4 text-warning">
+            Loading...
+          </div>
+        )}
+        {error && (
+          <div className="error-message text-center fw-bold my-4">{error}</div>
+        )}
+        {cityNotFound && (
+          <div className="city-not-found text-center fw-bold fs-3 my-4 text-danger">
+            City not found !
+          </div>
+        )}
+
+        {!loading && !cityNotFound && (
+          <WeatherDetails
+            icon={icon}
+            temp={temp}
+            city={city}
+            country={country}
+            lat={lat}
+            long={long}
+            humi={humi}
+            win={win}
+          />
+        )}
         <footer className="text-center mt-3">
           <p>
             &copy; Copyright{" "}
@@ -195,6 +212,6 @@ const weatherIconMap={
       </div>
     </>
   );
-};
+}
 
 export default App;
