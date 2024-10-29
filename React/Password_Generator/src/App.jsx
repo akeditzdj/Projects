@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [length, setLenght] = useState(8);
+  const [length, setLength] = useState(8);
   const [includesUppercase, setIncludesUppercase] = useState(true);
   const [includesLowercase, setIncludesLowercase] = useState(true);
   const [includesNumbers, setIncludesNumbers] = useState(true);
@@ -24,7 +24,19 @@ function App() {
     let charset = "";
     if (includesUppercase) charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     if (includesLowercase) charset += "abcdefghijklmnopqrstuvwxyz";
-    if (includesNumbers) charset += "abcdefghijklmnopqrstuvwxyz";
+    if (includesNumbers) charset += "0123456789";
+    if (includesSymbols) charset += "!@#$%^&*()-_+";
+    let generatedPassword = "";
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * charset.length);
+      generatedPassword += charset[randomIndex];
+    }
+    setPassword(generatedPassword);
+  };
+
+  const copyToClicpboard = () => {
+    navigator.clipboard.writeText(password);
+    alert("Password is copied");
   };
 
   return (
@@ -39,7 +51,7 @@ function App() {
             min="0"
             max="16"
             value={length}
-            onChange={(e) => setLenght(parseInt(e.target.value))}
+            onChange={(e) => setLength(parseInt(e.target.value))}
           />
         </div>
 
@@ -87,10 +99,12 @@ function App() {
           <p>
             Password is: <span>{password}</span>
           </p>
-          <p title="Copy">{btnCopy}</p>
+          <p title="Copy" onClick={copyToClicpboard}>
+            {btnCopy}
+          </p>
         </div>
         <div className="btn-group">
-          <button>Generate Password</button>
+          <button onClick={generatePassword}>Generate Password</button>
         </div>
         <p className="copyright">
           &copy;Copyrigt - <a href="https://www.akeditz.com">AK Editz</a>
