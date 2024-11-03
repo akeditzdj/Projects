@@ -19,7 +19,7 @@ const FaqItem = ({ question, answer }) => {
     </div>
   );
 };
-const FaqAccordion = ({data}) => {
+const FaqAccordion = ({ data }) => {
   return (
     <div className="faq-accordion">
       <h2>FAQ's</h2>
@@ -30,39 +30,37 @@ const FaqAccordion = ({data}) => {
   );
 };
 
-
-  const data = [
-    {
-      id: 1,
-      question: "What is your return policy?",
-      answer:
-        "You can return any item within 30 days of purchase for a full refund, provided it is in its original condition.",
-    },
-    {
-      id: 2,
-      question: "How can I track my order?",
-      answer:
-        "Once your order has shipped, you will receive an email with a tracking number. You can use this number on our website to track your shipment.",
-    },
-    {
-      id: 3,
-      question: "What payment methods do you accept?",
-      answer: "We accept major credit cards, PayPal, and Apple Pay.",
-    },
-    {
-      id: 4,
-      question: "How long does shipping take?",
-      answer:
-        "Standard shipping typically takes 5-7 business days, while expedited shipping options are available for faster delivery.",
-    },
-    {
-      id: 5,
-      question: "Do you ship internationally?",
-      answer:
-        "Yes, we offer international shipping to select countries. Additional fees may apply.",
-    },
-  ];
-
+const data = [
+  {
+    id: 1,
+    question: "What is your return policy?",
+    answer:
+      "You can return any item within 30 days of purchase for a full refund, provided it is in its original condition.",
+  },
+  {
+    id: 2,
+    question: "How can I track my order?",
+    answer:
+      "Once your order has shipped, you will receive an email with a tracking number. You can use this number on our website to track your shipment.",
+  },
+  {
+    id: 3,
+    question: "What payment methods do you accept?",
+    answer: "We accept major credit cards, PayPal, and Apple Pay.",
+  },
+  {
+    id: 4,
+    question: "How long does shipping take?",
+    answer:
+      "Standard shipping typically takes 5-7 business days, while expedited shipping options are available for faster delivery.",
+  },
+  {
+    id: 5,
+    question: "Do you ship internationally?",
+    answer:
+      "Yes, we offer international shipping to select countries. Additional fees may apply.",
+  },
+];
 
 function App() {
   return (
