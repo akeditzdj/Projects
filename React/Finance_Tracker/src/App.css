@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  width: 500px;
+  text-align: center;
+}
+.summary {
+  display: flex;
+  justify-content: space-between;
+}
+
+.income {
+  color: green;
+}
+
+.expense {
+  color: red;
+}
+ul {
+  list-style-type: none;
+}
+.transactions {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding: 5px 0;
+}
+
+.transactions ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
