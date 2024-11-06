@@ -1,52 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }
 
 .App {
   width: 500px;
   text-align: center;
+  background-color: #e3e1e1;
+  width: 900px;
+  height: auto;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 600;
+  color: blueviolet;
+}
+
+.balance {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.balance-box h2 {
+  color: white;
+}
+
+.balance-box {
+  width: 250px;
+  height: 100px;
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: blue;
+  border-radius: 5px;
+  filter: drop-shadow(5px 5px 15px #757575);
 }
 .summary {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
 
-.income {
-  color: green;
+.summary div {
+  border: 1px solid #ccc;
+  width: 250px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  filter: drop-shadow(5px 5px 15px #757575);
 }
 
-.expense {
-  color: red;
+.summary div:first-child {
+  background-color: green;
+  color: white;
 }
+.summary div:last-child {
+  background-color: red;
+  color: white;
+}
+
+.transactions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 ul {
   list-style-type: none;
 }
+table {
+  width: auto;
+  height: auto;
+  border-collapse: collapse;
+}
+tr th {
+  border: 1px solid #ccc;
+  padding: 5px;
+  background-color: #0be881;
+}
+tbody tr{
+  transition: 0.3s ease;
+}
+tbody tr td {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
 .transactions {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  width: 100%;
   margin-top: 20px;
-  border-top: 1px solid #ccc;
-  padding: 5px 0;
+}
+tbody tr:hover{
+  background-color: #ccc;
 }
 
-.transactions ul li {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
+.transactions h3 {
+  margin-bottom: 10px;
 }
 
-.actions {
-  display: flex;
-  gap: 10px;
+tbody tr button{
+ border: none;
+  width: 50px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
 }
+
+tbody tr td:nth-child(4) button{
+  background-color: yellow;
+}
+tbody tr td:nth-child(5) button{
+  background-color: red;
+  color: white;
+}
+

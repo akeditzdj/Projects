@@ -80,9 +80,12 @@ function App() {
   return (
     <>
       <div className="App">
-        <h3>Personal Finance Tracker</h3>
+        <h3 className="title">Personal Finance Tracker</h3>
         <div className="balance">
-          <h2>Balance : {balance.toFixed(2)}</h2>
+          <div className="balance-box">
+            <h2>Balance</h2>
+            <h2>{balance.toFixed(2)}</h2>
+          </div>
 
           <div className="summary">
             <div>
@@ -96,7 +99,57 @@ function App() {
             </div>
           </div>
         </div>
+      </div>
 
+      <div className="transactions">
+        <h3>Transactions</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Sl No</th>
+              <th>Transection Name</th>
+              <th>Traansection Amount</th>
+              <th colspan="2">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {transactions.map((transaction, index) => (
+              <tr
+                key={transaction.id}
+                className={transaction.amount > 0 ? `income` : "expense"}
+              >
+                <td>{index + 1}</td>
+                <td>{transaction.description}</td>
+                <td>
+                  {" "}
+                  Rs.
+                  {Math.abs(transaction.amount.toFixed(2))}
+                </td>
+
+                <td>
+                  {" "}
+                  <button
+                    onClick={() => {
+                      handleEditTransaction(transaction.id);
+                    }}
+                  >
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  {" "}
+                  <button
+                    onClick={() => handleDeleteTransaction(transaction.id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="modal">
         <form onSubmit={handleAddTransaction}>
           <div>
             <input
@@ -116,38 +169,6 @@ function App() {
           </div>
           <button type="submit">Add Transaction</button>
         </form>
-
-        <div className="transactions">
-          <h3>Transactions</h3>
-          <ul>
-            {transactions.map((transaction) => (
-              <li
-                key={transaction.id}
-                className={transaction.amount > 0 ? `income` : "expense"}
-              >
-                <span>
-                  {transaction.description} - Rs.
-                  {Math.abs(transaction.amount.toFixed(2))}
-                </span>
-
-                <div className="actions">
-                  <button
-                    onClick={() => {
-                      handleEditTransaction(transaction.id);
-                    }}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    onClick={() => handleDeleteTransaction(transaction.id)}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
     </>
   );
