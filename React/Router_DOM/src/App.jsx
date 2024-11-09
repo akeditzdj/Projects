@@ -14,6 +14,11 @@ import ContactLayout from "./Layout/ContactLayout";
 import Info from "./Components/Info";
 import Form from "./Components/Form";
 import NotFound from "./Pages/NotFound";
+import Users from "./Pages/Users";
+import UserLayout from "./Layout/UserLayout";
+import { userLoader, userSingleLoader } from "./Utils/UserLoader";
+import User from "./Components/User";
+
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -27,6 +32,10 @@ function App() {
         </Route>
         <Route path="login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="users" element={<UserLayout />}>
+          <Route index element={<Users />} loader={userLoader} />
+          <Route path=":id" element={<User />} loader={userSingleLoader} />
+        </Route>
       </Route>
     )
   );

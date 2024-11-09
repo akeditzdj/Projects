@@ -5,13 +5,13 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="navbar navbar-expand-lg bg-body-secondary p-4 top-0 sticky-top">
+    <div className="navbar navbar-expand-lg bg-body-secondary p-3 top-0 sticky-top">
       <div className="container-fluid">
         <a className="navbar-brand fw-bold fs-2" href="#">
           LOGO
         </a>
 
-        <div className="d-flex gap-2">
+        <div className="d-flex justify-content-center align-items-center gap-2">
           <ul className="navbar-nav">
             <NavLink to="/">
               <li className="nav-link">Home</li>
@@ -24,6 +24,9 @@ const Navbar = () => {
             </NavLink>
             <NavLink to="/contact">
               <li className="nav-link">Contact</li>
+            </NavLink>
+            <NavLink to="/users">
+              <li className="nav-link">Users</li>
             </NavLink>
           </ul>
 

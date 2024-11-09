@@ -3,7 +3,7 @@ const Info = () => {
     <div className="container">
       <div className="row mt-3">
         <div className="col-md-12 mb-4">
-          <div className="contact-info">
+          <div className="contact-info shadow bg-dark-subtle">
             <h4>Contact Information</h4>
             <p>
               <strong>Email:</strong> contact@yourwebsite.com

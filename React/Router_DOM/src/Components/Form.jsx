@@ -1,6 +1,6 @@
 const Form = () => {
   return (
-    <div className="container form-container">
+    <div className="container form-container rounded mt-3 shadow bg-dark-subtle">
       <div className="row mt-3">
         <div className="col-md-12 mb-4">
           <div className="contact-form">

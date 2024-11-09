@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <div className="container">
       <h1 className="mt-2 text-center">Contact</h1>
-      <div className="text-center mt-4 d-flex justify-content-center align-items-center gap-2">
+      <div className="text-center mt-3 d-flex justify-content-center align-items-center gap-2">
         <button className="btn btn-primary" onClick={() => navigate("info")}>
           Contact Info
         </button>

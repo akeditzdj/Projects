@@ -8,7 +8,7 @@ const Home = () => {
       <div className="container mt-0">
         <div className="container-fluid w-75">
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-12">
               <h1 className="mt-5">Welcome to Modern Business</h1>
             </div>
           </div>

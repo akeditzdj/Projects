@@ -4,7 +4,11 @@ import img3 from "/images/Banner-3.jpg";
 const Carousel = () => {
   return (
     <div>
-      <div id="carousel" className="carousel slide">
+      <div
+        id="carousel"
+        className="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
         <div className="carousel-indicators">
           <button
             type="button"
