@@ -14,7 +14,7 @@ const Login = () => {
       <div className="form w-100  p-4">
         <div className="row mb-4">
           <div className="col input-group input-group-lg">
-            <i className="fa-solid fa-user input-group-text"></i>
+            <i className="bi bi-person-fill input-group-text"></i>
             <input
               className="form-control form-control-lg"
               type="text"
@@ -26,7 +26,7 @@ const Login = () => {
         </div>
         <div className="row">
           <div className="col input-group input-group-lg">
-            <i className="bi bi-lock input-group-text"></i>
+            <i className="bi bi-lock-fill input-group-text"></i>
             <input
               className="form-control form-control-lg"
               type="password"
@@ -51,7 +51,7 @@ const Login = () => {
         </div>
         <div className="row mt-2 border-bottom border-1 border-dark-subtle">
           <div className="col mb-3 btn-group">
-            <button className="btn btn-success ps-3 pe-3">Login</button>
+            <button className="btn btn-success">Login</button>
             <button className="btn text-white">Login with Facebook</button>
           </div>
         </div>

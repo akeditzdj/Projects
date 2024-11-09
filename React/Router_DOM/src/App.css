@@ -65,6 +65,7 @@ body {
   color: #3c88cb;
 }
 
-.login-box .btn-group:nth-child(2) {
+.login-box .btn-group:nth-child(1) {
   background-color: #3c88cb;
+  width: auto !important;
 }
