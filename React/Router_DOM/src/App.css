@@ -57,3 +57,14 @@ body {
 .pb4 {
   width: 90%;
 }
+
+.login-box {
+  width: 750px;
+}
+.login-box h3 {
+  color: #3c88cb;
+}
+
+.login-box .btn-group:nth-child(2) {
+  background-color: #3c88cb;
+}

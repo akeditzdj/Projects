@@ -1,6 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import Login from "../Pages/Login";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="navbar navbar-expand-lg bg-body-secondary p-4">
       <div className="container-fluid">
@@ -24,7 +27,9 @@ const Navbar = () => {
             </NavLink>
           </ul>
 
-          <button className="btn btn-primary">Login</button>
+          <button onClick={navigate(login)} className="btn btn-primary">
+            Login
+          </button>
         </div>
       </div>
     </div>
