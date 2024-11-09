@@ -4,12 +4,8 @@ import Login from "../Pages/Login";
 const Navbar = () => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate("/login");
-  };
-
   return (
-    <div className="navbar navbar-expand-lg bg-body-secondary p-4">
+    <div className="navbar navbar-expand-lg bg-body-secondary p-4 top-0 sticky-top">
       <div className="container-fluid">
         <a className="navbar-brand fw-bold fs-2" href="#">
           LOGO
@@ -31,7 +27,10 @@ const Navbar = () => {
             </NavLink>
           </ul>
 
-          <button onClick={handleClick} className="btn btn-primary">
+          <button
+            onClick={() => navigate("/login", { replace: true })}
+            className="btn btn-primary"
+          >
             Login
           </button>
         </div>

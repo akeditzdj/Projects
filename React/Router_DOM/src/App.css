@@ -11,12 +11,18 @@ body {
   width: 100vw;
   height: 100vh;
 }
-.navbar ul a {
+
+a {
   text-decoration: none;
 }
 
 .navbar-nav li a.active {
   color: red;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
 }
 
 .container h3 {
@@ -64,8 +70,17 @@ body {
 .login-box h3 {
   color: #3c88cb;
 }
-
-.login-box .btn-group:nth-child(1) {
-  background-color: #3c88cb;
-  width: auto !important;
+.form-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
 }
+.form-container form {
+  width: 400px;
+}
+.error-container {
+ width: 100%;
+  height: 100%;
+}
+

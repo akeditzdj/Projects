@@ -50,9 +50,11 @@ const Login = () => {
           </div>
         </div>
         <div className="row mt-2 border-bottom border-1 border-dark-subtle">
-          <div className="col mb-3 btn-group">
+          <div className="col mb-3">
             <button className="btn btn-success">Login</button>
-            <button className="btn text-white">Login with Facebook</button>
+            <button className="btn btn-primary ms-3">
+              Login with Facebook
+            </button>
           </div>
         </div>
         <div className="row mt-3">
