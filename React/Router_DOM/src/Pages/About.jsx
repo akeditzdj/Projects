@@ -12,7 +12,7 @@ const About = () => {
                   className="img-fluid rounded ms-4"
                   width="170px"
                   height="150px"
-                  src={profile}
+                  src="images/man-1.png"
                   alt=""
                 />
               </div>
@@ -45,7 +45,7 @@ const About = () => {
                   aria-valuemin="0"
                   aria-valuemax="100"
                 >
-                  <div className="progress-bar"></div>
+                  <div className="progress-bar pb1"></div>
                 </div>
               </div>
               <div className="mt-3 mb-4">
@@ -58,7 +58,7 @@ const About = () => {
                   aria-valuemin="0"
                   aria-valuemax="100"
                 >
-                  <div className="progress-bar"></div>
+                  <div className="progress-bar pb2"></div>
                 </div>
               </div>
               <div className="mt-3 mb-4">
@@ -71,7 +71,7 @@ const About = () => {
                   aria-valuemin="0"
                   aria-valuemax="100"
                 >
-                  <div className="progress-bar"></div>
+                  <div className="progress-bar pb3"></div>
                 </div>
               </div>
               <div className="mt-3 mb-4">
@@ -84,7 +84,7 @@ const About = () => {
                   aria-valuemin="0"
                   aria-valuemax="100"
                 >
-                  <div className="progress-bar"></div>
+                  <div className="progress-bar pb4"></div>
                 </div>
               </div>
             </div>
