@@ -50,7 +50,7 @@ const Form = () => {
                   className="form-control"
                   id="message"
                   name="message"
-                  rows="5"
+                  rows="2"
                   required
                 ></textarea>
               </div>

@@ -18,6 +18,7 @@ import Users from "./Pages/Users";
 import UserLayout from "./Layout/UserLayout";
 import { userLoader, userSingleLoader } from "./Utils/UserLoader";
 import User from "./Components/User";
+import ErrorPage from "./Components/ErrorPage";
 
 function App() {
   const router = createBrowserRouter(
@@ -32,7 +33,11 @@ function App() {
         </Route>
         <Route path="login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="users" element={<UserLayout />}>
+        <Route
+          path="users"
+          element={<UserLayout />}
+          errorElement={<ErrorPage />}
+        >
           <Route index element={<Users />} loader={userLoader} />
           <Route path=":id" element={<User />} loader={userSingleLoader} />
         </Route>
