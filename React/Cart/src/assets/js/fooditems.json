@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "name": "Hyderabadi Chicken Biryani",
+    "category": "Biryani",
+    "price": 350,
+    "offer_price": 300,
+    "ratings": 4.5,
+    "img": "https://www.indianhealthyrecipes.com/wp-content/uploads/2022/02/hyderabadi-biryani-recipe-chicken.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Mutton Biryani",
+    "category": "Biryani",
+    "price": 450,
+    "offer_price": 400,
+    "ratings": 4.7,
+    "img": "https://media.istockphoto.com/id/980036908/photo/gosht-or-lamb-biryani-prepared-in-basmati-rice-served-with-yogurt-dip-in-terracotta-bowl.jpg?s=612x612&w=0&k=20&c=645rawxal6FWadH0M_AKKQV_4hlOR3kNLLzi67e6tyI="
+  },
+  {
+    "id": 3,
+    "name": "Prawn Biryani",
+    "category": "Biryani",
+    "price": 500,
+    "offer_price": 450,
+    "ratings": 4.6,
+    "img": "https://www.cubesnjuliennes.com/wp-content/uploads/2020/12/Prawn-Biryani-Recipe.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Vegetable Biryani",
+    "category": "Biryani",
+    "price": 300,
+    "offer_price": 250,
+    "ratings": 4.4,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1Ja24UiG96COANQY6LXyBO8eDYqBxYweOoQ&s"
+  },
+  {
+    "id": 5,
+    "name": "Egg Biryani",
+    "category": "Biryani",
+    "price": 280,
+    "offer_price": 240,
+    "ratings": 4.3,
+    "img": "https://www.indianhealthyrecipes.com/wp-content/uploads/2020/02/instant-pot-egg-biryani.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Fish Biryani",
+    "category": "Biryani",
+    "price": 450,
+    "offer_price": 400,
+    "ratings": 4.5,
+    "img": "https://media.istockphoto.com/id/1334383300/photo/fish-biryani-spicy-and-delicious-malabar-biryani-or-hydrabadi-biryani-dum-biriyani.jpg?s=612x612&w=0&k=20&c=NHYmMWB3wFbILekgO0d9gEfDcOXTi-c9q-E0yT3Y9lU="
+  },
+  {
+    "id": 7,
+    "name": "Keema Biryani",
+    "category": "Biryani",
+    "price": 400,
+    "offer_price": 350,
+    "ratings": 4.6,
+    "img": "https://i0.wp.com/kalimirchbysmita.com/wp-content/uploads/2018/06/Keema-Biryani-Insta-01.jpg?resize=1537%2C1024"
+  },
+  {
+    "id": 8,
+    "name": "Beef Biryani",
+    "category": "Biryani",
+    "price": 480,
+    "offer_price": 430,
+    "ratings": 4.7,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh4heBKn8mMJz00VVuP1hl2Qd7IVegxGisJw&s"
+  },
+  {
+    "id": 9,
+    "name": "Kolkata Biryani",
+    "category": "Biryani",
+    "price": 400,
+    "offer_price": 350,
+    "ratings": 4.5,
+    "img": "https://media.istockphoto.com/id/1328536877/photo/delicious-mutton-biryani-served-in-black-pot-with-raita-kolkata-style-dum-biryani-with-mutton.jpg?s=612x612&w=0&k=20&c=MSQMxoD2AkH36lA1M1oIwWYKQk3jdJ8xxGaFgL2MyQY="
+  },
+  {
+    "id": 10,
+    "name": "Chicken Dum Biryani",
+    "category": "Biryani",
+    "price": 370,
+    "offer_price": 320,
+    "ratings": 4.4,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwLcjzfW_Wx_jh7swBDD9xC3WD4CqAQqarFA&s"
+  },
+  {
+    "id": 11,
+    "name": "Vanilla Ice Cream",
+    "category": "Ice Cream",
+    "price": 150,
+    "offer_price": 120,
+    "ratings": 4.5,
+    "img": "https://media.istockphoto.com/id/1326143969/photo/bowl-with-vanilla-ice-cream-balls.jpg?s=612x612&w=0&k=20&c=WxEriNEK7yW7F4AWImLQRrpco-R_bdDYEQoyhigu9fc="
+  },
+  {
+    "id": 12,
+    "name": "Chocolate Ice Cream",
+    "category": "Ice Cream",
+    "price": 180,
+    "offer_price": 150,
+    "ratings": 4.8,
+    "img": "https://veenaazmanov.com/wp-content/uploads/2017/07/Homemade-Chocolate-Ice-Cream-3.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Strawberry Ice Cream",
+    "category": "Ice Cream",
+    "price": 170,
+    "offer_price": 140,
+    "ratings": 4.4,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSjtuMumQSNfewX0O_SPc2Hjp89OIJWS5Njw&s"
+  },
+  {
+    "id": 14,
+    "name": "Mint Chocolate Chip Ice Cream",
+    "category": "Ice Cream",
+    "price": 200,
+    "offer_price": 170,
+    "ratings": 4.6,
+    "img": "https://media.gettyimages.com/id/157607284/photo/mint-chocolate-ice-cream-sundae.jpg?s=612x612&w=gi&k=20&c=a-ycRjiJGhoVt3YFEGYsHNqO610gN6OkNv3xl7n1vnk="
+  },
+  {
+    "id": 15,
+    "name": "Butterscotch Ice Cream",
+    "category": "Ice Cream",
+    "price": 160,
+    "offer_price": 130,
+    "ratings": 4.5,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-INC8Uxem8uE4TAKRkFweuiW_FEwCUnLqaA&s"
+  },
+  {
+    "id": 16,
+    "name": "Mango Ice Cream",
+    "category": "Ice Cream",
+    "price": 190,
+    "offer_price": 160,
+    "ratings": 4.7,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROTKBXfewUARNFuwNcdvwbdL_4Zr96exbnDA&s"
+  },
+  {
+    "id": 17,
+    "name": "Coffee Ice Cream",
+    "category": "Ice Cream",
+    "price": 200,
+    "offer_price": 170,
+    "ratings": 4.4,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTP4mmLAaLL2zSyyxPdssV4QGxuZRDjQGQeg&s"
+  },
+  {
+    "id": 18,
+    "name": "Rocky Road Ice Cream",
+    "category": "Ice Cream",
+    "price": 220,
+    "offer_price": 190,
+    "ratings": 4.6,
+    "img": "https://celebratingsweets.com/wp-content/uploads/2021/04/Rocky-Road-Ice-Cream-1-5.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Pistachio Ice Cream",
+    "category": "Ice Cream",
+    "price": 210,
+    "offer_price": 180,
+    "ratings": 4.5,
+    "img": "https://media.istockphoto.com/id/952495340/photo/homemade-green-pistachio-ice-cream.jpg?s=612x612&w=0&k=20&c=s4A4qLElM9iDpix_B5V9lmLG6ANOdS8lzvDiXamPelY="
+  },
+  {
+    "id": 20,
+    "name": "Cookies and Cream Ice Cream",
+    "category": "Ice Cream",
+    "price": 230,
+    "offer_price": 200,
+    "ratings": 4.9,
+    "img": "https://media.istockphoto.com/id/154245754/photo/real-gourmet-ice-cream.jpg?s=612x612&w=0&k=20&c=QN9crvD_if0d3brbqjlCeEiBK247WYLxwkp9si6txXE="
+  },
+  {
+    "id": 21,
+    "name": "Chocolate Cake",
+    "category": "Cake",
+    "price": 500,
+    "offer_price": 450,
+    "ratings": 4.8,
+    "img": "https://mrbrownbakery.com/image/images/GJ7uCwGiteTF24HTWBclkziVTdhpQeZWH23MvQfq.jpeg?p=full"
+  },
+  {
+    "id": 22,
+    "name": "Vanilla Sponge Cake",
+    "category": "Cake",
+    "price": 400,
+    "offer_price": 350,
+    "ratings": 4.5,
+    "img": "https://media.istockphoto.com/id/469754503/photo/homemade-sponge-cake.jpg?s=612x612&w=0&k=20&c=WEY86ymyGlvrKYGkmEq9EK_icpMfZKNWz1B8Smh4RZE="
+  },
+  {
+    "id": 23,
+    "name": "Red Velvet Cake",
+    "category": "Cake",
+    "price": 550,
+    "offer_price": 500,
+    "ratings": 4.9,
+    "img": "https://i.ytimg.com/vi/vGE-RfP6KRE/maxresdefault.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Carrot Cake",
+    "category": "Cake",
+    "price": 480,
+    "offer_price": 430,
+    "ratings": 4.4,
+    "img": "https://static01.nyt.com/images/2020/11/01/dining/Carrot-Cake-textless/Carrot-Cake-textless-threeByTwoMediumAt2X.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Lemon Cake",
+    "category": "Cake",
+    "price": 420,
+    "offer_price": 370,
+    "ratings": 4.6,
+    "img": "https://i.pinimg.com/736x/a0/e2/a6/a0e2a65b9d7cb612a82e84dceba647a6.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Cheesecake",
+    "category": "Cake",
+    "price": 600,
+    "offer_price": 550,
+    "ratings": 4.7,
+    "img": "https://cakesbymk.com/wp-content/uploads/2023/11/Template-Size-for-Blog-Photos-24.jpg"
+  },
+  {
+    "id": 27,
+    "name": "Black Forest Cake",
+    "category": "Cake",
+    "price": 520,
+    "offer_price": 470,
+    "ratings": 4.5,
+    "img": "https://www.hotbreads.co.in/cdn/shop/products/0I4A5479copy_1000x1000.jpg?v=1641168101"
+  },
+  {
+    "id": 28,
+    "name": "Pineapple Cake",
+    "category": "Cake",
+    "price": 450,
+    "offer_price": 400,
+    "ratings": 4.3,
+    "img": "https://i.ytimg.com/vi/gIpKJqpzTXY/maxresdefault.jpg"
+  },
+  {
+    "id": 29,
+    "name": "Funfetti Cake",
+    "category": "Cake",
+    "price": 480,
+    "offer_price": 430,
+    "ratings": 4.9,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIJSzrS_ww71aOF4arG3Lp4QGxKN6-QvGS6Q&s"
+  },
+  {
+    "id": 30,
+    "name": "Matcha Green Tea Cake",
+    "category": "Cake",
+    "price": 550,
+    "offer_price": 500,
+    "ratings": 4.4,
+    "img": "https://img.freepik.com/free-photo/green-tea-cakes_74190-238.jpg"
+  },
+  {
+    "id": 31,
+    "name": "Chicken Kathi Roll",
+    "category": "Roll",
+    "price": 200,
+    "offer_price": 180,
+    "ratings": 4.5,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT29Gi1sUEjmwwMVCUvJnoTMK7xV8o0SwvJAw&s"
+  },
+  {
+    "id": 32,
+    "name": "Paneer Tikka Roll",
+    "category": "Roll",
+    "price": 180,
+    "offer_price": 160,
+    "ratings": 4.7,
+    "img": "https://spicecravings.com/wp-content/uploads/2020/12/Paneer-kathi-Roll-Featured-1.jpg"
+  },
+  {
+    "id": 33,
+    "name": "Egg Roll",
+    "category": "Roll",
+    "price": 150,
+    "offer_price": 130,
+    "ratings": 4.4,
+    "img": "https://media.istockphoto.com/id/1409919857/photo/delicious-indian-street-food-egg-rolls-is-ready-to-eat.jpg?s=612x612&w=0&k=20&c=9vbJmMR0mkF8ctKTTthVZITQMezkCPWZvjkOdUgL3KQ="
+  },
+  {
+    "id": 34,
+    "name": "Veg Roll",
+    "category": "Roll",
+    "price": 170,
+    "offer_price": 150,
+    "ratings": 4.3,
+    "img": "https://t3.ftcdn.net/jpg/04/68/60/36/360_F_468603601_Ps563DCSqT74lKG6gdKQ9FqZdzJHOfsS.jpg"
+  },
+  {
+    "id": 35,
+    "name": "Mutton Seekh Roll",
+    "category": "Roll",
+    "price": 220,
+    "offer_price": 200,
+    "ratings": 4.6,
+    "img": "https://c8.alamy.com/comp/F5W34G/mutton-seekh-kabab-with-mint-chutney-isolated-on-white-background-F5W34G.jpg"
+  },
+  {
+    "id": 36,
+    "name": "Cheese Veg Roll",
+    "category": "Roll",
+    "price": 190,
+    "offer_price": 170,
+    "ratings": 4.5,
+    "img": "https://dms.mydukaan.io/original/jpeg/4338846/1f4ed201-cae3-41e6-90b8-319709966f5f/cheese-spring-roll-dcf35ceb-14ee-461c-97e4-dcc83e24e0f6.JPG"
+  },
+  {
+    "id": 37,
+    "name": "Tandoori Chicken Roll",
+    "category": "Roll",
+    "price": 250,
+    "offer_price": 230,
+    "ratings": 4.8,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmYMkkOaMhBmVWDKSc1Iv3eedRfTiPJhbwQg&s"
+  },
+  {
+    "id": 38,
+    "name": "Falafel Roll",
+    "category": "Roll",
+    "price": 180,
+    "offer_price": 160,
+    "ratings": 4.4,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeJbTRqeU3RM1rFcti0xf3vQLM4FJaf4F6wQ&s"
+  },
+  {
+    "id": 39,
+    "name": "Prawn Roll",
+    "category": "Roll",
+    "price": 280,
+    "offer_price": 250,
+    "ratings": 4.9,
+    "img": "https://thumbs.dreamstime.com/b/spring-roll-prawn-popular-appetizer-thai-food-30376036.jpg"
+  },
+  {
+    "id": 40,
+    "name": "Buffalo Chicken Roll",
+    "category": "Roll",
+    "price": 230,
+    "offer_price": 210,
+    "ratings": 4.6,
+    "img": "https://www.thecountrycook.net/wp-content/uploads/2021/02/thumbnail-Buffalo-Chicken-Wraps-scaled.jpg"
+  },
+  {
+    "id": 41,
+    "name": "Cheese Pizza",
+    "category": "Pizza",
+    "price": 250,
+    "offer_price": 230,
+    "ratings": 4.5,
+    "img": "https://media.istockphoto.com/id/1393150881/photo/italian-pizza-margherita-with-cheese-and-tomato-sauce-on-the-board-on-grey-table-macro-close.jpg?s=612x612&w=0&k=20&c=kL0Vhg2XKBjEl__iG8sFv31WTiahdpLc3rTDtNZuD2g="
+  },
+  {
+    "id": 42,
+    "name": "Tomato Basil Pizza",
+    "category": "Pizza",
+    "price": 280,
+    "offer_price": 250,
+    "ratings": 4.4,
+    "img": "https://media.istockphoto.com/id/466149291/photo/italian-pizza-with-cherry-tomatoes.jpg?s=612x612&w=0&k=20&c=lVsLx2tntN48LmjLePZIZw1m68nD1bClP_0yi-ANUMQ="
+  },
+  {
+    "id": 43,
+    "name": "Margarita Pizza",
+    "category": "Pizza",
+    "price": 300,
+    "offer_price": 270,
+    "ratings": 4.6,
+    "img": "https://media.istockphoto.com/id/1168754685/photo/pizza-margarita-with-cheese-top-view-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=psLRwd-hX9R-S_iYU-sihB4Jx2aUlUr26fkVrxGDfNg="
+  },
+  {
+    "id": 44,
+    "name": "Pesto Pizza",
+    "category": "Pizza",
+    "price": 320,
+    "offer_price": 290,
+    "ratings": 4.5,
+    "img": "https://sallysbakingaddiction.com/wp-content/uploads/2022/08/basil-pesto-pizza-3.jpg"
+  },
+  {
+    "id": 45,
+    "name": "Vegetable Pizza",
+    "category": "Pizza",
+    "price": 350,
+    "offer_price": 320,
+    "ratings": 4.3,
+    "img": "https://cdn.loveandlemons.com/wp-content/uploads/2023/02/vegetarian-pizza.jpg"
+  },
+  {
+    "id": 46,
+    "name": "Garlic Pizza",
+    "category": "Pizza",
+    "price": 240,
+    "offer_price": 220,
+    "ratings": 4.4,
+    "img": "https://www.recipetineats.com/uploads/2023/05/Garlic-cheese-pizza_9.jpg"
+  },
+  {
+    "id": 47,
+    "name": "Olive Pizza",
+    "category": "Pizza",
+    "price": 330,
+    "offer_price": 300,
+    "ratings": 4.5,
+    "img": "https://media.istockphoto.com/id/861661836/photo/pizza-pepperoni-with-black-olives.jpg?s=612x612&w=0&k=20&c=Ma0YPahiY_RB9oEVU0kOZx_uTtvCdQF2IriizSgp34A="
+  },
+  {
+    "id": 48,
+    "name": "Simple Veg Pizza",
+    "category": "Pizza",
+    "price": 260,
+    "offer_price": 240,
+    "ratings": 4.2,
+    "img": "https://www.vegrecipesofindia.com/wp-content/uploads/2020/11/pizza-recipe.jpg"
+  },
+  {
+    "id": 49,
+    "name": "Classic Cheese and Tomato Pizza",
+    "category": "Pizza",
+    "price": 290,
+    "offer_price": 260,
+    "ratings": 4.8,
+    "img": "https://www.shutterstock.com/image-photo/pizza-cheese-isolated-on-white-600nw-1074752555.jpg"
+  },
+  {
+    "id": 50,
+    "name": "Plain Pizza",
+    "category": "Pizza",
+    "price": 230,
+    "offer_price": 210,
+    "ratings": 4.3,
+    "img": "https://media.istockphoto.com/id/1273709352/photo/pizza.jpg?s=612x612&w=0&k=20&c=6gNg2UHY55hgqpmXmo7nmsICSX1lYSkRr3MBQxpYRiw="
+  }
+]

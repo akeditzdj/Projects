@@ -40,7 +40,8 @@ ul li {
   align-items: center;
 }
 .navbar h1 {
-  color: orangered;
+  color: #fff;
+  font-weight: bold;
 }
 
 .navbar ul {
@@ -50,7 +51,7 @@ ul li {
   gap: 20px;
 }
 .navbar ul a {
-  color: orangered;
+  color: #fff;
   font-weight: 500;
   transition: 0.3s ease;
 }
@@ -82,14 +83,14 @@ ul li {
 }
 
 .navbar ul a.active {
-  color: #333;
+  color: #eaff00;
 }
 
 .navbar ul button {
   width: 70px;
   height: 30px;
-  background-color: orangered;
-  border: none;
+  background-color: transparent;
+  border: 2px solid #fff;
   border-radius: 5px;
   color: #fff;
   font-weight: bold;
@@ -98,7 +99,6 @@ ul li {
 }
 
 .navbar ul button:hover {
-  background-color: transparent;
-  border: 1px solid orangered;
+  background-color: #fff;
   color: orangered;
 }

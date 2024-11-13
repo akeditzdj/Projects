@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="navbar">
+    <div className="navbar top-0 sticky-top">
       <div className="nav-items">
         <div>
           <a href="#">
