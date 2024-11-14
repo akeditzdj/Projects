@@ -12,6 +12,10 @@
   color: white;
 }
 
+h1 {
+  color: #fe5005;
+}
+
 .offcanvas-header img {
   width: 70px;
 }
@@ -775,7 +779,7 @@ h2 {
   margin-bottom: 15px;
 }
 
-p {
+.left-column p {
   margin-bottom: 15px;
   font-size: 1em;
   line-height: 1.6;
@@ -801,4 +805,67 @@ a:hover {
     width: 100%;
     margin-bottom: 20px;
   }
+}
+
+.product-details-box {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 20px;
+}
+
+.product-details-box .product-details-img {
+  width: 50%;
+  height: 500px;
+}
+.product-details-box .product-details-content {
+  width: 50%;
+  height: auto;
+}
+
+.product-details-box .product-details-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.product-details-box .product-details-content button {
+  background-color: #fe5005;
+  color: #ffff;
+  border: none;
+  padding: 8px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.product-details-box .product-details-content button:hover {
+  background-color: rgba(255, 68, 0, 0.407);
+}
+
+.star-rating {
+  color: #fe5005; /* Yellow for the stars */
+  margin-top: 10px;
+}
+
+.star {
+  margin-right: 2px;
+  font-size: 30px;
+}
+
+.star.full {
+  color: #fe5005; /* Full star in yellow */
+}
+
+.star.half {
+  color: #fe50058b; /* Half star in light yellow */
+}
+
+.star.empty {
+  color: #fff; /* Empty star in gray */
 }
