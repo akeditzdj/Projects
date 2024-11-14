@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../assets/css/style.css";
+import Poster from "../Components/Poster";
 
 const ContactInfo = () => (
   <section className="contact-info">
@@ -161,7 +162,7 @@ const Contact = () => {
 
   return (
     <div className="contact-container">
-      <div className="container d-flex justify-content-center align-items-center gap-3">
+      <div className="container d-flex justify-content-center gap-3">
         <ContactInfo />
         <ContactForm
           formData={formData}
@@ -169,8 +170,11 @@ const Contact = () => {
           handleSubmit={handleSubmit}
         />
       </div>
-      <InvestorQueries />
-      <PublicRelations />
+      <div className="d-flex justify-content-center container">
+        <InvestorQueries />
+        <PublicRelations />
+      </div>
+      <Poster />
     </div>
   );
 };
