@@ -5,9 +5,9 @@ const Navbar = () => {
     <div className="navbar top-0 sticky-top">
       <div className="nav-items">
         <div>
-          <a href="#">
+          <NavLink to="/">
             <img src={Logo} alt="Swiggy Logo" />
-          </a>
+          </NavLink>
         </div>
         <div>
           <ul>
