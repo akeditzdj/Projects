@@ -1,3 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Universal Style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Navbar */
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.navbar {
+  width: 100%;
+  height: auto;
+  background-color: #fe5005;
+}
+
 .offcanvas-body,
 .offcanvas-header {
   background-color: #fe5005;
@@ -7,7 +30,21 @@
 .offcanvas-header img {
   width: 70px;
 }
+.navbar-brand .logo-1 {
+  width: 50px;
+  height: auto;
+  border: 2px solid #ffff;
+  border-radius: 15px;
+}
+.navbar-brand .logo-2 {
+  width: 90px;
+  height: auto;
+}
 
+.navbar-nav li a {
+  font-size: 13px;
+  font-weight: 600;
+}
 .icon .cart,
 .icon .fav {
   position: relative;
@@ -37,6 +74,39 @@
   font-size: 14px;
   left: 22px;
   top: -5px;
+}
+.dropdown-menu li a:hover {
+  background-color: #fe5005;
+  color: white;
+}
+
+/* Header */
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: #fe5005;
+}
+.header img {
+  margin-top: 15px;
+}
+
+/* Nav-pills Button */
+
+.nav-pills .nav-item button {
+  width: 200px;
+  height: 45px;
+  border-radius: 50px;
+  background-color: transparent !important;
+  border: 1px solid #8d8a8a;
+  color: #525050;
+}
+
+.nav-pills .nav-item button.active {
+  background-color: #fe5005 !important ;
+  color: #ffff;
+  border: none;
 }
 
 /* Food Items header */
@@ -195,12 +265,8 @@ select option {
 
 /* Blog */
 
-.blog {
-  width: 50% !important;
-}
-
 .blog .card {
-  width: 300px;
+  width: 400px;
   height: auto;
   border-radius: 25px;
 }
@@ -272,6 +338,19 @@ footer .app-link img {
 /* Responsive Multiple Device Style */
 
 @media (max-width: 1200px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+    background-color: #fe5005;
+  }
+
+  .header {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #fe5005;
+  }
+
   .food-items-header {
     width: 100%;
     margin: 0 auto;
@@ -290,6 +369,23 @@ footer .app-link img {
 }
 
 @media (max-width: 900px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+    background-color: #fe5005;
+  }
+
+  .header {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #fe5005;
+  }
+  .header img {
+    width: 250px;
+    height: auto;
+  }
+
   .header .header-content p {
     width: 100%;
   }
@@ -311,6 +407,21 @@ footer .app-link img {
 }
 
 @media (max-width: 600px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+    background-color: #fe5005;
+  }
+  .header {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #fe5005;
+  }
+  .header img {
+    width: 100%;
+    height: auto;
+  }
   .food-items-header {
     width: 100%;
     margin: 0 auto;
