@@ -6,7 +6,7 @@ const Products = () => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [foodItems, setFoodItems] = useState([]);
-  const [priceRange, setPriceRange] = useState(130);
+  const [priceRange, setPriceRange] = useState(300);
 
   // Example categories
   const categories = [...new Set(foodData.map((item) => item.category))];

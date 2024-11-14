@@ -122,6 +122,8 @@ select option {
   width: 300px;
   height: 200px;
   overflow: hidden;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .card .card-body {
   background-color: #fe5005;
@@ -219,7 +221,7 @@ select option {
 
 .blog .card {
   width: 400px;
-  height: auto;
+  height: 450px;
   border-radius: 25px;
 }
 .blog .card .card-img-top {
@@ -233,6 +235,12 @@ select option {
 }
 .blog .card img:hover {
   scale: 1.4;
+}
+
+.blog button.active {
+  background-color: #fe5005;
+  border: none;
+  color: #fff;
 }
 
 .section-break {
@@ -602,22 +610,32 @@ span {
 
 /* Contact Page Styles */
 .contact-container {
-  background-color: #f7f7f7;
   padding: 50px 0;
+  width: 100%;
 }
 
+.contact-container {
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 68, 0, 0.356),
+    rgb(224, 214, 214),
+    rgb(255, 255, 255)
+  );
+  width: 100%;
+}
 .contact-info,
 .contact-form {
   padding: 30px;
   margin-bottom: 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+}
+.contact-container .contact-form {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-h2,
-h3,
-h4 {
+.contact-container h2,
+.contact-container h3,
+.contact-container h4 {
   color: #333;
 }
 
@@ -632,7 +650,7 @@ h4 {
 }
 
 .contact-info a {
-  color: #555;
+  color: orangered;
   text-decoration: none;
   background-color: transparent;
 }
@@ -653,7 +671,6 @@ h4 {
 
 label {
   display: block;
-  font-weight: bold;
   margin-bottom: 8px;
   color: #555;
 }
@@ -666,7 +683,7 @@ textarea {
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 input[type="text"]:focus,
@@ -680,7 +697,7 @@ textarea {
   resize: vertical;
 }
 
-button {
+.contact-container button {
   background-color: #fe5005;
   color: #ffff;
   border: none;
@@ -691,7 +708,7 @@ button {
 }
 
 button:hover {
-  background-color: #005bb5;
+  background-color: rgba(255, 68, 0, 0.407);
 }
 
 .form-group p {
@@ -703,16 +720,10 @@ button:hover {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #0066cc;
   color: white;
   border-radius: 4px;
   text-decoration: none;
 }
-
-.get-directions:hover {
-  background-color: #005bb5;
-}
-
 @media (max-width: 768px) {
   .container {
     width: 90%;
@@ -731,44 +742,45 @@ button:hover {
   }
 }
 
-
-.left-column, .right-column {
-    flex: 1;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+.left-column,
+.right-column {
+  flex: 1;
+  border-radius: 8px;
+  padding: 20px;
 }
-
+.public {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 h2 {
-    color: #333;
-    font-size: 1.5em;
-    margin-bottom: 15px;
+  color: #333;
+  font-size: 1.5em;
+  margin-bottom: 15px;
 }
 
 p {
-    margin-bottom: 15px;
-    font-size: 1em;
-    line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 1em;
+  line-height: 1.6;
 }
 
 a {
-    color: #0066cc;
-    text-decoration: none;
+  color: orangered;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .left-column, .right-column {
-        width: 100%;
-        margin-bottom: 20px;
-    }
+  .left-column,
+  .right-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }

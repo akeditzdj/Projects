@@ -170,7 +170,7 @@ const Contact = () => {
           handleSubmit={handleSubmit}
         />
       </div>
-      <div className="d-flex justify-content-center container">
+      <div className="d-flex justify-content-center container public">
         <InvestorQueries />
         <PublicRelations />
       </div>
