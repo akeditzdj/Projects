@@ -2,25 +2,30 @@ import React, { useState } from "react";
 import Logo from "../assets/images/logo.webp";
 import { NavLink } from "react-router-dom";
 
-const Login = () => {
+const SignUp = () => {
+  // State for the form data
   const [formData, setFormData] = useState({
-    phoneNumber: "",
-    name: "",
-    email: "",
+    phoneNumber: "", // Initial value for phone number
+    referralCode: "", // Placeholder for referral code if needed
   });
 
+  // Handle input change for form fields
   const handleInputChange = (e) => {
     const { id, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
+    setFormData({
+      ...formData,
       [id]: value,
-    }));
+    });
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add form submission logic here
-    console.log(formData);
+
+    // You can add further validation or form submission logic here
+    console.log("Form submitted with data:", formData);
+
+    // For example, after successful form submission, you can reset the form or redirect the user
   };
 
   return (
@@ -29,11 +34,11 @@ const Login = () => {
         <div className="logo-container">
           <img src={Logo} alt="Logo" />
           <div className="heading-container">
-            <h2>Login</h2>
+            <h2>Sign Up</h2>
             <p>
               or{" "}
-              <NavLink to="/signup">
-                <span>Create a new account</span>
+              <NavLink to="/login">
+                <span>already have an account? Login</span>
               </NavLink>
             </p>
             <hr />
@@ -54,28 +59,16 @@ const Login = () => {
         <div className="row">
           <input
             type="text"
-            id="name"
-            value={formData.name}
+            id="referralCode"
+            value={formData.referralCode}
             onChange={handleInputChange}
-            required
           />
-          <label htmlFor="name">Name</label>
-        </div>
-
-        <div className="row">
-          <input
-            type="email"
-            id="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-          />
-          <label htmlFor="email">Email</label>
+          <label htmlFor="referralCode">Referral Code (Optional)</label>
         </div>
 
         <h5>Have a referral code?</h5>
 
-        <input type="submit" value="LOG IN" />
+        <input type="submit" value="SIGN UP" />
 
         <div className="footer">
           <p>
@@ -88,4 +81,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;

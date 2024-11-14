@@ -460,11 +460,18 @@ footer .app-link img {
   animation: slideUp 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; /* Apply slide-up animation */
 }
 
-form {
-  width: 400px;
+.login-form-container {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  margin: 50px auto;
 }
 
-.form-container form input {
+.login-form-container form {
+  width: 100%;
+}
+
+.login-form-container form input {
   width: 100%;
   height: 70px;
   outline: none;
@@ -477,7 +484,7 @@ form input[id="email"] {
   border-top: none;
 }
 
-.form-container form label {
+.login-form-container form label {
   position: absolute;
   display: block;
   margin-top: 15px;
@@ -493,7 +500,7 @@ form input:valid + label {
   font-size: 12px;
 }
 
-.form-container h5 {
+.login-form-container h5 {
   margin-top: 30px;
   font-size: 14px;
   font-weight: 400;
@@ -501,7 +508,7 @@ form input:valid + label {
   cursor: pointer;
 }
 
-.form-container input[type="submit"] {
+.login-form-container input[type="submit"] {
   width: 100%;
   height: 50px;
   border: none;
@@ -514,44 +521,44 @@ form input:valid + label {
   cursor: pointer;
 }
 
-.form-container .footer p,
+.login-form-container .footer p,
 span {
   font-size: 11px;
   color: #5e5b5b;
 }
-.form-container .footer span {
+.login-form-container .footer span {
   font-size: 11px;
   color: black;
 }
 
-.form-container {
+.login-form-container {
   width: 400px;
   padding: 10px;
   position: relative;
   padding: 20px 35px;
 }
-.form-container i {
+.login-form-container i {
   font-size: 24px;
   margin-bottom: 20px;
   cursor: pointer;
 }
-.form-container h2 {
+.login-form-container h2 {
   font-size: 29px;
   font-weight: 500;
 }
 
-.form-container p {
+.login-form-container p {
   margin-top: 8px;
   font-size: 13px;
 }
-.form-container span {
+.login-form-container span {
   margin-top: 8px;
   font-size: 13px;
   color: rgb(241, 90, 9);
   cursor: pointer;
 }
 
-.form-container img {
+.login-form-container img {
   width: 80px;
   height: 80px;
   position: absolute;
@@ -559,7 +566,7 @@ span {
   top: 15px;
 }
 
-.form-container hr {
+.login-form-container hr {
   margin-top: 20px;
   width: 9%;
   height: 3px;
