@@ -9,6 +9,19 @@ const Login = () => {
     email: "",
   });
 
+  const [errors, setErrors] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.phoneNumber.match(/^[0-9]{10}$/)) {
+      newErrors.phoneNumber = "Please enter a valid 10-digit phone number.";
+    }
+    // Add more validations as needed for email, name, etc.
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     setFormData((prevData) => ({
@@ -17,10 +30,16 @@ const Login = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add form submission logic here
-    console.log(formData);
+    if (!validate()) return; // Stop if there are validation errors
+
+    setIsLoading(true);
+    // Simulate a form submission (e.g., API call)
+    setTimeout(() => {
+      console.log(formData); // Handle form submission logic here
+      setIsLoading(false);
+    }, 2000);
   };
 
   return (
@@ -47,35 +66,22 @@ const Login = () => {
             value={formData.phoneNumber}
             onChange={handleInputChange}
             required
+            aria-describedby="phoneError"
           />
           <label htmlFor="phoneNumber">Phone Number</label>
+          {errors.phoneNumber && (
+            <p id="phoneError" className="error-message mt-2 ">
+              {errors.phoneNumber}
+            </p>
+          )}
+          <p>
+            <a href="#">Forgot Password</a>
+          </p>
         </div>
 
-        <div className="row">
-          <input
-            type="text"
-            id="name"
-            value={formData.name}
-            onChange={handleInputChange}
-            required
-          />
-          <label htmlFor="name">Name</label>
-        </div>
-
-        <div className="row">
-          <input
-            type="email"
-            id="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-          />
-          <label htmlFor="email">Email</label>
-        </div>
-
-        <h5>Have a referral code?</h5>
-
-        <input type="submit" value="LOG IN" />
+        <button type="submit" disabled={isLoading}>
+          {isLoading ? "Logging in..." : "LOG IN"}
+        </button>
 
         <div className="footer">
           <p>
