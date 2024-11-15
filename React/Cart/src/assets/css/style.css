@@ -161,9 +161,14 @@ select option {
 .cart-list:hover {
   scale: 1.02;
 }
-.cart-list img {
-  width: 800px !important;
+
+.cart-list-img {
+  width: 100px;
   height: 100px;
+}
+.cart-list img {
+  width: 100% !important;
+  height: 100%;
   object-fit: cover;
   border-radius: 10px;
   overflow: hidden;

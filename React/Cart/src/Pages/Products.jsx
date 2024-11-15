@@ -46,11 +46,10 @@ const Products = () => {
                     </p>
                     <p>Offer Price: Rs.{item.offer_price}.00</p>
                     <p>Customer Review: {item.ratings}</p>
-                    <button
-                      onClick={() => addToCart(item)}
-                      className="btn btn-sm"
-                    >
-                      Add to Cart
+                    <button onClick={() => addToCart(item)} className="btn">
+                      <h3>
+                        <i className="bi bi-cart-plus"></i>
+                      </h3>
                     </button>
                   </div>
                 </div>

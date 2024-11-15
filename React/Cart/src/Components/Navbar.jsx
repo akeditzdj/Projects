@@ -15,7 +15,7 @@ const Navbar = () => {
   }, [cart]);
 
   return (
-    <div>
+    <div className="sticky-top">
       {/* Mobile Menu-bar Button */}
       <button
         className="btn bg-transparent text-white d-block d-lg-none"
@@ -28,7 +28,7 @@ const Navbar = () => {
       </button>
 
       {/* Navbar Section */}
-      <div className="navbar top-0 sticky-top">
+      <div className="navbar ">
         <div className="nav-items">
           {/* Logo */}
           <div>
@@ -62,14 +62,6 @@ const Navbar = () => {
                   </NavLink>
                 </li>
 
-                {/* Login and Buttons Section */}
-                <li>
-                  <NavLink to="/login">
-                    <button className="btn btn-outline-light p-0">Login</button>
-                  </NavLink>
-                </li>
-
-                {/* Icon Buttons */}
                 {/* Cart Button */}
                 <li className="icon d-md-flex d-flex align-items-center justify-content-center">
                   <button
@@ -84,6 +76,13 @@ const Navbar = () => {
                       <span id="cartItemCount">{cartItemCount}</span>
                     </a>
                   </button>
+                </li>
+
+                {/* Login and Buttons Section */}
+                <li>
+                  <NavLink to="/login">
+                    <button className="btn btn-outline-light p-0">Login</button>
+                  </NavLink>
                 </li>
               </ul>
             </nav>
@@ -112,8 +111,8 @@ const Navbar = () => {
             aria-label="Close"
           ></button>
         </div>
-        <div className="offcanvas-body p-2">
-          <CartItems /> {/* Display Cart Items inside Offcanvas */}
+        <div className="offcanvas-body p-3">
+          <CartItems />
           <div class="total-section border-top mt-2">
             <div id="cartTotalOutput"></div>
             <div class="d-flex justify-content-center align-items-center gap-5 py-2">
