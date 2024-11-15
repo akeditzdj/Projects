@@ -14,7 +14,10 @@ import SignUp from "./Pages/SignUp";
 import ProductDetails from "./Pages/ProductDetails";
 import ProductLayout from "./Layout/ProductLayout";
 import Products from "./Pages/Products";
-import NotFound from "./Pages/NotFound"; // Assuming you created this page
+import NotFound from "./Pages/NotFound";
+import CartItems from "./Components/CartItems";
+import { CartProvider } from "./Context/CartContext"; // Import the CartProvider
+import "../src/assets/css/style.css";
 
 function App() {
   const router = createBrowserRouter(
@@ -29,12 +32,17 @@ function App() {
           <Route index element={<Products />} />
           <Route path=":id" element={<ProductDetails />} />
         </Route>
-        <Route path="*" element={<NotFound />} /> {/* Handle 404 */}
+        <Route path="cart" element={<CartItems />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     )
   );
 
-  return <RouterProvider router={router} />;
+  return (
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
+  );
 }
 
 export default App;

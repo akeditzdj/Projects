@@ -1,38 +1,23 @@
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import FoodItems from "../assets/js/fooditems.json"; // Your local JSON file with product data
-import Poster from "../Components/Poster";
-import StarRating from "../Components/StarRating";
-import "../assets/css/style.css";
-const ProductDetails = () => {
-  const { id } = useParams(); // Get the product ID from the URL
-  const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+import foodData from "../assets/js/fooditems.json"; // Product data
+import { useCart } from "../Context/CartContext"; // Use the cart context
+import StarRating from "../Components/StarRating"; // Assuming you have this component
 
-  // Fetch the product details from the local FoodItems data
+const ProductDetails = () => {
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
+  const { addToCart } = useCart(); // Get the addToCart function from context
+
   useEffect(() => {
-    const foundProduct = FoodItems.find((item) => item.id === parseInt(id));
+    const foundProduct = foodData.find((item) => item.id === parseInt(id));
     if (foundProduct) {
       setProduct(foundProduct);
-      setLoading(false);
-    } else {
-      setError("Product not found");
-      setLoading(false);
     }
   }, [id]);
 
-  // Loading state
-  if (loading) {
-    return <div>Loading product details...</div>;
-  }
+  if (!product) return <div>Loading...</div>;
 
-  // Error handling
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
-  // If product is found, display it
   return (
     <div className="container-fluid">
       <div className="container">
@@ -50,41 +35,20 @@ const ProductDetails = () => {
             </p>
             <p>
               <strong>Description:</strong> Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Dolores facere maxime odio eaque
-              sint saepe voluptatem expedita blanditiis, ut voluptatum,
-              distinctio ullam ducimus delectus quae doloremque praesentium
-              ratione molestiae libero.
+              consectetur adipisicing elit.
             </p>
-            <p className="d-flex justify-content-start align-items-center gap-1">
+            <p>
               <strong>Product Rating:</strong>
-              <p>
-                <StarRating rating={product.ratings} />
-              </p>
-
+              <StarRating rating={product.ratings} />
             </p>
-            <div className="social-media-link d-flex justify-content-start align-items-center gap-3">
-              <strong>Follow me :</strong>
-              <a href="#">
-                <i className="bi bi-facebook fs-4"></i>
-              </a>
-              <a href="#">
-                <i className="bi bi-twitter fs-4"></i>
-              </a>
-              <a href="#">
-                <i className="bi bi-youtube fs-4"></i>
-              </a>
-              <a href="#">
-                <i className="bi bi-instagram fs-4"></i>
-              </a>
-            </div>
             <div className="d-flex gap-2 justify-content-start align-items-center mt-4">
-              <button className="btn btn-sm">Add to Cart</button>
-              <button className="btn btn-sm">Buy Now</button>
+              <button onClick={() => addToCart(product)} className="btn btn-sm">
+                Add to Cart
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <Poster />
     </div>
   );
 };

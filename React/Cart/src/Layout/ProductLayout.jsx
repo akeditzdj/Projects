@@ -1,14 +1,17 @@
 import { Outlet } from "react-router-dom";
+import CartItems from "../Components/CartItems"; // Import CartItems component
+import { useCart } from "../Context/CartContext"; // Use the cart context
 
 const ProductLayout = () => {
+  const { cart } = useCart(); // Get cart from context
+
   return (
     <div>
-      <h1 className="text-center my-5">Product Details</h1>
-      <nav>
-        {/* Include links to product categories or other sections here */}
-      </nav>
-      <Outlet />{" "}
-      {/* This is where child routes like Products or ProductDetails will render */}
+      <div className="product-layout-container">
+        <Outlet />
+      </div>
+      {cart.length > 0 && <CartItems />}{" "}
+      {/* Conditionally render the CartItems */}
     </div>
   );
 };
