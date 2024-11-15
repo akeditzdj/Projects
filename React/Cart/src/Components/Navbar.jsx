@@ -112,10 +112,8 @@ const Navbar = () => {
             aria-label="Close"
           ></button>
         </div>
-        <div className="offcanvas-body">
-          <div id="cartItems">
-            <CartItems /> {/* Display Cart Items inside Offcanvas */}
-          </div>
+        <div className="offcanvas-body p-2">
+          <CartItems /> {/* Display Cart Items inside Offcanvas */}
           <div class="total-section border-top mt-2">
             <div id="cartTotalOutput"></div>
             <div class="d-flex justify-content-center align-items-center gap-5 py-2">

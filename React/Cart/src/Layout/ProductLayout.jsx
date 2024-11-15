@@ -10,8 +10,6 @@ const ProductLayout = () => {
       <div className="product-layout-container">
         <Outlet />
       </div>
-      {cart.length > 0 && <CartItems />}{" "}
-      {/* Conditionally render the CartItems */}
     </div>
   );
 };
