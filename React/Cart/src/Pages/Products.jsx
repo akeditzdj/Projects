@@ -89,7 +89,7 @@ const Products = () => {
           {filteredFoodItems.map(
             ({ id, name, category, img, price, offer_price, ratings }) => (
               <div key={id} className="col-12 col-md-4">
-                <NavLink to={`/products/${id}`}>
+
                   <div className="card border-0 shadow">
                     <div className="card-img">
                       <img className="img-fluid" src={img} alt={name} />
@@ -123,9 +123,11 @@ const Products = () => {
                           ></i>
                         </h3>
                       </button>
+                      <NavLink to={`/products/${id}`}>
+                        <button className="btn btn-sm border">View More</button>
+                      </NavLink>
                     </div>
                   </div>
-                </NavLink>
               </div>
             )
           )}

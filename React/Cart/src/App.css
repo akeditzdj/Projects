@@ -260,6 +260,10 @@ select option {
   scale: 1.5;
 }
 
+.card .card-body button:nth-child(1):hover {
+  color: #fff;
+}
+
 /* --#{$prefix}offcanvas-width: #{$offcanvas-horizontal-width}; */
 
 .offcanvas,
@@ -329,6 +333,12 @@ select option {
   border-radius: 5px;
   border: 2px solid #fe5005;
   outline: none;
+}
+
+.text-truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 /* Blog */
 
@@ -1026,7 +1036,7 @@ td {
   text-align: left;
 }
 
-th {
+th , tfoot{
   background-color: #f1f1f1;
 }
 

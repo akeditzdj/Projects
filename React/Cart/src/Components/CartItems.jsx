@@ -34,7 +34,11 @@ const CartItems = () => {
                   alt={item.name}
                   style={{ width: "100px", objectFit: "cover" }}
                 />
-                <h5 className="fs-6 fw-bold text-truncate">{item.name}</h5>
+                <div className="d-flex" style={{ maxWidth: "100px" }}>
+                  {" "}
+                  {/* or any width you need */}
+                  <h5 className="fs-6 fw-bold text-truncate">{item.name}</h5>
+                </div>
               </div>
 
               <div className="d-flex">
@@ -54,7 +58,7 @@ const CartItems = () => {
                   <i className="bi bi-trash"></i>
                 </button>
               </div>
-              <h5 className="fs-6 text-end fw-bold">
+              <h5 className="fs-6 text-end fw-bold pe-2">
                 Rs.{item.offer_price}.00
               </h5>
             </div>

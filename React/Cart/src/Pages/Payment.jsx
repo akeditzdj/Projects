@@ -1,24 +1,18 @@
-import { useState } from "react";
+import React from "react";
+import { useCart } from "../Context/CartContext";
+
 const PaymentPage = () => {
-  // State for the payment method selection
-  const [paymentMethod, setPaymentMethod] = useState("credit-card");
+  const { cart, getTotalPrice } = useCart(); // Get cart items and total price from context
+  const totalAmount = getTotalPrice().toFixed(2); // Total price formatted to 2 decimal places
 
-  // Order items
-  const orderItems = [
-    { name: "Cheeseburger", price: 5.99 },
-    { name: "Fries", price: 2.49 },
-    { name: "Soft Drink", price: 1.99 },
-  ];
-
-  // Calculate total price
-  const totalAmount = orderItems
-    .reduce((acc, item) => acc + item.price, 0)
-    .toFixed(2);
+  const [paymentMethod, setPaymentMethod] = React.useState("credit-card");
 
   // Handle payment method change
   const handlePaymentMethodChange = (event) => {
     setPaymentMethod(event.target.value);
-  };
+    };
+
+    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <div className="container">
@@ -26,6 +20,7 @@ const PaymentPage = () => {
         <h1>Food Court Payment</h1>
         <p>Complete your order and enjoy your meal!</p>
       </header>
+
       <div className="mt-5 d-flex justify-content-center align-items-start">
         {/* Order Summary */}
         <div className="order-summary">
@@ -34,16 +29,24 @@ const PaymentPage = () => {
             <thead>
               <tr>
                 <th>Item</th>
+                <th>Qty</th>
                 <th>Price</th>
               </tr>
             </thead>
             <tbody>
-              {orderItems.map((item, index) => (
-                <tr key={index}>
-                  <td>{item.name}</td>
-                  <td>${item.price}</td>
+              {cart.length === 0 ? (
+                <tr>
+                  <td colSpan="2">Your cart is empty.</td>
                 </tr>
-              ))}
+              ) : (
+                cart.map((item) => (
+                  <tr key={item.id}>
+                    <td>{item.name}</td>
+                    <td>{item.quantity}</td>
+                    <td>Rs.{item.offer_price}</td>
+                  </tr>
+                ))
+              )}
             </tbody>
             <tfoot>
               <tr>
@@ -51,7 +54,10 @@ const PaymentPage = () => {
                   <strong>Total</strong>
                 </td>
                 <td>
-                  <strong>${totalAmount}</strong>
+                  <strong>{totalQuantity}</strong>
+                </td>
+                <td>
+                  <strong>Rs.{totalAmount}</strong>
                 </td>
               </tr>
             </tfoot>
