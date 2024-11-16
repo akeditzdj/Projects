@@ -17,7 +17,7 @@ import Products from "./Pages/Products";
 import NotFound from "./Pages/NotFound";
 import CartItems from "./Components/CartItems";
 import { CartProvider } from "./Context/CartContext"; // Import the CartProvider
-import "../src/assets/css/style.css";
+
 
 function App() {
   const router = createBrowserRouter(

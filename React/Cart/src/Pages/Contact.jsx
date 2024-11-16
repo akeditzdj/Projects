@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../assets/css/style.css";
 import Poster from "../Components/Poster";
 
 const ContactInfo = () => (

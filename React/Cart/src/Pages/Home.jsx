@@ -4,7 +4,7 @@ import Blog1 from "../assets/images/blog-1.png";
 import Blog2 from "../assets/images/blog-2.jpg";
 import Blog3 from "../assets/images/blog-3.jpg";
 import HomeBanner from "../assets/images/Home-Banner.jpeg";
-import "../assets/css/style.css";
+import "../App.css";
 import Poster from "../Components/Poster";
 
 const Home = () => {
@@ -151,7 +151,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid p-0 m-0 w-100">
+      <div className="container-fluid p-0 m-0">
         <Poster />
       </div>
     </>
