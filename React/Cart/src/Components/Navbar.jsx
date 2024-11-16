@@ -28,7 +28,7 @@ const Navbar = () => {
       </button>
 
       {/* Navbar Section */}
-      <div className="navbar ">
+      <div className="navbar">
         <div className="nav-items">
           {/* Logo */}
           <div>

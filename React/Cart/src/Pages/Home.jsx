@@ -3,12 +3,18 @@ import Industry from "../assets/images/industry.png";
 import Blog1 from "../assets/images/blog-1.png";
 import Blog2 from "../assets/images/blog-2.jpg";
 import Blog3 from "../assets/images/blog-3.jpg";
+import HomeBanner from "../assets/images/Home-Banner.jpeg";
 import "../assets/css/style.css";
 import Poster from "../Components/Poster";
 
 const Home = () => {
   return (
     <>
+      <div className="container-fluid p-0">
+        <div className="home-banner">
+          <img src={HomeBanner} alt="Swiggy Banner" />
+        </div>
+      </div>
       <div className="container">
         <div className="row d-md-flex justify-content-center align-items-center">
           <div className="col-md-6">
@@ -145,7 +151,9 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Poster />
+      <div className="container-fluid p-0 m-0 w-100">
+        <Poster />
+      </div>
     </>
   );
 };

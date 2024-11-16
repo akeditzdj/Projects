@@ -41,6 +41,31 @@ const ProductDetails = () => {
               <strong>Product Rating:</strong>
               <StarRating rating={product.ratings} />
             </p>
+            <div className="d-flex justify-content-start align-items-center gap-4">
+              <p className="fw-bold">Follow Me:</p>
+              <p>
+                <a href="#">
+                  <i className="bi fs-5 bi-facebook"></i>
+                </a>
+              </p>
+              <p>
+                <a href="#">
+                  <i className="bi fs-5 bi-twitter"></i>
+                </a>
+              </p>
+              <p>
+                <a href="#">
+                  {" "}
+                  <i className="bi fs-5 bi-instagram"></i>
+                </a>
+              </p>
+              <p>
+                <a href="#">
+                  {" "}
+                  <i className="bi fs-5 bi-youtube"></i>
+                </a>
+              </p>
+            </div>
             <div className="d-flex gap-2 justify-content-start align-items-center mt-4">
               <button onClick={() => addToCart(product)} className="btn btn-sm">
                 Add to Cart

@@ -5,17 +5,22 @@ const CartItems = () => {
   const { cart, getTotalPrice } = useCart();
 
   return (
-    <div className="cart-items-container w-100">
+    <div className="cart-items-container">
       {cart.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
         <div>
           {cart.map((item) => (
             <div className="cart-list pe-2" key={item.id}>
-              <div className="cart-list-img">
-                <img className="w-100" src={item.img} alt={item.name}></img>
+              <div className="cart-list-img" style={{ width: "80px" }}>
+                <img
+                  className=""
+                  style={{ width: "100px" }}
+                  src={item.img}
+                  alt={item.name}
+                ></img>
               </div>
-              <h5 className="ms-0 fs-6 fw-bold">{item.name}</h5>
+              <h5 className="ms-0 fs-6 fw-bold text-truncate">{item.name}</h5>
 
               <h6>Qty:{item.quantity}</h6>
               <h5 className="fs-6 text-end fw-bold">
