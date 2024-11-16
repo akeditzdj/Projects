@@ -18,15 +18,6 @@ const Navbar = () => {
   return (
     <div className="sticky-top">
       {/* Mobile Menu-bar Button */}
-      <button
-        className="btn bg-transparent text-white d-block d-lg-none"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#offCanvasMenu" // Target offcanvas menu here
-        aria-controls="offCanvasMenu"
-      >
-        <i className="bi bi-list fs-1"></i>
-      </button>
 
       {/* Navbar Section */}
       <div className="navbar">
@@ -42,22 +33,22 @@ const Navbar = () => {
           <div>
             <nav>
               <ul className="list-unstyled d-flex gap-4">
-                <li>
+                <li className="d-none d-md-block">
                   <NavLink to="/" activeClassName="active">
                     Home
                   </NavLink>
                 </li>
-                <li>
+                <li className="d-none d-md-block">
                   <NavLink to="/products" activeClassName="active">
                     Products
                   </NavLink>
                 </li>
-                <li>
+                <li className="d-none d-md-block">
                   <NavLink to="/about" activeClassName="active">
                     About
                   </NavLink>
                 </li>
-                <li>
+                <li className="d-none d-md-block">
                   <NavLink to="/contact" activeClassName="active">
                     Contact
                   </NavLink>
@@ -67,7 +58,7 @@ const Navbar = () => {
                 <li className="icon d-md-flex d-flex align-items-center justify-content-center">
                   <button
                     type="button"
-                    className="btn bg-transparent border-0 p-0"
+                    className="p-0 cart-btn"
                     data-bs-toggle="offcanvas"
                     data-bs-target="#cart"
                   >
@@ -85,6 +76,15 @@ const Navbar = () => {
                     <button className="btn btn-outline-light p-0">Login</button>
                   </NavLink>
                 </li>
+                <button
+                  className="btn bg-transparent text-white d-block d-lg-none border-0"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offCanvasMenu" // Target offcanvas menu here
+                  aria-controls="offCanvasMenu"
+                >
+                  <i className="bi bi-list fs-1"></i>
+                </button>
               </ul>
             </nav>
           </div>

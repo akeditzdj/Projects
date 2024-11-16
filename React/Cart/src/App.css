@@ -93,8 +93,17 @@ ul li {
   color: #eaff00;
   font-weight: bold;
 }
+.navbar ul li .cart-btn {
+  width: 30px !important;
+  background-color: transparent;
+  border: none !important;
+}
 
-.navbar ul button {
+.navbar ul li .cart-btn:hover {
+  background-color: transparent;
+}
+
+.navbar ul button:nth-child(1) {
   width: 70px;
   height: 30px;
   background-color: transparent;
@@ -418,170 +427,6 @@ footer .footer-content .content-1 {
 footer .app-link img {
   width: 200px;
 }
-/* Responsive Multiple Device Style */
-
-@media (max-width: 1200px) {
-  .navbar {
-    width: 100%;
-    height: auto;
-    background-color: #fe5005;
-  }
-
-  .header {
-    position: relative;
-    width: 100%;
-    height: auto;
-    background-color: #fe5005;
-  }
-
-  .food-items-header {
-    width: 100%;
-    margin: 0 auto;
-  }
-  .header .header-content p {
-    width: 100%;
-  }
-
-  .food-items-header .range {
-    width: 100%;
-    height: auto;
-  }
-  .show-food-items {
-    grid-template-columns: repeat(3, 305px);
-  }
-}
-
-@media (max-width: 900px) {
-  .navbar {
-    width: 100%;
-    height: auto;
-    background-color: #fe5005;
-  }
-
-  .header {
-    position: relative;
-    width: 100%;
-    height: auto;
-    background-color: #fe5005;
-  }
-  .header img {
-    width: 250px;
-    height: auto;
-  }
-
-  .header .header-content p {
-    width: 100%;
-  }
-
-  .food-items-header {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .food-items-header .range {
-    width: 100%;
-    height: auto;
-  }
-  .show-food-items {
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-@media (max-width: 600px) {
-  .navbar {
-    width: 100%;
-    height: auto;
-    background-color: #fe5005;
-  }
-  .header {
-    position: relative;
-    width: 100%;
-    height: auto;
-    background-color: #fe5005;
-  }
-  .header img {
-    width: 100%;
-    height: auto;
-  }
-  .food-items-header {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .food-items-header .range {
-    width: 100%;
-    height: auto;
-  }
-  .show-food-items {
-    grid-template-columns: 305px;
-    justify-content: center;
-    place-content: center;
-  }
-  footer {
-    width: 100%;
-    height: auto;
-  }
-  footer .footer-content {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-  }
-  footer .footer-content div {
-    margin-bottom: 10px;
-  }
-  footer .footer-content p {
-    width: 100% !important;
-  }
-
-  footer .footer-content .content-1 {
-    width: 100%;
-  }
-
-  footer .footer-content div img {
-    width: 100%;
-  }
-  footer .app-link {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-.popup {
-  display: none; /* Hidden by default */
-  position: fixed;
-  left: 1%;
-  bottom: 1%;
-  padding: 10px;
-  background-color: #fe5005;
-  color: #fff;
-  border-radius: 5px;
-  z-index: 1000;
-  text-align: center;
-  opacity: 0; /* Start hidden */
-  width: auto;
-  height: 50px;
-}
-
-@keyframes slideUp {
-  0% {
-    opacity: 0; /* Fully transparent */
-    transform: translateY(20px); /* Start slightly below */
-  }
-  100% {
-    opacity: 1; /* Fully visible */
-    transform: translateY(0); /* Final position */
-  }
-}
-
-.popup.show {
-  display: block; /* Show the popup */
-  animation: slideUp 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; /* Apply slide-up animation */
-}
 
 .login-form-container {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -652,6 +497,11 @@ form input:valid + label {
   margin-top: 20px;
   line-height: 10px;
   cursor: pointer;
+}
+.login-form-container button:hover {
+  background-color: white;
+  border: 1px solid #fe5005;
+  color: #fe5005;
 }
 
 .login-form-container .footer p,
@@ -849,8 +699,10 @@ textarea {
   border-radius: 4px;
 }
 
-button:hover {
-  background-color: rgba(255, 68, 0, 0.407);
+.contact-container button:hover {
+  background-color: #fff;
+  border: 1px solid #fe5005;
+  color: #fe5005;
 }
 
 .form-group p {
@@ -865,23 +717,6 @@ button:hover {
   color: white;
   border-radius: 4px;
   text-decoration: none;
-}
-@media (max-width: 768px) {
-  .container {
-    width: 90%;
-  }
-
-  .contact-info,
-  .contact-form {
-    padding: 20px;
-  }
-
-  .contact-form button {
-    width: 100%;
-    padding: 14px;
-    background-color: #fe5005 !important;
-    color: #ffff;
-  }
 }
 
 .left-column,
@@ -912,19 +747,6 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .left-column,
-  .right-column {
-    width: 100%;
-    margin-bottom: 20px;
-  }
 }
 
 .product-details-box {
@@ -965,7 +787,9 @@ a:hover {
 }
 
 .product-details-box .product-details-content button:hover {
-  background-color: rgba(255, 68, 0, 0.407);
+  background-color: #fff;
+  border: 1px solid #fe5005;
+  color: #fe5005;
 }
 
 .star-rating {
@@ -1036,7 +860,8 @@ td {
   text-align: left;
 }
 
-th , tfoot{
+th,
+tfoot {
   background-color: #f1f1f1;
 }
 
