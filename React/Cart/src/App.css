@@ -130,6 +130,9 @@ ul li {
   object-fit: cover;
 }
 
+.home-container h3 {
+  color: #fe5005;
+}
 /* Navbar */
 
 .offcanvas-body,
@@ -547,6 +550,12 @@ span {
   position: absolute;
   right: 20px;
   top: 15px;
+  transition: 0.3s ease;
+}
+.login-form-container img:hover {
+  scale: 1.1;
+  transform: rotate(-15deg);
+  filter: drop-shadow(5px 5px 15px #fe5005);
 }
 
 .login-form-container hr {
@@ -823,7 +832,7 @@ header {
 
 header h1 {
   font-size: 2.5em;
-  color: #2d2d2d;
+  color: #fe5005;
 }
 
 header p {
@@ -844,7 +853,7 @@ header p {
 
 .order-summary h2 {
   font-size: 1.8em;
-  color: #444;
+  color: #fe5005;
   margin-bottom: 10px;
 }
 
@@ -882,6 +891,7 @@ tfoot {
 .payment-methods h2 {
   font-size: 1.8em;
   margin-bottom: 10px;
+  color: #fe5005;
 }
 
 label {

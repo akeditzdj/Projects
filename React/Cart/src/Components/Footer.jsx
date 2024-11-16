@@ -4,7 +4,7 @@ import AppStore from "../assets/images/appstore-logo.png";
 
 const Footer = () => {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid border-top">
       <footer className="mt-5 pt-5">
         <div className="d-flex justify-content-between align-items-start footer-content pb-5">
           <section className="content-1">

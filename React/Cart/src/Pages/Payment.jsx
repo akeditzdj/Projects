@@ -10,12 +10,12 @@ const PaymentPage = () => {
   // Handle payment method change
   const handlePaymentMethodChange = (event) => {
     setPaymentMethod(event.target.value);
-    };
+  };
 
-    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <div className="container">
+    <div className="container payment-container mb-5">
       <header>
         <h1>Food Court Payment</h1>
         <p>Complete your order and enjoy your meal!</p>

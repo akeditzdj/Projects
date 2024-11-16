@@ -15,7 +15,7 @@ const Home = () => {
           <img src={HomeBanner} alt="Swiggy Banner" />
         </div>
       </div>
-      <div className="container">
+      <div className="container home-container">
         <div className="row d-md-flex justify-content-center align-items-center">
           <div className="col-md-6">
             <div>
