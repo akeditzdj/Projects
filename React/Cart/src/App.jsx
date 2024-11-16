@@ -16,8 +16,8 @@ import ProductLayout from "./Layout/ProductLayout";
 import Products from "./Pages/Products";
 import NotFound from "./Pages/NotFound";
 import CartItems from "./Components/CartItems";
+import Payment from "./Pages/Payment";
 import { CartProvider } from "./Context/CartContext"; // Import the CartProvider
-
 
 function App() {
   const router = createBrowserRouter(
@@ -33,6 +33,7 @@ function App() {
           <Route path=":id" element={<ProductDetails />} />
         </Route>
         <Route path="cart" element={<CartItems />} />
+        <Route path="payment" element={<Payment />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     )

@@ -22,8 +22,8 @@ export const CartProvider = ({ children }) => {
     }
   }, [cart]);
 
+  // Add item to the cart (or increase quantity if already in cart)
   const addToCart = (item) => {
-    // Check if item is already in the cart
     const itemExists = cart.find((cartItem) => cartItem.id === item.id);
     if (itemExists) {
       setCart(
@@ -38,6 +38,22 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  // Update the quantity of an item in the cart
+  const updateQuantity = (itemId, newQuantity) => {
+    if (newQuantity <= 0) return; // Prevent invalid quantity
+    setCart(
+      cart.map((item) =>
+        item.id === itemId ? { ...item, quantity: newQuantity } : item
+      )
+    );
+  };
+
+  // Remove item from the cart
+  const removeFromCart = (itemId) => {
+    setCart(cart.filter((item) => item.id !== itemId));
+  };
+
+  // Get the total price of all items in the cart
   const getTotalPrice = () => {
     return cart.reduce(
       (total, item) => total + item.offer_price * item.quantity,
@@ -46,7 +62,15 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, getTotalPrice }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        addToCart,
+        updateQuantity,
+        removeFromCart,
+        getTotalPrice,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

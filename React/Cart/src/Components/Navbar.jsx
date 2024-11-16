@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/images/swiggy-logo.svg";
-import { useCart } from "../Context/CartContext"; // Import CartContext
-import OffcanvasMenu from "./OffcanvasMenu"; // Import OffcanvasMenu component
-import CartItems from "./CartItems"; // Import CartItems component
+import { useCart } from "../Context/CartContext";
+import OffcanvasMenu from "./OffcanvasMenu";
+import CartItems from "./CartItems";
+import Payment from "../Pages/Payment";
 
 const Navbar = () => {
   const { cart } = useCart(); // Access cart state from context
@@ -123,9 +124,11 @@ const Navbar = () => {
               >
                 Continue to Buy
               </button>
-              <button type="button" class="btn  btn-light">
-                Proceed to Checkout
-              </button>
+              <NavLink to="/payment">
+                <button type="button" class="btn  btn-light">
+                  Proceed to Checkout
+                </button>
+              </NavLink>
             </div>
           </div>
         </div>

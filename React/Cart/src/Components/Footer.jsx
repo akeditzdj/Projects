@@ -1,4 +1,3 @@
-
 import SwiggyLogo from "../assets/images/Swiggy_Logo_2024.webp.png";
 import GooglePlay from "../assets/images/google-play.png";
 import AppStore from "../assets/images/appstore-logo.png";

@@ -117,7 +117,10 @@ const Products = () => {
                         className="btn"
                       >
                         <h3>
-                          <i className="bi bi-cart-plus"></i>
+                          <i
+                            className="bi bi-cart-plus"
+                            title="Add To Cart"
+                          ></i>
                         </h3>
                       </button>
                     </div>

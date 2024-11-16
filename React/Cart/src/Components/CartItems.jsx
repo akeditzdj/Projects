@@ -2,7 +2,23 @@ import React from "react";
 import { useCart } from "../Context/CartContext";
 
 const CartItems = () => {
-  const { cart, getTotalPrice } = useCart();
+  const { cart, getTotalPrice, updateQuantity, removeFromCart } = useCart();
+
+  const handleQuantityChange = (itemId, newQuantity) => {
+    updateQuantity(itemId, newQuantity);
+  };
+
+  const handleRemoveItem = (itemId) => {
+    // Remove from the cart
+    removeFromCart(itemId);
+
+    // Remove from local storage
+    const updatedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    const filteredCart = updatedCart.filter((item) => item.id !== itemId);
+
+    // Save the updated cart back to local storage
+    localStorage.setItem("cart", JSON.stringify(filteredCart));
+  };
 
   return (
     <div className="cart-items-container">
@@ -11,25 +27,41 @@ const CartItems = () => {
       ) : (
         <div>
           {cart.map((item) => (
-            <div className="cart-list pe-2" key={item.id}>
-              <div className="cart-list-img" style={{ width: "80px" }}>
+            <div className="cart-item cart-list" key={item.id}>
+              <div className="cart-item-img d-flex justify-content-center align-items-center gap-1">
                 <img
-                  className=""
-                  style={{ width: "100px" }}
                   src={item.img}
                   alt={item.name}
-                ></img>
+                  style={{ width: "100px", objectFit: "cover" }}
+                />
+                <h5 className="fs-6 fw-bold text-truncate">{item.name}</h5>
               </div>
-              <h5 className="ms-0 fs-6 fw-bold text-truncate">{item.name}</h5>
 
-              <h6>Qty:{item.quantity}</h6>
+              <div className="d-flex">
+                <input
+                  type="number"
+                  min="1"
+                  value={item.quantity}
+                  onChange={(e) =>
+                    handleQuantityChange(item.id, parseInt(e.target.value))
+                  }
+                  className="quantity-input"
+                />
+                <button
+                  onClick={() => handleRemoveItem(item.id)}
+                  className="btn btn-danger btn-sm ms-2"
+                >
+                  <i className="bi bi-trash"></i>
+                </button>
+              </div>
               <h5 className="fs-6 text-end fw-bold">
                 Rs.{item.offer_price}.00
               </h5>
             </div>
           ))}
-
-          <h4>Total: Rs.{getTotalPrice()}</h4>
+          <div className="total-price mt-3">
+            <h4>Total: Rs.{getTotalPrice()}</h4>
+          </div>
         </div>
       )}
     </div>
