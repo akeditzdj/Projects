@@ -1,6 +1,5 @@
 import Header from "../components/Header";
 import ImageList from "../components/ImageList";
-
 const Home = () => {
   return (
     <div>

@@ -74,8 +74,8 @@ const ImageList = () => {
   };
 
   return (
-    <div className="container">
-      <div className="img-header d-flex justify-content-between align-items-center mt-4 border-bottom">
+    <div className="container img-container">
+      <div className="img-header d-md-flex  justify-content-between align-items-center mt-4 border-bottom">
         <div className="my-3">
           <h5>
             Over 5.1 million+ high-quality stock images, videos, and music

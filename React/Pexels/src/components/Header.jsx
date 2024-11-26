@@ -1,9 +1,7 @@
-import React from "react";
-
 const Header = () => {
   return (
     <nav className="navbar navbar-expand-md navbar-dark">
-      <div className="container-fluid px-5 d-flex justify-content-between align-items-start h-100">
+      <div className="container-fluid px-md-5 d-flex justify-content-between  align-items-start h-100">
         {/* Logo Section */}
         <div>
           <a className="fs-2" href="#">
@@ -11,16 +9,25 @@ const Header = () => {
           </a>
         </div>
 
+        <button
+          className="navbar-toggler mt-3"
+          type="button"
+          data-bs-toggle="menu"
+          data-bs-target="#menu"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
         {/* Navbar Items */}
-        <div>
-          <ul className="navbar-nav d-flex align-items-center gap-3">
+        <div className="collapse navbar-collapse" id="menu">
+          <ul className="navbar-nav d-flex align-items-center gap-3 mt-3 ps-5">
             <li className="nav-item">
-              <a className="nav-link fs-5" href="#">
+              <a className="nav-link fs-6" href="#">
                 Explore <i className="bi bi-chevron-down"></i>
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link fs-5" href="#">
+              <a className="nav-link fs-6" href="#">
                 <i className="bi bi-bell-fill"></i>
               </a>
             </li>
@@ -39,13 +46,13 @@ const Header = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="d-flex flex-column justify-content-center align-items-center header-content gap-3">
-        <h1 className="fw-bold text-light">
+      <div className="d-flex flex-column justify-content-center align-items-center header-content gap-3 w-100">
+        <h1 className="fw-bold text-light text-center">
           Stunning royalty-free images & royalty-free stock
         </h1>
 
         {/* Category Buttons */}
-        <div className="d-flex gap-3">
+        <div className="d-flex gap-1 flex-wrap justify-content-center align-items-center">
           <button className="btn btn-grp text-light fw-semibold rounded-5">
             Explore
           </button>
@@ -73,11 +80,11 @@ const Header = () => {
         </div>
 
         {/* Search Bar */}
-        <div className="bg-light rounded-5 w-100 py-2 px-3">
+        <div className="bg-light hedaer-input rounded-5 py-2 px-3 w-50">
           <div className="d-flex align-items-center">
             <i className="bi bi-search fs-4"></i>
             <input
-              className="form-control form-control-lg border-0 bg-transparent rounded-5"
+              className="form-control border-0 bg-transparent rounded-5"
               type="text"
               placeholder="Search for free Images, Videos, Music & more"
             />
@@ -85,7 +92,7 @@ const Header = () => {
         </div>
 
         {/* Tags */}
-        <div className="d-flex gap-1 tags">
+        <div className="d-flex gap-1 flex-wrap justify-content-center align-items-center">
           <button className="btn btn-secondary text-light fw-semibold rounded-3">
             Woman
           </button>
@@ -121,7 +128,7 @@ const Header = () => {
 
       {/* Footer Section */}
       <div className="position-absolute d-flex justify-content-between align-items-end w-100 h-auto bottom-0 px-5">
-        <div className="poster-footer d-flex justify-content-between align-items-end w-100">
+        <div className="poster-footer d-md-flex justify-content-between align-items-end w-100 text-center">
           <p className="text-light">
             Free images by{" "}
             <a className="text-light text-decoration-underline" href="#">
