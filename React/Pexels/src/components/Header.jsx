@@ -1,6 +1,16 @@
+import { useState } from "react";
 import Profile from "/profile-pic.webp";
 
-const Header = () => {
+const Header = ({ onSearchChange }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // Handle the search input change
+  const handleSearchChange = (event) => {
+    const value = event.target.value;
+    setSearchTerm(value);
+    onSearchChange(value); // Pass the updated search term to parent component
+  };
+
   return (
     <nav className="navbar navbar-expand-md navbar-dark">
       <div className="container-fluid px-md-5 d-flex justify-content-between  align-items-start h-100">
@@ -41,7 +51,7 @@ const Header = () => {
               </a>
             </li>
             <li className="nav-item">
-              <button className="btn btn-light btn-sm" >
+              <button className="btn btn-light btn-sm">
                 <i className="bi bi-box-arrow-up"></i> Upload
               </button>
             </li>
@@ -91,6 +101,8 @@ const Header = () => {
               className="form-control border-0 bg-transparent rounded-5"
               type="text"
               placeholder="Search for free Images, Videos, Music & more"
+              value={searchTerm}
+              onChange={handleSearchChange}
             />
           </div>
         </div>
@@ -120,12 +132,6 @@ const Header = () => {
           </button>
           <button className="btn btn-secondary text-light fw-semibold rounded-3 btn-sm">
             House
-          </button>
-          <button className="btn btn-secondary text-light fw-semibold rounded-3 btn-sm">
-            iPhone Wallpaper
-          </button>
-          <button className="btn btn-secondary text-light fw-semibold rounded-3 btn-sm">
-            Tree
           </button>
         </div>
       </div>

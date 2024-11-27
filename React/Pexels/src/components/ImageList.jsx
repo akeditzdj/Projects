@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 
-const ImageList = () => {
+const ImageList = ({ searchTerm }) => {
   const [images, setImages] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("nature");
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -33,34 +32,12 @@ const ImageList = () => {
       });
   };
 
-  // useEffect to fetch images when the component mounts or searchTerm or page changes
+  // useEffect to fetch images when the search term or page changes
   useEffect(() => {
     if (searchTerm) {
       fetchImages(searchTerm);
     }
-  }, [page]);
-
-  // useEffect to handle debouncing of search term
-  useEffect(() => {
-    const typingTimeout = setTimeout(() => {
-      fetchImages(searchTerm);
-    }, 500); // 500 ms debounce delay
-
-    // Cleanup function to clear the timeout if searchTerm changes before timeout
-    return () => clearTimeout(typingTimeout);
-  }, [searchTerm]); // This effect runs when searchTerm changes
-
-  // Handle the search input change
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
-  // Handle the form submission (searching)
-  const handleSearchSubmit = (event) => {
-    event.preventDefault();
-    setPage(1); // Reset to first page when a new search is made
-    fetchImages(searchTerm);
-  };
+  }, [searchTerm, page]); // Run the effect when searchTerm or page changes
 
   // Handle next page button click
   const handleNextPage = () => {
@@ -77,36 +54,31 @@ const ImageList = () => {
   };
 
   return (
-    <div className="container img-container">
-      <div className="img-header d-md-flex  justify-content-between align-items-center mt-4 border-bottom">
-        <div className="my-3">
-          <h5>
-            Over 5.1 million+ high-quality stock images, videos, and music
-            shared by our talented community.
-          </h5>
-        </div>
+    <div className="container  shadow">
+      <div className="image-header mt-4 px-3 d-md-flex justify-content-between align-items-center">
         <div>
-          <form onSubmit={handleSearchSubmit}>
-            <input
-              className="form-control"
-              type="search"
-              name="Search"
-              placeholder="Search Images"
-              value={searchTerm}
-              onChange={handleSearchChange}
-              disabled={loading} // Disable the input while loading
-            />
-          </form>
+          <h6 className="text-center text-md-start">
+            Over 5.1 million+ high quality stock images, videos and music shared
+            by our talented community.
+          </h6>
+        </div>
+        <div className="bg-light p-2 rounded rounded-5 text-center">
+          <button className="btn btn-lightrounded rounded-5 bg-white">
+            Editor's Choice
+          </button>
+          <button className="btn rounded rounded-5">Latest</button>
+          <button className="btn rounded rounded-5">Trending</button>
         </div>
       </div>
-
       <div className="image-results mt-4">
         {loading ? (
-          <p>Loading...</p>
+          <div class="spinner-border m-5" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
         ) : images.length > 0 ? (
-          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 img-container mb-5">
+          <div className="row img-container mb-5">
             {images.map((image) => (
-              <div className="col" key={image.id}>
+              <div key={image.id}>
                 <img
                   src={image.largeImageURL}
                   alt={image.tags || "Image"}
