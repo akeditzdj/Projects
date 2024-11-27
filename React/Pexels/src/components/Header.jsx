@@ -1,3 +1,5 @@
+import Profile from "/profile-pic.webp";
+
 const Header = () => {
   return (
     <nav className="navbar navbar-expand-md navbar-dark">
@@ -20,7 +22,7 @@ const Header = () => {
 
         {/* Navbar Items */}
         <div className="collapse navbar-collapse p-2" id="menu">
-          <ul className="navbar-nav d-flex align-items-center gap-3 mt-3 ps-5">
+          <ul className="navbar-nav d-flex align-items-center gap-3 mt-2 ps-5">
             <li className="nav-item">
               <a className="nav-link fs-6" href="#">
                 Explore <i className="bi bi-chevron-down"></i>
@@ -32,12 +34,14 @@ const Header = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link fs-1" href="#">
-                <i className="bi bi-circle-fill"></i>
+              <a className="nav-link fs-2" href="#">
+                <div className="profile-img">
+                  <img className="img-fluid w-100" src={Profile} />
+                </div>
               </a>
             </li>
             <li className="nav-item">
-              <button className="btn btn-success">
+              <button className="btn btn-light btn-sm" >
                 <i className="bi bi-box-arrow-up"></i> Upload
               </button>
             </li>
@@ -92,35 +96,35 @@ const Header = () => {
         </div>
 
         {/* Tags */}
-        <div className="d-flex gap-1 flex-wrap justify-content-center align-items-center">
-          <button className="btn btn-secondary text-light fw-semibold rounded-3">
+        <div className="d-flex gap-1 flex-wrap justify-content-center align-items-center mt-md-2">
+          <button className="btn btn-secondary text-light fw-semibold rounded-3 btn-sm">
             Woman
           </button>
-          <button className="btn btn-secondary text-light fw-semibold rounded-3">
+          <button className="btn btn-secondary text-light fw-semibold rounded-3 btn-sm">
             Wallpaper
           </button>
-          <button className="btn btn-secondary text-light fw-semibold rounded-3">
+          <button className="btn btn-secondary text-light fw-semibold rounded-3 btn-sm">
             Flowers
           </button>
-          <button className="btn btn-secondary text-light fw-semibold rounded-3">
+          <button className="btn btn-secondary text-light fw-semibold rounded-3 btn-sm">
             Autumn
           </button>
-          <button className="btn btn-secondary text-light fw-semibold rounded-3">
+          <button className="btn btn-secondary text-light fw-semibold rounded-3 btn-sm">
             Travel
           </button>
-          <button className="btn btn-secondary text-light fw-semibold rounded-3">
+          <button className="btn btn-secondary text-light fw-semibold rounded-3 btn-sm">
             Mountain
           </button>
-          <button className="btn btn-secondary text-light fw-semibold rounded-3">
+          <button className="btn btn-secondary text-light fw-semibold rounded-3 btn-sm">
             Sea
           </button>
-          <button className="btn btn-secondary text-light fw-semibold rounded-3">
+          <button className="btn btn-secondary text-light fw-semibold rounded-3 btn-sm">
             House
           </button>
-          <button className="btn btn-secondary text-light fw-semibold rounded-3">
+          <button className="btn btn-secondary text-light fw-semibold rounded-3 btn-sm">
             iPhone Wallpaper
           </button>
-          <button className="btn btn-secondary text-light fw-semibold rounded-3">
+          <button className="btn btn-secondary text-light fw-semibold rounded-3 btn-sm">
             Tree
           </button>
         </div>

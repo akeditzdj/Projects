@@ -90,3 +90,12 @@ ul li {
   height: auto;
   margin: 0 auto;
 }
+
+.profile-img {
+  width: 45px;
+  height: 45px;
+}
+.profile-img img {
+  object-fit: cover;
+  border-radius: 50%;
+}
