@@ -54,7 +54,7 @@ const ImageList = ({ searchTerm }) => {
   };
 
   return (
-    <div className="container  shadow">
+    <div className="container-fluid">
       <div className="image-header mt-4 px-3 d-md-flex justify-content-between align-items-center">
         <div>
           <h6 className="text-center text-md-start">
@@ -76,14 +76,10 @@ const ImageList = ({ searchTerm }) => {
             <span class="visually-hidden">Loading...</span>
           </div>
         ) : images.length > 0 ? (
-          <div className="row img-container mb-5">
+          <div className="row mb-5 img-container">
             {images.map((image) => (
-              <div key={image.id}>
-                <img
-                  src={image.largeImageURL}
-                  alt={image.tags || "Image"}
-                  className="img-fluid"
-                />
+              <div className="img-item" key={image.id}>
+                <img src={image.largeImageURL} alt={image.tags || "Image"} />
               </div>
             ))}
           </div>
