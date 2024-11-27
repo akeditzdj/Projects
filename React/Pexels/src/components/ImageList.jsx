@@ -4,7 +4,6 @@ const ImageList = () => {
   const [images, setImages] = useState([]);
   const [searchTerm, setSearchTerm] = useState("nature");
   const [loading, setLoading] = useState(false);
-  const [typingTimeout, setTypingTimeout] = useState(null);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
@@ -39,17 +38,21 @@ const ImageList = () => {
     if (searchTerm) {
       fetchImages(searchTerm);
     }
-  }, [searchTerm, page]);
+  }, [page]);
 
-  // Handle the search input change with debouncing
+  // useEffect to handle debouncing of search term
+  useEffect(() => {
+    const typingTimeout = setTimeout(() => {
+      fetchImages(searchTerm);
+    }, 500); // 500 ms debounce delay
+
+    // Cleanup function to clear the timeout if searchTerm changes before timeout
+    return () => clearTimeout(typingTimeout);
+  }, [searchTerm]); // This effect runs when searchTerm changes
+
+  // Handle the search input change
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
-
-    if (typingTimeout) {
-      clearTimeout(typingTimeout);
-    }
-
-    setTypingTimeout(setTimeout(() => fetchImages(event.target.value), 500));
   };
 
   // Handle the form submission (searching)
@@ -121,7 +124,7 @@ const ImageList = () => {
       </div>
 
       {/* Pagination controls */}
-      <div className="pagination-controls d-flex justify-content-center mt-4">
+      <div className="pagination-controls d-flex justify-content-center my-4">
         <button
           className="btn btn-primary"
           onClick={handlePrevPage}

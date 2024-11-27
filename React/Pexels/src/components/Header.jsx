@@ -12,14 +12,14 @@ const Header = () => {
         <button
           className="navbar-toggler mt-3"
           type="button"
-          data-bs-toggle="menu"
+          data-bs-toggle="collapse"
           data-bs-target="#menu"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         {/* Navbar Items */}
-        <div className="collapse navbar-collapse" id="menu">
+        <div className="collapse navbar-collapse p-2" id="menu">
           <ul className="navbar-nav d-flex align-items-center gap-3 mt-3 ps-5">
             <li className="nav-item">
               <a className="nav-link fs-6" href="#">
