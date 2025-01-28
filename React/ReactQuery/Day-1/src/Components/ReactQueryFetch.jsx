@@ -1,7 +1,9 @@
-
-
 const ReactQueryFetch = () => {
-  return <div className="container">ReactQueryFetch</div>;
-}
+  return (
+    <div className="container">
+      <h3>ReactQueryFetch</h3>
+    </div>
+  );
+};
 
-export default ReactQueryFetch
+export default ReactQueryFetch;

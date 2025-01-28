@@ -31,4 +31,25 @@ nav a.active {
 
 .container {
   padding: 10px;
+  
+}
+
+.container h3 {
+  font-weight: 500;
+  background-color: #ccc;
+  padding: 10px;
+}
+
+li {
+  padding: 10px;
+  list-style-type: none;
+  margin-top: 15px;
+}
+
+li a {
+  text-decoration: none;
+  color:#000;
+}
+li:hover{
+    background-color: #ccc;
 }
