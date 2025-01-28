@@ -1,0 +1,690 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Introduction to Fullstack Development",
+      "body": "Exploring the roles of frontend and backend in web applications."
+    },
+    {
+      "id": "2",
+      "title": "Getting Started with HTML and CSS",
+      "body": "The foundation of web development for beginners."
+    },
+    {
+      "id": "3",
+      "title": "JavaScript Essentials for Fullstack Developers",
+      "body": "Mastering the core language of the web."
+    },
+    {
+      "id": "4",
+      "title": "Understanding RESTful APIs",
+      "body": "Building and consuming APIs in fullstack projects."
+    },
+    {
+      "id": "5",
+      "title": "Top Frameworks for Fullstack Development in 2025",
+      "body": "A guide to popular frameworks like React, Node.js, and Django."
+    },
+    {
+      "id": "6",
+      "title": "Databases Demystified for Web Developers",
+      "body": "An overview of SQL vs NoSQL and choosing the right database."
+    },
+    {
+      "id": "7",
+      "title": "Deploying Fullstack Applications",
+      "body": "Best practices for deploying apps on AWS, Vercel, and Heroku."
+    },
+    {
+      "id": "8",
+      "title": "The Importance of Responsive Design",
+      "body": "Ensuring your web applications look great on all devices."
+    },
+    {
+      "id": "9",
+      "title": "Debugging Tips for Fullstack Developers",
+      "body": "Effective ways to troubleshoot both frontend and backend issues."
+    },
+    {
+      "id": "10",
+      "title": "What is WEFD?",
+      "body": "Understanding Web Engineering and Fullstack Development."
+    },
+    {
+      "id": "11",
+      "title": "Server-Side Rendering vs Client-Side Rendering",
+      "body": "How to decide which rendering method works best for your project."
+    },
+    {
+      "id": "12",
+      "title": "Authentication in Fullstack Applications",
+      "body": "Implementing secure login systems using JWT and OAuth."
+    },
+    {
+      "id": "13",
+      "title": "Building Scalable Web Applications",
+      "body": "Techniques for creating high-performance, scalable systems."
+    },
+    {
+      "id": "14",
+      "title": "Version Control with Git and GitHub",
+      "body": "Collaborating on code effectively with Git basics."
+    },
+    {
+      "id": "15",
+      "title": "Future Trends in Web Development",
+      "body": "Exploring AI tools, Web3, and the evolving tech landscape."
+    },
+    {
+      "id": "16",
+      "title": "Tutor Joes,Salem",
+      "body": "This is Sample data salem"
+    },
+    {
+      "id": "IJJFq_7"
+    }
+  ],
+  "items": [
+    {
+      "id": "1",
+      "name": "Apple",
+      "color": "Red",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "2",
+      "name": "Banana",
+      "color": "Yellow",
+      "vitamin": "Vitamin B6"
+    },
+    {
+      "id": "3",
+      "name": "Carrot",
+      "color": "Orange",
+      "vitamin": "Vitamin A"
+    },
+    {
+      "id": "4",
+      "name": "Tomato",
+      "color": "Red",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "5",
+      "name": "Spinach",
+      "color": "Green",
+      "vitamin": "Vitamin K"
+    },
+    {
+      "id": "6",
+      "name": "Orange",
+      "color": "Orange",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "7",
+      "name": "Potato",
+      "color": "Brown",
+      "vitamin": "Vitamin B6"
+    },
+    {
+      "id": "8",
+      "name": "Strawberry",
+      "color": "Red",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "9",
+      "name": "Cucumber",
+      "color": "Green",
+      "vitamin": "Vitamin K"
+    },
+    {
+      "id": "10",
+      "name": "Pineapple",
+      "color": "Yellow",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "11",
+      "name": "Onion",
+      "color": "White",
+      "vitamin": "Vitamin B6"
+    },
+    {
+      "id": "12",
+      "name": "Mango",
+      "color": "Yellow",
+      "vitamin": "Vitamin A"
+    },
+    {
+      "id": "13",
+      "name": "Lettuce",
+      "color": "Green",
+      "vitamin": "Vitamin K"
+    },
+    {
+      "id": "14",
+      "name": "Watermelon",
+      "color": "Red",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "15",
+      "name": "Bell Pepper",
+      "color": "Green",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "16",
+      "name": "Blueberry",
+      "color": "Blue",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "17",
+      "name": "Peach",
+      "color": "Orange",
+      "vitamin": "Vitamin A"
+    },
+    {
+      "id": "18",
+      "name": "Broccoli",
+      "color": "Green",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "19",
+      "name": "Grapes",
+      "color": "Purple",
+      "vitamin": "Vitamin K"
+    },
+    {
+      "id": "20",
+      "name": "Papaya",
+      "color": "Orange",
+      "vitamin": "Vitamin A"
+    },
+    {
+      "id": "21",
+      "name": "Zucchini",
+      "color": "Green",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "22",
+      "name": "Cherry",
+      "color": "Red",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "23",
+      "name": "Pumpkin",
+      "color": "Orange",
+      "vitamin": "Vitamin A"
+    },
+    {
+      "id": "24",
+      "name": "Pear",
+      "color": "Green",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "25",
+      "name": "Eggplant",
+      "color": "Purple",
+      "vitamin": "Vitamin B6"
+    },
+    {
+      "id": "26",
+      "name": "Kiwi",
+      "color": "Brown",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "27",
+      "name": "Avocado",
+      "color": "Green",
+      "vitamin": "Vitamin E"
+    },
+    {
+      "id": "28",
+      "name": "Radish",
+      "color": "Red",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "29",
+      "name": "Cabbage",
+      "color": "Green",
+      "vitamin": "Vitamin K"
+    },
+    {
+      "id": "30",
+      "name": "Beetroot",
+      "color": "Purple",
+      "vitamin": "Vitamin B9"
+    },
+    {
+      "id": "31",
+      "name": "Pomegranate",
+      "color": "Red",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "32",
+      "name": "Corn",
+      "color": "Yellow",
+      "vitamin": "Vitamin B1"
+    },
+    {
+      "id": "33",
+      "name": "Lime",
+      "color": "Green",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "34",
+      "name": "Guava",
+      "color": "Green",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "35",
+      "name": "Celery",
+      "color": "Green",
+      "vitamin": "Vitamin K"
+    },
+    {
+      "id": "36",
+      "name": "Plum",
+      "color": "Purple",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "37",
+      "name": "Cauliflower",
+      "color": "White",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "38",
+      "name": "Blackberry",
+      "color": "Black",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "39",
+      "name": "Apricot",
+      "color": "Orange",
+      "vitamin": "Vitamin A"
+    },
+    {
+      "id": "40",
+      "name": "Artichoke",
+      "color": "Green",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "41",
+      "name": "Chili Pepper",
+      "color": "Red",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "42",
+      "name": "Fig",
+      "color": "Purple",
+      "vitamin": "Vitamin B6"
+    },
+    {
+      "id": "43",
+      "name": "Coconut",
+      "color": "Brown",
+      "vitamin": "Vitamin E"
+    },
+    {
+      "id": "44",
+      "name": "Turnip",
+      "color": "Purple",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "45",
+      "name": "Lemon",
+      "color": "Yellow",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "46",
+      "name": "Okra",
+      "color": "Green",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "47",
+      "name": "Raspberry",
+      "color": "Red",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "48",
+      "name": "Dates",
+      "color": "Brown",
+      "vitamin": "Vitamin B6"
+    },
+    {
+      "id": "49",
+      "name": "Green Beans",
+      "color": "Green",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "50",
+      "name": "Sweet Potato",
+      "color": "Orange",
+      "vitamin": "Vitamin A"
+    },
+    {
+      "id": "51",
+      "name": "Peas",
+      "color": "Green",
+      "vitamin": "Vitamin K"
+    },
+    {
+      "id": "52",
+      "name": "Lychee",
+      "color": "Red",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "53",
+      "name": "Ginger",
+      "color": "Brown",
+      "vitamin": "Vitamin B6"
+    },
+    {
+      "id": "54",
+      "name": "Garlic",
+      "color": "White",
+      "vitamin": "Vitamin B6"
+    },
+    {
+      "id": "55",
+      "name": "Brussels Sprouts",
+      "color": "Green",
+      "vitamin": "Vitamin K"
+    },
+    {
+      "id": "56",
+      "name": "Bok Choy",
+      "color": "Green",
+      "vitamin": "Vitamin A"
+    },
+    {
+      "id": "57",
+      "name": "Cranberry",
+      "color": "Red",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "58",
+      "name": "Melon",
+      "color": "Orange",
+      "vitamin": "Vitamin A"
+    },
+    {
+      "id": "59",
+      "name": "Starfruit",
+      "color": "Yellow",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "60",
+      "name": "Kale",
+      "color": "Green",
+      "vitamin": "Vitamin K"
+    },
+    {
+      "id": "61",
+      "name": "Passion Fruit",
+      "color": "Purple",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "62",
+      "name": "Asparagus",
+      "color": "Green",
+      "vitamin": "Vitamin K"
+    },
+    {
+      "id": "63",
+      "name": "Rhubarb",
+      "color": "Pink",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "64",
+      "name": "Dragon Fruit",
+      "color": "Pink",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "65",
+      "name": "Jackfruit",
+      "color": "Yellow",
+      "vitamin": "Vitamin B6"
+    },
+    {
+      "id": "66",
+      "name": "Gooseberry",
+      "color": "Green",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "67",
+      "name": "Durian",
+      "color": "Yellow",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "68",
+      "name": "Sapodilla",
+      "color": "Brown",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "69",
+      "name": "Tangerine",
+      "color": "Orange",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "70",
+      "name": "Bitter Gourd",
+      "color": "Green",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "71",
+      "name": "Loquat",
+      "color": "Yellow",
+      "vitamin": "Vitamin A"
+    },
+    {
+      "id": "72",
+      "name": "Elderberry",
+      "color": "Black",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "73",
+      "name": "Mulberry",
+      "color": "Purple",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "74",
+      "name": "Persimmon",
+      "color": "Orange",
+      "vitamin": "Vitamin A"
+    },
+    {
+      "id": "75",
+      "name": "Celeriac",
+      "color": "White",
+      "vitamin": "Vitamin K"
+    },
+    {
+      "id": "76",
+      "name": "Leek",
+      "color": "White",
+      "vitamin": "Vitamin A"
+    },
+    {
+      "id": "77",
+      "name": "Chives",
+      "color": "Green",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "78",
+      "name": "Basil",
+      "color": "Green",
+      "vitamin": "Vitamin A"
+    },
+    {
+      "id": "79",
+      "name": "Mint",
+      "color": "Green",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "80",
+      "name": "Thyme",
+      "color": "Green",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "81",
+      "name": "Parsley",
+      "color": "Green",
+      "vitamin": "Vitamin K"
+    },
+    {
+      "id": "82",
+      "name": "Dill",
+      "color": "Green",
+      "vitamin": "Vitamin A"
+    },
+    {
+      "id": "83",
+      "name": "Sage",
+      "color": "Green",
+      "vitamin": "Vitamin K"
+    },
+    {
+      "id": "84",
+      "name": "Rosemary",
+      "color": "Green",
+      "vitamin": "Vitamin A"
+    },
+    {
+      "id": "85",
+      "name": "Coriander",
+      "color": "Green",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "86",
+      "name": "Taro",
+      "color": "Brown",
+      "vitamin": "Vitamin E"
+    },
+    {
+      "id": "87",
+      "name": "Yam",
+      "color": "Brown",
+      "vitamin": "Vitamin B6"
+    },
+    {
+      "id": "88",
+      "name": "Cassava",
+      "color": "Brown",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "89",
+      "name": "Fennel",
+      "color": "White",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "90",
+      "name": "Horseradish",
+      "color": "White",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "91",
+      "name": "Parsnip",
+      "color": "White",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "92",
+      "name": "Squash",
+      "color": "Yellow",
+      "vitamin": "Vitamin A"
+    },
+    {
+      "id": "93",
+      "name": "Grapefruit",
+      "color": "Pink",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "94",
+      "name": "Cantaloupe",
+      "color": "Orange",
+      "vitamin": "Vitamin A"
+    },
+    {
+      "id": "95",
+      "name": "Quince",
+      "color": "Yellow",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "96",
+      "name": "Kumquat",
+      "color": "Orange",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "97",
+      "name": "Pummelo",
+      "color": "Green",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "98",
+      "name": "Longan",
+      "color": "Brown",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "99",
+      "name": "Mangosteen",
+      "color": "Purple",
+      "vitamin": "Vitamin C"
+    },
+    {
+      "id": "100",
+      "name": "Nectarine",
+      "color": "Orange",
+      "vitamin": "Vitamin A"
+    }
+  ],
+  "users": []
+}
