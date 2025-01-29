@@ -16,8 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/regular" element={<RegularFetch />} />
-        <Route path="/react-query" element={ <ReactQueryFetch /> } />
-        <Route path="/react-query/:id" element={ <ReactQueryFetchDetail/>} />
+        <Route path="/react-query" element={<ReactQueryFetch />} />
+        <Route path="/react-query/:id" element={<ReactQueryFetchDetail />} />
       </Routes>
     </BrowserRouter>
   );
