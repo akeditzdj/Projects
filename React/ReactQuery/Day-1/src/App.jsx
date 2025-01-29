@@ -3,6 +3,7 @@ import "./App.css";
 import RegularFetch from "./Components/RegularFetch";
 import ReactQueryFetch from "./Components/ReactQueryFetch";
 import Home from "./Components/Home";
+import ReactQueryFetchDetail from "./Components/ReactQueryFetchDetail";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/regular" element={<RegularFetch />} />
-        <Route path="/react-query" element={<ReactQueryFetch />} />
+        <Route path="/react-query" element={ <ReactQueryFetch /> } />
+        <Route path="/react-query/:id" element={ <ReactQueryFetchDetail/>} />
       </Routes>
     </BrowserRouter>
   );

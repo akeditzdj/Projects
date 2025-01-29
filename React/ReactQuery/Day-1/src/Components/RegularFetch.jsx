@@ -4,7 +4,7 @@ import axios from "axios";
 
 const RegularFetch = () => {
   const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState();
+  const [isLoading, setIsLoading] = useState();
   const [isError, setIsError] = useState();
 
   const fetchPosts = async () => {
@@ -14,7 +14,7 @@ const RegularFetch = () => {
     } catch (error) {
       setIsError(error);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
@@ -22,16 +22,16 @@ const RegularFetch = () => {
     fetchPosts();
   }, []);
 
-  if (loading) {
-    return;
+  if (isLoading) {
+    return <p>Please wait while data is loading...</p>;
   }
   if (isError) {
-    <p>Error in fetching data</p>;
+    return <p>Error in fetching data</p>;
   }
 
   return (
     <div className="container">
-      <h3>RegularFetch</h3>
+      <h3>Regular Post</h3>
       <ul className="posts">
         {posts.map((post) => (
           <li key={post.id} className="post">
