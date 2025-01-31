@@ -32,22 +32,24 @@ const Pagination = () => {
           </li>
         ))}
       </ul>
-      <button
-        onClick={() => {
-          setPage((prev) => prev - 1);
-        }}
-        disabled={page == 1 ? true : false}
-      >
-        Previous
-      </button>
-      <button
-        onClick={() => {
-          setPage((prev) => prev + 1);
-        }}
-        disabled={page == 10 ? true : false}
-      >
-        Next
-      </button>
+      <div className="btn">
+        <button
+          onClick={() => {
+            setPage((prev) => prev - 1);
+          }}
+          disabled={page == 1 ? true : false}
+        >
+          Previous
+        </button>
+        <button
+          onClick={() => {
+            setPage((prev) => prev + 1);
+          }}
+          disabled={page == 10 ? true : false}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };
