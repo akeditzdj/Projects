@@ -7,6 +7,7 @@ import ReactQueryFetchDetail from "./Components/ReactQueryFetchDetail";
 import Pagination from "./Components/Pagination";
 import InfiniteQuery from "./Components/InfiniteQuery";
 import InfiniteScroll from "./Components/InfiniteScroll";
+import UseQueriesDemo from "./Components/UseQueriesDemo";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <NavLink to="/react-query-pagination">Pagination</NavLink>
         <NavLink to="/react-query-infiniteQuery">Infinite Query</NavLink>
         <NavLink to="/react-query-infiniteScroll">Infinite Scroll</NavLink>
+        <NavLink to="/react-usequeries">Use Queries</NavLink>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -30,6 +32,7 @@ function App() {
           path="/react-query-infiniteScroll"
           element={<InfiniteScroll />}
         />
+        <Route path="/react-usequeries" element={<UseQueriesDemo />} />
       </Routes>
     </BrowserRouter>
   );

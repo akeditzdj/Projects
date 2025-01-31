@@ -46,7 +46,7 @@ nav a.active {
 li {
   padding: 10px;
   list-style-type: none;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 a {
@@ -64,3 +64,7 @@ button {
   border-radius: 50px;
   cursor: pointer;
 }
+
+/* .item-box {
+  width: 200px;
+} */

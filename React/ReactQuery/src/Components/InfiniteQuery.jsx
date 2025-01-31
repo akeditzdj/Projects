@@ -60,7 +60,7 @@ const InfiniteQuery = () => {
             className="btn btn-secondary btn-sm"
             onClick={fetchNextPage}
             disabled={!hasNextPage ? true : false}
-          ></button>
+          >Load More</button>
         </div>
       </div>
     </>

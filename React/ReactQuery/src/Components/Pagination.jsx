@@ -33,7 +33,7 @@ const Pagination = () => {
           </li>
         ))}
       </ul>
-      <div className="btn d-flex justify-content-center align-items-center gap-3">
+      <div className="d-flex justify-content-center align-items-center gap-3">
         <button
           className="btn btn-secondary btn-sm"
           onClick={() => {
