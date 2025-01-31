@@ -24,7 +24,8 @@ const Pagination = () => {
   }
 
   return (
-    <div>
+    <div className="container">
+      <h3>Pagination</h3>
       <ul>
         {data?.data.map((item) => (
           <li key={item.id}>
@@ -32,8 +33,9 @@ const Pagination = () => {
           </li>
         ))}
       </ul>
-      <div className="btn">
+      <div className="btn d-flex justify-content-center align-items-center gap-3">
         <button
+          className="btn btn-secondary btn-sm"
           onClick={() => {
             setPage((prev) => prev - 1);
           }}
@@ -42,6 +44,7 @@ const Pagination = () => {
           Previous
         </button>
         <button
+          className="btn btn-secondary btn-sm"
           onClick={() => {
             setPage((prev) => prev + 1);
           }}

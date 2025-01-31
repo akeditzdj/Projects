@@ -26,7 +26,12 @@ export const ReactQueryFetch = () => {
   return (
     <div className="container">
       <h3>React Query Post</h3>
-      <button onClick={refetch}>Load Data</button>
+      <button
+        onClick={refetch}
+        className="btn btn-secondary btn-sm mt-3"
+      >
+        Fetch Data
+      </button>
 
       <ul className="posts">
         {data?.data.map((post) => (
