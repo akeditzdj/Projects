@@ -19,7 +19,11 @@
   "breadcrumbs.showNull": true,
   "outline.showNull": true,
   "editor.defaultColorDecorators": "never",
-  "workbench.preferredLightColorTheme": "Monokai",
-  "window.autoDetectColorScheme": false,
-  "errorLens.statusBarColorsEnabled": false
+  "workbench.preferredLightColorTheme": "Default Light Modern",
+  "window.autoDetectColorScheme": true,
+  "errorLens.statusBarColorsEnabled": false,
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.preferredDarkColorTheme": "Default Dark Modern",
+  "workbench.preferredHighContrastColorTheme": "Default Dark Modern",
+  "workbench.iconTheme": "vs-seti"
 }

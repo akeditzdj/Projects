@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+
 const ReactQueryFetchDetail = () => {
   const fetchPostDetails = (id) => {
     return axios.get(`http://localhost:3001/posts/${id}`);
