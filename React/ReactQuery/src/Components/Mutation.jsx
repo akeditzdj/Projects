@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const API_URL = "http://localhost:3001/posts";
 
@@ -114,32 +114,32 @@ const Mutation = () => {
         </form>
         <ul>
           {data?.map((post, index) => (
-            <Link to={`/react-query/${post.id}`} key={post.id}>
-              <li key={post.id}>
-                <div className="d-flex justify-content-between align-items-center">
+            <li key={post.id}>
+              <div className="d-flex justify-content-between align-items-center">
+                <Link to={`/react-query/${post.id}`} key={post.id}>
                   <div>
                     <h4>
                       {index + 1}. {post.title}
                     </h4>
                     <p>{post.body}</p>
                   </div>
-                  <div className="d-flex justify-content-start align-items-center gap-2">
-                    <button
-                      onClick={() => handleUpdate(post)}
-                      className="btn btn-sm btn-primary"
-                    >
-                      Edit
-                    </button>
-                    <button
-                      onClick={() => handleDelete(post.id)}
-                      className="btn btn-sm btn-danger"
-                    >
-                      Delete
-                    </button>
-                  </div>
+                </Link>
+                <div className="d-flex justify-content-start align-items-center gap-2">
+                  <button
+                    onClick={() => handleUpdate(post)}
+                    className="btn btn-sm btn-primary"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => handleDelete(post.id)}
+                    className="btn btn-sm btn-danger"
+                  >
+                    Delete
+                  </button>
                 </div>
-              </li>
-            </Link>
+              </div>
+            </li>
           ))}
         </ul>
       </div>
