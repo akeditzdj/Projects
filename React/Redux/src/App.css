@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", serif;
+}
+nav a {
+  color: #ffff;
+  text-decoration: none;
+  padding: 8px;
+}
+
+nav a.active {
+  background-color: #ffff;
+  color: #000;
+  padding: auto;
+}
