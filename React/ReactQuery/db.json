@@ -1,9 +1,9 @@
 {
   "posts": [
     {
-      "id": "1",
       "title": "Introduction to Fullstack Development",
-      "body": "Exploring the roles of frontend and backend in web applications."
+      "body": "Exploring the roles of frontend and backend in web applications.",
+      "id": "1"
     },
     {
       "id": "2",

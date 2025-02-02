@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useQueries } from "@tanstack/react-query";
 
@@ -59,11 +59,36 @@ const MultipleItems = ({ itemIds }) => {
 
 // Parent component that holds state for item IDs
 const UseQueriesDemo = () => {
-  const itemIds = [12, 15, 25, 29, 46, 55, 69, 74, 99, 52, 44, 84];
+  const [inputIds, setInputIds] = useState("");
+  const [itemIds, setItemIds] = useState([]);
+
+  const handleUpdateIds = () => {
+    const newIds = inputIds.split(",").map((id) => parseInt(id.trim(), 10));
+    setItemIds(newIds);
+    setInputIds("");
+  };
 
   return (
     <div className="container">
       <h3>Use Queries Demo</h3>
+      <div className="mb-3">
+        <label htmlFor="itemIdsInput" className="form-label">
+          Enter Item IDs (comma-separated):
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          id="itemIdsInput"
+          value={inputIds}
+          onChange={(e) => setInputIds(e.target.value)}
+        />
+        <button
+          className="btn btn-primary mt-2 w-auto"
+          onClick={handleUpdateIds}
+        >
+          Fetch Items
+        </button>
+      </div>
       <MultipleItems itemIds={itemIds} />
     </div>
   );
