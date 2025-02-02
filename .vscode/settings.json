@@ -19,7 +19,7 @@
   "breadcrumbs.showNull": true,
   "outline.showNull": true,
   "editor.defaultColorDecorators": "never",
-  "workbench.preferredLightColorTheme": "Default Light Modern",
+  "workbench.preferredLightColorTheme": "Visual Studio Dark",
   "window.autoDetectColorScheme": true,
   "errorLens.statusBarColorsEnabled": false,
   "workbench.colorTheme": "Default Dark Modern",
