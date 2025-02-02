@@ -59,7 +59,7 @@ const MultipleItems = ({ itemIds }) => {
 
 // Parent component that holds state for item IDs
 const UseQueriesDemo = () => {
-  const itemIds = [];
+  const itemIds = [12, 15, 25, 29, 46, 55, 69, 74, 99, 52, 44, 84];
 
   return (
     <div className="container">
